@@ -1,9 +1,9 @@
-# directory-ui
+# directory-ui-supplier
 [Export Directory UI](https://www.directory.exportingisgreat.gov.uk/)
 
 ## Build status
 
-[![CircleCI](https://circleci.com/gh/uktrade/directory-ui/tree/master.svg?style=svg)](https://circleci.com/gh/uktrade/directory-ui/tree/master)
+[![CircleCI](https://circleci.com/gh/uktrade/directory-ui-supplier/tree/master.svg?style=svg)](https://circleci.com/gh/uktrade/directory-ui-supplier/tree/master)
 
 ## Requirements
 
@@ -15,8 +15,8 @@
 
 ## Local installation
 
-    $ git clone https://github.com/uktrade/directory-ui
-    $ cd directory-ui
+    $ git clone https://github.com/uktrade/directory-ui-supplier
+    $ cd directory-ui-supplier
     $ make
 
 ## Running with Docker
@@ -33,18 +33,18 @@ Requires all host environment variables to be set.
     $ make docker_test
 
 ### Host environment variables for docker-compose
-``.env`` files will be automatically created (with ``env_writer.py`` based on ``env.json``) by ``make docker_test``, based on host environment variables with ``DIRECTORY_UI_`` prefix.
+``.env`` files will be automatically created (with ``env_writer.py`` based on ``env.json``) by ``make docker_test``, based on host environment variables with ``DIRECTORY_UI_SUPPLIER_`` prefix.
 
 #### Web server
 | Host environment variable | Docker environment variable  |
 | ------------- | ------------- |
-| DIRECTORY_UI_SECRET_KEY | SECRET_KEY |
-| DIRECTORY_UI_PORT | PORT |
-| DIRECTORY_UI_API_CLIENT_KEY | API_CLIENT_KEY |
-| DIRECTORY_UI_API_CLIENT_BASE_URL | API_CLIENT_BASE_URL |
-| DIRECTORY_UI_COMPANIES_HOUSE_SEARCH_URL | COMPANIES_HOUSE_SEARCH_URL |
-| DIRECTORY_UI_SSO_API_CLIENT_BASE_URL | SSO_API_CLIENT_BASE_URL |
-| DIRECTORY_UI_UI_SESSION_COOKIE_SECURE | UI_SESSION_COOKIE_SECURE |
+| DIRECTORY_UI_SUPPLIER_SECRET_KEY | SECRET_KEY |
+| DIRECTORY_UI_SUPPLIER_PORT | PORT |
+| DIRECTORY_UI_SUPPLIER_API_CLIENT_KEY | API_CLIENT_KEY |
+| DIRECTORY_UI_SUPPLIER_API_CLIENT_BASE_URL | API_CLIENT_BASE_URL |
+| DIRECTORY_UI_SUPPLIER_COMPANIES_HOUSE_SEARCH_URL | COMPANIES_HOUSE_SEARCH_URL |
+| DIRECTORY_UI_SUPPLIER_SSO_API_CLIENT_BASE_URL | SSO_API_CLIENT_BASE_URL |
+| DIRECTORY_UI_SUPPLIER_UI_SESSION_COOKIE_SECURE | UI_SESSION_COOKIE_SECURE |
 
 ## Debugging
 
@@ -94,12 +94,12 @@ To make sso work locally add the following to your `/etc/hosts`:
 127.0.0.1 sso.trade.great.
 127.0.0.1 api.trade.great.dev
 
-Then log into `directory-sso` via `sso.trade.great.dev:8001`, and use `directory-ui` on `ui.trade.great.dev:8001`
+Then log into `directory-sso` via `sso.trade.great.dev:8001`, and use `directory-ui-supplier` on `ui.trade.great.dev:8001`
 
 Note in production, the `directory-sso` session cookie is shared with all subdomains that are on the same parent domain as `directory-sso`. However in development we cannot share cookies between subdomains using `localhost` - that would be like trying to set a cookie for `.com`, which is not supported any any RFC.
 
 Therefore to make cookie sharing work in development we need the apps to ne running on subdomains. Some stipulations:
- - `directory-ui` and `directory-sso` must both be running on sibling subdomains (with same parent domain)
+ - `directory-ui-supplier` and `directory-sso` must both be running on sibling subdomains (with same parent domain)
  - `directory-sso` must be told to target cookies at the parent domain.
 
 # Geodata

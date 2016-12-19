@@ -31,23 +31,23 @@ docker_run:
 	docker-compose up --build
 
 DOCKER_SET_DEBUG_ENV_VARS := \
-	export DIRECTORY_UI_API_CLIENT_CLASS_NAME=unit-test; \
-	export DIRECTORY_UI_API_CLIENT_KEY=debug; \
-	export DIRECTORY_UI_API_CLIENT_BASE_URL=http://api.trade.great.dev:8000; \
-	export DIRECTORY_UI_SSO_API_CLIENT_KEY=api_signature_debug; \
-	export DIRECTORY_UI_SSO_API_CLIENT_BASE_URL=http://sso.trade.great.dev:8004/api/v1/; \
-	export DIRECTORY_UI_SSO_LOGIN_URL=http://sso.trade.great.dev:8004/accounts/login/; \
-	export DIRECTORY_UI_SSO_LOGOUT_URL=http://sso.trade.great.dev:8004/accounts/logout/?next=http://ui.trade.great.dev:8001; \
-	export DIRECTORY_UI_SSO_SIGNUP_URL=http://sso.trade.great.dev:8004/accounts/signup/; \
-	export DIRECTORY_UI_SSO_REDIRECT_FIELD_NAME=next; \
-	export DIRECTORY_UI_SSO_SESSION_COOKIE=debug_sso_session_cookie; \
-	export DIRECTORY_UI_SESSION_COOKIE_SECURE=false; \
-	export DIRECTORY_UI_PORT=8001; \
-	export DIRECTORY_UI_SECRET_KEY=debug; \
-	export DIRECTORY_UI_DEBUG=true; \
-	export DIRECTORY_UI_COMPANIES_HOUSE_API_KEY=debug; \
-	export DIRECTORY_UI_FEATURE_PUBLIC_PROFILES_ENABLED=true; \
-	export DIRECTORY_UI_FEATURE_SECTOR_LANDING_PAGES_ENABLED=true
+	export DIRECTORY_UI_SUPPLIER_API_CLIENT_CLASS_NAME=unit-test; \
+	export DIRECTORY_UI_SUPPLIER_API_CLIENT_KEY=debug; \
+	export DIRECTORY_UI_SUPPLIER_API_CLIENT_BASE_URL=http://api.trade.great.dev:8000; \
+	export DIRECTORY_UI_SUPPLIER_SSO_API_CLIENT_KEY=api_signature_debug; \
+	export DIRECTORY_UI_SUPPLIER_SSO_API_CLIENT_BASE_URL=http://sso.trade.great.dev:8004/api/v1/; \
+	export DIRECTORY_UI_SUPPLIER_SSO_LOGIN_URL=http://sso.trade.great.dev:8004/accounts/login/; \
+	export DIRECTORY_UI_SUPPLIER_SSO_LOGOUT_URL=http://sso.trade.great.dev:8004/accounts/logout/?next=http://ui.trade.great.dev:8001; \
+	export DIRECTORY_UI_SUPPLIER_SSO_SIGNUP_URL=http://sso.trade.great.dev:8004/accounts/signup/; \
+	export DIRECTORY_UI_SUPPLIER_SSO_REDIRECT_FIELD_NAME=next; \
+	export DIRECTORY_UI_SUPPLIER_SSO_SESSION_COOKIE=debug_sso_session_cookie; \
+	export DIRECTORY_UI_SUPPLIER_SESSION_COOKIE_SECURE=false; \
+	export DIRECTORY_UI_SUPPLIER_PORT=8001; \
+	export DIRECTORY_UI_SUPPLIER_SECRET_KEY=debug; \
+	export DIRECTORY_UI_SUPPLIER_DEBUG=true; \
+	export DIRECTORY_UI_SUPPLIER_COMPANIES_HOUSE_API_KEY=debug; \
+	export DIRECTORY_UI_SUPPLIER_FEATURE_PUBLIC_PROFILES_ENABLED=true; \
+	export DIRECTORY_UI_SUPPLIER_FEATURE_SECTOR_LANDING_PAGES_ENABLED=true
 
 DOCKER_REMOVE_ALL := \
 	docker ps -a | \
@@ -76,7 +76,7 @@ docker_test: docker_remove_all
 	docker-compose -f docker-compose-test.yml run sut
 
 docker_build:
-	docker build -t ukti/directory-ui:latest .
+	docker build -t ukti/directory-ui-supplier:latest .
 
 DEBUG_SET_ENV_VARS := \
 	export PORT=8001; \
@@ -114,12 +114,7 @@ debug_shell:
 debug: test_requirements debug_test
 
 heroku_deploy_dev:
-	docker build -t registry.heroku.com/directory-ui-dev/web .
-	docker push registry.heroku.com/directory-ui-dev/web
-
-heroku_deploy_demo:
-	docker build -t registry.heroku.com/directory-ui-demo/web .
-	docker push registry.heroku.com/directory-ui-demo/web
-
+	docker build -t registry.heroku.com/directory-ui-supplier-dev/web .
+	docker push registry.heroku.com/directory-ui-supplier-dev/web
 
 .PHONY: build clean test_requirements docker_run docker_debug docker_webserver_bash docker_test debug_webserver debug_test debug heroku_deploy_dev heroku_deploy_demo
