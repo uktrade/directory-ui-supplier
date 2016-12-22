@@ -25,6 +25,15 @@ html select:focus:invalid {
   color: #4a4a4a;
 }
 
+html {
+  a:focus {
+    border-color: #007EA3;
+    color: #007EA3;
+    background-color: transparent;
+  }
+}
+
+
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -937,5 +946,65 @@ a.no-focus-highlight {
     .element-within {
       display: block;
     }
+  }
+}
+
+.ed-arrow_box {
+  position: relative;
+  background: #D8D8D8;
+}
+
+.ed-arrow_box:after {
+  top: 100%;
+  left: 50px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(237, 237, 237, 0);
+  border-top-color: #D8D8D8;
+  border-width: 20px 20px 0px 0px;
+  margin-left: -20px;
+}
+
+
+// do not remove the `a.` prefix - it increases the specificity
+// to ensure `color` we set here is respected.
+a.ed-naked-button-error {
+  border: 3px solid #B00D23;
+  color: #B00D23;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+}
+
+
+// do not remove the `a.` prefix - it increases the specificity
+// to ensure `color` we set here is respected.
+a.ed-filled-button-primary {
+  background-color: #00549F;
+  width: 100%;
+  text-align: center;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: 21px 24px;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  font-weight: 500;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: #fff;
+  box-sizing: border-box;
+  vertical-align: top;
+  line-height: 1;
+  font-family: 'Roboto', sans-serif;
+  &:focus {
+    background: #007EA3;
+    outline: 0;
   }
 }

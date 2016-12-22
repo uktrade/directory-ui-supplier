@@ -79,7 +79,6 @@ def test_company_profile_details_links_to_case_studies():
                 "title": "three",
                 "video_one": None,
                 "website": "http://www.example.com",
-                "year": "2000"
             },
         ]
     }
@@ -396,7 +395,7 @@ def test_supplier_case_study_details_renders_company_details():
     context = {
         'case_study': {
             'company': {
-                'date_of_creation': '1 Jan 2015',
+                'date_of_creation': datetime(2015, 1, 1),
                 'name': 'Example corp',
             }
         }
@@ -404,7 +403,7 @@ def test_supplier_case_study_details_renders_company_details():
     html = render_to_string('supplier-case-study-detail.html', context)
 
     assert context['case_study']['company']['name'] in html
-    assert context['case_study']['company']['date_of_creation'] in html
+    assert '2015' in html
 
 
 def test_supplier_case_study_details_renders_case_study_details():
@@ -413,7 +412,6 @@ def test_supplier_case_study_details_renders_case_study_details():
             'sector': {
                 'label': 'Water'
             },
-            'year': '2000',
             'testimonial': 'Good.',
             'testimonial_name': 'Neville',
             'testimonial_job_title': 'Abstract hat maker',
@@ -427,7 +425,6 @@ def test_supplier_case_study_details_renders_case_study_details():
     html = render_to_string('supplier-case-study-detail.html', context)
 
     assert context['case_study']['sector']['label'] in html
-    assert context['case_study']['year'] in html
     assert context['case_study']['testimonial'] in html
     assert context['case_study']['testimonial_name'] in html
     assert context['case_study']['testimonial_job_title'] in html
@@ -444,18 +441,16 @@ def test_supplier_case_study_detail_render_profile_link_flag_on_published():
             'company': {
                 'number': 3,
                 'is_published': True,
+                'public_profile_url': 'http://www.thing.com',
             },
         },
         'features': {
             'FEATURE_PUBLIC_PROFILES_ENABLED': True,
         },
     }
-    url = reverse(
-        'public-company-profiles-detail', kwargs={'company_number': '3'}
-    )
     html = render_to_string('supplier-case-study-detail.html', context)
 
-    assert url in html
+    assert context['case_study']['company']['public_profile_url'] in html
 
 
 def test_supplier_case_study_detail_render_profile_link_flag_on_unpublished():

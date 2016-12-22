@@ -14,11 +14,7 @@ SECTOR_CHOICES = {key: value for key, value in choices.COMPANY_CLASSIFICATIONS}
 def format_date_of_creation(raw_date_of_creation):
     if not raw_date_of_creation:
         return raw_date_of_creation
-    date_of_creation = datetime.datetime.strptime(
-        raw_date_of_creation,
-        '%Y-%m-%d'
-    )
-    return date_of_creation.strftime('%d %b %Y')
+    return datetime.datetime.strptime(raw_date_of_creation, '%Y-%m-%d')
 
 
 def get_employees_label(employees_value):
