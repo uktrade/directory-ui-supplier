@@ -985,6 +985,7 @@ a.ed-naked-button-error {
 // do not remove the `a.` prefix - it increases the specificity
 // to ensure `color` we set here is respected.
 a.ed-filled-button-primary {
+  border-radius: 4px;
   background-color: #00549F;
   width: 100%;
   text-align: center;
@@ -992,7 +993,6 @@ a.ed-filled-button-primary {
   display: inline-block;
   padding: 21px 24px;
   border: none;
-  border-radius: 0;
   -webkit-appearance: none;
   font-weight: 500;
   text-decoration: none;

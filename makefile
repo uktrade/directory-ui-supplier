@@ -37,17 +37,18 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_SSO_API_CLIENT_KEY=api_signature_debug; \
 	export DIRECTORY_UI_SUPPLIER_SSO_API_CLIENT_BASE_URL=http://sso.trade.great.dev:8004/api/v1/; \
 	export DIRECTORY_UI_SUPPLIER_SSO_LOGIN_URL=http://sso.trade.great.dev:8004/accounts/login/; \
-	export DIRECTORY_UI_SUPPLIER_SSO_LOGOUT_URL=http://sso.trade.great.dev:8004/accounts/logout/?next=http://ui.trade.great.dev:8001; \
+	export DIRECTORY_UI_SUPPLIER_SSO_LOGOUT_URL=http://sso.trade.great.dev:8004/accounts/logout/?next=http://buyer.trade.great.dev:8001; \
 	export DIRECTORY_UI_SUPPLIER_SSO_SIGNUP_URL=http://sso.trade.great.dev:8004/accounts/signup/; \
 	export DIRECTORY_UI_SUPPLIER_SSO_REDIRECT_FIELD_NAME=next; \
 	export DIRECTORY_UI_SUPPLIER_SSO_SESSION_COOKIE=debug_sso_session_cookie; \
 	export DIRECTORY_UI_SUPPLIER_SESSION_COOKIE_SECURE=false; \
-	export DIRECTORY_UI_SUPPLIER_PORT=8001; \
+	export DIRECTORY_UI_SUPPLIER_PORT=8005; \
 	export DIRECTORY_UI_SUPPLIER_SECRET_KEY=debug; \
 	export DIRECTORY_UI_SUPPLIER_DEBUG=true; \
 	export DIRECTORY_UI_SUPPLIER_COMPANIES_HOUSE_API_KEY=debug; \
 	export DIRECTORY_UI_SUPPLIER_FEATURE_PUBLIC_PROFILES_ENABLED=true; \
-	export DIRECTORY_UI_SUPPLIER_FEATURE_SECTOR_LANDING_PAGES_ENABLED=true
+	export DIRECTORY_UI_SUPPLIER_FEATURE_SECTOR_LANDING_PAGES_ENABLED=true; \
+	export DIRECTORY_UI_SUPPLIER_BUYER_PUBLIC_COMPANY_PROFILE_URL=http://buyer.trade.great.dev:8001/suppliers/{number}
 
 DOCKER_REMOVE_ALL := \
 	docker ps -a | \
@@ -79,7 +80,7 @@ docker_build:
 	docker build -t ukti/directory-ui-supplier:latest .
 
 DEBUG_SET_ENV_VARS := \
-	export PORT=8001; \
+	export PORT=8005; \
 	export SECRET_KEY=debug; \
 	export DEBUG=true ;\
 	export API_CLIENT_KEY=debug; \
@@ -87,14 +88,15 @@ DEBUG_SET_ENV_VARS := \
 	export SSO_API_CLIENT_KEY=api_signature_debug; \
 	export SSO_API_CLIENT_BASE_URL=http://sso.trade.great.dev:8004/api/v1/; \
 	export SSO_LOGIN_URL=http://sso.trade.great.dev:8004/accounts/login/; \
-	export SSO_LOGOUT_URL=http://sso.trade.great.dev:8004/accounts/logout/?next=http://ui.trade.great.dev:8001; \
+	export SSO_LOGOUT_URL=http://sso.trade.great.dev:8004/accounts/logout/?next=http://buyer.trade.great.dev:8001; \
 	export SSO_SIGNUP_URL=http://sso.trade.great.dev:8004/accounts/signup/; \
 	export SSO_REDIRECT_FIELD_NAME=next; \
 	export SSO_SESSION_COOKIE=debug_sso_session_cookie; \
 	export SESSION_COOKIE_SECURE=false; \
 	export COMPANIES_HOUSE_API_KEY=debug; \
 	export FEATURE_PUBLIC_PROFILES_ENABLED=true; \
-	export FEATURE_SECTOR_LANDING_PAGES_ENABLED=true
+	export FEATURE_SECTOR_LANDING_PAGES_ENABLED=true; \
+	export BUYER_PUBLIC_COMPANY_PROFILE_URL=http://buyer.trade.great.dev:8001/suppliers/{number}
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)

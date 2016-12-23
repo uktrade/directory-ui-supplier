@@ -71,37 +71,8 @@ def test_pair_sector_values_with_label_empty():
         assert helpers.pair_sector_values_with_label(value) == []
 
 
-def test_get_company_profile_from_response(profile_data):
-    response = requests.Response()
-    response.json = lambda: profile_data
-    expected = {
-        'website': 'http://www.example.com',
-        'description': 'bloody good',
-        'number': '01234567',
-        'date_of_creation': datetime(2010, 10, 10),
-        'sectors': [
-            {
-                'label': 'Agriculture, horticulture and fisheries',
-                'value': 'AGRICULTURE_HORTICULTURE_AND_FISHERIES',
-            }
-        ],
-        'logo': 'nice.png',
-        'name': 'Great corp',
-        'keywords': 'I found it most pleasing, hi',
-        'employees': '1,001-10,000',
-        'supplier_case_studies': [],
-        'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
-        'verified_with_code': True,
-        'is_address_set': True,
-        'contact_details': {
-            'email_address': 'sales@example.com',
-        }
-    }
-    actual = helpers.get_company_profile_from_response(response)
-    assert actual == expected
-
-
-def test_get_public_company_profile_from_response(profile_data):
+def test_get_company_profile_from_response(profile_data, settings):
+    settings.BUYER_PUBLIC_COMPANY_PROFILE_URL = 'http://profile.com/{number}'
     response = requests.Response()
     response.json = lambda: profile_data
     expected = {
@@ -126,12 +97,46 @@ def test_get_public_company_profile_from_response(profile_data):
         'contact_details': {
             'email_address': 'sales@example.com',
         },
+        'public_profile_url': 'http://profile.com/01234567',
+    }
+    actual = helpers.get_company_profile_from_response(response)
+    assert actual == expected
+
+
+def test_get_public_company_profile_from_response(profile_data, settings):
+    settings.BUYER_PUBLIC_COMPANY_PROFILE_URL = 'http://profile.com/{number}'
+    response = requests.Response()
+    response.json = lambda: profile_data
+    expected = {
+        'website': 'http://www.example.com',
+        'description': 'bloody good',
+        'number': '01234567',
+        'date_of_creation': datetime(2010, 10, 10),
+        'sectors': [
+            {
+                'label': 'Agriculture, horticulture and fisheries',
+                'value': 'AGRICULTURE_HORTICULTURE_AND_FISHERIES',
+            }
+        ],
+        'logo': 'nice.png',
+        'name': 'Great corp',
+        'keywords': 'I found it most pleasing, hi',
+        'employees': '1,001-10,000',
+        'supplier_case_studies': [],
+        'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
+        'verified_with_code': True,
+        'is_address_set': True,
+        'contact_details': {
+            'email_address': 'sales@example.com',
+        },
+        'public_profile_url': 'http://profile.com/01234567',
     }
     actual = helpers.get_public_company_profile_from_response(response)
     assert actual == expected
 
 
-def test_get_company_list_from_response(public_companies):
+def test_get_company_list_from_response(public_companies, settings):
+    settings.BUYER_PUBLIC_COMPANY_PROFILE_URL = 'http://profile.com/{number}'
     response = requests.Response()
     response.json = lambda: public_companies
     expected = {
@@ -159,6 +164,7 @@ def test_get_company_list_from_response(public_companies):
                 'contact_details': {
                     'email_address': 'sales@example.com'
                 },
+                'public_profile_url': 'http://profile.com/01234567',
             }
         ]
     }
@@ -177,7 +183,10 @@ def test_get_company_list_from_response_empty(public_companies_empty):
     assert actual == expected
 
 
-def test_get_case_study_details_from_response(supplier_case_study_data):
+def test_get_case_study_details_from_response(
+    supplier_case_study_data, settings
+):
+    settings.BUYER_PUBLIC_COMPANY_PROFILE_URL = 'http://profile.com/{number}'
     response = requests.Response()
     response.json = lambda: supplier_case_study_data
 
@@ -209,13 +218,14 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
             'verified_with_code': True,
             'is_address_set': False,
             'contact_details': {},
+            'public_profile_url': 'http://profile.com/09466004',
         },
         'image_one': 'https://image_one.jpg',
         'testimonial': 'I found it most pleasing.',
         'keywords': 'great',
         'pk': 2,
         'year': '2000',
-        'image_two': 'https://image_two.jpg'
+        'image_two': 'https://image_two.jpg',
     }
 
     assert helpers.get_case_study_details_from_response(response) == expected

@@ -90,11 +90,12 @@ Signed cookies are used as the session backend to avoid using a database. We the
 
 # SSO
 To make sso work locally add the following to your `/etc/hosts`:
-127.0.0.1 ui.trade.great.dev
+127.0.0.1 buyer.trade.great.dev
+127.0.0.1 supplier.trade.great.dev
 127.0.0.1 sso.trade.great.
 127.0.0.1 api.trade.great.dev
 
-Then log into `directory-sso` via `sso.trade.great.dev:8001`, and use `directory-ui-supplier` on `ui.trade.great.dev:8001`
+Then log into `directory-sso` via `sso.trade.great.dev:8001`, and use `directory-ui-supplier` on `buyer.trade.great.dev:8001`
 
 Note in production, the `directory-sso` session cookie is shared with all subdomains that are on the same parent domain as `directory-sso`. However in development we cannot share cookies between subdomains using `localhost` - that would be like trying to set a cookie for `.com`, which is not supported any any RFC.
 
