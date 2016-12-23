@@ -13,35 +13,46 @@ HEALTH_SECTOR_CONTEXT = {
         ),
         'url': '#',
         'testimonial': (
-            'Lorem ipsum dolor sit amet consectetur adipiscing elit '
-            'sed do eiusmod tempor incididunt ut labore et dolore '
-            'magna aliqua. Ut enim ad minim'
+            'The i-limb™ quantum is the next best thing to real hands and as '
+            'a bilateral amputee having the ability to do what I want to do '
+            'independently is truly remarkable.'
         ),
-        'testimonial_name': 'Firstname Surname',
-        'testimonial_company': 'Company name',
+        'testimonial_name': 'Jason',
+        'testimonial_company': 'i-limb quantum™ user',
         'company_name': 'Touch Bionics',
-        'sector_url': '#',
-        'sector_name': 'Technology',
+        'sectors': [
+            {
+                'label': 'Healthcare and life sciences',
+                'url': '#',
+            },
+            {
+                'label': 'Technology',
+                'url': '#',
+            }
+        ],
         'keywords': (
-            'Robotics, Limb Loss, Prosthetics, Healthcare, '
-            'Technology, Bionics'
+            'prosthetics, bionics, robotics, healthcare, technology, limb loss'
         ),
     },
     'companies': [
         {
             'image_url': '/static/images/sector-image.png',
-            'name': 'Cool Corp',
-            'descrition': (
-                'Build labs, factories and clinical facilities with '
-                'UK infrastructure know-how lorem ipsum dolor sit'
+            'name': 'RD Biomed',
+            'description': (
+                'RD Biomed designed and makes Peptest™ - the world’s first '
+                'non-invasive reflux diagnostic test. RD Biomed specialises in'
+                ' diagnostics for gastroenterology, respiratory and ENT '
+                'conditions.'
             ),
             'public_profile_url': '#',
         },
         {
             'image_url': '/static/images/sector-image.png',
-            'name': 'Cool Corp',
-            'descrition': (
-                'Training and education in the UK lorem ipsum dolor sit'
+            'name': 'Touch Bionics',
+            'description': (
+                'Touch Bionics is responsible for developing and improving '
+                'the world’s first bionic hand with 5 independently moving '
+                'fingers - transforming lives across the globe.'
             ),
             'public_profile_url': '#',
         },

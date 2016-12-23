@@ -150,12 +150,12 @@ if settings.FEATURE_PUBLIC_PROFILES_ENABLED:
 if settings.FEATURE_SECTOR_LANDING_PAGES_ENABLED:
     urlpatterns += [
         url(
-            r"^international/sectors$",
+            r"^sectors$",
             InternationalLandingSectorListView.as_view(),
             name="international-sector-list"
         ),
         url(
-            r"^international/sectors/(?P<slug>.+)$",
+            r"^sectors/(?P<slug>.+)$",
             InternationalLandingSectorDetailView.as_view(),
             name="international-sector-detail"
         ),
