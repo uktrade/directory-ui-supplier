@@ -2,8 +2,9 @@ import datetime
 
 from directory_validators.constants import choices
 
-from api_client import api_client
+from django.conf import settings
 
+from api_client import api_client
 from enrolment.helpers import get_companies_house_office_address
 
 
@@ -14,11 +15,7 @@ SECTOR_CHOICES = {key: value for key, value in choices.COMPANY_CLASSIFICATIONS}
 def format_date_of_creation(raw_date_of_creation):
     if not raw_date_of_creation:
         return raw_date_of_creation
-    date_of_creation = datetime.datetime.strptime(
-        raw_date_of_creation,
-        '%Y-%m-%d'
-    )
-    return date_of_creation.strftime('%d %b %Y')
+    return datetime.datetime.strptime(raw_date_of_creation, '%Y-%m-%d')
 
 
 def get_employees_label(employees_value):
@@ -89,7 +86,12 @@ def format_company_details(details):
         'verified_with_code': details['verified_with_code'],
         'is_address_set': contact_details != {},
         'contact_details': contact_details,
+        'public_profile_url': get_buyer_public_profile_url(details['number'])
     }
+
+
+def get_buyer_public_profile_url(number):
+    return settings.BUYER_PUBLIC_COMPANY_PROFILE_URL.format(number=number)
 
 
 def get_company_profile(sso_id):
