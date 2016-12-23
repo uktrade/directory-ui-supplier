@@ -4,7 +4,6 @@ from django.views.decorators.cache import cache_page
 
 from enrolment.views import (
     CachableTemplateView,
-    DomesticLandingView,
     EnrolmentInstructionsView,
     EnrolmentView,
     InternationalLandingView,
@@ -46,13 +45,8 @@ urlpatterns = [
     ),
     url(
         r"^$",
-        DomesticLandingView.as_view(),
-        name="index"
-    ),
-    url(
-        r"^international$",
         InternationalLandingView.as_view(),
-        name="international"
+        name="index"
     ),
     url(
         r"^register$",
