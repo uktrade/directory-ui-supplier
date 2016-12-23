@@ -694,7 +694,8 @@ body {
   -o-background-size: cover;
   background-size: cover;
   .ed-hero-sub-header-title {
-    h1 {
+    h2 {
+      font-weight: normal;
       margin-bottom: 20px;
       @media (max-width: 979px) {
         text-align: center;

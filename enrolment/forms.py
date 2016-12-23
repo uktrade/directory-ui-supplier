@@ -111,7 +111,7 @@ class InternationalBuyerForm(IndentedInvalidFieldsMixin,
                                 'the terms and conditions.')
 
     full_name = forms.CharField(label='Your name')
-    email_address = forms.EmailField(label='Your email address')
+    email_address = forms.EmailField(label='Email address')
     sector = forms.ChoiceField(
         label='Sector',
         choices=(
@@ -120,8 +120,8 @@ class InternationalBuyerForm(IndentedInvalidFieldsMixin,
     )
     terms = forms.BooleanField(
         label=mark_safe(
-            'I agree to the <a target="_self" '
-            'href="{url}">terms and conditions</a> of the website.'.format(
+            'I agree to the great.gov.uk <a target="_self" '
+            'href="{url}">terms and conditions</a>.'.format(
                 url=urls.TERMS_AND_CONDITIONS_URL)
         ),
         error_messages={'required': TERMS_CONDITIONS_MESSAGE}

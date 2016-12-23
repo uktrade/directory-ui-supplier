@@ -46,10 +46,6 @@ class CachableTemplateView(CacheMixin, TemplateView):
     pass
 
 
-class DomesticLandingView(TemplateView):
-    template_name = 'landing-page.html'
-
-
 class InternationalLandingView(HandleBuyerFormSubmitMixin, FormView):
     template_name_new = 'landing-page-international.html'
     template_name_old = 'landing-page-international-old.html'
