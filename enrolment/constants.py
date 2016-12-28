@@ -90,7 +90,7 @@ TECH_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/sector-image.png',
             'name': 'Cool Corp',
-            'descrition': (
+            'description': (
                 'Build labs, factories and clinical facilities with '
                 'UK infrastructure know-how lorem ipsum dolor sit'
             ),
@@ -99,7 +99,7 @@ TECH_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/sector-image.png',
             'name': 'Cool Corp',
-            'descrition': (
+            'description': (
                 'Training and education in the UK lorem ipsum dolor sit'
             ),
             'public_profile_url': '#',
@@ -110,45 +110,58 @@ TECH_SECTOR_CONTEXT = {
 CREATIVE_SECTOR_CONTEXT = {
     'case_study': {
         'image_url': '/static/images/health-case-study-hero-image.png',
-        'title': 'Touch Bionics',
+        'image_caption': 'Spaceport America',
+        'title': 'Spaceport America',
         'synopsis': (
-            'Touch Bionics has transformed thousands of lives in '
-            'dozens of countries worldwide through its world-leading '
-            'prosthetic technologies. We have a range of myoelectric '
-            'prosthetic hand and prosthetic finger solutions to help '
-            'people increase their independence and confidence.'
+            'The world’s first private spaceport in the world has been '
+            'designed by Foster + Partners as part of an international '
+            'collaboration led by UK firms. The creative masterminds at '
+            'Foster + Partners worked to develop the shape of the building '
+            'in the landscape and its interior spaces so as to capture the '
+            'drama and mystery of space flight itself.'
         ),
         'url': '#',
         'testimonial': (
-            'Lorem ipsum dolor sit amet consectetur adipiscing elit '
-            'sed do eiusmod tempor incididunt ut labore et dolore '
-            'magna aliqua. Ut enim ad minim'
+            'We’ve never wavered in our commitment to the monumental task of '
+            'pioneering safe, affordable and clean access to space, or to '
+            'demonstrate that we mean business at each step along the way.'
         ),
-        'testimonial_name': 'Firstname Surname',
-        'testimonial_company': 'Company name',
-        'company_name': 'Touch Bionics',
-        'sector_url': '#',
-        'sector_name': 'Technology',
+        'testimonial_name': 'Sir Richard Branson',
+        'testimonial_company': 'Virgin Galactic',
+        'company_name': 'Foster + Partners',
+        'sectors': [
+            {
+                'label': 'Creative',
+                'url': '#',
+            },
+        ],
         'keywords': (
-            'Robotics, Limb Loss, Prosthetics, Healthcare, '
-            'Technology, Bionics'
+            'Architecture, interiors, structural engineering, '
+            'environmental engineering, urban design, industrial design, '
+            'workplace consultancy'
         ),
     },
     'companies': [
         {
-            'image_url': '/static/images/sector-image.png',
-            'name': 'Cool Corp',
-            'descrition': (
-                'Build labs, factories and clinical facilities with '
-                'UK infrastructure know-how lorem ipsum dolor sit'
+            'image_url': '/static/images/immersive.png',
+            'name': 'Immersive',
+            'description': (
+                'Immersive is a complete solution provider for audio-visual '
+                'projects of any scale. Immersive uses new media technology '
+                '(such as LED, holograms, projection, virtual reality and '
+                'augmented reality) to design and create cutting-edge '
+                'lighting, video and interactive installations.'
             ),
             'public_profile_url': '#',
         },
         {
-            'image_url': '/static/images/sector-image.png',
-            'name': 'Cool Corp',
-            'descrition': (
-                'Training and education in the UK lorem ipsum dolor sit'
+            'image_url': '/static/images/blippar.png',
+            'name': 'Blippar',
+            'description': (
+                'Blippar is the leading visual discovery app, harnessing '
+                'augmented reality, image-recognition technology and '
+                'artificial intelligence to bring the physical world to '
+                'life through smartphones.'
             ),
             'public_profile_url': '#',
         },
@@ -186,7 +199,7 @@ FOOD_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/sector-image.png',
             'name': 'Cool Corp',
-            'descrition': (
+            'description': (
                 'Build labs, factories and clinical facilities with '
                 'UK infrastructure know-how lorem ipsum dolor sit'
             ),
@@ -195,7 +208,7 @@ FOOD_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/sector-image.png',
             'name': 'Cool Corp',
-            'descrition': (
+            'description': (
                 'Training and education in the UK lorem ipsum dolor sit'
             ),
             'public_profile_url': '#',

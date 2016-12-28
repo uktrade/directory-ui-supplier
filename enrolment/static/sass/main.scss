@@ -1008,3 +1008,16 @@ a.ed-filled-button-primary {
     outline: 0;
   }
 }
+
+.ed-image-caption {
+  position: relative;
+  div {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    color: white;
+    padding: 5px;
+    background: black;
+    opacity: 0.7;
+  }
+}
