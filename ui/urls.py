@@ -1,5 +1,4 @@
 from django.conf.urls import url
-from django.conf import settings
 from django.views.decorators.cache import cache_page
 
 from enrolment.views import (

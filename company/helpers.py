@@ -2,7 +2,6 @@ import datetime
 
 from directory_validators.constants import choices
 
-from django.conf import settings
 from django.core.urlresolvers import reverse
 
 from api_client import api_client

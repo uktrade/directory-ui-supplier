@@ -8,7 +8,6 @@ from django.core.urlresolvers import reverse
 from company import helpers
 
 
-
 @pytest.fixture
 def profile_data():
     return {
