@@ -50,7 +50,7 @@
 
         {% include 'header.html' %}
         {% block sub_header %}
-            <section class="ed-hero-sub-header">
+            <section class="ed-hero-sub-header" style="background-image: url({% block hero_image %}{% static 'images/banner-img1.jpg' %}){% endblock %};">
                 <div class="container">
                     <div class="row-fluid">
                         <span class="span6 ed-hero-sub-header-title">
