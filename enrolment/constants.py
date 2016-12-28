@@ -62,45 +62,63 @@ HEALTH_SECTOR_CONTEXT = {
 TECH_SECTOR_CONTEXT = {
     'case_study': {
         'image_url': '/static/images/health-case-study-hero-image.png',
-        'title': 'Touch Bionics',
+        'title': 'Electronic line-calling service',
         'synopsis': (
-            'Touch Bionics has transformed thousands of lives in '
-            'dozens of countries worldwide through its world-leading '
-            'prosthetic technologies. We have a range of myoelectric '
-            'prosthetic hand and prosthetic finger solutions to help '
-            'people increase their independence and confidence.'
+            'Hawk-Eye has developed the most sophisticated vision processing '
+            'technology in sport which enables us to not only track balls to '
+            'millimetre-accuracy but also players and cars. This vision '
+            'processing technology combined with an intelligent IT based '
+            'video replay and distribution software and creative graphics '
+            'platform powers a revolution for sport.'
         ),
         'url': '#',
         'testimonial': (
-            'Lorem ipsum dolor sit amet consectetur adipiscing elit '
-            'sed do eiusmod tempor incididunt ut labore et dolore '
-            'magna aliqua. Ut enim ad minim'
+            'Hawk-Eye has now become an integral part of over 20 sports and '
+            'every year covers 7,200 games or events across 450 stadiums in '
+            'over 60 countries.'
         ),
-        'testimonial_name': 'Firstname Surname',
-        'testimonial_company': 'Company name',
-        'company_name': 'Touch Bionics',
-        'sector_url': '#',
-        'sector_name': 'Technology',
+        'testimonial_name': None,
+        'testimonial_company': None,
+        'company_name': 'Hawk-Eye Innovations',
+        'sectors': [
+            {
+                'label': 'Technology',
+                'url': '#',
+            },
+            {
+                'label': 'Sports',
+                'url': '#',
+            },
+        ],
         'keywords': (
-            'Robotics, Limb Loss, Prosthetics, Healthcare, '
-            'Technology, Bionics'
+            'Sports, officiation, digital, data, broadcast media, '
+            'ball-tracking, player-tracking'
         ),
     },
     'companies': [
         {
-            'image_url': '/static/images/sector-image.png',
-            'name': 'Cool Corp',
+            'image_url': '/static/images/evrything.png',
+            'name': 'evrything',
             'description': (
-                'Build labs, factories and clinical facilities with '
-                'UK infrastructure know-how lorem ipsum dolor sit'
+                'evrythng is an Internet of Things software company that '
+                'helps manufacturers digitize their physical products by '
+                'connecting them to the web. From everyday consumer packaged '
+                'products connected via smart packaging and smartphones, to '
+                'fully-connected smart home appliances, each individual item '
+                'managed in the EVRYTHNG cloud has a unique Active Digital '
+                'Identity'
             ),
             'public_profile_url': '#',
         },
         {
-            'image_url': '/static/images/sector-image.png',
-            'name': 'Cool Corp',
+            'image_url': '/static/images/arkessa.png',
+            'name': 'Arkessa',
             'description': (
-                'Training and education in the UK lorem ipsum dolor sit'
+                'Arkessa enables Internet of Things devices and applications '
+                'developers to connect to the IoT, regardless of location, '
+                'network operator or wireless technology. It provides '
+                'enterprises with a secure and future-proof mobility '
+                'platform that is easy to adopt, integrate and scale.'
             ),
             'public_profile_url': '#',
         },
