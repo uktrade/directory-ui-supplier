@@ -3,7 +3,10 @@ from datetime import datetime
 import requests
 import pytest
 
+from django.core.urlresolvers import reverse
+
 from company import helpers
+
 
 
 @pytest.fixture
@@ -71,8 +74,7 @@ def test_pair_sector_values_with_label_empty():
         assert helpers.pair_sector_values_with_label(value) == []
 
 
-def test_get_company_profile_from_response(profile_data, settings):
-    settings.BUYER_PUBLIC_COMPANY_PROFILE_URL = 'http://profile.com/{number}'
+def test_get_company_profile_from_response(profile_data):
     response = requests.Response()
     response.json = lambda: profile_data
     expected = {
@@ -97,14 +99,16 @@ def test_get_company_profile_from_response(profile_data, settings):
         'contact_details': {
             'email_address': 'sales@example.com',
         },
-        'public_profile_url': 'http://profile.com/01234567',
+        'public_profile_url': reverse(
+            'public-company-profiles-detail',
+            kwargs={'company_number': '01234567'},
+        )
     }
     actual = helpers.get_company_profile_from_response(response)
     assert actual == expected
 
 
-def test_get_public_company_profile_from_response(profile_data, settings):
-    settings.BUYER_PUBLIC_COMPANY_PROFILE_URL = 'http://profile.com/{number}'
+def test_get_public_company_profile_from_response(profile_data):
     response = requests.Response()
     response.json = lambda: profile_data
     expected = {
@@ -129,14 +133,16 @@ def test_get_public_company_profile_from_response(profile_data, settings):
         'contact_details': {
             'email_address': 'sales@example.com',
         },
-        'public_profile_url': 'http://profile.com/01234567',
+        'public_profile_url': reverse(
+            'public-company-profiles-detail',
+            kwargs={'company_number': '01234567'}
+        ),
     }
     actual = helpers.get_public_company_profile_from_response(response)
     assert actual == expected
 
 
-def test_get_company_list_from_response(public_companies, settings):
-    settings.BUYER_PUBLIC_COMPANY_PROFILE_URL = 'http://profile.com/{number}'
+def test_get_company_list_from_response(public_companies):
     response = requests.Response()
     response.json = lambda: public_companies
     expected = {
@@ -164,7 +170,10 @@ def test_get_company_list_from_response(public_companies, settings):
                 'contact_details': {
                     'email_address': 'sales@example.com'
                 },
-                'public_profile_url': 'http://profile.com/01234567',
+                'public_profile_url': reverse(
+                    'public-company-profiles-detail',
+                    kwargs={'company_number': '01234567'}
+                ),
             }
         ]
     }
@@ -183,10 +192,7 @@ def test_get_company_list_from_response_empty(public_companies_empty):
     assert actual == expected
 
 
-def test_get_case_study_details_from_response(
-    supplier_case_study_data, settings
-):
-    settings.BUYER_PUBLIC_COMPANY_PROFILE_URL = 'http://profile.com/{number}'
+def test_get_case_study_details_from_response(supplier_case_study_data):
     response = requests.Response()
     response.json = lambda: supplier_case_study_data
 
@@ -218,7 +224,10 @@ def test_get_case_study_details_from_response(
             'verified_with_code': True,
             'is_address_set': False,
             'contact_details': {},
-            'public_profile_url': 'http://profile.com/09466004',
+            'public_profile_url': reverse(
+                'public-company-profiles-detail',
+                kwargs={'company_number': '09466004'},
+            ),
         },
         'image_one': 'https://image_one.jpg',
         'testimonial': 'I found it most pleasing.',

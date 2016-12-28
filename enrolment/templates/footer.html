@@ -8,16 +8,19 @@
                     <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" class="hmg-logo no-focus-highlight">
                         <img src="{% static 'images/HM_Government_logo.png' %}" alt="Gov.uk logo" class="footer-img footer-img--top"/>
                     </a>
+                    <a href="{% external_url 'exporting_is_great' %}" title="Go to the Exporting is Great homepage" class="eig-logo-footer no-focus-highlight">
+                        <img src="{% static 'images/EiG-logo-stacked.png' %}" alt="Exporting is Great logo" class="footer-img footer-img--bottom footer-img--eig">
+                    </a>
+                    <p class="copyright-text">&copy; Crown Copyright 2016</p>
                 </div>
             </div>
 
             <div class="span4 links">
                 <div class="footer-section">
                     <ul class="footer-links-container">
-                      <li class="footer-links"><a href="{% external_url 'export_opportunities' %}" title="Exporting opportunities">Exporting opportunities</a></li>
-                      <li class="footer-links"><a href="{% external_url 'find_a_buyer' %}" title="Find a buyer">Next steps</a></li>
-                      <li class="footer-links"><a href="{% external_url 'selling_online_overseas' %}" title="Selling online overseas">Advice and support</a></li>
-                      <li class="footer-links"><a href="{% external_url 'events' %}" title="Events">News</a></li>
+                      <li class="footer-links"><a href="#" title="">Invest in Great Britain</a></li>
+                      <li class="footer-links"><a href="#" title="">Visit Britain</a></li>
+                      <li class="footer-links"><a href="#" title="">Study in the UK</a></li>
                     </ul>
                 </div>
             </div>
@@ -26,7 +29,7 @@
                 <div class="footer-section">
                     <ul class="footer-links-container">
                         <li class="footer-links"><a href="{% external_url 'DIT' %}" title="">Department for International Trade</a></li>
-                        <li class="footer-links"><a href="{% external_url 'contact_directory' %}" title="">Contact Us</a></li>
+                        <li class="footer-links"><a href="{% external_url 'contact_directory' %}" title="">Contact us</a></li>
                         <li class="footer-links"><a href="{% external_url 'privacy' %}" title="">Privacy and cookies</a></li>
                         <li class="footer-links"><a href="{% external_url 'terms' %}" title="">Terms &amp; conditions</a></li>
                     </ul>

@@ -57,28 +57,6 @@ def test_google_tag_manager():
     assert 'www.googletagmanager.com' in expected_body
 
 
-def test_international_landing_page_sector_feature_flag_enabled():
-    context = {
-        'features': {
-            'FEATURE_SECTOR_LANDING_PAGES_ENABLED': True
-        }
-    }
-    html = render_to_string('landing-page-international.html', context)
-
-    assert reverse('international-sector-list') in html
-
-
-def test_international_landing_page_sector_feature_flag_disabled():
-    context = {
-        'features': {
-            'FEATURE_SECTOR_LANDING_PAGES_ENABLED': False
-        }
-    }
-    html = render_to_string('landing-page-international.html', context)
-
-    assert reverse('international-sector-list') not in html
-
-
 def test_templates_render_successfully():
 
     template_list = []

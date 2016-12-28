@@ -57,32 +57,24 @@ urlpatterns = [
         SupplierCaseStudyDetailView.as_view(),
         name='company-case-study-view'
     ),
+    url(
+        r'^suppliers$',
+        PublicProfileListView.as_view(),
+        name='public-company-profiles-list',
+    ),
+    url(
+        r'^suppliers/(?P<company_number>.+)$',
+        PublicProfileDetailView.as_view(),
+        name='public-company-profiles-detail',
+    ),
+    url(
+        r'^sectors$',
+        InternationalLandingSectorListView.as_view(),
+        name='international-sector-list',
+    ),
+    url(
+        r'^sectors/(?P<slug>.+)$',
+        InternationalLandingSectorDetailView.as_view(),
+        name='international-sector-detail',
+    ),
 ]
-
-if settings.FEATURE_PUBLIC_PROFILES_ENABLED:
-    urlpatterns += [
-        url(
-            r'^suppliers$',
-            PublicProfileListView.as_view(),
-            name='public-company-profiles-list',
-        ),
-        url(
-            r'^suppliers/(?P<company_number>.+)$',
-            PublicProfileDetailView.as_view(),
-            name='public-company-profiles-detail',
-        ),
-    ]
-
-if settings.FEATURE_SECTOR_LANDING_PAGES_ENABLED:
-    urlpatterns += [
-        url(
-            r"^sectors$",
-            InternationalLandingSectorListView.as_view(),
-            name="international-sector-list"
-        ),
-        url(
-            r"^sectors/(?P<slug>.+)$",
-            InternationalLandingSectorDetailView.as_view(),
-            name="international-sector-detail"
-        ),
-    ]
