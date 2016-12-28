@@ -5,8 +5,6 @@ import requests
 
 from django.conf import settings
 
-from api_client import api_client
-
 
 COMPANIES_HOUSE_PROFILE_SESSION_KEY = 'ch_profile'
 MESSAGE_AUTH_FAILED = 'Auth failed with Companies House'
@@ -48,19 +46,6 @@ def halt_validation_on_failure(*validators):
             validator(value)
     inner.inner_validators = validators
     return [inner]
-
-
-def has_company(sso_user_id):
-    response = api_client.supplier.retrieve_profile(
-        sso_id=sso_user_id
-    )
-    if response.ok:
-        profile = response.json()
-        has_company = bool(profile['company'])
-    else:
-        has_company = False
-
-    return has_company
 
 
 def companies_house_client(url):

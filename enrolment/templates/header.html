@@ -10,12 +10,6 @@
                     <li class="hide-in-mobile"><a href="{% external_url 'find_a_buyer' %}" title="Find a buyer">Find a buyer</a></li>
                     <li class="hide-in-mobile"><a href="{% external_url 'selling_online_overseas' %}" title="Selling online overseas">Selling online overseas</a></li>
                     <li class="hide-in-mobile"><a href="{% external_url 'events' %}" title="Events">Events</a></li>
-                    {% if not sso_is_logged_in %}
-                        <li><a href="{{ sso_login_url }}" target="_self" title="Login">Login</a></li>
-                    {% else %}
-                        <li><a href="{% url 'company-detail' %}" target="_self" title="Profile">Profile</a></li>
-                        <li><a href="{{ sso_logout_url }}" target="_self" title="Logout">Logout</a></li>
-                    {% endif %}
                 </ul>
             </div>
         </div>

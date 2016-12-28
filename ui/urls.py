@@ -4,27 +4,15 @@ from django.views.decorators.cache import cache_page
 
 from enrolment.views import (
     CachableTemplateView,
-    EnrolmentInstructionsView,
-    EnrolmentView,
     InternationalLandingView,
     InternationalLandingSectorListView,
     InternationalLandingSectorDetailView,
 )
 from supplier.views import SupplierProfileDetailView
 from company.views import (
-    PublicProfileDetailView,
     PublicProfileListView,
-    SupplierAddressEditView,
-    SupplierBasicInfoEditView,
-    SupplierCaseStudyDetailView,
-    SupplierCaseStudyWizardView,
-    SupplierClassificationEditView,
-    SupplierCompanyAddressVerificationView,
-    SupplierCompanyDescriptionEditView,
-    SupplierCompanyProfileDetailView,
-    SupplierCompanyProfileEditView,
-    SupplierCompanyProfileLogoEditView,
-    SupplierContactEditView,
+    PublicProfileDetailView,
+    SupplierCaseStudyDetailView
 )
 from admin.proxy import AdminProxyView
 
@@ -49,16 +37,6 @@ urlpatterns = [
         name="index"
     ),
     url(
-        r"^register$",
-        EnrolmentInstructionsView.as_view(),
-        name="register-instructions"
-    ),
-    url(
-        r"^register/(?P<step>.+)$",
-        EnrolmentView.as_view(url_name='register', done_step_name='finished'),
-        name="register"
-    ),
-    url(
         r"^thanks$",
         cache_me(CachableTemplateView.as_view(template_name="thanks.html")),
         name="thanks"
@@ -73,58 +51,6 @@ urlpatterns = [
         r'^supplier-profile$',
         SupplierProfileDetailView.as_view(),
         name='supplier-detail'
-    ),
-    url(
-        r'^confirm-company-address$',
-        SupplierCompanyAddressVerificationView.as_view(),
-        name='confirm-company-address'
-    ),
-    url(
-        r'^company-profile$',
-        SupplierCompanyProfileDetailView.as_view(),
-        name='company-detail'
-    ),
-    url(
-        r'^company-profile/edit$',
-        SupplierCompanyProfileEditView.as_view(),
-        name='company-edit'
-    ),
-    url(
-        r'^company-profile/edit/logo$',
-        SupplierCompanyProfileLogoEditView.as_view(),
-        name='company-edit-logo'
-    ),
-    url(
-        r'^company-profile/edit/description$',
-        SupplierCompanyDescriptionEditView.as_view(),
-        name='company-edit-description'
-    ),
-
-
-    url(
-        r'^company-profile/edit/key-facts$',
-        SupplierBasicInfoEditView.as_view(),
-        name='company-edit-key-facts'
-    ),
-    url(
-        r'^company-profile/edit/sectors$',
-        SupplierClassificationEditView.as_view(),
-        name='company-edit-sectors'
-    ),
-    url(
-        r'^company-profile/edit/contact$',
-        SupplierContactEditView.as_view(),
-        name='company-edit-contact'
-    ),
-    url(
-        r'^company-profile/edit/address$',
-        SupplierAddressEditView.as_view(),
-        name='company-edit-address'
-    ),
-    url(
-        r'^company/case-study/edit/(?P<id>.+)?$',
-        SupplierCaseStudyWizardView.as_view(),
-        name='company-case-study-edit'
     ),
     url(
         r'^company/case-study/view/(?P<id>.+)$',
