@@ -171,45 +171,51 @@ CREATIVE_SECTOR_CONTEXT = {
 FOOD_SECTOR_CONTEXT = {
     'case_study': {
         'image_url': '/static/images/health-case-study-hero-image.png',
-        'title': 'Touch Bionics',
+        'title': 'Clementine and cinnamon tonic water',
         'synopsis': (
-            'Touch Bionics has transformed thousands of lives in '
-            'dozens of countries worldwide through its world-leading '
-            'prosthetic technologies. We have a range of myoelectric '
-            'prosthetic hand and prosthetic finger solutions to help '
-            'people increase their independence and confidence.'
+            'Fever-Tree has established itself as the mixer drink '
+            'specialists, crafting a range of fourteen products with an '
+            'intrepid attitude: going to the ends of the earth, sourcing the '
+            'highest quality natural ingredients for the best tasting '
+            'mixers.\nFever-Tree’s award-winning mixers taste clean, subtle '
+            'and balanced, with authentic flavours and fine carbonation to '
+            'perfectly enhance the flavour of high quality spirits.'
         ),
         'url': '#',
         'testimonial': (
-            'Lorem ipsum dolor sit amet consectetur adipiscing elit '
-            'sed do eiusmod tempor incididunt ut labore et dolore '
-            'magna aliqua. Ut enim ad minim'
+            'If three-quarters of your gin and tonic is the tonic, make sure '
+            'you use the best.'
         ),
-        'testimonial_name': 'Firstname Surname',
-        'testimonial_company': 'Company name',
-        'company_name': 'Touch Bionics',
-        'sector_url': '#',
-        'sector_name': 'Technology',
-        'keywords': (
-            'Robotics, Limb Loss, Prosthetics, Healthcare, '
-            'Technology, Bionics'
-        ),
+        'testimonial_name': 'Tim Warrillow',
+        'testimonial_company': 'Fever-Tree',
+        'company_name': 'Fever-Tree',
+        'sectors': [
+            {
+                'label': 'Food and Drink',
+                'url': '#',
+            },
+        ],
+        'keywords': 'Premium, Natural, Mixers, Drinks, Taste, Quality',
     },
     'companies': [
         {
-            'image_url': '/static/images/sector-image.png',
-            'name': 'Cool Corp',
+            'image_url': '/static/images/joe-and-steph.png',
+            'name': "Joe & Seph's",
             'description': (
-                'Build labs, factories and clinical facilities with '
-                'UK infrastructure know-how lorem ipsum dolor sit'
+                'All Joe & Seph’s popcorn is handmade in small batches to '
+                'ensure superior texture and an intense flavour on each and '
+                'every kernel. The ingredients used are 100% natural and the '
+                'kernels are all air-popped – a healthier cooking method '
+                'compared to frying.'
             ),
             'public_profile_url': '#',
         },
         {
-            'image_url': '/static/images/sector-image.png',
-            'name': 'Cool Corp',
+            'image_url': '/static/images/fever-tree.png',
+            'name': 'Fever-Tree',
             'description': (
-                'Training and education in the UK lorem ipsum dolor sit'
+                "Fever-Tree has pioneered premium mixers and is now the "
+                "world's leading premium mixer company."
             ),
             'public_profile_url': '#',
         },
