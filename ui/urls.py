@@ -10,7 +10,6 @@ from enrolment.views import (
 from company.views import (
     PublicProfileListView,
     PublicProfileDetailView,
-    SupplierCaseStudyDetailView
 )
 
 
@@ -32,11 +31,6 @@ urlpatterns = [
         r"^sorry$",
         cache_me(CachableTemplateView.as_view(template_name="sorry.html")),
         name="problem"
-    ),
-    url(
-        r'^company/case-study/view/(?P<id>.+)$',
-        SupplierCaseStudyDetailView.as_view(),
-        name='company-case-study-view'
     ),
     url(
         r'^suppliers$',
