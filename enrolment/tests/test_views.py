@@ -13,23 +13,6 @@ from enrolment.views import (
     InternationalLandingSectorListView,
     InternationalLandingSectorDetailView
 )
-from sso.utils import SSOUser
-
-
-@pytest.fixture
-def sso_user():
-    return SSOUser(
-        id=1,
-        email='jim@example.com',
-    )
-
-
-def process_request(self, request):
-    request.sso_user = sso_user()
-
-
-def process_request_anon(self, request):
-    request.sso_user = None
 
 
 @pytest.fixture
@@ -52,7 +35,6 @@ def buyer_request(rf, client, buyer_form_data):
 @pytest.fixture
 def anon_request(rf, client):
     request = rf.get('/')
-    request.sso_user = None
     request.session = client.session
     return request
 

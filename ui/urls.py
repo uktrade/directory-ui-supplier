@@ -7,29 +7,17 @@ from enrolment.views import (
     InternationalLandingSectorListView,
     InternationalLandingSectorDetailView,
 )
-from supplier.views import SupplierProfileDetailView
 from company.views import (
     PublicProfileListView,
     PublicProfileDetailView,
     SupplierCaseStudyDetailView
 )
-from admin.proxy import AdminProxyView
 
 
 cache_me = cache_page(60 * 1)
 
 
 urlpatterns = [
-    url(
-        r"^admin/",
-        AdminProxyView.as_view(),
-        name="admin_proxy"
-    ),
-    url(
-        r"^api-static/admin/",
-        AdminProxyView.as_view(),
-        name="admin_proxy"
-    ),
     url(
         r"^$",
         InternationalLandingView.as_view(),
@@ -44,12 +32,6 @@ urlpatterns = [
         r"^sorry$",
         cache_me(CachableTemplateView.as_view(template_name="sorry.html")),
         name="problem"
-    ),
-
-    url(
-        r'^supplier-profile$',
-        SupplierProfileDetailView.as_view(),
-        name='supplier-detail'
     ),
     url(
         r'^company/case-study/view/(?P<id>.+)$',

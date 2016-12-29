@@ -4,9 +4,6 @@ from directory_validators.constants import choices
 
 from django.core.urlresolvers import reverse
 
-from api_client import api_client
-from enrolment.helpers import get_companies_house_office_address
-
 
 EMPLOYEE_CHOICES = {key: value for key, value in choices.EMPLOYEES}
 SECTOR_CHOICES = {key: value for key, value in choices.COMPANY_CLASSIFICATIONS}
@@ -91,28 +88,3 @@ def format_company_details(details):
             kwargs={'company_number': details['number']},
         ),
     }
-
-
-def get_company_profile(sso_id):
-    response = api_client.company.retrieve_profile(sso_id)
-    if not response.ok:
-        response.raise_for_status()
-    return response.json()
-
-
-def get_company_contact_details_from_companies_house(number):
-    response = get_companies_house_office_address(number)
-    if not response.ok:
-        response.raise_for_status()
-    return response.json()
-
-
-def get_contact_details(sso_id):
-    profile = get_company_profile(sso_id)
-    is_address_known = (
-        profile.get('contact_details') and
-        profile['contact_details'].get('address_line_1')
-    )
-    if is_address_known:
-        return profile['contact_details']
-    return get_company_contact_details_from_companies_house(profile['number'])

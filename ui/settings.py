@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(PROJECT_ROOT)
 SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.getenv("DEBUG", False))
+DEBUG = True if (os.getenv('DEBUG') == 'true') else False
 
 # As the app is running behind a host-based router supplied by Heroku or other
 # PaaS, we can open ALLOWED_HOSTS
@@ -36,14 +36,10 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    "django_extensions",
     "raven.contrib.django.raven_compat",
     "django.contrib.sessions",
-    "revproxy",
-    "formtools",
     "ui",
     "enrolment",
-    "supplier",
     "company",
     "directory_constants",
 ]
@@ -53,7 +49,6 @@ MIDDLEWARE_CLASSES = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'sso.middleware.SSOUserMiddleware',
 ]
 
 ROOT_URLCONF = 'ui.urls'
@@ -67,7 +62,6 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'sso.context_processors.sso_user_processor',
                 'ui.context_processors.feature_flags',
                 'ui.context_processors.current_view_name',
             ],
@@ -96,15 +90,10 @@ CACHES = {
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
-
 LANGUAGE_CODE = 'en-gb'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
@@ -195,15 +184,6 @@ else:
 API_CLIENT_BASE_URL = os.environ["API_CLIENT_BASE_URL"]
 API_CLIENT_KEY = os.environ["API_CLIENT_KEY"]
 
-# directory-sso
-SSO_API_CLIENT_BASE_URL = os.environ["SSO_API_CLIENT_BASE_URL"]
-SSO_API_CLIENT_KEY = os.environ["SSO_API_CLIENT_KEY"]
-SSO_LOGIN_URL = os.environ["SSO_LOGIN_URL"]
-SSO_LOGOUT_URL = os.environ["SSO_LOGOUT_URL"]
-SSO_SIGNUP_URL = os.environ["SSO_SIGNUP_URL"]
-SSO_REDIRECT_FIELD_NAME = os.environ["SSO_REDIRECT_FIELD_NAME"]
-SSO_SESSION_COOKIE = os.environ["SSO_SESSION_COOKIE"]
-
 ANALYTICS_ID = os.getenv("ANALYTICS_ID")
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -218,16 +198,6 @@ SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE', 'true') == 'true'
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SECURE = True
 
-VALIDATOR_MAX_LOGO_SIZE_BYTES = int(os.getenv(
-    "VALIDATOR_MAX_LOGO_SIZE_BYTES", 2 * 1024 * 1024
-))
-VALIDATOR_MAX_CASE_STUDY_IMAGE_SIZE_BYTES = int(os.getenv(
-    "VALIDATOR_MAX_CASE_STUDY_IMAGE_SIZE_BYTES", 2 * 1024 * 1024
-))
-VALIDATOR_MAX_CASE_STUDY_VIDEO_SIZE_BYTES = int(os.getenv(
-    "VALIDATOR_MAX_CASE_STUDY_VIDEO_SIZE_BYTES", 20 * 1024 * 1024
-))
-
 API_CLIENT_CLASSES = {
     'default': 'directory_api_client.client.DirectoryAPIClient',
     'unit-test': 'directory_api_client.dummy_client.DummyDirectoryAPIClient',
@@ -235,7 +205,6 @@ API_CLIENT_CLASSES = {
 API_CLIENT_CLASS_NAME = os.getenv('API_CLIENT_CLASS_NAME', 'default')
 API_CLIENT_CLASS = API_CLIENT_CLASSES[API_CLIENT_CLASS_NAME]
 
-COMPANIES_HOUSE_API_KEY = os.environ['COMPANIES_HOUSE_API_KEY']
 
 FEATURE_NEW_INTERNATIONAL_LANDING_PAGE_ENABLED = (
     os.getenv('FEATURE_NEW_INTERNATIONAL_LANDING_PAGE_ENABLED') == 'true'
