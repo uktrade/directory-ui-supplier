@@ -1,8 +1,10 @@
 COMPANIES_HOUSE_SEARCH_URL = 'https://beta.companieshouse.gov.uk'
 
 HEALTH_SECTOR_CONTEXT = {
+    'sector_value': 'FOOD_AND_DRINK',
     'case_study': {
-        'image_url': '/static/images/health-case-study-hero-image.png',
+        'image_url': '/static/images/touch-bionics-right-hand.png',
+        'image_caption': 'Rebekah Marine: i-limbTM user',
         'title': 'Touch Bionics',
         'synopsis': (
             'Touch Bionics has transformed thousands of lives in '
@@ -23,11 +25,11 @@ HEALTH_SECTOR_CONTEXT = {
         'sectors': [
             {
                 'label': 'Healthcare and life sciences',
-                'url': '#',
+                'value': 'HEALTHCARE_AND_MEDICAL'
             },
             {
                 'label': 'Technology',
-                'url': '#',
+                'value': 'SOFTWARE_AND_COMPUTER_SERVICES'
             }
         ],
         'keywords': (
@@ -36,7 +38,7 @@ HEALTH_SECTOR_CONTEXT = {
     },
     'companies': [
         {
-            'image_url': '/static/images/sector-image.png',
+            'image_url': '/static/images/r-d-biomed.png',
             'name': 'RD Biomed',
             'description': (
                 'RD Biomed designed and makes Peptest™ - the world’s first '
@@ -47,7 +49,7 @@ HEALTH_SECTOR_CONTEXT = {
             'public_profile_url': '#',
         },
         {
-            'image_url': '/static/images/sector-image.png',
+            'image_url': '/static/images/touch-bionics-left-hand.png',
             'name': 'Touch Bionics',
             'description': (
                 'Touch Bionics is responsible for developing and improving '
@@ -60,8 +62,10 @@ HEALTH_SECTOR_CONTEXT = {
 }
 
 TECH_SECTOR_CONTEXT = {
+    'sector_value': 'SOFTWARE_AND_COMPUTER_SERVICES',
     'case_study': {
-        'image_url': '/static/images/health-case-study-hero-image.png',
+        'image_url': '/static/images/hawk-eye.png',
+        'image_caption': 'Electronic line-calling service',
         'title': 'Electronic line-calling service',
         'synopsis': (
             'Hawk-Eye has developed the most sophisticated vision processing '
@@ -83,11 +87,7 @@ TECH_SECTOR_CONTEXT = {
         'sectors': [
             {
                 'label': 'Technology',
-                'url': '#',
-            },
-            {
-                'label': 'Sports',
-                'url': '#',
+                'value': 'SOFTWARE_AND_COMPUTER_SERVICES',
             },
         ],
         'keywords': (
@@ -126,8 +126,9 @@ TECH_SECTOR_CONTEXT = {
 }
 
 CREATIVE_SECTOR_CONTEXT = {
+    'sector_value': 'CREATIVE_AND_MEDIA',
     'case_study': {
-        'image_url': '/static/images/health-case-study-hero-image.png',
+        'image_url': '/static/images/foster-and-partners.png',
         'image_caption': 'Spaceport America',
         'title': 'Spaceport America',
         'synopsis': (
@@ -150,7 +151,7 @@ CREATIVE_SECTOR_CONTEXT = {
         'sectors': [
             {
                 'label': 'Creative',
-                'url': '#',
+                'value': 'CREATIVE_AND_MEDIA',
             },
         ],
         'keywords': (
@@ -187,8 +188,10 @@ CREATIVE_SECTOR_CONTEXT = {
 }
 
 FOOD_SECTOR_CONTEXT = {
+    'sector_value': 'FOOD_AND_DRINK',
     'case_study': {
-        'image_url': '/static/images/health-case-study-hero-image.png',
+        'image_url': '/static/images/fever-tree-pour.png',
+        'image_caption': 'Clementine and cinnamon tonic water',
         'title': 'Clementine and cinnamon tonic water',
         'synopsis': (
             'Fever-Tree has established itself as the mixer drink '
@@ -210,7 +213,7 @@ FOOD_SECTOR_CONTEXT = {
         'sectors': [
             {
                 'label': 'Food and Drink',
-                'url': '#',
+                'value': 'FOOD_AND_DRINK',
             },
         ],
         'keywords': 'Premium, Natural, Mixers, Drinks, Taste, Quality',
