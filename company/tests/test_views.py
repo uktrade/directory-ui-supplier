@@ -8,14 +8,6 @@ import requests
 from django.core.urlresolvers import reverse
 
 from company import helpers, views
-from sso.utils import SSOUser
-
-
-def sso_user():
-    return SSOUser(
-        id=1,
-        email='jim@example.com',
-    )
 
 
 @pytest.fixture
@@ -44,10 +36,6 @@ def retrieve_supplier_case_study_200(api_response_200):
     response = api_response_200
     response.json = lambda: {'field': 'value'}
     return response
-
-
-def process_request(self, request):
-    request.sso_user = sso_user()
 
 
 @patch.object(views.api_client.company,
@@ -84,55 +72,6 @@ def test_company_profile_list_exposes_context(
     assert response.template_name == views.PublicProfileListView.template_name
     assert response.context_data['companies'] == expected_companies
     assert response.context_data['pagination'].paginator.count == 20
-
-
-@patch('sso.middleware.SSOUserMiddleware.process_request', process_request)
-@patch.object(views.api_client.company, 'retrieve_supplier_case_study')
-def test_supplier_case_study_exposes_context(
-    mock_retrieve_supplier_case_study, client,
-    api_response_retrieve_supplier_case_study_200
-):
-    mock_retrieve_supplier_case_study.return_value = (
-        api_response_retrieve_supplier_case_study_200
-    )
-    expected_case_study = helpers.get_case_study_details_from_response(
-        api_response_retrieve_supplier_case_study_200
-    )
-    url = reverse('company-case-study-view', kwargs={'id': '2'})
-    response = client.get(url)
-
-    assert response.status_code == http.client.OK
-    assert response.template_name == [
-        views.SupplierCaseStudyDetailView.template_name
-    ]
-    assert response.context_data['case_study'] == expected_case_study
-
-
-@patch('sso.middleware.SSOUserMiddleware.process_request', process_request)
-@patch.object(views.api_client.company, 'retrieve_supplier_case_study')
-def test_supplier_case_study_calls_api(
-    mock_retrieve_supplier_case_study, client,
-    api_response_retrieve_supplier_case_study_200
-):
-    mock_retrieve_supplier_case_study.return_value = (
-        api_response_retrieve_supplier_case_study_200
-    )
-    url = reverse('company-case-study-view', kwargs={'id': '2'})
-    client.get(url)
-
-    assert mock_retrieve_supplier_case_study.called_once_with(pk='2')
-
-
-@patch('sso.middleware.SSOUserMiddleware.process_request', process_request)
-@patch.object(views.api_client.company, 'retrieve_supplier_case_study')
-def test_supplier_case_study_handles_bad_status(
-    mock_retrieve_supplier_case_study, client, api_response_400
-):
-    mock_retrieve_supplier_case_study.return_value = api_response_400
-    url = reverse('company-case-study-view', kwargs={'id': '2'})
-
-    with pytest.raises(requests.exceptions.HTTPError):
-        client.get(url)
 
 
 @patch.object(helpers, 'get_public_company_profile_from_response')

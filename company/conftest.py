@@ -68,31 +68,6 @@ def supplier_case_study_data(retrieve_profile_data):
 
 
 @pytest.fixture
-def company_profile_companies_house_data():
-    return {
-        'email_full_name': 'Jeremy Companies House',
-        'email_address': 'test@example.com',
-        'postal_full_name': 'Jeremy',
-        'address_line_1': '123 Fake Street',
-        'address_line_2': 'Fakeville',
-        'locality': 'London',
-        'postal_code': 'E14 6XK',
-        'po_box': 'abc',
-        'country': 'GB',
-    }
-
-
-@pytest.fixture
-def api_response_company_profile_companies_house_200(
-    company_profile_companies_house_data
-):
-    response = requests.Response()
-    response.status_code = http.client.OK
-    response.json = lambda: deepcopy(company_profile_companies_house_data)
-    return response
-
-
-@pytest.fixture
 def api_response_company_profile_200(retrieve_profile_data):
     response = requests.Response()
     response.status_code = http.client.OK
@@ -174,19 +149,6 @@ def retrieve_profile(api_response_company_profile_200):
     stub = patch(
         'api_client.api_client.company.retrieve_profile',
         return_value=api_response_company_profile_200,
-    )
-    stub.start()
-    yield
-    stub.stop()
-
-
-@pytest.fixture(autouse=True)
-def get_companies_house_office_address(
-    api_response_company_profile_companies_house_200
-):
-    stub = patch(
-        'company.helpers.get_companies_house_office_address',
-        return_value=api_response_company_profile_companies_house_200,
     )
     stub.start()
     yield
