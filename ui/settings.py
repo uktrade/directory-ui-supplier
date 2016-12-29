@@ -69,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'sso.context_processors.sso_user_processor',
                 'ui.context_processors.feature_flags',
+                'ui.context_processors.current_view_name',
             ],
         },
     },
@@ -203,11 +204,6 @@ SSO_SIGNUP_URL = os.environ["SSO_SIGNUP_URL"]
 SSO_REDIRECT_FIELD_NAME = os.environ["SSO_REDIRECT_FIELD_NAME"]
 SSO_SESSION_COOKIE = os.environ["SSO_SESSION_COOKIE"]
 
-# directory-ui
-BUYER_PUBLIC_COMPANY_PROFILE_URL = (
-    os.environ['BUYER_PUBLIC_COMPANY_PROFILE_URL']
-)
-
 ANALYTICS_ID = os.getenv("ANALYTICS_ID")
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -240,14 +236,6 @@ API_CLIENT_CLASS_NAME = os.getenv('API_CLIENT_CLASS_NAME', 'default')
 API_CLIENT_CLASS = API_CLIENT_CLASSES[API_CLIENT_CLASS_NAME]
 
 COMPANIES_HOUSE_API_KEY = os.environ['COMPANIES_HOUSE_API_KEY']
-
-FEATURE_PUBLIC_PROFILES_ENABLED = (
-    os.getenv('FEATURE_PUBLIC_PROFILES_ENABLED') == 'true'
-)
-
-FEATURE_SECTOR_LANDING_PAGES_ENABLED = (
-    os.getenv('FEATURE_SECTOR_LANDING_PAGES_ENABLED') == 'true'
-)
 
 FEATURE_NEW_INTERNATIONAL_LANDING_PAGE_ENABLED = (
     os.getenv('FEATURE_NEW_INTERNATIONAL_LANDING_PAGE_ENABLED') == 'true'
