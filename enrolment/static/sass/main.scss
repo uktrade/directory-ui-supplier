@@ -638,13 +638,6 @@ body {
   }
 }
 
-body.js-enabled .js-header-nav-menu.js-header-nav-menu-hide {
-  display: block;
-  @media (max-width: 960px) {
-    display: none;
-  }
-}
-
 .header-nav-menu-toggle-button {
   color: white;
   font-weight: bold;
@@ -849,6 +842,8 @@ a.ed-filled-button-primary {
     }
   }
   .navbar-inner {
+    border-radius: 0;
+    border-top: 0;
     ul li a {
       box-shadow: none!important;
       border-right: 1px solid #D8D8D8;
