@@ -11,7 +11,7 @@ def retrieve_profile_data():
     return {
         'website': 'http://example.com',
         'description': 'Ecommerce website',
-        'number': 123456,
+        'number': '01234567',
         'sectors': ['SECURITY'],
         'logo': 'nice.jpg',
         'name': 'Great company',
@@ -19,6 +19,11 @@ def retrieve_profile_data():
         'employees': '501-1000',
         'date_of_creation': '2015-03-02',
         'verified_with_code': True,
+        'twitter_url': 'http://www.twitter.com',
+        'facebook_url': 'http://www.facebook.com',
+        'linkedin_url': 'http://www.linkedin.com',
+        'supplier_case_studies': [],
+        'modified': '2016-11-23T11:21:10.977518Z',
         'contact_details': {
             'email_full_name': 'Jeremy',
             'email_address': 'test@example.com',
@@ -34,31 +39,17 @@ def retrieve_profile_data():
 
 
 @pytest.fixture
-def list_public_profiles_data():
+def list_public_profiles_data(retrieve_profile_data):
     return {
         'results': [
-            {
-                'sectors': ['SECTOR1', 'SECTOR2'],
-                'number': '123456',
-                'name': 'UK exporting co ltd.',
-                'description': 'Exporters of UK wares.',
-                'website': 'http://www.ukexportersnow.co.uk',
-                'logo': 'www.ukexportersnow.co.uk/logo.png',
-                'keywords': 'word1 word2',
-                'date_of_creation': '2015-03-01',
-                'employees': '1001-10000',
-                'supplier_case_studies': [],
-                'modified': '2016-11-23T11:21:10.977518Z',
-                'verified_with_code': True,
-                'contact_details': {},
-            }
+            retrieve_profile_data,
         ],
         'count': 20
     }
 
 
 @pytest.fixture
-def supplier_case_study_data():
+def supplier_case_study_data(retrieve_profile_data):
     return {
         'description': 'Damn great',
         'sector': 'SOFTWARE_AND_COMPUTER_SERVICES',
@@ -66,21 +57,7 @@ def supplier_case_study_data():
         'website': 'http://www.google.com',
         'video_one': 'https://video_one.wav',
         'title': 'Two',
-        'company': {
-            'website': 'https://www.example.com',
-            'employees': '1-10',
-            'description': 'Good stuff.',
-            'logo': 'https://logo.png',
-            'date_of_creation': '2015-03-02',
-            'name': 'EXAMPLE CORP',
-            'supplier_case_studies': [],
-            'keywords': 'Web development',
-            'sectors': ['SOFTWARE_AND_COMPUTER_SERVICES'],
-            'number': '09466004',
-            'modified': '2016-11-23T11:21:10.977518Z',
-            'verified_with_code': True,
-            'contact_details': {},
-        },
+        'company': retrieve_profile_data,
         'image_one': 'https://image_one.jpg',
         'testimonial': 'I found it most pleasing.',
         'keywords': 'great',
