@@ -90,6 +90,14 @@ def format_company_details(details):
             'public-company-profiles-detail',
             kwargs={'company_number': details['number']},
         ),
+        'twitter_url': details['twitter_url'],
+        'facebook_url': details['facebook_url'],
+        'linkedin_url': details['linkedin_url'],
+        'has_social_links': bool(
+            details['twitter_url'] or
+            details['facebook_url'] or
+            details['linkedin_url']
+        )
     }
 
 
