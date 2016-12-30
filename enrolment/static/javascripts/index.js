@@ -1,13 +1,5 @@
-(function(){
-  var menuToggleClass = 'js-header-nav-menu-toggle-button';
-  var menuShowClass = 'js-header-nav-menu';
-  var menuHideClass = menuShowClass + ' js-header-nav-menu-hide';
-  var menuElement = document.querySelectorAll('.' + menuShowClass)[0];
-  var menuToggleButton = document.querySelectorAll('.' + menuToggleClass)[0];
-  var state = {
-    showmenu: menuElement.className === menuShowClass,
-  };
-
+// google analytics tack mailto clicks
+(function() {
   function addEventListener(element, listener) {
     // for IE8 compatibility
     if (element.addEventListener) {
@@ -16,25 +8,16 @@
       element.attachEvent('onclick', listener);
     }
   }
-
-  function showMenu() {
-    menuElement.className = menuShowClass;
-    state.showmenu = true;
+  function trackMailtoLinkClick(event) {
+    ga('send', 'event', {
+      eventCategory: 'Mailto link',
+      eventAction: 'click',
+      eventLabel: event.target.href,
+    });
   }
-
-  function hideMenu() {
-    menuElement.className = menuHideClass;
-    state.showmenu = false;
+  var mailToElementSelector = '.js-track-mailto-click';
+  var elements = document.querySelectorAll(mailToElementSelector);
+  for (var i=0, element; element = elements[i]; i++) {
+    addEventListener(element, trackMailtoLinkClick)
   }
-
-  function handleMenuToggle() {
-    if (state.showmenu === true) {
-      hideMenu();
-    } else {
-      showMenu();
-    }
-  }
-
-  addEventListener(menuToggleButton, handleMenuToggle);
-
 })();
