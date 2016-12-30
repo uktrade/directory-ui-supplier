@@ -16,6 +16,7 @@
     "govuk_frontend_toolkit": "^4.13.0",
     "jsdom": "^9.8.3",
     "mocha": "^3.1.2",
+    "sinon": "^1.17.6",
     "trade_elements": "0.0.3"
   }
 }
