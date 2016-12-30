@@ -13,36 +13,6 @@ supplier_context = {
 }
 
 
-def test_form_wrapper_next_button():
-    context = {
-        'wizard': {
-            'steps':
-                {
-                    'step1': 2,
-                    'count': 3,
-                }
-        }
-    }
-    html = render_to_string('form-wrapper.html', context)
-    assert 'value="Next"' in html
-    assert 'value="Register"' not in html
-
-
-def test_form_wrapper_finish_button():
-    context = {
-        'wizard': {
-            'steps':
-                {
-                    'step1': 3,
-                    'count': 3,
-                }
-        }
-    }
-    html = render_to_string('form-wrapper.html', context)
-    assert 'value="Next"' not in html
-    assert 'value="Register"' in html
-
-
 def test_google_tag_manager():
     expected_head = render_to_string('google_tag_manager_head.html')
     expected_body = render_to_string('google_tag_manager_body.html')

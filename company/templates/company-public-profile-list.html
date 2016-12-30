@@ -42,7 +42,7 @@
 						</h1>
 					</a>
 					<div class="web-address element-within">
-						<a href="{% url 'public-company-profiles-detail' company_number=company.number %}" class=" dont-break-out" target="_blank">
+						<a href="{% url 'public-company-profiles-detail' company_number=company.number %}" class=" dont-break-out">
 							<span class="url pull-right">View profile</span>
 						</a>
 					</div>
@@ -54,7 +54,7 @@
 					<div class="logo-container">
 						<div class="logo">
 							{% if company.logo %}
-							<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number %}" target="_blank">
+							<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number %}">
 								<img src="{{company.logo}}" />
 							</a>
 							{% endif %}
