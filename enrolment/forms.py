@@ -14,8 +14,7 @@ class InternationalBuyerForm(forms.Form):
     TERMS_LABEL = _(
         'I agree to the great.gov.uk '
         '<a target="_self" href="%(url)s">terms and conditions</a>.'
-    ) % {'url': urls.TERMS_AND_CONDITIONS_URL}
-
+    )
     full_name = forms.CharField(label=_('Your name'))
     email_address = forms.EmailField(label=_('Email address'))
     sector = forms.ChoiceField(
@@ -25,11 +24,16 @@ class InternationalBuyerForm(forms.Form):
         )
     )
     terms = forms.BooleanField(
-        label=mark_safe(TERMS_LABEL),
         error_messages={'required': TERMS_CONDITIONS_MESSAGE}
     )
 
     error_css_class = 'input-field-container has-error'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['terms'].label = mark_safe(
+            self.TERMS_LABEL % {'url': urls.TERMS_AND_CONDITIONS_URL}
+        )
 
 
 def serialize_international_buyer_forms(cleaned_data):

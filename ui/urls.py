@@ -11,6 +11,7 @@ from company.views import (
     CaseStudyDetailView
 )
 
+
 urlpatterns = [
     url(
         r"^$",

@@ -51,6 +51,7 @@ MIDDLEWARE_CLASSES = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'ui.middleware.LocaleQuerystringMiddleware',
 ]
 
 ROOT_URLCONF = 'ui.urls'
@@ -102,6 +103,9 @@ LANGUAGES = [
   ('de', _('German')),
   ('zh-hans', _('Simplified Chinese')),
 ]
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
