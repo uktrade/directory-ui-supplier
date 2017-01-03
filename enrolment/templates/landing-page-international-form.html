@@ -1,8 +1,9 @@
+{% load trans from i18n %}
 <div class="ed-landing-page-form-container">
 	<div class="ed-landing-page-form-inner">
-		<h2 style="font-weight: normal;">Find a UK company that can meet your needs</h2>
+		<h2 style="font-weight: normal;">{% trans "Find a UK company that can meet your needs" %}</h2>
 		<p>
-			Choose from hundreds of UK companies offering exceptional products and services. Register to be notified as soon as companies that match your needs are live on the Find a Supplier service.
+			{% trans "Choose from hundreds of UK companies offering exceptional products and services. Register to be notified as soon as companies that match your needs are live on the Find a Supplier service." %}
 		</p>
 
 		<div class="row-fluid">
@@ -52,7 +53,7 @@
 
 					<div class="span2 btn-container ed-landing-page-register-button-container">
 						<button class="button" style="border-radius: 4px;">
-							Register
+							{% trans "Register" %}
 						</button>
 					</div>
 				</div>

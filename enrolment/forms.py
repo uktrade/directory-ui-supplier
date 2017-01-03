@@ -1,29 +1,31 @@
 from django import forms
 from django.utils.safestring import mark_safe
+from django.utils.translation import ugettext_lazy as _
 
 from directory_validators.constants import choices
 from directory_constants.constants import urls
 
 
 class InternationalBuyerForm(forms.Form):
-    PLEASE_SELECT_LABEL = 'Please select a sector'
-    TERMS_CONDITIONS_MESSAGE = ('Tick the box to confirm you agree to '
-                                'the terms and conditions.')
+    PLEASE_SELECT_LABEL = _('Please select a sector')
+    TERMS_CONDITIONS_MESSAGE = _(
+        'Tick the box to confirm you agree to the terms and conditions.'
+    )
+    TERMS_LABEL = _(
+        'I agree to the great.gov.uk '
+        '<a target="_self" href="%(url)s">terms and conditions</a>.'
+    ) % {'url': urls.TERMS_AND_CONDITIONS_URL}
 
-    full_name = forms.CharField(label='Your name')
-    email_address = forms.EmailField(label='Email address')
+    full_name = forms.CharField(label=_('Your name'))
+    email_address = forms.EmailField(label=_('Email address'))
     sector = forms.ChoiceField(
-        label='Sector',
+        label=_('Sector'),
         choices=(
             [['', PLEASE_SELECT_LABEL]] + list(choices.COMPANY_CLASSIFICATIONS)
         )
     )
     terms = forms.BooleanField(
-        label=mark_safe(
-            'I agree to the great.gov.uk <a target="_self" '
-            'href="{url}">terms and conditions</a>.'.format(
-                url=urls.TERMS_AND_CONDITIONS_URL)
-        ),
+        label=mark_safe(TERMS_LABEL),
         error_messages={'required': TERMS_CONDITIONS_MESSAGE}
     )
 

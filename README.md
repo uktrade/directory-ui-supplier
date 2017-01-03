@@ -103,7 +103,6 @@ Therefore to make cookie sharing work in development we need the apps to ne runn
  - `directory-ui-supplier` and `directory-sso` must both be running on sibling subdomains (with same parent domain)
  - `directory-sso` must be told to target cookies at the parent domain.
 
-# Geodata
+# Translations
 
-This product includes GeoLite2 data created by MaxMind, available from
-<a href="http://www.maxmind.com">http://www.maxmind.com</a>.
+Follow the <a href="https://docs.djangoproject.com/en/1.9/topics/i18n/translation/#localization-how-to-create-language-files" target="_blank">Django documentation</a>
