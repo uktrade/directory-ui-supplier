@@ -3,8 +3,6 @@ from datetime import datetime
 import requests
 import pytest
 
-from django.core.urlresolvers import reverse
-
 from company import helpers
 
 
@@ -83,14 +81,23 @@ def test_get_company_profile_from_response(retrieve_profile_data):
         'has_social_links': True,
         'number': '01234567',
         'description': 'Ecommerce website',
-        'public_profile_url': reverse(
-            'public-company-profiles-detail',
-            kwargs={'company_number': '01234567'},
-        ),
         'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
     }
 
     actual = helpers.get_company_profile_from_response(response)
+    assert actual == expected
+
+
+def test_format_case_study():
+    case_study = {
+        'sector': 'AEROSPACE',
+    }
+    expected = {
+        'sector': {
+            'label': 'Aerospace'
+        }
+    }
+    actual = helpers.format_case_study(case_study)
     assert actual == expected
 
 
@@ -126,10 +133,6 @@ def test_get_public_company_profile_from_response(retrieve_profile_data):
         'employees': '501-1,000',
         'keywords': 'word1 word2',
         'name': 'Great company',
-        'public_profile_url': reverse(
-            'public-company-profiles-detail',
-            kwargs={'company_number': '01234567'}
-        ),
     }
 
     actual = helpers.get_public_company_profile_from_response(response)
@@ -156,10 +159,7 @@ def test_get_company_list_from_response(public_companies):
                     'email_address': 'test@example.com',
                     'postal_full_name': 'Jeremy',
                 },
-                'public_profile_url': reverse(
-                    'public-company-profiles-detail',
-                    kwargs={'company_number': '01234567'}
-                ),                'employees': '501-1,000',
+                'employees': '501-1,000',
                 'number': '01234567',
                 'supplier_case_studies': [],
                 'verified_with_code': True,
@@ -223,10 +223,6 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
             'sectors': [{'value': 'SECURITY', 'label': 'Security'}],
             'is_address_set': True,
             'facebook_url': 'http://www.facebook.com',
-            'public_profile_url': reverse(
-                'public-company-profiles-detail',
-                kwargs={'company_number': '01234567'}
-            ),
             'twitter_url': 'http://www.twitter.com',
             'keywords': 'word1 word2',
             'number': '01234567',
