@@ -2,8 +2,6 @@ import datetime
 
 from directory_validators.constants import choices
 
-from django.core.urlresolvers import reverse
-
 
 EMPLOYEE_CHOICES = {key: value for key, value in choices.EMPLOYEES}
 SECTOR_CHOICES = {key: value for key, value in choices.COMPANY_CLASSIFICATIONS}
@@ -67,6 +65,7 @@ def format_company_details(details):
     # If the contact details json is set to null
     # then details['contact_details'] will be None
     contact_details = details['contact_details'] or {}
+    case_studies = map(format_case_study, details['supplier_case_studies'])
     return {
         'website': details['website'],
         'description': details['description'],
@@ -77,16 +76,12 @@ def format_company_details(details):
         'name': details['name'],
         'keywords': details['keywords'],
         'employees': get_employees_label(details['employees']),
-        'supplier_case_studies': details['supplier_case_studies'],
+        'supplier_case_studies': list(case_studies),
         'modified': datetime.datetime.strptime(
             details['modified'], '%Y-%m-%dT%H:%M:%S.%fZ'),
         'verified_with_code': details['verified_with_code'],
         'is_address_set': contact_details != {},
         'contact_details': contact_details,
-        'public_profile_url': reverse(
-            'public-company-profiles-detail',
-            kwargs={'company_number': details['number']},
-        ),
         'twitter_url': details['twitter_url'],
         'facebook_url': details['facebook_url'],
         'linkedin_url': details['linkedin_url'],
@@ -96,3 +91,10 @@ def format_company_details(details):
             details['linkedin_url']
         )
     }
+
+
+def format_case_study(case_study):
+    case_study['sector'] = {
+        'label': get_sectors_label(case_study['sector']),
+    }
+    return case_study

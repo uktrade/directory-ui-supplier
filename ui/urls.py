@@ -1,8 +1,6 @@
 from django.conf.urls import url
-from django.views.decorators.cache import cache_page
 
 from enrolment.views import (
-    CachableTemplateView,
     InternationalLandingView,
     InternationalLandingSectorListView,
     InternationalLandingSectorDetailView,
@@ -10,27 +8,14 @@ from enrolment.views import (
 from company.views import (
     PublicProfileListView,
     PublicProfileDetailView,
+    CaseStudyDetailView
 )
-
-
-cache_me = cache_page(60 * 1)
-
 
 urlpatterns = [
     url(
         r"^$",
         InternationalLandingView.as_view(),
         name="index"
-    ),
-    url(
-        r"^thanks$",
-        cache_me(CachableTemplateView.as_view(template_name="thanks.html")),
-        name="thanks"
-    ),
-    url(
-        r"^sorry$",
-        cache_me(CachableTemplateView.as_view(template_name="sorry.html")),
-        name="problem"
     ),
     url(
         r'^suppliers$',
@@ -51,5 +36,10 @@ urlpatterns = [
         r'^sectors/(?P<slug>.+)$',
         InternationalLandingSectorDetailView.as_view(),
         name='international-sector-detail',
+    ),
+    url(
+        r'^case-study/(?P<id>.+)$',
+        CaseStudyDetailView.as_view(),
+        name='case-study-details'
     ),
 ]

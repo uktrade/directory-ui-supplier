@@ -122,7 +122,7 @@
 							<p>{{ case_study.short_summary }}</p>
 
 							<p class="supplier-case-study-read-more-cta">
-								<a href="{{ case_study.url }}">Read case study</a>
+								<a href="{% url 'case-study-details' id=case_study.pk %}">Read case study</a>
 							</p>
 						</div>
 						{% if case_study.testimonial %}
@@ -143,6 +143,7 @@
 							</p>
 							<p>
 								<span>Sector: </span>
+								{{ case_study.sector.label }}
 								{% if features.FEATURE_PUBLIC_PROFILES_ENABLED %}
 									<a href="{{ case_study.sector.url }}">{{ case_study.sector.label }}</a>
 								{% else %}

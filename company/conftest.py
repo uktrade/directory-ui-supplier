@@ -103,7 +103,7 @@ def api_response_list_public_profile_200(
 
 
 @pytest.fixture
-def api_response_retrieve_supplier_case_study_200(supplier_case_study_data):
+def api_response_retrieve_public_case_study_200(supplier_case_study_data):
     response = api_response_200()
     response.json = lambda: deepcopy(supplier_case_study_data)
     return response
@@ -112,7 +112,7 @@ def api_response_retrieve_supplier_case_study_200(supplier_case_study_data):
 @pytest.fixture(autouse=True)
 def retrieve_supplier_case_study_response(api_response_200):
     stub = patch(
-        'api_client.api_client.company.retrieve_supplier_case_study',
+        'api_client.api_client.company.retrieve_public_case_study',
         return_value=api_response_200,
     )
     stub.start()
@@ -133,11 +133,11 @@ def list_public_profiles(api_response_list_public_profile_200):
 
 @pytest.fixture(autouse=True)
 def retrieve_supplier_case_study(
-    api_response_retrieve_supplier_case_study_200
+    api_response_retrieve_public_case_study_200
 ):
     stub = patch(
-        'api_client.api_client.company.retrieve_supplier_case_study',
-        return_value=api_response_retrieve_supplier_case_study_200,
+        'api_client.api_client.company.retrieve_public_case_study',
+        return_value=api_response_retrieve_public_case_study_200,
     )
     stub.start()
     yield

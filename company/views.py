@@ -85,3 +85,20 @@ class PublicProfileDetailView(TemplateView):
             'company': company,
             'show_edit_links': False,
         }
+
+
+class CaseStudyDetailView(TemplateView):
+    template_name = 'supplier-case-study-detail.html'
+
+    def get_case_study(self):
+        response = api_client.company.retrieve_public_case_study(
+            case_study_id=self.kwargs['id'],
+        )
+        if not response.ok:
+            response.raise_for_status()
+        return helpers.get_case_study_details_from_response(response)
+
+    def get_context_data(self, **kwargs):
+        return {
+            'case_study': self.get_case_study(),
+        }

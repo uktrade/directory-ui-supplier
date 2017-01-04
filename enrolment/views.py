@@ -1,27 +1,10 @@
 from django.conf import settings
 from django.shortcuts import Http404
 from django.template.response import TemplateResponse
-from django.utils.cache import patch_response_headers
-from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
 from api_client import api_client
 from enrolment import constants, forms
-
-
-class CacheMixin:
-
-    def render_to_response(self, context, **response_kwargs):
-        # Get response from parent TemplateView class
-        response = super().render_to_response(
-            context, **response_kwargs
-        )
-
-        # Add Cache-Control and Expires headers
-        patch_response_headers(response, cache_timeout=60 * 30)
-
-        # Return response
-        return response
 
 
 class HandleBuyerFormSubmitMixin:
@@ -32,10 +15,6 @@ class HandleBuyerFormSubmitMixin:
         data = forms.serialize_international_buyer_forms(form.cleaned_data)
         api_client.buyer.send_form(data)
         return TemplateResponse(self.request, self.success_template)
-
-
-class CachableTemplateView(CacheMixin, TemplateView):
-    pass
 
 
 class InternationalLandingView(HandleBuyerFormSubmitMixin, FormView):
