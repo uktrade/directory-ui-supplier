@@ -52,6 +52,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'ui.middleware.LocaleQuerystringMiddleware',
+    'ui.middleware.PersistLocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'ui.urls'

@@ -178,7 +178,7 @@ msgid "English"
 msgstr ""
 
 #: ui/settings.py:102
-msgid "CHINESE!"
+msgid "German"
 msgstr ""
 
 #: ui/settings.py:103
