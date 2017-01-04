@@ -5,7 +5,6 @@ from django.utils import translation
 
 class LocaleQuerystringMiddleware(LocaleMiddleware):
     def process_request(self, request):
-        # from ipdb import set_trace; set_trace()
         super().process_request(request)
         language_code = request.GET.get('lang')
         language_codes = translation.trans_real.get_languages()
