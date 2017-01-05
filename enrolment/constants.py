@@ -98,9 +98,9 @@ TECH_SECTOR_CONTEXT = {
     'companies': [
         {
             'image_url': '/static/images/evrything.png',
-            'name': 'evrything',
+            'name': 'EVRYTHING',
             'description': (
-                'evrythng is an Internet of Things software company that '
+                'EVRYTHING is an Internet of Things software company that '
                 'helps manufacturers digitize their physical products by '
                 'connecting them to the web. From everyday consumer packaged '
                 'products connected via smart packaging and smartphones, to '
