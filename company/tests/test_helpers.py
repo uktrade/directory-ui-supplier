@@ -81,6 +81,7 @@ def test_get_company_profile_from_response(retrieve_profile_data):
         'has_social_links': True,
         'number': '01234567',
         'description': 'Ecommerce website',
+        'summary': 'good',
         'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
     }
 
@@ -129,6 +130,7 @@ def test_get_public_company_profile_from_response(retrieve_profile_data):
         'logo': 'nice.jpg',
         'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
         'description': 'Ecommerce website',
+        'summary': 'good',
         'linkedin_url': 'http://www.linkedin.com',
         'employees': '501-1,000',
         'keywords': 'word1 word2',
@@ -177,6 +179,7 @@ def test_get_company_list_from_response(public_companies):
                 ],
                 'has_social_links': True,
                 'description': 'Ecommerce website',
+                'summary': 'good',
                 'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
                 'date_of_creation': datetime(2015, 3, 2, 0, 0)}
             ]
@@ -217,6 +220,7 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
         'image_two': 'https://image_two.jpg',
         'company': {
             'description': 'Ecommerce website',
+            'summary': 'good',
             'linkedin_url': 'http://www.linkedin.com',
             'logo': 'nice.jpg',
             'name': 'Great company',

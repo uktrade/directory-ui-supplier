@@ -84,6 +84,7 @@ class PublicProfileDetailView(TemplateView):
         return {
             'company': company,
             'show_edit_links': False,
+            'show_description': 'verbose' in self.request.GET,
         }
 
 
