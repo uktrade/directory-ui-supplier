@@ -142,3 +142,19 @@ def test_international_landing_page_sector_context(client):
     assert pages['tech']['context'] == constants.TECH_SECTOR_CONTEXT
     assert pages['creative']['context'] == constants.CREATIVE_SECTOR_CONTEXT
     assert pages['food-and-drink']['context'] == constants.FOOD_SECTOR_CONTEXT
+
+
+def test_terms_page_success(client):
+    url = reverse('terms-and-conditions')
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.OK
+
+
+def test_privacy_cookiues_success(client):
+    url = reverse('privacy-and-cookies')
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.OK
