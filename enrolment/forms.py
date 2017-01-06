@@ -7,7 +7,7 @@ from directory_constants.constants import urls
 
 
 class InternationalBuyerForm(forms.Form):
-    PLEASE_SELECT_LABEL = _('Please select a sector')
+    PLEASE_SELECT_LABEL = _('Please select an industry')
     TERMS_CONDITIONS_MESSAGE = _(
         'Tick the box to confirm you agree to the terms and conditions.'
     )
@@ -18,7 +18,7 @@ class InternationalBuyerForm(forms.Form):
     full_name = forms.CharField(label=_('Your name'))
     email_address = forms.EmailField(label=_('Email address'))
     sector = forms.ChoiceField(
-        label=_('Sector'),
+        label=_('Industry'),
         choices=(
             [['', PLEASE_SELECT_LABEL]] + list(choices.COMPANY_CLASSIFICATIONS)
         )
