@@ -122,3 +122,33 @@ def test_company_public_profile_list_paginate_prev():
     html = render_to_string('company-public-profile-list.html', context)
 
     assert 'href="?sectors=WATER&page=1"' in html
+
+
+def test_public_profile_verbose():
+    context = {
+        'show_description': True,
+        'company': {
+            'summary': 'the summary!',
+            'description': 'the description!'
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert 'href="?verbose=true"' not in html
+    assert context['company']['summary'] not in html
+    assert context['company']['description'] in html
+
+
+def test_public_profile_non_verbose():
+    context = {
+        'show_description': False,
+        'company': {
+            'summary': 'the summary!',
+            'description': 'the description!'
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert 'href="?verbose=true"' in html
+    assert context['company']['summary'] in html
+    assert context['company']['description'] not in html

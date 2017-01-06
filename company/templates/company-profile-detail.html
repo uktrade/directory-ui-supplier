@@ -57,8 +57,17 @@
 
 			<div class="{{company.has_social_links|yesno:'span8,span12'}} company-profile-module-inner">
 				<h3>Company description</h3>
-				{% if company.description %}
-					<p>{{company.description}}</p>
+
+				{% if show_description %}
+					<p>
+						{{ company.description }}
+					</p>
+				{% else %}
+					<p>
+						{{ company.summary }}
+						{# reload current page with querystring #}
+						<a href="?verbose=true">Read full company profile</a>
+					</p>
 				{% endif %}
 			</div>
 
