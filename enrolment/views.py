@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.shortcuts import Http404
 from django.template.response import TemplateResponse
 from django.views.generic.edit import FormView
