@@ -1,5 +1,6 @@
 from django.shortcuts import Http404
 from django.template.response import TemplateResponse
+from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
 from api_client import api_client
@@ -22,6 +23,14 @@ class InternationalLandingView(HandleBuyerFormSubmitMixin, FormView):
 
 class InternationalLandingSectorListView(HandleBuyerFormSubmitMixin, FormView):
     template_name = 'landing-page-international-sector-list.html'
+
+
+class PrivacyCookiesView(TemplateView):
+    template_name = 'privacy-and-cookies.html'
+
+
+class TermsView(TemplateView):
+    template_name = 'terms-and-conditions.html'
 
 
 class InternationalLandingSectorDetailView(HandleBuyerFormSubmitMixin,
