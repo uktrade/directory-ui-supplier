@@ -497,7 +497,9 @@ body {
   background-size: cover;
   .ed-hero-sub-header-title {
     h2 {
-      font-weight: normal;
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 1.25em;
       margin-bottom: 20px;
       @media (max-width: 979px) {
         text-align: center;
@@ -720,7 +722,7 @@ a.no-focus-highlight {
 
 .ed-arrow_box {
   position: relative;
-  background: #D8D8D8;
+  background: #d8d8d8;
 }
 
 .ed-arrow_box:after {
@@ -733,7 +735,7 @@ a.no-focus-highlight {
   position: absolute;
   pointer-events: none;
   border-color: rgba(237, 237, 237, 0);
-  border-top-color: #D8D8D8;
+  border-top-color: #d8d8d8;
   border-width: 20px 20px 0px 0px;
   margin-left: -20px;
 }
@@ -787,7 +789,7 @@ a.ed-filled-button-primary {
     color: white;
     padding: 5px;
     background: black;
-    opacity: 0.7;
+    opacity: 0.5;
   }
 }
 
@@ -808,6 +810,11 @@ a.ed-filled-button-primary {
   img {
     height: 35px;
     margin-top: 15px;
+    margin-top: 20px;
+    @media (max-width: 767px) {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
   }
   .btn-navbar {
     margin-top: 12px;
