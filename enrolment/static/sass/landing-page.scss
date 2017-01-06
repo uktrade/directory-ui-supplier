@@ -258,13 +258,26 @@ a .register-interest-btn {
 
 .ed-landing-page-sector-container {
   border: 2px solid #dedede;
+  &.ed-landing-page-sector-container-min-height {
+    min-height: 250px;
+  }
+  h2 {
+    font-weight: 300;
+  }
 }
 
+
 .ed-landing-page-sector-image {
-  padding: 20px;
+  padding: 10px;
+  padding-right: 20px;
+  margin: 10px;
 }
 
 .ed-landing-page-sector-synopsis {
+  padding-right: 10px;
+}
+
+.ed-landing-page-sector-link-container {
   padding-right: 10px;
 }
 
