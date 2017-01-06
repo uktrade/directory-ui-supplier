@@ -94,13 +94,11 @@
 		</div>
 	</div>
 
-	{% if features.FEATURE_SECTOR_LANDING_PAGES_ENABLED %}
-		<div class="row-fluid ed-landing-page-see-more-button-container">
-			<a href="{% url 'international-sector-list' %}" class="ed-landing-page-see-more-button">
-				{% trans "See more sectors" %}
-			</a>
-		</div>
-	{% endif %}
+	<div class="row-fluid ed-landing-page-see-more-button-container">
+		<a href="{% url 'international-sector-list' %}" class="ed-landing-page-see-more-button">
+			{% trans "See more sectors" %}
+		</a>
+	</div>
 
 	{% include 'landing-page-international-form.html' %}
 

@@ -246,23 +246,25 @@ a .register-interest-btn {
 
 .ed-landing-page-synopsis {
   padding:20px;
-  border: 2px solid #dedede;
+  border: 1px solid #dedede;
   border-top: none;
-  background: white;
+  background-color: #FAFAFA;
 }
 
 .ed-landing-page-read-more-subtitle {
   margin-top: 20px;
   margin-bottom: 20px;
+  font-weight: 300;
 }
 
 .ed-landing-page-sector-container {
-  border: 2px solid #dedede;
+  border: 1px solid #dedede;
   &.ed-landing-page-sector-container-min-height {
     min-height: 250px;
   }
   h2 {
     font-weight: 300;
+    line-height: 1.25em;
   }
 }
 
@@ -286,13 +288,14 @@ a .register-interest-btn {
   margin-bottom: 30px;
 }
 
-.ed-landing-page-see-more-button {
-  border: 3px solid #007EA3;
-  color: #007EA3;
+a.ed-landing-page-see-more-button {
+  border: 2px solid #004f95;
+  color: #004f95;
   padding: 20px;
   text-align: center;
   font-weight: bold;
   display: block;
+  border-radius: 4px;
 }
 
 .ed-landing-page-form-container {
@@ -302,7 +305,7 @@ a .register-interest-btn {
 
 .ed-landing-page-form-inner {
   padding:20px;
-  border: 2px solid #dedede;
+  border: 1px solid #dedede;
   border-bottom: none
 }
 
@@ -347,7 +350,7 @@ a .register-interest-btn {
   color: white;
   h3 {
     line-height: 1em;
-    font-weight: normal;
+    font-weight: 300;
   }
   a.button {
     background-color: white;
@@ -363,7 +366,7 @@ a .register-interest-btn {
   padding-top: 0;
   margin-bottom: 20px;
   h2 {
-    font-weight: normal;
+    font-weight: 300;
     font-size: 24px;
   }
 }
@@ -401,16 +404,16 @@ a .register-interest-btn {
   padding: 20px;
   h3 {
     margin-top: 0;
-    font-weight: normal;
+    font-weight: 300;
   }
   li {
     list-style: initial;
-    margin-bottom: 20px;
+    margin-bottom: 1.39em;
   }
 }
 
 .ed-landing-page-sector-specific-container {
   h1, h2, h3 {
-    font-weight: normal;
+    font-weight: 300;
   }
 }

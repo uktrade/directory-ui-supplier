@@ -497,7 +497,9 @@ body {
   background-size: cover;
   .ed-hero-sub-header-title {
     h2 {
-      font-weight: normal;
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 1.25em;
       margin-bottom: 20px;
       @media (max-width: 979px) {
         text-align: center;
@@ -808,6 +810,11 @@ a.ed-filled-button-primary {
   img {
     height: 35px;
     margin-top: 15px;
+    margin-top: 20px;
+    @media (max-width: 767px) {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
   }
   .btn-navbar {
     margin-top: 12px;

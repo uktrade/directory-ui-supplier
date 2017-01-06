@@ -1,7 +1,7 @@
 {% load trans from i18n %}
 <div class="ed-landing-page-form-container">
 	<div class="ed-landing-page-form-inner">
-		<h2 style="font-weight: normal;">{% trans "Find a UK company that can meet your needs" %}</h2>
+		<h2 style="font-weight: 300; margin-top: 0;">{% trans "Find a UK company that can meet your needs" %}</h2>
 		<p>
 			{% trans "Choose from hundreds of UK companies offering exceptional products and services. Register to be notified as soon as companies that match your needs are live on the Find a Supplier service." %}
 		</p>
@@ -45,7 +45,7 @@
 				<div class="row-fluid">
 					<div class="span10 checkbox-tc {{ form.terms.css_classes|default:'input-field-container' }}" style="text-align: right;">
 						{{ form.terms.errors }}
-						<label for="{{ form.terms.id_for_label }}" style="margin-top: 15px;">
+						<label for="{{ form.terms.id_for_label }}" style="margin-top: 15px; font-weight: 300;">
 							{{ form.terms.label }}
 							<input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox" style="vertical-align: top; margin-top: 7px;">
 						</label>
