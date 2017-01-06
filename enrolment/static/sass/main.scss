@@ -508,7 +508,7 @@ body {
 }
 
 #footer.ed-footer {
-  background: #1E1348;
+  background: #444444;
   padding: 40px 40px 50px;
   @media (max-width: 960px) {
     padding: 40px 0;
@@ -547,16 +547,19 @@ body {
   .footer-wrapper {
     background: #1E1348;
   }
-  ul li {
-    a {
-      color: $white;
-    }
-    a:focus {
-      background: #007EA3;
-      color: #ffffff;
-    }
+  a {
+    color: $white;
+    font-size: 17px;
   }
-
+  a:focus {
+    background: #007EA3;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .ed-text-divider {
+    padding: 5px;
+    color: white;
+  }
   .hmg-logo {
     img {
       max-width: 250px;
@@ -567,34 +570,9 @@ body {
       max-width: 200px;
     }
   }
-  p.copyright-text {
-    color: #dce0df;
-    font-size: 14px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    font-weight: 300;
-  }
-  .footer-img--top {
-    margin-bottom: 10px;
-  }
-
-  h3.footer-header {
-    color: $white;
-    font-weight: 500;
-    font-size: 20px;
-    margin: 0 0 30px 0;
-    padding: 0;
-    line-height: 30px;
-  }
-  ul.footer-links-container {
-    margin: 0;
-    li.footer-links {
-      margin-bottom: 15px;
-      a {
-        font-size: 18px;
-        font-weight: 400;
-      }
-    }
+  .copyright-text {
+    color: white;
+    font-size: 17px;
   }
 }
 
