@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.shortcuts import Http404
 from django.template.response import TemplateResponse
 from django.views.generic.edit import FormView
@@ -18,13 +17,7 @@ class HandleBuyerFormSubmitMixin:
 
 
 class InternationalLandingView(HandleBuyerFormSubmitMixin, FormView):
-    template_name_new = 'landing-page-international.html'
-    template_name_old = 'landing-page-international-old.html'
-
-    def get_template_names(self):
-        if settings.FEATURE_NEW_INTERNATIONAL_LANDING_PAGE_ENABLED:
-            return [self.template_name_new]
-        return [self.template_name_old]
+    template_name = 'landing-page-international.html'
 
 
 class InternationalLandingSectorListView(HandleBuyerFormSubmitMixin, FormView):
