@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.shortcuts import Http404
 from django.template.response import TemplateResponse
 from django.views.generic import TemplateView
@@ -17,7 +18,20 @@ class HandleBuyerFormSubmitMixin:
         return TemplateResponse(self.request, self.success_template)
 
 
-class InternationalLandingView(HandleBuyerFormSubmitMixin, FormView):
+class ShowLanguageSwitcherMixin:
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['language_switcher'] = {
+            'show': settings.FEATURE_LANGUAGE_SWITCHER_ENABLED,
+            'form': forms.LanguageForm(
+                initial=forms.get_language_form_initial_data(),
+            )
+        }
+        return context
+
+
+class InternationalLandingView(ShowLanguageSwitcherMixin,
+                               HandleBuyerFormSubmitMixin, FormView):
     template_name = 'landing-page-international.html'
 
 

@@ -107,6 +107,9 @@ LANGUAGES = [
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+FEATURE_LANGUAGE_SWITCHER_ENABLED = (
+    os.getenv('FEATURE_LANGUAGE_SWITCHER_ENABLED') == 'true'
+)
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 

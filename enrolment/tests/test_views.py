@@ -4,6 +4,7 @@ from unittest.mock import patch
 
 import pytest
 
+from django.conf import settings
 from django.core.urlresolvers import reverse
 
 from enrolment import constants, forms
@@ -99,6 +100,14 @@ def test_international_landing_view_submit(
     mock_send_form.assert_called_once_with(
         forms.serialize_international_buyer_forms(buyer_form_data)
     )
+
+
+def test_international_landing_view_context(anon_request):
+    response = InternationalLandingView.as_view()(anon_request)
+
+    context = response.context_data['language_switcher']
+    assert context['show']
+    assert context['form'].initial == {'lang': settings.LANGUAGE_CODE}
 
 
 @patch.object(api_client.buyer, 'send_form')
