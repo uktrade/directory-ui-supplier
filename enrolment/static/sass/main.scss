@@ -846,3 +846,37 @@ a.ed-filled-button-primary {
 .ed-special-bottom-border {
   border-bottom: 7px solid #B00D23;
 }
+
+.ed-language-switcher {
+  color: #ffffff;
+  form {
+    margin-bottom: 0;
+    padding: 0 5px 0 5px;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    select {
+      font-size: 15px;
+      padding: 0;
+      padding-bottom: 2px;
+      margin: 0;
+      height: 40px;
+      background: transparent;
+      color: #ffffff;
+      border: 0;
+      border-radius: 0;
+      width: 190px;
+      option {
+        color: black;
+      }
+    }
+    button {
+      font-size: 15px;
+      background: transparent;
+      border: 1px solid #ffffff;
+      color: #ffffff;
+      border-radius: 4px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

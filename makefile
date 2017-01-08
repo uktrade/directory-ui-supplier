@@ -36,7 +36,9 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_API_CLIENT_BASE_URL=http://api.trade.great.dev:8000; \
 	export DIRECTORY_UI_SUPPLIER_PORT=8005; \
 	export DIRECTORY_UI_SUPPLIER_SECRET_KEY=debug; \
-	export DIRECTORY_UI_SUPPLIER_DEBUG=true
+	export DIRECTORY_UI_SUPPLIER_DEBUG=true; \
+	export DIRECTORY_UI_SUPPLIER_FEATURE_LANGUAGE_SWITCHER_ENABLED=true
+
 
 DOCKER_REMOVE_ALL := \
 	docker ps -a | \
@@ -73,7 +75,8 @@ DEBUG_SET_ENV_VARS := \
 	export DEBUG=true ;\
 	export API_CLIENT_CLASS_NAME=unit-test; \
 	export API_CLIENT_KEY=debug; \
-	export API_CLIENT_BASE_URL=http://api.trade.great.dev:8000
+	export API_CLIENT_BASE_URL=http://api.trade.great.dev:8000; \
+	export FEATURE_LANGUAGE_SWITCHER_ENABLED=true
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)
