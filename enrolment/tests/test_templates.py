@@ -46,3 +46,10 @@ def test_templates_render_successfully():
     assert template_list
     for template in template_list:
         render_to_string(template, default_context)
+
+
+def test_footer_contact_us():
+    html = render_to_string('footer.html')
+    href = 'href="mailto:help@digital.trade.gov.uk?subject=General%20enquiry"'
+
+    assert href in html
