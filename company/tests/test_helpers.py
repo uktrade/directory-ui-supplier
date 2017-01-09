@@ -95,7 +95,8 @@ def test_format_case_study():
     }
     expected = {
         'sector': {
-            'label': 'Aerospace'
+            'label': 'Aerospace',
+            'value': 'AEROSPACE',
         }
     }
     actual = helpers.format_case_study(case_study)
