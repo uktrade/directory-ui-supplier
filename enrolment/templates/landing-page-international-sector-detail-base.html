@@ -109,7 +109,7 @@ adipiscing elit sed do eiusmod tempor
 		</div>
 	</section>
 	<section class="ed-landing-page-form-container">
-		<div class="ed-landing-page-form-inner">
+		<div class="ed-landing-page-form-inner" style="padding-top: 5px;">
 			<h2>Find a UK company that can meet your needs</h2>
 			<p>
 			{% block form_value_proposition %}
@@ -151,8 +151,7 @@ adipiscing elit sed do eiusmod tempor
 						</div>
 					</div>
 
-					<hr class="custom-hr">
-
+					<br>
 					<div class="row-fluid">
 						<div class="span10 checkbox-tc {{ form.terms.css_classes|default:'input-field-container' }}" style="text-align: right;">
 							{{ form.terms.errors }}
