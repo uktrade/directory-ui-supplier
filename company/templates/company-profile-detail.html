@@ -151,7 +151,7 @@
 								<span>Incorporated: </span>{{ company.date_of_creation|date:'Y' }}
 							</p>
 							<p>
-								<span>Sector: </span>
+								<span>Industry: </span>
 								{{ case_study.sector.label }}
 								{% if features.FEATURE_PUBLIC_PROFILES_ENABLED %}
 									<a href="{{ case_study.sector.url }}">{{ case_study.sector.label }}</a>
@@ -171,7 +171,7 @@
 				<div class="span6">
 					<div style="margin-bottom: 0;">
 						<div class="company-profile-module-inner ">
-							<h3>Sectors of interest</h3>
+							<h3>Industries of interest</h3>
 							<p>
 							{% for sector in company.sectors %}
 								<span class="label stone-label">

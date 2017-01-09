@@ -5,6 +5,7 @@ from django import forms
 
 class PublicProfileSearchForm(forms.Form):
     sectors = forms.ChoiceField(
+        label='Industry',
         choices=choices.COMPANY_CLASSIFICATIONS,
     )
     page = forms.IntegerField(
