@@ -124,6 +124,32 @@ def test_company_public_profile_list_paginate_prev():
     assert 'href="?sectors=WATER&page=1"' in html
 
 
+def test_case_study_detail_report_button():
+    context = {
+        'case_study': {
+            'company': {
+                'number': '012344',
+            }
+        }
+    }
+    html = render_to_string('supplier-case-study-detail.html', context)
+    href = "mailto:help@digital.trade.gov.uk?subject=Report%20profile%20012344"
+
+    assert href in html
+
+
+def test_public_profile_report_button():
+    context = {
+        'company': {
+            'number': '012344',
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+    href = "mailto:help@digital.trade.gov.uk?subject=Report%20profile%20012344"
+
+    assert href in html
+
+
 def test_public_profile_verbose():
     context = {
         'show_description': True,
