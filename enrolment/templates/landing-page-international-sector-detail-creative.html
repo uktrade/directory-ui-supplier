@@ -4,11 +4,102 @@
 {% block hero_title %}Delivering exceptional creative services{% endblock%}
 {% block title%}Find a your UK trade partner{% endblock %}
 {% block synopsis %}
-	<p>Whether you need buildings designed, films made or a fresh approach to marketing, the UK is the first place to look.</p>
+    <p>Whether you need buildings designed, films made or a fresh approach to marketing, the UK is the first place to look.</p>
+    <div class="ed-landing-page-read-more">
+        <a href="?verbose=true">Read more about creative services </a>
+    </div>
+{% endblock %}
+
+{% block proposition %}
+
+    <section>
+        <h2>If you need intelligent, creative ideas and rich, high-quality designs and media, look no further than the UK.</h2>
+        <p>
+            From producing big budget movies to designing funky furniture fabrics to developing world-class computer games, creativity is thriving in the UK.
+        </p>
+    </section>
+
+    <section>
+        <div class="row-fluid">
+            <div class="span6">
+                <h2>Work with the best in film, TV and visual effects</h2>
+                <p>
+                    The UK is one of the world's largest makers of original content. Award-winning film and television production are at the heart of our world-class creative industries, with more than 1,500 independent TV production companies in the UK.
+                </p>
+                <p>
+                    We are the home of films such as Star Wars and offer state-of-the-art studio facilities suitable for big movie productions and an amazing diversity of film locations. We're also the world leaders in exporting and localising TV formats first commissioned in the UK.
+                </p>
+            </div>
+            <div class="span6">
+                <div class="ed-key-facts-container">
+                    <h2>Key facts</h2>
+                    <ul>
+                        <li>UK companies gave the world £84.1 billion of creative services in 2014</li>
+                        <li>9% of all UK service exports are in the creative services in 2013</li>
+                        <li>Growth of creative services exports was 3.5% in 2013</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Our creative digital experience</h2>
+        <p>
+            The UK has one of the most advanced games industries, with more than 30 years' experience of innovation and commercial success. 
+        </p>
+        <p>
+            We're at the forefront of social and mobile platforms, with a rapidly growing start-up scene and more than a third of UK studios focusing on the mobile market.
+        </p>
+        <p>
+            The UK's augmented reality specialists create immersive experiences that help further the creative reach of the likes of National Geographic and Universal Studios.
+        </p>
+    </section>
+    <section>
+        <h2>A publishing powerhouse</h2>
+        <p>
+            Publishing in the UK is truly digital-first, but the sector continually innovates with print - creating a renaissance of magazines and newspapers. British news journalism remains a powerful force, uncovering important stories around the world.
+        </p>
+        <p>
+            The London Book Fair is one of the world's leading events for rights negotiation and the sale and distribution of content across print, audio, TV, film and digital channels. And half of the top 20 global box office successes of the last 11 years were based on novels by UK writers.
+        </p>
+    </section>
+    <section>
+        <h2>Our design talent is bringing beauty and strength to the world</h2>
+        <p>
+            UK architects are responsible for some of the world's stunning set-piece buildings such as the Galaxy Soho urban village in Beijing and reshaping environments, such as Singapore's Gardens by the Bay.
+        </p>
+        <p>
+            We're also responsible for designing usable industrial and commercial spaces such as the new Apple Campus and Spaceport America.
+        </p>
+        <p>
+            As well as designing and creating the built environment, our vehicles and interiors are being designed by UK firms to transform the world. We've helped China to design the world's fastest passenger train.
+        </p>
+    </section>
+
+    <section>
+        <h2>Arts: heritage and innovation</h2>
+
+        <p>
+            Grounded in the centuries-old traditions of Shakespeare, the UK continues to produce hundreds of the best known artists, writers, singers and performers. From Adele topping charts worldwide to our theatre companies responsible for global productions. 
+        </p>
+        <p>
+            As well as music for the consumer market, the UK's thriving commercial music and audio agencies are providing the scores and tracks for films for the likes of Boeing and Mercedes-Benz. And our rights management companies have an ongoing reputation for protecting Intellectual Property for performers and producers alike. 
+        </p>
+        <p>
+            The UK's national museums attract visitors from around the world and have lasting partnerships and collection-sharing with their peers from countries as diverse as Russia and Malawi.
+        </p>
+        <p>
+            The UK is alive with exceptional creative talent and ingenuity.
+        </p>
+    </section>
+    <div>
+        <a href="{% url 'public-company-profiles-list' %}?sectors={{ sector_value }}">Find your UK technology trade partner</a>
+    </div>
 {% endblock %}
 
 {% block company_list_title %}
-	<h2>See the UK's creative services providers on the Find a supplier service</h2>
+    <h2>See the UK's creative services providers on the Find a supplier service</h2>
 {% endblock %}
 
 {% block form_value_proposition %}
