@@ -82,4 +82,6 @@ class InternationalLandingSectorDetailView(HandleBuyerFormSubmitMixin,
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context.update(self.pages[self.kwargs['slug']]['context'])
+        context['show_proposition'] = 'verbose' in self.request.GET
+        context['slug'] = self.kwargs['slug']
         return context

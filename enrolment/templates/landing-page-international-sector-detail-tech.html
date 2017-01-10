@@ -4,9 +4,84 @@
 {% block title%}Find a your UK trade partner{% endblock %}
 {% block hero_title %}Delivering the exceptional in technology{% endblock%}
 {% block synopsis %}
-	<p>Whether you need electronic systems, data analytics, artificial intelligence or semiconductors, the UK is the first place to look.</p>
+    <p>Whether you need electronic systems, data analytics, artificial intelligence or semiconductors, the UK is the first place to look.</p>
+    <div class="ed-landing-page-read-more">
+        <a href="?verbose=true">Read more about technology in the UK</a>
+    </div>
 {% endblock %}
+    
+{% block proposition %}
+    <section>
+        <h2>If you need the best technology, look no further than the UK.</h2>
+        <p>
+            The UK is a world leader: in 2016, we were ranked first for science and technology and third for global innovation.
+            Today, the UK tech industry underpins many of our successful business sectors – from financial services and high-value manufacturing, to retail and agriculture – and continues to expand at an extraordinary pace.
+            Many of the world's best-known and successful companies take advantage of UK innovation, and we are proud that we provide a technological springboard for companies worldwide.
+            Our technology sector is one of the world's largest and shows our creativity, innovation and design skills. The UK offers unrivalled innovation in technology that can support the growth of your business.
+        </p>
+    </section>
+    <section>
+        <div class="row-fluid">
+            <div class="span6">
+                <h2>The UK excels in:</h2>
+                <p>
+                    <b>Electronic systems</b>. In particular, the UK's expertise centres on low-power radio-frequency electronics. We pioneered the first single-chip implementation of Bluetooth, as well as the international standard NarrowBand-IoT (NB-IoT).
+                </p>
+                <p>
+                    <b>Communications</b>. The second largest exporter of telecoms services globally is from the UK, and our information and communication technology sector has been ranked as the most globalised. The UK is at the forefront of 5G development, which will underpin the future of connected devices and the Internet of Things (IoT).
+                </p>
+            </div>
+            <div class="span6">
+                <div class="ed-key-facts-container">
+                    <h2>Key facts</h2>
+                    <ul>
+                        <li>Largest tech market in Europe - bigger than the rest combined</li>
+                        <li>Second largest telecoms service exporter globally</li>
+                        <li>Second largest data centre sector in the world</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12">
+                <p>
+                    <b>Data analytics</b>. The UK has one of the world's strongest and most developed data analytics sectors - creating sources of real-time consumer trends, behaviour and insights.
+                </p>
+                <p>
+                    <b>Data centres</b>. The UK has the largest data centre market in Europe with 26% of the region's capacity.
+                </p>
+                <p>
+                    <b>Artificial intelligence</b>. We are one of the world's most prolific sources of successful artificial intelligence (AI) start-up companies. Machine learning, deep learning and natural language processing are all well-represented by UK companies, with impact in retail, financial services and cyber security.
+                </p>
+                <p>
+                    <b>Semiconductor design</b>. One of the leading suppliers for compound semiconductor materials is from the UK. Most mobile phones in the world contained semiconductor intellectual property which has been designed in the UK.
+                </p>
+                <p>
+                    <b>Sensors</b>. We have one of the world's strongest and most developed intelligent sensor technology ecosystems. The UK produces frontier-based sensor-related IP and sensor technologies across a significant portion of the value chain, from devices to applications, software and services.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>UK technology firms are global success stories</h2>
 
+        <p>
+            There are thousands of technology start-ups in the UK, thanks to our strong entrepreneurial culture. Successful tech companies can be found all over the country and if you're looking to grow your business through tech, the UK is an ideal place to find a trade partner.
+        </p>
+        <p>
+            Our flourishing start-ups complement a host of established global technology companies based here. UK technology success stories include:
+            <ul>
+                <li>a telecommunications services company that operates in 180 markets with revenue of more than £17billion</li>
+                <li>the world's third-largest supplier of enterprise resource planning software</li>
+                <li>a mobile virtual network operator operating in 21 countries worldwide</li>
+                <li>the world's second biggest mobile telecomms network (by number of connections)</li>
+            </ul>
+        </p>
+        <div>
+            <a href="{% url 'public-company-profiles-list' %}?sectors={{ slug }}">Find your UK technology trade partner</a>
+        </div>
+    </section>
+{% endblock %}
 {% block company_list_title %}
-	<h2>See the UK's technology providers on the Find a supplier service</h2>
+    <h2>See the UK's technology providers on the Find a supplier service</h2>
 {% endblock %}
