@@ -46,7 +46,7 @@ HEALTH_SECTOR_CONTEXT = {
                 ' diagnostics for gastroenterology, respiratory and ENT '
                 'conditions.'
             ),
-            'public_profile_url': '#',
+            'public_profile_url': '',
         },
         {
             'image_url': '/static/images/touch-bionics-left-hand.png',
@@ -56,7 +56,7 @@ HEALTH_SECTOR_CONTEXT = {
                 'the world’s first bionic hand with 5 independently moving '
                 'fingers - transforming lives across the globe.'
             ),
-            'public_profile_url': '#',
+            'public_profile_url': '',
         },
     ]
 }
@@ -108,7 +108,7 @@ TECH_SECTOR_CONTEXT = {
                 'managed in the EVRYTHNG cloud has a unique Active Digital '
                 'Identity'
             ),
-            'public_profile_url': '#',
+            'public_profile_url': '',
         },
         {
             'image_url': '/static/images/arkessa.png',
@@ -120,7 +120,7 @@ TECH_SECTOR_CONTEXT = {
                 'enterprises with a secure and future-proof mobility '
                 'platform that is easy to adopt, integrate and scale.'
             ),
-            'public_profile_url': '#',
+            'public_profile_url': '',
         },
     ]
 }
@@ -171,7 +171,7 @@ CREATIVE_SECTOR_CONTEXT = {
                 'augmented reality) to design and create cutting-edge '
                 'lighting, video and interactive installations.'
             ),
-            'public_profile_url': '#',
+            'public_profile_url': '',
         },
         {
             'image_url': '/static/images/blippar.png',
@@ -182,7 +182,7 @@ CREATIVE_SECTOR_CONTEXT = {
                 'artificial intelligence to bring the physical world to '
                 'life through smartphones.'
             ),
-            'public_profile_url': '#',
+            'public_profile_url': '',
         },
     ]
 }
@@ -229,7 +229,7 @@ FOOD_SECTOR_CONTEXT = {
                 'kernels are all air-popped – a healthier cooking method '
                 'compared to frying.'
             ),
-            'public_profile_url': '#',
+            'public_profile_url': '',
         },
         {
             'image_url': '/static/images/fever-tree.png',
@@ -238,7 +238,7 @@ FOOD_SECTOR_CONTEXT = {
                 "Fever-Tree has pioneered premium mixers and is now the "
                 "world's leading premium mixer company."
             ),
-            'public_profile_url': '#',
+            'public_profile_url': '',
         },
     ]
 }
