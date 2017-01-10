@@ -123,6 +123,24 @@ def test_international_landing_sector_list_view_submit(
     )
 
 
+def test_international_landing_page_sector_context_verbose(client):
+    url = reverse('international-sector-detail', kwargs={'slug': 'health'})
+
+    response = client.get(url + '?verbose=true')
+
+    assert response.status_code == http.client.OK
+    assert response.context_data['show_proposition'] is True
+
+
+def test_international_landing_page_sector_context_non_verbose(client):
+    url = reverse('international-sector-detail', kwargs={'slug': 'health'})
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.OK
+    assert response.context_data['show_proposition'] is False
+
+
 def test_international_landing_page_sector_specific_unknown(client):
     url = reverse('international-sector-detail', kwargs={'slug': 'jam'})
 

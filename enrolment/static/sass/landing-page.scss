@@ -403,3 +403,39 @@ a.ed-landing-page-see-more-button {
     font-weight: 300;
   }
 }
+
+.ed-proposition-container {
+  h2 {
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.04;
+    color: #4a4a4a;
+    margin-bottom: 24px;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+  ul {
+    li {
+      list-style-type: disc;
+      margin-bottom: 24px;
+    }
+  }
+
+  .ed-key-facts-container {
+    h2 {
+      margin-top: 0;
+      color: white;
+    }
+    background-color: #007ea3;
+    padding: 20px;
+    color: white;
+  }
+}
+
+.ed-landing-page-read-more {
+  margin-top: 15px;
+}

@@ -19,7 +19,13 @@
 		</div>
 		<div class="ed-landing-page-synopsis">
 			<div class="row-fluid">
-				{% block synopsis %}{% endblock %}
+				{% if show_proposition %}
+					<div class="ed-proposition-container">
+						{% block proposition %}{% endblock %}
+					</div>
+				{% else %}
+					{% block synopsis %}{% endblock %}
+				{% endif %}
 			</div>
 		</div>
 	</section>

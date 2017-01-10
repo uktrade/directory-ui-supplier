@@ -1,7 +1,7 @@
 COMPANIES_HOUSE_SEARCH_URL = 'https://beta.companieshouse.gov.uk'
 
 HEALTH_SECTOR_CONTEXT = {
-    'sector_value': 'FOOD_AND_DRINK',
+    'sector_value': 'HEALTHCARE_AND_MEDICAL',
     'case_study': {
         'image_url': '/static/images/touch-bionics-right-hand.png',
         'image_caption': 'Rebekah Marine: i-limbTM user',
