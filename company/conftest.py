@@ -25,17 +25,17 @@ def retrieve_profile_data():
         'linkedin_url': 'http://www.linkedin.com',
         'supplier_case_studies': [],
         'modified': '2016-11-23T11:21:10.977518Z',
-        'contact_details': {
-            'email_full_name': 'Jeremy',
-            'email_address': 'test@example.com',
-            'postal_full_name': 'Jeremy',
-            'address_line_1': '123 Fake Street',
-            'address_line_2': 'Fakeville',
-            'locality': 'London',
-            'postal_code': 'E14 6XK',
-            'po_box': 'abc',
-            'country': 'GB',
-        },
+        'email_full_name': 'Jeremy',
+        'email_address': 'test@example.com',
+        'postal_full_name': 'Jeremy',
+        'address_line_1': '123 Fake Street',
+        'address_line_2': 'Fakeville',
+        'locality': 'London',
+        'postal_code': 'E14 6XK',
+        'po_box': 'abc',
+        'country': 'GB',
+        'is_address_set': True,
+        'mobile_number': '07506043448',
     }
 
 
@@ -73,16 +73,6 @@ def api_response_company_profile_200(retrieve_profile_data):
     response = requests.Response()
     response.status_code = http.client.OK
     response.json = lambda: deepcopy(retrieve_profile_data)
-    return response
-
-
-@pytest.fixture
-def api_response_company_profile_no_contact_details(retrieve_profile_data):
-    data = retrieve_profile_data.copy()
-    data['contact_details'] = {}
-    response = requests.Response()
-    response.status_code = http.client.OK
-    response.json = lambda: deepcopy(data)
     return response
 
 

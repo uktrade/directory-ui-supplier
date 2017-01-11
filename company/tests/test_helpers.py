@@ -57,17 +57,15 @@ def test_get_company_profile_from_response(retrieve_profile_data):
         'keywords': 'word1 word2',
         'website': 'http://example.com',
         'linkedin_url': 'http://www.linkedin.com',
-        'contact_details': {
-            'email_full_name': 'Jeremy',
-            'address_line_1': '123 Fake Street',
-            'address_line_2': 'Fakeville',
-            'locality': 'London',
-            'postal_code': 'E14 6XK',
-            'po_box': 'abc',
-            'email_address': 'test@example.com',
-            'country': 'GB',
-            'postal_full_name': 'Jeremy',
-        },
+        'email_full_name': 'Jeremy',
+        'address_line_1': '123 Fake Street',
+        'address_line_2': 'Fakeville',
+        'locality': 'London',
+        'postal_code': 'E14 6XK',
+        'po_box': 'abc',
+        'email_address': 'test@example.com',
+        'country': 'GB',
+        'postal_full_name': 'Jeremy',
         'supplier_case_studies': [],
         'sectors': [{'label': 'Security', 'value': 'SECURITY'}],
         'name': 'Great company',
@@ -83,6 +81,8 @@ def test_get_company_profile_from_response(retrieve_profile_data):
         'description': 'Ecommerce website',
         'summary': 'good',
         'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
+        'is_address_set': True,
+        'mobile_number': '07506043448',
     }
 
     actual = helpers.get_company_profile_from_response(response)
@@ -108,20 +108,17 @@ def test_get_public_company_profile_from_response(retrieve_profile_data):
     response.json = lambda: retrieve_profile_data
     expected = {
         'twitter_url': 'http://www.twitter.com',
-        'contact_details': {
-            'po_box': 'abc',
-            'address_line_2': 'Fakeville',
-            'address_line_1': '123 Fake Street',
-            'email_full_name': 'Jeremy',
-            'country': 'GB',
-            'email_address': 'test@example.com',
-            'postal_code': 'E14 6XK',
-            'locality': 'London',
-            'postal_full_name': 'Jeremy',
-        },
+        'po_box': 'abc',
+        'address_line_2': 'Fakeville',
+        'address_line_1': '123 Fake Street',
+        'email_full_name': 'Jeremy',
+        'country': 'GB',
+        'email_address': 'test@example.com',
+        'postal_code': 'E14 6XK',
+        'locality': 'London',
+        'postal_full_name': 'Jeremy',
         'verified_with_code': True,
         'facebook_url': 'http://www.facebook.com',
-        'is_address_set': True,
         'has_social_links': True,
         'website': 'http://example.com',
         'sectors': [{'value': 'SECURITY', 'label': 'Security'}],
@@ -136,6 +133,8 @@ def test_get_public_company_profile_from_response(retrieve_profile_data):
         'employees': '501-1,000',
         'keywords': 'word1 word2',
         'name': 'Great company',
+        'is_address_set': True,
+        'mobile_number': '07506043448',
     }
 
     actual = helpers.get_public_company_profile_from_response(response)
@@ -151,17 +150,15 @@ def test_get_company_list_from_response(public_companies):
             {
                 'logo': 'nice.jpg',
                 'keywords': 'word1 word2',
-                'contact_details': {
-                    'email_full_name': 'Jeremy',
-                    'locality': 'London',
-                    'country': 'GB',
-                    'address_line_2': 'Fakeville',
-                    'address_line_1': '123 Fake Street',
-                    'po_box': 'abc',
-                    'postal_code': 'E14 6XK',
-                    'email_address': 'test@example.com',
-                    'postal_full_name': 'Jeremy',
-                },
+                'email_full_name': 'Jeremy',
+                'locality': 'London',
+                'country': 'GB',
+                'address_line_2': 'Fakeville',
+                'address_line_1': '123 Fake Street',
+                'po_box': 'abc',
+                'postal_code': 'E14 6XK',
+                'email_address': 'test@example.com',
+                'postal_full_name': 'Jeremy',
                 'employees': '501-1,000',
                 'number': '01234567',
                 'supplier_case_studies': [],
@@ -170,7 +167,6 @@ def test_get_company_list_from_response(public_companies):
                 'facebook_url': 'http://www.facebook.com',
                 'linkedin_url': 'http://www.linkedin.com',
                 'name': 'Great company',
-                'is_address_set': True,
                 'twitter_url': 'http://www.twitter.com',
                 'sectors': [
                     {
@@ -182,9 +178,12 @@ def test_get_company_list_from_response(public_companies):
                 'description': 'Ecommerce website',
                 'summary': 'good',
                 'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
-                'date_of_creation': datetime(2015, 3, 2, 0, 0)}
-            ]
-        }
+                'date_of_creation': datetime(2015, 3, 2, 0, 0),
+                'is_address_set': True,
+                'mobile_number': '07506043448',
+            },
+        ]
+    }
 
     actual = helpers.get_company_list_from_response(response)
     assert actual == expected
@@ -226,7 +225,6 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
             'logo': 'nice.jpg',
             'name': 'Great company',
             'sectors': [{'value': 'SECURITY', 'label': 'Security'}],
-            'is_address_set': True,
             'facebook_url': 'http://www.facebook.com',
             'twitter_url': 'http://www.twitter.com',
             'keywords': 'word1 word2',
@@ -236,19 +234,19 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
             'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
             'supplier_case_studies': [],
             'has_social_links': True,
-            'contact_details': {
-                'postal_code': 'E14 6XK',
-                'locality': 'London',
-                'email_address': 'test@example.com',
-                'po_box': 'abc',
-                'postal_full_name': 'Jeremy',
-                'country': 'GB',
-                'address_line_2': 'Fakeville',
-                'email_full_name': 'Jeremy',
-                'address_line_1': '123 Fake Street',
-            },
+            'postal_code': 'E14 6XK',
+            'locality': 'London',
+            'email_address': 'test@example.com',
+            'po_box': 'abc',
+            'postal_full_name': 'Jeremy',
+            'country': 'GB',
+            'address_line_2': 'Fakeville',
+            'email_full_name': 'Jeremy',
+            'address_line_1': '123 Fake Street',
             'verified_with_code': True,
             'employees': '501-1,000',
+            'is_address_set': True,
+            'mobile_number': '07506043448',
         },
         'image_one': 'https://image_one.jpg',
         'video_one': 'https://video_one.wav',
@@ -267,21 +265,14 @@ def test_get_company_profile_from_response_without_date():
 
 
 def test_format_company_details_address_set(retrieve_profile_data):
-    retrieve_profile_data['contact_details'] = {'key': 'value'}
+    retrieve_profile_data['is_address_set'] = True
     actual = helpers.format_company_details(retrieve_profile_data)
 
     assert actual['is_address_set'] is True
 
 
 def test_format_company_details_address_not_set(retrieve_profile_data):
-    retrieve_profile_data['contact_details'] = {}
-    actual = helpers.format_company_details(retrieve_profile_data)
-
-    assert actual['is_address_set'] is False
-
-
-def test_format_company_details_none_address_not_set(retrieve_profile_data):
-    retrieve_profile_data['contact_details'] = None
+    retrieve_profile_data['is_address_set'] = False
     actual = helpers.format_company_details(retrieve_profile_data)
 
     assert actual['is_address_set'] is False

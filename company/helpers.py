@@ -62,9 +62,6 @@ def get_company_list_from_response(response):
 
 def format_company_details(details):
     date_of_creation = format_date_of_creation(details.get('date_of_creation'))
-    # If the contact details json is set to null
-    # then details['contact_details'] will be None
-    contact_details = details['contact_details'] or {}
     case_studies = map(format_case_study, details['supplier_case_studies'])
     return {
         'website': details['website'],
@@ -81,11 +78,20 @@ def format_company_details(details):
         'modified': datetime.datetime.strptime(
             details['modified'], '%Y-%m-%dT%H:%M:%S.%fZ'),
         'verified_with_code': details['verified_with_code'],
-        'is_address_set': contact_details != {},
-        'contact_details': contact_details,
+        'is_address_set': details['is_address_set'],
+        'postal_full_name': details['postal_full_name'],
+        'address_line_1': details['address_line_1'],
+        'address_line_2': details['address_line_2'],
+        'locality': details['locality'],
+        'country': details['country'],
+        'postal_code': details['postal_code'],
+        'po_box': details['po_box'],
+        'mobile_number': details['mobile_number'],
         'twitter_url': details['twitter_url'],
         'facebook_url': details['facebook_url'],
         'linkedin_url': details['linkedin_url'],
+        'email_address': details['email_address'],
+        'email_full_name': details['email_full_name'],
         'has_social_links': bool(
             details['twitter_url'] or
             details['facebook_url'] or
