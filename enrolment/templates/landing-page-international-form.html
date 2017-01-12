@@ -7,40 +7,38 @@
 		</p>
 
 		<div class="row-fluid">
-			<form action="" method="post">
+			<form action="" method="post" style="margin-top: 30px;">
 				<div class="row-fluid">
 					<div class="span4">
 						<div class="{{ form.full_name.css_classes|default:'input-field-container' }}">
-							{{ form.full_name.errors }}
 							<label for="{{ form.full_name.id_for_label }}">
-								<b>{{ form.full_name.label }}</b>
+								<span>{{ form.full_name.label }}</span>
+								{{ form.full_name.errors }}
 								{{ form.full_name }}
 							</label>
 						</div>
 					</div>
 
 					<div class="span4">
-						<div class="{{ form.full_name.css_classes|default:'input-field-container' }}">
-							{{ form.email_address.errors }}
+						<div class="{{ form.email_address.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.email_address.id_for_label }}">
-								<b>{{ form.email_address.label }}</b>
+								<span>{{ form.email_address.label }}</span>
+								{{ form.email_address.errors }}
 								{{ form.email_address }}
 							</label>
 						</div>
 					</div>
 
 					<div class="span4">
-						<div class="{{ form.full_name.css_classes|default:'input-field-container' }}">
-							{{ form.sector.errors }}
+						<div class="{{ form.sector.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.sector.id_for_label }}">
-								<b>{{ form.sector.label }}</b>
+								<span>{{ form.sector.label }}</span>
+								{{ form.sector.errors }}
 								{{ form.sector }}
 							</label>
 						</div>
 					</div>
 				</div>
-
-				<hr class="custom-hr">
 
 				<div class="row-fluid">
 					<div class="span10 checkbox-tc {{ form.terms.css_classes|default:'input-field-container' }}" style="text-align: right;">
