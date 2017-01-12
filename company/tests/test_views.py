@@ -106,6 +106,23 @@ def test_public_company_profile_details_handles_bad_status(
         client.get(url)
 
 
+@patch.object(helpers, 'get_public_company_profile_from_response')
+@patch.object(views.api_client.company,
+              'retrieve_public_profile_by_companies_house_number')
+def test_public_company_profile_details_handles_404(
+    mock_retrieve_public_profile,
+    mock_get_public_company_profile_from_response, client, api_response_404
+):
+    mock_retrieve_public_profile.return_value = api_response_404
+    url = reverse(
+        'public-company-profiles-detail', kwargs={'company_number': '01234567'}
+    )
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.NOT_FOUND
+
+
 def test_company_profile_list_exposes_selected_sector_label(client):
     url = reverse('public-company-profiles-list')
     params = {'sectors': choices.COMPANY_CLASSIFICATIONS[1][0]}
