@@ -69,6 +69,7 @@ def format_company_details(details):
     return {
         'website': details['website'],
         'description': details['description'],
+        'summary': details['summary'],
         'number': details['number'],
         'date_of_creation': date_of_creation,
         'sectors': pair_sector_values_with_label(details['sectors']),
@@ -94,7 +95,5 @@ def format_company_details(details):
 
 
 def format_case_study(case_study):
-    case_study['sector'] = {
-        'label': get_sectors_label(case_study['sector']),
-    }
+    case_study['sector'] = pair_sector_value_with_label(case_study['sector'])
     return case_study

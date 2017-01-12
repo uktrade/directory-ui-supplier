@@ -10,8 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
-from django.utils.translation import ugettext_lazy as _
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -100,12 +98,15 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 LANGUAGES = [
-  ('en-gb', _('English')),
-  ('de', _('German')),
-  ('zh-hans', _('Simplified Chinese')),
+  ('en-gb', 'English'),
+  ('de', 'Deutsch'),  # German
+  ('zh-hans', '简体中文'),  # Simplified Chinese
 ]
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
+)
+FEATURE_LANGUAGE_SWITCHER_ENABLED = (
+    os.getenv('FEATURE_LANGUAGE_SWITCHER_ENABLED') == 'true'
 )
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
@@ -216,8 +217,3 @@ API_CLIENT_CLASSES = {
 }
 API_CLIENT_CLASS_NAME = os.getenv('API_CLIENT_CLASS_NAME', 'default')
 API_CLIENT_CLASS = API_CLIENT_CLASSES[API_CLIENT_CLASS_NAME]
-
-
-FEATURE_NEW_INTERNATIONAL_LANDING_PAGE_ENABLED = (
-    os.getenv('FEATURE_NEW_INTERNATIONAL_LANDING_PAGE_ENABLED') == 'true'
-)

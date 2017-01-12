@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.shortcuts import Http404
 from django.template.response import TemplateResponse
+from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
 from api_client import api_client
@@ -17,18 +18,33 @@ class HandleBuyerFormSubmitMixin:
         return TemplateResponse(self.request, self.success_template)
 
 
-class InternationalLandingView(HandleBuyerFormSubmitMixin, FormView):
-    template_name_new = 'landing-page-international.html'
-    template_name_old = 'landing-page-international-old.html'
+class ShowLanguageSwitcherMixin:
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['language_switcher'] = {
+            'show': settings.FEATURE_LANGUAGE_SWITCHER_ENABLED,
+            'form': forms.LanguageForm(
+                initial=forms.get_language_form_initial_data(),
+            )
+        }
+        return context
 
-    def get_template_names(self):
-        if settings.FEATURE_NEW_INTERNATIONAL_LANDING_PAGE_ENABLED:
-            return [self.template_name_new]
-        return [self.template_name_old]
+
+class InternationalLandingView(ShowLanguageSwitcherMixin,
+                               HandleBuyerFormSubmitMixin, FormView):
+    template_name = 'landing-page-international.html'
 
 
 class InternationalLandingSectorListView(HandleBuyerFormSubmitMixin, FormView):
     template_name = 'landing-page-international-sector-list.html'
+
+
+class PrivacyCookiesView(TemplateView):
+    template_name = 'privacy-and-cookies.html'
+
+
+class TermsView(TemplateView):
+    template_name = 'terms-and-conditions.html'
 
 
 class InternationalLandingSectorDetailView(HandleBuyerFormSubmitMixin,
@@ -66,4 +82,6 @@ class InternationalLandingSectorDetailView(HandleBuyerFormSubmitMixin,
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context.update(self.pages[self.kwargs['slug']]['context'])
+        context['show_proposition'] = 'verbose' in self.request.GET
+        context['slug'] = self.kwargs['slug']
         return context

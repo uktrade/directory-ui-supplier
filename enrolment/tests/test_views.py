@@ -4,6 +4,7 @@ from unittest.mock import patch
 
 import pytest
 
+from django.conf import settings
 from django.core.urlresolvers import reverse
 
 from enrolment import constants, forms
@@ -89,24 +90,6 @@ def api_response_company_profile_no_date_of_creation_200(api_response_200):
     return response
 
 
-def test_international_landing_view_template_new(settings, anon_request):
-    settings.FEATURE_NEW_INTERNATIONAL_LANDING_PAGE_ENABLED = True
-    view = InternationalLandingView
-
-    response = view.as_view()(anon_request)
-
-    assert response.template_name == [view.template_name_new]
-
-
-def test_international_landing_view_template_old(settings, anon_request):
-    settings.FEATURE_NEW_INTERNATIONAL_LANDING_PAGE_ENABLED = False
-    view = InternationalLandingView
-
-    response = view.as_view()(anon_request)
-
-    assert response.template_name == [view.template_name_old]
-
-
 @patch.object(api_client.buyer, 'send_form')
 def test_international_landing_view_submit(
     mock_send_form, buyer_request, buyer_form_data
@@ -117,6 +100,14 @@ def test_international_landing_view_submit(
     mock_send_form.assert_called_once_with(
         forms.serialize_international_buyer_forms(buyer_form_data)
     )
+
+
+def test_international_landing_view_context(anon_request):
+    response = InternationalLandingView.as_view()(anon_request)
+
+    context = response.context_data['language_switcher']
+    assert context['show']
+    assert context['form'].initial == {'lang': settings.LANGUAGE_CODE}
 
 
 @patch.object(api_client.buyer, 'send_form')
@@ -130,6 +121,24 @@ def test_international_landing_sector_list_view_submit(
     mock_send_form.assert_called_once_with(
         forms.serialize_international_buyer_forms(buyer_form_data)
     )
+
+
+def test_international_landing_page_sector_context_verbose(client):
+    url = reverse('international-sector-detail', kwargs={'slug': 'health'})
+
+    response = client.get(url + '?verbose=true')
+
+    assert response.status_code == http.client.OK
+    assert response.context_data['show_proposition'] is True
+
+
+def test_international_landing_page_sector_context_non_verbose(client):
+    url = reverse('international-sector-detail', kwargs={'slug': 'health'})
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.OK
+    assert response.context_data['show_proposition'] is False
 
 
 def test_international_landing_page_sector_specific_unknown(client):
@@ -160,3 +169,19 @@ def test_international_landing_page_sector_context(client):
     assert pages['tech']['context'] == constants.TECH_SECTOR_CONTEXT
     assert pages['creative']['context'] == constants.CREATIVE_SECTOR_CONTEXT
     assert pages['food-and-drink']['context'] == constants.FOOD_SECTOR_CONTEXT
+
+
+def test_terms_page_success(client):
+    url = reverse('terms-and-conditions')
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.OK
+
+
+def test_privacy_cookiues_success(client):
+    url = reverse('privacy-and-cookies')
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.OK

@@ -497,7 +497,9 @@ body {
   background-size: cover;
   .ed-hero-sub-header-title {
     h2 {
-      font-weight: normal;
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 1.25em;
       margin-bottom: 20px;
       @media (max-width: 979px) {
         text-align: center;
@@ -508,7 +510,7 @@ body {
 }
 
 #footer.ed-footer {
-  background: #1E1348;
+  background: #444444;
   padding: 40px 40px 50px;
   @media (max-width: 960px) {
     padding: 40px 0;
@@ -547,16 +549,19 @@ body {
   .footer-wrapper {
     background: #1E1348;
   }
-  ul li {
-    a {
-      color: $white;
-    }
-    a:focus {
-      background: #007EA3;
-      color: #ffffff;
-    }
+  a {
+    color: $white;
+    font-size: 17px;
   }
-
+  a:focus {
+    background: #007EA3;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .ed-text-divider {
+    padding: 5px;
+    color: white;
+  }
   .hmg-logo {
     img {
       max-width: 250px;
@@ -567,34 +572,9 @@ body {
       max-width: 200px;
     }
   }
-  p.copyright-text {
-    color: #dce0df;
-    font-size: 14px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    font-weight: 300;
-  }
-  .footer-img--top {
-    margin-bottom: 10px;
-  }
-
-  h3.footer-header {
-    color: $white;
-    font-weight: 500;
-    font-size: 20px;
-    margin: 0 0 30px 0;
-    padding: 0;
-    line-height: 30px;
-  }
-  ul.footer-links-container {
-    margin: 0;
-    li.footer-links {
-      margin-bottom: 15px;
-      a {
-        font-size: 18px;
-        font-weight: 400;
-      }
-    }
+  .copyright-text {
+    color: white;
+    font-size: 17px;
   }
 }
 
@@ -687,7 +667,7 @@ a.no-focus-highlight {
   .company-name-title {
     color: $white;
     font-size: 36px;
-    font-weight: 500;
+    font-weight: 300;
     width: 60%;
 
     span {
@@ -742,7 +722,7 @@ a.no-focus-highlight {
 
 .ed-arrow_box {
   position: relative;
-  background: #D8D8D8;
+  background: #d8d8d8;
 }
 
 .ed-arrow_box:after {
@@ -755,7 +735,7 @@ a.no-focus-highlight {
   position: absolute;
   pointer-events: none;
   border-color: rgba(237, 237, 237, 0);
-  border-top-color: #D8D8D8;
+  border-top-color: #d8d8d8;
   border-width: 20px 20px 0px 0px;
   margin-left: -20px;
 }
@@ -808,8 +788,9 @@ a.ed-filled-button-primary {
     left: 0;
     color: white;
     padding: 5px;
-    background: black;
-    opacity: 0.7;
+    background: #4a4a4a;
+    opacity: 0.5;
+    padding: 10px;
   }
 }
 
@@ -830,6 +811,11 @@ a.ed-filled-button-primary {
   img {
     height: 35px;
     margin-top: 15px;
+    margin-top: 20px;
+    @media (max-width: 767px) {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
   }
   .btn-navbar {
     margin-top: 12px;
@@ -860,4 +846,38 @@ a.ed-filled-button-primary {
 
 .ed-special-bottom-border {
   border-bottom: 7px solid #B00D23;
+}
+
+.ed-language-switcher {
+  color: #ffffff;
+  form {
+    margin-bottom: 0;
+    padding: 0 5px 0 5px;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    select {
+      font-size: 15px;
+      padding: 0;
+      padding-bottom: 2px;
+      margin: 0;
+      height: 40px;
+      background: transparent;
+      color: #ffffff;
+      border: 0;
+      border-radius: 0;
+      width: 90px;
+      option {
+        color: black;
+      }
+    }
+    button {
+      font-size: 15px;
+      background: transparent;
+      border: 1px solid #ffffff;
+      color: #ffffff;
+      border-radius: 4px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
 }

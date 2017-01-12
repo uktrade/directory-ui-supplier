@@ -5,6 +5,9 @@
         <a href="https://www.gov.uk/" target="_blank">
             <img src="{% static 'images/hmg-logo.png' %}" alt="HMG Logo">
         </a>
+        <span class="pull-right">
+          {% include 'language_switcher.html' %}
+        </span>
     </div>
 </header>
 <div class="navbar ed-header-buttons">
@@ -26,7 +29,7 @@
                 <a href="{% url 'public-company-profiles-list' %}">Trade Profiles</a>
             </li>
             <li  {% if active_view_name == 'international-sector-list'%}class="active"{% endif %}>
-                <a href="{% url 'international-sector-list' %}">Sectors</a>
+                <a href="{% url 'international-sector-list' %}">Industries</a>
             </li>
         </ul>
       </div>

@@ -5,8 +5,7 @@
 {% endblock %}
 
 {% block hero_title %}
-Lorem ipsum dolor sit amet consectetur
-adipiscing elit sed do eiusmod tempor
+Discover the UK's capability in these key industries
 {% endblock %}
 
 {% block content %}
@@ -15,14 +14,18 @@ adipiscing elit sed do eiusmod tempor
 		<div class="row-fluid">
 			<div class="span12 great-blue-bar">
 				<h1 class="element-within company-name-title">
-					<span class="dont-break-out">UK Sectors</span>
+					<span class="dont-break-out">UK trade industries</span>
 				</h1>
 			</div>
 		</div>
 		<div class="ed-landing-page-synopsis">
 			<div class="row-fluid">
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					As an international business decision-maker you need look no further than the UK for innovative, high-quality products and services. This is the place to make the right trade connections with global corporations and smaller enterprises across every industry.
+
+				</p>
+				<p>
+					We can help you make vital business connections with ideal companies. Choose from the businesses in these UK industries to work with you today.
 				</p>
 			</div>
 		</div>
@@ -30,61 +33,65 @@ adipiscing elit sed do eiusmod tempor
 
 	<div>
 		<div class="row-fluid ed-landing-page-gap">
-			<div class="span6 ed-landing-page-sector-container">
+			<div class="span6 ed-landing-page-sector-container ed-landing-page-sector-container-min-height">
 				<div class="span4">
-					<img class="ed-landing-page-sector-image" src="{% static 'images/sector-image.png' %}" />
+					<img class="ed-landing-page-sector-image" src="{% static 'images/square-health.jpg' %}" />
 				</div>
 				<div class="span8">
-					<h2>Sector name</h2>
+					<h2>Healthcare and life sciences in the UK</h2>
 					<p class="ed-landing-page-sector-synopsis">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+						Get access to the UK health and life sciences supply-chain, delivering high quality, innovative services to the world.
 					</p>
-					<p>
-						<a href="#">Lorem ipsum dolor (In English)</a>
+					<p class="ed-landing-page-sector-link-container">
+						<a href="{% url 'international-sector-detail' slug='health' %}">Find out more about the UK’s healthcare and life sciences</a>
 					</p>
 				</div>
 			</div>
-			<div class="span6 ed-landing-page-sector-container">
+			<div class="span6 ed-landing-page-sector-container ed-landing-page-sector-container-min-height">
 				<div class="span4">
-					<img class="ed-landing-page-sector-image"  src="{% static 'images/sector-image.png' %}" />
+					<img class="ed-landing-page-sector-image"  src="{% static 'images/square-technology.jpg' %}" />
 				</div>
 				<div class="span8">
-					<h2>Sector name</h2>
+					<h2>The UK's advanced technology</h2>
 					<p class="ed-landing-page-sector-synopsis">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+						Check out the latest cutting-edge technological innovations that the UK is bringing to the world.
 					</p>
-					<p>
-						<a href="#">Lorem ipsum dolor (In English)</a>
+					<br>
+					<br>
+					<p class="ed-landing-page-sector-link-container">
+						<a href="{% url 'international-sector-detail' slug='tech' %}">Find out more about UK technology</a>
 					</p>
 				</div>
 			</div>
 		</div>
 		<div class="row-fluid ed-landing-page-gap">
-			<div class="span6 ed-landing-page-sector-container">
+			<div class="span6 ed-landing-page-sector-container ed-landing-page-sector-container-min-height">
 				<div class="span4">
-					<img class="ed-landing-page-sector-image" src="{% static 'images/sector-image.png' %}" />
+					<img class="ed-landing-page-sector-image" src="{% static 'images/square-creative.jpg' %}" />
 				</div>
 				<div class="span8">
-					<h2>Sector name</h2>
+					<h2>The UK's creative services</h2>
 					<p class="ed-landing-page-sector-synopsis">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+						Whether you need buildings designed, films made or a fresh approach to marketing, the UK is the first place to look.
 					</p>
-					<p>
-						<a href="#">Lorem ipsum dolor (In English)</a>
+					<br>
+					<p class="ed-landing-page-sector-link-container">
+						<a href="{% url 'international-sector-detail' slug='creative' %}">Find out more about the UK’s creative services</a>
 					</p>
 				</div>
 			</div>
-			<div class="span6 ed-landing-page-sector-container">
+			<div class="span6 ed-landing-page-sector-container ed-landing-page-sector-container-min-height">
 				<div class="span4">
-					<img class="ed-landing-page-sector-image"  src="{% static 'images/sector-image.png' %}" />
+					<img class="ed-landing-page-sector-image"  src="{% static 'images/square-food.jpg' %}" />
 				</div>
 				<div class="span8">
-					<h2>Sector name</h2>
+					<h2>The UK’s food and drink</h2>
 					<p class="ed-landing-page-sector-synopsis">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+						Whether you want the most innovative food brands or exceptional quality drinks, the UK is the first place to look.
 					</p>
-					<p>
-						<a href="#">Lorem ipsum dolor (In English)</a>
+					<br>
+					<p class="ed-landing-page-sector-link-container">
+						<a href="{% url 'international-sector-detail' slug='food-and-drink' %}">Find out more about UK food and drink</a>
 					</p>
 				</div>
 			</div>

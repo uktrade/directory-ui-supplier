@@ -122,3 +122,59 @@ def test_company_public_profile_list_paginate_prev():
     html = render_to_string('company-public-profile-list.html', context)
 
     assert 'href="?sectors=WATER&page=1"' in html
+
+
+def test_case_study_detail_report_button():
+    context = {
+        'case_study': {
+            'company': {
+                'number': '012344',
+            }
+        }
+    }
+    html = render_to_string('supplier-case-study-detail.html', context)
+    href = "mailto:help@digital.trade.gov.uk?subject=Report%20profile%20012344"
+
+    assert href in html
+
+
+def test_public_profile_report_button():
+    context = {
+        'company': {
+            'number': '012344',
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+    href = "mailto:help@digital.trade.gov.uk?subject=Report%20profile%20012344"
+
+    assert href in html
+
+
+def test_public_profile_verbose():
+    context = {
+        'show_description': True,
+        'company': {
+            'summary': 'the summary!',
+            'description': 'the description!'
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert 'href="?verbose=true"' not in html
+    assert context['company']['summary'] not in html
+    assert context['company']['description'] in html
+
+
+def test_public_profile_non_verbose():
+    context = {
+        'show_description': False,
+        'company': {
+            'summary': 'the summary!',
+            'description': 'the description!'
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert 'href="?verbose=true"' in html
+    assert context['company']['summary'] in html
+    assert context['company']['description'] not in html

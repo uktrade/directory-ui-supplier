@@ -1,13 +1,19 @@
 from django import forms
+from django.conf import settings
 from django.utils.safestring import mark_safe
+from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
 
 from directory_validators.constants import choices
 from directory_constants.constants import urls
 
 
+class LanguageForm(forms.Form):
+    lang = forms.ChoiceField(choices=settings.LANGUAGES)
+
+
 class InternationalBuyerForm(forms.Form):
-    PLEASE_SELECT_LABEL = _('Please select a sector')
+    PLEASE_SELECT_LABEL = _('Please select an industry')
     TERMS_CONDITIONS_MESSAGE = _(
         'Tick the box to confirm you agree to the terms and conditions.'
     )
@@ -18,7 +24,7 @@ class InternationalBuyerForm(forms.Form):
     full_name = forms.CharField(label=_('Your name'))
     email_address = forms.EmailField(label=_('Email address'))
     sector = forms.ChoiceField(
-        label=_('Sector'),
+        label=_('Industry'),
         choices=(
             [['', PLEASE_SELECT_LABEL]] + list(choices.COMPANY_CLASSIFICATIONS)
         )
@@ -50,4 +56,10 @@ def serialize_international_buyer_forms(cleaned_data):
         'name': cleaned_data['full_name'],
         'email': cleaned_data['email_address'],
         'sector': cleaned_data['sector'],
+    }
+
+
+def get_language_form_initial_data():
+    return {
+        'lang': translation.get_language()
     }

@@ -5,8 +5,6 @@
 {% endblock %}
 
 {% block hero_title %}
-Lorem ipsum dolor sit amet consectetur
-adipiscing elit sed do eiusmod tempor
 {% endblock %}
 
 {% block content %}
@@ -21,7 +19,13 @@ adipiscing elit sed do eiusmod tempor
 		</div>
 		<div class="ed-landing-page-synopsis">
 			<div class="row-fluid">
-				{% block synopsis %}{% endblock %}
+				{% if show_proposition %}
+					<div class="ed-proposition-container">
+						{% block proposition %}{% endblock %}
+					</div>
+				{% else %}
+					{% block synopsis %}{% endblock %}
+				{% endif %}
 			</div>
 		</div>
 	</section>
@@ -38,13 +42,15 @@ adipiscing elit sed do eiusmod tempor
 						<img class="ed-landing-page-sector-company-image" src="{{ company.image_url }}" />
 					</div>
 					<div class="row-fluid">
-						<h2>{{ company.name }}</h2>
+						<h2 style="font-size: 21px;">{{ company.name }}</h2>
 						<p class="ed-landing-page-sector-synopsis">
 							{{ company.description }}
 						</p>
+						{% if company.public_profile_url %}
 						<p>
 							<a href="{{ company.public_profile_url }}">Read more</a>
 						</p>
+						{% endif %}
 					</div>
 				</div>
 			{% endfor %}
@@ -84,7 +90,7 @@ adipiscing elit sed do eiusmod tempor
 					<a href="{{ case_study.url }}"></a>
 				</p>
 			</div>
-			<div class="span4 arrow_box ed-landing-page-case-study-testomonial-container">
+			<div class="span4 ed-arrow_box ed-landing-page-case-study-testomonial-container">
 				<p class="ed-landing-page-sector-synopsis">
 					<b>"{{ case_study.testimonial }}"</b>
 				</p>
@@ -96,7 +102,7 @@ adipiscing elit sed do eiusmod tempor
 					<b>{{ case_study.company_name }}</b>
 				</b>
 				<p>
-					<span>Sectors: </span>
+					<span>Industries: </span>
 					{% for sector in case_study.sectors %}
 						<a href="{% url 'public-company-profiles-list' %}?sectors={{sector.value }}">{{ sector.label }}</a>
 						{% if not forloop.last %}, {% endif %}
@@ -109,7 +115,7 @@ adipiscing elit sed do eiusmod tempor
 		</div>
 	</section>
 	<section class="ed-landing-page-form-container">
-		<div class="ed-landing-page-form-inner">
+		<div class="ed-landing-page-form-inner" style="padding-top: 5px;">
 			<h2>Find a UK company that can meet your needs</h2>
 			<p>
 			{% block form_value_proposition %}
@@ -151,8 +157,7 @@ adipiscing elit sed do eiusmod tempor
 						</div>
 					</div>
 
-					<hr class="custom-hr">
-
+					<br>
 					<div class="row-fluid">
 						<div class="span10 checkbox-tc {{ form.terms.css_classes|default:'input-field-container' }}" style="text-align: right;">
 							{{ form.terms.errors }}

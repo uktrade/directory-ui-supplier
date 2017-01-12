@@ -4,6 +4,8 @@ from enrolment.views import (
     InternationalLandingView,
     InternationalLandingSectorListView,
     InternationalLandingSectorDetailView,
+    PrivacyCookiesView,
+    TermsView,
 )
 from company.views import (
     PublicProfileListView,
@@ -28,12 +30,12 @@ urlpatterns = [
         name='public-company-profiles-detail',
     ),
     url(
-        r'^sectors$',
+        r'^industries$',
         InternationalLandingSectorListView.as_view(),
         name='international-sector-list',
     ),
     url(
-        r'^sectors/(?P<slug>.+)$',
+        r'^industries/(?P<slug>.+)$',
         InternationalLandingSectorDetailView.as_view(),
         name='international-sector-detail',
     ),
@@ -41,5 +43,15 @@ urlpatterns = [
         r'^case-study/(?P<id>.+)$',
         CaseStudyDetailView.as_view(),
         name='case-study-details'
+    ),
+    url(
+        r'^privacy-policy$',
+        PrivacyCookiesView.as_view(),
+        name='privacy-and-cookies'
+    ),
+    url(
+        r'^terms-and-conditions$',
+        TermsView.as_view(),
+        name='terms-and-conditions'
     ),
 ]

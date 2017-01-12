@@ -18,9 +18,10 @@ input_output_map="\
 	enrolment/static/sass/company-profile-form.scss:enrolment/static/company-profile-form.css \
 	enrolment/static/sass/supplier-profile-details.scss:enrolment/static/supplier-profile-details.css \
 	enrolment/static/sass/landing-page.scss:enrolment/static/landing-page.css \
+	enrolment/static/sass/legal.scss:enrolment/static/legal.css \
 "
 
 prod_command="sass --style compressed"
 
-eval 'rm enrolment/static/*.css profile/static/*.css'
+eval 'rm enrolment/static/*.css'
 eval $prod_command$libraries$input_output_map
