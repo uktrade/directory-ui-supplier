@@ -13,7 +13,7 @@
 		<div class="row-fluid">
 			<div class="span12 great-blue-bar">
 				<h1 class="element-within company-name-title">
-					<span class="dont-break-out">{% block title%}{% endblock %}</span>
+					<span class="dont-break-out">Find UK companies to do business with</span>
 				</h1>
 			</div>
 		</div>
@@ -114,70 +114,23 @@
 			</div>
 		</div>
 	</section>
-	<section class="ed-landing-page-form-container">
-		<div class="ed-landing-page-form-inner" style="padding-top: 5px;">
-			<h2>Find a UK company that can meet your needs</h2>
-			<p>
-			{% block form_value_proposition %}
-				Choose from hundreds of UK companies offering exceptional products and services. Register to be notified as soon as companies that match your needs are live on the Find a Supplier service.
-			{% endblock %}
-			</p>
 
-			<div class="row-fluid">
-				<form action="" method="post">
-					<div class="row-fluid">
-						<div class="span4">
-							<div class="{{ form.full_name.css_classes|default:'input-field-container' }}">
-								{{ form.full_name.errors }}
-								<label for="{{ form.full_name.id_for_label }}">
-									<b>{{ form.full_name.label }}</b>
-									{{ form.full_name }}
-								</label>
-							</div>
-						</div>
-
-						<div class="span4">
-							<div class="{{ form.full_name.css_classes|default:'input-field-container' }}">
-								{{ form.email_address.errors }}
-								<label for="{{ form.email_address.id_for_label }}">
-									<b>{{ form.email_address.label }}</b>
-									{{ form.email_address }}
-								</label>
-							</div>
-						</div>
-
-						<div class="span4">
-							<div class="{{ form.full_name.css_classes|default:'input-field-container' }}">
-								{{ form.sector.errors }}
-								<label for="{{ form.sector.id_for_label }}">
-									<b>{{ form.sector.label }}</b>
-									{{ form.sector }}
-								</label>
-							</div>
-						</div>
-					</div>
-
-					<br>
-					<div class="row-fluid">
-						<div class="span10 checkbox-tc {{ form.terms.css_classes|default:'input-field-container' }}" style="text-align: right;">
-							{{ form.terms.errors }}
-							<label for="{{ form.terms.id_for_label }}" style="margin-top: 15px;">
-								{{ form.terms.label }}
-								<input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox" style="vertical-align: top; margin-top: 7px;">
-							</label>
-						</div>
-
-						<div class="span2 btn-container ed-landing-page-register-button-container">
-							<button class="button" style="border-radius: 4px;">
-								Register
-							</button>
-						</div>
-					</div>
-				</form>
-
+	<section>
+		<div class="row-fluid ed-landing-page-find-other-companies-container ed-landing-page-find-other-companies-container-bottom">
+			<div class="span8">
+				<h3>Find other great UK companies</h3>
+				<p class="ed-landing-page-sector-synopsis">
+					Exceptionally innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service.
+				</p>
+			</div>
+			<div class="span4">
+				<div class="btn-container">
+					<a class="button" href="{% url 'public-company-profiles-list' %}?sectors={{sector_value}}">
+						Browse UK companies
+					</a>
+				</div>
 			</div>
 		</div>
 	</section>
-
 </div>
 {% endblock content %}
