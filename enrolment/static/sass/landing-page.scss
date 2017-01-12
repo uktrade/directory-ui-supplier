@@ -45,27 +45,6 @@
   }
 }
 
-.input-field-container {
-	margin-bottom: 0;
-	input, select {
-		height: 60px;
-		margin-bottom: 0;
-		padding: 0 24px;
-		@media (max-width: 767px) {
-			margin-bottom: 20px;
-		}
-	}
-	label {
-		margin-bottom: 0;
-	}
-}
-
-.checkbox-tc {
-  @media (max-width: 767px) {
-    margin-bottom: 20px;
-  }
-}
-
 .page-title {
 	color: #fff;
 	font-size: 36px;
