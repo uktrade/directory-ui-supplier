@@ -100,7 +100,12 @@ class CaseStudyDetailView(TemplateView):
         response = api_client.company.retrieve_public_case_study(
             case_study_id=self.kwargs['id'],
         )
-        if not response.ok:
+        if response.status_code == http.client.NOT_FOUND:
+            raise Http404(
+                "API returned 404 for case study with id %s",
+                self.kwargs['id'],
+            )
+        elif not response.ok:
             response.raise_for_status()
         return helpers.get_case_study_details_from_response(response)
 

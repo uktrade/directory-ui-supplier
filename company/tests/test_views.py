@@ -217,3 +217,15 @@ def test_supplier_case_study_handles_bad_status(
 
     with pytest.raises(requests.exceptions.HTTPError):
         client.get(url)
+
+
+@patch.object(views.api_client.company, 'retrieve_public_case_study')
+def test_supplier_case_study_handles_404(
+    mock_retrieve_public_case_study, client, api_response_404
+):
+    mock_retrieve_public_case_study.return_value = api_response_404
+    url = reverse('case-study-details', kwargs={'id': '2'})
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.NOT_FOUND
