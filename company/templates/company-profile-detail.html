@@ -38,18 +38,18 @@
 				{% endif %}
 				{% if company.contact_details.email_address %}
 					<p>
-						<a class="ga-tracking-contact-supplier" href="mailto:{{ company.contact_details.email_address }}?subject=International%20buyer%20contact%20via%20your%20great.gov.uk%20trade%20profile">{{ company.contact_details.email_address }}</a>
+						<a class="ga-tracking-contact-supplier" href="mailto:{{ company.contact_details.email_address }}?subject=International%20buyer%20contact%20via%20your%20great.gov.uk%20trade%20profile">Contact company</a>
 					</p>
 				{% endif %}
 			</div>
 
 			<div class="span4 company-profile-module-inner" style="border-left: 1px solid #dedede;">
 				<h3>Facts &amp details</h3>
-				<p>Number of employees: {{ company.employees|default:'N/A' }}</p>
-				<p>Registration number: {{company.number}}</p>
 				{% if company.date_of_creation %}
-					<p>Incorporated: {{company.date_of_creation|date:'Y'}}</p>
+					<p>Incorporated in: <b>{{company.date_of_creation|date:'Y'}}</b></p>
 				{% endif %}
+				<p>Company number: <b>{{company.number}}</b></p>
+				<p>Number of employees: <b>{{ company.employees|default:'N/A' }}</b></p>
 			</div>
 		</div>
 
