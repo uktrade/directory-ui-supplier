@@ -732,7 +732,6 @@ a.ed-naked-button-error {
 // do not remove the `a.` prefix - it increases the specificity
 // to ensure `color` we set here is respected.
 a.ed-filled-button-primary {
-  border-radius: 4px;
   background-color: #00549F;
   width: 100%;
   text-align: center;
@@ -752,9 +751,11 @@ a.ed-filled-button-primary {
   font-family: 'Roboto', sans-serif;
   &:focus {
     background: #007EA3;
+    color: white;
     outline: 0;
   }
 }
+
 
 .ed-image-caption {
   position: relative;

@@ -195,8 +195,13 @@
 
 	</div>
 	<div class="row-fluid ed-report-profile-container">
-		<div class="span12">
+		<div class="span6" style="padding-top: 25px;">
 			<a href="mailto:help@digital.trade.gov.uk?subject=Report%20profile%20{{company.number}}">Report profile</a>
+		</div>
+		<div class="span6 pull-right" style="text-align: right;">
+			{% if company.email_address %}
+				<a class="ed-filled-button-primary" href="mailto:{{ company.email_address }}?subject=International%20buyer%20contact%20via%20your%20great.gov.uk%20trade%20profile">Contact company</a>
+			{% endif %}
 		</div>
 	</div>
 </div>
