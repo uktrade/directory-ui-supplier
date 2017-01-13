@@ -1,3 +1,7 @@
+from django.conf import settings
+
+links = settings.SECTOR_LINKS
+
 COMPANIES_HOUSE_SEARCH_URL = 'https://beta.companieshouse.gov.uk'
 
 HEALTH_SECTOR_CONTEXT = {
@@ -13,7 +17,7 @@ HEALTH_SECTOR_CONTEXT = {
             'prosthetic hand and prosthetic finger solutions to help '
             'people increase their independence and confidence.'
         ),
-        'url': '#',
+        'url': links['HEALTHCARE_AND_MEDICAL']['case_study'],
         'testimonial': (
             'The i-limb™ quantum is the next best thing to real hands and as '
             'a bilateral amputee having the ability to do what I want to do '
@@ -46,7 +50,7 @@ HEALTH_SECTOR_CONTEXT = {
                 ' diagnostics for gastroenterology, respiratory and ENT '
                 'conditions.'
             ),
-            'public_profile_url': '',
+            'url': links['HEALTHCARE_AND_MEDICAL']['company_one'],
         },
         {
             'image_url': '/static/images/touch-bionics-left-hand.png',
@@ -56,7 +60,7 @@ HEALTH_SECTOR_CONTEXT = {
                 'the world’s first bionic hand with 5 independently moving '
                 'fingers - transforming lives across the globe.'
             ),
-            'public_profile_url': '',
+            'url': links['HEALTHCARE_AND_MEDICAL']['company_two'],
         },
     ]
 }
@@ -75,7 +79,7 @@ TECH_SECTOR_CONTEXT = {
             'video replay and distribution software and creative graphics '
             'platform powers a revolution for sport.'
         ),
-        'url': '#',
+        'url': links['SOFTWARE_AND_COMPUTER_SERVICES']['case_study'],
         'testimonial': (
             'Hawk-Eye has now become an integral part of over 20 sports and '
             'every year covers 7,200 games or events across 450 stadiums in '
@@ -108,7 +112,7 @@ TECH_SECTOR_CONTEXT = {
                 'managed in the EVRYTHNG cloud has a unique Active Digital '
                 'Identity'
             ),
-            'public_profile_url': '',
+            'url': links['SOFTWARE_AND_COMPUTER_SERVICES']['company_one'],
         },
         {
             'image_url': '/static/images/arkessa.png',
@@ -120,7 +124,7 @@ TECH_SECTOR_CONTEXT = {
                 'enterprises with a secure and future-proof mobility '
                 'platform that is easy to adopt, integrate and scale.'
             ),
-            'public_profile_url': '',
+            'url': links['SOFTWARE_AND_COMPUTER_SERVICES']['company_two'],
         },
     ]
 }
@@ -139,7 +143,7 @@ CREATIVE_SECTOR_CONTEXT = {
             'in the landscape and its interior spaces so as to capture the '
             'drama and mystery of space flight itself.'
         ),
-        'url': '#',
+        'url': links['CREATIVE_AND_MEDIA']['case_study'],
         'testimonial': (
             'We’ve never wavered in our commitment to the monumental task of '
             'pioneering safe, affordable and clean access to space, or to '
@@ -171,7 +175,7 @@ CREATIVE_SECTOR_CONTEXT = {
                 'augmented reality) to design and create cutting-edge '
                 'lighting, video and interactive installations.'
             ),
-            'public_profile_url': '',
+            'url': links['CREATIVE_AND_MEDIA']['company_one'],
         },
         {
             'image_url': '/static/images/blippar.png',
@@ -182,7 +186,7 @@ CREATIVE_SECTOR_CONTEXT = {
                 'artificial intelligence to bring the physical world to '
                 'life through smartphones.'
             ),
-            'public_profile_url': '',
+            'url': links['CREATIVE_AND_MEDIA']['company_two'],
         },
     ]
 }
@@ -202,7 +206,7 @@ FOOD_SECTOR_CONTEXT = {
             'and balanced, with authentic flavours and fine carbonation to '
             'perfectly enhance the flavour of high quality spirits.'
         ),
-        'url': '#',
+        'url': links['FOOD_AND_DRINK']['case_study'],
         'testimonial': (
             'If three-quarters of your gin and tonic is the tonic, make sure '
             'you use the best.'
@@ -229,7 +233,7 @@ FOOD_SECTOR_CONTEXT = {
                 'kernels are all air-popped – a healthier cooking method '
                 'compared to frying.'
             ),
-            'public_profile_url': '',
+            'url': links['FOOD_AND_DRINK']['company_one'],
         },
         {
             'image_url': '/static/images/fever-tree.png',
@@ -238,7 +242,7 @@ FOOD_SECTOR_CONTEXT = {
                 "Fever-Tree has pioneered premium mixers and is now the "
                 "world's leading premium mixer company."
             ),
-            'public_profile_url': '',
+            'url': links['FOOD_AND_DRINK']['company_two'],
         },
     ]
 }

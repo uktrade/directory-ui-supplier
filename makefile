@@ -37,7 +37,8 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_PORT=8005; \
 	export DIRECTORY_UI_SUPPLIER_SECRET_KEY=debug; \
 	export DIRECTORY_UI_SUPPLIER_DEBUG=true; \
-	export DIRECTORY_UI_SUPPLIER_FEATURE_LANGUAGE_SWITCHER_ENABLED=true
+	export DIRECTORY_UI_SUPPLIER_FEATURE_LANGUAGE_SWITCHER_ENABLED=true; \
+	export DIRECTORY_UI_SECTOR_LINKS_JSON=\{\"CREATIVE_AND_MEDIA\":\{\"company_one\":\"https:\/\/www.example.com\",\"company_two\":\"http:\/\/www.example.com\",\"case_study\":\"http:\/\/www.example.com\"\},\"HEALTHCARE_AND_MEDICAL\":\{\"company_one\":\"http:\/\/www.example.com\",\"company_two\":\"http:\/\/www.example.com\",\"case_study\":\"http:\/\/www.example.com\"\},\"FOOD_AND_DRINK\":\{\"company_one\":\"http:\/\/www.example.com\",\"company_two\":\"http:\/\/www.example.com\",\"case_study\":\"http:\/\/www.example.com\"\},\"SOFTWARE_AND_COMPUTER_SERVICES\":\{\"company_one\":\"http:\/\/www.example.com\",\"company_two\":\"http:\/\/www.example.com\",\"case_study\":\"http:\/\/www.example.com\"\}\}
 
 
 DOCKER_REMOVE_ALL := \
@@ -76,7 +77,9 @@ DEBUG_SET_ENV_VARS := \
 	export API_CLIENT_CLASS_NAME=unit-test; \
 	export API_CLIENT_KEY=debug; \
 	export API_CLIENT_BASE_URL=http://api.trade.great.dev:8000; \
-	export FEATURE_LANGUAGE_SWITCHER_ENABLED=true
+	export FEATURE_LANGUAGE_SWITCHER_ENABLED=true; \
+	export SECTOR_LINKS_JSON=\{\"CREATIVE_AND_MEDIA\":\{\"company_one\":\"https:\/\/www.example.com\",\"company_two\":\"http:\/\/www.example.com\",\"case_study\":\"http:\/\/www.example.com\"\},\"HEALTHCARE_AND_MEDICAL\":\{\"company_one\":\"http:\/\/www.example.com\",\"company_two\":\"http:\/\/www.example.com\",\"case_study\":\"http:\/\/www.example.com\"\},\"FOOD_AND_DRINK\":\{\"company_one\":\"http:\/\/www.example.com\",\"company_two\":\"http:\/\/www.example.com\",\"case_study\":\"http:\/\/www.example.com\"\},\"SOFTWARE_AND_COMPUTER_SERVICES\":\{\"company_one\":\"http:\/\/www.example.com\",\"company_two\":\"http:\/\/www.example.com\",\"case_study\":\"http:\/\/www.example.com\"\}\}
+
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)
