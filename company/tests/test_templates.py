@@ -21,13 +21,12 @@ default_context = {
         'keywords': 'word1 word2',
         'date_of_creation': '2 Mar 2015',
         'modified': datetime.now() - timedelta(hours=1),
-        'contact_details': {
-            'email_address': 'sales@example.com',
-        },
+        'email_address': 'sales@example.com',
     }
 }
 
 NO_RESULTS_FOUND_LABEL = 'No companies found'
+CONTACT_COMPANY_LABEL = 'Contact company'
 
 
 def test_company_public_profile_list_link_to_profle():
@@ -136,6 +135,19 @@ def test_case_study_detail_report_button():
     href = "mailto:help@digital.trade.gov.uk?subject=Report%20profile%20012344"
 
     assert href in html
+
+
+def test_public_profile_contact_button():
+    html = render_to_string('company-profile-detail.html', default_context)
+
+    assert html.count(default_context['company']['email_address']) == 2
+    assert CONTACT_COMPANY_LABEL in html
+
+
+def test_public_profile_contact_button_no_email():
+    html = render_to_string('company-profile-detail.html', {})
+
+    assert CONTACT_COMPANY_LABEL not in html
 
 
 def test_public_profile_report_button():

@@ -335,5 +335,8 @@
 
 .ed-report-profile-container {
   margin-top: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  .ed-filled-button-primary {
+    width: auto;
+  }
 }
