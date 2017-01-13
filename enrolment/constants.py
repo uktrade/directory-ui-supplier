@@ -1,5 +1,6 @@
 from django.conf import settings
 
+
 links = settings.SECTOR_LINKS
 
 COMPANIES_HOUSE_SEARCH_URL = 'https://beta.companieshouse.gov.uk'

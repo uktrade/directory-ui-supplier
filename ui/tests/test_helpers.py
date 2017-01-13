@@ -86,7 +86,6 @@ def test_parse_sector_links_missing_key():
         helpers.parse_sector_links(json.dumps(invalid))
 
 
-
 def test_parse_sector_links_missing():
     invalid = {}
 
