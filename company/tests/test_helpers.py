@@ -74,14 +74,12 @@ def test_get_company_profile_from_response(retrieve_profile_data):
         'date_of_creation': datetime(2015, 3, 2, 0, 0),
         'logo': 'nice.jpg',
         'facebook_url': 'http://www.facebook.com',
-        'is_address_set': True,
         'employees': '501-1,000',
         'has_social_links': True,
         'number': '01234567',
         'description': 'Ecommerce website',
         'summary': 'good',
         'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
-        'is_address_set': True,
         'mobile_number': '07506043448',
     }
 
@@ -133,7 +131,6 @@ def test_get_public_company_profile_from_response(retrieve_profile_data):
         'employees': '501-1,000',
         'keywords': 'word1 word2',
         'name': 'Great company',
-        'is_address_set': True,
         'mobile_number': '07506043448',
     }
 
@@ -179,7 +176,6 @@ def test_get_company_list_from_response(public_companies):
                 'summary': 'good',
                 'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
                 'date_of_creation': datetime(2015, 3, 2, 0, 0),
-                'is_address_set': True,
                 'mobile_number': '07506043448',
             },
         ]
@@ -245,7 +241,6 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
             'address_line_1': '123 Fake Street',
             'verified_with_code': True,
             'employees': '501-1,000',
-            'is_address_set': True,
             'mobile_number': '07506043448',
         },
         'image_one': 'https://image_one.jpg',
@@ -262,17 +257,3 @@ def test_get_company_profile_from_response_without_date():
     ]
     for provided, expected in pairs:
         assert helpers.format_date_of_creation(provided) == expected
-
-
-def test_format_company_details_address_set(retrieve_profile_data):
-    retrieve_profile_data['is_address_set'] = True
-    actual = helpers.format_company_details(retrieve_profile_data)
-
-    assert actual['is_address_set'] is True
-
-
-def test_format_company_details_address_not_set(retrieve_profile_data):
-    retrieve_profile_data['is_address_set'] = False
-    actual = helpers.format_company_details(retrieve_profile_data)
-
-    assert actual['is_address_set'] is False

@@ -34,7 +34,6 @@ def retrieve_profile_data():
         'postal_code': 'E14 6XK',
         'po_box': 'abc',
         'country': 'GB',
-        'is_address_set': True,
         'mobile_number': '07506043448',
     }
 
