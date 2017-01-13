@@ -78,7 +78,6 @@ def format_company_details(details):
         'modified': datetime.datetime.strptime(
             details['modified'], '%Y-%m-%dT%H:%M:%S.%fZ'),
         'verified_with_code': details['verified_with_code'],
-        'is_address_set': details['is_address_set'],
         'postal_full_name': details['postal_full_name'],
         'address_line_1': details['address_line_1'],
         'address_line_2': details['address_line_2'],
