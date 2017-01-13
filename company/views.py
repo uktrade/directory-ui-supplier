@@ -7,6 +7,7 @@ from django.shortcuts import redirect
 from django.template.response import TemplateResponse
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
+from django.http import Http404
 
 from api_client import api_client
 from company import forms, helpers
@@ -78,7 +79,12 @@ class PublicProfileDetailView(TemplateView):
             retrieve_public_profile_by_companies_house_number
         )
         response = api_call(number=self.kwargs['company_number'])
-        if not response.ok:
+        if response.status_code == http.client.NOT_FOUND:
+            raise Http404(
+                "API returned 404 for company number %s",
+                self.kwargs['company_number'],
+            )
+        elif not response.ok:
             response.raise_for_status()
         company = helpers.get_public_company_profile_from_response(response)
         return {
@@ -95,7 +101,12 @@ class CaseStudyDetailView(TemplateView):
         response = api_client.company.retrieve_public_case_study(
             case_study_id=self.kwargs['id'],
         )
-        if not response.ok:
+        if response.status_code == http.client.NOT_FOUND:
+            raise Http404(
+                "API returned 404 for case study with id %s",
+                self.kwargs['id'],
+            )
+        elif not response.ok:
             response.raise_for_status()
         return helpers.get_case_study_details_from_response(response)
 
