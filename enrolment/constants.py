@@ -8,10 +8,10 @@ HEALTH_SECTOR_CONTEXT = {
         'title': 'Touch Bionics',
         'synopsis': (
             'Touch Bionics has transformed thousands of lives in '
-            'dozens of countries worldwide through its world-leading '
-            'prosthetic technologies. We have a range of myoelectric '
-            'prosthetic hand and prosthetic finger solutions to help '
-            'people increase their independence and confidence.'
+            'dozens of countries through world-leading prosthetic '
+            'technologies. We have a range of myoelectric prosthetic '
+            'hands and prosthetic fingers that help people increase '
+            'their independence and confidence.'
         ),
         'url': '#',
         'testimonial': (
@@ -41,10 +41,10 @@ HEALTH_SECTOR_CONTEXT = {
             'image_url': '/static/images/r-d-biomed.png',
             'name': 'RD Biomed',
             'description': (
-                'RD Biomed designed and makes Peptest™ - the world’s first '
-                'non-invasive reflux diagnostic test. RD Biomed specialises in'
-                ' diagnostics for gastroenterology, respiratory and ENT '
-                'conditions.'
+                'RD Biomed designs and makes Peptest[TM] - the world’s '
+                'first non-invasive reflux diagnostic test. RD Biomed '
+                'specialises in diagnostics for gastroenterology and '
+                'respiratory conditions.'
             ),
             'public_profile_url': '',
         },
@@ -52,9 +52,9 @@ HEALTH_SECTOR_CONTEXT = {
             'image_url': '/static/images/touch-bionics-left-hand.png',
             'name': 'Touch Bionics',
             'description': (
-                'Touch Bionics is responsible for developing and improving '
-                'the world’s first bionic hand with 5 independently moving '
-                'fingers - transforming lives across the globe.'
+                "Touch Bionics is responsible for developing and improving "
+                "the world's first bionic hand with 5 independently "
+                "moving fingers, transforming lives across the globe."
             ),
             'public_profile_url': '',
         },
