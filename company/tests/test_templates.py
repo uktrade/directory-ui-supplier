@@ -190,3 +190,27 @@ def test_public_profile_non_verbose():
     assert 'href="?verbose=true"' in html
     assert context['company']['summary'] in html
     assert context['company']['description'] not in html
+
+
+def test_public_profile_non_verbose_missing_summary():
+    description = (
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doesel '
+        'eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enime'
+        ' ad minim veniam, quis nostrud exercitation ullamco laboris nisileds'
+    )
+    expected = description[0:197] + '...'
+    # sanity testing the values for the test. The description should be
+    # truncated to 200 chars, including the ellipsis chars.
+    assert len(description) == 204
+    assert len(expected) == 200
+
+    context = {
+        'show_description': False,
+        'company': {
+            'summary': '',
+            'description': description
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert expected in html

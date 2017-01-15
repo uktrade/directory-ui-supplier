@@ -64,7 +64,11 @@
 					</p>
 				{% else %}
 					<p>
-						{{ company.summary }}
+						{% if company.summary %}
+							{{ company.summary }}
+						{% elif company.description %}
+							{{ company.description|truncatechars:200 }}
+						{% endif %}
 						{# reload current page with querystring #}
 						<a href="?verbose=true">Read full company profile</a>
 					</p>
