@@ -27,6 +27,7 @@ default_context = {
 
 NO_RESULTS_FOUND_LABEL = 'No companies found'
 CONTACT_COMPANY_LABEL = 'Contact company'
+RECENT_PROJECTS_LABEL = 'Recent projects'
 
 
 def test_company_public_profile_list_link_to_profle():
@@ -135,6 +136,30 @@ def test_case_study_detail_report_button():
     href = "mailto:help@digital.trade.gov.uk?subject=Report%20profile%20012344"
 
     assert href in html
+
+
+def test_profile_case_studies_empty():
+    context = {
+        'company': {
+            'number': '012344',
+            'supplier_case_studies': []
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert RECENT_PROJECTS_LABEL not in html
+
+
+def test_profile_case_studies_present():
+    context = {
+        'company': {
+            'number': '012344',
+            'supplier_case_studies': [{'pk': 1}]
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert RECENT_PROJECTS_LABEL in html
 
 
 def test_public_profile_contact_button():
