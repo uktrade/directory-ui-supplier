@@ -20,8 +20,8 @@ def parse_sector_links(raw):
         },
         'required': ['company_one', 'company_two', 'case_study'],
     }
-    # side effect: raises ValidationError if `raw` was not expected schema
     parsed = json.loads(raw)
+    # side effect: raises ValidationError if `raw` was not expected schema
     jsonschema.validate(parsed, {
         '$schema': 'http://json-schema.org/draft-04/schema#',
         'type': 'object',
