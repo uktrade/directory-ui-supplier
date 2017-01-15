@@ -19,7 +19,7 @@ default_context = {
         'website': 'www.ukexportersnow.co.uk',
         'logo': 'www.ukexportersnow.co.uk/logo.png',
         'keywords': 'word1 word2',
-        'date_of_creation': '2 Mar 2015',
+        'date_of_creation': datetime(2015, 3, 2),
         'modified': datetime.now() - timedelta(hours=1),
         'email_address': 'sales@example.com',
     }
@@ -27,6 +27,17 @@ default_context = {
 
 NO_RESULTS_FOUND_LABEL = 'No companies found'
 CONTACT_COMPANY_LABEL = 'Contact company'
+
+
+def test_company_public_profile_list_date_of_creation():
+    context = {
+        'companies': [
+            default_context['company']
+        ]
+    }
+    html = render_to_string('company-public-profile-list.html', context)
+
+    assert '2015' in html
 
 
 def test_company_public_profile_list_link_to_profle():
