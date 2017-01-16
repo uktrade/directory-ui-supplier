@@ -195,7 +195,10 @@ FOOD_SECTOR_CONTEXT = {
         'image_caption': 'Clementine and cinnamon tonic water',
         'title': 'Clementine and cinnamon tonic water',
         'synopsis': (
-
+            'Fever-Tree has established itself as the mixer drink '
+            'specialist, crafting a range of fourteen products sourced '
+            'from the highest quality natural ingredients for the best '
+            'tasting mixers.'
         ),
         'url': links['FOOD_AND_DRINK']['case_study'],
         'testimonial': (
@@ -207,11 +210,11 @@ FOOD_SECTOR_CONTEXT = {
         'company_name': 'Fever-Tree',
         'sectors': [
             {
-                'label': 'Food and Drink',
+                'label': 'Food and drink',
                 'value': 'FOOD_AND_DRINK',
             },
         ],
-        'keywords': 'Premium, Natural, Mixers, Drinks, Taste, Quality',
+        'keywords': 'Mixers, Quality, Taste',
     },
     'companies': [
         {
@@ -219,10 +222,10 @@ FOOD_SECTOR_CONTEXT = {
             'name': "Joe & Seph's",
             'description': (
                 'All Joe & Seph’s popcorn is handmade in small batches to '
-                'ensure superior texture and an intense flavour on each and '
-                'every kernel. The ingredients used are 100% natural and the '
-                'kernels are all air-popped – a healthier cooking method '
-                'compared to frying.'
+                'ensure superior texture and an intense flavour. The '
+                'ingredients used are 100% natural and the kernels are '
+                'all air-popped – a healthier cooking method compared to '
+                'frying.'
             ),
             'url': links['FOOD_AND_DRINK']['company_one'],
         },
@@ -230,8 +233,8 @@ FOOD_SECTOR_CONTEXT = {
             'image_url': '/static/images/fever-tree.png',
             'name': 'Fever-Tree',
             'description': (
-                "Fever-Tree has pioneered premium mixers and is now the "
-                "world's leading premium mixer company."
+                'Fever-Tree has pioneered premium mixers and is now the '
+                'world’s leading premium mixer company.'
             ),
             'url': links['FOOD_AND_DRINK']['company_two'],
         },
