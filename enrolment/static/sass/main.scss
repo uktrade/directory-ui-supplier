@@ -867,3 +867,10 @@ a.ed-filled-button-primary {
     margin-top: 5px;
   }
 }
+
+
+.ed-truncate-single-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

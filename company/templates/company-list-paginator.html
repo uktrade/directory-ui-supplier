@@ -1,0 +1,16 @@
+{% if companies %}
+	<div>
+		<span class="step-links">
+			{% if pagination.has_previous %}
+				<a href="?sectors={{ form.cleaned_data.sectors }}&page={{ pagination.previous_page_number }}">Back</a>
+			{% endif %}
+			<span class="current">
+				{{ pagination.number }} of {{ pagination.paginator.num_pages }}
+			</span>
+			{% if pagination.has_next %}
+				<a href="?sectors={{ form.cleaned_data.sectors }}&page={{ pagination.next_page_number }}">Next</a>
+			{% endif %}
+		</span>
+	</div>
+{% endif %}
+
