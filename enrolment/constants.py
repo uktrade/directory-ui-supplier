@@ -69,26 +69,27 @@ HEALTH_SECTOR_CONTEXT = {
 TECH_SECTOR_CONTEXT = {
     'sector_value': 'SOFTWARE_AND_COMPUTER_SERVICES',
     'case_study': {
-        'image_url': '/static/images/hawk-eye.png',
-        'image_caption': 'Electronic line-calling service',
-        'title': 'Electronic line-calling service',
+        'image_url': '/static/images/evrythng.jpg',
+        'image_caption': 'EVRYTHNG',
+        'title': 'EVRYTHNG',
         'synopsis': (
-            'Hawk-Eye has developed the most sophisticated vision processing '
-            'technology in sport which enables us to not only track balls to '
-            'millimetre-accuracy but also players and cars. This vision '
-            'processing technology combined with an intelligent IT based '
-            'video replay and distribution software and creative graphics '
-            'platform powers a revolution for sport.'
+            'EVRYTHNG’s commercial Internet of Things traceability '
+            'solution allows brands to track and report the status, '
+            'location and history of everything they produce from '
+            'manufacture through to the home. EVRYTHNG’s flexible data '
+            'model enables the complex, interlinked hierarchy of '
+            'component parts, finished product, batches, cases and '
+            'pallets can be identified and mapped.'
         ),
         'url': links['SOFTWARE_AND_COMPUTER_SERVICES']['case_study'],
         'testimonial': (
-            'Hawk-Eye has now become an integral part of over 20 sports and '
-            'every year covers 7,200 games or events across 450 stadiums in '
-            'over 60 countries.'
+            'Companies can transform the value of their physical assets '
+            'in the EVRYTHNG cloud by adding an intelligent, personalised '
+            'layer of digital content, services and data analytics.'
         ),
         'testimonial_name': None,
         'testimonial_company': None,
-        'company_name': 'Hawk-Eye Innovations',
+        'company_name': 'EVRYTHNG',
         'sectors': [
             {
                 'label': 'Technology',
@@ -96,8 +97,7 @@ TECH_SECTOR_CONTEXT = {
             },
         ],
         'keywords': (
-            'Sports, officiation, digital, data, broadcast media, '
-            'ball-tracking, player-tracking'
+            'Internet of Things, data analytics, traceability, connectivity'
         ),
     },
     'companies': [
