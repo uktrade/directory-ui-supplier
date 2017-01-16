@@ -106,12 +106,12 @@ TECH_SECTOR_CONTEXT = {
             'name': 'EVRYTHNG',
             'description': (
                 'EVRYTHNG is an Internet of Things software company that '
-                'helps manufacturers digitalise their physical products '
-                'by connecting them to the web. From everyday consumer '
-                'packaged products connected via smart packaging and '
-                'smartphones, to fully-connected smart home appliances, '
-                'each individual item managed in the EVRYTHNG cloud has '
-                'a unique Active Digital Identity'
+                'helps manufacturers <i>digitalise</i> their physical '
+                'products by connecting them to the web. From everyday '
+                'consumer packaged products connected via smart packaging '
+                'and smartphones, to fully-connected smart home '
+                'appliances, each individual item managed in the EVRYTHNG '
+                'cloud has a unique Active Digital Identity'
             ),
             'url': links['SOFTWARE_AND_COMPUTER_SERVICES']['company_one'],
         },
