@@ -46,7 +46,7 @@
 					<div class="row-fluid">
 						<h2 style="font-size: 21px;">{{ company.name }}</h2>
 						<p class="ed-landing-page-sector-synopsis">
-							{{ company.description }}
+							{{ company.description|safe }}
 						</p>
 						<p>
 							<a href="{{ company.url }}">Read more</a>
