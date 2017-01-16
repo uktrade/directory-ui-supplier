@@ -19,7 +19,7 @@ default_context = {
         'website': 'www.ukexportersnow.co.uk',
         'logo': 'www.ukexportersnow.co.uk/logo.png',
         'keywords': 'word1 word2',
-        'date_of_creation': '2 Mar 2015',
+        'date_of_creation': datetime(2015, 3, 2),
         'modified': datetime.now() - timedelta(hours=1),
         'email_address': 'sales@example.com',
     }
@@ -27,6 +27,18 @@ default_context = {
 
 NO_RESULTS_FOUND_LABEL = 'No companies found'
 CONTACT_COMPANY_LABEL = 'Contact company'
+RECENT_PROJECTS_LABEL = 'Recent projects'
+
+
+def test_company_public_profile_list_date_of_creation():
+    context = {
+        'companies': [
+            default_context['company']
+        ]
+    }
+    html = render_to_string('company-public-profile-list.html', context)
+
+    assert '2015' in html
 
 
 def test_company_public_profile_list_link_to_profle():
@@ -137,6 +149,30 @@ def test_case_study_detail_report_button():
     assert href in html
 
 
+def test_profile_case_studies_empty():
+    context = {
+        'company': {
+            'number': '012344',
+            'supplier_case_studies': []
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert RECENT_PROJECTS_LABEL not in html
+
+
+def test_profile_case_studies_present():
+    context = {
+        'company': {
+            'number': '012344',
+            'supplier_case_studies': [{'pk': 1}]
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert RECENT_PROJECTS_LABEL in html
+
+
 def test_public_profile_contact_button():
     html = render_to_string('company-profile-detail.html', default_context)
 
@@ -190,3 +226,27 @@ def test_public_profile_non_verbose():
     assert 'href="?verbose=true"' in html
     assert context['company']['summary'] in html
     assert context['company']['description'] not in html
+
+
+def test_public_profile_non_verbose_missing_summary():
+    description = (
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doesel '
+        'eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enime'
+        ' ad minim veniam, quis nostrud exercitation ullamco laboris nisileds'
+    )
+    expected = description[0:197] + '...'
+    # sanity testing the values for the test. The description should be
+    # truncated to 200 chars, including the ellipsis chars.
+    assert len(description) == 204
+    assert len(expected) == 200
+
+    context = {
+        'show_description': False,
+        'company': {
+            'summary': '',
+            'description': description
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert expected in html
