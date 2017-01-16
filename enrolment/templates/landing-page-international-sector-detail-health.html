@@ -11,7 +11,13 @@
     </div>
 {% endblock %}
 
-{% block proposition_header %}Healthcare and life sciences from the UK{% endblock %}
+{% block content_header %}
+    {% if show_proposition %}
+        Healthcare and life sciences from the UK
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
 
 {% block proposition %}
     <section>

@@ -52,9 +52,9 @@ HEALTH_SECTOR_CONTEXT = {
             'image_url': '/static/images/touch-bionics-left-hand.png',
             'name': 'Touch Bionics',
             'description': (
-                "Touch Bionics is responsible for developing and improving "
-                "the world's first bionic hand with 5 independently "
-                "moving fingers, transforming lives across the globe."
+                'Touch Bionics is responsible for developing and improving '
+                'the world’s first bionic hand with 5 independently '
+                'moving fingers, transforming lives across the globe.'
             ),
             'public_profile_url': '',
         },
