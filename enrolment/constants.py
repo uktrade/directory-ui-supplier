@@ -106,7 +106,7 @@ TECH_SECTOR_CONTEXT = {
             'name': 'EVRYTHNG',
             'description': (
                 'EVRYTHNG is an Internet of Things software company that '
-                'helps manufacturers digitalise their physical products '
+                'helps manufacturers <i>digitalise</i> their physical products '
                 'by connecting them to the web. From everyday consumer '
                 'packaged products connected via smart packaging and '
                 'smartphones, to fully-connected smart home appliances, '
