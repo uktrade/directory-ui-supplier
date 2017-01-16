@@ -103,15 +103,15 @@ TECH_SECTOR_CONTEXT = {
     'companies': [
         {
             'image_url': '/static/images/evrything.png',
-            'name': 'EVRYTHING',
+            'name': 'EVRYTHNG',
             'description': (
-                'EVRYTHING is an Internet of Things software company that '
-                'helps manufacturers digitize their physical products by '
-                'connecting them to the web. From everyday consumer packaged '
-                'products connected via smart packaging and smartphones, to '
-                'fully-connected smart home appliances, each individual item '
-                'managed in the EVRYTHNG cloud has a unique Active Digital '
-                'Identity'
+                'EVRYTHNG is an Internet of Things software company that '
+                'helps manufacturers digitalise their physical products '
+                'by connecting them to the web. From everyday consumer '
+                'packaged products connected via smart packaging and '
+                'smartphones, to fully-connected smart home appliances, '
+                'each individual item managed in the EVRYTHNG cloud has '
+                'a unique Active Digital Identity'
             ),
             'url': links['SOFTWARE_AND_COMPUTER_SERVICES']['company_one'],
         },
@@ -119,11 +119,12 @@ TECH_SECTOR_CONTEXT = {
             'image_url': '/static/images/arkessa.png',
             'name': 'Arkessa',
             'description': (
-                'Arkessa enables Internet of Things devices and applications '
-                'developers to connect to the IoT, regardless of location, '
-                'network operator or wireless technology. It provides '
-                'enterprises with a secure and future-proof mobility '
-                'platform that is easy to adopt, integrate and scale.'
+                'Arkessa enables devices and applications developers to '
+                'connect to the Internet of Things (IoT), regardless of '
+                'location, network operator or wireless technology. It '
+                'provides enterprises with a secure and future-proof '
+                'mobility platform that is easy to adopt, integrate and '
+                'scale.'
             ),
             'url': links['SOFTWARE_AND_COMPUTER_SERVICES']['company_two'],
         },
