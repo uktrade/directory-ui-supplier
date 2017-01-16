@@ -37,8 +37,8 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_PORT=8005; \
 	export DIRECTORY_UI_SUPPLIER_SECRET_KEY=debug; \
 	export DIRECTORY_UI_SUPPLIER_DEBUG=true; \
-	export DIRECTORY_UI_SUPPLIER_FEATURE_LANGUAGE_SWITCHER_ENABLED=true
-
+	export DIRECTORY_UI_SUPPLIER_FEATURE_LANGUAGE_SWITCHER_ENABLED=true; \
+	export DIRECTORY_UI_SUPPLIER_SECTOR_LINKS_JSON=\{\"CREATIVE_AND_MEDIA\":\{\"company_one\":\"https:\/\/www.example.com\/creative-company-1\",\"company_two\":\"http:\/\/www.example.com\/creative-company-2\",\"case_study\":\"http:\/\/www.example.com\/creative-case-study\"\},\"HEALTHCARE_AND_MEDICAL\":\{\"company_one\":\"http:\/\/www.example.com\/health-company-1\",\"company_two\":\"http:\/\/www.example.com\/health-company-1\",\"case_study\":\"http:\/\/www.example.com\/health-case-study\"\},\"FOOD_AND_DRINK\":\{\"company_one\":\"http:\/\/www.example.com\/food-company-1\",\"company_two\":\"http:\/\/www.example.com\/food-company-2\",\"case_study\":\"http:\/\/www.example.com\/food-case-study\"\},\"SOFTWARE_AND_COMPUTER_SERVICES\":\{\"company_one\":\"http:\/\/www.example.com\/tech-company-1\",\"company_two\":\"http:\/\/www.example.com\/tech-company-2\",\"case_study\":\"http:\/\/www.example.com\/tech-case-study\"\}\}
 
 DOCKER_REMOVE_ALL := \
 	docker ps -a | \
@@ -73,10 +73,10 @@ DEBUG_SET_ENV_VARS := \
 	export PORT=8005; \
 	export SECRET_KEY=debug; \
 	export DEBUG=true ;\
-	export API_CLIENT_CLASS_NAME=unit-test; \
 	export API_CLIENT_KEY=debug; \
 	export API_CLIENT_BASE_URL=http://api.trade.great.dev:8000; \
-	export FEATURE_LANGUAGE_SWITCHER_ENABLED=true
+	export FEATURE_LANGUAGE_SWITCHER_ENABLED=true; \
+	export SECTOR_LINKS_JSON=\{\"CREATIVE_AND_MEDIA\":\{\"company_one\":\"https:\/\/www.example.com\/creative-company-1\",\"company_two\":\"http:\/\/www.example.com\/creative-company-2\",\"case_study\":\"http:\/\/www.example.com\/creative-case-study\"\},\"HEALTHCARE_AND_MEDICAL\":\{\"company_one\":\"http:\/\/www.example.com\/health-company-1\",\"company_two\":\"http:\/\/www.example.com\/health-company-1\",\"case_study\":\"http:\/\/www.example.com\/health-case-study\"\},\"FOOD_AND_DRINK\":\{\"company_one\":\"http:\/\/www.example.com\/food-company-1\",\"company_two\":\"http:\/\/www.example.com\/food-company-2\",\"case_study\":\"http:\/\/www.example.com\/food-case-study\"\},\"SOFTWARE_AND_COMPUTER_SERVICES\":\{\"company_one\":\"http:\/\/www.example.com\/tech-company-1\",\"company_two\":\"http:\/\/www.example.com\/tech-company-2\",\"case_study\":\"http:\/\/www.example.com\/tech-case-study\"\}\}
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)
