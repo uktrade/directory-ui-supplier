@@ -48,11 +48,9 @@
 						<p class="ed-landing-page-sector-synopsis">
 							{{ company.description }}
 						</p>
-						{% if company.public_profile_url %}
 						<p>
-							<a href="{{ company.public_profile_url }}">Read more</a>
+							<a href="{{ company.url }}">Read more</a>
 						</p>
-						{% endif %}
 					</div>
 				</div>
 			{% endfor %}
@@ -66,7 +64,7 @@
 					</div>
 				</div>
 				<p class="ed-landing-page-sector-synopsis">
-					Innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service.
+					{% block company_box_text %}Innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service.{% endblock %}
 				</p>
 				<p>
 					<div class="btn-container">
@@ -96,7 +94,7 @@
 			<div class="span4">
 				<p>{{ case_study.synopsis|linebreaks }}</p>
 				<p>
-					<a href="{{ case_study.url }}"></a>
+					<a href="{{ case_study.url }}">Read case study</a>
 				</p>
 			</div>
 			<div class="span4 ed-arrow_box ed-landing-page-case-study-testomonial-container">

@@ -73,7 +73,7 @@
 							</div>
 						{% endif %}
 						{% if company.date_of_creation %}
-							<div>Date incorporated: {{company.date_of_creation}}</div>
+							<div>Date incorporated: {{company.date_of_creation|date:'Y' }}</div>
 						{% endif %}
 					</div>
 				</div>
