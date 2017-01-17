@@ -122,10 +122,11 @@ def test_company_profile_list_exposes_context_hide_companies_count(
 ):
     url = reverse('public-company-profiles-list')
 
-    response = client.get(url, {})
+    for params in [{}, {'sectors': ''}, {'sectors': ''}]:
+        response = client.get(url, {})
 
-    assert response.status_code == http.client.OK
-    assert response.context_data['show_companies_count'] is False
+        assert response.status_code == http.client.OK
+        assert response.context_data['show_companies_count'] is False
 
 
 @patch.object(helpers, 'get_public_company_profile_from_response')

@@ -35,7 +35,7 @@ class PublicProfileListView(SubmitFormOnGetMixin, FormView):
         return context
 
     def get_show_companies_count(self):
-        return self.request.GET.get('sectors') is not None
+        return bool(self.request.GET.get('sectors'))
 
     def get_sector_label(self, context):
         form = context['form']
