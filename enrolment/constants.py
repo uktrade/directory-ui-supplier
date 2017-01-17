@@ -134,7 +134,7 @@ TECH_SECTOR_CONTEXT = {
 CREATIVE_SECTOR_CONTEXT = {
     'sector_value': 'CREATIVE_AND_MEDIA',
     'case_study': {
-        'image_url': '',
+        'image_url': '/static/images/immersive-hero.jpg',
         'image_caption': '',
         'title': 'Immersive',
         'synopsis': (
