@@ -91,9 +91,10 @@ def test_company_public_profile_results_label():
         ],
         'pagination': paginator.page(1),
         'form': form,
+        'show_companies_count': True,
     }
     html = render_to_string('company-public-profile-list.html', context)
-    assert "Displaying 1 of 1 thing company" in html
+
     assert NO_RESULTS_FOUND_LABEL not in html
 
 
@@ -109,9 +110,10 @@ def test_company_public_profile_results_label_plural():
         ],
         'pagination': paginator.page(1),
         'form': form,
+        'show_companies_count': True,
     }
     html = render_to_string('company-public-profile-list.html', context)
-    assert "Displaying 2 of 10 thing companies" in html
+
     assert NO_RESULTS_FOUND_LABEL not in html
 
 
@@ -145,6 +147,76 @@ def test_company_public_profile_list_paginate_prev():
     html = render_to_string('company-public-profile-list.html', context)
 
     assert 'href="?sectors=WATER&page=1"' in html
+
+
+def test_company_public_profile_list_paginate_label_single_with_sector():
+    form = forms.PublicProfileSearchForm(data={'sectors': 'WATER'})
+    assert form.is_valid()
+
+    paginator = Paginator(range(100), 10)
+    context = {
+        'pagination': paginator.page(2),
+        'form': form,
+        'companies': [{'number': '01234567A'}],
+        'show_companies_count': True,
+        'selected_sector_label': 'Water',
+    }
+
+    html = render_to_string('company-public-profile-list.html', context)
+
+    assert 'Displaying 1 of 100 Water companies' in html
+
+
+def test_company_public_profile_list_paginate_label_multiple_with_sector():
+    form = forms.PublicProfileSearchForm(data={'sectors': 'WATER'})
+    assert form.is_valid()
+
+    paginator = Paginator(range(100), 10)
+    context = {
+        'pagination': paginator.page(2),
+        'form': form,
+        'companies': [{'number': '01234567A'}, {'number': '01234567B'}],
+        'show_companies_count': True,
+        'selected_sector_label': 'Water',
+    }
+
+    html = render_to_string('company-public-profile-list.html', context)
+
+    assert 'Displaying 2 of 100 Water companies' in html
+
+
+def test_company_public_profile_list_paginate_label_single_without_sector():
+    form = forms.PublicProfileSearchForm(data={})
+    assert form.is_valid()
+
+    paginator = Paginator(range(100), 10)
+    context = {
+        'pagination': paginator.page(2),
+        'form': form,
+        'companies': [{'number': '01234567A'}],
+        'show_companies_count': False,
+    }
+
+    html = render_to_string('company-public-profile-list.html', context)
+
+    assert 'Displaying 1  company' in html
+
+
+def test_company_public_profile_list_paginate_label_multiple_without_sector():
+    form = forms.PublicProfileSearchForm(data={})
+    assert form.is_valid()
+
+    paginator = Paginator(range(100), 10)
+    context = {
+        'pagination': paginator.page(2),
+        'form': form,
+        'companies': [{'number': '01234567A'}, {'number': '01234567B'}],
+        'show_companies_count': False,
+    }
+
+    html = render_to_string('company-public-profile-list.html', context)
+
+    assert 'Displaying 2  companies' in html
 
 
 def test_case_study_detail_report_button():
