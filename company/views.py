@@ -30,11 +30,18 @@ class PublicProfileListView(SubmitFormOnGetMixin, FormView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['selected_sector_label'] = self.get_sector_label(context)
+        context['show_companies_count'] = self.get_show_companies_count()
+        return context
+
+    def get_show_companies_count(self):
+        return self.request.GET.get('sectors') is not None
+
+    def get_sector_label(self, context):
         form = context['form']
         if form.is_valid():
-            sector = helpers.get_sectors_label(form.cleaned_data['sectors'])
-            context['selected_sector_label'] = sector
-        return context
+            return helpers.get_sectors_label(form.cleaned_data['sectors'])
+        return ''
 
     def get_results_and_count(self, form):
         response = api_client.company.list_public_profiles(
