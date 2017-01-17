@@ -7,7 +7,7 @@
 		</p>
 
 		<div class="row-fluid">
-			<form action="" method="post" style="margin-top: 30px;">
+			<form action="{% url 'subscribe' %}" method="post" style="margin-top: 30px;">
 				<div class="row-fluid">
 					<div class="span4">
 						<div class="{{ form.full_name.css_classes|default:'input-field-container' }}">

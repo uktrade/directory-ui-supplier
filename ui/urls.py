@@ -1,6 +1,7 @@
 from django.conf.urls import url
 
 from enrolment.views import (
+    BuyerSubscribeFormView,
     InternationalLandingView,
     InternationalLandingSectorListView,
     InternationalLandingSectorDetailView,
@@ -53,5 +54,10 @@ urlpatterns = [
         r'^terms-and-conditions$',
         TermsView.as_view(),
         name='terms-and-conditions'
+    ),
+    url(
+        r'^subscribe$',
+        BuyerSubscribeFormView.as_view(),
+        name='subscribe'
     ),
 ]
