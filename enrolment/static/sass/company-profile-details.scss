@@ -374,7 +374,7 @@
     margin-top: 10px;
     margin-bottom: 0;
     select {
-      width: 270px;
+      width: 250px;
       margin-left: 5px;
     }
   }
@@ -391,4 +391,16 @@
       background: white;
     }
   }
+}
+
+.public-company-profiles-result-item-updated {
+  position: absolute;
+  right: 20px;
+  bottom: 36px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.39;
+  letter-spacing: -0.2px;
+  text-align: right;
+  color: #007ea3;
 }
