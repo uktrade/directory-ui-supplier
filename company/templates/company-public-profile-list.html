@@ -1,4 +1,5 @@
 {% extends 'govuk_layout.html' %}
+{% load naturaltime from humanize %}
 {% load staticfiles %}
 {% block css %}
 	<link href="{% static 'company-profile-details.css' %}" media="all" rel="stylesheet" />
@@ -28,70 +29,73 @@
 	</div>
 {% endblock %}
 {% block content %}
-<div class="clearfix"></div>
-<div class="container">
-	<div class="company-profile-details-body">
-		<div class="row-fluid company-profile-details-body-toolbar">
-			<div class="span8">
-				{% if form.is_bound %}
+	<div class="clearfix"></div>
+	<div class="container">
+		<div class="company-profile-details-body">
+			<div class="row-fluid company-profile-details-body-toolbar">
+				<div class="span8">
 					{% if companies %}
-						<span>Displaying {{ companies|length }} of {{ pagination.paginator.count }} '{{ selected_sector_label }}' {{companies|length|pluralize:'company,companies'}}</span>
+						<span>Displaying {{ companies|length }} of {{ pagination.paginator.count }} {{ selected_sector_label }} {{companies|length|pluralize:'company,companies'}}</span>
 					{% else %}
 						<span>No companies found</span>
 					{% endif %}
-				{% endif %}
+				</div>
+				<div class="span4" style="text-align: right;">
+					{% include 'company-list-paginator.html' %}
+				</div>
 			</div>
-			<div class="span4" style="text-align: right;">
-				{% include 'company-list-paginator.html' %}
-			</div>
-		</div>
-		{% for company in companies %}
-		<div class="public-company-profiles-result-item">
-			<div class="row-fluid ">
-				<!-- Company Logo area -->
-				<div class="span2 company-logo">
-					<div class="logo-container">
-						<div class="logo">
-							{% if company.logo %}
-							<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number %}">
-								<img src="{{company.logo}}" style="width: 140px;" />
-							</a>
-							{% endif %}
-							</a>
+			{% for company in companies %}
+			<div class="public-company-profiles-result-item" style="position: relative;">
+				<div class="row-fluid ">
+					<!-- Company Logo area -->
+					<div class="span2 company-logo">
+						<div class="logo-container">
+							<div class="logo">
+								{% if company.logo %}
+								<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number %}">
+									<img src="{{company.logo}}" style="width: 140px;" />
+								</a>
+								{% endif %}
+								</a>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="span8">
-					<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number %}">
-						<h3 class="ed-truncate-single-line">{{company.name}}</h3>
+					<div class="span8">
+						<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number %}">
+							<h3 class="ed-truncate-single-line">{{ company.name }}</h3>
+						</a>
+						<p><b>At a glance</b><p>
+						<div>
+							{% if company.employees %}
+								<div>
+									Number of employees: {{company.employees}}
+								</div>
+							{% endif %}
+							{% if company.date_of_creation %}
+								<div>Date incorporated: {{ company.date_of_creation|date:'Y' }}</div>
+							{% endif %}
+						</div>
+						<div class="public-company-profiles-result-item-updated">Updated {{ company.modified|naturaltime }}</div>
+					</div>
+					<a href="{% url 'public-company-profiles-detail' company_number=company.number %}" class="span2 pull-right ed-public-company-profiles-result-item-profile-link">
+						View profile
 					</a>
-					<p><b>At a glance</b><p>
-					<div>
-						{% if company.employees %}
-							<div>
-								Number of employees: {{company.employees}}
-							</div>
-						{% endif %}
-						{% if company.date_of_creation %}
-							<div>Date incorporated: {{company.date_of_creation|date:'Y' }}</div>
-						{% endif %}
+				</div>
+			</div>
+			{% endfor %}
+
+			{% if companies %}
+				<div class="row-fluid company-profile-details-body-toolbar company-profile-details-body-toolbar-bottom">
+					<div class="offset8 span4" style="text-align: right;">
+						{% include 'company-list-paginator.html' %}
 					</div>
 				</div>
-				<a href="{% url 'public-company-profiles-detail' company_number=company.number %}" class="span2 pull-right ed-public-company-profiles-result-item-profile-link">
-					View profile
-				</a>
-			</div>
-		</div>
-		{% endfor %}
+			{% else %}
+				<br>
+			{% endif %}
 
-		<div class="row-fluid company-profile-details-body-toolbar company-profile-details-body-toolbar-bottom">
-			<div class="offset8 span4" style="text-align: right;">
-				{% include 'company-list-paginator.html' %}
-			</div>
 		</div>
 
 	</div>
-
-</div>
 {% endblock %}

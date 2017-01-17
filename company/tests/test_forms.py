@@ -29,12 +29,10 @@ def test_public_profile_search_form_specified_page():
     assert form.cleaned_data['page'] == 3
 
 
-def test_public_profile_search_form_requires_sectors():
-    data = {}
-    form = forms.PublicProfileSearchForm(data=data)
+def test_public_profile_search_form_not_require_sectors():
+    form = forms.PublicProfileSearchForm()
 
-    assert form.is_valid() is False
-    assert form.errors['sectors'] == [REQUIRED_MESSAGE]
+    assert form.fields['sectors'].required is False
 
 
 def test_public_profile_search_form_valid_data():

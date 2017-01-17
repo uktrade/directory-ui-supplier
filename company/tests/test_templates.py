@@ -41,6 +41,18 @@ def test_company_public_profile_list_date_of_creation():
     assert '2015' in html
 
 
+def test_company_public_profile_list_modified():
+    context = {
+        'companies': [
+            default_context['company']
+        ]
+    }
+
+    html = render_to_string('company-public-profile-list.html', context)
+
+    assert 'Updated an hour ago' in html
+
+
 def test_company_public_profile_list_link_to_profle():
     context = {
         'companies': [
@@ -81,7 +93,7 @@ def test_company_public_profile_results_label():
         'form': form,
     }
     html = render_to_string('company-public-profile-list.html', context)
-    assert "Displaying 1 of 1 \'thing\' company" in html
+    assert "Displaying 1 of 1 thing company" in html
     assert NO_RESULTS_FOUND_LABEL not in html
 
 
@@ -99,7 +111,7 @@ def test_company_public_profile_results_label_plural():
         'form': form,
     }
     html = render_to_string('company-public-profile-list.html', context)
-    assert "Displaying 2 of 10 \'thing\' companies" in html
+    assert "Displaying 2 of 10 thing companies" in html
     assert NO_RESULTS_FOUND_LABEL not in html
 
 

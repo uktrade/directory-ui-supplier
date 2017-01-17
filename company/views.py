@@ -17,7 +17,7 @@ class SubmitFormOnGetMixin:
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['data'] = self.request.GET or None
+        kwargs['data'] = self.request.GET or {}
         return kwargs
 
     def get(self, request, *args, **kwargs):

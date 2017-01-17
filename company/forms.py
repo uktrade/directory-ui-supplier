@@ -4,9 +4,11 @@ from django import forms
 
 
 class PublicProfileSearchForm(forms.Form):
+    SELECT_LABEL = 'Please select an industry'
     sectors = forms.ChoiceField(
         label='Show UK companies in:',
-        choices=choices.COMPANY_CLASSIFICATIONS,
+        choices=[['', SELECT_LABEL]] + list(choices.COMPANY_CLASSIFICATIONS),
+        required=False,
     )
     page = forms.IntegerField(
         required=False,
