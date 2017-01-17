@@ -8,16 +8,6 @@ from api_client import api_client
 from enrolment import constants, forms
 
 
-class HandleBuyerFormSubmitMixin:
-    success_template = 'landing-page-international-success.html'
-    form_class = forms.InternationalBuyerForm
-
-    def form_valid(self, form):
-        data = forms.serialize_international_buyer_forms(form.cleaned_data)
-        api_client.buyer.send_form(data)
-        return TemplateResponse(self.request, self.success_template)
-
-
 class ShowLanguageSwitcherMixin:
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -30,12 +20,22 @@ class ShowLanguageSwitcherMixin:
         return context
 
 
-class InternationalLandingView(ShowLanguageSwitcherMixin,
-                               HandleBuyerFormSubmitMixin, FormView):
+class BuyerSubscribeFormView(FormView):
+    success_template = 'landing-page-international-success.html'
+    template_name = 'subscribe.html'
+    form_class = forms.InternationalBuyerForm
+
+    def form_valid(self, form):
+        data = forms.serialize_international_buyer_forms(form.cleaned_data)
+        api_client.buyer.send_form(data)
+        return TemplateResponse(self.request, self.success_template)
+
+
+class InternationalLandingView(ShowLanguageSwitcherMixin, TemplateView):
     template_name = 'landing-page-international.html'
 
 
-class InternationalLandingSectorListView(HandleBuyerFormSubmitMixin, FormView):
+class InternationalLandingSectorListView(TemplateView):
     template_name = 'landing-page-international-sector-list.html'
 
 
@@ -47,8 +47,7 @@ class TermsView(TemplateView):
     template_name = 'terms-and-conditions.html'
 
 
-class InternationalLandingSectorDetailView(HandleBuyerFormSubmitMixin,
-                                           FormView):
+class InternationalLandingSectorDetailView(TemplateView):
     pages = {
         'health': {
             'template': 'landing-page-international-sector-detail-health.html',

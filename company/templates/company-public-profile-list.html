@@ -8,7 +8,7 @@
 {% block sub_header %}
 	<div class="row-fluid public-company-profiles-search-form">
 		<div class="container">
-			<h2>Browse UK company trade profiles</h2>
+			<h2>Browse UK company profiles</h2>
 			<div class="span12">
 				<form action="" method="get">
 					<div class="span6">
@@ -35,7 +35,11 @@
 			<div class="row-fluid company-profile-details-body-toolbar">
 				<div class="span8">
 					{% if companies %}
-						<span>Displaying {{ companies|length }} of {{ pagination.paginator.count }} {{ selected_sector_label }} {{companies|length|pluralize:'company,companies'}}</span>
+						{% if show_companies_count %}
+							<span>Displaying {{ companies|length }} of {{ pagination.paginator.count }} {{ selected_sector_label }} {{pagination.paginator.count|pluralize:'company,companies'}}</span>
+						{% else %}
+							<span>Displaying {{ companies|length }} {{ selected_sector_label }} {{companies|length|pluralize:'company,companies'}}</span>
+						{% endif %}
 					{% else %}
 						<span>No companies found</span>
 					{% endif %}
@@ -94,8 +98,7 @@
 			{% else %}
 				<br>
 			{% endif %}
-
 		</div>
-
+		{% include 'landing-page-international-form.html' with form=subscribe.form %}
 	</div>
 {% endblock %}

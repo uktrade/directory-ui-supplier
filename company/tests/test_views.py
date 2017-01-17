@@ -102,6 +102,30 @@ def test_company_profile_list_exposes_context(
     assert response.template_name == views.PublicProfileListView.template_name
     assert response.context_data['companies'] == expected_companies
     assert response.context_data['pagination'].paginator.count == 20
+    assert response.context_data['show_companies_count'] is True
+
+
+def test_company_profile_list_exposes_context_show_companies_count(
+    client, api_response_list_public_profile_200
+):
+    url = reverse('public-company-profiles-list')
+    params = {'sectors': choices.COMPANY_CLASSIFICATIONS[1][0]}
+
+    response = client.get(url, params)
+
+    assert response.status_code == http.client.OK
+    assert response.context_data['show_companies_count'] is True
+
+
+def test_company_profile_list_exposes_context_hide_companies_count(
+    client, api_response_list_public_profile_200
+):
+    url = reverse('public-company-profiles-list')
+
+    response = client.get(url, {})
+
+    assert response.status_code == http.client.OK
+    assert response.context_data['show_companies_count'] is False
 
 
 @patch.object(helpers, 'get_public_company_profile_from_response')

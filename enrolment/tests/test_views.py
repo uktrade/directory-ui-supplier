@@ -10,8 +10,8 @@ from django.core.urlresolvers import reverse
 from enrolment import constants, forms
 from enrolment.views import (
     api_client,
+    BuyerSubscribeFormView,
     InternationalLandingView,
-    InternationalLandingSectorListView,
     InternationalLandingSectorDetailView
 )
 
@@ -29,6 +29,13 @@ def buyer_form_data():
 @pytest.fixture
 def buyer_request(rf, client, buyer_form_data):
     request = rf.post('/', buyer_form_data)
+    request.session = client.session
+    return request
+
+
+@pytest.fixture
+def buyer_request_invalid(rf, client):
+    request = rf.post('/', {})
     request.session = client.session
     return request
 
@@ -90,37 +97,12 @@ def api_response_company_profile_no_date_of_creation_200(api_response_200):
     return response
 
 
-@patch.object(api_client.buyer, 'send_form')
-def test_international_landing_view_submit(
-    mock_send_form, buyer_request, buyer_form_data
-):
-    response = InternationalLandingView.as_view()(buyer_request)
-
-    assert response.template_name == InternationalLandingView.success_template
-    mock_send_form.assert_called_once_with(
-        forms.serialize_international_buyer_forms(buyer_form_data)
-    )
-
-
 def test_international_landing_view_context(anon_request):
     response = InternationalLandingView.as_view()(anon_request)
 
     context = response.context_data['language_switcher']
     assert context['show']
     assert context['form'].initial == {'lang': settings.LANGUAGE_CODE}
-
-
-@patch.object(api_client.buyer, 'send_form')
-def test_international_landing_sector_list_view_submit(
-    mock_send_form, buyer_request, buyer_form_data
-):
-    response = InternationalLandingSectorListView.as_view()(buyer_request)
-    expected_template = InternationalLandingSectorListView.success_template
-
-    assert response.template_name == expected_template
-    mock_send_form.assert_called_once_with(
-        forms.serialize_international_buyer_forms(buyer_form_data)
-    )
 
 
 def test_international_landing_page_sector_context_verbose(client):
@@ -185,3 +167,27 @@ def test_privacy_cookiues_success(client):
     response = client.get(url)
 
     assert response.status_code == http.client.OK
+
+
+@patch.object(api_client.buyer, 'send_form')
+def test_subscribe_view_submit(
+    mock_send_form, buyer_request, buyer_form_data
+):
+    response = BuyerSubscribeFormView.as_view()(buyer_request)
+
+    assert response.status_code == http.client.OK
+    assert response.template_name == BuyerSubscribeFormView.success_template
+    mock_send_form.assert_called_once_with(
+        forms.serialize_international_buyer_forms(buyer_form_data)
+    )
+
+
+@patch.object(api_client.buyer, 'send_form')
+def test_subscribe_view_submit_invalid(
+    mock_send_form, buyer_request_invalid
+):
+    response = BuyerSubscribeFormView.as_view()(buyer_request_invalid)
+
+    assert response.template_name == [BuyerSubscribeFormView.template_name]
+    assert response.status_code == http.client.OK
+    assert response.context_data['form'].errors
