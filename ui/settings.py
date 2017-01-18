@@ -68,7 +68,6 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'ui.context_processors.feature_flags',
-                'ui.context_processors.current_view_name',
                 'ui.context_processors.subscribe_form',
             ],
         },

@@ -32,6 +32,7 @@ class PublicProfileListView(SubmitFormOnGetMixin, FormView):
         context = super().get_context_data(**kwargs)
         context['selected_sector_label'] = self.get_sector_label(context)
         context['show_companies_count'] = self.get_show_companies_count()
+        context['active_view_name'] = 'public-company-profiles-list'
         return context
 
     def get_show_companies_count(self):

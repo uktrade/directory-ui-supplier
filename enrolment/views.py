@@ -34,9 +34,19 @@ class BuyerSubscribeFormView(FormView):
 class InternationalLandingView(ShowLanguageSwitcherMixin, TemplateView):
     template_name = 'landing-page-international.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['active_view_name'] = 'index'
+        return context
+
 
 class InternationalLandingSectorListView(TemplateView):
     template_name = 'landing-page-international-sector-list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['active_view_name'] = 'international-sector-list'
+        return context
 
 
 class PrivacyCookiesView(TemplateView):
