@@ -1,17 +1,34 @@
 {% load static %}
+{% load trans from i18n %}
 {% load external_url from constants_tags %}
 <footer class="group ed-footer" id="footer" role="contentinfo">
     <div class="container">
         <div class="row-fluid grid-row">
             <div class="span9 subscribe">
                 <div class="footer-section">
-                    <span class="footer-links"><a href="{% external_url 'DIT' %}" title="">Department for International Trade</a></span>
+                    <span class="footer-links">
+                        <a href="{% external_url 'DIT' %}" title="">
+                            {% trans "Department for International Trade" %}
+                        </a>
+                    </span>
                     <span class="ed-text-divider">|</span>
-                    <span class="footer-links"><a href="mailto:help@digital.trade.gov.uk?subject=General%20enquiry%20for%20{{ request.get_full_path }}" title="">Contact us</a></span>
+                    <span class="footer-links">
+                        <a href="mailto:help@digital.trade.gov.uk?subject=General%20enquiry%20for%20{{ request.get_full_path }}" title="">
+                            {% trans "Contact us" %}
+                        </a>
+                    </span>
                     <span class="ed-text-divider">|</span>
-                    <span class="footer-links"><a href="{% url 'privacy-and-cookies' %}" title="">Privacy and cookies</a></span>
+                    <span class="footer-links">
+                        <a href="{% url 'privacy-and-cookies' %}" title="">
+                            {% trans "Privacy and cookies" %}
+                        </a>
+                    </span>
                     <span class="ed-text-divider">|</span>
-                    <span class="footer-links"><a href="{% url 'terms-and-conditions' %}" title="">Terms &amp; conditions</a></span>
+                    <span class="footer-links">
+                        <a href="{% url 'terms-and-conditions' %}" title="">
+                            {% trans "Terms &amp; conditions" %}
+                        </a>
+                    </span>
                 </div>
             </div>
             <div class="span3 logo">
@@ -21,7 +38,8 @@
                             <img src="{% static 'images/hmg-logo.png' %}" alt="HMG Logo" style="height:30px;">
                         </a>
                     </p>
-                    <p class="copyright-text">&copy; Crown Copyright 2016</p>
+                    <p class="copyright-text">
+                        &copy; {% trans "Crown Copyright 2016" %}</p>
                     <p>
                       <img class="dit-iigb-logo" alt="Brand" src="{% static 'images/business-is-great-logo-white.png' %}"> 
                     </p>

@@ -1,8 +1,9 @@
+{% load trans from i18n %}
 {% if language_switcher.show %}
     <div class="ed-language-switcher">
         <form method="get">
             {{ language_switcher.form.lang }}
-            <button>Select</button>
+            <button>{% trans "Select" %}</button>
         </form>
     </div>
 {% endif %}
