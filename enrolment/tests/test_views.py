@@ -11,7 +11,6 @@ from enrolment import constants, forms
 from enrolment.views import (
     api_client,
     BuyerSubscribeFormView,
-    InternationalLandingView,
     InternationalLandingSectorDetailView
 )
 
@@ -97,12 +96,14 @@ def api_response_company_profile_no_date_of_creation_200(api_response_200):
     return response
 
 
-def test_international_landing_view_context(anon_request):
-    response = InternationalLandingView.as_view()(anon_request)
+def test_international_landing_view_context(client):
+    response = client.get(reverse('index'))
 
-    context = response.context_data['language_switcher']
-    assert context['show']
-    assert context['form'].initial == {'lang': settings.LANGUAGE_CODE}
+    lang_context = response.context['language_switcher']
+
+    assert lang_context['show']
+    assert lang_context['form'].initial == {'lang': settings.LANGUAGE_CODE}
+    assert response.context['active_view_name'] == 'index'
 
 
 def test_international_landing_page_sector_context_verbose(client):
@@ -151,6 +152,13 @@ def test_international_landing_page_sector_context(client):
     assert pages['tech']['context'] == constants.TECH_SECTOR_CONTEXT
     assert pages['creative']['context'] == constants.CREATIVE_SECTOR_CONTEXT
     assert pages['food-and-drink']['context'] == constants.FOOD_SECTOR_CONTEXT
+
+
+def test_international_sector_list_context(client):
+    view_name = 'international-sector-list'
+    response = client.get(reverse(view_name))
+
+    assert response.context['active_view_name'] == view_name
 
 
 def test_terms_page_success(client):
