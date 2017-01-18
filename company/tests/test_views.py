@@ -129,6 +129,13 @@ def test_company_profile_list_exposes_context_hide_companies_count(
         assert response.context_data['show_companies_count'] is False
 
 
+def test_company_profile_list_general_context(client):
+    view_name = 'public-company-profiles-list'
+    response = client.get(reverse(view_name))
+
+    assert response.context['active_view_name'] == view_name
+
+
 @patch.object(helpers, 'get_public_company_profile_from_response')
 @patch.object(views.api_client.company,
               'retrieve_public_profile_by_companies_house_number')
