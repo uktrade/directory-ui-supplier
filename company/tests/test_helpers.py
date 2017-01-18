@@ -41,6 +41,21 @@ def test_pair_sector_values_with_label():
     assert helpers.pair_sector_values_with_label(values) == expected
 
 
+def test_pair_sector_values_with_label_contains_invalid():
+    values = ['AGRICULTURE_HORTICULTURE_AND_FISHERIES', 'AEROSPACE', 'DEFENCE']
+    expected = [
+        {
+            'label': 'Agriculture, horticulture and fisheries',
+            'value': 'AGRICULTURE_HORTICULTURE_AND_FISHERIES',
+        },
+        {
+            'label': 'Aerospace',
+            'value': 'AEROSPACE',
+        },
+    ]
+    assert helpers.pair_sector_values_with_label(values) == expected
+
+
 def test_get_employees_label_none():
     assert helpers.get_employees_label('') == ''
 

@@ -3,8 +3,8 @@ import datetime
 from directory_validators.constants import choices
 
 
-EMPLOYEE_CHOICES = {key: value for key, value in choices.EMPLOYEES}
-SECTOR_CHOICES = {key: value for key, value in choices.COMPANY_CLASSIFICATIONS}
+EMPLOYEE_CHOICES = dict(choices.EMPLOYEES)
+SECTOR_CHOICES = dict(choices.COMPANY_CLASSIFICATIONS)
 
 
 def format_date_of_creation(raw_date_of_creation):
@@ -22,7 +22,10 @@ def get_employees_label(employees_value):
 def pair_sector_values_with_label(sectors_values):
     if not sectors_values:
         return []
-    return [pair_sector_value_with_label(value) for value in sectors_values]
+    return [
+        pair_sector_value_with_label(value) for value in sectors_values
+        if value in SECTOR_CHOICES
+    ]
 
 
 def pair_sector_value_with_label(sectors_value):
@@ -63,6 +66,7 @@ def get_company_list_from_response(response):
 def format_company_details(details):
     date_of_creation = format_date_of_creation(details.get('date_of_creation'))
     case_studies = map(format_case_study, details['supplier_case_studies'])
+
     return {
         'website': details['website'],
         'description': details['description'],
