@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-18 13:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: enrolment/forms.py:16
+msgid "Please select an industry"
+msgstr ""
+
+#: enrolment/forms.py:18
+msgid "Tick the box to confirm you agree to the terms and conditions."
+msgstr ""
+
+#: enrolment/forms.py:21
+#, python-format
+msgid ""
+"I agree to the great.gov.uk <a target=\"_self\" href=\"%(url)s\">terms and "
+"conditions</a>."
+msgstr ""
+
+#: enrolment/forms.py:24
+msgid "Your name"
+msgstr ""
+
+#: enrolment/forms.py:25
+msgid "Email address"
+msgstr ""
+
+#: enrolment/forms.py:27
+msgid "Industry"
+msgstr ""
+
+#: enrolment/templates/header.html:26
+msgid "Home"
+msgstr ""
+
+#: enrolment/templates/header.html:29
+msgid "Find a Supplier"
+msgstr ""
+
+#: enrolment/templates/header.html:32
+msgid "Industries"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-form.html:4
+msgid "Register to see the latest UK companies"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-form.html:6
+msgid ""
+"We have hundreds of companies that may meet your needs and new ones are "
+"being added frequently. Register to receive a weekly mail with a summary of "
+"new companies in your industry."
+msgstr ""
+
+#: enrolment/templates/landing-page-international-form.html:54
+msgid "Register"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:9
+msgid ""
+"Welcome to Great Britain and Northern Ireland - the right place to do "
+"business"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:18
+msgid "Find UK companies to do business with"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:26
+msgid ""
+"The UK is a great place to find innovative, high-quality products and "
+"services."
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:29
+msgid ""
+"You can make the right trade connections in the UK with global corporations "
+"and smaller enterprises across every industry."
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:32
+msgid ""
+"UK companies work with businesses and governments around the world to create "
+"new living and working environments, run high quality services and deliver "
+"the best experiences."
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:35
+msgid ""
+"When you need a trade partner, the reliability and expertise of UK companies "
+"is hard to beat."
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:38
+msgid ""
+"Choose from the hundreds of businesses in the UK to work with you today."
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:44
+msgid "Find great UK companies"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:51
+msgid ""
+"Exceptionally innovative and creative UK trade partners are ready to work "
+"with you. Discover them on the Find a Supplier service."
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:63
+msgid "UK industries"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:72
+msgid "Healthcare and life sciences in the UK"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:74
+msgid ""
+"Get access to the UK health and life sciences supply-chain, delivering high "
+"quality, innovative services to the world."
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:78
+msgid "Find out more about the UK’s healthcare and life sciences"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:88
+msgid "The UK's advanced technology"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:90
+msgid ""
+"Check out the latest cutting-edge technologies that the UK is bringing to "
+"the world."
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:108
+msgid "The UK's creative services"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:110
+msgid ""
+"Whether you need buildings designed, films made or a fresh approach to "
+"marketing, the UK is the first place to look."
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:115
+msgid "Find out more about the UK’s creative services"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:125
+msgid "The UK's food and drink"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:127
+msgid ""
+"Whether you want the most innovative food brands or exceptional quality "
+"drinks, the UK is the first place to look."
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:132
+msgid "Find out more about UK food and drink"
+msgstr ""

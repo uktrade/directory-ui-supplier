@@ -1,5 +1,5 @@
 {% load static from static %}
-{% load external_url from constants_tags %}
+{% load trans from i18n %}
 <header class="ed-header-gov-row">
     <div class="container">
         <a href="https://www.gov.uk/" target="_blank">
@@ -23,13 +23,13 @@
       <div class="nav-collapse collapse pull-right">
         <ul class="nav navbar-nav dit-main-nav-list pull-right">
             <li {% if active_view_name == 'index'%}class="active"{% endif %}>
-                <a style="border-left: 1px solid #D8D8D8;" href="{% url 'index' %}">Home</a>
+                <a style="border-left: 1px solid #D8D8D8;" href="{% url 'index' %}">{% trans "Home" %}</a>
             </li>
             <li {% if active_view_name == 'public-company-profiles-list'%}class="active"{% endif %}>
-                <a href="{% url 'public-company-profiles-list' %}">Find a Supplier</a>
+                <a href="{% url 'public-company-profiles-list' %}">{% trans "Find a Supplier" %}</a>
             </li>
             <li  {% if active_view_name == 'international-sector-list'%}class="active"{% endif %}>
-                <a href="{% url 'international-sector-list' %}">Industries</a>
+                <a href="{% url 'international-sector-list' %}">{% trans "Industries" %}</a>
             </li>
         </ul>
       </div>

@@ -1,3 +1,4 @@
+{% load trans from i18n %}
 {% load static from staticfiles %}
 <section>
 	<div class="ed-landing-page-find-other-companies-container ed-landing-page-find-other-companies-container-bottom">
@@ -8,14 +9,18 @@
 						<img src="{% static 'images/globe-icon.png' %}" />
 					</div>
 					<div class="span9">
-						<h3>{% block footer_title %}Find great UK companies{% endblock %}</h3>
+						<h3>
+							{% block footer_title %}
+								{% trans "Find great UK companies" %}
+							{% endblock %}
+						</h3>
 					</div>
 				</div>
 				<div class="row-fluid ">
 					<div class="span11">
 						<p class="ed-landing-page-sector-synopsis">
 							{% block footer_text %}
-								Exceptionally innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service.
+								{% trans "Exceptionally innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service." %}
 							{% endblock %}
 						</p>
 					</div>
@@ -24,7 +29,7 @@
 			<div class="span4">
 				<div class="btn-container pull-right">
 					<a class="button" href="{% url 'public-company-profiles-list' %}">
-						Browse UK companies
+						{% trans "Browse UK companies" %}
 					</a>
 				</div>
 			</div>

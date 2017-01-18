@@ -51,9 +51,7 @@
 						{% trans "Exceptionally innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service." %}
 					</p>
 					<div class="btn-container">
-						<a class="button" href="{% url 'public-company-profiles-list' %}">
-							Browse UK companies
-						</a>
+						<a class="button" href="{% url 'public-company-profiles-list' %}">{% trans "Browse UK companies" %}</a>
 					</div>
 				</div>
 			</div>
@@ -93,7 +91,7 @@
 					<br>
 					<p class="ed-landing-page-sector-link-container">
 						<a href="{% url 'international-sector-detail' slug='tech' %}">
-							Find out more about UK technology
+							{% trans "Find out more about UK technology" %}
 						</a>
 					</p>
 				</div>
