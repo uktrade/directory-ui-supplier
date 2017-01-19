@@ -290,7 +290,7 @@ def test_contact_company_view_feature_flag_on(settings, client):
     assert response.status_code == http.client.OK
 
 
-def test_contact_company_view_feature_submit(settings, client):
+def test_contact_company_view_feature_submit(settings, client, captcha_stub):
     settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = True
 
     url = reverse('contact-company', kwargs={'company_number': '01234567'})
@@ -302,6 +302,7 @@ def test_contact_company_view_feature_submit(settings, client):
         'sector': 'AEROSPACE',
         'subject': 'greetings',
         'body': 'and salutations',
+        'recaptcha_response_field': captcha_stub,
     }
     response = client.post(url, data)
 

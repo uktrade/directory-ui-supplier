@@ -293,6 +293,9 @@ label, input, button, select, textarea {
   select {
     height: 50px;
     width: 100%;
+    -webkit-appearance: none; 
+    appearance: none; 
+    background: url(images/down-arrow.svg) no-repeat 98% white;
   }
 
   textarea {
@@ -901,7 +904,7 @@ a.ed-filled-button-primary {
   }
   li {
     margin-bottom: 20px;
-    span {
+    > span {
       font-size: 15px;
       font-weight: 300;
       line-height: 1.4;

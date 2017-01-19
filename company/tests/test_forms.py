@@ -64,3 +64,19 @@ def test_contact_company__form_length_of_fields():
     assert form.fields['country'].max_length == 255
     assert form.fields['subject'].max_length == 200
     assert form.fields['body'].max_length == 1000
+
+
+def test_contact_company_form_capcha_valid(captcha_stub):
+    form = forms.ContactCompanyForm({'recaptcha_response_field': captcha_stub})
+
+    form.is_valid()
+
+    assert 'captcha' not in form.errors
+
+
+def test_contact_company_form_captcha_valid():
+    form = forms.ContactCompanyForm({'recaptcha_response_field': 'INVALID'})
+
+    form.is_valid()
+
+    assert 'captcha' in form.errors
