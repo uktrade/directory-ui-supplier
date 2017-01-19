@@ -361,3 +361,18 @@ def test_public_profile_non_verbose_missing_summary():
     html = render_to_string('company-profile-detail.html', context)
 
     assert expected in html
+
+
+def test_company_contact_displays_company_name():
+    html = render_to_string('company-contact-form.html', default_context)
+    assert default_context['company']['name'] in html
+
+
+def test_company_contact_displays_cancel_link():
+    html = render_to_string('company-contact-form.html', default_context)
+    url = reverse(
+        'public-company-profiles-detail',
+        kwargs={'company_number': default_context['company']['number']}
+    )
+
+    assert url in html
