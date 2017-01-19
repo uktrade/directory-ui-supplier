@@ -120,7 +120,7 @@ msgstr ""
 
 #: enrolment/templates/landing-page-international.html:18
 msgid "Find UK companies to do business with"
-msgstr " Finden Sie britische Unternehmen um Geschäfte zu machen"
+msgstr "Finden sie britische Handelsunternehmen"
 
 #: enrolment/templates/landing-page-international.html:26
 msgid ""
@@ -239,4 +239,4 @@ msgstr ""
 
 #: enrolment/templates/language_switcher.html:6
 msgid "Select"
-msgstr ""
+msgstr "Wechseln"
