@@ -81,7 +81,7 @@ def test_public_company_profile_details_exposes_context(
     response = client.get(url)
     assert response.status_code == http.client.OK
     assert response.template_name == [
-        views.PublicProfileDetailView.template_name
+        views.PublishedProfileDetailView.template_name
     ]
     assert response.context_data['company'] == {}
     assert response.context_data['show_edit_links'] is False
@@ -97,9 +97,10 @@ def test_company_profile_list_exposes_context(
     )['results']
 
     response = client.get(url, params)
+    expected_template_name = views.PublishedProfileListView.template_name
 
     assert response.status_code == http.client.OK
-    assert response.template_name == views.PublicProfileListView.template_name
+    assert response.template_name == expected_template_name
     assert response.context_data['companies'] == expected_companies
     assert response.context_data['pagination'].paginator.count == 20
     assert response.context_data['show_companies_count'] is True
@@ -291,3 +292,44 @@ def test_supplier_case_study_handles_404(
     response = client.get(url)
 
     assert response.status_code == http.client.NOT_FOUND
+
+
+def test_contact_company_view_feature_flag_off(settings, client):
+    settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = False
+
+    url = reverse('contact-company', kwargs={'company_number': '01234567'})
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.NOT_FOUND
+
+
+def test_contact_company_view_feature_flag_on(settings, client):
+    settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = True
+
+    url = reverse('contact-company', kwargs={'company_number': '01234567'})
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.OK
+
+
+def test_contact_company_view_feature_submit(settings, client):
+    settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = True
+
+    url = reverse('contact-company', kwargs={'company_number': '01234567'})
+    data = {
+        'full_name': 'Jim Example',
+        'company_name': 'Example Corp',
+        'country': 'China',
+        'email_address': 'jim@example.com',
+        'sector': 'AEROSPACE',
+        'subject': 'greetings',
+        'body': 'and salutations',
+    }
+    response = client.post(url, data)
+
+    expected_template_name = views.ContactCompanyView.success_template_name
+
+    assert response.status_code == http.client.OK
+    assert response.template_name == expected_template_name

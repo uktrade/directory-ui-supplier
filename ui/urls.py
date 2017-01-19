@@ -9,9 +9,10 @@ from enrolment.views import (
     TermsView,
 )
 from company.views import (
-    PublicProfileListView,
-    PublicProfileDetailView,
-    CaseStudyDetailView
+    PublishedProfileListView,
+    PublishedProfileDetailView,
+    CaseStudyDetailView,
+    ContactCompanyView
 )
 
 urlpatterns = [
@@ -22,12 +23,17 @@ urlpatterns = [
     ),
     url(
         r'^suppliers$',
-        PublicProfileListView.as_view(),
+        PublishedProfileListView.as_view(),
         name='public-company-profiles-list',
     ),
     url(
+        r'^suppliers/(?P<company_number>.+)/contact$',
+        ContactCompanyView.as_view(),
+        name='contact-company',
+    ),
+    url(
         r'^suppliers/(?P<company_number>.+)$',
-        PublicProfileDetailView.as_view(),
+        PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail',
     ),
     url(

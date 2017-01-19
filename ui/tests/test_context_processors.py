@@ -11,11 +11,15 @@ def test_feature_flags_installed(settings):
 
 
 def test_feature_returns_expected_features(rf, settings):
+    settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = 'A'
+
     request = rf.get('/')
     actual = context_processors.feature_flags(request)
 
     assert actual == {
-        'features': {}
+        'features': {
+            'FEATURE_CONTACT_COMPANY_FORM_ENABLED': 'A',
+        }
     }
 
 
