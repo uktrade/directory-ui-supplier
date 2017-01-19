@@ -1,6 +1,7 @@
 import http
 import requests
 
+from django.conf import settings
 from django.core.paginator import Paginator
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
@@ -24,7 +25,7 @@ class SubmitFormOnGetMixin:
         return super().post(request, *args, **kwargs)
 
 
-class PublicProfileListView(SubmitFormOnGetMixin, FormView):
+class PublishedProfileListView(SubmitFormOnGetMixin, FormView):
     template_name = 'company-public-profile-list.html'
     form_class = forms.PublicProfileSearchForm
 
@@ -78,7 +79,7 @@ class PublicProfileListView(SubmitFormOnGetMixin, FormView):
             return TemplateResponse(self.request, self.template_name, context)
 
 
-class PublicProfileDetailView(TemplateView):
+class PublishedProfileDetailView(TemplateView):
     template_name = 'company-profile-detail.html'
 
     def get_context_data(self, **kwargs):
@@ -122,3 +123,13 @@ class CaseStudyDetailView(TemplateView):
         return {
             'case_study': self.get_case_study(),
         }
+
+
+class ContactCompanyView(FormView):
+    template_name = 'company-contact-form.html'
+    form_class = forms.ContactCompanyForm
+
+    def dispatch(self, *args, **kwargs):
+        if not settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED:
+            raise Http404()
+        return super().dispatch(*args, **kwargs)

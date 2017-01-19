@@ -30,6 +30,8 @@ class PublicProfileSearchForm(forms.Form):
 
 
 class ContactCompanyForm(forms.Form):
+    error_css_class = 'input-field-container has-error'
+
     full_name = forms.CharField(
         label='Your full name:',
         max_length=255,

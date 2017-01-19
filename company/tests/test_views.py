@@ -81,7 +81,7 @@ def test_public_company_profile_details_exposes_context(
     response = client.get(url)
     assert response.status_code == http.client.OK
     assert response.template_name == [
-        views.PublicProfileDetailView.template_name
+        views.PublishedProfileDetailView.template_name
     ]
     assert response.context_data['company'] == {}
     assert response.context_data['show_edit_links'] is False
@@ -99,7 +99,7 @@ def test_company_profile_list_exposes_context(
     response = client.get(url, params)
 
     assert response.status_code == http.client.OK
-    assert response.template_name == views.PublicProfileListView.template_name
+    assert response.template_name == views.PublishedProfileListView.template_name
     assert response.context_data['companies'] == expected_companies
     assert response.context_data['pagination'].paginator.count == 20
     assert response.context_data['show_companies_count'] is True

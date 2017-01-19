@@ -1,0 +1,30 @@
+{% extends 'govuk_layout.html' %}
+{% load naturaltime from humanize %}
+{% load staticfiles %}
+{% block css %}
+	<link href="{% static 'company-profile-details.css' %}" media="all" rel="stylesheet" />
+{% endblock %}
+{% block hero_title %}Contact company{% endblock %}
+{% block sub_header %}
+	<br>
+	<br>
+{% endblock %}
+{% block content %}
+	<div class="container">
+		<div class="row-fluid">
+			<div class="container">
+				<div class="span8 offset2">
+					<div class="input-field-container">
+						<form action="" method="post">
+							{{ form.as_ul }}
+							<div class="clearfix"></div>
+							<div class="form-wrapper-btn-container btn-container">
+								<input class="register-btn button" type="submit" value="Send">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
