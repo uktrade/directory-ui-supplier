@@ -257,11 +257,38 @@ def test_profile_case_studies_present():
     assert RECENT_PROJECTS_LABEL in html
 
 
-def test_public_profile_contact_button():
-    html = render_to_string('company-profile-detail.html', default_context)
+def test_public_profile_contact_button_feature_flag_off(settings):
+    context = {
+        'company': default_context['company'],
+        'features': {
+            'FEATURE_CONTACT_COMPANY_FORM_ENABLED': False,
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+    expected_url = reverse(
+        'contact-company', kwargs={'company_number': '123456'}
+    )
 
-    assert html.count(default_context['company']['email_address']) == 2
     assert CONTACT_COMPANY_LABEL in html
+    assert html.count(default_context['company']['email_address']) == 2
+    assert html.count(expected_url) == 0
+
+
+def test_public_profile_contact_button_feature_flag_on(settings):
+    context = {
+        'company': default_context['company'],
+        'features': {
+            'FEATURE_CONTACT_COMPANY_FORM_ENABLED': True,
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+    expected_url = reverse(
+        'contact-company', kwargs={'company_number': '123456'}
+    )
+
+    assert CONTACT_COMPANY_LABEL in html
+    assert html.count(default_context['company']['email_address']) == 0
+    assert html.count(expected_url) == 2
 
 
 def test_public_profile_contact_button_no_email():

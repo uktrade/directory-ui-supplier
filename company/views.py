@@ -127,9 +127,13 @@ class CaseStudyDetailView(TemplateView):
 
 class ContactCompanyView(FormView):
     template_name = 'company-contact-form.html'
+    success_template_name = 'company-contact-success.html'
     form_class = forms.ContactCompanyForm
 
     def dispatch(self, *args, **kwargs):
         if not settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED:
             raise Http404()
         return super().dispatch(*args, **kwargs)
+
+    def form_valid(self, form):
+        return TemplateResponse(self.request, self.success_template_name, {})
