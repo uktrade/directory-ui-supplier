@@ -32,6 +32,8 @@ class InternationalBuyerForm(forms.Form):
     terms = forms.BooleanField(
         error_messages={'required': TERMS_CONDITIONS_MESSAGE}
     )
+    company_name = forms.CharField(label=_('Company name'))
+    country = forms.CharField(label=_('Country'))
 
     error_css_class = 'input-field-container has-error'
 
