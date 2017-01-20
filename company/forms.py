@@ -1,6 +1,7 @@
-from django import forms
-
+from captcha.fields import ReCaptchaField
 from directory_validators.constants import choices
+
+from django import forms
 
 
 SELECT_LABEL = 'Please select an industry'
@@ -63,3 +64,4 @@ class ContactCompanyForm(forms.Form):
         max_length=1000,
         widget=forms.Textarea
     )
+    captcha = ReCaptchaField()

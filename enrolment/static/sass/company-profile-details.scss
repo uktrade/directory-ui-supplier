@@ -374,7 +374,7 @@
     margin-top: 10px;
     margin-bottom: 0;
     select {
-      width: 260px;
+      width: 270px;
       margin-left: 5px;
     }
   }
@@ -403,4 +403,10 @@
   letter-spacing: -0.2px;
   text-align: right;
   color: #007ea3;
+}
+
+.recaptcha_input_area {
+  input {
+    height: auto;
+  }
 }

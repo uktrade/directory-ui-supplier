@@ -1,3 +1,4 @@
+import os
 from copy import deepcopy
 import http
 from unittest.mock import patch
@@ -155,3 +156,11 @@ def retrieve_public_profile(api_response_company_profile_200):
     stub.start()
     yield
     stub.stop()
+
+
+@pytest.fixture()
+def captcha_stub():
+    # https://github.com/praekelt/django-recaptcha#id5
+    os.environ['RECAPTCHA_TESTING'] = 'True'
+    yield 'PASSED'
+    os.environ['RECAPTCHA_TESTING'] = 'False'

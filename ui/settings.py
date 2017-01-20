@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "enrolment",
     "company",
     "directory_constants",
+    "captcha",
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -223,3 +224,7 @@ API_CLIENT_CLASS_NAME = os.getenv('API_CLIENT_CLASS_NAME', 'default')
 API_CLIENT_CLASS = API_CLIENT_CLASSES[API_CLIENT_CLASS_NAME]
 
 SECTOR_LINKS = helpers.parse_sector_links(os.environ['SECTOR_LINKS_JSON'])
+
+# Google Recaptcha
+RECAPTCHA_PUBLIC_KEY = os.environ['RECAPTCHA_PUBLIC_KEY']
+RECAPTCHA_PRIVATE_KEY = os.environ['RECAPTCHA_PRIVATE_KEY']
