@@ -139,7 +139,6 @@ class ContactCompanyView(AddCompanyProfileToContextMixin, FormView):
             raise Http404()
         return super().dispatch(*args, **kwargs)
 
-
     def form_valid(self, form):
         response = api_client.company.send_email(
             number=self.kwargs['company_number'],
@@ -149,7 +148,8 @@ class ContactCompanyView(AddCompanyProfileToContextMixin, FormView):
             template = self.success_template_name
         else:
             template = self.failure_template_name
-        return TemplateResponse(self.request, template)
+        context = self.get_context_data()
+        return TemplateResponse(self.request, template, context)
 
     @staticmethod
     def serialize_form_data(cleaned_data):

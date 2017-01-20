@@ -81,7 +81,7 @@ def serialize_contact_company_form(cleaned_data):
         'full_name': cleaned_data['full_name'],
         'company_name': cleaned_data['company_name'],
         'country': cleaned_data['country'],
-        'from': cleaned_data['email_address'],
+        'email_address': cleaned_data['email_address'],
         'sector': cleaned_data['sector'],
         'subject': cleaned_data['subject'],
         'body': cleaned_data['body'],

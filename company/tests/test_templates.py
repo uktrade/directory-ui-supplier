@@ -376,3 +376,9 @@ def test_company_contact_displays_cancel_link():
     )
 
     assert url in html
+
+
+def test_contact_company_success():
+    html = render_to_string('company-contact-success.html', default_context)
+
+    assert 'Your message has been sent to UK exporting co ltd.' in html
