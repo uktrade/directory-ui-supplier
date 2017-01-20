@@ -25,6 +25,27 @@ class SubmitFormOnGetMixin:
         return super().post(request, *args, **kwargs)
 
 
+class AddCompanyProfileToContextMixin:
+
+    company_number_url_kwarg = 'company_number'
+
+    def get_context_data(self, **kwargs):
+        api_call = (
+            api_client.company.
+            retrieve_public_profile_by_companies_house_number
+        )
+        response = api_call(number=self.kwargs[self.company_number_url_kwarg])
+        if response.status_code == http.client.NOT_FOUND:
+            raise Http404(
+                "API returned 404 for company number %s",
+                self.kwargs['company_number'],
+            )
+        elif not response.ok:
+            response.raise_for_status()
+        company = helpers.get_public_company_profile_from_response(response)
+        return super().get_context_data(company=company, **kwargs)
+
+
 class PublishedProfileListView(SubmitFormOnGetMixin, FormView):
     template_name = 'company-public-profile-list.html'
     form_class = forms.PublicProfileSearchForm
@@ -79,28 +100,13 @@ class PublishedProfileListView(SubmitFormOnGetMixin, FormView):
             return TemplateResponse(self.request, self.template_name, context)
 
 
-class PublishedProfileDetailView(TemplateView):
+class PublishedProfileDetailView(AddCompanyProfileToContextMixin,
+                                 TemplateView):
     template_name = 'company-profile-detail.html'
 
     def get_context_data(self, **kwargs):
-        api_call = (
-            api_client.company.
-            retrieve_public_profile_by_companies_house_number
-        )
-        response = api_call(number=self.kwargs['company_number'])
-        if response.status_code == http.client.NOT_FOUND:
-            raise Http404(
-                "API returned 404 for company number %s",
-                self.kwargs['company_number'],
-            )
-        elif not response.ok:
-            response.raise_for_status()
-        company = helpers.get_public_company_profile_from_response(response)
-        return {
-            'company': company,
-            'show_edit_links': False,
-            'show_description': 'verbose' in self.request.GET,
-        }
+        is_verbose = 'verbose' in self.request.GET
+        return super().get_context_data(show_description=is_verbose, **kwargs)
 
 
 class CaseStudyDetailView(TemplateView):
@@ -125,7 +131,7 @@ class CaseStudyDetailView(TemplateView):
         }
 
 
-class ContactCompanyView(FormView):
+class ContactCompanyView(AddCompanyProfileToContextMixin, FormView):
     template_name = 'company-contact-form.html'
     success_template_name = 'company-contact-success.html'
     form_class = forms.ContactCompanyForm

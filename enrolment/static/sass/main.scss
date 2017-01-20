@@ -264,6 +264,8 @@ label, input, button, select, textarea {
   label {
     font-size: 18px;
     font-weight: 300;
+    letter-spacing: -0.2px;
+    color: #4a4a4a;
     span {
       margin-bottom: 5px;
       display: inline-block;
@@ -271,8 +273,9 @@ label, input, button, select, textarea {
   }
 
   input, select, textarea {
-    font-size: 14px;
-    height: 34px;
+    border-radius: 0;
+    font-size: 20px;
+    height: 50px;
     width: 100%;
     color: #4a4a4a;
     background-color: #fafafa;
@@ -288,7 +291,7 @@ label, input, button, select, textarea {
   }
 
   select {
-    height: 34px;
+    height: 50px;
     width: 100%;
   }
 
@@ -887,5 +890,28 @@ a.ed-filled-button-primary {
     margin-bottom: 0;
     margin-top: 0;
     text-align: right;
+  }
+}
+
+.ed-contact-form-container {
+  margin-bottom: 40px;
+  .ed-contact-form-inner {
+    border: solid 1px #d8d8d8;
+    border-bottom: 0;
+  }
+  li {
+    margin-bottom: 20px;
+    span {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.4;
+      color: #4a4a4a;
+    }
+  }
+  .btn-container .button {
+    padding: inherit;
+    width: 100px;
+    font-size: 18px;
+    border-radius: 3px;
   }
 }

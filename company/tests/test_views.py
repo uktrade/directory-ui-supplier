@@ -38,13 +38,7 @@ def retrieve_public_case_study_200(api_response_200):
     return response
 
 
-@patch.object(views.api_client.company,
-              'retrieve_public_profile_by_companies_house_number', Mock)
-@patch.object(helpers, 'get_public_company_profile_from_response')
-def test_public_company_profile_details_verbose_context(
-    mock_get_public_company_profile_from_response, client
-):
-    mock_get_public_company_profile_from_response.return_value = {}
+def test_public_profile_details_verbose_context(client):
     url = reverse(
         'public-company-profiles-detail', kwargs={'company_number': '01234567'}
     )
@@ -53,13 +47,7 @@ def test_public_company_profile_details_verbose_context(
     assert response.context_data['show_description'] is True
 
 
-@patch.object(views.api_client.company,
-              'retrieve_public_profile_by_companies_house_number', Mock)
-@patch.object(helpers, 'get_public_company_profile_from_response')
-def test_public_company_profile_details_non_verbose_context(
-    mock_get_public_company_profile_from_response, client
-):
-    mock_get_public_company_profile_from_response.return_value = {}
+def test_public_profile_details_non_verbose_context(client):
     url = reverse(
         'public-company-profiles-detail', kwargs={'company_number': '01234567'}
     )
@@ -71,7 +59,7 @@ def test_public_company_profile_details_non_verbose_context(
 @patch.object(views.api_client.company,
               'retrieve_public_profile_by_companies_house_number', Mock)
 @patch.object(helpers, 'get_public_company_profile_from_response')
-def test_public_company_profile_details_exposes_context(
+def test_public_profile_details_exposes_context(
     mock_get_public_company_profile_from_response, client
 ):
     mock_get_public_company_profile_from_response.return_value = {}
@@ -84,7 +72,6 @@ def test_public_company_profile_details_exposes_context(
         views.PublishedProfileDetailView.template_name
     ]
     assert response.context_data['company'] == {}
-    assert response.context_data['show_edit_links'] is False
 
 
 def test_company_profile_list_exposes_context(
@@ -138,27 +125,19 @@ def test_company_profile_list_general_context(client):
 
 
 @patch.object(helpers, 'get_public_company_profile_from_response')
-@patch.object(views.api_client.company,
-              'retrieve_public_profile_by_companies_house_number')
-def test_public_company_profile_details_calls_api(
-    mock_retrieve_public_profile,
-    mock_get_public_company_profile_from_response, client
-):
-    mock_get_public_company_profile_from_response.return_value = {}
+def test_public_profile_details_calls_api(mock_retrieve_profile, client):
     url = reverse(
         'public-company-profiles-detail', kwargs={'company_number': '01234567'}
     )
     client.get(url)
 
-    assert mock_retrieve_public_profile.called_once_with(1)
+    assert mock_retrieve_profile.called_once_with(1)
 
 
-@patch.object(helpers, 'get_public_company_profile_from_response')
 @patch.object(views.api_client.company,
               'retrieve_public_profile_by_companies_house_number')
-def test_public_company_profile_details_handles_bad_status(
-    mock_retrieve_public_profile,
-    mock_get_public_company_profile_from_response, client, api_response_400
+def test_public_profile_details_handles_bad_status(
+    mock_retrieve_public_profile, client, api_response_400
 ):
     mock_retrieve_public_profile.return_value = api_response_400
     url = reverse(
@@ -169,12 +148,10 @@ def test_public_company_profile_details_handles_bad_status(
         client.get(url)
 
 
-@patch.object(helpers, 'get_public_company_profile_from_response')
 @patch.object(views.api_client.company,
               'retrieve_public_profile_by_companies_house_number')
-def test_public_company_profile_details_handles_404(
-    mock_retrieve_public_profile,
-    mock_get_public_company_profile_from_response, client, api_response_404
+def test_public_profile_details_handles_404(
+    mock_retrieve_public_profile, client, api_response_404
 ):
     mock_retrieve_public_profile.return_value = api_response_404
     url = reverse(
@@ -308,7 +285,6 @@ def test_contact_company_view_feature_flag_on(settings, client):
     settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = True
 
     url = reverse('contact-company', kwargs={'company_number': '01234567'})
-
     response = client.get(url)
 
     assert response.status_code == http.client.OK
@@ -333,3 +309,22 @@ def test_contact_company_view_feature_submit(settings, client):
 
     assert response.status_code == http.client.OK
     assert response.template_name == expected_template_name
+
+
+@patch.object(views.api_client.company,
+              'retrieve_public_profile_by_companies_house_number', Mock)
+@patch.object(helpers, 'get_public_company_profile_from_response')
+def test_contact_company_exposes_context(
+    mock_get_public_company_profile_from_response, client
+):
+    mock_get_public_company_profile_from_response.return_value = {
+        'number': '01234567'
+    }
+    url = reverse('contact-company', kwargs={'company_number': '01234567'})
+
+    response = client.get(url)
+    assert response.status_code == http.client.OK
+    assert response.template_name == [views.ContactCompanyView.template_name]
+    assert response.context_data['company'] == {
+        'number': '01234567'
+    }
