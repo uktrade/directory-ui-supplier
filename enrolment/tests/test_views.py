@@ -21,6 +21,8 @@ def buyer_form_data():
         'full_name': 'Jim Example',
         'email_address': 'jim@example.com',
         'sector': 'AEROSPACE',
+        'company_name': 'Deutsche Bank',
+        'country': 'Germany',
         'terms': True
     }
 
