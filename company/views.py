@@ -30,11 +30,8 @@ class AddCompanyProfileToContextMixin:
     company_number_url_kwarg = 'company_number'
 
     def get_context_data(self, **kwargs):
-        api_call = (
-            api_client.company.
-            retrieve_public_profile_by_companies_house_number
-        )
-        response = api_call(number=self.kwargs[self.company_number_url_kwarg])
+        number = self.kwargs[self.company_number_url_kwarg]
+        response = api_client.company.retrieve_public_profile(number=number)
         if response.status_code == http.client.NOT_FOUND:
             raise Http404(
                 "API returned 404 for company number %s",
@@ -134,6 +131,7 @@ class CaseStudyDetailView(TemplateView):
 class ContactCompanyView(AddCompanyProfileToContextMixin, FormView):
     template_name = 'company-contact-form.html'
     success_template_name = 'company-contact-success.html'
+    failure_template_name = 'company-contact-error.html'
     form_class = forms.ContactCompanyForm
 
     def dispatch(self, *args, **kwargs):
@@ -142,4 +140,17 @@ class ContactCompanyView(AddCompanyProfileToContextMixin, FormView):
         return super().dispatch(*args, **kwargs)
 
     def form_valid(self, form):
-        return TemplateResponse(self.request, self.success_template_name, {})
+        response = api_client.company.send_email(
+            number=self.kwargs['company_number'],
+            data=self.serialize_form_data(form.cleaned_data)
+        )
+        if response.ok:
+            template = self.success_template_name
+        else:
+            template = self.failure_template_name
+        context = self.get_context_data()
+        return TemplateResponse(self.request, template, context)
+
+    @staticmethod
+    def serialize_form_data(cleaned_data):
+        return forms.serialize_contact_company_form(cleaned_data)

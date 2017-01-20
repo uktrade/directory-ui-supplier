@@ -4,9 +4,14 @@
 {% block sub_header %}{# prevent the subheader from showing on form pages #}{% endblock %}
 {% block content %}
 	<div class="container ed-international-success-container">
-		<h1>Success</h1>
-		<p class="ed-international-success-synopsis">
-			The company will reply to you.
-		</p>
+		<h1>Message sent</h1>
+		<div class="ed-international-success-synopsis">
+			<p>
+				Your message has been sent to {{ company.name }}.
+			</p>
+			<p>
+				<a href="{% url 'public-company-profiles-list' %}">Browse more companies</a>
+			</p>
+		</div>
 	</div>
 {%endblock content %}
