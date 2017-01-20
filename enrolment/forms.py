@@ -21,13 +21,10 @@ class InternationalBuyerForm(forms.Form):
         'I agree to the great.gov.uk '
         '<a target="_self" href="%(url)s">terms and conditions</a>.'
     )
-    full_name = forms.CharField(widget=forms.TextInput(
-        attrs={'placeholder': _('Your name')}
-    ))
-    email_address = forms.EmailField(
-        widget=forms.TextInput(attrs={'placeholder': _('Email address')})
-    )
+    full_name = forms.CharField(label=_('Your name'))
+    email_address = forms.EmailField(label=_('Email address'))
     sector = forms.ChoiceField(
+        label=_('Industry'),
         choices=(
             [['', PLEASE_SELECT_LABEL]] + list(choices.COMPANY_CLASSIFICATIONS)
         )
@@ -35,12 +32,8 @@ class InternationalBuyerForm(forms.Form):
     terms = forms.BooleanField(
         error_messages={'required': TERMS_CONDITIONS_MESSAGE}
     )
-    company_name = forms.CharField(widget=forms.TextInput(
-        attrs={'placeholder': _('Company name')}
-    ))
-    country = forms.CharField(widget=forms.TextInput(
-        attrs={'placeholder': _('Country')}
-    ))
+    company_name = forms.CharField(label=_('Company name'))
+    country = forms.CharField(label=_('Country'))
 
     error_css_class = 'input-field-container has-error'
 
