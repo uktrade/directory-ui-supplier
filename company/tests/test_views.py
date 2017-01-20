@@ -56,8 +56,7 @@ def test_public_profile_details_non_verbose_context(client):
     assert response.context_data['show_description'] is False
 
 
-@patch.object(views.api_client.company,
-              'retrieve_public_profile_by_companies_house_number', Mock)
+@patch.object(views.api_client.company, 'retrieve_public_profile', Mock)
 @patch.object(helpers, 'get_public_company_profile_from_response')
 def test_public_profile_details_exposes_context(
     mock_get_public_company_profile_from_response, client
@@ -134,8 +133,7 @@ def test_public_profile_details_calls_api(mock_retrieve_profile, client):
     assert mock_retrieve_profile.called_once_with(1)
 
 
-@patch.object(views.api_client.company,
-              'retrieve_public_profile_by_companies_house_number')
+@patch.object(views.api_client.company, 'retrieve_public_profile')
 def test_public_profile_details_handles_bad_status(
     mock_retrieve_public_profile, client, api_response_400
 ):
@@ -148,8 +146,7 @@ def test_public_profile_details_handles_bad_status(
         client.get(url)
 
 
-@patch.object(views.api_client.company,
-              'retrieve_public_profile_by_companies_house_number')
+@patch.object(views.api_client.company, 'retrieve_public_profile')
 def test_public_profile_details_handles_404(
     mock_retrieve_public_profile, client, api_response_404
 ):
@@ -290,9 +287,13 @@ def test_contact_company_view_feature_flag_on(settings, client):
     assert response.status_code == http.client.OK
 
 
-def test_contact_company_view_feature_submit(settings, client, captcha_stub):
+@patch.object(views.api_client.company, 'send_email')
+def test_contact_company_view_feature_submit(
+    mock_send_email, settings, client, captcha_stub
+):
     settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = True
 
+    view = views.ContactCompanyView
     url = reverse('contact-company', kwargs={'company_number': '01234567'})
     data = {
         'full_name': 'Jim Example',
@@ -306,14 +307,15 @@ def test_contact_company_view_feature_submit(settings, client, captcha_stub):
     }
     response = client.post(url, data)
 
-    expected_template_name = views.ContactCompanyView.success_template_name
-
     assert response.status_code == http.client.OK
-    assert response.template_name == expected_template_name
+    assert response.template_name == view.success_template_name
+    mock_send_email.assert_called_once_with(
+        number='01234567',
+        data=view.serialize_form_data(data),
+    )
 
 
-@patch.object(views.api_client.company,
-              'retrieve_public_profile_by_companies_house_number', Mock)
+@patch.object(views.api_client.company, 'retrieve_public_profile', Mock)
 @patch.object(helpers, 'get_public_company_profile_from_response')
 def test_contact_company_exposes_context(
     mock_get_public_company_profile_from_response, client
