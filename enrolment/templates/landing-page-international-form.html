@@ -11,33 +11,42 @@
 				<div class="row-fluid">
 					<div class="span4">
 						<div class="{{ form.full_name.css_classes|default:'input-field-container' }}">
-							<label for="{{ form.full_name.id_for_label }}">
-								<span>{{ form.full_name.label }}</span>
 								{{ form.full_name.errors }}
 								{{ form.full_name }}
-							</label>
 						</div>
 					</div>
 
 					<div class="span4">
 						<div class="{{ form.email_address.css_classes|default:'input-field-container' }}">
-							<label for="{{ form.email_address.id_for_label }}">
-								<span>{{ form.email_address.label }}</span>
 								{{ form.email_address.errors }}
 								{{ form.email_address }}
-							</label>
 						</div>
 					</div>
 
 					<div class="span4">
 						<div class="{{ form.sector.css_classes|default:'input-field-container' }}">
-							<label for="{{ form.sector.id_for_label }}">
-								<span>{{ form.sector.label }}</span>
 								{{ form.sector.errors }}
 								{{ form.sector }}
-							</label>
 						</div>
 					</div>
+				</div>
+
+				<div class="row-fluid">
+					<div class="span4">
+						<div class="{{ form.company_name.css_classes|default:'input-field-container' }}">
+								{{ form.company_name.errors }}
+								{{ form.company_name }}
+						</div>
+					</div>
+
+					<div class="span4">
+						<div class="{{ form.country.css_classes|default:'input-field-container' }}">
+								{{ form.country.errors }}
+								{{ form.country }}
+						</div>
+					</div>
+
+					<div class="span4"></div>
 				</div>
 
 				<div class="row-fluid">
