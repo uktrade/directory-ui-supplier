@@ -143,3 +143,15 @@ def retrieve_profile(api_response_company_profile_200):
     stub.start()
     yield
     stub.stop()
+
+
+@pytest.fixture(autouse=True)
+def retrieve_public_profile(api_response_company_profile_200):
+    stub = patch(
+        'api_client.api_client.company.'
+        'retrieve_public_profile_by_companies_house_number',
+        return_value=api_response_company_profile_200,
+    )
+    stub.start()
+    yield
+    stub.stop()
