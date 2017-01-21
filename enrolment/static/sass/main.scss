@@ -260,7 +260,7 @@ label, input, button, select, textarea {
 }
 
 .input-field-container {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   label {
     font-size: 18px;
     font-weight: 300;
@@ -273,6 +273,7 @@ label, input, button, select, textarea {
   }
 
   input, select, textarea {
+    background-color: white!important;
     border-radius: 0;
     font-size: 20px;
     height: 50px;
@@ -892,7 +893,13 @@ a.ed-filled-button-primary {
   .ed-landing-page-register-button-container {
     margin-bottom: 0;
     margin-top: 0;
-    text-align: right;
+    text-align: left;
+  }
+  .ed-checkbox-container {
+    margin-left: 0;
+  }
+  textarea {
+    min-height: 100px;
   }
 }
 
@@ -904,12 +911,6 @@ a.ed-filled-button-primary {
   }
   li {
     margin-bottom: 20px;
-    > span {
-      font-size: 15px;
-      font-weight: 300;
-      line-height: 1.4;
-      color: #4a4a4a;
-    }
   }
   .btn-container .button {
     padding: inherit;
@@ -917,4 +918,11 @@ a.ed-filled-button-primary {
     font-size: 18px;
     border-radius: 3px;
   }
+}
+
+.helptext {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #4a4a4a;
 }

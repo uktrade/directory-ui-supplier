@@ -13,6 +13,7 @@ class LanguageForm(forms.Form):
 
 
 class InternationalBuyerForm(forms.Form):
+    error_css_class = 'input-field-container has-error'
     PLEASE_SELECT_LABEL = _('Please select an industry')
     TERMS_CONDITIONS_MESSAGE = _(
         'Tick the box to confirm you agree to the terms and conditions.'
@@ -21,6 +22,7 @@ class InternationalBuyerForm(forms.Form):
         'I agree to the great.gov.uk '
         '<a target="_self" href="%(url)s">terms and conditions</a>.'
     )
+
     full_name = forms.CharField(label=_('Your name'))
     email_address = forms.EmailField(label=_('Email address'))
     sector = forms.ChoiceField(
@@ -34,8 +36,16 @@ class InternationalBuyerForm(forms.Form):
     )
     company_name = forms.CharField(label=_('Company name'))
     country = forms.CharField(label=_('Country'))
-
-    error_css_class = 'input-field-container has-error'
+    comment = forms.CharField(
+        label=_(
+            "Couldn't find what you were looking for or would like to give us "
+            "feedback? Let us know:"
+        ),
+        help_text=_('Maximum 1000 characters.'),
+        max_length=1000,
+        widget=forms.Textarea,
+        required=False,
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -58,6 +68,9 @@ def serialize_international_buyer_forms(cleaned_data):
         'name': cleaned_data['full_name'],
         'email': cleaned_data['email_address'],
         'sector': cleaned_data['sector'],
+        'company_name': cleaned_data['company_name'],
+        'country': cleaned_data['country'],
+        'comment': cleaned_data.get('comment', ''),
     }
 
 
