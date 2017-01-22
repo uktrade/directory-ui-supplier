@@ -101,8 +101,9 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 LANGUAGES = [
-  ('en-gb', 'English'),
+  ('en_GB', 'English'),
   ('de', 'Deutsch'),  # German
+  ('ja', '日本語'),  # Japanese
 ]
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),

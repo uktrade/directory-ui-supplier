@@ -1,0 +1,222 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-22 16:41+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: enrolment/forms.py:16
+msgid "Please select an industry"
+msgstr ""
+
+#: enrolment/forms.py:18
+msgid "Tick the box to confirm you agree to the terms and conditions."
+msgstr ""
+
+#: enrolment/forms.py:21
+#, python-format
+msgid ""
+"I agree to the great.gov.uk <a target=\"_self\" href=\"%(url)s\">terms and "
+"conditions</a>."
+msgstr ""
+
+#: enrolment/forms.py:24
+msgid "Your name"
+msgstr ""
+
+#: enrolment/forms.py:25
+msgid "Email address"
+msgstr ""
+
+#: enrolment/forms.py:27
+msgid "Industry"
+msgstr ""
+
+#: enrolment/forms.py:35
+msgid "Company name"
+msgstr ""
+
+#: enrolment/forms.py:36
+msgid "Country"
+msgstr ""
+
+#: enrolment/templates/browse-companies.html:14
+#: enrolment/templates/landing-page-international.html:44
+msgid "Find great UK companies"
+msgstr "優良な英国企業を検索する"
+
+#: enrolment/templates/browse-companies.html:23
+#: enrolment/templates/landing-page-international.html:51
+msgid ""
+"Exceptionally innovative and creative UK trade partners are ready to work "
+"with you. Discover them on the Find a Supplier service."
+msgstr "革新的でクリエイティブな英国の優良企業が、貴社との取引を求めています。「サプライヤー検索」サービスでは、このような企業を検索できます。"
+
+#: enrolment/templates/browse-companies.html:32
+#: enrolment/templates/landing-page-international.html:54
+msgid "Browse UK companies"
+msgstr "英国企業を閲覧する"
+
+#: enrolment/templates/footer.html:11
+msgid "Department for International Trade"
+msgstr "英国国際貿易省"
+
+#: enrolment/templates/footer.html:17
+msgid "Contact us"
+msgstr "問い合わせ先"
+
+#: enrolment/templates/footer.html:23
+msgid "Privacy and cookies"
+msgstr "プライバシーとクッキー"
+
+#: enrolment/templates/footer.html:29
+msgid "Terms &amp; conditions"
+msgstr "利用規約"
+
+#: enrolment/templates/footer.html:42
+msgid "Crown Copyright 2016"
+msgstr ""
+
+#: enrolment/templates/header.html:26
+msgid "Home"
+msgstr "ホームページ"
+
+#: enrolment/templates/header.html:29
+msgid "Find a Supplier"
+msgstr "サプライヤー検索"
+
+#: enrolment/templates/header.html:32
+msgid "Industries"
+msgstr "産業"
+
+#: enrolment/templates/landing-page-international-form.html:4
+msgid "Register to see the latest UK companies"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-form.html:6
+msgid ""
+"We have hundreds of companies that may meet your needs and new ones are "
+"being added frequently. Register to receive a weekly mail with a summary of "
+"new companies in your industry."
+msgstr ""
+
+#: enrolment/templates/landing-page-international-form.html:78
+msgid "Register"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:9
+msgid ""
+"Welcome to Great Britain and Northern Ireland - the right place to do "
+"business"
+msgstr "事業に理想的な場所、英国･北アイルランドにようこそ"
+
+#: enrolment/templates/landing-page-international.html:18
+msgid "Find UK companies to do business with"
+msgstr "取引先候補になる英国企業を検索する"
+
+#: enrolment/templates/landing-page-international.html:26
+msgid ""
+"The UK is a great place to find innovative, high-quality products and "
+"services."
+msgstr "英国は、画期的で高品質な製品やサービスを見つけるために理想的です。"
+
+#: enrolment/templates/landing-page-international.html:29
+msgid ""
+"You can make the right trade connections in the UK with global corporations "
+"and smaller enterprises across every industry."
+msgstr "英国では、グローバルな企業や中小企業など、全業種の様々な規模の優良な取引相手を見つけることができます。"
+
+#: enrolment/templates/landing-page-international.html:32
+msgid ""
+"UK companies work with businesses and governments around the world to create "
+"new living and working environments, run high quality services and deliver "
+"the best experiences."
+msgstr "英国企業は世界中の事業や政府と協力して新しい生活環境や仕事環境を生み出し、質の良いサービスを提供し、ベストなエクスペリエンスを実現しています。"
+
+#: enrolment/templates/landing-page-international.html:35
+msgid ""
+"When you need a trade partner, the reliability and expertise of UK companies "
+"is hard to beat."
+msgstr "取引相手をお探しならば、ぜひ英国企業の信頼性と専門技能･知識をご検討ください。"
+
+#: enrolment/templates/landing-page-international.html:38
+msgid ""
+"Choose from the hundreds of businesses in the UK to work with you today."
+msgstr "英国の何百もの事業から取引相手をご選択いただけます。"
+
+#: enrolment/templates/landing-page-international.html:61
+msgid "UK industries"
+msgstr "英国産業"
+
+#: enrolment/templates/landing-page-international.html:70
+msgid "Healthcare and life sciences in the UK"
+msgstr "英国における医療とライフサイエンス"
+
+#: enrolment/templates/landing-page-international.html:72
+msgid ""
+"Get access to the UK health and life sciences supply-chain, delivering high "
+"quality, innovative services to the world."
+msgstr "高品質で革新的なサービスを世界中にお届けしている、英国の医療･ライフサイエンスのサプライチェーンにアクセスしませんか。"
+
+#: enrolment/templates/landing-page-international.html:76
+msgid "Find out more about the UK’s healthcare and life sciences"
+msgstr "英国の医療とライフサイエンスについて、詳しくご覧ください"
+
+#: enrolment/templates/landing-page-international.html:86
+msgid "The UK's advanced technology"
+msgstr "英国の高度なテクノロジー"
+
+#: enrolment/templates/landing-page-international.html:88
+msgid ""
+"Check out the latest cutting-edge technologies that the UK is bringing to "
+"the world."
+msgstr "英国から世界にお届けしている最新のテクノロジーについてご覧ください。"
+
+#: enrolment/templates/landing-page-international.html:94
+msgid "Find out more about UK technology"
+msgstr "英国のテクノロジーについて、詳しくご覧ください"
+
+#: enrolment/templates/landing-page-international.html:106
+msgid "The UK's creative services"
+msgstr "英国のクリエイティブ･サービス"
+
+#: enrolment/templates/landing-page-international.html:108
+msgid ""
+"Whether you need buildings designed, films made or a fresh approach to "
+"marketing, the UK is the first place to look."
+msgstr "建築設計、映画制作、マーケティングへのアプローチなど、どのようなサービスをお求めであっても、ぜひ最初に英国をご検討ください。"
+
+#: enrolment/templates/landing-page-international.html:113
+msgid "Find out more about the UK’s creative services"
+msgstr "英国のクリエイティブ･サービスについての詳細をご覧ください"
+
+#: enrolment/templates/landing-page-international.html:123
+msgid "The UK's food and drink"
+msgstr "英国の飲食品"
+
+#: enrolment/templates/landing-page-international.html:125
+msgid ""
+"Whether you want the most innovative food brands or exceptional quality "
+"drinks, the UK is the first place to look."
+msgstr "革新的な食品ブランド、最高品質の飲料品など、どのようなものをお探しであっても、ぜひ最初に英国をご検討ください。"
+
+#: enrolment/templates/landing-page-international.html:130
+msgid "Find out more about UK food and drink"
+msgstr "英国の飲食品についての詳細をご覧ください"
+
+#: enrolment/templates/language_switcher.html:6
+msgid "Select"
+msgstr "言語の変更"
