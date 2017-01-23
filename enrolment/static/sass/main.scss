@@ -794,11 +794,12 @@ a.ed-filled-button-primary {
   margin-bottom: 0;
   img {
     height: 35px;
-    margin-top: 15px;
-    margin-top: 20px;
+    height: 40px;
+    margin-top: 16px;
     @media (max-width: 767px) {
-      margin-top: 15px;
+      margin-top: 13px;
       margin-bottom: 15px;
+      height: 38px;
     }
   }
   .btn-navbar {
