@@ -101,7 +101,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 LANGUAGES = [
-  ('en-gb', 'English'),
+  ('en_GB', 'English'),
   ('de', 'Deutsch'),  # German
   ('zh-hans', '简体中文'),  # Simplified Chinese
 ]
