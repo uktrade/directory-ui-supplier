@@ -2,7 +2,7 @@ from directory_validators.constants import choices
 
 from django.forms.fields import Field
 
-from company import forms
+from company import forms, validators
 
 
 REQUIRED_MESSAGE = Field.default_error_messages['required']
@@ -80,6 +80,17 @@ def test_contact_company_form_captcha_valid():
     form.is_valid()
 
     assert 'captcha' in form.errors
+
+
+def test_contact_company_validators():
+    form = forms.ContactCompanyForm({})
+    validator = validators.not_contains_url
+
+    assert validator in form.fields['full_name'].validators
+    assert validator in form.fields['company_name'].validators
+    assert validator in form.fields['country'].validators
+    assert validator in form.fields['subject'].validators
+    assert validator in form.fields['body'].validators
 
 
 def test_serialize_contact_company_form():
