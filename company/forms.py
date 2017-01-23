@@ -3,6 +3,8 @@ from directory_validators.constants import choices
 
 from django import forms
 
+from company import validators
+
 
 SELECT_LABEL = 'Please select an industry'
 
@@ -36,13 +38,16 @@ class ContactCompanyForm(forms.Form):
     full_name = forms.CharField(
         label='Your full name:',
         max_length=255,
+        validators=[validators.not_contains_url],
     )
     company_name = forms.CharField(
         label='Your company name:',
         max_length=255,
+        validators=[validators.not_contains_url],
     )
     country = forms.CharField(
         max_length=255,
+        validators=[validators.not_contains_url],
     )
     email_address = forms.EmailField(
         label='Your email address:',
@@ -57,12 +62,14 @@ class ContactCompanyForm(forms.Form):
         label='Enter a subject line for your message:',
         help_text='Maximum 200 characters.',
         max_length=200,
+        validators=[validators.not_contains_url],
     )
     body = forms.CharField(
         label='Enter your message to the UK company:',
         help_text='Maximum 1000 characters.',
         max_length=1000,
-        widget=forms.Textarea
+        widget=forms.Textarea,
+        validators=[validators.not_contains_url],
     )
     captcha = ReCaptchaField()
 
