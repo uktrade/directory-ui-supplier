@@ -8,15 +8,24 @@ TERMS_CONDITIONS_MESSAGE = \
     forms.InternationalBuyerForm.TERMS_CONDITIONS_MESSAGE
 
 
-def test_international_form_missing_data():
-    form = forms.InternationalBuyerForm(data={})
+def test_international_form_required():
+    form = forms.InternationalBuyerForm()
 
     assert form.is_valid() is False
-    assert form.errors['full_name'] == [REQUIRED_MESSAGE]
-    assert form.errors['email_address'] == [REQUIRED_MESSAGE]
-    assert form.errors['sector'] == [REQUIRED_MESSAGE]
-    assert form.errors['company_name'] == [REQUIRED_MESSAGE]
-    assert form.errors['country'] == [REQUIRED_MESSAGE]
+    assert form.fields['full_name'].required is True
+    assert form.fields['email_address'].required is True
+    assert form.fields['sector'].required is True
+    assert form.fields['company_name'].required is True
+    assert form.fields['country'].required is True
+    assert form.fields['terms'].required is True
+    assert form.fields['comment'].required is False
+
+
+def test_international_form_terms_custom_message():
+    form = forms.InternationalBuyerForm(data={})
+
+    form.is_valid()
+
     assert form.errors['terms'] == [TERMS_CONDITIONS_MESSAGE]
 
 
@@ -30,3 +39,25 @@ def test_international_form_accepts_valid_data():
         'terms': True
     })
     assert form.is_valid()
+
+
+def test_serialize_international_buyer_forms():
+    data = {
+        'full_name': 'Jim Example',
+        'email_address': 'jim@example.com',
+        'sector': 'AEROSPACE',
+        'company_name': 'Example corp',
+        'country': 'UK',
+        'comment': 'sup, bro',
+    }
+    expected = {
+        'name': 'Jim Example',
+        'email': 'jim@example.com',
+        'sector': 'AEROSPACE',
+        'company_name': 'Example corp',
+        'country': 'UK',
+        'comment': 'sup, bro',
+    }
+    actual = forms.serialize_international_buyer_forms(data)
+
+    assert actual == expected
