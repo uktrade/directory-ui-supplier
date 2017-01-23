@@ -138,7 +138,7 @@ def retrieve_supplier_case_study(
 @pytest.fixture(autouse=True)
 def retrieve_profile(api_response_company_profile_200):
     stub = patch(
-        'api_client.api_client.company.retrieve_profile',
+        'api_client.api_client.company.retrieve_private_profile',
         return_value=api_response_company_profile_200,
     )
     stub.start()
@@ -149,8 +149,7 @@ def retrieve_profile(api_response_company_profile_200):
 @pytest.fixture(autouse=True)
 def retrieve_public_profile(api_response_company_profile_200):
     stub = patch(
-        'api_client.api_client.company.'
-        'retrieve_public_profile_by_companies_house_number',
+        'api_client.api_client.company.retrieve_public_profile',
         return_value=api_response_company_profile_200,
     )
     stub.start()
