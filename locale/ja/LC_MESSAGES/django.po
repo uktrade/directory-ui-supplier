@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-21 13:36+0000\n"
+"POT-Creation-Date: 2017-01-22 16:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: zh_CN\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: enrolment/forms.py:16
 msgid "Please select an industry"
@@ -55,53 +56,51 @@ msgstr ""
 #: enrolment/templates/browse-companies.html:14
 #: enrolment/templates/landing-page-international.html:44
 msgid "Find great UK companies"
-msgstr "寻找优秀的英国公司"
+msgstr "優良な英国企業を検索する"
 
 #: enrolment/templates/browse-companies.html:23
 #: enrolment/templates/landing-page-international.html:51
 msgid ""
 "Exceptionally innovative and creative UK trade partners are ready to work "
 "with you. Discover them on the Find a Supplier service."
-msgstr ""
-"极具创意和创新精神的英国贸易合作伙伴正期待着与您合作。在“寻找供应商”服务中发"
-"现他们吧。"
+msgstr "革新的でクリエイティブな英国の優良企業が、貴社との取引を求めています。「サプライヤー検索」サービスでは、このような企業を検索できます。"
 
 #: enrolment/templates/browse-companies.html:32
 #: enrolment/templates/landing-page-international.html:54
 msgid "Browse UK companies"
-msgstr "浏览英国公司"
+msgstr "英国企業を閲覧する"
 
 #: enrolment/templates/footer.html:11
 msgid "Department for International Trade"
-msgstr "国际贸易部"
+msgstr "英国国際貿易省"
 
 #: enrolment/templates/footer.html:17
 msgid "Contact us"
-msgstr "联系我们"
+msgstr "問い合わせ先"
 
 #: enrolment/templates/footer.html:23
 msgid "Privacy and cookies"
-msgstr "隐私和 Cookie"
+msgstr "プライバシーとクッキー"
 
 #: enrolment/templates/footer.html:29
 msgid "Terms &amp; conditions"
-msgstr "条款和条件"
+msgstr "利用規約"
 
 #: enrolment/templates/footer.html:42
 msgid "Crown Copyright 2016"
 msgstr ""
 
-#: enrolment/templates/header.html:25
+#: enrolment/templates/header.html:26
 msgid "Home"
-msgstr "主页"
+msgstr "ホームページ"
 
-#: enrolment/templates/header.html:28
+#: enrolment/templates/header.html:29
 msgid "Find a Supplier"
-msgstr "寻找供应商"
+msgstr "サプライヤー検索"
 
-#: enrolment/templates/header.html:31
+#: enrolment/templates/header.html:32
 msgid "Industries"
-msgstr "产业"
+msgstr "産業"
 
 #: enrolment/templates/landing-page-international-form.html:4
 msgid "Register to see the latest UK companies"
@@ -122,105 +121,102 @@ msgstr ""
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
 "business"
-msgstr "欢迎来到大不列颠和北爱尔兰 - 理想的经商之地"
+msgstr "事業に理想的な場所、英国･北アイルランドにようこそ"
 
 #: enrolment/templates/landing-page-international.html:18
 msgid "Find UK companies to do business with"
-msgstr "寻找可以合作的英国公司"
+msgstr "取引先候補になる英国企業を検索する"
 
 #: enrolment/templates/landing-page-international.html:26
 msgid ""
 "The UK is a great place to find innovative, high-quality products and "
 "services."
-msgstr "英国是盛产创新、优质产品和服务的国度。"
+msgstr "英国は、画期的で高品質な製品やサービスを見つけるために理想的です。"
 
 #: enrolment/templates/landing-page-international.html:29
 msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
-msgstr "英国公司与全球企业和政府合作，一起打造出一个全新的生活与工作环境，能够提供优质的服务和最佳的体验。"
+msgstr "英国では、グローバルな企業や中小企業など、全業種の様々な規模の優良な取引相手を見つけることができます。"
 
 #: enrolment/templates/landing-page-international.html:32
 msgid ""
 "UK companies work with businesses and governments around the world to create "
 "new living and working environments, run high quality services and deliver "
 "the best experiences."
-msgstr "英国公司与全世界的国际企业和政府都建立了合作关系，与他们一起协同创造出了一个美好的新环境，能够提供高品质服务以及无与伦比的商业体验。"
+msgstr "英国企業は世界中の事業や政府と協力して新しい生活環境や仕事環境を生み出し、質の良いサービスを提供し、ベストなエクスペリエンスを実現しています。"
 
 #: enrolment/templates/landing-page-international.html:35
 msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
 "is hard to beat."
-msgstr "如果您需要寻求一位贸易合作伙伴，那么英国公司的可靠性和专业知识无人能及，是您的不二之选。"
+msgstr "取引相手をお探しならば、ぜひ英国企業の信頼性と専門技能･知識をご検討ください。"
 
 #: enrolment/templates/landing-page-international.html:38
 msgid ""
 "Choose from the hundreds of businesses in the UK to work with you today."
-msgstr "如今，英国有数百家企业可以和您一起携手共进。"
+msgstr "英国の何百もの事業から取引相手をご選択いただけます。"
 
 #: enrolment/templates/landing-page-international.html:61
 msgid "UK industries"
-msgstr "英国贸易部门"
+msgstr "英国産業"
 
 #: enrolment/templates/landing-page-international.html:70
 msgid "Healthcare and life sciences in the UK"
-msgstr "英国的医疗保健和生命科学"
+msgstr "英国における医療とライフサイエンス"
 
 #: enrolment/templates/landing-page-international.html:72
 msgid ""
 "Get access to the UK health and life sciences supply-chain, delivering high "
 "quality, innovative services to the world."
-msgstr "进入英国医疗保健和生命科学供应链，向全世界交付高质量的创新服务。	"
+msgstr "高品質で革新的なサービスを世界中にお届けしている、英国の医療･ライフサイエンスのサプライチェーンにアクセスしませんか。"
 
 #: enrolment/templates/landing-page-international.html:76
 msgid "Find out more about the UK’s healthcare and life sciences"
-msgstr "详细了解英国医疗保健和生命科学"
+msgstr "英国の医療とライフサイエンスについて、詳しくご覧ください"
 
 #: enrolment/templates/landing-page-international.html:86
 msgid "The UK's advanced technology"
-msgstr "英国的先进技术"
+msgstr "英国の高度なテクノロジー"
 
 #: enrolment/templates/landing-page-international.html:88
 msgid ""
 "Check out the latest cutting-edge technologies that the UK is bringing to "
 "the world."
-msgstr "查看英国带给世界的最新尖端技术创新。"
+msgstr "英国から世界にお届けしている最新のテクノロジーについてご覧ください。"
 
 #: enrolment/templates/landing-page-international.html:94
 msgid "Find out more about UK technology"
-msgstr "详细了解英国的技术"
+msgstr "英国のテクノロジーについて、詳しくご覧ください"
 
 #: enrolment/templates/landing-page-international.html:106
 msgid "The UK's creative services"
-msgstr "来自英国的创新服务"
+msgstr "英国のクリエイティブ･サービス"
 
 #: enrolment/templates/landing-page-international.html:108
 msgid ""
 "Whether you need buildings designed, films made or a fresh approach to "
 "marketing, the UK is the first place to look."
-msgstr ""
-"无论您需要设计建筑、制作电影还是构思新颖的营销方法，英国都将是您的不二之选。"
+msgstr "建築設計、映画制作、マーケティングへのアプローチなど、どのようなサービスをお求めであっても、ぜひ最初に英国をご検討ください。"
 
 #: enrolment/templates/landing-page-international.html:113
 msgid "Find out more about the UK’s creative services"
-msgstr "详细了解来自英国的创意服务"
+msgstr "英国のクリエイティブ･サービスについての詳細をご覧ください"
 
 #: enrolment/templates/landing-page-international.html:123
 msgid "The UK's food and drink"
-msgstr "来自英国的食品和饮料"
+msgstr "英国の飲食品"
 
 #: enrolment/templates/landing-page-international.html:125
 msgid ""
 "Whether you want the most innovative food brands or exceptional quality "
 "drinks, the UK is the first place to look."
-msgstr ""
-"无论您是需要具有创新精神的食品品牌，还是需要具有卓越品质的优质饮料，英国都将"
-"是您的不二之选。"
+msgstr "革新的な食品ブランド、最高品質の飲料品など、どのようなものをお探しであっても、ぜひ最初に英国をご検討ください。"
 
 #: enrolment/templates/landing-page-international.html:130
 msgid "Find out more about UK food and drink"
-msgstr "详细了解来自英国的食品和饮料"
+msgstr "英国の飲食品についての詳細をご覧ください"
 
 #: enrolment/templates/language_switcher.html:6
 msgid "Select"
-msgstr "更改语言"
+msgstr "言語の変更"
