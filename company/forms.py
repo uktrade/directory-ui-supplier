@@ -67,22 +67,24 @@ class ContactCompanyForm(forms.Form):
     captcha = ReCaptchaField()
 
 
-def serialize_contact_company_form(cleaned_data):
+def serialize_contact_company_form(cleaned_data, company_number):
     """
     Return the shape directory-api-client expects for sending a email to a
     company
 
     @param {dict} cleaned_data - Fields from `ContactCompanyForm`
+    @param {str}  company_number - the recipient's company house number
     @returns dict
 
     """
 
     return {
-        'full_name': cleaned_data['full_name'],
-        'company_name': cleaned_data['company_name'],
-        'country': cleaned_data['country'],
-        'email_address': cleaned_data['email_address'],
+        'sender_email': cleaned_data['email_address'],
+        'sender_name': cleaned_data['full_name'],
+        'sender_company_name': cleaned_data['company_name'],
+        'sender_country': cleaned_data['country'],
         'sector': cleaned_data['sector'],
         'subject': cleaned_data['subject'],
         'body': cleaned_data['body'],
+        'recipient_company_number': company_number,
     }
