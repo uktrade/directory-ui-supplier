@@ -140,10 +140,11 @@ class ContactCompanyView(AddCompanyProfileToContextMixin, FormView):
         return super().dispatch(*args, **kwargs)
 
     def form_valid(self, form):
-        response = api_client.company.send_email(
-            number=self.kwargs['company_number'],
-            data=self.serialize_form_data(form.cleaned_data)
+        data = self.serialize_form_data(
+            cleaned_data=form.cleaned_data,
+            company_number=self.kwargs['company_number'],
         )
+        response = api_client.company.send_email(data)
         if response.ok:
             template = self.success_template_name
         else:
@@ -152,5 +153,8 @@ class ContactCompanyView(AddCompanyProfileToContextMixin, FormView):
         return TemplateResponse(self.request, template, context)
 
     @staticmethod
-    def serialize_form_data(cleaned_data):
-        return forms.serialize_contact_company_form(cleaned_data)
+    def serialize_form_data(cleaned_data, company_number):
+        return forms.serialize_contact_company_form(
+            cleaned_data,
+            company_number,
+        )

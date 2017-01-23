@@ -309,14 +309,23 @@ def test_contact_company_view_feature_submit_success(
 
     view = views.ContactCompanyView
     url = reverse('contact-company', kwargs={'company_number': '01234567'})
+
     response = client.post(url, valid_contact_company_data)
+
+    expected_data = {
+        'sender_email': valid_contact_company_data['email_address'],
+        'sender_name': valid_contact_company_data['full_name'],
+        'sender_company_name': valid_contact_company_data['company_name'],
+        'sender_country': valid_contact_company_data['country'],
+        'sector': valid_contact_company_data['sector'],
+        'subject': valid_contact_company_data['subject'],
+        'body': valid_contact_company_data['body'],
+        'recipient_company_number': '01234567',
+    }
 
     assert response.status_code == http.client.OK
     assert response.template_name == view.success_template_name
-    mock_send_email.assert_called_once_with(
-        number='01234567',
-        data=view.serialize_form_data(valid_contact_company_data),
-    )
+    mock_send_email.assert_called_once_with(expected_data)
 
 
 @patch.object(views.api_client.company, 'send_email')
@@ -328,14 +337,11 @@ def test_contact_company_view_feature_submit_failure(
     mock_send_email.return_value = api_response_400
     view = views.ContactCompanyView
     url = reverse('contact-company', kwargs={'company_number': '01234567'})
+
     response = client.post(url, valid_contact_company_data)
 
     assert response.status_code == http.client.OK
     assert response.template_name == view.failure_template_name
-    mock_send_email.assert_called_once_with(
-        number='01234567',
-        data=view.serialize_form_data(valid_contact_company_data),
-    )
 
 
 @patch.object(views.api_client.company, 'retrieve_public_profile', Mock)

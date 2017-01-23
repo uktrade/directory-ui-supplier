@@ -80,3 +80,28 @@ def test_contact_company_form_captcha_valid():
     form.is_valid()
 
     assert 'captcha' in form.errors
+
+
+def test_serialize_contact_company_form():
+    data = {
+        'email_address': 'jim@example.com',
+        'full_name': 'Jimmy example',
+        'company_name': 'Example corp',
+        'country': 'United states of whatever',
+        'sector': 'AEROSPACE',
+        'subject': 'Whatever',
+        'body': 'This is my united states of whatever',
+    }
+    expected = {
+        'sender_email': 'jim@example.com',
+        'sender_name': 'Jimmy example',
+        'sender_company_name': 'Example corp',
+        'sender_country': 'United states of whatever',
+        'sector': 'AEROSPACE',
+        'subject': 'Whatever',
+        'body': 'This is my united states of whatever',
+        'recipient_company_number': '01234567',
+    }
+    actual = forms.serialize_contact_company_form(data, '01234567')
+
+    assert actual == expected
