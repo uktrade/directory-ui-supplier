@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-03 11:37+0000\n"
+"POT-Creation-Date: 2017-01-21 13:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,45 +17,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: enrolment/forms.py:10
-msgid "Please select a sector"
-msgstr ""
-
-#: enrolment/forms.py:11
-msgid "Tick the box to confirm you agree to the terms and conditions."
-msgstr ""
-
-#: enrolment/forms.py:14
-#, python-format
-msgid ""
-"I agree to the great.gov.uk "
-"<a target=\"_self\" href=\"%(url)s\">terms and conditions</a>."
+#: enrolment/forms.py:16
+msgid "Please select an industry"
 msgstr ""
 
 #: enrolment/forms.py:18
-msgid "Your name"
-msgstr ""
-
-#: enrolment/forms.py:19
-msgid "Email address"
+msgid "Tick the box to confirm you agree to the terms and conditions."
 msgstr ""
 
 #: enrolment/forms.py:21
-msgid "Sector"
+#, python-format
+msgid ""
+"I agree to the great.gov.uk <a target=\"_self\" href=\"%(url)s\">terms and "
+"conditions</a>."
 msgstr ""
 
+#: enrolment/forms.py:24
+msgid "Your name"
+msgstr ""
+
+#: enrolment/forms.py:25
+msgid "Email address"
+msgstr ""
+
+#: enrolment/forms.py:27
+msgid "Industry"
+msgstr ""
+
+#: enrolment/forms.py:35
+msgid "Company name"
+msgstr ""
+
+#: enrolment/forms.py:36
+msgid "Country"
+msgstr ""
+
+#: enrolment/templates/browse-companies.html:14
+#: enrolment/templates/landing-page-international.html:44
+msgid "Find great UK companies"
+msgstr "寻找优秀的英国公司"
+
+#: enrolment/templates/browse-companies.html:23
+#: enrolment/templates/landing-page-international.html:51
+msgid ""
+"Exceptionally innovative and creative UK trade partners are ready to work "
+"with you. Discover them on the Find a Supplier service."
+msgstr ""
+"极具创意和创新精神的英国贸易合作伙伴正期待着与您合作。在“寻找供应商”服务中发"
+"现他们吧。"
+
+#: enrolment/templates/browse-companies.html:32
+#: enrolment/templates/landing-page-international.html:54
+msgid "Browse UK companies"
+msgstr "浏览英国公司"
+
+#: enrolment/templates/footer.html:11
+msgid "Department for International Trade"
+msgstr "国际贸易部"
+
+#: enrolment/templates/footer.html:17
+msgid "Contact us"
+msgstr "联系我们"
+
+#: enrolment/templates/footer.html:23
+msgid "Privacy and cookies"
+msgstr "隐私和 Cookie"
+
+#: enrolment/templates/footer.html:29
+msgid "Terms &amp; conditions"
+msgstr "条款和条件"
+
+#: enrolment/templates/footer.html:42
+msgid "Crown Copyright 2016"
+msgstr ""
+
+#: enrolment/templates/header.html:25
+msgid "Home"
+msgstr "主页"
+
+#: enrolment/templates/header.html:28
+msgid "Find a Supplier"
+msgstr "寻找供应商"
+
+#: enrolment/templates/header.html:31
+msgid "Industries"
+msgstr "产业"
+
 #: enrolment/templates/landing-page-international-form.html:4
-msgid "Find a UK company that can meet your needs"
+msgid "Register to see the latest UK companies"
 msgstr ""
 
 #: enrolment/templates/landing-page-international-form.html:6
 msgid ""
-"Choose from hundreds of UK companies offering exceptional products and "
-"services. Register to be notified as soon as companies that match your needs "
-"are live on the Find a Supplier service."
+"We have hundreds of companies that may meet your needs and new ones are "
+"being added frequently. Register to receive a weekly mail with a summary of "
+"new companies in your industry."
 msgstr ""
 
-#: enrolment/templates/landing-page-international-form.html:56
+#: enrolment/templates/landing-page-international-form.html:78
 msgid "Register"
 msgstr ""
 
@@ -63,124 +122,105 @@ msgstr ""
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
 "business"
-msgstr ""
+msgstr "欢迎来到大不列颠和北爱尔兰 - 理想的经商之地"
 
 #: enrolment/templates/landing-page-international.html:18
-msgid "Find your UK trade partner"
-msgstr ""
+msgid "Find UK companies to do business with"
+msgstr "寻找可以合作的英国公司"
 
-#: enrolment/templates/landing-page-international.html:25
+#: enrolment/templates/landing-page-international.html:26
 msgid ""
-"As an international business decision-maker you need look no further than "
-"the UK for innovative, high-quality products and services. This is the place "
-"to make the right trade connections with global corporations and smaller "
-"enterprises across every sector of business."
-msgstr ""
+"The UK is a great place to find innovative, high-quality products and "
+"services."
+msgstr "英国是盛产创新、优质产品和服务的国度。"
 
-#: enrolment/templates/landing-page-international.html:31
+#: enrolment/templates/landing-page-international.html:29
 msgid ""
-"All around the world, UK companies are working with international businesses "
-"and governments to create stunning new environments, run high quality "
-"services and deliver astonishing experiences."
-msgstr ""
+"You can make the right trade connections in the UK with global corporations "
+"and smaller enterprises across every industry."
+msgstr "英国公司与全球企业和政府合作，一起打造出一个全新的生活与工作环境，能够提供优质的服务和最佳的体验。"
 
-#: enrolment/templates/landing-page-international.html:34
+#: enrolment/templates/landing-page-international.html:32
 msgid ""
-"The UK’s zest for innovation is helping transform lives worldwide and "
-"provides answers to many of the most pressing global challenges."
-msgstr ""
+"UK companies work with businesses and governments around the world to create "
+"new living and working environments, run high quality services and deliver "
+"the best experiences."
+msgstr "英国公司与全世界的国际企业和政府都建立了合作关系，与他们一起协同创造出了一个美好的新环境，能够提供高品质服务以及无与伦比的商业体验。"
 
-#: enrolment/templates/landing-page-international.html:37
+#: enrolment/templates/landing-page-international.html:35
 msgid ""
-"UK companies have created the world’s first bionic hand with independently "
-"moving fingers and the latest motion-tracking technology to make sports more "
-"spectacular: just two exceptional examples of what we can offer you."
-msgstr ""
+"When you need a trade partner, the reliability and expertise of UK companies "
+"is hard to beat."
+msgstr "如果您需要寻求一位贸易合作伙伴，那么英国公司的可靠性和专业知识无人能及，是您的不二之选。"
 
-#: enrolment/templates/landing-page-international.html:40
+#: enrolment/templates/landing-page-international.html:38
 msgid ""
-"Our experience, reliability and creativity are what makes UK businesses "
-"world-renowned. When you need a trade partner to create exceptional products "
-"and services, the strength and expertise of UK companies is hard to beat."
-msgstr ""
+"Choose from the hundreds of businesses in the UK to work with you today."
+msgstr "如今，英国有数百家企业可以和您一起携手共进。"
 
-#: enrolment/templates/landing-page-international.html:43
-msgid "We can help you make vital business connections with ideal companies."
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:46
-msgid ""
-"Choose from the millions of businesses in the UK to work with you today."
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:50
-msgid "UK business facts"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:52
-msgid ""
-"UK companies are at the heart of everyday goods and services, including "
-"almost every mobile phone worldwide"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:53
-msgid ""
-"Largest technology market in Europe, larger than the rest of Europe combined"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:54
-msgid ""
-"A long history of innovation and creativity with 123 Nobel prize winners"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:55
-msgid "UK brands are renowned for quality, reliability and desirability"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:62
-msgid "UK trade sectors"
-msgstr ""
+#: enrolment/templates/landing-page-international.html:61
+msgid "UK industries"
+msgstr "英国贸易部门"
 
 #: enrolment/templates/landing-page-international.html:70
 msgid "Healthcare and life sciences in the UK"
-msgstr ""
+msgstr "英国的医疗保健和生命科学"
 
 #: enrolment/templates/landing-page-international.html:72
 msgid ""
 "Get access to the UK health and life sciences supply-chain, delivering high "
 "quality, innovative services to the world."
-msgstr ""
+msgstr "进入英国医疗保健和生命科学供应链，向全世界交付高质量的创新服务。	"
 
-#: enrolment/templates/landing-page-international.html:75
+#: enrolment/templates/landing-page-international.html:76
 msgid "Find out more about the UK’s healthcare and life sciences"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:84
-msgid "The UK’s advanced technology"
-msgstr ""
+msgstr "详细了解英国医疗保健和生命科学"
 
 #: enrolment/templates/landing-page-international.html:86
+msgid "The UK's advanced technology"
+msgstr "英国的先进技术"
+
+#: enrolment/templates/landing-page-international.html:88
 msgid ""
-"Check out the latest cutting-edge technological innovations that the UK is "
-"bringing to the world."
-msgstr ""
+"Check out the latest cutting-edge technologies that the UK is bringing to "
+"the world."
+msgstr "查看英国带给世界的最新尖端技术创新。"
 
-#: enrolment/templates/landing-page-international.html:91
+#: enrolment/templates/landing-page-international.html:94
 msgid "Find out more about UK technology"
-msgstr ""
+msgstr "详细了解英国的技术"
 
-#: enrolment/templates/landing-page-international.html:100
-msgid "See more sectors"
-msgstr ""
+#: enrolment/templates/landing-page-international.html:106
+msgid "The UK's creative services"
+msgstr "来自英国的创新服务"
 
-#: ui/settings.py:101
-msgid "English"
+#: enrolment/templates/landing-page-international.html:108
+msgid ""
+"Whether you need buildings designed, films made or a fresh approach to "
+"marketing, the UK is the first place to look."
 msgstr ""
+"无论您需要设计建筑、制作电影还是构思新颖的营销方法，英国都将是您的不二之选。"
 
-#: ui/settings.py:102
-msgid "German"
-msgstr ""
+#: enrolment/templates/landing-page-international.html:113
+msgid "Find out more about the UK’s creative services"
+msgstr "详细了解来自英国的创意服务"
 
-#: ui/settings.py:103
-msgid "Simplified Chinese"
+#: enrolment/templates/landing-page-international.html:123
+msgid "The UK's food and drink"
+msgstr "来自英国的食品和饮料"
+
+#: enrolment/templates/landing-page-international.html:125
+msgid ""
+"Whether you want the most innovative food brands or exceptional quality "
+"drinks, the UK is the first place to look."
 msgstr ""
+"无论您是需要具有创新精神的食品品牌，还是需要具有卓越品质的优质饮料，英国都将"
+"是您的不二之选。"
+
+#: enrolment/templates/landing-page-international.html:130
+msgid "Find out more about UK food and drink"
+msgstr "详细了解来自英国的食品和饮料"
+
+#: enrolment/templates/language_switcher.html:6
+msgid "Select"
+msgstr "更改语言"
