@@ -103,6 +103,7 @@ USE_TZ = True
 LANGUAGES = [
   ('en_GB', 'English'),
   ('de', 'Deutsch'),  # German
+  ('zh-hans', '简体中文'),  # Simplified Chinese
 ]
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
