@@ -38,8 +38,8 @@ class InternationalBuyerForm(forms.Form):
     country = forms.CharField(label=_('Country'))
     comment = forms.CharField(
         label=_(
-            "Couldn't find what you were looking for or would like to give us "
-            "feedback? Let us know:"
+            "Tell us if you can't find what you were looking for, or if you "
+            "want to give feedback"
         ),
         help_text=_('Maximum 1000 characters.'),
         max_length=1000,
