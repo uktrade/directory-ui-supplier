@@ -35,9 +35,24 @@ class BuyerSubscribeFormView(FormView):
             'subdomain': settings.ZENDESK_SUBDOMAIN
         }
         zenpy_client = Zenpy(**credentials)
+        description = (
+            'Name: {name}\n'
+            'Email: {email}\n'
+            'Company: {company}\n'
+            'Country: {country}\n'
+            'Sector: {sector}\n'
+            'Comment: {comment}'
+        ).format(
+            name=cleaned_data['full_name'],
+            email=cleaned_data['email_address'],
+            company=cleaned_data['company_name'],
+            country=cleaned_data['country'],
+            sector=cleaned_data['sector'],
+            comment=cleaned_data['comment'],
+        )
         ticket = Ticket(
             subject=settings.ZENDESK_TICKET_SUBJECT,
-            description=cleaned_data['comment'],
+            description=description,
         )
         zenpy_client.tickets.create(ticket)
 

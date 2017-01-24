@@ -45,7 +45,7 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_ZENDESK_EMAIL=""; \
 	export DIRECTORY_UI_SUPPLIER_ZENDESK_SUBDOMAIN=""; \
 	export DIRECTORY_UI_SUPPLIER_ZENDESK_TOKEN="debug"; \
-	export DIRECTORY_UI_SUPPLIER_ZENDESK_TICKET_SUBJECT="Buyer left a comment"
+	export DIRECTORY_UI_SUPPLIER_ZENDESK_TICKET_SUBJECT="Trade Profiles feedback"
 
 DOCKER_REMOVE_ALL := \
 	docker ps -a | \
@@ -90,7 +90,7 @@ DEBUG_SET_ENV_VARS := \
 	export ZENDESK_EMAIL=""; \
 	export ZENDESK_SUBDOMAIN=""; \
 	export ZENDESK_TOKEN="debug"; \
-	export ZENDESK_TICKET_SUBJECT="Buyer left a comment"
+	export ZENDESK_TICKET_SUBJECT="Trade Profiles feedback"
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)

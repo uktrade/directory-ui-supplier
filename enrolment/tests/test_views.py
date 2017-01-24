@@ -218,7 +218,22 @@ def test_subscribe_view_submit_with_comment(
     ticket = mock_ticket_create.call_args[0][0]
     assert ticket.__class__ == Ticket
     assert ticket.subject == 'Be Zen!'
-    assert ticket.description == 'This website should be all in German.'
+    description = (
+        'Name: {name}\n'
+        'Email: {email}\n'
+        'Company: {company}\n'
+        'Country: {country}\n'
+        'Sector: {sector}\n'
+        'Comment: {comment}'
+    ).format(
+        name=buyer_form_data['full_name'],
+        email=buyer_form_data['email_address'],
+        company=buyer_form_data['company_name'],
+        country=buyer_form_data['country'],
+        sector=buyer_form_data['sector'],
+        comment=buyer_form_data['comment'],
+    )
+    assert ticket.description == description
 
 
 @patch('zenpy.lib.api.TicketApi.create')
