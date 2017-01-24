@@ -3,6 +3,8 @@ from directory_validators.constants import choices
 
 from django import forms
 
+from company import validators
+
 
 SELECT_LABEL = 'Please select an industry'
 
@@ -36,13 +38,16 @@ class ContactCompanyForm(forms.Form):
     full_name = forms.CharField(
         label='Your full name:',
         max_length=255,
+        validators=[validators.not_contains_url],
     )
     company_name = forms.CharField(
         label='Your company name:',
         max_length=255,
+        validators=[validators.not_contains_url],
     )
     country = forms.CharField(
         max_length=255,
+        validators=[validators.not_contains_url],
     )
     email_address = forms.EmailField(
         label='Your email address:',
@@ -57,32 +62,36 @@ class ContactCompanyForm(forms.Form):
         label='Enter a subject line for your message:',
         help_text='Maximum 200 characters.',
         max_length=200,
+        validators=[validators.not_contains_url],
     )
     body = forms.CharField(
         label='Enter your message to the UK company:',
         help_text='Maximum 1000 characters.',
         max_length=1000,
-        widget=forms.Textarea
+        widget=forms.Textarea,
+        validators=[validators.not_contains_url],
     )
     captcha = ReCaptchaField()
 
 
-def serialize_contact_company_form(cleaned_data):
+def serialize_contact_company_form(cleaned_data, company_number):
     """
     Return the shape directory-api-client expects for sending a email to a
     company
 
     @param {dict} cleaned_data - Fields from `ContactCompanyForm`
+    @param {str}  company_number - the recipient's company house number
     @returns dict
 
     """
 
     return {
-        'full_name': cleaned_data['full_name'],
-        'company_name': cleaned_data['company_name'],
-        'country': cleaned_data['country'],
-        'email_address': cleaned_data['email_address'],
+        'sender_email': cleaned_data['email_address'],
+        'sender_name': cleaned_data['full_name'],
+        'sender_company_name': cleaned_data['company_name'],
+        'sender_country': cleaned_data['country'],
         'sector': cleaned_data['sector'],
         'subject': cleaned_data['subject'],
         'body': cleaned_data['body'],
+        'recipient_company_number': company_number,
     }
