@@ -1,11 +1,9 @@
 {% load trans from i18n %}
 <div class="ed-landing-page-form-container">
 	<div class="ed-landing-page-form-inner">
-		<h2 style="font-weight: 300; margin-top: 0;">{% trans "Stay up to date" %}</h2>
-		<p>
-			{% trans "New companies in your sector join every day. Register to receive updates or let us know if your needs were not currently met and we will be in touch." %}
-		</p>
-
+		<h2 style="font-weight: 300; margin-top: 0;">
+			{% trans "Receive email updates of the latest UK companies in your industry" %}
+		</h2>
 		<div class="row-fluid">
 			<form action="{% url 'subscribe' %}" method="post" style="margin-top: 30px;">
 				<div class="row-fluid">

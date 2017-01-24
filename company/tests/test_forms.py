@@ -2,7 +2,7 @@ from directory_validators.constants import choices
 
 from django.forms.fields import Field
 
-from company import forms
+from company import forms, validators
 
 
 REQUIRED_MESSAGE = Field.default_error_messages['required']
@@ -80,3 +80,39 @@ def test_contact_company_form_captcha_valid():
     form.is_valid()
 
     assert 'captcha' in form.errors
+
+
+def test_contact_company_validators():
+    form = forms.ContactCompanyForm({})
+    validator = validators.not_contains_url
+
+    assert validator in form.fields['full_name'].validators
+    assert validator in form.fields['company_name'].validators
+    assert validator in form.fields['country'].validators
+    assert validator in form.fields['subject'].validators
+    assert validator in form.fields['body'].validators
+
+
+def test_serialize_contact_company_form():
+    data = {
+        'email_address': 'jim@example.com',
+        'full_name': 'Jimmy example',
+        'company_name': 'Example corp',
+        'country': 'United states of whatever',
+        'sector': 'AEROSPACE',
+        'subject': 'Whatever',
+        'body': 'This is my united states of whatever',
+    }
+    expected = {
+        'sender_email': 'jim@example.com',
+        'sender_name': 'Jimmy example',
+        'sender_company_name': 'Example corp',
+        'sender_country': 'United states of whatever',
+        'sector': 'AEROSPACE',
+        'subject': 'Whatever',
+        'body': 'This is my united states of whatever',
+        'recipient_company_number': '01234567',
+    }
+    actual = forms.serialize_contact_company_form(data, '01234567')
+
+    assert actual == expected
