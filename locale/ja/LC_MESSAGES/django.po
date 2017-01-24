@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-22 16:41+0000\n"
+"POT-Creation-Date: 2017-01-24 18:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,39 +18,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: enrolment/forms.py:16
+#: enrolment/forms.py:17
 msgid "Please select an industry"
 msgstr ""
 
-#: enrolment/forms.py:18
+#: enrolment/forms.py:19
 msgid "Tick the box to confirm you agree to the terms and conditions."
 msgstr ""
 
-#: enrolment/forms.py:21
+#: enrolment/forms.py:22
 #, python-format
 msgid ""
 "I agree to the great.gov.uk <a target=\"_self\" href=\"%(url)s\">terms and "
 "conditions</a>."
 msgstr ""
 
-#: enrolment/forms.py:24
+#: enrolment/forms.py:26
 msgid "Your name"
 msgstr ""
 
-#: enrolment/forms.py:25
+#: enrolment/forms.py:27
 msgid "Email address"
 msgstr ""
 
-#: enrolment/forms.py:27
+#: enrolment/forms.py:29
 msgid "Industry"
 msgstr ""
 
-#: enrolment/forms.py:35
+#: enrolment/forms.py:37
 msgid "Company name"
 msgstr ""
 
-#: enrolment/forms.py:36
+#: enrolment/forms.py:38
 msgid "Country"
+msgstr ""
+
+#: enrolment/forms.py:41
+msgid ""
+"Tell us if you can't find what you were looking for, or if you want to give "
+"feedback"
+msgstr ""
+
+#: enrolment/forms.py:44
+msgid "Maximum 1000 characters."
 msgstr ""
 
 #: enrolment/templates/browse-companies.html:14
@@ -63,7 +73,9 @@ msgstr "優良な英国企業を検索する"
 msgid ""
 "Exceptionally innovative and creative UK trade partners are ready to work "
 "with you. Discover them on the Find a Supplier service."
-msgstr "革新的でクリエイティブな英国の優良企業が、貴社との取引を求めています。「サプライヤー検索」サービスでは、このような企業を検索できます。"
+msgstr ""
+"革新的でクリエイティブな英国の優良企業が、貴社との取引を求めています。「サプ"
+"ライヤー検索」サービスでは、このような企業を検索できます。"
 
 #: enrolment/templates/browse-companies.html:32
 #: enrolment/templates/landing-page-international.html:54
@@ -90,31 +102,24 @@ msgstr "利用規約"
 msgid "Crown Copyright 2016"
 msgstr ""
 
-#: enrolment/templates/header.html:26
+#: enrolment/templates/header.html:25
 msgid "Home"
 msgstr "ホームページ"
 
-#: enrolment/templates/header.html:29
+#: enrolment/templates/header.html:28
 msgid "Find a Supplier"
 msgstr "サプライヤー検索"
 
-#: enrolment/templates/header.html:32
+#: enrolment/templates/header.html:31
 msgid "Industries"
 msgstr "産業"
 
-#: enrolment/templates/landing-page-international-form.html:4
-msgid "Register to see the latest UK companies"
+#: enrolment/templates/landing-page-international-form.html:5
+msgid "Receive email updates of the latest UK companies in your industry"
 msgstr ""
 
-#: enrolment/templates/landing-page-international-form.html:6
-msgid ""
-"We have hundreds of companies that may meet your needs and new ones are "
-"being added frequently. Register to receive a weekly mail with a summary of "
-"new companies in your industry."
-msgstr ""
-
-#: enrolment/templates/landing-page-international-form.html:78
-msgid "Register"
+#: enrolment/templates/landing-page-international-form.html:80
+msgid "Send"
 msgstr ""
 
 #: enrolment/templates/landing-page-international.html:9
@@ -137,20 +142,25 @@ msgstr "英国は、画期的で高品質な製品やサービスを見つける
 msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
-msgstr "英国では、グローバルな企業や中小企業など、全業種の様々な規模の優良な取引相手を見つけることができます。"
+msgstr ""
+"英国では、グローバルな企業や中小企業など、全業種の様々な規模の優良な取引相手"
+"を見つけることができます。"
 
 #: enrolment/templates/landing-page-international.html:32
 msgid ""
 "UK companies work with businesses and governments around the world to create "
 "new living and working environments, run high quality services and deliver "
 "the best experiences."
-msgstr "英国企業は世界中の事業や政府と協力して新しい生活環境や仕事環境を生み出し、質の良いサービスを提供し、ベストなエクスペリエンスを実現しています。"
+msgstr ""
+"英国企業は世界中の事業や政府と協力して新しい生活環境や仕事環境を生み出し、質"
+"の良いサービスを提供し、ベストなエクスペリエンスを実現しています。"
 
 #: enrolment/templates/landing-page-international.html:35
 msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
 "is hard to beat."
-msgstr "取引相手をお探しならば、ぜひ英国企業の信頼性と専門技能･知識をご検討ください。"
+msgstr ""
+"取引相手をお探しならば、ぜひ英国企業の信頼性と専門技能･知識をご検討ください。"
 
 #: enrolment/templates/landing-page-international.html:38
 msgid ""
@@ -169,7 +179,9 @@ msgstr "英国における医療とライフサイエンス"
 msgid ""
 "Get access to the UK health and life sciences supply-chain, delivering high "
 "quality, innovative services to the world."
-msgstr "高品質で革新的なサービスを世界中にお届けしている、英国の医療･ライフサイエンスのサプライチェーンにアクセスしませんか。"
+msgstr ""
+"高品質で革新的なサービスを世界中にお届けしている、英国の医療･ライフサイエンス"
+"のサプライチェーンにアクセスしませんか。"
 
 #: enrolment/templates/landing-page-international.html:76
 msgid "Find out more about the UK’s healthcare and life sciences"
@@ -197,7 +209,9 @@ msgstr "英国のクリエイティブ･サービス"
 msgid ""
 "Whether you need buildings designed, films made or a fresh approach to "
 "marketing, the UK is the first place to look."
-msgstr "建築設計、映画制作、マーケティングへのアプローチなど、どのようなサービスをお求めであっても、ぜひ最初に英国をご検討ください。"
+msgstr ""
+"建築設計、映画制作、マーケティングへのアプローチなど、どのようなサービスをお"
+"求めであっても、ぜひ最初に英国をご検討ください。"
 
 #: enrolment/templates/landing-page-international.html:113
 msgid "Find out more about the UK’s creative services"
@@ -211,7 +225,9 @@ msgstr "英国の飲食品"
 msgid ""
 "Whether you want the most innovative food brands or exceptional quality "
 "drinks, the UK is the first place to look."
-msgstr "革新的な食品ブランド、最高品質の飲料品など、どのようなものをお探しであっても、ぜひ最初に英国をご検討ください。"
+msgstr ""
+"革新的な食品ブランド、最高品質の飲料品など、どのようなものをお探しであって"
+"も、ぜひ最初に英国をご検討ください。"
 
 #: enrolment/templates/landing-page-international.html:130
 msgid "Find out more about UK food and drink"
