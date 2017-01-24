@@ -59,3 +59,30 @@ def test_footer_contact_us(rf):
     )
 
     assert href in html
+
+
+def test_social_share_all_populated():
+    context = {
+        'social': {
+            'image': 'image.png',
+            'title': 'a title',
+            'description': 'a description',
+        }
+    }
+    html = render_to_string('social.html', context)
+
+    assert '<meta property="og:type" content="website" />' in html
+    assert '<meta property="og:image" content="image.png" />' in html
+    assert '<meta property="og:title" content="a title" />'in html
+    assert '<meta property="og:description" content="a description" />' in html
+
+
+def test_social_share_not_populated():
+    context = {}
+    html = render_to_string('social.html', context)
+    url = '/static/govuk-0.18.0/assets/images/opengraph-image.f86f1d0dd106.png'
+
+    assert '<meta property="og:type" content="website" />' in html
+    assert '<meta property="og:image" content="{0}" />'.format(url) in html
+    assert '<meta property="og:title"' not in html
+    assert '<meta property="og:description"' not in html
