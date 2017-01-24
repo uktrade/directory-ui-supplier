@@ -495,6 +495,13 @@ body {
 #footer.ed-footer {
   background: #444444;
   padding: 40px 40px 50px;
+  img {
+    image-rendering: -moz-crisp-edges;         /* Firefox */
+    image-rendering:   -o-crisp-edges;         /* Opera */
+    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+  }
   @media (max-width: 960px) {
     padding: 40px 0;
 
@@ -787,6 +794,11 @@ a.ed-filled-button-primary {
     height: 24px;
     margin-top: 8px;
     margin-left: -2px;
+    image-rendering: -moz-crisp-edges;         /* Firefox */
+    image-rendering:   -o-crisp-edges;         /* Opera */
+    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
   }
 }
 
