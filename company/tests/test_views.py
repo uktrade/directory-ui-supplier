@@ -75,7 +75,12 @@ def test_public_profile_details_non_verbose_context(client):
 def test_public_profile_details_exposes_context(
     mock_get_public_company_profile_from_response, client
 ):
-    mock_get_public_company_profile_from_response.return_value = {}
+    company = {
+        'name': 'Example corp',
+        'logo': 'logo.png',
+        'summary': 'summary summary',
+    }
+    mock_get_public_company_profile_from_response.return_value = company
     url = reverse(
         'public-company-profiles-detail', kwargs={'company_number': '01234567'}
     )
@@ -84,7 +89,12 @@ def test_public_profile_details_exposes_context(
     assert response.template_name == [
         views.PublishedProfileDetailView.template_name
     ]
-    assert response.context_data['company'] == {}
+    assert response.context_data['company'] == company
+    assert response.context_data['social'] == {
+        'description': company['summary'],
+        'image': company['logo'],
+        'title': 'International trade profile: {}'.format(company['name']),
+    }
 
 
 def test_company_profile_list_exposes_context(
@@ -243,6 +253,11 @@ def test_supplier_case_study_exposes_context(
         views.CaseStudyDetailView.template_name
     ]
     assert response.context_data['case_study'] == expected_case_study
+    assert response.context_data['social'] == {
+        'description': expected_case_study['description'],
+        'image': expected_case_study['image_one'],
+        'title': 'Project: {}'.format(expected_case_study['title']),
+    }
 
 
 @patch.object(views.api_client.company, 'retrieve_public_case_study')

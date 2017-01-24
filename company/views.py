@@ -102,8 +102,17 @@ class PublishedProfileDetailView(AddCompanyProfileToContextMixin,
     template_name = 'company-profile-detail.html'
 
     def get_context_data(self, **kwargs):
-        is_verbose = 'verbose' in self.request.GET
-        return super().get_context_data(show_description=is_verbose, **kwargs)
+        verbose = 'verbose' in self.request.GET
+        context = super().get_context_data(show_description=verbose, **kwargs)
+        company = context['company']
+        context['social'] = {
+            'title': (
+                'International trade profile: {0}'.format(company['name'])
+            ),
+            'description': company['summary'],
+            'image': company['logo'],
+        }
+        return context
 
 
 class CaseStudyDetailView(TemplateView):
@@ -123,9 +132,14 @@ class CaseStudyDetailView(TemplateView):
         return helpers.get_case_study_details_from_response(response)
 
     def get_context_data(self, **kwargs):
-        return {
-            'case_study': self.get_case_study(),
+        case_study = self.get_case_study()
+        context = super().get_context_data(case_study=case_study, **kwargs)
+        context['social'] = {
+            'title': 'Project: {title}'.format(title=case_study['title']),
+            'description': case_study['description'],
+            'image': case_study['image_one'],
         }
+        return context
 
 
 class ContactCompanyView(AddCompanyProfileToContextMixin, FormView):

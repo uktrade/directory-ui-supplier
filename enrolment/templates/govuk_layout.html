@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
     <head>
         {% include 'google_tag_manager_head.html' %}
+        {% include 'social.html' %}
         <meta charset="utf-8" />
         <title>{% block head_title %}Find a Supplier - GOV.UK{% endblock %}</title>
 
@@ -27,7 +28,6 @@
         <link rel="apple-touch-icon-precomposed" href="{% static 'govuk-0.18.0/assets/images/apple-touch-icon-60x60.png' %}">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:image" content="{% static 'govuk-0.18.0/assets/images/opengraph-image.png' %}">
 
         <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" media="all" rel="stylesheet" />
         <link href="{% static 'vendor/bootstrap/css/bootstrap-responsive.min.css' %}" media="all" rel="stylesheet" />
