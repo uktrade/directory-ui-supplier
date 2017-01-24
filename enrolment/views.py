@@ -4,6 +4,9 @@ from django.template.response import TemplateResponse
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
+from zenpy import Zenpy
+from zenpy.lib.api_objects import Ticket
+
 from api_client import api_client
 from enrolment import constants, forms
 
@@ -25,9 +28,24 @@ class BuyerSubscribeFormView(FormView):
     template_name = 'subscribe.html'
     form_class = forms.InternationalBuyerForm
 
+    def _create_zendesk_ticket(self, cleaned_data):
+        credentials = {
+            'email': settings.ZENDESK_EMAIL,
+            'token': settings.ZENDESK_TOKEN,
+            'subdomain': settings.ZENDESK_SUBDOMAIN
+        }
+        zenpy_client = Zenpy(**credentials)
+        ticket = Ticket(
+            subject=settings.ZENDESK_TICKET_SUBJECT,
+            description=cleaned_data['comment'],
+        )
+        zenpy_client.tickets.create(ticket)
+
     def form_valid(self, form):
         data = forms.serialize_international_buyer_forms(form.cleaned_data)
         api_client.buyer.send_form(data)
+        if form.cleaned_data['comment']:
+            self._create_zendesk_ticket(form.cleaned_data)
         return TemplateResponse(self.request, self.success_template)
 
 

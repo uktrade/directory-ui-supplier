@@ -7,12 +7,26 @@ import pytest
 from django.conf import settings
 from django.core.urlresolvers import reverse
 
+from zenpy.lib.api_objects import Ticket
+
 from enrolment import constants, forms
 from enrolment.views import (
     api_client,
     BuyerSubscribeFormView,
     InternationalLandingSectorDetailView
 )
+
+
+@pytest.fixture
+def buyer_form_data_no_comment():
+    return {
+        'full_name': 'Jim Example',
+        'email_address': 'jim@example.com',
+        'sector': 'AEROSPACE',
+        'company_name': 'Deutsche Bank',
+        'country': 'Germany',
+        'terms': True,
+    }
 
 
 @pytest.fixture
@@ -23,13 +37,21 @@ def buyer_form_data():
         'sector': 'AEROSPACE',
         'company_name': 'Deutsche Bank',
         'country': 'Germany',
-        'terms': True
+        'terms': True,
+        'comment': 'This website should be all in German.',
     }
 
 
 @pytest.fixture
 def buyer_request(rf, client, buyer_form_data):
     request = rf.post('/', buyer_form_data)
+    request.session = client.session
+    return request
+
+
+@pytest.fixture
+def buyer_request_no_comment(rf, client, buyer_form_data_no_comment):
+    request = rf.post('/', buyer_form_data_no_comment)
     request.session = client.session
     return request
 
@@ -179,10 +201,13 @@ def test_privacy_cookiues_success(client):
     assert response.status_code == http.client.OK
 
 
+@patch('zenpy.lib.api.TicketApi.create')
 @patch.object(api_client.buyer, 'send_form')
-def test_subscribe_view_submit(
-    mock_send_form, buyer_request, buyer_form_data
+def test_subscribe_view_submit_with_comment(
+    mock_send_form, mock_ticket_create, buyer_request, buyer_form_data,
+    settings
 ):
+    settings.ZENDESK_TICKET_SUBJECT = 'Be Zen!'
     response = BuyerSubscribeFormView.as_view()(buyer_request)
 
     assert response.status_code == http.client.OK
@@ -190,14 +215,37 @@ def test_subscribe_view_submit(
     mock_send_form.assert_called_once_with(
         forms.serialize_international_buyer_forms(buyer_form_data)
     )
+    ticket = mock_ticket_create.call_args[0][0]
+    assert ticket.__class__ == Ticket
+    assert ticket.subject == 'Be Zen!'
+    assert ticket.description == 'This website should be all in German.'
 
 
+@patch('zenpy.lib.api.TicketApi.create')
+@patch.object(api_client.buyer, 'send_form')
+def test_subscribe_view_submit_without_comment(
+    mock_send_form, mock_ticket_create, buyer_request_no_comment,
+    buyer_form_data_no_comment
+):
+    response = BuyerSubscribeFormView.as_view()(buyer_request_no_comment)
+
+    assert response.status_code == http.client.OK
+    assert response.template_name == BuyerSubscribeFormView.success_template
+    mock_send_form.assert_called_once_with(
+        forms.serialize_international_buyer_forms(buyer_form_data_no_comment)
+    )
+    assert mock_ticket_create.called is False
+
+
+@patch('zenpy.lib.api.TicketApi.create')
 @patch.object(api_client.buyer, 'send_form')
 def test_subscribe_view_submit_invalid(
-    mock_send_form, buyer_request_invalid
+    mock_send_form, mock_ticket_create, buyer_request_invalid
 ):
     response = BuyerSubscribeFormView.as_view()(buyer_request_invalid)
 
     assert response.template_name == [BuyerSubscribeFormView.template_name]
     assert response.status_code == http.client.OK
     assert response.context_data['form'].errors
+    assert mock_send_form.called is False
+    assert mock_ticket_create.called is False
