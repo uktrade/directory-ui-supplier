@@ -16,7 +16,8 @@ ZENPY_CREDENTIALS = {
     'token': settings.ZENDESK_TOKEN,
     'subdomain': settings.ZENDESK_SUBDOMAIN
 }
-ZENPY_CLIENT = Zenpy(**ZENPY_CREDENTIALS)
+# Zenpy will let the connection timeout after 5s and will retry 3 times
+ZENPY_CLIENT = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
 class ShowLanguageSwitcherMixin:
