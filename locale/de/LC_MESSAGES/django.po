@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 16:24+0000\n"
+"POT-Creation-Date: 2017-01-24 18:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,31 +17,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: enrolment/forms.py:16
+#: enrolment/forms.py:17
 msgid "Please select an industry"
 msgstr ""
 
-#: enrolment/forms.py:18
+#: enrolment/forms.py:19
 msgid "Tick the box to confirm you agree to the terms and conditions."
 msgstr ""
 
-#: enrolment/forms.py:21
+#: enrolment/forms.py:22
 #, python-format
 msgid ""
 "I agree to the great.gov.uk <a target=\"_self\" href=\"%(url)s\">terms and "
 "conditions</a>."
 msgstr ""
 
-#: enrolment/forms.py:24
+#: enrolment/forms.py:26
 msgid "Your name"
 msgstr ""
 
-#: enrolment/forms.py:25
+#: enrolment/forms.py:27
 msgid "Email address"
 msgstr ""
 
-#: enrolment/forms.py:27
+#: enrolment/forms.py:29
 msgid "Industry"
+msgstr ""
+
+#: enrolment/forms.py:37
+msgid "Company name"
+msgstr ""
+
+#: enrolment/forms.py:38
+msgid "Country"
+msgstr ""
+
+#: enrolment/forms.py:41
+msgid ""
+"Tell us if you can't find what you were looking for, or if you want to give "
+"feedback"
+msgstr ""
+
+#: enrolment/forms.py:44
+msgid "Maximum 1000 characters."
 msgstr ""
 
 #: enrolment/templates/browse-companies.html:14
@@ -84,31 +102,24 @@ msgstr "Allgemeine Geschäftsbedingungen"
 msgid "Crown Copyright 2016"
 msgstr ""
 
-#: enrolment/templates/header.html:26
+#: enrolment/templates/header.html:25
 msgid "Home"
 msgstr "Start"
 
-#: enrolment/templates/header.html:29
+#: enrolment/templates/header.html:28
 msgid "Find a Supplier"
 msgstr "Finden sie einen Geschäftspartner"
 
-#: enrolment/templates/header.html:32
+#: enrolment/templates/header.html:31
 msgid "Industries"
 msgstr "Branchen"
 
-#: enrolment/templates/landing-page-international-form.html:4
-msgid "Register to see the latest UK companies"
+#: enrolment/templates/landing-page-international-form.html:5
+msgid "Receive email updates of the latest UK companies in your industry"
 msgstr ""
 
-#: enrolment/templates/landing-page-international-form.html:6
-msgid ""
-"We have hundreds of companies that may meet your needs and new ones are "
-"being added frequently. Register to receive a weekly mail with a summary of "
-"new companies in your industry."
-msgstr ""
-
-#: enrolment/templates/landing-page-international-form.html:54
-msgid "Register"
+#: enrolment/templates/landing-page-international-form.html:80
+msgid "Send"
 msgstr ""
 
 #: enrolment/templates/landing-page-international.html:9

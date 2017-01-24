@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-03 11:37+0000\n"
+"POT-Creation-Date: 2017-01-24 18:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,46 +17,106 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: enrolment/forms.py:10
-msgid "Please select a sector"
+#: enrolment/forms.py:17
+msgid "Please select an industry"
 msgstr ""
 
-#: enrolment/forms.py:11
+#: enrolment/forms.py:19
 msgid "Tick the box to confirm you agree to the terms and conditions."
 msgstr ""
 
-#: enrolment/forms.py:14
+#: enrolment/forms.py:22
 #, python-format
 msgid ""
 "I agree to the great.gov.uk <a target=\"_self\" href=\"%(url)s\">terms and "
 "conditions</a>."
 msgstr ""
 
-#: enrolment/forms.py:18
+#: enrolment/forms.py:26
 msgid "Your name"
 msgstr ""
 
-#: enrolment/forms.py:19
+#: enrolment/forms.py:27
 msgid "Email address"
 msgstr ""
 
-#: enrolment/forms.py:21
-msgid "Sector"
+#: enrolment/forms.py:29
+msgid "Industry"
 msgstr ""
 
-#: enrolment/templates/landing-page-international-form.html:4
-msgid "Find a UK company that can meet your needs"
+#: enrolment/forms.py:37
+msgid "Company name"
 msgstr ""
 
-#: enrolment/templates/landing-page-international-form.html:6
+#: enrolment/forms.py:38
+msgid "Country"
+msgstr ""
+
+#: enrolment/forms.py:41
 msgid ""
-"Choose from hundreds of UK companies offering exceptional products and "
-"services. Register to be notified as soon as companies that match your needs "
-"are live on the Find a Supplier service."
+"Tell us if you can't find what you were looking for, or if you want to give "
+"feedback"
 msgstr ""
 
-#: enrolment/templates/landing-page-international-form.html:56
-msgid "Register"
+#: enrolment/forms.py:44
+msgid "Maximum 1000 characters."
+msgstr ""
+
+#: enrolment/templates/browse-companies.html:14
+#: enrolment/templates/landing-page-international.html:44
+msgid "Find great UK companies"
+msgstr ""
+
+#: enrolment/templates/browse-companies.html:23
+#: enrolment/templates/landing-page-international.html:51
+msgid ""
+"Exceptionally innovative and creative UK trade partners are ready to work "
+"with you. Discover them on the Find a Supplier service."
+msgstr ""
+
+#: enrolment/templates/browse-companies.html:32
+#: enrolment/templates/landing-page-international.html:54
+msgid "Browse UK companies"
+msgstr ""
+
+#: enrolment/templates/footer.html:11
+msgid "Department for International Trade"
+msgstr ""
+
+#: enrolment/templates/footer.html:17
+msgid "Contact us"
+msgstr ""
+
+#: enrolment/templates/footer.html:23
+msgid "Privacy and cookies"
+msgstr ""
+
+#: enrolment/templates/footer.html:29
+msgid "Terms &amp; conditions"
+msgstr ""
+
+#: enrolment/templates/footer.html:42
+msgid "Crown Copyright 2016"
+msgstr ""
+
+#: enrolment/templates/header.html:25
+msgid "Home"
+msgstr ""
+
+#: enrolment/templates/header.html:28
+msgid "Find a Supplier"
+msgstr ""
+
+#: enrolment/templates/header.html:31
+msgid "Industries"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-form.html:5
+msgid "Receive email updates of the latest UK companies in your industry"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-form.html:80
+msgid "Send"
 msgstr ""
 
 #: enrolment/templates/landing-page-international.html:9
@@ -66,79 +126,41 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/landing-page-international.html:18
-msgid "Find your UK trade partner"
+msgid "Find UK companies to do business with"
 msgstr ""
 
-#: enrolment/templates/landing-page-international.html:25
+#: enrolment/templates/landing-page-international.html:26
 msgid ""
-"As an international business decision-maker you need look no further than "
-"the UK for innovative, high-quality products and services. This is the place "
-"to make the right trade connections with global corporations and smaller "
-"enterprises across every sector of business."
+"The UK is a great place to find innovative, high-quality products and "
+"services."
 msgstr ""
 
-#: enrolment/templates/landing-page-international.html:31
+#: enrolment/templates/landing-page-international.html:29
 msgid ""
-"All around the world, UK companies are working with international businesses "
-"and governments to create stunning new environments, run high quality "
-"services and deliver astonishing experiences."
+"You can make the right trade connections in the UK with global corporations "
+"and smaller enterprises across every industry."
 msgstr ""
 
-#: enrolment/templates/landing-page-international.html:34
+#: enrolment/templates/landing-page-international.html:32
 msgid ""
-"The UK’s zest for innovation is helping transform lives worldwide and "
-"provides answers to many of the most pressing global challenges."
+"UK companies work with businesses and governments around the world to create "
+"new living and working environments, run high quality services and deliver "
+"the best experiences."
 msgstr ""
 
-#: enrolment/templates/landing-page-international.html:37
+#: enrolment/templates/landing-page-international.html:35
 msgid ""
-"UK companies have created the world’s first bionic hand with independently "
-"moving fingers and the latest motion-tracking technology to make sports more "
-"spectacular: just two exceptional examples of what we can offer you."
+"When you need a trade partner, the reliability and expertise of UK companies "
+"is hard to beat."
 msgstr ""
 
-#: enrolment/templates/landing-page-international.html:40
+#: enrolment/templates/landing-page-international.html:38
 msgid ""
-"Our experience, reliability and creativity are what makes UK businesses "
-"world-renowned. When you need a trade partner to create exceptional products "
-"and services, the strength and expertise of UK companies is hard to beat."
+"Choose from the hundreds of businesses in the UK to work with you today."
 msgstr ""
 
-#: enrolment/templates/landing-page-international.html:43
-msgid "We can help you make vital business connections with ideal companies."
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:46
-msgid ""
-"Choose from the millions of businesses in the UK to work with you today."
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:50
-msgid "UK business facts"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:52
-msgid ""
-"UK companies are at the heart of everyday goods and services, including "
-"almost every mobile phone worldwide"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:53
-msgid ""
-"Largest technology market in Europe, larger than the rest of Europe combined"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:54
-msgid ""
-"A long history of innovation and creativity with 123 Nobel prize winners"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:55
-msgid "UK brands are renowned for quality, reliability and desirability"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:62
-msgid "UK trade sectors"
+#: enrolment/templates/landing-page-international.html:61
+msgid "UK industries"
 msgstr ""
 
 #: enrolment/templates/landing-page-international.html:70
@@ -151,36 +173,52 @@ msgid ""
 "quality, innovative services to the world."
 msgstr ""
 
-#: enrolment/templates/landing-page-international.html:75
+#: enrolment/templates/landing-page-international.html:76
 msgid "Find out more about the UK’s healthcare and life sciences"
 msgstr ""
 
-#: enrolment/templates/landing-page-international.html:84
-msgid "The UK’s advanced technology"
-msgstr ""
-
 #: enrolment/templates/landing-page-international.html:86
-msgid ""
-"Check out the latest cutting-edge technological innovations that the UK is "
-"bringing to the world."
+msgid "The UK's advanced technology"
 msgstr ""
 
-#: enrolment/templates/landing-page-international.html:91
+#: enrolment/templates/landing-page-international.html:88
+msgid ""
+"Check out the latest cutting-edge technologies that the UK is bringing to "
+"the world."
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:94
 msgid "Find out more about UK technology"
 msgstr ""
 
-#: enrolment/templates/landing-page-international.html:100
-msgid "See more sectors"
+#: enrolment/templates/landing-page-international.html:106
+msgid "The UK's creative services"
 msgstr ""
 
-#: ui/settings.py:101
-msgid "English"
+#: enrolment/templates/landing-page-international.html:108
+msgid ""
+"Whether you need buildings designed, films made or a fresh approach to "
+"marketing, the UK is the first place to look."
 msgstr ""
 
-#: ui/settings.py:102
-msgid "German"
+#: enrolment/templates/landing-page-international.html:113
+msgid "Find out more about the UK’s creative services"
 msgstr ""
 
-#: ui/settings.py:103
-msgid "Simplified Chinese"
+#: enrolment/templates/landing-page-international.html:123
+msgid "The UK's food and drink"
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:125
+msgid ""
+"Whether you want the most innovative food brands or exceptional quality "
+"drinks, the UK is the first place to look."
+msgstr ""
+
+#: enrolment/templates/landing-page-international.html:130
+msgid "Find out more about UK food and drink"
+msgstr ""
+
+#: enrolment/templates/language_switcher.html:6
+msgid "Select"
 msgstr ""
