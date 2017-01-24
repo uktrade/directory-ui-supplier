@@ -11,6 +11,14 @@ from api_client import api_client
 from enrolment import constants, forms
 
 
+ZENPY_CREDENTIALS = {
+    'email': settings.ZENDESK_EMAIL,
+    'token': settings.ZENDESK_TOKEN,
+    'subdomain': settings.ZENDESK_SUBDOMAIN
+}
+ZENPY_CLIENT = Zenpy(**ZENPY_CREDENTIALS)
+
+
 class ShowLanguageSwitcherMixin:
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -29,12 +37,6 @@ class BuyerSubscribeFormView(FormView):
     form_class = forms.InternationalBuyerForm
 
     def _create_zendesk_ticket(self, cleaned_data):
-        credentials = {
-            'email': settings.ZENDESK_EMAIL,
-            'token': settings.ZENDESK_TOKEN,
-            'subdomain': settings.ZENDESK_SUBDOMAIN
-        }
-        zenpy_client = Zenpy(**credentials)
         description = (
             'Name: {name}\n'
             'Email: {email}\n'
@@ -54,7 +56,7 @@ class BuyerSubscribeFormView(FormView):
             subject=settings.ZENDESK_TICKET_SUBJECT,
             description=description,
         )
-        zenpy_client.tickets.create(ticket)
+        ZENPY_CLIENT.tickets.create(ticket)
 
     def form_valid(self, form):
         data = forms.serialize_international_buyer_forms(form.cleaned_data)

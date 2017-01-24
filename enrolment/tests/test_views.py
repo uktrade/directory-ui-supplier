@@ -204,10 +204,8 @@ def test_privacy_cookiues_success(client):
 @patch('zenpy.lib.api.TicketApi.create')
 @patch.object(api_client.buyer, 'send_form')
 def test_subscribe_view_submit_with_comment(
-    mock_send_form, mock_ticket_create, buyer_request, buyer_form_data,
-    settings
+    mock_send_form, mock_ticket_create, buyer_request, buyer_form_data
 ):
-    settings.ZENDESK_TICKET_SUBJECT = 'Be Zen!'
     response = BuyerSubscribeFormView.as_view()(buyer_request)
 
     assert response.status_code == http.client.OK
@@ -217,7 +215,7 @@ def test_subscribe_view_submit_with_comment(
     )
     ticket = mock_ticket_create.call_args[0][0]
     assert ticket.__class__ == Ticket
-    assert ticket.subject == 'Be Zen!'
+    assert ticket.subject == 'Trade Profiles feedback'
     description = (
         'Name: {name}\n'
         'Email: {email}\n'
