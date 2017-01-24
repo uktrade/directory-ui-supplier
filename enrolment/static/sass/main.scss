@@ -807,9 +807,13 @@ a.ed-filled-button-primary {
 .ed-header-buttons {
   margin-bottom: 0;
   img {
-    height: 35px;
     height: 40px;
     margin-top: 16px;
+    image-rendering: -moz-crisp-edges;         /* Firefox */
+    image-rendering:   -o-crisp-edges;         /* Opera */
+    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
     @media (max-width: 767px) {
       margin-top: 13px;
       margin-bottom: 15px;
