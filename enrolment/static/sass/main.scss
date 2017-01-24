@@ -501,6 +501,8 @@ body {
     image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
     image-rendering: crisp-edges;
     -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+    height: 40px;
+    max-width: inherit;
   }
   @media (max-width: 960px) {
     padding: 40px 0;
