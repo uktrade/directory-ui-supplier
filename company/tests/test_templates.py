@@ -27,6 +27,7 @@ default_context = {
 
 NO_RESULTS_FOUND_LABEL = 'No companies found'
 CONTACT_COMPANY_LABEL = 'Contact company'
+EMAIL_COMPANY_LABEL = 'Email company'
 RECENT_PROJECTS_LABEL = 'Recent projects'
 
 
@@ -382,3 +383,41 @@ def test_contact_company_success():
     html = render_to_string('company-contact-success.html', default_context)
 
     assert 'Your message has been sent to UK exporting co ltd.' in html
+
+
+def test_case_study_contact_button_feature_flag_off(settings):
+    context = {
+        'case_study': {
+            'company': default_context['company'],
+        },
+        'features': {
+            'FEATURE_CONTACT_COMPANY_FORM_ENABLED': False,
+        }
+    }
+    html = render_to_string('supplier-case-study-detail.html', context)
+    expected_url = reverse(
+        'contact-company', kwargs={'company_number': '123456'}
+    )
+
+    assert EMAIL_COMPANY_LABEL in html
+    assert default_context['company']['email_address'] in html
+    assert expected_url not in html
+
+
+def test_case_study_contact_button_feature_flag_on(settings):
+    context = {
+        'case_study': {
+            'company': default_context['company'],
+        },
+        'features': {
+            'FEATURE_CONTACT_COMPANY_FORM_ENABLED': True,
+        }
+    }
+    html = render_to_string('supplier-case-study-detail.html', context)
+    expected_url = reverse(
+        'contact-company', kwargs={'company_number': '123456'}
+    )
+
+    assert EMAIL_COMPANY_LABEL in html
+    assert default_context['company']['email_address'] not in html
+    assert expected_url in html
