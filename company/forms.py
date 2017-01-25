@@ -3,10 +3,11 @@ from directory_validators.constants import choices
 
 from django import forms
 
-from company import validators
+from company import validators, widgets
+from ui.forms import AgreeToTermsMixin
 
 
-SELECT_LABEL = 'Please select an industry'
+SELECT_LABEL = 'Please select your industry'
 
 
 class PublicProfileSearchForm(forms.Form):
@@ -32,7 +33,7 @@ class PublicProfileSearchForm(forms.Form):
         return self.cleaned_data['page'] or self.fields['page'].initial
 
 
-class ContactCompanyForm(forms.Form):
+class ContactCompanyForm(AgreeToTermsMixin, forms.Form):
     error_css_class = 'input-field-container has-error'
 
     full_name = forms.CharField(
@@ -72,6 +73,10 @@ class ContactCompanyForm(forms.Form):
         validators=[validators.not_contains_url],
     )
     captcha = ReCaptchaField()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['terms'].widget = widgets.PreventRenderWidget
 
 
 def serialize_contact_company_form(cleaned_data, company_number):

@@ -1,27 +1,20 @@
 from django import forms
 from django.conf import settings
-from django.utils.safestring import mark_safe
 from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
 
 from directory_validators.constants import choices
-from directory_constants.constants import urls
+
+from ui.forms import AgreeToTermsMixin
 
 
 class LanguageForm(forms.Form):
     lang = forms.ChoiceField(choices=settings.LANGUAGES)
 
 
-class InternationalBuyerForm(forms.Form):
+class InternationalBuyerForm(AgreeToTermsMixin, forms.Form):
     error_css_class = 'input-field-container has-error'
     PLEASE_SELECT_LABEL = _('Please select an industry')
-    TERMS_CONDITIONS_MESSAGE = _(
-        'Tick the box to confirm you agree to the terms and conditions.'
-    )
-    TERMS_LABEL = _(
-        'I agree to the great.gov.uk '
-        '<a target="_self" href="%(url)s">terms and conditions</a>.'
-    )
 
     full_name = forms.CharField(label=_('Your name'))
     email_address = forms.EmailField(label=_('Email address'))
@@ -30,9 +23,6 @@ class InternationalBuyerForm(forms.Form):
         choices=(
             [['', PLEASE_SELECT_LABEL]] + list(choices.COMPANY_CLASSIFICATIONS)
         )
-    )
-    terms = forms.BooleanField(
-        error_messages={'required': TERMS_CONDITIONS_MESSAGE}
     )
     company_name = forms.CharField(label=_('Company name'))
     country = forms.CharField(label=_('Country'))
@@ -46,12 +36,6 @@ class InternationalBuyerForm(forms.Form):
         widget=forms.Textarea,
         required=False,
     )
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['terms'].label = mark_safe(
-            self.TERMS_LABEL % {'url': urls.TERMS_AND_CONDITIONS_URL}
-        )
 
 
 def serialize_international_buyer_forms(cleaned_data):
