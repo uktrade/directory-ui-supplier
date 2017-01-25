@@ -217,20 +217,13 @@ def test_subscribe_view_submit_with_comment(
     assert ticket.__class__ == Ticket
     assert ticket.subject == 'Trade Profiles feedback'
     description = (
-        'Name: {name}\n'
-        'Email: {email}\n'
-        'Company: {company}\n'
+        'Name: {full_name}\n'
+        'Email: {email_address}\n'
+        'Company: {company_name}\n'
         'Country: {country}\n'
         'Sector: {sector}\n'
         'Comment: {comment}'
-    ).format(
-        name=buyer_form_data['full_name'],
-        email=buyer_form_data['email_address'],
-        company=buyer_form_data['company_name'],
-        country=buyer_form_data['country'],
-        sector=buyer_form_data['sector'],
-        comment=buyer_form_data['comment'],
-    )
+    ).format(**buyer_form_data)
     assert ticket.description == description
 
 
