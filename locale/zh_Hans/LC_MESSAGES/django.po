@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-24 18:16+0000\n"
+"POT-Creation-Date: 2017-01-25 15:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -169,7 +169,7 @@ msgstr "如今，英国有数百家企业可以和您一起携手共进。"
 
 #: enrolment/templates/landing-page-international.html:61
 msgid "UK industries"
-msgstr "英国的产业"
+msgstr "英国贸易部门"
 
 #: enrolment/templates/landing-page-international.html:70
 msgid "Healthcare and life sciences in the UK"
@@ -233,3 +233,7 @@ msgstr "详细了解来自英国的食品和饮料"
 #: enrolment/templates/language_switcher.html:6
 msgid "Select"
 msgstr "更改语言"
+
+#: enrolment/templates/language_switcher.html:12
+msgid "Page in English only"
+msgstr "该页仅以英文显示"

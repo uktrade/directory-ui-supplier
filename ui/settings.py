@@ -54,6 +54,8 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'ui.middleware.LocaleQuerystringMiddleware',
+    'ui.middleware.PersistLocaleMiddleware',
+    'ui.middleware.ForceDefaultLocale',
 ]
 
 ROOT_URLCONF = 'ui.urls'
@@ -101,7 +103,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 LANGUAGES = [
-  ('en_GB', 'English'),
+  ('en-gb', 'English'),
   ('de', 'Deutsch'),  # German
   ('zh-hans', '简体中文'),  # Simplified Chinese
 ]

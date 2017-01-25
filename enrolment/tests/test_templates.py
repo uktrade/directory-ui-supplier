@@ -13,6 +13,9 @@ supplier_context = {
 }
 
 
+MESSAGE_ENGLISH_ONLY = 'Page in English only'
+
+
 def test_google_tag_manager():
     expected_head = render_to_string('google_tag_manager_head.html')
     expected_body = render_to_string('google_tag_manager_body.html')
@@ -86,3 +89,60 @@ def test_social_share_not_populated():
     assert '<meta property="og:image" content="{0}" />'.format(url) in html
     assert '<meta property="og:title"' not in html
     assert '<meta property="og:description"' not in html
+
+
+def test_language_switcher_show():
+    context = {
+        'language_switcher': {
+            'show': True
+        }
+    }
+    html = render_to_string('language_switcher.html', context)
+
+    assert '<form' in html
+    assert MESSAGE_ENGLISH_ONLY not in html
+
+
+def test_language_switcher_hide():
+    context = {
+        'language_switcher': {
+            'show': False
+        },
+        'request': {
+            'LANGUAGE_CODE': 'en-gb'
+        }
+    }
+    html = render_to_string('language_switcher.html', context)
+
+    assert '<form' not in html
+    assert MESSAGE_ENGLISH_ONLY not in html
+
+
+def test_language_switcher_hide_not_translated_english_selected():
+    context = {
+        'language_switcher': {
+            'show': False
+        },
+        'request': {
+            'LANGUAGE_CODE': 'en-gb'
+        }
+    }
+    html = render_to_string('language_switcher.html', context)
+
+    assert '<form' not in html
+    assert MESSAGE_ENGLISH_ONLY not in html
+
+
+def test_language_switcher_hide_not_translated_german_selected():
+    context = {
+        'language_switcher': {
+            'show': False
+        },
+        'request': {
+            'LANGUAGE_CODE': 'de',
+        }
+    }
+    html = render_to_string('language_switcher.html', context)
+
+    assert '<form' not in html
+    assert 'Seite nur auf Englisch' in html
