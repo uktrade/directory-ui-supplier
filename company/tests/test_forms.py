@@ -93,6 +93,13 @@ def test_contact_company_validators():
     assert validator in form.fields['body'].validators
 
 
+def test_contact_company_terms_custom_render():
+    form = forms.ContactCompanyForm()
+    html = str(form)
+
+    assert 'terms' not in html
+
+
 def test_serialize_contact_company_form():
     data = {
         'email_address': 'jim@example.com',

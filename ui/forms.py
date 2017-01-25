@@ -17,7 +17,7 @@ class AgreeToTermsMixin:
     def create_terms_field(self):
         return forms.BooleanField(
             error_messages={'required': self.TERMS_CONDITIONS_MESSAGE},
-            label = mark_safe(
+            label=mark_safe(
                 self.TERMS_LABEL % {'url': urls.TERMS_AND_CONDITIONS_URL}
             ),
         )
