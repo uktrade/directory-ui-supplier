@@ -71,12 +71,16 @@
 						</div>
 						<div class="row" style="padding: 20px; border: 1px solid #dedede; margin-top: 20px; margin-left: 20px;">
 							<h4 style="margin-top: 0;">Contact</h4>
+							<p class="ed-truncate-single-line">
+								{% if features.FEATURE_CONTACT_COMPANY_FORM_ENABLED %}
+									<a class="ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=case_study.company.number %}">Email company</a>
+								{% else %}
+									<a class="ga-tracking-contact-supplier" href="mailto:{{ case_study.company.email_address }}">Email company</a>
+								{% endif %}
+							</p>
 							<p class="ed-truncate-single-line" >
 								<a href="{{ case_study.company.website }}" taget="_blank">{{ case_study.company.website }}</a>
 							</b>
-							<p class="ed-truncate-single-line">
-								<a href="mailto://{{ case_study.company.email_address }}">{{ case_study.company.email_address }}</a>
-							</p>
 						</div>
 						<div class="row ed-company-profile-case-study-company-details" style="padding: 20px;  margin-top: 20px; margin-left: 20px;">
 							<p>
