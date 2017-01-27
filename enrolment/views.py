@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
 from zenpy import Zenpy
-from zenpy.lib.api_objects import Ticket
+from zenpy.lib.api_objects import Ticket, User
 
 from api_client import api_client
 from enrolment import constants, forms
@@ -38,6 +38,19 @@ class BuyerSubscribeFormView(FormView):
     form_class = forms.InternationalBuyerForm
 
     def _create_zendesk_ticket(self, cleaned_data):
+        # Check if user already exists
+        user_search = ZENPY_CLIENT.search(
+            type='user',
+            email=cleaned_data['email_address'],
+        )
+        if user_search.count == 0:
+            user = User(
+                name=cleaned_data['full_name'],
+                email=cleaned_data['email_address'],
+            )
+            user_id = ZENPY_CLIENT.users.create(user).id
+        else:
+            user_id = user_search.values[0]['id']
         description = (
             'Name: {full_name}\n'
             'Email: {email_address}\n'
@@ -49,6 +62,8 @@ class BuyerSubscribeFormView(FormView):
         ticket = Ticket(
             subject=settings.ZENDESK_TICKET_SUBJECT,
             description=description,
+            submitter_id=user_id,
+            requester_id=user_id,
         )
         ZENPY_CLIENT.tickets.create(ticket)
 

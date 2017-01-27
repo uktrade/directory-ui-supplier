@@ -1,13 +1,13 @@
 import http
 import requests
-from unittest.mock import patch
+from unittest.mock import patch, Mock
 
 import pytest
 
 from django.conf import settings
 from django.core.urlresolvers import reverse
 
-from zenpy.lib.api_objects import Ticket
+from zenpy.lib.api_objects import Ticket, User
 
 from enrolment import constants, forms
 from enrolment.views import (
@@ -201,11 +201,16 @@ def test_privacy_cookiues_success(client):
     assert response.status_code == http.client.OK
 
 
+@patch('enrolment.views.ZENPY_CLIENT.search')
+@patch('zenpy.lib.api.UserApi.create')
 @patch('zenpy.lib.api.TicketApi.create')
 @patch.object(api_client.buyer, 'send_form')
 def test_subscribe_view_submit_with_comment(
-    mock_send_form, mock_ticket_create, buyer_request, buyer_form_data
+    mock_send_form, mock_ticket_create, mock_user_create, mock_search,
+    buyer_request, buyer_form_data
 ):
+    mock_user_create.return_value = Mock(id=999)
+    mock_search.return_value = Mock(count=0, values=[])
     response = BuyerSubscribeFormView.as_view()(buyer_request)
 
     assert response.status_code == http.client.OK
@@ -213,9 +218,23 @@ def test_subscribe_view_submit_with_comment(
     mock_send_form.assert_called_once_with(
         forms.serialize_international_buyer_forms(buyer_form_data)
     )
+
+    mock_search.assert_called_once_with(
+        type='user',
+        email=buyer_form_data['email_address'],
+    )
+    assert mock_user_create.call_count == 1
+    user = mock_user_create.call_args[0][0]
+    assert user.__class__ == User
+    assert user.email == buyer_form_data['email_address']
+    assert user.name == buyer_form_data['full_name']
+
+    assert mock_ticket_create.call_count == 1
     ticket = mock_ticket_create.call_args[0][0]
     assert ticket.__class__ == Ticket
     assert ticket.subject == 'Trade Profiles feedback'
+    assert ticket.submitter_id == 999
+    assert ticket.requester_id == 999
     description = (
         'Name: {full_name}\n'
         'Email: {email_address}\n'
@@ -227,11 +246,60 @@ def test_subscribe_view_submit_with_comment(
     assert ticket.description == description
 
 
+@patch('enrolment.views.ZENPY_CLIENT.search')
+@patch('zenpy.lib.api.UserApi.create')
+@patch('zenpy.lib.api.TicketApi.create')
+@patch.object(api_client.buyer, 'send_form')
+def test_subscribe_view_submit_with_comment_from_existing_zendesk_user(
+    mock_send_form, mock_ticket_create, mock_user_create, mock_search,
+    buyer_request, buyer_form_data
+):
+    mock_search.return_value = Mock(
+        count=1,
+        values=[{
+            'email': buyer_form_data['email_address'],
+            'name': buyer_form_data['full_name'],
+            'id': 998,
+        }]
+    )
+    response = BuyerSubscribeFormView.as_view()(buyer_request)
+
+    assert response.status_code == http.client.OK
+    assert response.template_name == BuyerSubscribeFormView.success_template
+    mock_send_form.assert_called_once_with(
+        forms.serialize_international_buyer_forms(buyer_form_data)
+    )
+
+    mock_search.assert_called_once_with(
+        type='user',
+        email=buyer_form_data['email_address'],
+    )
+    assert mock_user_create.called is False
+
+    assert mock_ticket_create.call_count == 1
+    ticket = mock_ticket_create.call_args[0][0]
+    assert ticket.__class__ == Ticket
+    assert ticket.subject == 'Trade Profiles feedback'
+    assert ticket.submitter_id == 998
+    assert ticket.requester_id == 998
+    description = (
+        'Name: {full_name}\n'
+        'Email: {email_address}\n'
+        'Company: {company_name}\n'
+        'Country: {country}\n'
+        'Sector: {sector}\n'
+        'Comment: {comment}'
+    ).format(**buyer_form_data)
+    assert ticket.description == description
+
+
+@patch('enrolment.views.ZENPY_CLIENT.search')
+@patch('zenpy.lib.api.UserApi.create')
 @patch('zenpy.lib.api.TicketApi.create')
 @patch.object(api_client.buyer, 'send_form')
 def test_subscribe_view_submit_without_comment(
-    mock_send_form, mock_ticket_create, buyer_request_no_comment,
-    buyer_form_data_no_comment
+    mock_send_form, mock_ticket_create, mock_user_create, mock_search,
+    buyer_request_no_comment, buyer_form_data_no_comment
 ):
     response = BuyerSubscribeFormView.as_view()(buyer_request_no_comment)
 
@@ -240,13 +308,18 @@ def test_subscribe_view_submit_without_comment(
     mock_send_form.assert_called_once_with(
         forms.serialize_international_buyer_forms(buyer_form_data_no_comment)
     )
+    assert mock_search.called is False
+    assert mock_user_create.called is False
     assert mock_ticket_create.called is False
 
 
+@patch('enrolment.views.ZENPY_CLIENT.search')
+@patch('zenpy.lib.api.UserApi.create')
 @patch('zenpy.lib.api.TicketApi.create')
 @patch.object(api_client.buyer, 'send_form')
 def test_subscribe_view_submit_invalid(
-    mock_send_form, mock_ticket_create, buyer_request_invalid
+    mock_send_form, mock_ticket_create, mock_user_create, mock_search,
+    buyer_request_invalid
 ):
     response = BuyerSubscribeFormView.as_view()(buyer_request_invalid)
 
@@ -254,4 +327,6 @@ def test_subscribe_view_submit_invalid(
     assert response.status_code == http.client.OK
     assert response.context_data['form'].errors
     assert mock_send_form.called is False
+    assert mock_search.called is False
+    assert mock_user_create.called is False
     assert mock_ticket_create.called is False
