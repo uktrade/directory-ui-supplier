@@ -5,14 +5,14 @@ from django.utils.translation import ugettext_lazy as _
 
 from directory_validators.constants import choices
 
-from ui.forms import AgreeToTermsMixin
+from ui.fields import AgreeToTermsField
 
 
 class LanguageForm(forms.Form):
     lang = forms.ChoiceField(choices=settings.LANGUAGES)
 
 
-class InternationalBuyerForm(AgreeToTermsMixin, forms.Form):
+class InternationalBuyerForm(forms.Form):
     error_css_class = 'input-field-container has-error'
     PLEASE_SELECT_LABEL = _('Please select an industry')
 
@@ -36,6 +36,7 @@ class InternationalBuyerForm(AgreeToTermsMixin, forms.Form):
         widget=forms.Textarea,
         required=False,
     )
+    terms = AgreeToTermsField()
 
 
 def serialize_international_buyer_forms(cleaned_data):

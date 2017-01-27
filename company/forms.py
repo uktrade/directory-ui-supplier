@@ -4,7 +4,7 @@ from directory_validators.constants import choices
 from django import forms
 
 from company import validators, widgets
-from ui.forms import AgreeToTermsMixin
+from ui.fields import AgreeToTermsField
 
 
 SELECT_LABEL = 'Please select your industry'
@@ -33,7 +33,7 @@ class PublicProfileSearchForm(forms.Form):
         return self.cleaned_data['page'] or self.fields['page'].initial
 
 
-class ContactCompanyForm(AgreeToTermsMixin, forms.Form):
+class ContactCompanyForm(forms.Form):
     error_css_class = 'input-field-container has-error'
 
     full_name = forms.CharField(
@@ -73,6 +73,7 @@ class ContactCompanyForm(AgreeToTermsMixin, forms.Form):
         validators=[validators.not_contains_url],
     )
     captcha = ReCaptchaField()
+    terms = AgreeToTermsField()
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

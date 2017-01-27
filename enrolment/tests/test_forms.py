@@ -4,8 +4,6 @@ from enrolment import forms
 
 
 REQUIRED_MESSAGE = Field.default_error_messages['required']
-TERMS_CONDITIONS_MESSAGE = \
-    forms.InternationalBuyerForm.TERMS_CONDITIONS_MESSAGE
 
 
 def test_international_form_required():
@@ -19,14 +17,6 @@ def test_international_form_required():
     assert form.fields['country'].required is True
     assert form.fields['terms'].required is True
     assert form.fields['comment'].required is False
-
-
-def test_international_form_terms_custom_message():
-    form = forms.InternationalBuyerForm(data={})
-
-    form.is_valid()
-
-    assert form.errors['terms'] == [TERMS_CONDITIONS_MESSAGE]
 
 
 def test_international_form_accepts_valid_data():
