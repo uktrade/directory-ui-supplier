@@ -49,6 +49,7 @@ def valid_contact_company_data(captcha_stub):
         'subject': 'greetings',
         'body': 'and salutations',
         'recaptcha_response_field': captcha_stub,
+        'terms': True,
     }
 
 

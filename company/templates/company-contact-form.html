@@ -10,8 +10,8 @@
 	<br>
 {% endblock %}
 {% block content %}
-	<div class="container ed-contact-form-container ed-special-bottom-border">
-		<div>
+	<div class="container">
+		<div class="ed-contact-form-container ed-special-bottom-border">
 			<div class="row-fluid">
 				<div class="span12 great-blue-bar">
 					<h1 class="element-within company-name-title">
@@ -19,25 +19,42 @@
 					</h1>
 				</div>
 			</div>
-			<div class="row-fluid ed-contact-form-inner">
-				<div class="span7" style="padding-left: 20px;">
-					<br>
-					<p>
-						Fill in your details and a brief message summarising your needs that will be sent to the UK company.
-					</p>
-					<br>
-					<div class="input-field-container">
-						<form action="" method="post">
-							{{ form.as_ul }}
-							<div class="clearfix"></div>
-							<div class="form-wrapper-btn-container btn-container">
-								<input class="register-btn button" type="submit" value="Send">
-								<a style="margin-left: 20px;" href="{% url 'public-company-profiles-detail' company_number=company.number %}">cancel</a>
+			<div class="ed-contact-form-inner">
+				<form action="" method="post">
+					<div class="row-fluid">
+						<div class="span7" style="padding-left: 20px;">
+							<br>
+							<p>
+								Fill in your details and a brief message summarising your needs that will be sent to the UK company.
+							</p>
+							<br>
+							<div class="input-field-container">
+								{{ form.as_ul }}
+								<div class="clearfix"></div>
 							</div>
-						</form>
+						</div>
 					</div>
-				</div>
+					<div class="row-fluid">
+						<div style="padding: 20px; ">
+							<div class="span2">
+								<input class="register-btn button" type="submit" value="Send">
+							</div>
+							<div class="span6 ed-checkbox-container {{ form.terms.css_classes|default:'input-field-container' }}">
+								{{ form.terms.errors }}
+								<label for="{{ form.terms.id_for_label }}" style="margin-top: 15px; font-weight: 300;">
+									<input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox" style="vertical-align: top; margin-top: 7px;">
+									{{ form.terms.label }}
+								</label>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
+		<div style="margin-top: 20px; margin-bottom: 20px;">
+			<a style="margin-left: 20px;" href="{% url 'public-company-profiles-detail' company_number=company.number %}">cancel</a>
+		</div>
 	</div>
+
 {% endblock %}
