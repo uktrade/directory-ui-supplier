@@ -31,18 +31,18 @@
 
 			<div class="span5 company-profile-module-inner">
 				<h3>Contact</h3>
-				{% if company.website %}
-					<p>
-						<a href="{{ company.website}}">{{ company.website }}</a>
-					</p>
-				{% endif %}
 				{% if company.email_address %}
 					<p>
 						{% if features.FEATURE_CONTACT_COMPANY_FORM_ENABLED %}
-							<a class="ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=company.number %}">Contact company</a>
+							<a class="ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=company.number %}">Email company</a>
 						{% else %}
-							<a class="ga-tracking-contact-supplier" href="mailto:{{ company.email_address }}?subject=International%20buyer%20contact%20via%20your%20great.gov.uk%20trade%20profile">Contact company</a>
+							<a class="ga-tracking-contact-supplier" href="mailto:{{ company.email_address }}?subject=International%20buyer%20contact%20via%20your%20great.gov.uk%20trade%20profile">Email company</a>
 						{% endif %}
+					</p>
+				{% endif %}
+				{% if company.website %}
+					<p>
+						<a href="{{ company.website}}">{{ company.website }}</a>
 					</p>
 				{% endif %}
 			</div>

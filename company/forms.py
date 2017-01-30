@@ -4,7 +4,6 @@ from directory_validators.constants import choices
 from django import forms
 
 from company import validators, widgets
-from ui.fields import AgreeToTermsField
 
 
 SELECT_LABEL = 'Please select your industry'
@@ -35,6 +34,9 @@ class PublicProfileSearchForm(forms.Form):
 
 class ContactCompanyForm(forms.Form):
     error_css_class = 'input-field-container has-error'
+    TERMS_CONDITIONS_MESSAGE = (
+        'Tick the box to confirm you agree to the terms and conditions.'
+    )
 
     full_name = forms.CharField(
         label='Your full name:',
@@ -73,7 +75,9 @@ class ContactCompanyForm(forms.Form):
         validators=[validators.not_contains_url],
     )
     captcha = ReCaptchaField()
-    terms = AgreeToTermsField()
+    terms = forms.BooleanField(
+        error_messages={'required': TERMS_CONDITIONS_MESSAGE}
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

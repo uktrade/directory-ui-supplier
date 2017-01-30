@@ -1,11 +1,8 @@
 from django import forms
 from django.conf import settings
 from django.utils import translation
-from django.utils.translation import ugettext_lazy as _
 
 from directory_validators.constants import choices
-
-from ui.fields import AgreeToTermsField
 
 
 class LanguageForm(forms.Form):
@@ -14,29 +11,34 @@ class LanguageForm(forms.Form):
 
 class InternationalBuyerForm(forms.Form):
     error_css_class = 'input-field-container has-error'
-    PLEASE_SELECT_LABEL = _('Please select an industry')
+    PLEASE_SELECT_LABEL = 'Please select an industry'
+    TERMS_CONDITIONS_MESSAGE = (
+        'Tick the box to confirm you agree to the terms and conditions.'
+    )
 
-    full_name = forms.CharField(label=_('Your name'))
-    email_address = forms.EmailField(label=_('Email address'))
+    full_name = forms.CharField(label='Your name')
+    email_address = forms.EmailField(label='Email address')
     sector = forms.ChoiceField(
-        label=_('Industry'),
+        label='Industry',
         choices=(
             [['', PLEASE_SELECT_LABEL]] + list(choices.COMPANY_CLASSIFICATIONS)
         )
     )
-    company_name = forms.CharField(label=_('Company name'))
-    country = forms.CharField(label=_('Country'))
+    company_name = forms.CharField(label='Company name')
+    country = forms.CharField(label='Country')
     comment = forms.CharField(
-        label=_(
+        label=(
             "Tell us if you can't find what you were looking for, or if you "
             "want to give feedback"
         ),
-        help_text=_('Maximum 1000 characters.'),
+        help_text='Maximum 1000 characters.',
         max_length=1000,
         widget=forms.Textarea,
         required=False,
     )
-    terms = AgreeToTermsField()
+    terms = forms.BooleanField(
+        error_messages={'required': TERMS_CONDITIONS_MESSAGE}
+    )
 
 
 def serialize_international_buyer_forms(cleaned_data):
