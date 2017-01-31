@@ -421,3 +421,15 @@ def test_case_study_contact_button_feature_flag_on(settings):
     assert EMAIL_COMPANY_LABEL in html
     assert default_context['company']['email_address'] not in html
     assert expected_url in html
+
+
+def test_case_study_handles_not_present_image_one():
+    context = {
+        'case_study': {
+            'company': default_context['company'],
+            'image_one': None
+        }
+    }
+    html = render_to_string('supplier-case-study-detail.html', context)
+
+    assert 'None' not in html
