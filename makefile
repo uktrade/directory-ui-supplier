@@ -40,7 +40,9 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_SECTOR_LINKS_JSON=\{\"CREATIVE_AND_MEDIA\":\{\"company_one\":\"https:\/\/www.example.com\/creative-company-1\",\"company_two\":\"http:\/\/www.example.com\/creative-company-2\",\"case_study\":\"http:\/\/www.example.com\/creative-case-study\"\},\"HEALTHCARE_AND_MEDICAL\":\{\"company_one\":\"http:\/\/www.example.com\/health-company-1\",\"company_two\":\"http:\/\/www.example.com\/health-company-1\",\"case_study\":\"http:\/\/www.example.com\/health-case-study\"\},\"FOOD_AND_DRINK\":\{\"company_one\":\"http:\/\/www.example.com\/food-company-1\",\"company_two\":\"http:\/\/www.example.com\/food-company-2\",\"case_study\":\"http:\/\/www.example.com\/food-case-study\"\},\"SOFTWARE_AND_COMPUTER_SERVICES\":\{\"company_one\":\"http:\/\/www.example.com\/tech-company-1\",\"company_two\":\"http:\/\/www.example.com\/tech-company-2\",\"case_study\":\"http:\/\/www.example.com\/tech-case-study\"\}\}; \
 	export DIRECTORY_UI_SUPPLIER_FEATURE_CONTACT_COMPANY_FORM_ENABLED=true; \
 	export DIRECTORY_UI_SUPPLIER_RECAPTCHA_PUBLIC_KEY=debug; \
-	export DIRECTORY_UI_SUPPLIER_RECAPTCHA_PRIVATE_KEY=debug
+	export DIRECTORY_UI_SUPPLIER_RECAPTCHA_PRIVATE_KEY=debug; \
+	export DIRECTORY_UI_BUYER_GOOGLE_TAG_MANAGER_ID=GTM-TC46J8K; \
+	export DIRECTORY_UI_BUYER_GOOGLE_TAG_MANAGER_ENV=&gtm_auth=Ok4kd4Wf_NKgs4c5Z5lUFQ&gtm_preview=env-6&gtm_cookies_win=x
 
 DOCKER_REMOVE_ALL := \
 	docker ps -a | \
@@ -80,7 +82,9 @@ DEBUG_SET_ENV_VARS := \
 	export SECTOR_LINKS_JSON=\{\"CREATIVE_AND_MEDIA\":\{\"company_one\":\"https:\/\/www.example.com\/creative-company-1\",\"company_two\":\"http:\/\/www.example.com\/creative-company-2\",\"case_study\":\"http:\/\/www.example.com\/creative-case-study\"\},\"HEALTHCARE_AND_MEDICAL\":\{\"company_one\":\"http:\/\/www.example.com\/health-company-1\",\"company_two\":\"http:\/\/www.example.com\/health-company-1\",\"case_study\":\"http:\/\/www.example.com\/health-case-study\"\},\"FOOD_AND_DRINK\":\{\"company_one\":\"http:\/\/www.example.com\/food-company-1\",\"company_two\":\"http:\/\/www.example.com\/food-company-2\",\"case_study\":\"http:\/\/www.example.com\/food-case-study\"\},\"SOFTWARE_AND_COMPUTER_SERVICES\":\{\"company_one\":\"http:\/\/www.example.com\/tech-company-1\",\"company_two\":\"http:\/\/www.example.com\/tech-company-2\",\"case_study\":\"http:\/\/www.example.com\/tech-case-study\"\}\}; \
 	export FEATURE_CONTACT_COMPANY_FORM_ENABLED=true; \
 	export RECAPTCHA_PUBLIC_KEY=debug; \
-	export RECAPTCHA_PRIVATE_KEY=debug
+	export RECAPTCHA_PRIVATE_KEY=debug; \
+	export GOOGLE_TAG_MANAGER_ID=GTM-TC46J8K; \
+	export GOOGLE_TAG_MANAGER_ENV=&gtm_auth=Ok4kd4Wf_NKgs4c5Z5lUFQ&gtm_preview=env-6&gtm_cookies_win=x
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)
