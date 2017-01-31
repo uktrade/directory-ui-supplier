@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-24 18:16+0000\n"
+"POT-Creation-Date: 2017-01-25 15:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -236,3 +236,7 @@ msgstr "英国の飲食品についての詳細をご覧ください"
 #: enrolment/templates/language_switcher.html:6
 msgid "Select"
 msgstr "言語の変更"
+
+#: enrolment/templates/language_switcher.html:12
+msgid "Page in English only"
+msgstr ""

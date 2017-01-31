@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.shortcuts import Http404
 from django.template.response import TemplateResponse
+from django.utils import translation
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
@@ -20,11 +21,20 @@ ZENPY_CREDENTIALS = {
 ZENPY_CLIENT = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
-class ShowLanguageSwitcherMixin:
+class EnableTranslationsMixin:
+
+    def __init__(self, *args, **kwargs):
+        dependency = 'ui.middleware.ForceDefaultLocale'
+        assert dependency in settings.MIDDLEWARE_CLASSES
+
+    def dispatch(self, request, *args, **kwargs):
+        translation.activate(request.LANGUAGE_CODE)
+        return super().dispatch(request, *args, **kwargs)
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['language_switcher'] = {
-            'show': settings.FEATURE_LANGUAGE_SWITCHER_ENABLED,
+            'show': True,
             'form': forms.LanguageForm(
                 initial=forms.get_language_form_initial_data(),
             )
@@ -75,7 +85,7 @@ class BuyerSubscribeFormView(FormView):
         return TemplateResponse(self.request, self.success_template)
 
 
-class InternationalLandingView(ShowLanguageSwitcherMixin, TemplateView):
+class InternationalLandingView(EnableTranslationsMixin, TemplateView):
     template_name = 'landing-page-international.html'
 
     def get_context_data(self, **kwargs):

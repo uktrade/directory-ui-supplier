@@ -15,6 +15,7 @@ from company.views import (
     ContactCompanyView
 )
 
+
 urlpatterns = [
     url(
         r"^$",
