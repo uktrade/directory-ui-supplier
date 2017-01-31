@@ -71,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'ui.context_processors.feature_flags',
                 'ui.context_processors.subscribe_form',
+                'ui.context_processors.analytics',
             ],
         },
     },
@@ -231,3 +232,7 @@ SECTOR_LINKS = helpers.parse_sector_links(os.environ['SECTOR_LINKS_JSON'])
 # Google Recaptcha
 RECAPTCHA_PUBLIC_KEY = os.environ['RECAPTCHA_PUBLIC_KEY']
 RECAPTCHA_PRIVATE_KEY = os.environ['RECAPTCHA_PRIVATE_KEY']
+
+# Google tag manager
+GOOGLE_TAG_MANAGER_ID = os.getenv('GOOGLE_TAG_MANAGER_ID', '')
+GOOGLE_TAG_MANAGER_ENABLED = os.getenv('GOOGLE_TAG_MANAGER_ENABLED') == 'true'
