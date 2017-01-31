@@ -47,8 +47,7 @@ class BuyerSubscribeFormView(FormView):
     template_name = 'subscribe.html'
     form_class = forms.InternationalBuyerForm
 
-    def _create_zendesk_ticket(self, cleaned_data):
-        # Check if user already exists
+    def _get_or_create_zendesk_user(self, cleaned_data):
         user_search = ZENPY_CLIENT.search(
             type='user',
             email=cleaned_data['email_address'],
@@ -61,6 +60,9 @@ class BuyerSubscribeFormView(FormView):
             user_id = ZENPY_CLIENT.users.create(user).id
         else:
             user_id = user_search.values[0]['id']
+        return user_id
+
+    def _create_zendesk_ticket(self, cleaned_data, user_id):
         description = (
             'Name: {full_name}\n'
             'Email: {email_address}\n'
@@ -81,7 +83,8 @@ class BuyerSubscribeFormView(FormView):
         data = forms.serialize_international_buyer_forms(form.cleaned_data)
         api_client.buyer.send_form(data)
         if form.cleaned_data['comment']:
-            self._create_zendesk_ticket(form.cleaned_data)
+            user_id = self._get_or_create_zendesk_user(form.cleaned_data)
+            self._create_zendesk_ticket(form.cleaned_data, user_id)
         return TemplateResponse(self.request, self.success_template)
 
 
