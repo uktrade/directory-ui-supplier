@@ -201,6 +201,7 @@ def test_privacy_cookiues_success(client):
     assert response.status_code == http.client.OK
 
 
+@pytest.mark.django_db
 @patch('enrolment.views.ZENPY_CLIENT.search')
 @patch('zenpy.lib.api.UserApi.create')
 @patch('zenpy.lib.api.TicketApi.create')
@@ -246,6 +247,7 @@ def test_subscribe_view_submit_with_comment(
     assert ticket.description == description
 
 
+@pytest.mark.django_db
 @patch('enrolment.views.ZENPY_CLIENT.search')
 @patch('zenpy.lib.api.UserApi.create')
 @patch('zenpy.lib.api.TicketApi.create')
@@ -293,6 +295,7 @@ def test_subscribe_view_submit_with_comment_from_existing_zendesk_user(
     assert ticket.description == description
 
 
+@pytest.mark.django_db
 @patch('enrolment.views.ZENPY_CLIENT.search')
 @patch('zenpy.lib.api.UserApi.create')
 @patch('zenpy.lib.api.TicketApi.create')
@@ -313,6 +316,7 @@ def test_subscribe_view_submit_without_comment(
     assert mock_ticket_create.called is False
 
 
+@pytest.mark.django_db
 @patch('enrolment.views.ZENPY_CLIENT.search')
 @patch('zenpy.lib.api.UserApi.create')
 @patch('zenpy.lib.api.TicketApi.create')
