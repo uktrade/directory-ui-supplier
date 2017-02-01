@@ -68,6 +68,12 @@
 .company-logo {
   .logo-container {
     display: table;
+    @media (max-width: 767px) {
+        margin-bottom: 20px;
+    }
+    img {
+      max-height: 135px;
+    }
   }
 }
 
@@ -228,6 +234,10 @@
     letter-spacing: -0.2px;
     text-align: right;
     color: #004f95;
+    @media (max-width: 767px) {
+      margin-bottom: 10px;
+      display: inline-block;
+    }
   }
   .company-profile-box {
     background: white;
@@ -394,15 +404,10 @@
 }
 
 .public-company-profiles-result-item-updated {
-  position: absolute;
-  right: 20px;
-  bottom: 36px;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.39;
   letter-spacing: -0.2px;
-  text-align: right;
-  color: #007ea3;
 }
 
 .recaptcha_input_area {
