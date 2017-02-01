@@ -46,7 +46,6 @@ def test_serialize_international_buyer_forms():
         'sector': 'AEROSPACE',
         'company_name': 'Example corp',
         'country': 'UK',
-        'comment': 'sup, bro',
     }
     actual = forms.serialize_international_buyer_forms(data)
 
