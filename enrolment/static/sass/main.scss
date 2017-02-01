@@ -818,11 +818,13 @@ a.ed-filled-button-primary {
     @media (max-width: 767px) {
       margin-top: 13px;
       margin-bottom: 15px;
-      height: 37px;
+      height: 36px;
     }
   }
   .btn-navbar {
     margin-top: 12px;
+    margin-left: 0;
+    margin-right: 0;
   }
   @media (max-width: 767px) {
     .nav-collapse {
