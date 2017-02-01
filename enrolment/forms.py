@@ -57,7 +57,9 @@ def serialize_international_buyer_forms(cleaned_data):
         'sector': cleaned_data['sector'],
         'company_name': cleaned_data['company_name'],
         'country': cleaned_data['country'],
-        'comment': cleaned_data.get('comment', ''),
+        # NOTE: Intentionally not serializing comment field as
+        # the comment field does not get saved in api, it's only sent
+        # to zendesk
     }
 
 
