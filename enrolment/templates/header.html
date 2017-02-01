@@ -2,12 +2,12 @@
 {% load trans from i18n %}
 <header class="ed-header-gov-row">
     <div class="container">
-        <a href="https://www.gov.uk/" target="_blank">
+        <a href="https://www.gov.uk/" target="_blank" style="display: inline-block; height: 40px;">
             <img src="{% static 'images/hmg-logo.png' %}" alt="HMG Logo">
         </a>
-        <span class="pull-right">
+        <div class="pull-right">
           {% include 'language_switcher.html' %}
-        </span>
+        </div>
     </div>
 </header>
 <div class="navbar ed-header-buttons">
