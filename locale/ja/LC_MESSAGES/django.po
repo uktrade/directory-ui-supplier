@@ -84,7 +84,7 @@ msgstr "英国企業を閲覧する"
 
 #: enrolment/templates/footer.html:11
 msgid "Department for International Trade"
-msgstr "英国国際貿易省"
+msgstr "国際通商省"
 
 #: enrolment/templates/footer.html:17
 msgid "Contact us"
@@ -104,7 +104,7 @@ msgstr ""
 
 #: enrolment/templates/header.html:25
 msgid "Home"
-msgstr "ホームページ"
+msgstr "トップページ"
 
 #: enrolment/templates/header.html:28
 msgid "Find a Supplier"
@@ -126,7 +126,7 @@ msgstr ""
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
 "business"
-msgstr "事業に理想的な場所、英国･北アイルランドにようこそ"
+msgstr "ビジネスに理想的な場所、英国･北アイルランドにようこそ"
 
 #: enrolment/templates/landing-page-international.html:18
 msgid "Find UK companies to do business with"
@@ -239,4 +239,4 @@ msgstr "言語の変更"
 
 #: enrolment/templates/language_switcher.html:12
 msgid "Page in English only"
-msgstr ""
+msgstr "こちらのページは英語です"
