@@ -42,7 +42,10 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_RECAPTCHA_PUBLIC_KEY=debug; \
 	export DIRECTORY_UI_SUPPLIER_RECAPTCHA_PRIVATE_KEY=debug; \
 	export DIRECTORY_UI_BUYER_GOOGLE_TAG_MANAGER_ID=GTM-TC46J8K; \
-	export DIRECTORY_UI_BUYER_GOOGLE_TAG_MANAGER_ENV=&gtm_auth=Ok4kd4Wf_NKgs4c5Z5lUFQ&gtm_preview=env-6&gtm_cookies_win=x
+	export DIRECTORY_UI_BUYER_GOOGLE_TAG_MANAGER_ENV=&gtm_auth=Ok4kd4Wf_NKgs4c5Z5lUFQ&gtm_preview=env-6&gtm_cookies_win=x; \
+	export DIRECTORY_UI_SUPPLIER_ZENDESK_EMAIL=debug; \
+	export DIRECTORY_UI_SUPPLIER_ZENDESK_SUBDOMAIN=debugdebugdebug; \
+	export DIRECTORY_UI_SUPPLIER_ZENDESK_TOKEN=debug
 
 DOCKER_REMOVE_ALL := \
 	docker ps -a | \
@@ -84,7 +87,10 @@ DEBUG_SET_ENV_VARS := \
 	export RECAPTCHA_PUBLIC_KEY=debug; \
 	export RECAPTCHA_PRIVATE_KEY=debug; \
 	export GOOGLE_TAG_MANAGER_ID=GTM-TC46J8K; \
-	export GOOGLE_TAG_MANAGER_ENV=&gtm_auth=Ok4kd4Wf_NKgs4c5Z5lUFQ&gtm_preview=env-6&gtm_cookies_win=x
+	export GOOGLE_TAG_MANAGER_ENV=&gtm_auth=Ok4kd4Wf_NKgs4c5Z5lUFQ&gtm_preview=env-6&gtm_cookies_win=x; \
+	export ZENDESK_EMAIL=""; \
+	export ZENDESK_SUBDOMAIN=""; \
+	export ZENDESK_TOKEN=debug
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)

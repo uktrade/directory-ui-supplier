@@ -5,8 +5,20 @@ from django.utils import translation
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
+from zenpy import Zenpy
+from zenpy.lib.api_objects import Ticket, User
+
 from api_client import api_client
 from enrolment import constants, forms
+
+
+ZENPY_CREDENTIALS = {
+    'email': settings.ZENDESK_EMAIL,
+    'token': settings.ZENDESK_TOKEN,
+    'subdomain': settings.ZENDESK_SUBDOMAIN
+}
+# Zenpy will let the connection timeout after 5s and will retry 3 times
+ZENPY_CLIENT = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
 class EnableTranslationsMixin:
@@ -35,9 +47,44 @@ class BuyerSubscribeFormView(FormView):
     template_name = 'subscribe.html'
     form_class = forms.InternationalBuyerForm
 
+    def _get_or_create_zendesk_user(self, cleaned_data):
+        user_search = ZENPY_CLIENT.search(
+            type='user',
+            email=cleaned_data['email_address'],
+        )
+        if user_search.count == 0:
+            user = User(
+                name=cleaned_data['full_name'],
+                email=cleaned_data['email_address'],
+            )
+            user_id = ZENPY_CLIENT.users.create(user).id
+        else:
+            user_id = user_search.values[0]['id']
+        return user_id
+
+    def _create_zendesk_ticket(self, cleaned_data, user_id):
+        description = (
+            'Name: {full_name}\n'
+            'Email: {email_address}\n'
+            'Company: {company_name}\n'
+            'Country: {country}\n'
+            'Sector: {sector}\n'
+            'Comment: {comment}'
+        ).format(**cleaned_data)
+        ticket = Ticket(
+            subject=settings.ZENDESK_TICKET_SUBJECT,
+            description=description,
+            submitter_id=user_id,
+            requester_id=user_id,
+        )
+        ZENPY_CLIENT.tickets.create(ticket)
+
     def form_valid(self, form):
         data = forms.serialize_international_buyer_forms(form.cleaned_data)
         api_client.buyer.send_form(data)
+        if form.cleaned_data['comment']:
+            user_id = self._get_or_create_zendesk_user(form.cleaned_data)
+            self._create_zendesk_ticket(form.cleaned_data, user_id)
         return TemplateResponse(self.request, self.success_template)
 
 
