@@ -69,9 +69,11 @@
 						<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number %}">
 							<h3 class="ed-truncate-single-line">{{ company.name }}</h3>
 						</a>
-						<div>
-							<span>{{company.summary|truncatechars:135}}</span>
-                        </div>
+						{% if company.description or company.summary %}
+							<div>
+								<span>{{company.summary|default:company.description|truncatechars:135}}</span>
+	                        </div>
+	                    {% endif %}
 						<div>
 							<a href="{% url 'public-company-profiles-detail' company_number=company.number %}" class="ed-public-company-profiles-result-item-profile-link">
                            view profile

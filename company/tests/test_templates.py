@@ -22,6 +22,7 @@ default_context = {
         'date_of_creation': datetime(2015, 3, 2),
         'modified': datetime.now() - timedelta(hours=1),
         'email_address': 'sales@example.com',
+        'summary': '',
     }
 }
 
@@ -79,6 +80,55 @@ def test_company_public_profile_no_results_label():
     html = render_to_string('company-public-profile-list.html', context)
 
     assert NO_RESULTS_FOUND_LABEL in html
+
+
+def test_company_public_profile_results_summary():
+    company = {
+        **default_context['company'],
+        'summary': (
+            'summary summary summary summary summary summary summary '
+            'summary summary summary summary summary summary summary '
+            'summary summary summary summary summary summary summary'
+        )
+    }
+
+    context = {
+        'companies': [company],
+    }
+    html = render_to_string('company-public-profile-list.html', context)
+    expected = (
+        'summary summary summary summary summary summary summary summary '
+        'summary summary summary summary summary summary summary summary '
+        'summ...'
+    )
+
+    assert expected in html
+
+
+def test_company_public_profile_results_description():
+    company = {
+        **default_context['company'],
+        'description': (
+            'description description description description description '
+            'description description description description description '
+            'description description description description description '
+            'description description description description description '
+            'description'
+        ),
+        'summary': '',
+    }
+
+    context = {
+        'companies': [company],
+    }
+    html = render_to_string('company-public-profile-list.html', context)
+    expected = (
+        'description description description description description '
+        'description description description description description '
+        'description ...'
+    )
+
+    assert expected in html
 
 
 def test_company_public_profile_results_label():

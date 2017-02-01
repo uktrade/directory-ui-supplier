@@ -235,9 +235,8 @@
     text-align: right;
     color: #004f95;
     @media (max-width: 767px) {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+      margin-bottom: 10px;
+      display: inline-block;
     }
   }
   .company-profile-box {
