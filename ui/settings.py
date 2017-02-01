@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     "raven.contrib.django.raven_compat",
     "django.contrib.sessions",
+    "django.contrib.sitemaps",
     "ui",
     "enrolment",
     "company",

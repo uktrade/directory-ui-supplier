@@ -1,4 +1,6 @@
 from django.conf.urls import url
+from django.contrib.sitemaps.views import sitemap
+from django.views.generic import TemplateView
 
 from enrolment.views import (
     BuyerSubscribeFormView,
@@ -14,9 +16,29 @@ from company.views import (
     CaseStudyDetailView,
     ContactCompanyView
 )
+from ui.sitemaps import (
+    StaticViewSitemap,
+    SectorLandingPageSitemap
+)
 
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'industries': SectorLandingPageSitemap,
+}
 
 urlpatterns = [
+    url(
+        r"^sitemap\.xml$", sitemap, {'sitemaps': sitemaps},
+        name='sitemap'
+    ),
+    url(
+        r"^robots\.txt$",
+        TemplateView.as_view(
+            template_name='robots.txt', content_type='text/plain'
+        ),
+        name='robots'
+    ),
     url(
         r"^$",
         InternationalLandingView.as_view(),
