@@ -13,7 +13,7 @@
 				<form action="" method="get">
 					<div class="span6">
 						<div class="input-field-container">
-							<span>{{ form.sectors.label }}</span>
+							<label for="{{ form.sectors.id_for_label }}">{{ form.sectors.label }}</label>
 							{{ form.sectors }}
 						</div>
 					</div>
@@ -57,7 +57,7 @@
 							<div class="logo">
 								{% if company.logo %}
 								<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number %}">
-									<img src="{{company.logo}}" />
+									<img src="{{company.logo}}" alt="Logo for {{ company.name }}" />
 								</a>
 								{% endif %}
 								</a>

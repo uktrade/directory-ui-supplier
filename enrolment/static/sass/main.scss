@@ -33,6 +33,13 @@ input[type="checkbox"]:focus {
 }
 
 html {
+  .navbar .nav>.active>a,
+  .navbar .nav>.active>a:hover,
+  .navbar .nav>.active>a:focus {
+    color: black;
+  }
+}
+html {
   a:focus {
     outline: 3px solid #ffbf47;
     color: #007EA3;
@@ -489,6 +496,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-color: #0D1019;
   .ed-hero-sub-header-title {
     margin-top: 30px;
     font-size: 24px;
@@ -846,6 +854,7 @@ a.ed-filled-button-primary {
     border-radius: 0;
     border-top: 0;
     ul li a {
+      color: black;
       box-shadow: none!important;
       border-right: 1px solid #D8D8D8;
       display: inline-block;
