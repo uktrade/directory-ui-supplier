@@ -25,9 +25,16 @@ html select:focus:invalid {
   color: #4a4a4a;
 }
 
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: 3px solid #ffbf47;
+}
+
 html {
   a:focus {
-    border-color: #007EA3;
+    outline: 3px solid #ffbf47;
     color: #007EA3;
     background-color: transparent;
   }
@@ -240,6 +247,10 @@ a.teal:focus {
   color: #ffffff;
 }
 
+#skiplink-container a.skiplink {
+  margin-top: 8px;
+}
+
 .custom-hr {
   border-top: 0;
 }
@@ -352,7 +363,7 @@ label, input, button, select, textarea {
   font-family: 'Roboto', sans-serif;
   &:focus {
     background: #007EA3;
-    outline: 0;
+    outline: 3px solid #ffbf47;
   }
 }
 
@@ -480,15 +491,13 @@ body {
   background-size: cover;
   .ed-hero-sub-header-title {
     margin-top: 30px;
-    h2 {
-      font-size: 24px;
-      font-weight: 300;
-      line-height: 1.25em;
-      margin-bottom: 20px;
-      @media (max-width: 979px) {
-        text-align: center;
-        margin-bottom: 40px;
-      }
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.25em;
+    margin-bottom: 20px;
+    @media (max-width: 979px) {
+      text-align: center;
+      margin-bottom: 40px;
     }
   }
 }

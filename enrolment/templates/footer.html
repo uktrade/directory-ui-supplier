@@ -1,7 +1,7 @@
 {% load static %}
 {% load trans from i18n %}
 {% load external_url from constants_tags %}
-<footer class="group ed-footer" id="footer" role="contentinfo">
+<footer class="group ed-footer" id="footer">
     <div class="container">
         <div class="row-fluid grid-row">
             <div class="span9 subscribe">
@@ -35,13 +35,13 @@
                 <div class="footer-section footer-section--first">
                     <p style="margin-bottom: 0;">
                         <a href="https://www.gov.uk/" target="_blank">
-                            <img src="{% static 'images/hmg-logo.png' %}" alt="HMG Logo" style="height:30px;">
+                            <img src="{% static 'images/hmg-logo.png' %}" alt="HMG Logo" height="30">
                         </a>
                     </p>
                     <p class="copyright-text">
                         &copy; {% trans "Crown Copyright 2016" %}</p>
                     <p>
-                      <img class="dit-iigb-logo" alt="Brand" src="{% static 'images/welcome-to-great-logo-white.png' %}"> 
+                      <img class="dit-iigb-logo" alt="Brand" src="{% static 'images/welcome-to-great-logo-white.png' %}" height="40"> 
                     </p>
                 </div>
             </div>
