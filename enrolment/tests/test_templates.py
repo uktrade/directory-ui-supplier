@@ -160,3 +160,15 @@ def test_language_switcher_hide_not_translated_german_selected():
 
     assert '<form' not in html
     assert 'Seite nur auf Englisch' in html
+
+
+def test_robots(rf):
+    request = rf.get('/')
+
+    context = {
+        'request': request,
+    }
+
+    html = render_to_string('robots.txt', context)
+
+    assert 'Sitemap: http://testserver/sitemap.xml' in html
