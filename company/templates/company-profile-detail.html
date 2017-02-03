@@ -22,7 +22,7 @@
 					<div>
 						<div class="ed-company-profile-logo-container">	
 							{% if company.logo %}
-								<img src="{{company.logo}}" />
+								<img src="{{company.logo}}" alt="Company logo" />
 							{% endif %}
 						</div>
 					</div>
@@ -84,26 +84,26 @@
 					<h3>Online profiles</h3>
 					{% if company.linkedin_url %}
 					<p>
-						<img class="ed-social-icon" src="/static/images/icon-linkedin-white.png">
-							<span>
-								<a href="{{ company.linkedin_url }}" target="_blank">Visit LinkedIn</a>
-							</span>
+						<img class="ed-social-icon" src="/static/images/icon-linkedin-white.png" alt="" />
+						<span>
+							<a href="{{ company.linkedin_url }}" target="_blank">Visit LinkedIn</a>
+						</span>
 					</p>
 					{% endif %}
 					{% if company.twitter_url %}
 					<p>
-						<img class="ed-social-icon" src="/static/images/icon-twitter.png">
-							<span>
-								<a href="{{ company.twitter_url }}" target="_blank">Visit Twitter</a>
-							</span>
+						<img class="ed-social-icon" src="/static/images/icon-twitter.png" alt="" />
+						<span>
+							<a href="{{ company.twitter_url }}" target="_blank">Visit Twitter</a>
+						</span>
 					</p>
 					{% endif %}
 					{% if company.facebook_url %}
 					<p>
-						<img class="ed-social-icon" src="/static/images/icon-facebook-white.png">
-							<span>
-								<a href="{{ company.facebook_url }}" target="_blank">Visit Facebook</a>
-							</span>
+						<img class="ed-social-icon" src="/static/images/icon-facebook-white.png" alt="">
+						<span>
+							<a href="{{ company.facebook_url }}" target="_blank">Visit Facebook</a>
+						</span>
 					</p>
 					{% endif %}
 				</div>
@@ -126,11 +126,11 @@
 						<h3>{{ case_study.title }}</h3>
 						<div class="supplier-case-study-images">
 							{% if case_study.image_one %}
-							<img src="{{ case_study.image_one }}" />
+							<img src="{{ case_study.image_one }}" alt="case study image 1"/>
 							{% elif case_study.image_two %}
-							<img src="{{ case_study.image_two }}" />
+							<img src="{{ case_study.image_two }}" alt="case study image 2" />
 							{% elif case_study.image_three %}
-							<img src="{{ case_study.image_three }}" />
+							<img src="{{ case_study.image_three }}" alt="case study image 3" />
 							{% endif %}
 						</div>
 

@@ -46,7 +46,7 @@ HEALTH_SECTOR_CONTEXT = {
             'image_url': '/static/images/r-d-biomed.png',
             'name': 'RD Biomed',
             'description': (
-                'RD Biomed designs and makes Peptest[TM] - the world’s '
+                'RD Biomed designs and makes Peptest&trade;- the world’s '
                 'first non-invasive reflux diagnostic test. RD Biomed '
                 'specialises in diagnostics for gastroenterology and '
                 'respiratory conditions.'

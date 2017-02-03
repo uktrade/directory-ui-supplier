@@ -384,8 +384,13 @@
     margin-top: 10px;
     margin-bottom: 0;
     select {
-      width: 270px;
+      width: 277px;
       margin-left: 5px;
+    }
+    label {
+      display: inline-block;
+      color: white;
+      font-size: 18px
     }
   }
   .btn-container {
