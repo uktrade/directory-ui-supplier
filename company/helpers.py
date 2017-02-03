@@ -1,6 +1,11 @@
 import datetime
+import http
 
 from directory_validators.constants import choices
+
+from django.http import Http404
+
+from api_client import api_client
 
 
 EMPLOYEE_CHOICES = dict(choices.EMPLOYEES)
@@ -95,6 +100,7 @@ def format_company_details(details):
         'linkedin_url': details['linkedin_url'],
         'email_address': details['email_address'],
         'email_full_name': details['email_full_name'],
+        'slug': details['slug'],
         'has_social_links': bool(
             details['twitter_url'] or
             details['facebook_url'] or
@@ -106,3 +112,25 @@ def format_company_details(details):
 def format_case_study(case_study):
     case_study['sector'] = pair_sector_value_with_label(case_study['sector'])
     return case_study
+
+
+def get_company_profile(number):
+    response = api_client.company.retrieve_public_profile(number=number)
+    if response.status_code == http.client.NOT_FOUND:
+        raise Http404("API returned 404 for company number %s", number)
+    elif not response.ok:
+        response.raise_for_status()
+    return get_public_company_profile_from_response(response)
+
+
+def get_case_study(case_study_id):
+    response = api_client.company.retrieve_public_case_study(
+        case_study_id=case_study_id,
+    )
+    if response.status_code == http.client.NOT_FOUND:
+        raise Http404(
+            "API returned 404 for case study with id %s", case_study_id,
+        )
+    elif not response.ok:
+        response.raise_for_status()
+    return get_case_study_details_from_response(response)

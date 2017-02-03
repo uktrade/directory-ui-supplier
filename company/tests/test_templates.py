@@ -23,6 +23,7 @@ default_context = {
         'modified': datetime.now() - timedelta(hours=1),
         'email_address': 'sales@example.com',
         'summary': '',
+        'slug': 'uk-exporting-co-ltd'
     }
 }
 
@@ -63,7 +64,10 @@ def test_company_public_profile_list_link_to_profle():
     }
     url = reverse(
         'public-company-profiles-detail',
-        kwargs={'company_number': default_context['company']['number']}
+        kwargs={
+            'company_number': default_context['company']['number'],
+            'slug': default_context['company']['slug'],
+        }
     )
     html = render_to_string('company-public-profile-list.html', context)
 
@@ -176,7 +180,10 @@ def test_company_public_profile_list_paginate_next():
     context = {
         'pagination': paginator.page(1),
         'form': form,
-        'companies': [{'number': '01234567A'}]
+        'companies': [
+            {'number': '01234567A', 'slug': 'hello'},
+            {'number': '01234567B', 'slug': 'hello'}
+        ],
     }
 
     html = render_to_string('company-public-profile-list.html', context)
@@ -192,7 +199,10 @@ def test_company_public_profile_list_paginate_prev():
     context = {
         'pagination': paginator.page(2),
         'form': form,
-        'companies': [{'number': '01234567A'}]
+        'companies': [
+            {'number': '01234567A', 'slug': 'hello'},
+            {'number': '01234567B', 'slug': 'hello'}
+        ],
     }
 
     html = render_to_string('company-public-profile-list.html', context)
@@ -208,7 +218,9 @@ def test_company_public_profile_list_paginate_label_single_with_sector():
     context = {
         'pagination': paginator.page(2),
         'form': form,
-        'companies': [{'number': '01234567A'}],
+        'companies': [
+            {'number': '01234567B', 'slug': 'hello'}
+        ],
         'show_companies_count': True,
         'selected_sector_label': 'Water',
     }
@@ -226,7 +238,10 @@ def test_company_public_profile_list_paginate_label_multiple_with_sector():
     context = {
         'pagination': paginator.page(2),
         'form': form,
-        'companies': [{'number': '01234567A'}, {'number': '01234567B'}],
+        'companies': [
+            {'number': '01234567A', 'slug': 'hello'},
+            {'number': '01234567B', 'slug': 'hello'}
+        ],
         'show_companies_count': True,
         'selected_sector_label': 'Water',
     }
@@ -244,7 +259,9 @@ def test_company_public_profile_list_paginate_label_single_without_sector():
     context = {
         'pagination': paginator.page(2),
         'form': form,
-        'companies': [{'number': '01234567A'}],
+        'companies': [
+            {'number': '01234567A', 'slug': 'hello'},
+        ],
         'show_companies_count': False,
     }
 
@@ -261,7 +278,10 @@ def test_company_public_profile_list_paginate_label_multiple_without_sector():
     context = {
         'pagination': paginator.page(2),
         'form': form,
-        'companies': [{'number': '01234567A'}, {'number': '01234567B'}],
+        'companies': [
+            {'number': '01234567A', 'slug': 'hello'},
+            {'number': '01234567B', 'slug': 'hello'}
+        ],
         'show_companies_count': False,
     }
 
@@ -275,6 +295,7 @@ def test_case_study_detail_report_button():
         'case_study': {
             'company': {
                 'number': '012344',
+                'slug': 'hello',
             }
         }
     }
@@ -288,7 +309,8 @@ def test_profile_case_studies_empty():
     context = {
         'company': {
             'number': '012344',
-            'supplier_case_studies': []
+            'supplier_case_studies': [],
+            'slug': 'hello',
         }
     }
     html = render_to_string('company-profile-detail.html', context)
@@ -300,7 +322,8 @@ def test_profile_case_studies_present():
     context = {
         'company': {
             'number': '012344',
-            'supplier_case_studies': [{'pk': 1}]
+            'supplier_case_studies': [{'pk': 1, 'slug': 'hello'}],
+            'slug': 'hello'
         }
     }
     html = render_to_string('company-profile-detail.html', context)
@@ -308,29 +331,9 @@ def test_profile_case_studies_present():
     assert RECENT_PROJECTS_LABEL in html
 
 
-def test_public_profile_contact_button_feature_flag_off(settings):
+def test_public_profile_contact_button():
     context = {
         'company': default_context['company'],
-        'features': {
-            'FEATURE_CONTACT_COMPANY_FORM_ENABLED': False,
-        }
-    }
-    html = render_to_string('company-profile-detail.html', context)
-    expected_url = reverse(
-        'contact-company', kwargs={'company_number': '123456'}
-    )
-
-    assert CONTACT_COMPANY_LABEL in html
-    assert html.count(default_context['company']['email_address']) == 2
-    assert html.count(expected_url) == 0
-
-
-def test_public_profile_contact_button_feature_flag_on(settings):
-    context = {
-        'company': default_context['company'],
-        'features': {
-            'FEATURE_CONTACT_COMPANY_FORM_ENABLED': True,
-        }
     }
     html = render_to_string('company-profile-detail.html', context)
     expected_url = reverse(
@@ -352,6 +355,7 @@ def test_public_profile_report_button():
     context = {
         'company': {
             'number': '012344',
+            'slug': 'hello',
         }
     }
     html = render_to_string('company-profile-detail.html', context)
@@ -365,7 +369,8 @@ def test_public_profile_verbose():
         'show_description': True,
         'company': {
             'summary': 'the summary!',
-            'description': 'the description!'
+            'description': 'the description!',
+            'slug': 'hello',
         }
     }
     html = render_to_string('company-profile-detail.html', context)
@@ -380,7 +385,8 @@ def test_public_profile_non_verbose():
         'show_description': False,
         'company': {
             'summary': 'the summary!',
-            'description': 'the description!'
+            'description': 'the description!',
+            'slug': 'hello',
         }
     }
     html = render_to_string('company-profile-detail.html', context)
@@ -406,7 +412,8 @@ def test_public_profile_non_verbose_missing_summary():
         'show_description': False,
         'company': {
             'summary': '',
-            'description': description
+            'description': description,
+            'slug': 'hello',
         }
     }
     html = render_to_string('company-profile-detail.html', context)
@@ -423,7 +430,10 @@ def test_company_contact_displays_cancel_link():
     html = render_to_string('company-contact-form.html', default_context)
     url = reverse(
         'public-company-profiles-detail',
-        kwargs={'company_number': default_context['company']['number']}
+        kwargs={
+            'company_number': default_context['company']['number'],
+            'slug': default_context['company']['slug'],
+        }
     )
 
     assert url in html
@@ -435,33 +445,11 @@ def test_contact_company_success():
     assert 'Your message has been sent to UK exporting co ltd.' in html
 
 
-def test_case_study_contact_button_feature_flag_off(settings):
+def test_case_study_contact_button():
     context = {
         'case_study': {
             'company': default_context['company'],
         },
-        'features': {
-            'FEATURE_CONTACT_COMPANY_FORM_ENABLED': False,
-        }
-    }
-    html = render_to_string('supplier-case-study-detail.html', context)
-    expected_url = reverse(
-        'contact-company', kwargs={'company_number': '123456'}
-    )
-
-    assert EMAIL_COMPANY_LABEL in html
-    assert default_context['company']['email_address'] in html
-    assert expected_url not in html
-
-
-def test_case_study_contact_button_feature_flag_on(settings):
-    context = {
-        'case_study': {
-            'company': default_context['company'],
-        },
-        'features': {
-            'FEATURE_CONTACT_COMPANY_FORM_ENABLED': True,
-        }
     }
     html = render_to_string('supplier-case-study-detail.html', context)
     expected_url = reverse(

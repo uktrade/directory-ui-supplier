@@ -55,9 +55,15 @@ urlpatterns = [
         name='contact-company',
     ),
     url(
-        r'^suppliers/(?P<company_number>.+)$',
+        r'^suppliers/(?P<company_number>.+)/(?P<slug>.+)$',
         PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail',
+    ),
+    # obsolete. use `public-company-profiles-detail`
+    url(
+        r'^suppliers/(?P<company_number>.+)$',
+        PublishedProfileDetailView.as_view(),
+        name='public-company-profiles-detail-slugless',
     ),
     url(
         r'^industries$',
@@ -70,9 +76,15 @@ urlpatterns = [
         name='international-sector-detail',
     ),
     url(
-        r'^case-study/(?P<id>.+)$',
+        r'^case-study/(?P<id>.+)/(?P<slug>.+)$',
         CaseStudyDetailView.as_view(),
         name='case-study-details'
+    ),
+    # obsolete. use `case-study-details`
+    url(
+        r'^case-study/(?P<id>.+)$',
+        CaseStudyDetailView.as_view(),
+        name='case-study-details-slugless',
     ),
     url(
         r'^privacy-policy$',

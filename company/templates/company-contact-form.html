@@ -53,7 +53,7 @@
 			</div>
 		</div>
 		<div style="margin-top: 20px; margin-bottom: 20px;">
-			<a style="margin-left: 20px;" href="{% url 'public-company-profiles-detail' company_number=company.number %}">cancel</a>
+			<a style="margin-left: 20px;" href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}">cancel</a>
 		</div>
 	</div>
 

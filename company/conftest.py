@@ -17,6 +17,7 @@ def retrieve_profile_data():
         'sectors': ['SECURITY'],
         'logo': 'nice.jpg',
         'name': 'Great company',
+        'slug': 'great-company',
         'keywords': 'word1 word2',
         'employees': '501-1000',
         'date_of_creation': '2015-03-02',
@@ -58,6 +59,7 @@ def supplier_case_study_data(retrieve_profile_data):
         'website': 'http://www.google.com',
         'video_one': 'https://video_one.wav',
         'title': 'Two',
+        'slug': 'two',
         'company': retrieve_profile_data,
         'image_one': 'https://image_one.jpg',
         'testimonial': 'I found it most pleasing.',
@@ -98,17 +100,6 @@ def api_response_retrieve_public_case_study_200(supplier_case_study_data):
     response = api_response_200()
     response.json = lambda: deepcopy(supplier_case_study_data)
     return response
-
-
-@pytest.fixture(autouse=True)
-def retrieve_supplier_case_study_response(api_response_200):
-    stub = patch(
-        'api_client.api_client.company.retrieve_public_case_study',
-        return_value=api_response_200,
-    )
-    stub.start()
-    yield
-    stub.stop()
 
 
 @pytest.fixture(autouse=True)
