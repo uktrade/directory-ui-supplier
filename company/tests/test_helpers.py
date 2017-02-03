@@ -96,6 +96,7 @@ def test_get_company_profile_from_response(retrieve_profile_data):
         'summary': 'good',
         'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
         'mobile_number': '07506043448',
+        'slug': 'great-company',
     }
 
     actual = helpers.get_company_profile_from_response(response)
@@ -147,6 +148,7 @@ def test_get_public_company_profile_from_response(retrieve_profile_data):
         'keywords': 'word1 word2',
         'name': 'Great company',
         'mobile_number': '07506043448',
+        'slug': 'great-company',
     }
 
     actual = helpers.get_public_company_profile_from_response(response)
@@ -192,6 +194,7 @@ def test_get_company_list_from_response(public_companies):
                 'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
                 'date_of_creation': datetime(2015, 3, 2, 0, 0),
                 'mobile_number': '07506043448',
+                'slug': 'great-company',
             },
         ]
     }
@@ -257,7 +260,9 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
             'verified_with_code': True,
             'employees': '501-1,000',
             'mobile_number': '07506043448',
+            'slug': 'great-company',
         },
+        'slug': 'two',
         'image_one': 'https://image_one.jpg',
         'video_one': 'https://video_one.wav',
     }

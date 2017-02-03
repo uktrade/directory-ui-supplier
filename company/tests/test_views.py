@@ -53,18 +53,88 @@ def valid_contact_company_data(captcha_stub):
     }
 
 
-def test_public_profile_details_verbose_context(client):
+def test_public_profile_different_slug_redirected(
+    client, retrieve_profile_data
+):
     url = reverse(
-        'public-company-profiles-detail', kwargs={'company_number': '01234567'}
+        'public-company-profiles-detail',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+            'slug': retrieve_profile_data['slug'] + 'thing',
+        }
+    )
+    expected_redirect_url = reverse(
+        'public-company-profiles-detail',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+            'slug': retrieve_profile_data['slug'],
+        }
+    )
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.MOVED_PERMANENTLY
+    assert response.get('Location') == expected_redirect_url
+
+
+def test_public_profile_missing_slug_redirected(client, retrieve_profile_data):
+    url = reverse(
+        'public-company-profiles-detail-slugless',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+        }
+    )
+    expected_redirect_url = reverse(
+        'public-company-profiles-detail',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+            'slug': retrieve_profile_data['slug'],
+        }
+    )
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.MOVED_PERMANENTLY
+    assert response.get('Location') == expected_redirect_url
+
+
+def test_public_profile_same_slug_not_redirected(
+    client, retrieve_profile_data
+):
+    url = reverse(
+        'public-company-profiles-detail',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+            'slug': retrieve_profile_data['slug'],
+        }
+    )
+
+    response = client.get(url)
+    assert response.status_code == http.client.OK
+
+
+def test_public_profile_details_verbose_context(client, retrieve_profile_data):
+    url = reverse(
+        'public-company-profiles-detail',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+            'slug': retrieve_profile_data['slug'],
+        }
     )
     response = client.get(url + '?verbose=true')
     assert response.status_code == http.client.OK
     assert response.context_data['show_description'] is True
 
 
-def test_public_profile_details_non_verbose_context(client):
+def test_public_profile_details_non_verbose_context(
+    client, retrieve_profile_data
+):
     url = reverse(
-        'public-company-profiles-detail', kwargs={'company_number': '01234567'}
+        'public-company-profiles-detail',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+            'slug': retrieve_profile_data['slug'],
+        }
     )
     response = client.get(url)
     assert response.status_code == http.client.OK
@@ -80,10 +150,12 @@ def test_public_profile_details_exposes_context(
         'name': 'Example corp',
         'logo': 'logo.png',
         'summary': 'summary summary',
+        'slug': 'thing',
     }
     mock_get_public_company_profile_from_response.return_value = company
     url = reverse(
-        'public-company-profiles-detail', kwargs={'company_number': '01234567'}
+        'public-company-profiles-detail',
+        kwargs={'company_number': '01234567', 'slug': 'thing'},
     )
     response = client.get(url)
     assert response.status_code == http.client.OK
@@ -151,7 +223,8 @@ def test_company_profile_list_general_context(client):
 @patch.object(helpers, 'get_public_company_profile_from_response')
 def test_public_profile_details_calls_api(mock_retrieve_profile, client):
     url = reverse(
-        'public-company-profiles-detail', kwargs={'company_number': '01234567'}
+        'public-company-profiles-detail',
+        kwargs={'company_number': '01234567', 'slug': 'thing'}
     )
     client.get(url)
 
@@ -164,7 +237,8 @@ def test_public_profile_details_handles_bad_status(
 ):
     mock_retrieve_public_profile.return_value = api_response_400
     url = reverse(
-        'public-company-profiles-detail', kwargs={'company_number': '01234567'}
+        'public-company-profiles-detail',
+        kwargs={'company_number': '01234567', 'slug': 'thing'}
     )
 
     with pytest.raises(requests.exceptions.HTTPError):
@@ -177,7 +251,8 @@ def test_public_profile_details_handles_404(
 ):
     mock_retrieve_public_profile.return_value = api_response_404
     url = reverse(
-        'public-company-profiles-detail', kwargs={'company_number': '01234567'}
+        'public-company-profiles-detail',
+        kwargs={'company_number': '01234567', 'slug': 'thing'}
     )
 
     response = client.get(url)
@@ -237,7 +312,7 @@ def test_company_profile_list_handles_empty_page(mock_list_profiles, client):
 
 @patch.object(views.api_client.company, 'retrieve_public_case_study')
 def test_supplier_case_study_exposes_context(
-    mock_retrieve_public_case_study, client,
+    mock_retrieve_public_case_study, client, supplier_case_study_data,
     api_response_retrieve_public_case_study_200
 ):
     mock_retrieve_public_case_study.return_value = (
@@ -246,7 +321,13 @@ def test_supplier_case_study_exposes_context(
     expected_case_study = helpers.get_case_study_details_from_response(
         api_response_retrieve_public_case_study_200
     )
-    url = reverse('case-study-details', kwargs={'id': '2'})
+    url = reverse(
+        'case-study-details',
+        kwargs={
+            'id': supplier_case_study_data['pk'],
+            'slug': supplier_case_study_data['slug'],
+        }
+    )
     response = client.get(url)
 
     assert response.status_code == http.client.OK
@@ -263,24 +344,96 @@ def test_supplier_case_study_exposes_context(
 
 @patch.object(views.api_client.company, 'retrieve_public_case_study')
 def test_supplier_case_study_calls_api(
-    mock_retrieve_public_case_study, client,
+    mock_retrieve_public_case_study, client, supplier_case_study_data,
     api_response_retrieve_public_case_study_200
 ):
     mock_retrieve_public_case_study.return_value = (
         api_response_retrieve_public_case_study_200
     )
-    url = reverse('case-study-details', kwargs={'id': '2'})
+    url = reverse(
+        'case-study-details',
+        kwargs={
+            'id': supplier_case_study_data['pk'],
+            'slug': supplier_case_study_data['slug'],
+        }
+    )
+
     client.get(url)
 
     assert mock_retrieve_public_case_study.called_once_with(pk='2')
 
 
+def test_case_study_different_slug_redirected(
+    supplier_case_study_data, client
+):
+    url = reverse(
+        'case-study-details',
+        kwargs={
+            'id': supplier_case_study_data['pk'],
+            'slug': supplier_case_study_data['slug'] + 'thing',
+        }
+    )
+    expected_redirect_url = reverse(
+        'case-study-details',
+        kwargs={
+            'id': supplier_case_study_data['pk'],
+            'slug': supplier_case_study_data['slug'],
+        }
+    )
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.MOVED_PERMANENTLY
+    assert response.get('Location') == expected_redirect_url
+
+
+def test_case_study_missing_slug_redirected(supplier_case_study_data, client):
+    url = reverse(
+        'case-study-details-slugless',
+        kwargs={
+            'id': supplier_case_study_data['pk'],
+        }
+    )
+    expected_redirect_url = reverse(
+        'case-study-details',
+        kwargs={
+            'id': supplier_case_study_data['pk'],
+            'slug': supplier_case_study_data['slug'],
+        }
+    )
+
+    response = client.get(url)
+
+    assert response.status_code == http.client.MOVED_PERMANENTLY
+    assert response.get('Location') == expected_redirect_url
+
+
+def test_case_study_same_slug_not_redirected(supplier_case_study_data, client):
+    url = reverse(
+        'case-study-details',
+        kwargs={
+            'id': supplier_case_study_data['pk'],
+            'slug': supplier_case_study_data['slug'],
+        }
+    )
+
+    response = client.get(url)
+    assert response.status_code == http.client.OK
+
+
 @patch.object(views.api_client.company, 'retrieve_public_case_study')
 def test_supplier_case_study_handles_bad_status(
-    mock_retrieve_public_case_study, client, api_response_400
+    mock_retrieve_public_case_study, client, api_response_400,
+    supplier_case_study_data
 ):
     mock_retrieve_public_case_study.return_value = api_response_400
-    url = reverse('case-study-details', kwargs={'id': '2'})
+    url = reverse(
+        'case-study-details',
+        kwargs={
+            'id': supplier_case_study_data['pk'],
+            'slug': supplier_case_study_data['slug'],
+        }
+    )
 
     with pytest.raises(requests.exceptions.HTTPError):
         client.get(url)
@@ -288,30 +441,27 @@ def test_supplier_case_study_handles_bad_status(
 
 @patch.object(views.api_client.company, 'retrieve_public_case_study')
 def test_supplier_case_study_handles_404(
-    mock_retrieve_public_case_study, client, api_response_404
+    mock_retrieve_public_case_study, client, api_response_404,
+    supplier_case_study_data
 ):
     mock_retrieve_public_case_study.return_value = api_response_404
-    url = reverse('case-study-details', kwargs={'id': '2'})
-
+    url = reverse(
+        'case-study-details',
+        kwargs={
+            'id': supplier_case_study_data['pk'],
+            'slug': supplier_case_study_data['slug'],
+        }
+    )
     response = client.get(url)
 
     assert response.status_code == http.client.NOT_FOUND
 
 
-def test_contact_company_view_feature_flag_off(settings, client):
-    settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = False
-
-    url = reverse('contact-company', kwargs={'company_number': '01234567'})
-
-    response = client.get(url)
-
-    assert response.status_code == http.client.NOT_FOUND
-
-
-def test_contact_company_view_feature_flag_on(settings, client):
-    settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = True
-
-    url = reverse('contact-company', kwargs={'company_number': '01234567'})
+def test_contact_company_view(client, retrieve_profile_data):
+    url = reverse(
+        'contact-company',
+        kwargs={'company_number': retrieve_profile_data['number']},
+    )
     response = client.get(url)
 
     assert response.status_code == http.client.OK
@@ -319,13 +469,18 @@ def test_contact_company_view_feature_flag_on(settings, client):
 
 @patch.object(views.api_client.company, 'send_email')
 def test_contact_company_view_feature_submit_success(
-    mock_send_email, settings, client, valid_contact_company_data
+    mock_send_email, settings, client, valid_contact_company_data,
+    retrieve_profile_data
 ):
     settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = True
 
     view = views.ContactCompanyView
-    url = reverse('contact-company', kwargs={'company_number': '01234567'})
-
+    url = reverse(
+        'contact-company',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+        },
+    )
     response = client.post(url, valid_contact_company_data)
 
     expected_data = {
@@ -347,12 +502,17 @@ def test_contact_company_view_feature_submit_success(
 @patch.object(views.api_client.company, 'send_email')
 def test_contact_company_view_feature_submit_failure(
     mock_send_email, api_response_400, settings, client,
-    valid_contact_company_data
+    valid_contact_company_data, retrieve_profile_data
 ):
     settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = True
     mock_send_email.return_value = api_response_400
     view = views.ContactCompanyView
-    url = reverse('contact-company', kwargs={'company_number': '01234567'})
+    url = reverse(
+        'contact-company',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+        },
+    )
 
     response = client.post(url, valid_contact_company_data)
 
@@ -365,14 +525,16 @@ def test_contact_company_view_feature_submit_failure(
 def test_contact_company_exposes_context(
     mock_get_public_company_profile_from_response, client
 ):
-    mock_get_public_company_profile_from_response.return_value = {
-        'number': '01234567'
+    mock_get_public_company_profile_from_response.return_value = expected = {
+        'number': '01234567',
+        'slug': 'thing',
     }
-    url = reverse('contact-company', kwargs={'company_number': '01234567'})
+    url = reverse(
+        'contact-company',
+        kwargs={'company_number': '01234567'}
+    )
 
     response = client.get(url)
     assert response.status_code == http.client.OK
     assert response.template_name == [views.ContactCompanyView.template_name]
-    assert response.context_data['company'] == {
-        'number': '01234567'
-    }
+    assert response.context_data['company'] == expected

@@ -60,25 +60,21 @@
 							</div>
 						{% endif %}
 						<div class="row-fluid" style="margin-top: 20px;">
-							<a href="{% url 'public-company-profiles-detail' company_number=case_study.company.number %}">
+							<a href="{% url 'public-company-profiles-detail' company_number=case_study.company.number slug=case_study.company.slug %}">
 								View company profile
 							</a>
 						</div>
 					</div>
 					<div class="span4 ed-company-profile-sector-case-study-container ">
 						<div class="row" style="margin-top: 20px; margin-left: 20px;">
-							<a href="{% url 'public-company-profiles-detail' company_number=case_study.company.number %}" class="ed-filled-button-primary">
+							<a href="{% url 'public-company-profiles-detail' company_number=case_study.company.number slug=case_study.company.slug %}" class="ed-filled-button-primary">
 								View company profile
 							</a>
 						</div>
 						<div class="row" style="padding: 20px; border: 1px solid #dedede; margin-top: 20px; margin-left: 20px;">
 							<h4 style="margin-top: 0;">Contact</h4>
 							<p class="ed-truncate-single-line">
-								{% if features.FEATURE_CONTACT_COMPANY_FORM_ENABLED %}
-									<a class="ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=case_study.company.number %}">Email company</a>
-								{% else %}
-									<a class="ga-tracking-contact-supplier" href="mailto:{{ case_study.company.email_address }}">Email company</a>
-								{% endif %}
+								<a class="ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=case_study.company.number %}">Email company</a>
 							</p>
 							<p class="ed-truncate-single-line" >
 								<a href="{{ case_study.company.website }}" taget="_blank">{{ case_study.company.website }}</a>

@@ -1,14 +1,14 @@
 import http
+
 import requests
 
-from django.conf import settings
 from django.core.paginator import Paginator
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 from django.template.response import TemplateResponse
+from django.utils.functional import cached_property
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
-from django.http import Http404
 
 from api_client import api_client
 from company import forms, helpers
@@ -23,24 +23,6 @@ class SubmitFormOnGetMixin:
 
     def get(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
-
-
-class AddCompanyProfileToContextMixin:
-
-    company_number_url_kwarg = 'company_number'
-
-    def get_context_data(self, **kwargs):
-        number = self.kwargs[self.company_number_url_kwarg]
-        response = api_client.company.retrieve_public_profile(number=number)
-        if response.status_code == http.client.NOT_FOUND:
-            raise Http404(
-                "API returned 404 for company number %s",
-                self.kwargs['company_number'],
-            )
-        elif not response.ok:
-            response.raise_for_status()
-        company = helpers.get_public_company_profile_from_response(response)
-        return super().get_context_data(company=company, **kwargs)
 
 
 class PublishedProfileListView(SubmitFormOnGetMixin, FormView):
@@ -97,61 +79,78 @@ class PublishedProfileListView(SubmitFormOnGetMixin, FormView):
             return TemplateResponse(self.request, self.template_name, context)
 
 
-class PublishedProfileDetailView(AddCompanyProfileToContextMixin,
-                                 TemplateView):
+class PublishedProfileDetailView(TemplateView):
     template_name = 'company-profile-detail.html'
 
-    def get_context_data(self, **kwargs):
-        verbose = 'verbose' in self.request.GET
-        context = super().get_context_data(show_description=verbose, **kwargs)
-        company = context['company']
-        context['social'] = {
-            'title': (
-                'International trade profile: {0}'.format(company['name'])
-            ),
-            'description': company['summary'],
-            'image': company['logo'],
+    @cached_property
+    def company(self):
+        return helpers.get_company_profile(self.kwargs['company_number'])
+
+    def get_canonical_url(self):
+        kwargs = {
+            'company_number': self.company['number'],
+            'slug': self.company['slug'],
         }
-        return context
+        return reverse('public-company-profiles-detail', kwargs=kwargs)
+
+    def get(self, *args, **kwargs):
+        if self.kwargs.get('slug') != self.company['slug']:
+            return redirect(to=self.get_canonical_url(), permanent=True)
+        return super().get(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        social = {
+            'title': (
+                'International trade profile: {0}'.format(self.company['name'])
+            ),
+            'description': self.company['summary'],
+            'image': self.company['logo'],
+        }
+        return super().get_context_data(
+            show_description='verbose' in self.request.GET,
+            company=self.company,
+            social=social,
+            **kwargs
+        )
 
 
 class CaseStudyDetailView(TemplateView):
     template_name = 'supplier-case-study-detail.html'
 
-    def get_case_study(self):
-        response = api_client.company.retrieve_public_case_study(
-            case_study_id=self.kwargs['id'],
-        )
-        if response.status_code == http.client.NOT_FOUND:
-            raise Http404(
-                "API returned 404 for case study with id %s",
-                self.kwargs['id'],
-            )
-        elif not response.ok:
-            response.raise_for_status()
-        return helpers.get_case_study_details_from_response(response)
+    @cached_property
+    def case_study(self):
+        return helpers.get_case_study(self.kwargs['id'])
+
+    def get_canonical_url(self):
+        kwargs = {
+            'id': self.case_study['pk'],
+            'slug': self.case_study['slug'],
+        }
+        return reverse('case-study-details', kwargs=kwargs)
+
+    def get(self, *args, **kwargs):
+        if self.kwargs.get('slug') != self.case_study['slug']:
+            return redirect(to=self.get_canonical_url(), permanent=True)
+        return super().get(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
-        case_study = self.get_case_study()
-        context = super().get_context_data(case_study=case_study, **kwargs)
-        context['social'] = {
-            'title': 'Project: {title}'.format(title=case_study['title']),
-            'description': case_study['description'],
-            'image': case_study['image_one'],
+        social = {
+            'title': 'Project: {title}'.format(title=self.case_study['title']),
+            'description': self.case_study['description'],
+            'image': self.case_study['image_one'],
         }
-        return context
+        return super().get_context_data(
+            case_study=self.case_study,
+            social=social,
+            **kwargs
+        )
 
 
-class ContactCompanyView(AddCompanyProfileToContextMixin, FormView):
+class ContactCompanyView(FormView):
     template_name = 'company-contact-form.html'
     success_template_name = 'company-contact-success.html'
     failure_template_name = 'company-contact-error.html'
     form_class = forms.ContactCompanyForm
-
-    def dispatch(self, *args, **kwargs):
-        if not settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED:
-            raise Http404()
-        return super().dispatch(*args, **kwargs)
 
     def form_valid(self, form):
         data = self.serialize_form_data(
@@ -172,3 +171,7 @@ class ContactCompanyView(AddCompanyProfileToContextMixin, FormView):
             cleaned_data,
             company_number,
         )
+
+    def get_context_data(self, **kwargs):
+        company = helpers.get_company_profile(self.kwargs['company_number'])
+        return super().get_context_data(company=company, **kwargs)
