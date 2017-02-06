@@ -9,7 +9,8 @@ class SectorLandingPageSitemap(sitemaps.Sitemap):
     changefreq = 'daily'
 
     def items(self):
-        return list(views.InternationalLandingSectorDetailView.pages.keys())
+        pages = views.InternationalLandingSectorDetailView.get_active_pages()
+        return list(pages.keys())
 
     def location(self, item):
         return reverse('international-sector-detail', kwargs={'slug': item})

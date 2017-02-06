@@ -240,3 +240,35 @@ FOOD_SECTOR_CONTEXT = {
         },
     ]
 }
+
+
+ADVANCED_MANUFACTURING_CONTEXT = {
+    'sector_value': 'MECHANICAL_ELECTRICAL_AND_PROCESS_ENGINEERING',
+    'case_study': {
+        'image_url': '',
+        'image_caption': '',
+        'title': '',
+        'synopsis': '',
+        'url': '',
+        'testimonial': '',
+        'testimonial_name': '',
+        'testimonial_company': '',
+        'company_name': '',
+        'sectors': [],
+        'keywords': '',
+    },
+    'companies': [
+        {
+            'image_url': '',
+            'name': '',
+            'description': '',
+            'url': '',
+        },
+        {
+            'image_url': '',
+            'name': '',
+            'description': '',
+            'url': '',
+        },
+    ]
+}

@@ -1,0 +1,59 @@
+{% extends 'marketing-pages/base.html' %}
+{% load static from staticfiles %}
+{% block hero_image %}{% static '' %}{% endblock %}
+{% block hero_title %}Delivering exceptional advanced manufacturing services{% endblock%}
+{% block synopsis %}
+    <p></p>
+    <div class="ed-landing-page-read-more">
+        <a href="?verbose=true">Read more about advanced manufacturing </a>
+    </div>
+{% endblock %}
+
+{% block proposition %}
+    <section>
+        <h2>VALUE PROPOSITION TITLE</h2>
+        <p>VALUE PROPOSITION PARAGRAPH</p>
+        <p>VALUE PROPOSITION PARAGRAPH</p>
+        <p>VALUE PROPOSITION PARAGRAPH</p>
+    </section>
+
+    <section>
+        <div class="row-fluid">
+            <div class="span6">
+                <h2>ANOTHER VALUE PROPOSITION TITLE</h2>
+                <p>ANOTHER VALUE PROPOSITION PARAGRAPH</p>
+            </div>
+            <div class="span6">
+                <div class="ed-key-facts-container">
+                    <h2>Key facts</h2>
+                    <ul>
+                        <li>KEY FACT 1</li>
+                        <li>KEY FACT 2</li>
+                        <li>KEY FACT 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>ANOTHER VALUE PROPOSITION TITLE</h2>
+        <p>ANOTHER VALUE PROPOSITION PARAGRAPH </p>
+        <p>ANOTHER VALUE PROPOSITION PARAGRAPH</p>
+        <p>ANOTHER VALUE PROPOSITION PARAGRAPH</p>
+    </section>
+
+    <section>
+        <h2>ANOTHER VALUE PROPOSITION TITLE</h2>
+        <p>ANOTHER VALUE PROPOSITION PARAGRAPH</p>
+        <p>ANOTHER VALUE PROPOSITION PARAGRAPH</p>
+    </section>
+
+    <div>
+        <a href="{% url 'public-company-profiles-list' %}?sectors={{ sector_value }}">Find your UK advanced manufacturing partner today</a>
+    </div>
+{% endblock %}
+
+{% block company_list_title %}
+    <h2>See the UK's advanced manufacturers on the Find a supplier service</h2>
+{% endblock %}
