@@ -115,39 +115,52 @@ class TermsView(TemplateView):
 
 
 class InternationalLandingSectorDetailView(TemplateView):
-    pages = {
-        'health': {
-            'template': 'landing-page-international-sector-detail-health.html',
-            'context': constants.HEALTH_SECTOR_CONTEXT,
-        },
-        'tech': {
-            'template': 'landing-page-international-sector-detail-tech.html',
-            'context': constants.TECH_SECTOR_CONTEXT,
-        },
-        'creative': {
-            'template': (
-                'landing-page-international-sector-detail-creative.html'
-            ),
-            'context': constants.CREATIVE_SECTOR_CONTEXT,
-        },
-        'food-and-drink': {
-            'template': 'landing-page-international-sector-detail-food.html',
-            'context': constants.FOOD_SECTOR_CONTEXT,
+
+    @classmethod
+    def get_active_pages(cls):
+        pages = {
+            'health': {
+                'template': 'marketing-pages/health.html',
+                'context': constants.HEALTH_SECTOR_CONTEXT,
+                'is_active': True,
+            },
+            'tech': {
+                'template': 'marketing-pages/tech.html',
+                'context': constants.TECH_SECTOR_CONTEXT,
+                'is_active': True,
+            },
+            'creative': {
+                'template': 'marketing-pages/creative.html',
+                'context': constants.CREATIVE_SECTOR_CONTEXT,
+                'is_active': True,
+            },
+            'food-and-drink': {
+                'template': 'marketing-pages/food.html',
+                'context': constants.FOOD_SECTOR_CONTEXT,
+                'is_active': True,
+            },
+            'advanced-manufacturing': {
+                'template': 'marketing-pages/advanced-manufacturing.html',
+                'context': constants.ADVANCED_MANUFACTURING_CONTEXT,
+                'is_active': settings.FEATURE_ADVANCED_MANUFACTURING_ENABLED,
+            }
         }
-    }
+        return {key: val for key, val in pages.items() if val['is_active']}
 
     def dispatch(self, request, *args, **kwargs):
-        if self.kwargs['slug'] not in self.pages:
+        if self.kwargs['slug'] not in self.get_active_pages():
             raise Http404()
         return super().dispatch(request, *args, **kwargs)
 
     def get_template_names(self):
-        template_name = self.pages[self.kwargs['slug']]['template']
+        pages = self.get_active_pages()
+        template_name = pages[self.kwargs['slug']]['template']
         return [template_name]
 
     def get_context_data(self, *args, **kwargs):
+        pages = self.get_active_pages()
         context = super().get_context_data(*args, **kwargs)
-        context.update(self.pages[self.kwargs['slug']]['context'])
+        context.update(pages[self.kwargs['slug']]['context'])
         context['show_proposition'] = 'verbose' in self.request.GET
         context['slug'] = self.kwargs['slug']
         return context

@@ -157,7 +157,8 @@ def test_international_landing_page_sector_specific_unknown(client):
 
 
 def test_international_landing_page_sector_specific_known(client):
-    for slug, values in InternationalLandingSectorDetailView.pages.items():
+    pages = InternationalLandingSectorDetailView.get_active_pages()
+    for slug, values in pages.items():
         context = values['context']
         template_name = values['template']
         url = reverse('international-sector-detail', kwargs={'slug': slug})
@@ -171,7 +172,7 @@ def test_international_landing_page_sector_specific_known(client):
 
 
 def test_international_landing_page_sector_context(client):
-    pages = InternationalLandingSectorDetailView.pages
+    pages = InternationalLandingSectorDetailView.get_active_pages()
     assert pages['health']['context'] == constants.HEALTH_SECTOR_CONTEXT
     assert pages['tech']['context'] == constants.TECH_SECTOR_CONTEXT
     assert pages['creative']['context'] == constants.CREATIVE_SECTOR_CONTEXT
@@ -334,3 +335,17 @@ def test_subscribe_view_submit_invalid(
     assert mock_search.called is False
     assert mock_user_create.called is False
     assert mock_ticket_create.called is False
+
+
+def test_international_landing_page_flag_on_advanced_manufacturing(settings):
+    settings.FEATURE_ADVANCED_MANUFACTURING_ENABLED = True
+    view = InternationalLandingSectorDetailView
+
+    assert 'advanced-manufacturing' in view.get_active_pages()
+
+
+def test_international_landing_page_flag_off_advanced_manufacturing(settings):
+    settings.FEATURE_ADVANCED_MANUFACTURING_ENABLED = False
+    view = InternationalLandingSectorDetailView
+
+    assert 'advanced-manufacturing' not in view.get_active_pages()
