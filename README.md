@@ -7,6 +7,9 @@
 
 ## Requirements
 
+### Python
+[Python 3.5](https://www.python.org/downloads/release/python-350/)
+
 ### Docker
 [Docker >= 1.10](https://docs.docker.com/engine/installation/)
 
