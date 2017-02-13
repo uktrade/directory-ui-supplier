@@ -172,3 +172,15 @@ def test_robots(rf):
     html = render_to_string('robots.txt', context)
 
     assert 'Sitemap: http://testserver/sitemap.xml' in html
+
+
+def test_utm_cookie_domain():
+    context = {
+        'analytics': {
+            'UTM_COOKIE_DOMAIN': '.thing.com',
+        }
+    }
+    html = render_to_string('govuk_layout.html', context)
+
+    assert '<meta id="utmCookieDomain" value=".thing.com" />' in html
+
