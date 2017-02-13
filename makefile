@@ -47,7 +47,7 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_ZENDESK_EMAIL=debug; \
 	export DIRECTORY_UI_SUPPLIER_ZENDESK_SUBDOMAIN=debugdebugdebug; \
 	export DIRECTORY_UI_SUPPLIER_ZENDESK_TOKEN=debug; \
-	export DIRECTORY_UI_SUPPLIER_UTM_COOKIE_DOMAIN=.trade.great.dev
+	export DIRECTORY_UI_SUPPLIER_UTM_COOKIE_DOMAIN=.great.dev
 
 
 DOCKER_REMOVE_ALL := \
@@ -95,7 +95,7 @@ DEBUG_SET_ENV_VARS := \
 	export ZENDESK_EMAIL=""; \
 	export ZENDESK_SUBDOMAIN=""; \
 	export ZENDESK_TOKEN=debug; \
-	export UTM_COOKIE_DOMAIN=.trade.great.dev
+	export UTM_COOKIE_DOMAIN=.great.dev
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)
