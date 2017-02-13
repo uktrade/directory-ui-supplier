@@ -6,6 +6,7 @@
     <head>
         {% include 'google_tag_manager_head.html' %}
         {% include 'social.html' %}
+        <meta id="utmCookieDomain" value="{{ analytics.UTM_COOKIE_DOMAIN }}" />
         <meta charset="utf-8" />
         <title>{% block head_title %}Find a Supplier - GOV.UK{% endblock %}</title>
 
@@ -74,6 +75,7 @@
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{% static 'javascripts/index.js' %}"></script>
 
         {% block bodyScripts %}{% endblock bodyScripts %}
     </body>

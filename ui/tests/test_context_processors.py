@@ -36,6 +36,7 @@ def test_subscribe_form_exposes_form_details(rf):
 def test_analytics(rf, settings):
     settings.GOOGLE_TAG_MANAGER_ID = '123'
     settings.GOOGLE_TAG_MANAGER_ENV = '&thing=1'
+    settings.UTM_COOKIE_DOMAIN = '.thing.com'
 
     actual = context_processors.analytics(None)
 
@@ -43,6 +44,7 @@ def test_analytics(rf, settings):
         'analytics': {
             'GOOGLE_TAG_MANAGER_ID': '123',
             'GOOGLE_TAG_MANAGER_ENV': '&thing=1',
+            'UTM_COOKIE_DOMAIN': '.thing.com',
         }
     }
 
