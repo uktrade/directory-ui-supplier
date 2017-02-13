@@ -183,4 +183,3 @@ def test_utm_cookie_domain():
     html = render_to_string('govuk_layout.html', context)
 
     assert '<meta id="utmCookieDomain" value=".thing.com" />' in html
-
