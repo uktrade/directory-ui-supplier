@@ -398,13 +398,14 @@
     margin-bottom: 0;
   }
   .button {
+    background: white;
     border: 2px solid #004f95;
     color: #004f95;
+    font-weight: bold;
+    margin-left: 10px;
     padding: 15px;
     text-align: center;
-    font-weight: bold;
-    display: block;
-    background: white;
+    width: 162px;
   }
 }
 
