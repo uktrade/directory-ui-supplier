@@ -99,4 +99,7 @@ Temporary Items
 node_modules/
 
 # Docker
-.env
+i.env
+
+# Generated files
+ui/staticfiles
