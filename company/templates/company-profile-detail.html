@@ -135,27 +135,6 @@
 								<a href="{% url 'case-study-details' id=case_study.pk slug=case_study.slug %}">Read case study</a>
 							</p>
 						</div>
-						{% if case_study.testimonial %}
-							<div class="ed-arrow_box ed-company-profile-case-study-testomonial-container">
-								<p class="ed-company-profile-sector-synopsis">
-									<b>"{{ case_study.testimonial }}"</b>
-								</p>
-								<div>{{ case_study.testimonial_name }}</div>
-								<div>{{ case_study.testimonial_company }}</div>
-							</div>
-						{% endif %}
-						<div class="ed-company-profile-case-study-company-details">
-							<p>
-								<b>{{ company.name }}</b>
-							</p>
-							<p>
-								<span>Incorporated: </span>{{ company.date_of_creation|date:'Y' }}
-							</p>
-							<p>
-								<span>Industry: </span>
-								<a href="{% url 'public-company-profiles-list' %}?sectors={{ case_study.sector.value }}">{{ case_study.sector.label }}</a>
-							</p>
-						</div>
 					</div>
 				</div>
 				{% endfor %}
