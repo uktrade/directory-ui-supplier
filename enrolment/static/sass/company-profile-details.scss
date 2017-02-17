@@ -304,23 +304,16 @@
 .ed-company-profile-sector-case-study-container {
   border: 1px solid #DFD5C5;
   margin-bottom: 20px;
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
+  a {
+    font-family: 'Roboto', sans-serif;
+  }
   img {
     padding: 0
   }
-  .ed-company-profile-case-study-testomonial-container {
-    background: #D8D8D8;
-    padding: 20px;
-  }
-  .ed-company-profile-case-study-company-details {
-    background: #007EA3;
-    padding: 20px;
-    clear: both;
-    color: white;
-    a {
-      color: white;
-      text-decoration: underline;
-    }
+  p {
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 18px;
   }
   .company-profile-module-container {
     border: none;
@@ -328,8 +321,8 @@
   .company-profile-module-inner {
     padding: 0;
     h3 {
-      font-size: 18px;
-      font-weight: 500;
+      font-family: 'Roboto Light', sans-serif;
+      font-size: 21px;
       letter-spacing: 0;
       line-height: 25px;
     }
