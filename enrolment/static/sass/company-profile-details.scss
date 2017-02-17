@@ -1,7 +1,6 @@
 @import 'main.scss';
 
 .company-profile-details-body {
-  margin-top: 30px;
   position: relative;
   h3 {
     line-height: 1em;
@@ -17,19 +16,20 @@
     }
   }
   .company-profile-module-container {
-    border: 1px solid #DFD5C5;
     margin-bottom: 20px;
+    position: relative;
+    h3 {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 25px;
+    }
     li {
       list-style: initial;
     }
   }
   .company-profile-module-inner {
-    padding: 20px;
     min-height: 135px;
-    h3 {
-      font-weight: 100;
-      margin-bottom: 20px;
-    }
     .icon-pencil {
       margin-top: 4px;
     }
@@ -192,6 +192,7 @@
 
 .supplier-case-study-images {
   margin-bottom: 20px;
+  overflow: hidden;
   img {
     vertical-align: top;
   }
@@ -295,21 +296,19 @@
 
 .ed-company-profile-logo-container {
   border: 1px solid #dedede;
-  min-width: 140px;
-  height: 140px;
+  min-height: 147px;
+  min-width: 147px;
   img {
-    max-height: 140px;
+    max-height: 147px;
   }
 }
 
 .ed-company-profile-sector-case-study-container {
   margin-bottom: 20px;
+  padding-top: 24px;
 
   img {
     padding: 0
-  }
-  .ed-company-profile-sector-case-study-inner {
-    margin-bottom: 20px;
   }
   .ed-company-profile-case-study-testomonial-container {
     background: #D8D8D8;
@@ -318,6 +317,7 @@
   .ed-company-profile-case-study-company-details {
     background: #007EA3;
     padding: 20px;
+    clear: both;
     color: white;
     a {
       color: white;
