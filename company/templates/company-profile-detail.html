@@ -129,7 +129,7 @@
 							{% endif %}
 						</div>
 						<h3>{{ case_study.title }}</h3>
-						<div class="{{case_study.testimonial|yesno:'span4,span8'}}">
+						<div class="span8'">
 							<p>{{ case_study.short_summary }}</p>
 							<p class="supplier-case-study-read-more-cta">
 								<a href="{% url 'case-study-details' id=case_study.pk slug=case_study.slug %}">Read case study</a>
