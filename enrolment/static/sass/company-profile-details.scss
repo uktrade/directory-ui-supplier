@@ -16,20 +16,19 @@
     }
   }
   .company-profile-module-container {
+    border: 1px solid #DFD5C5;
     margin-bottom: 20px;
-    position: relative;
-    h3 {
-      font-size: 18px;
-      font-weight: 500;
-      letter-spacing: 0;
-      line-height: 25px;
-    }
     li {
       list-style: initial;
     }
   }
   .company-profile-module-inner {
     min-height: 135px;
+    padding: 20px;
+    h3 {
+      font-weight: 100;
+      margin-bottom: 20px;
+    }
     .icon-pencil {
       margin-top: 4px;
     }
@@ -192,7 +191,6 @@
 
 .supplier-case-study-images {
   margin-bottom: 20px;
-  overflow: hidden;
   img {
     vertical-align: top;
   }
@@ -304,9 +302,9 @@
 }
 
 .ed-company-profile-sector-case-study-container {
+  border: 1px solid #DFD5C5;
   margin-bottom: 20px;
-  padding-top: 24px;
-
+  padding: 20px 20px 20px 20px;
   img {
     padding: 0
   }
@@ -322,6 +320,18 @@
     a {
       color: white;
       text-decoration: underline;
+    }
+  }
+  .company-profile-module-container {
+    border: none;
+  }
+  .company-profile-module-inner {
+    padding: 0;
+    h3 {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 25px;
     }
   }
 }
