@@ -60,14 +60,14 @@
 
 				{% if show_description %}
 					<p>
-						{{ company.description }}
+						{{ company.description|linebreaks }}
 					</p>
 				{% else %}
 					<p>
 						{% if company.summary %}
-							{{ company.summary }}
+							{{ company.summary|linebreaks }}
 						{% elif company.description %}
-							{{ company.description|truncatechars:200 }}
+							{{ company.description|truncatechars:200|linebreaks }}
 						{% endif %}
 						{# reload current page with querystring #}
 						<a href="?verbose=true">Read full company profile</a>
