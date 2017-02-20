@@ -14,6 +14,7 @@ supplier_context = {
 
 
 MESSAGE_ENGLISH_ONLY = 'Page in English only'
+MORE_INDUSTRIES_LABEL = 'More industries'
 
 
 def test_google_tag_manager_project_id():
@@ -183,3 +184,25 @@ def test_utm_cookie_domain():
     html = render_to_string('govuk_layout.html', context)
 
     assert '<meta id="utmCookieDomain" value=".thing.com" />' in html
+
+
+def test_international_landing_page_button_feature_flag_on():
+    context = {
+        'features': {
+            'FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED': True,
+        }
+    }
+    html = render_to_string('landing-page-international.html', context)
+
+    assert MORE_INDUSTRIES_LABEL in html
+
+
+def test_international_landing_page_button_feature_flag_off():
+    context = {
+        'features': {
+            'FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED': False,
+        }
+    }
+    html = render_to_string('landing-page-international.html', context)
+
+    assert MORE_INDUSTRIES_LABEL not in html
