@@ -38,7 +38,7 @@
 				{% endif %}
 				{% if company.website %}
 					<p>
-						<a href="{{ company.website}}">{{ company.website }}</a>
+						<a href="{{ company.website}}" target="_blank">{{ company.website }}</a>
 					</p>
 				{% endif %}
 			</div>
@@ -135,7 +135,7 @@
 								<p>{{ case_study.short_summary }}</p>
 
 								<p class="supplier-case-study-read-more-cta">
-									<a href="{% url 'case-study-details' id=case_study.pk slug=case_study.slug %}">Read case study</a>
+									<a href="{% url 'case-study-details' id=case_study.pk slug=case_study.slug %}" target="_blank">Read case study</a>
 								</p>
 							</div>
 							{% if case_study.testimonial %}
