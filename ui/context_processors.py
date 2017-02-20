@@ -6,6 +6,9 @@ from enrolment.forms import InternationalBuyerForm
 def feature_flags(request):
     return {
         'features': {
+            'FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED': (
+                settings.FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED
+            ),
         }
     }
 
