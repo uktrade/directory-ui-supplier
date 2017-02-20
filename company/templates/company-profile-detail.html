@@ -130,7 +130,7 @@
 						</div>
 						<h3>{{ case_study.title }}</h3>
 						<div class="content">
-							<p>{{ case_study.short_summary }}</p>
+							<p>{{{ case_study.short_summary|linebreaks }}</p>
 							<p class="supplier-case-study-read-more-cta">
 								<a href="{% url 'case-study-details' id=case_study.pk slug=case_study.slug %}">Read case study</a>
 							</p>
