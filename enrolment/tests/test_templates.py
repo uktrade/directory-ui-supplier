@@ -14,7 +14,7 @@ supplier_context = {
 
 
 MESSAGE_ENGLISH_ONLY = 'Page in English only'
-MORE_INDUSTRIES_LABEL = 'More industries'
+MORE_INDUSTRIES_LABEL = 'See more industries'
 
 
 def test_google_tag_manager_project_id():
