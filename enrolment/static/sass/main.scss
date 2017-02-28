@@ -754,6 +754,16 @@ a.no-focus-highlight {
   margin-left: -20px;
 }
 
+// do not remove the `a.` prefix - it increases the specificity
+// to ensure `color` we set here is respected.
+a.ed-naked-button-primary {
+  border: 3px solid #00549F;
+  color: #00549F;
+  display: block;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+}
 
 // do not remove the `a.` prefix - it increases the specificity
 // to ensure `color` we set here is respected.
