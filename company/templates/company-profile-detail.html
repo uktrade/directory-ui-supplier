@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="row-fluid company-profile-module-container">
-			<div class="span3 company-logo company-profile-module-inner">
+			<div class="span2 company-logo company-profile-module-inner">
 				<div class="logo-container">
 					<div>
 						<div class="ed-company-profile-logo-container">	
@@ -29,7 +29,7 @@
 				</div>
 			</div>
 
-			<div class="span5 company-profile-module-inner">
+			<div class="span6 company-profile-module-inner">
 				<h3>Contact</h3>
 				{% if company.email_address %}
 					<p>
@@ -115,11 +115,10 @@
 				</h2>
 			</div>
 		</div>
-		<div class="ed-company-profile-sector-case-study-container">
+		<div class="row-fluid ed-company-profile-sector-case-study-container">
 			{% for case_study in company.supplier_case_studies %}
-				<div class="row-fluid company-profile-module-container" style="margin-bottom: 0; border-top: 0;">
-					<div class="span12 company-profile-module-inner">
-						<h3>{{ case_study.title }}</h3>
+				<div class="span4 company-profile-module-container" style="margin-bottom: 0; border-top: 0;">
+					<div class="company-profile-module-inner">
 						<div class="supplier-case-study-images">
 							{% if case_study.image_one %}
 							<img src="{{ case_study.image_one }}" alt="case study image 1"/>
@@ -129,36 +128,12 @@
 							<img src="{{ case_study.image_three }}" alt="case study image 3" />
 							{% endif %}
 						</div>
-
-						<div class="row-fluid ed-company-profile-sector-case-study-inner">
-							<div class="{{case_study.testimonial|yesno:'span4,span8'}}">
-								<p>{{ case_study.short_summary }}</p>
-
-								<p class="supplier-case-study-read-more-cta">
-									<a href="{% url 'case-study-details' id=case_study.pk slug=case_study.slug %}" target="_blank">Read case study</a>
-								</p>
-							</div>
-							{% if case_study.testimonial %}
-								<div class="span4 ed-arrow_box ed-company-profile-case-study-testomonial-container">
-									<p class="ed-company-profile-sector-synopsis">
-										<b>"{{ case_study.testimonial }}"</b>
-									</p>
-									<div>{{ case_study.testimonial_name }}</div>
-									<div>{{ case_study.testimonial_company }}</div>
-								</div>
-							{% endif %}
-							<div class="span4 ed-company-profile-case-study-company-details">
-								<p>
-									<b>{{ company.name }}</b>
-								</p>
-								<p>
-									<span>Incorporated: </span>{{ company.date_of_creation|date:'Y' }}
-								</p>
-								<p>
-									<span>Industry: </span>
-									<a href="{% url 'public-company-profiles-list' %}?sectors={{ case_study.sector.value }}">{{ case_study.sector.label }}</a>
-								</p>
-							</div>
+						<h3>{{ case_study.title }}</h3>
+						<div class="content">
+							<p>{{ case_study.short_summary|linebreaks }}</p>
+							<p class="supplier-case-study-read-more-cta">
+								<a href="{% url 'case-study-details' id=case_study.pk slug=case_study.slug %}">Read case study</a>
+							</p>
 						</div>
 					</div>
 				</div>

@@ -1,7 +1,6 @@
 @import 'main.scss';
 
 .company-profile-details-body {
-  margin-top: 30px;
   position: relative;
   h3 {
     line-height: 1em;
@@ -24,8 +23,8 @@
     }
   }
   .company-profile-module-inner {
-    padding: 20px;
     min-height: 135px;
+    padding: 20px;
     h3 {
       font-weight: 100;
       margin-bottom: 20px;
@@ -295,33 +294,37 @@
 
 .ed-company-profile-logo-container {
   border: 1px solid #dedede;
-  min-width: 140px;
-  height: 140px;
+  min-height: 147px;
+  min-width: 147px;
   img {
-    max-height: 140px;
+    max-height: 147px;
   }
 }
 
 .ed-company-profile-sector-case-study-container {
+  border: 1px solid #DFD5C5;
   margin-bottom: 20px;
-
+  padding: 20px;
+  a {
+    font-family: 'Roboto', sans-serif;
+  }
   img {
     padding: 0
   }
-  .ed-company-profile-sector-case-study-inner {
-    margin-bottom: 20px;
+  p {
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 18px;
   }
-  .ed-company-profile-case-study-testomonial-container {
-    background: #D8D8D8;
-    padding: 20px;
+  .company-profile-module-container {
+    border: none;
   }
-  .ed-company-profile-case-study-company-details {
-    background: #007EA3;
-    padding: 20px;
-    color: white;
-    a {
-      color: white;
-      text-decoration: underline;
+  .company-profile-module-inner {
+    padding: 0;
+    h3 {
+      font-family: 'Roboto Light', sans-serif;
+      font-size: 21px;
+      letter-spacing: 0;
+      line-height: 25px;
     }
   }
 }
