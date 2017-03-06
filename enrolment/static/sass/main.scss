@@ -963,7 +963,11 @@ a.ed-filled-button-primary {
   .ed-landing-page-register-button-container {
     margin-bottom: 0;
     margin-top: 0;
-    text-align: left;
+    text-align: right;
+    
+    @media (max-width: 767px) {
+      text-align: left;
+    }
   }
   .ed-checkbox-container {
     margin-left: 0;
