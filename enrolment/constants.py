@@ -272,3 +272,35 @@ ADVANCED_MANUFACTURING_CONTEXT = {
         },
     ]
 }
+
+
+GLOBAL_SPORTS_INFRASTRUCTURE_CONTEXT = {
+    'sector_value': None,  # not one of the 36 supported industries
+    'case_study': {
+        'image_url': '',
+        'image_caption': '',
+        'title': '',
+        'synopsis': '',
+        'url': '',
+        'testimonial': '',
+        'testimonial_name': '',
+        'testimonial_company': '',
+        'company_name': '',
+        'sectors': [],
+        'keywords': '',
+    },
+    'companies': [
+        {
+            'image_url': '',
+            'name': '',
+            'description': '',
+            'url': '',
+        },
+        {
+            'image_url': '',
+            'name': '',
+            'description': '',
+            'url': '',
+        },
+    ]
+}
