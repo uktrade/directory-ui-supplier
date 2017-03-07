@@ -143,6 +143,11 @@ class InternationalLandingSectorDetailView(TemplateView):
                 'template': 'marketing-pages/advanced-manufacturing.html',
                 'context': constants.ADVANCED_MANUFACTURING_CONTEXT,
                 'is_active': settings.FEATURE_ADVANCED_MANUFACTURING_ENABLED,
+            },
+            'global-sports-infrastructure': {
+                'template': 'marketing-pages/sports-infrastructure.html',
+                'context': constants.GLOBAL_SPORTS_INFRASTRUCTURE_CONTEXT,
+                'is_active': settings.FEATURE_SPORTS_INFRASTRUCTURE_ENABLED,
             }
         }
         return {key: val for key, val in pages.items() if val['is_active']}
