@@ -107,6 +107,6 @@ urlpatterns = [
     url(
         r'^unsubscribe$',
         AnonymousUnsubscribeView.as_view(),
-        name='unsubscribe'
+        name='anonymous-unsubscribe'
     )
 ]

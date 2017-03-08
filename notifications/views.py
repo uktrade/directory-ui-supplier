@@ -15,16 +15,21 @@ class AnonymousUnsubscribeView(FormView):
     failure_template_name = 'anonymous_unsubscribe_error.html'
 
     def get_initial(self):
-        return {
-            'email': self.request.GET['email']
-        }
+        if self.request.method == 'GET':
+            return {
+                'email': self.request.GET['email']
+            }
+        return {}
 
     def dispatch(self, *args, **kwargs):
         if not settings.FEATURE_UNSUBSCRIBE_VIEW_ENABLED:
             raise Http404()
+        return super().dispatch(*args, **kwargs)
+
+    def get(self, *args, **kwargs):
         if not self.request.GET.get('email'):
             return TemplateResponse(self.request, self.failure_template_name)
-        return super().dispatch(*args, **kwargs)
+        return super().get(*args, **kwargs)
 
     def form_valid(self, form):
         response = api_client.notifications.anonymous_unsubscribe(
