@@ -1,0 +1,32 @@
+{% extends 'govuk_layout.html' %}
+{% load static from staticfiles %}
+{% block css %}
+	<link href="{% static 'company-profile-details.css' %}" media="all" rel="stylesheet" />
+{% endblock %}
+{% block sub_header %}{% endblock %}
+{% block content %}
+	<div class="container">
+		<br>
+<div class="ed-landing-page-form-container">
+	<div class="ed-landing-page-form-inner">
+		<h2>Unsubscribe from notifications</h2>
+		<h4 style="font-weight: 300; margin-top: 0;">
+			You will no longer receive automated notifications if you unsubscribe.
+		</h4>
+		<div class="row-fluid">
+			<form action="" method="post" style="margin-top: 30px;">
+				{{ form.email }}
+				<div class="row-fluid">
+					<div class="span2 btn-container ed-landing-page-register-button-container">
+						<button class="button" style="border-radius: 4px;">
+							Unsubscribe
+						</button>
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>
+	</div>
+{% endblock %}
