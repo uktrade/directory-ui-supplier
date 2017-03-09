@@ -30,7 +30,7 @@
 			</div>
 
 			<div class="span6 company-profile-module-inner">
-				<h3>Contact</h3>
+				<h2>Contact</h2>
 				{% if company.email_address %}
 					<p>
 						<a class="ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=company.number %}">Email company</a>
@@ -44,7 +44,7 @@
 			</div>
 
 			<div class="span4 company-profile-module-inner" style="border-left: 1px solid #dedede;">
-				<h3>Facts &amp details</h3>
+				<h2>Facts &amp details</h2>
 				{% if company.date_of_creation %}
 					<p>Incorporated in: <b>{{company.date_of_creation|date:'Y'}}</b></p>
 				{% endif %}
@@ -56,7 +56,7 @@
 		<div class="row-fluid company-profile-module-container">
 
 			<div class="{{company.has_social_links|yesno:'span8,span12'}} company-profile-module-inner">
-				<h3>Company description</h3>
+				<h2>Company description</h2>
 
 				{% if show_description %}
 					<p>
@@ -77,7 +77,7 @@
 
 			{% if company.has_social_links %}
 				<div class="span4 company-profile-module-inner company-profile-module-social-links">
-					<h3>Online profiles</h3>
+					<h2>Online profiles</h2>
 					{% if company.linkedin_url %}
 					<p>
 						<img class="ed-social-icon" src="/static/images/icon-linkedin-white.png" alt="" />
