@@ -59,6 +59,17 @@ ul, li {
     list-style: none;
 }
 
+.hidden { 
+  display: initial;
+  height: 1px;
+  left: -10000px;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  visibility: initial;
+  width: 1px;
+}
+
 .data-form {
   .form-control {
     width: 100%;
