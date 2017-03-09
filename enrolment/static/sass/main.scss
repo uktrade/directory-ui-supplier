@@ -59,14 +59,12 @@ ul, li {
     list-style: none;
 }
 
-.hidden { 
-  display: initial;
+.screen-reader-only { 
   height: 1px;
   left: -10000px;
   overflow: hidden;
   position: absolute;
   top: auto;
-  visibility: initial;
   width: 1px;
 }
 
