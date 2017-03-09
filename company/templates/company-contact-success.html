@@ -14,4 +14,13 @@
 			</p>
 		</div>
 	</div>
-{%endblock content %}
+{% endblock content %}
+
+{% block bodyScripts %}
+<script type="text/javascript">
+  if (window.ga) {
+    window.ga('set', 'page', '/suppliers/{{company.number}}/contact/sent');
+    window.ga('send', 'pageview');
+  }
+</script>
+{% endblock bodyScripts %}
