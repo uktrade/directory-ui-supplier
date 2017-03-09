@@ -2,23 +2,26 @@ from django.conf.urls import url
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
 
+from company.views import (
+    CaseStudyDetailView,
+    ContactCompanyView,
+    PublishedProfileDetailView,
+    PublishedProfileListView,
+)
 from enrolment.views import (
     BuyerSubscribeFormView,
-    InternationalLandingView,
-    InternationalLandingSectorListView,
     InternationalLandingSectorDetailView,
+    InternationalLandingSectorListView,
+    InternationalLandingView,
     PrivacyCookiesView,
     TermsView,
 )
-from company.views import (
-    PublishedProfileListView,
-    PublishedProfileDetailView,
-    CaseStudyDetailView,
-    ContactCompanyView
+from notifications.views import (
+    AnonymousUnsubscribeView
 )
 from ui.sitemaps import (
+    SectorLandingPageSitemap,
     StaticViewSitemap,
-    SectorLandingPageSitemap
 )
 
 
@@ -101,4 +104,9 @@ urlpatterns = [
         BuyerSubscribeFormView.as_view(),
         name='subscribe'
     ),
+    url(
+        r'^unsubscribe$',
+        AnonymousUnsubscribeView.as_view(),
+        name='anonymous-unsubscribe'
+    )
 ]

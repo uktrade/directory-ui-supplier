@@ -443,6 +443,7 @@ def test_contact_company_success():
     html = render_to_string('company-contact-success.html', default_context)
 
     assert 'Your message has been sent to UK exporting co ltd.' in html
+    assert "/suppliers/123456/contact/sent" in html
 
 
 def test_case_study_contact_button():
