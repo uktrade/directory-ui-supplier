@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "ui",
     "enrolment",
     "company",
+    "notifications",
     "directory_constants",
     "captcha",
 ]
@@ -121,6 +122,9 @@ FEATURE_ADVANCED_MANUFACTURING_ENABLED = (
 )
 FEATURE_SPORTS_INFRASTRUCTURE_ENABLED = (
     os.getenv('FEATURE_SPORTS_INFRASTRUCTURE_ENABLED') == 'true'
+)
+FEATURE_UNSUBSCRIBE_VIEW_ENABLED = (
+    os.getenv('FEATURE_UNSUBSCRIBE_VIEW_ENABLED') == 'true'
 )
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
