@@ -1,0 +1,23 @@
+/*
+  Compensation for lack of nth-child support.
+
+  This is the selector we cannot use.
+  .company-profile-module-container:nth-child(3n+1) 
+
+  And this is the hacky alternative version, that 
+  will onlyt support up to 12 case studies.
+
+  Less hacky but not as nice visually, would be to
+  simply add clear:both to all. 
+*/
+.ed-company-profile-sector-case-study-container {
+  .company-profile-module-container {
+    &:first-child,
+    &:first-child + div + div + div,
+    &:first-child + div + div + div + div + div + div,
+    &:first-child + div + div + div + div + div + div + div + div + div {
+      clear: left;
+      margin-left: 0;
+    }
+  }
+}
