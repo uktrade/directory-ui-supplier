@@ -17,35 +17,37 @@
 		</div>
 
 		<div class="row-fluid company-profile-module-container">
-			<div class="span2 company-logo company-profile-module-inner">
-				<div class="logo-container">
-					<div>
-						<div class="ed-company-profile-logo-container">	
-							{% if company.logo %}
-								<img src="{{company.logo}}" alt=""/>
-							{% else %}
-								<img class="placeholder" src="/static/images/placeholder_small.png" alt="" />
-							{% endif %}
+			<div class="span8 company-profile-module-details">
+				<div class="span3 company-logo company-profile-module-inner">
+					<div class="logo-container">
+						<div>
+							<div class="ed-company-profile-logo-container">	
+								{% if company.logo %}
+									<img src="{{company.logo}}" alt=""/>
+								{% else %}
+									<img class="placeholder" src="/static/images/placeholder_small.png" alt="" />
+								{% endif %}
+							</div>
 						</div>
 					</div>
 				</div>
+
+				<div class="span9 company-profile-module-inner">
+					<h2>Contact</h2>
+					{% if company.email_address %}
+						<p>
+							<a class="ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=company.number %}">Email company</a>
+						</p>
+					{% endif %}
+					{% if company.website %}
+						<p>
+							<a href="{{ company.website}}" target="_blank">{{ company.website }}</a>
+						</p>
+					{% endif %}
+				</div>
 			</div>
 
-			<div class="span6 company-profile-module-inner">
-				<h2>Contact</h2>
-				{% if company.email_address %}
-					<p>
-						<a class="ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=company.number %}">Email company</a>
-					</p>
-				{% endif %}
-				{% if company.website %}
-					<p>
-						<a href="{{ company.website}}" target="_blank">{{ company.website }}</a>
-					</p>
-				{% endif %}
-			</div>
-
-			<div class="span4 company-profile-module-inner" style="border-left: 1px solid #dedede;">
+			<div class="span4 company-profile-module-inner company-profile-module-facts">
 				<h2>Facts &amp; details</h2>
 				{% if company.date_of_creation %}
 					<p>Incorporated in: <b>{{company.date_of_creation|date:'Y'}}</b></p>
@@ -56,8 +58,7 @@
 		</div>
 
 		<div class="row-fluid company-profile-module-container">
-
-			<div class="{{company.has_social_links|yesno:'span8,span12'}} company-profile-module-inner">
+			<div class="{{company.has_social_links|yesno:'span8,span12'}} company-profile-module-inner company-profile-module-description">
 				<h2>Company description</h2>
 
 				{% if show_description %}
