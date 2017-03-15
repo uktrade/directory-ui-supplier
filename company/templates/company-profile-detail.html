@@ -22,7 +22,9 @@
 					<div>
 						<div class="ed-company-profile-logo-container">	
 							{% if company.logo %}
-								<img src="{{company.logo}}" alt="Company logo" />
+								<img src="{{company.logo}}" alt=""/>
+							{% else %}
+								<img class="placeholder" src="/static/images/placeholder_small.png" alt="" />
 							{% endif %}
 						</div>
 					</div>
@@ -44,7 +46,7 @@
 			</div>
 
 			<div class="span4 company-profile-module-inner" style="border-left: 1px solid #dedede;">
-				<h2>Facts &amp details</h2>
+				<h2>Facts &amp; details</h2>
 				{% if company.date_of_creation %}
 					<p>Incorporated in: <b>{{company.date_of_creation|date:'Y'}}</b></p>
 				{% endif %}
