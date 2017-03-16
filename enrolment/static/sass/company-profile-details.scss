@@ -461,3 +461,12 @@
     height: auto;
   }
 }
+
+/* IE targeted hack because 10+ no longer supports Conditional Comments */
+@media screen\0 {
+  
+  /* Fix lack of max-width support because container doesn't have set width */
+  .company-logo .logo-container img {
+    width: 100%;
+  }
+}
