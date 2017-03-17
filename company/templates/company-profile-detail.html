@@ -152,9 +152,7 @@
 							<h3>Industries of interest</h3>
 							<p>
 							{% for sector in company.sectors %}
-								<span class="label stone-label">
-									<a href="{% url 'public-company-profiles-list' %}?sectors={{ sector.value }}">{{ sector.label }}</a>
-								</span>
+								<a class="stone-label" href="{% url 'public-company-profiles-list' %}?sectors={{ sector.value }}">{{ sector.label }}</a>
 							{% endfor %}
 							</p>
 							{% if company.sectors %}
