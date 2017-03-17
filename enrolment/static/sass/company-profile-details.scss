@@ -33,10 +33,22 @@
     padding-left: 0;
     position: relative;
     .company-profile-module-inner {
+      padding-left: 0;
       padding-bottom: 0;
     }
   }
-  
+  .company-profile-module-details {
+    a {
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    a, p {
+      clear: both;
+    }
+  }
   @media (max-width: 767px) {
     .company-profile-module-details {
       left: 0;
