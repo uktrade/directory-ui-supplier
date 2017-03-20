@@ -246,6 +246,11 @@ a .register-interest-btn {
     font-weight: 300;
     line-height: 1.25em;
   }
+  @media (max-width: 767px) {
+    h2, p {
+      padding: 0 20px;
+    }
+  }
 }
 
 
