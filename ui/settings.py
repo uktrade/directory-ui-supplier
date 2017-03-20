@@ -222,6 +222,10 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Sentry
 RAVEN_CONFIG = {
     "dsn": os.getenv("SENTRY_DSN"),
+    "processors": (
+        'raven.processors.SanitizePasswordsProcessor',
+        'ui.sentry_processors.SanitizeEmailMessagesProcessor',
+    )
 }
 
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
