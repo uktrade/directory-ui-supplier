@@ -1,6 +1,6 @@
 from django.conf import settings
 
-from enrolment.forms import InternationalBuyerForm
+from enrolment.forms import AnonymousSubscribeForm, FeedbackForm
 
 
 def feature_flags(request):
@@ -16,8 +16,16 @@ def feature_flags(request):
 def subscribe_form(request):
     return {
         'subscribe': {
-            'form': InternationalBuyerForm(),
+            'form': AnonymousSubscribeForm(),
         },
+    }
+
+
+def feedback_form(request):
+    return {
+        'feedback': {
+            'form': FeedbackForm()
+        }
     }
 
 

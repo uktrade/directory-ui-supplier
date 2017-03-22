@@ -1,12 +1,19 @@
 <div class="ed-landing-page-form-container">
+	<div class="row-fluid">
+		<div class="span12 great-blue-bar">
+			<h1 class="element-within company-name-title">
+				<span class="dont-break-out">Get UK companies to fulfil your business needs</span>
+			</h1>
+		</div>
+	</div>
 	<div class="ed-landing-page-form-inner">
-		<h2 style="font-weight: 300; margin-top: 0;">
-			Receive email updates of the latest UK companies in your industry
-		</h2>
+		<div>
+			Tell us what kind of goods or services you need. We'll put you in touch with relevant UK suppliers.
+		</div>
 		<div class="row-fluid">
-			<form action="{% url 'subscribe' %}" method="post" style="margin-top: 30px;">
+			<form action="{% url 'feedback' %}" method="post" style="margin-top: 30px;">
 				<div class="row-fluid">
-					<div class="span4">
+					<div class="span6">
 						<div class="{{ form.full_name.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.full_name.id_for_label }}">
 								<span>{{ form.full_name.label }}</span>
@@ -16,7 +23,7 @@
 						</div>
 					</div>
 
-					<div class="span4">
+					<div class="span6">
 						<div class="{{ form.email_address.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.email_address.id_for_label }}">
 								<span>{{ form.email_address.label }}</span>
@@ -26,19 +33,10 @@
 						</div>
 					</div>
 
-					<div class="span4">
-						<div class="{{ form.sector.css_classes|default:'input-field-container' }}">
-							<label for="{{ form.sector.id_for_label }}">
-								<span>{{ form.sector.label }}</span>
-								{{ form.sector.errors }}
-								{{ form.sector }}
-							</label>
-						</div>
-					</div>
 				</div>
 
 				<div class="row-fluid">
-					<div class="span4">
+					<div class="span6">
 						<div class="{{ form.company_name.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.company_name.id_for_label }}">
 								<span>{{ form.company_name.label }}</span>
@@ -48,7 +46,7 @@
 						</div>
 					</div>
 
-					<div class="span4">
+					<div class="span6">
 						<div class="{{ form.country.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.country.id_for_label }}">
 								<span>{{ form.country.label }}</span>
@@ -57,7 +55,6 @@
 							</label>
 						</div>
 					</div>
-					<div class="span4"></div>
 				</div>
 
 				<div class="row-fluid">

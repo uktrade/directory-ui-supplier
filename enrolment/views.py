@@ -6,7 +6,7 @@ from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
 from zenpy import Zenpy
-from zenpy.lib.api_objects import Ticket, User
+from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
 from api_client import api_client
 from enrolment import constants, forms
@@ -18,7 +18,7 @@ ZENPY_CREDENTIALS = {
     'subdomain': settings.ZENDESK_SUBDOMAIN
 }
 # Zenpy will let the connection timeout after 5s and will retry 3 times
-ZENPY_CLIENT = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
+zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
 class EnableTranslationsMixin:
@@ -42,49 +42,48 @@ class EnableTranslationsMixin:
         return context
 
 
-class BuyerSubscribeFormView(FormView):
-    success_template = 'landing-page-international-success.html'
-    template_name = 'subscribe.html'
-    form_class = forms.InternationalBuyerForm
+class FeedbackFormView(FormView):
+    success_template = 'feedback-success.html'
+    template_name = 'feedback.html'
+    form_class = forms.FeedbackForm
 
-    def _get_or_create_zendesk_user(self, cleaned_data):
-        user_search = ZENPY_CLIENT.search(
-            type='user',
+    def get_or_create_zendesk_user(self, cleaned_data):
+        zendesk_user = ZendeskUser(
+            name=cleaned_data['full_name'],
             email=cleaned_data['email_address'],
         )
-        if user_search.count == 0:
-            user = User(
-                name=cleaned_data['full_name'],
-                email=cleaned_data['email_address'],
-            )
-            user_id = ZENPY_CLIENT.users.create(user).id
-        else:
-            user_id = user_search.values[0]['id']
-        return user_id
+        return zenpy_client.users.create_or_update(zendesk_user)
 
-    def _create_zendesk_ticket(self, cleaned_data, user_id):
+    def create_zendesk_ticket(self, cleaned_data, zendesk_user):
         description = (
             'Name: {full_name}\n'
             'Email: {email_address}\n'
             'Company: {company_name}\n'
             'Country: {country}\n'
-            'Sector: {sector}\n'
             'Comment: {comment}'
         ).format(**cleaned_data)
         ticket = Ticket(
             subject=settings.ZENDESK_TICKET_SUBJECT,
             description=description,
-            submitter_id=user_id,
-            requester_id=user_id,
+            submitter_id=zendesk_user.id,
+            requester_id=zendesk_user.id,
         )
-        ZENPY_CLIENT.tickets.create(ticket)
+        zenpy_client.tickets.create(ticket)
 
     def form_valid(self, form):
-        data = forms.serialize_international_buyer_forms(form.cleaned_data)
+        zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
+        self.create_zendesk_ticket(form.cleaned_data, zendesk_user)
+        return TemplateResponse(self.request, self.success_template)
+
+
+class AnonymousSubscribeFormView(FormView):
+    success_template = 'anonymous-subscribe-success.html'
+    template_name = 'anonymous-subscribe.html'
+    form_class = forms.AnonymousSubscribeForm
+
+    def form_valid(self, form):
+        data = forms.serialize_anonymous_subscriber_forms(form.cleaned_data)
         api_client.buyer.send_form(data)
-        if form.cleaned_data['comment']:
-            user_id = self._get_or_create_zendesk_user(form.cleaned_data)
-            self._create_zendesk_ticket(form.cleaned_data, user_id)
         return TemplateResponse(self.request, self.success_template)
 
 

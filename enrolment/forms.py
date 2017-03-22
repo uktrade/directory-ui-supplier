@@ -9,7 +9,7 @@ class LanguageForm(forms.Form):
     lang = forms.ChoiceField(choices=settings.LANGUAGES)
 
 
-class InternationalBuyerForm(forms.Form):
+class AnonymousSubscribeForm(forms.Form):
     error_css_class = 'input-field-container has-error'
     PLEASE_SELECT_LABEL = 'Please select an industry'
     TERMS_CONDITIONS_MESSAGE = (
@@ -26,27 +26,39 @@ class InternationalBuyerForm(forms.Form):
     )
     company_name = forms.CharField(label='Company name')
     country = forms.CharField(label='Country')
+    terms = forms.BooleanField(
+        error_messages={'required': TERMS_CONDITIONS_MESSAGE}
+    )
+
+
+class FeedbackForm(forms.Form):
+    error_css_class = 'input-field-container has-error'
+    PLEASE_SELECT_LABEL = 'Please select an industry'
+    TERMS_CONDITIONS_MESSAGE = (
+        'Tick the box to confirm you agree to the terms and conditions.'
+    )
+
+    full_name = forms.CharField(label='Your name')
+    email_address = forms.EmailField(label='Email address')
+    company_name = forms.CharField(label='Organisation name')
+    country = forms.CharField(label='Country')
     comment = forms.CharField(
-        label=(
-            "Tell us if you can't find what you were looking for, or if you "
-            "want to give feedback"
-        ),
+        label='Describe what you need',
         help_text='Maximum 1000 characters.',
         max_length=1000,
         widget=forms.Textarea,
-        required=False,
     )
     terms = forms.BooleanField(
         error_messages={'required': TERMS_CONDITIONS_MESSAGE}
     )
 
 
-def serialize_international_buyer_forms(cleaned_data):
+def serialize_anonymous_subscriber_forms(cleaned_data):
     """
     Return the shape directory-api-client expects for saving international
     buyers.
 
-    @param {dict} cleaned_data - All the fields in `InternationalBuyerForm`
+    @param {dict} cleaned_data - All the fields in `AnonymousSubscribeForm`
     @returns dict
 
     """
@@ -57,9 +69,6 @@ def serialize_international_buyer_forms(cleaned_data):
         'sector': cleaned_data['sector'],
         'company_name': cleaned_data['company_name'],
         'country': cleaned_data['country'],
-        # NOTE: Intentionally not serializing comment field as
-        # the comment field does not get saved in api, it's only sent
-        # to zendesk
     }
 
 

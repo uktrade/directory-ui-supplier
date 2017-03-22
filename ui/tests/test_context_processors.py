@@ -1,7 +1,7 @@
 from django.core.urlresolvers import reverse
 
 from ui import context_processors
-from enrolment.forms import InternationalBuyerForm
+from enrolment.forms import AnonymousSubscribeForm, FeedbackForm
 
 
 def test_feature_flags_installed(settings):
@@ -35,7 +35,7 @@ def test_subscribe_form_exposes_form_details(rf):
 
     actual = context_processors.subscribe_form(request)
 
-    assert isinstance(actual['subscribe']['form'], InternationalBuyerForm)
+    assert isinstance(actual['subscribe']['form'], AnonymousSubscribeForm)
 
 
 def test_analytics(rf, settings):
@@ -58,3 +58,17 @@ def test_analytics_installed(settings):
     processors = settings.TEMPLATES[0]['OPTIONS']['context_processors']
 
     assert 'ui.context_processors.analytics' in processors
+
+
+def test_feedback_form_installed(settings):
+    processors = settings.TEMPLATES[0]['OPTIONS']['context_processors']
+
+    assert 'ui.context_processors.feedback_form' in processors
+
+
+def test_feedback_form_exposes_form_details(rf):
+    request = rf.get(reverse('index'))
+
+    actual = context_processors.feedback_form(request)
+
+    assert isinstance(actual['feedback']['form'], FeedbackForm)
