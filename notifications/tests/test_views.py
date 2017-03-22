@@ -65,5 +65,6 @@ def test_unsubscribe_api_success(mock_unsubscribe, api_response_200, client):
     response = client.post(reverse('anonymous-unsubscribe'), {'email': '123'})
 
     view = views.AnonymousUnsubscribeView
+    mock_unsubscribe.assert_called_once_with(signed_email_address='123')
     assert response.status_code == http.client.OK
     assert response.template_name == view.success_template_name
