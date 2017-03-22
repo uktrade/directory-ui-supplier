@@ -33,7 +33,7 @@ class AnonymousUnsubscribeView(FormView):
 
     def form_valid(self, form):
         response = api_client.notifications.anonymous_unsubscribe(
-            email=form.cleaned_data['email']
+            signed_email_address=form.cleaned_data['email']
         )
         if response.ok:
             return TemplateResponse(self.request, self.success_template_name)
