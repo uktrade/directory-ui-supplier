@@ -54,8 +54,10 @@
 							<div class="logo">
 								{% if company.logo %}
 								<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}">
-									<img src="{{company.logo}}" alt="Logo for {{ company.name }}" />
+									<img src="{{company.logo}}" alt="{{ company.name }}" />
 								</a>
+								{% else %}
+									<img class="placeholder" src="/static/images/placeholder.png" alt="" />
 								{% endif %}
 								</a>
 							</div>

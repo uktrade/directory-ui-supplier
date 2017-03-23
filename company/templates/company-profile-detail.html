@@ -17,19 +17,19 @@
 		</div>
 
 		<div class="row-fluid company-profile-module-container">
-			<div class="span2 company-logo company-profile-module-inner">
+			<div class="span2 company-logo">
 				<div class="logo-container">
-					<div>
-						<div class="ed-company-profile-logo-container">	
-							{% if company.logo %}
-								<img src="{{company.logo}}" alt="Company logo" />
+					<div class="logo">	
+						{% if company.logo %}
+							<img src="{{company.logo}}" alt=""/>
+						{% else %}
+							<img class="placeholder" src="/static/images/placeholder.png" alt="" />
 							{% endif %}
-						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="span6 company-profile-module-inner">
+			<div class="span6 company-profile-module-details">
 				<h2>Contact</h2>
 				{% if company.email_address %}
 					<p>
@@ -43,8 +43,8 @@
 				{% endif %}
 			</div>
 
-			<div class="span4 company-profile-module-inner" style="border-left: 1px solid #dedede;">
-				<h2>Facts &amp details</h2>
+			<div class="span4 company-profile-module-inner company-profile-module-facts">
+				<h2>Facts &amp; details</h2>
 				{% if company.date_of_creation %}
 					<p>Incorporated in: <b>{{company.date_of_creation|date:'Y'}}</b></p>
 				{% endif %}
@@ -54,8 +54,7 @@
 		</div>
 
 		<div class="row-fluid company-profile-module-container">
-
-			<div class="{{company.has_social_links|yesno:'span8,span12'}} company-profile-module-inner">
+			<div class="{{company.has_social_links|yesno:'span8,span12'}} company-profile-module-inner company-profile-module-description">
 				<h2>Company description</h2>
 
 				{% if show_description %}
@@ -144,30 +143,24 @@
 		<div class="ed-special-bottom-border">
 			<div class="row-fluid company-profile-module-container" style="margin-bottom: 0; border-bottom: 0;">
 				<div class="span6">
-					<div style="margin-bottom: 0;">
-						<div class="company-profile-module-inner ">
-							<h3>Industries of interest</h3>
-							<p>
-							{% for sector in company.sectors %}
-								<span class="label stone-label">
-									<a href="{% url 'public-company-profiles-list' %}?sectors={{ sector.value }}">{{ sector.label }}</a>
-								</span>
-							{% endfor %}
-							</p>
-							{% if company.sectors %}
-							<div class="description-content"></div>
-							{% endif %}
-						</div>
+					<div class="company-profile-module-inner company-profile-industries">
+						<h3>Industries of interest</h3>
+						<p>
+						{% for sector in company.sectors %}
+							<a class="stone-label" href="{% url 'public-company-profiles-list' %}?sectors={{ sector.value }}">{{ sector.label }}</a>
+						{% endfor %}
+						</p>
+						{% if company.sectors %}
+						<div class="description-content"></div>
+						{% endif %}
 					</div>
 				</div>
 				<div class="span6">
-					<div style="margin-bottom: 0;">
-						<div class=" company-profile-module-inner">
-							<h3>Keywords</h3>
-							{% if company.keywords %}
-								<p class="dont-break-out">{{company.keywords}}</p>
-							{% endif %}
-						</div>
+					<div class=" company-profile-module-inner company-profile-keywords">
+						<h3>Keywords</h3>
+						{% if company.keywords %}
+							<p class="dont-break-out">{{company.keywords}}</p>
+						{% endif %}
 					</div>
 				</div>
 			</div>
