@@ -53,7 +53,7 @@ def test_company_public_profile_list_modified():
 
     html = render_to_string('company-public-profile-list.html', context)
 
-    assert 'Updated: an hour ago' in html
+    assert 'Updated: 1 hour ago' in html
 
 
 def test_company_public_profile_list_link_to_profle():
