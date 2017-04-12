@@ -13,7 +13,7 @@ from enrolment import constants, forms
 from enrolment.views import (
     api_client,
     AnonymousSubscribeFormView,
-    FeedbackFormView,
+    LeadGenerationFormView,
     InternationalLandingSectorDetailView,
 )
 
@@ -221,15 +221,15 @@ def test_subscribe_view_submit(
 @pytest.mark.django_db
 @patch('zenpy.lib.api.UserApi.create_or_update')
 @patch('zenpy.lib.api.TicketApi.create')
-def test_feedback_view_submit_with_comment(
+def test_lead_generation_view_submit_with_comment(
     mock_ticket_create, mock_user_create_or_update, buyer_request,
     buyer_form_data
 ):
     mock_user_create_or_update.return_value = Mock(id=999)
-    response = FeedbackFormView.as_view()(buyer_request)
+    response = LeadGenerationFormView.as_view()(buyer_request)
 
     assert response.status_code == http.client.OK
-    assert response.template_name == FeedbackFormView.success_template
+    assert response.template_name == LeadGenerationFormView.success_template
 
     assert mock_user_create_or_update.call_count == 1
     user = mock_user_create_or_update.call_args[0][0]

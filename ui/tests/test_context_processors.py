@@ -1,7 +1,7 @@
 from django.core.urlresolvers import reverse
 
 from ui import context_processors
-from enrolment.forms import AnonymousSubscribeForm, FeedbackForm
+from enrolment.forms import AnonymousSubscribeForm, LeadGenerationForm
 
 
 def test_feature_flags_installed(settings):
@@ -60,15 +60,15 @@ def test_analytics_installed(settings):
     assert 'ui.context_processors.analytics' in processors
 
 
-def test_feedback_form_installed(settings):
+def test_lead_generation_form_installed(settings):
     processors = settings.TEMPLATES[0]['OPTIONS']['context_processors']
 
-    assert 'ui.context_processors.feedback_form' in processors
+    assert 'ui.context_processors.lead_generation_form' in processors
 
 
-def test_feedback_form_exposes_form_details(rf):
+def test_lead_generation_form_exposes_form_details(rf):
     request = rf.get(reverse('index'))
 
-    actual = context_processors.feedback_form(request)
+    actual = context_processors.lead_generation_form(request)
 
-    assert isinstance(actual['feedback']['form'], FeedbackForm)
+    assert isinstance(actual['lead_generation']['form'], LeadGenerationForm)

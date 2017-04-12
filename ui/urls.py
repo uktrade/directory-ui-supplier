@@ -10,7 +10,7 @@ from company.views import (
 )
 from enrolment.views import (
     AnonymousSubscribeFormView,
-    FeedbackFormView,
+    LeadGenerationFormView,
     InternationalLandingSectorDetailView,
     InternationalLandingSectorListView,
     InternationalLandingView,
@@ -107,8 +107,8 @@ urlpatterns = [
     ),
     url(
         r'^feedback$',
-        FeedbackFormView.as_view(),
-        name='feedback'
+        LeadGenerationFormView.as_view(),
+        name='lead-generation'
     ),
     url(
         r'^unsubscribe$',

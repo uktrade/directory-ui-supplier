@@ -1,6 +1,6 @@
 from django.conf import settings
 
-from enrolment.forms import AnonymousSubscribeForm, FeedbackForm
+from enrolment.forms import AnonymousSubscribeForm, LeadGenerationForm
 
 
 def feature_flags(request):
@@ -21,10 +21,10 @@ def subscribe_form(request):
     }
 
 
-def feedback_form(request):
+def lead_generation_form(request):
     return {
-        'feedback': {
-            'form': FeedbackForm()
+        'lead_generation': {
+            'form': LeadGenerationForm()
         }
     }
 

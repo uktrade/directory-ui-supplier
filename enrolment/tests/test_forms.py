@@ -30,8 +30,8 @@ def test_subscribe_form_accepts_valid_data():
     assert form.is_valid()
 
 
-def test_feedback_form_required():
-    form = forms.FeedbackForm()
+def test_lead_generation_form_required():
+    form = forms.LeadGenerationForm()
 
     assert form.is_valid() is False
     assert form.fields['full_name'].required is True
@@ -42,8 +42,8 @@ def test_feedback_form_required():
     assert form.fields['terms'].required is True
 
 
-def test_feedback_form_accepts_valid_data():
-    form = forms.FeedbackForm(data={
+def test_lead_generation_form_accepts_valid_data():
+    form = forms.LeadGenerationForm(data={
         'full_name': 'Jim Example',
         'email_address': 'jim@example.com',
         'comment': 'Hello',

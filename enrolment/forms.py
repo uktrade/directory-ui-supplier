@@ -31,7 +31,7 @@ class AnonymousSubscribeForm(forms.Form):
     )
 
 
-class FeedbackForm(forms.Form):
+class LeadGenerationForm(forms.Form):
     error_css_class = 'input-field-container has-error'
     PLEASE_SELECT_LABEL = 'Please select an industry'
     TERMS_CONDITIONS_MESSAGE = (

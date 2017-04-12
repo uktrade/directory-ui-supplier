@@ -42,10 +42,10 @@ class EnableTranslationsMixin:
         return context
 
 
-class FeedbackFormView(FormView):
-    success_template = 'feedback-success.html'
-    template_name = 'feedback.html'
-    form_class = forms.FeedbackForm
+class LeadGenerationFormView(FormView):
+    success_template = 'lead-generation-success.html'
+    template_name = 'lead-generation.html'
+    form_class = forms.LeadGenerationForm
 
     def get_or_create_zendesk_user(self, cleaned_data):
         zendesk_user = ZendeskUser(
