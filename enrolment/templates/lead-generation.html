@@ -1,0 +1,13 @@
+{% extends 'govuk_layout.html' %}
+{% load static from staticfiles %}
+{% block css %}
+	<link href="{% static 'company-profile-details.css' %}" media="all" rel="stylesheet" />
+{% endblock %}
+{% block hero_title %}Subscribe{% endblock %}
+{% block sub_header %}{% endblock %}
+{% block content %}
+	<div class="container">
+		<br>
+		{% include 'lead-generation-form.html' with form=form %}
+	</div>
+{% endblock %}

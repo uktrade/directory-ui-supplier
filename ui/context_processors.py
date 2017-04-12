@@ -1,6 +1,6 @@
 from django.conf import settings
 
-from enrolment.forms import InternationalBuyerForm
+from enrolment.forms import AnonymousSubscribeForm, LeadGenerationForm
 
 
 def feature_flags(request):
@@ -16,8 +16,16 @@ def feature_flags(request):
 def subscribe_form(request):
     return {
         'subscribe': {
-            'form': InternationalBuyerForm(),
+            'form': AnonymousSubscribeForm(),
         },
+    }
+
+
+def lead_generation_form(request):
+    return {
+        'lead_generation': {
+            'form': LeadGenerationForm()
+        }
     }
 
 

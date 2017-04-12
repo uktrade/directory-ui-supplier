@@ -9,7 +9,8 @@ from company.views import (
     PublishedProfileListView,
 )
 from enrolment.views import (
-    BuyerSubscribeFormView,
+    AnonymousSubscribeFormView,
+    LeadGenerationFormView,
     InternationalLandingSectorDetailView,
     InternationalLandingSectorListView,
     InternationalLandingView,
@@ -101,8 +102,13 @@ urlpatterns = [
     ),
     url(
         r'^subscribe$',
-        BuyerSubscribeFormView.as_view(),
+        AnonymousSubscribeFormView.as_view(),
         name='subscribe'
+    ),
+    url(
+        r'^feedback$',
+        LeadGenerationFormView.as_view(),
+        name='lead-generation'
     ),
     url(
         r'^unsubscribe$',

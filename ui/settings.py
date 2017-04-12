@@ -73,6 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'ui.context_processors.feature_flags',
                 'ui.context_processors.subscribe_form',
+                'ui.context_processors.lead_generation_form',
                 'ui.context_processors.analytics',
             ],
         },

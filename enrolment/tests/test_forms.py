@@ -6,8 +6,8 @@ from enrolment import forms
 REQUIRED_MESSAGE = Field.default_error_messages['required']
 
 
-def test_international_form_required():
-    form = forms.InternationalBuyerForm()
+def test_subscribe_form_required():
+    form = forms.AnonymousSubscribeForm()
 
     assert form.is_valid() is False
     assert form.fields['full_name'].required is True
@@ -16,11 +16,10 @@ def test_international_form_required():
     assert form.fields['company_name'].required is True
     assert form.fields['country'].required is True
     assert form.fields['terms'].required is True
-    assert form.fields['comment'].required is False
 
 
-def test_international_form_accepts_valid_data():
-    form = forms.InternationalBuyerForm(data={
+def test_subscribe_form_accepts_valid_data():
+    form = forms.AnonymousSubscribeForm(data={
         'full_name': 'Jim Example',
         'email_address': 'jim@example.com',
         'sector': 'AEROSPACE',
@@ -31,14 +30,37 @@ def test_international_form_accepts_valid_data():
     assert form.is_valid()
 
 
-def test_serialize_international_buyer_forms():
+def test_lead_generation_form_required():
+    form = forms.LeadGenerationForm()
+
+    assert form.is_valid() is False
+    assert form.fields['full_name'].required is True
+    assert form.fields['email_address'].required is True
+    assert form.fields['comment'].required is True
+    assert form.fields['company_name'].required is True
+    assert form.fields['country'].required is True
+    assert form.fields['terms'].required is True
+
+
+def test_lead_generation_form_accepts_valid_data():
+    form = forms.LeadGenerationForm(data={
+        'full_name': 'Jim Example',
+        'email_address': 'jim@example.com',
+        'comment': 'Hello',
+        'company_name': 'Deutsche Bank',
+        'country': 'Germany',
+        'terms': True
+    })
+    assert form.is_valid()
+
+
+def test_serialize_anonymous_subscriber_forms():
     data = {
         'full_name': 'Jim Example',
         'email_address': 'jim@example.com',
         'sector': 'AEROSPACE',
         'company_name': 'Example corp',
         'country': 'UK',
-        'comment': 'sup, bro',
     }
     expected = {
         'name': 'Jim Example',
@@ -47,6 +69,6 @@ def test_serialize_international_buyer_forms():
         'company_name': 'Example corp',
         'country': 'UK',
     }
-    actual = forms.serialize_international_buyer_forms(data)
+    actual = forms.serialize_anonymous_subscriber_forms(data)
 
     assert actual == expected
