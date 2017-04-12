@@ -8,7 +8,7 @@ test_requirements:
 	pip install -r requirements_test.txt
 
 API_CLIENT_ENV_VARS := API_CLIENT_KEY=debug API_CLIENT_BASE_URL=http://debug
-FLAKE8 := flake8 . --exclude=migrations
+FLAKE8 := flake8 . --exclude=migrations,.venv
 PYTEST := pytest . --cov=. --cov-config=.coveragerc --capture=no $(pytest_args)
 COLLECT_STATIC := python manage.py collectstatic --noinput
 
