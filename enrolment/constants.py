@@ -275,7 +275,7 @@ ADVANCED_MANUFACTURING_CONTEXT = {
 
 
 GLOBAL_SPORTS_INFRASTRUCTURE_CONTEXT = {
-    'sector_value': None,  # not one of the 36 supported industries
+    'sector_value': 'GLOBAL_SPORTS_INFRASTRUCTURE',
     'case_study': {
         'image_url': (
             '/static/images/'
