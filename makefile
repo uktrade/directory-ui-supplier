@@ -7,7 +7,7 @@ clean:
 test_requirements:
 	pip install -r requirements_test.txt
 
-API_CLIENT_ENV_VARS := API_CLIENT_KEY=debug API_CLIENT_BASE_URL=http://debug
+API_CLIENT_ENV_VARS := API_SIGNATURE_SECRET=debug API_CLIENT_BASE_URL=http://debug
 FLAKE8 := flake8 . --exclude=migrations,.venv
 PYTEST := pytest . --cov=. --cov-config=.coveragerc --capture=no $(pytest_args)
 COLLECT_STATIC := python manage.py collectstatic --noinput
@@ -32,7 +32,7 @@ docker_run:
 
 DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_API_CLIENT_CLASS_NAME=unit-test; \
-	export DIRECTORY_UI_SUPPLIER_API_CLIENT_KEY=debug; \
+	export DIRECTORY_UI_SUPPLIER_API_SIGNATURE_SECRET=debug; \
 	export DIRECTORY_UI_SUPPLIER_API_CLIENT_BASE_URL=http://api.trade.great.dev:8000; \
 	export DIRECTORY_UI_SUPPLIER_PORT=8005; \
 	export DIRECTORY_UI_SUPPLIER_SECRET_KEY=debug; \
@@ -86,7 +86,7 @@ DEBUG_SET_ENV_VARS := \
 	export PORT=8005; \
 	export SECRET_KEY=debug; \
 	export DEBUG=true ;\
-	export API_CLIENT_KEY=debug; \
+	export API_SIGNATURE_SECRET=debug; \
 	export API_CLIENT_BASE_URL=http://api.trade.great.dev:8000; \
 	export SECTOR_LINKS_JSON=\{\"CREATIVE_AND_MEDIA\":\{\"company_one\":\"https:\/\/www.example.com\/creative-company-1\",\"company_two\":\"http:\/\/www.example.com\/creative-company-2\",\"case_study\":\"http:\/\/www.example.com\/creative-case-study\"\},\"HEALTHCARE_AND_MEDICAL\":\{\"company_one\":\"http:\/\/www.example.com\/health-company-1\",\"company_two\":\"http:\/\/www.example.com\/health-company-1\",\"case_study\":\"http:\/\/www.example.com\/health-case-study\"\},\"FOOD_AND_DRINK\":\{\"company_one\":\"http:\/\/www.example.com\/food-company-1\",\"company_two\":\"http:\/\/www.example.com\/food-company-2\",\"case_study\":\"http:\/\/www.example.com\/food-case-study\"\},\"SOFTWARE_AND_COMPUTER_SERVICES\":\{\"company_one\":\"http:\/\/www.example.com\/tech-company-1\",\"company_two\":\"http:\/\/www.example.com\/tech-company-2\",\"case_study\":\"http:\/\/www.example.com\/tech-case-study\"\}\}; \
 	export FEATURE_CONTACT_COMPANY_FORM_ENABLED=true; \
