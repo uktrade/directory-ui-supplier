@@ -214,7 +214,7 @@ else:
 
 # directory-api
 API_CLIENT_BASE_URL = os.environ["API_CLIENT_BASE_URL"]
-API_CLIENT_KEY = os.environ["API_CLIENT_KEY"]
+API_SIGNATURE_SECRET = os.environ["API_SIGNATURE_SECRET"]
 
 ANALYTICS_ID = os.getenv("ANALYTICS_ID")
 
