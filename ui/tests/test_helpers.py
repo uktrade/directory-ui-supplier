@@ -27,6 +27,11 @@ def test_parse_sector_links_valid():
             'company_one': 'http://www.example.com',
             'company_two': 'http://www.example.com',
             'case_study': 'http://www.example.com'
+        },
+        'GLOBAL_SPORTS_INFRASTRUCTURE': {
+            'company_one': 'http://www.example.com',
+            'company_two': 'http://www.example.com',
+            'case_study': 'http://www.example.com'
         }
     }
 

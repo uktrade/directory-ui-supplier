@@ -12,6 +12,7 @@ def parse_sector_links(raw):
         'HEALTHCARE_AND_MEDICAL',
         'FOOD_AND_DRINK',
         'SOFTWARE_AND_COMPUTER_SERVICES',
+        'GLOBAL_SPORTS_INFRASTRUCTURE',
     ]
     sector_schema = {
         'type': 'object',

@@ -275,32 +275,54 @@ ADVANCED_MANUFACTURING_CONTEXT = {
 
 
 GLOBAL_SPORTS_INFRASTRUCTURE_CONTEXT = {
-    'sector_value': None,  # not one of the 36 supported industries
+    'sector_value': 'GLOBAL_SPORTS_INFRASTRUCTURE',
     'case_study': {
-        'image_url': '',
-        'image_caption': '',
-        'title': '',
-        'synopsis': '',
-        'url': '',
+        'image_url': (
+            '/static/images/'
+            'Queen-Elizabeth-Olympic-Park---Movement-Strategies.jpg'
+        ),
+        'image_caption': 'Queen Elizabeth Olympic Park, London',
+        'title': 'London 2012 Olympic and Paralympic Games',
+        'synopsis': (
+            'Movement Strategies leads design standards for '
+            'major events such as the Olympic Games, helping plan '
+            'crowd movement and safety, and driving increased '
+            'ticket sales.'
+        ),
+        'url': links['GLOBAL_SPORTS_INFRASTRUCTURE']['case_study'],
         'testimonial': '',
         'testimonial_name': '',
         'testimonial_company': '',
-        'company_name': '',
-        'sectors': [],
-        'keywords': '',
+        'company_name': 'Movement Strategies',
+        'sectors': [
+            {
+                'label': 'Global sports infrastructure',
+                'value': 'Global_sports_infrastructure',
+            },
+        ],
+        'keywords': 'Crowd safety, Pedestrian flow, Movement analytics',
     },
     'companies': [
         {
-            'image_url': '',
-            'name': '',
-            'description': '',
-            'url': '',
+            'image_url': '/static/images/Movement-Strategies---Baku.jpg',
+            'name': 'Movement Strategies',
+            'description': (
+                'Movement Strategies is the largest and most '
+                'experienced independent, specialist people movement '
+                'consultancy in the world.'
+            ),
+            'url': links['GLOBAL_SPORTS_INFRASTRUCTURE']['company_one'],
         },
         {
-            'image_url': '',
-            'name': '',
-            'description': '',
-            'url': '',
+            'image_url': '/static/images/Fortress---The-London-Stadium.jpg',
+            'name': 'Fortress GB',
+            'description': (
+                'Fortress GB proved its reputation as the market-leading '
+                'e-ticketing provider by being selected to '
+                'install and manage the very latest in turnstile '
+                'technology at West Ham’s new home at the London Stadium.'
+            ),
+            'url': links['GLOBAL_SPORTS_INFRASTRUCTURE']['company_two'],
         },
     ]
 }
