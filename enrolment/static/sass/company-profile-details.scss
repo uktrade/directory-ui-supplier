@@ -482,6 +482,19 @@
   }
 }
 
+/* Mobile */
+@media (max-width: 640px) {
+  .company-logo .logo-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .company-profile-details-body .company-logo:first-child {
+    margin-left: 0;
+  }
+}
+
+
 /* IE targeted hack because 10+ no longer supports Conditional Comments */
 @media screen\0 {
   
