@@ -9,6 +9,9 @@ def feature_flags(request):
             'FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED': (
                 settings.FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED
             ),
+            'FEATURE_COMPANY_SEARCH_VIEW_ENABLED': (
+                settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED,
+            )
         }
     }
 

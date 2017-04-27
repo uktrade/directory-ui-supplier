@@ -9,6 +9,13 @@ from company import validators, widgets
 SELECT_LABEL = 'Please select your industry'
 
 
+class CompanySearchForm(forms.Form):
+    term = forms.CharField(
+        label='term:',
+        max_length=255,
+    )
+
+
 class PublicProfileSearchForm(forms.Form):
     sectors = forms.ChoiceField(
         label='Show UK companies in:',

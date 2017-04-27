@@ -18,21 +18,26 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <img class="dit-iigb-logo" alt="Brand" src="{% static 'images/welcome-to-great-logo.png' %}"> 
+      <img class="dit-iigb-logo" alt="Brand" src="{% static 'images/welcome-to-great-logo.png' %}">
       <div class="nav-collapse collapse pull-right">
         <ul class="nav navbar-nav dit-main-nav-list pull-right">
             <li {% if active_view_name == 'index'%}class="active"{% endif %}>
                 <a style="border-left: 1px solid #D8D8D8;" href="{% url 'index' %}">{% trans "Home" %}</a>
             </li>
             <li {% if active_view_name == 'public-company-profiles-list'%}class="active"{% endif %}>
+
+              {% if features.FEATURE_COMPANY_SEARCH_VIEW_ENABLED %}
+                <a href="{% url 'company-search' %}">{% trans "Find a Supplier" %}</a>
+              {% else %}
                 <a href="{% url 'public-company-profiles-list' %}">{% trans "Find a Supplier" %}</a>
+              {% endif %}
             </li>
             <li  {% if active_view_name == 'international-sector-list'%}class="active"{% endif %}>
                 <a href="{% url 'international-sector-list' %}">{% trans "Industries" %}</a>
             </li>
         </ul>
       </div>
- 
+
     </div>
   </div>
 </div>
