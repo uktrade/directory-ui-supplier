@@ -66,19 +66,6 @@ def test_templates_render_successfully():
         render_to_string(template, default_context)
 
 
-def test_footer_contact_us(rf):
-    context = {
-        'request': rf.get('/creative')
-    }
-    html = render_to_string('footer.html', context)
-    href = (
-        'href="mailto:help@digital.trade.gov.uk?subject=General'
-        '%20enquiry%20for%20/creative'
-    )
-
-    assert href in html
-
-
 def test_social_share_all_populated():
     context = {
         'social': {
