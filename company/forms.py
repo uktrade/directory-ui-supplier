@@ -14,6 +14,14 @@ class CompanySearchForm(forms.Form):
         label='term:',
         max_length=255,
     )
+    page = forms.IntegerField(
+        required=False,
+        widget=forms.HiddenInput,
+        initial=1,
+    )
+
+    def clean_page(self):
+        return self.cleaned_data['page'] or self.fields['page'].initial
 
 
 class PublicProfileSearchForm(forms.Form):
