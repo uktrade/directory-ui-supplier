@@ -5,6 +5,7 @@ import requests
 from django.conf import settings
 from django.core.paginator import Paginator
 from django.core.urlresolvers import reverse
+from django.http import Http404
 from django.shortcuts import redirect
 from django.template.response import TemplateResponse
 from django.utils.functional import cached_property
@@ -32,7 +33,7 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
 
     def dispatch(self, *args, **kwargs):
         if not settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED:
-            return Http404()
+            raise Http404()
         return super().dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
@@ -45,8 +46,7 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
         response = api_client.company.search(
             term=form.cleaned_data['term']
         )
-        if not response.ok:
-            response.raise_for_status()
+        response.raise_for_status()
         formatted = helpers.get_results_from_search_response(response)
         return formatted['results']
 
@@ -81,8 +81,7 @@ class PublishedProfileListView(SubmitFormOnGetMixin, FormView):
             sectors=form.cleaned_data['sectors'],
             page=form.cleaned_data['page']
         )
-        if not response.ok:
-            response.raise_for_status()
+        response.raise_for_status()
         formatted = helpers.get_company_list_from_response(response)
         return formatted['results'], formatted['count']
 

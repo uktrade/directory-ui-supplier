@@ -103,3 +103,4 @@ node_modules/
 
 # Generated files
 ui/staticfiles
+*.css.map
