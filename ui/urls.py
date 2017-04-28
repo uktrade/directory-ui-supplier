@@ -5,6 +5,7 @@ from django.views.generic import TemplateView
 from company.views import (
     CaseStudyDetailView,
     ContactCompanyView,
+    CompanySearchView,
     PublishedProfileDetailView,
     PublishedProfileListView,
 )
@@ -52,6 +53,11 @@ urlpatterns = [
         r'^suppliers$',
         PublishedProfileListView.as_view(),
         name='public-company-profiles-list',
+    ),
+    url(
+        r'^search$',
+        CompanySearchView.as_view(),
+        name='company-search',
     ),
     url(
         r'^suppliers/(?P<company_number>.+)/contact$',

@@ -20,6 +20,7 @@ input_output_map="\
 	enrolment/static/sass/landing-page.scss:enrolment/static/landing-page.css \
 	enrolment/static/sass/legal.scss:enrolment/static/legal.css \
 	enrolment/static/sass/ie8fixes.scss:enrolment/static/ie8fixes.css \
+	enrolment/static/sass/company-search_results.scss:enrolment/static/company-search_results.css \
 "
 
 prod_command="sass --style compressed"

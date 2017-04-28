@@ -2,8 +2,10 @@ import http
 
 import requests
 
+from django.conf import settings
 from django.core.paginator import Paginator
 from django.core.urlresolvers import reverse
+from django.http import Http404
 from django.shortcuts import redirect
 from django.template.response import TemplateResponse
 from django.utils.functional import cached_property
@@ -23,6 +25,35 @@ class SubmitFormOnGetMixin:
 
     def get(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
+
+
+class CompanySearchView(SubmitFormOnGetMixin, FormView):
+    template_name = 'company-search-results-list.html'
+    form_class = forms.CompanySearchForm
+
+    def dispatch(self, *args, **kwargs):
+        if not settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED:
+            raise Http404()
+        return super().dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(
+            active_view_name='public-company-profiles-list',
+            **kwargs,
+        )
+
+    def get_results(self, form):
+        response = api_client.company.search(
+            term=form.cleaned_data['term']
+        )
+        response.raise_for_status()
+        formatted = helpers.get_results_from_search_response(response)
+        return formatted['results']
+
+    def form_valid(self, form):
+        results = self.get_results(form)
+        context = self.get_context_data(results=results)
+        return TemplateResponse(self.request, self.template_name, context)
 
 
 class PublishedProfileListView(SubmitFormOnGetMixin, FormView):
@@ -50,8 +81,7 @@ class PublishedProfileListView(SubmitFormOnGetMixin, FormView):
             sectors=form.cleaned_data['sectors'],
             page=form.cleaned_data['page']
         )
-        if not response.ok:
-            response.raise_for_status()
+        response.raise_for_status()
         formatted = helpers.get_company_list_from_response(response)
         return formatted['results'], formatted['count']
 
