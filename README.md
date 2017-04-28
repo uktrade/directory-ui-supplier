@@ -109,3 +109,15 @@ Therefore to make cookie sharing work in development we need the apps to ne runn
 # Translations
 
 Follow the <a href="https://docs.djangoproject.com/en/1.9/topics/i18n/translation/#localization-how-to-create-language-files" target="_blank">Django documentation</a>
+
+To create or update `.po` files:
+
+```bash
+make debug_manage cmd="makemessages"
+```
+
+To compile `.mo` files (no need to add these to source code, as this is done automatically during build):
+
+```bash
+make debug_manage cmd="compilemessages"
+```

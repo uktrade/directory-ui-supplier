@@ -142,7 +142,6 @@ msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
 msgstr ""
-""
 
 #: enrolment/templates/landing-page-international.html:32
 msgid ""

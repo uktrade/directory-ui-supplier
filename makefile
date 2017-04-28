@@ -7,13 +7,13 @@ clean:
 test_requirements:
 	pip install -r requirements_test.txt
 
-API_CLIENT_ENV_VARS := API_SIGNATURE_SECRET=debug API_CLIENT_BASE_URL=http://debug
 FLAKE8 := flake8 . --exclude=migrations,.venv
 PYTEST := pytest . --cov=. --cov-config=.coveragerc --capture=no $(pytest_args)
 COLLECT_STATIC := python manage.py collectstatic --noinput
+COMPILE_TRANSLATIONS := python manage.py compilemessages
 
 test:
-	$(COLLECT_STATIC) && $(FLAKE8) && $(API_CLIENT_ENV_VARS) $(PYTEST)
+	$(COLLECT_STATIC) && $(COMPILE_TRANSLATIONS) && $(FLAKE8) && $(PYTEST)
 
 DJANGO_WEBSERVER := \
 	python manage.py collectstatic --noinput && \
