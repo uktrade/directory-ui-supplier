@@ -111,7 +111,7 @@ debug_pytest:
 	$(DEBUG_SET_ENV_VARS) && $(COLLECT_STATIC) && $(PYTEST)
 
 debug_test:
-	$(DEBUG_SET_ENV_VARS) && $(COLLECT_STATIC) && $(FLAKE8) && $(PYTEST) --cov-report=html
+	$(DEBUG_SET_ENV_VARS) && $(COLLECT_STATIC) && $(COMPILE_TRANSLATIONS) && $(FLAKE8) && $(PYTEST) --cov-report=html
 
 debug_manage:
 	$(DEBUG_SET_ENV_VARS) && ./manage.py $(cmd)
