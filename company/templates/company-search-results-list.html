@@ -6,24 +6,16 @@
 {% endblock %}
 {% block hero_title %}Browse UK company trade profiles{% endblock %}
 {% block sub_header %}
-	<h1 class="screen-reader-only">Find a Supplier</h1>
-	<div class="row-fluid public-company-profiles-search-form">
+	<section  id="fassearch-intro">
 		<div class="container">
-			<h2>Browse UK company profiles</h2>
-			<div class="span12">
-				<form action="" method="get">
-					<div class="span12">
-						<div class="input-field-container">
-							<label for="{{ form.term.id_for_label }}">{{ form.term.label }}</label>
-							{{ form.term }}
-							<input class="register-btn button" type="submit" value="Find company">
-						</div>
-					</div>
-				</form>
-			</div>
-			<div class="clearfix"></div>
+			<h1>Find UK Suppliers</h1>
+			<form action="" method="get" class="supplier-search-form">
+				<label for="{{ form.term.id_for_label }}">{{ form.term.label }}</label>
+				{{ form.term }}
+				<input class="button button-primary" type="submit" value="Search">
+			</form>
 		</div>
-	</div>
+	</section>
 {% endblock %}
 {% block content %}
 	<div class="clearfix"></div>
