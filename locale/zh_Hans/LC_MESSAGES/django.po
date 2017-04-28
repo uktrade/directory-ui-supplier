@@ -142,8 +142,7 @@ msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
 msgstr ""
-"英国公司与全球企业和政府合作，一起打造出一个全新的生活与工作环境，能够提供优"
-"质的服务和最佳的体验。"
+""
 
 #: enrolment/templates/landing-page-international.html:32
 msgid ""
@@ -151,8 +150,8 @@ msgid ""
 "new living and working environments, run high quality services and deliver "
 "the best experiences."
 msgstr ""
-"英国公司与全世界的国际企业和政府都建立了合作关系，与他们一起协同创造出了一个"
-"美好的新环境，能够提供高品质服务以及无与伦比的商业体验。"
+"英国公司与全球企业和政府合作，共同打造出一个全新的商业环境"
+"能够提供优质服务和卓越体验。"
 
 #: enrolment/templates/landing-page-international.html:35
 msgid ""
@@ -193,7 +192,7 @@ msgstr "英国的先进技术"
 msgid ""
 "Check out the latest cutting-edge technologies that the UK is bringing to "
 "the world."
-msgstr "查看英国带给世界的最新尖端技术创新。"
+msgstr "察看英国带给世界的尖端创新技术。"
 
 #: enrolment/templates/landing-page-international.html:94
 msgid "Find out more about UK technology"
