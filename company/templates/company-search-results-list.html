@@ -33,7 +33,7 @@
 				<div class="span8">
 					{% if results %}
 						<span>Displaying {{ results|length }} {{results|length|pluralize:'result,results'}}</span>
-					{% elif form %}
+					{% else %}
 						<span>No results found</span>
 					{% endif %}
 				</div>

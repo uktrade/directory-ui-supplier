@@ -60,7 +60,7 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
     def get_results_and_count(self, form):
         response = api_client.company.search(
             term=form.cleaned_data['term'],
-            page=form.cleaned_data['page']-1,  # ElasticSearch is 0-indexed
+            page=form.cleaned_data['page'],
             size=self.page_size,
         )
         response.raise_for_status()
@@ -71,7 +71,7 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
     def handle_empty_page(form):
         url = '{url}?term={term}'.format(
             url=reverse('company-search'),
-            sector=form.cleaned_data['term']
+            term=form.cleaned_data['term']
         )
         return redirect(url)
 

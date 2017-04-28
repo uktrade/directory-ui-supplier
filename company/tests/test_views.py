@@ -602,20 +602,6 @@ def test_company_search_pagination_count(
     response = client.get(reverse('company-search'), {'term': '123'})
 
     assert response.status_code == 200
-    assert response.context_data['results'] == expected_value
-
-
-@patch('company.views.CompanySearchView.get_results')
-def test_company_search_not_submit_without_params(
-    mock_get_results, settings, client
-):
-    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
-    results = [{'number': '1234567', 'slug': 'thing'}]
-    mock_get_results_and_count.return_value = (results, 20)
-
-    response = client.get(reverse('company-search'), {'term': '123'})
-
-    assert response.status_code == 200
     assert response.context_data['pagination'].paginator.count == 20
 
 
@@ -630,21 +616,21 @@ def test_company_search_pagination_param(
     response = client.get(url, {'term': '123', 'page': 1})
 
     assert response.status_code == 200
-    mock_search.assert_called_once_with(term='123', page=0)
+    mock_search.assert_called_once_with(page=1, size=10, term='123')
 
 
-# @patch('api_client.api_client.company.search')
-# def test_company_search_pagination_empty_page(
-#     mock_search, settings, client, search_results, api_response_search_200
-# ):
-#     settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
-#     mock_search.return_value = api_response_search_200
+@patch('api_client.api_client.company.search')
+def test_company_search_pagination_empty_page(
+    mock_search, settings, client, search_results, api_response_search_200
+):
+    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
+    mock_search.return_value = api_response_search_200
 
-#     url = reverse('company-search')
-#     response = client.get(url, {'term': '123', 'page': 100})
+    url = reverse('company-search')
+    response = client.get(url, {'term': '123', 'page': 100})
 
-#     assert response.status_code == 200
-#     mock_search.assert_called_once_with(term='123', page=1)
+    assert response.status_code == 302
+    assert response.get('Location') == '/search?term=123'
 
 
 @patch('company.views.CompanySearchView.get_results_and_count')
