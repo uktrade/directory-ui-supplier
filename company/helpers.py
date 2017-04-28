@@ -68,6 +68,14 @@ def get_company_list_from_response(response):
     return parsed
 
 
+def get_results_from_search_response(response):
+    parsed = response.json()
+    results = [hit['_source'] for hit in parsed['hits']['hits']]
+    results = map(format_company_details, results)
+    parsed['results'] = list(results)
+    return parsed
+
+
 def format_company_details(details):
     date_of_creation = format_date_of_creation(details.get('date_of_creation'))
     case_studies = map(format_case_study, details['supplier_case_studies'])

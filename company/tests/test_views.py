@@ -53,6 +53,29 @@ def valid_contact_company_data(captcha_stub):
     }
 
 
+@pytest.fixture
+def search_results():
+    return {
+        'hits': {
+            'total': 1,
+            'hits': [
+                {
+                    '_source': {
+                        'number': '1234567',
+                    }
+
+                }
+            ]
+        }
+    }
+
+
+@pytest.fixture
+def api_response_search_200(api_response_200, search_results):
+    api_response_200.json = lambda: search_results
+    return api_response_200
+
+
 def test_public_profile_different_slug_redirected(
     client, retrieve_profile_data
 ):
@@ -538,3 +561,81 @@ def test_contact_company_exposes_context(
     assert response.status_code == http.client.OK
     assert response.template_name == [views.ContactCompanyView.template_name]
     assert response.context_data['company'] == expected
+
+
+def test_company_search_404_feature_flag_disabled(client, settings):
+    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = False
+
+    response = client.get(reverse('company-search'))
+
+    assert response.status_code == 404
+
+
+def test_company_search_200_feature_flag_enabled(client, settings):
+    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
+
+    response = client.get(reverse('company-search'))
+
+    assert response.status_code == 200
+
+
+@patch('company.views.CompanySearchView.get_results')
+def test_company_search_submit_form_on_get(
+    mock_get_results, settings, client, search_results
+):
+    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
+
+    mock_get_results.return_value = expected_value = [
+        {'number': '1234567', 'slug': 'thing'}
+    ]
+
+    response = client.get(reverse('company-search'), {'term': '123'})
+
+    assert response.status_code == 200
+    assert response.context_data['results'] == expected_value
+
+
+@patch('company.views.CompanySearchView.get_results')
+def test_company_search_not_submit_without_params(
+    mock_get_results, settings, client
+):
+    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
+
+    response = client.get(reverse('company-search'))
+
+    assert response.status_code == 200
+    mock_get_results.assert_not_called()
+
+
+def test_company_search_sets_active_view_name(settings, client):
+    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
+    expected_value = 'public-company-profiles-list'
+
+    response = client.get(reverse('company-search'))
+
+    assert response.status_code == 200
+    assert response.context_data['active_view_name'] == expected_value
+
+
+@patch('api_client.api_client.company.search')
+def test_company_search_api_call_error(mock_search, api_response_400, client):
+    mock_search.return_value = api_response_400
+
+    with pytest.raises(requests.exceptions.HTTPError):
+        client.get(reverse('company-search'), {'term': '123'})
+
+
+@patch('api_client.api_client.company.search')
+@patch('company.helpers.get_results_from_search_response')
+def test_company_search_api_success(
+    mock_get_results_from_search_response, mock_search,
+    api_response_search_200, client
+):
+    mock_search.return_value = api_response_search_200
+    mock_get_results_from_search_response.return_value = {'results': []}
+    response = client.get(reverse('company-search'), {'term': '123'})
+
+    assert response.status_code == 200
+    mock_get_results_from_search_response.assert_called_once_with(
+        api_response_search_200
+    )

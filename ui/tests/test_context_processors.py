@@ -13,14 +13,15 @@ def test_feature_flags_installed(settings):
 def test_feature_returns_expected_features(rf, settings):
 
     settings.FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED = True
-
+    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = False
     request = rf.get('/')
     actual = context_processors.feature_flags(request)
 
     assert actual == {
         'features': {
             'FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED': True,
-        }
+            'FEATURE_COMPANY_SEARCH_VIEW_ENABLED': False,
+        },
     }
 
 

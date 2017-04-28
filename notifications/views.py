@@ -1,5 +1,3 @@
-from django.conf import settings
-from django.http import Http404
 from django.template.response import TemplateResponse
 from django.views.generic.edit import FormView
 
@@ -20,11 +18,6 @@ class AnonymousUnsubscribeView(FormView):
                 'email': self.request.GET['email']
             }
         return {}
-
-    def dispatch(self, *args, **kwargs):
-        if not settings.FEATURE_UNSUBSCRIBE_VIEW_ENABLED:
-            raise Http404()
-        return super().dispatch(*args, **kwargs)
 
     def get(self, *args, **kwargs):
         if not self.request.GET.get('email'):

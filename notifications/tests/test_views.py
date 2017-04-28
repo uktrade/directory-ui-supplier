@@ -23,14 +23,6 @@ def api_response_400():
     return response
 
 
-def test_unsubscribe_feature_flag_off(settings, client):
-    settings.FEATURE_UNSUBSCRIBE_VIEW_ENABLED = False
-
-    response = client.get(reverse('anonymous-unsubscribe'))
-
-    assert response.status_code == http.client.NOT_FOUND
-
-
 def test_unsubscribe_reuqired_params(client):
     response = client.get(reverse('anonymous-unsubscribe'), {'email': '123'})
 

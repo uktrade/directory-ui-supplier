@@ -123,3 +123,11 @@ def test_serialize_contact_company_form():
     actual = forms.serialize_contact_company_form(data, '01234567')
 
     assert actual == expected
+
+
+def test_search_form():
+    form = forms.CompanySearchForm(data={'term': '123'})
+
+    assert form.fields['term'].required is True
+    assert form.is_valid() is True
+    assert form.cleaned_data['term'] == '123'
