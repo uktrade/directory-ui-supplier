@@ -54,15 +54,13 @@ def valid_contact_company_data(captcha_stub):
 
 
 @pytest.fixture
-def search_results():
+def search_results(retrieve_profile_data):
     return {
         'hits': {
             'total': 1,
             'hits': [
                 {
-                    '_source': {
-                        'number': '1234567',
-                    }
+                    '_source': retrieve_profile_data
 
                 }
             ]
@@ -579,32 +577,72 @@ def test_company_search_200_feature_flag_enabled(client, settings):
     assert response.status_code == 200
 
 
-@patch('company.views.CompanySearchView.get_results')
+@patch('company.views.CompanySearchView.get_results_and_count')
 def test_company_search_submit_form_on_get(
-    mock_get_results, settings, client, search_results
+    mock_get_results_and_count, settings, client, search_results
 ):
     settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
-
-    mock_get_results.return_value = expected_value = [
-        {'number': '1234567', 'slug': 'thing'}
-    ]
+    results = [{'number': '1234567', 'slug': 'thing'}]
+    mock_get_results_and_count.return_value = (results, 20)
 
     response = client.get(reverse('company-search'), {'term': '123'})
 
     assert response.status_code == 200
-    assert response.context_data['results'] == expected_value
+    assert response.context_data['results'] == results
 
 
-@patch('company.views.CompanySearchView.get_results')
+@patch('company.views.CompanySearchView.get_results_and_count')
+def test_company_search_pagination_count(
+    mock_get_results_and_count, settings, client, search_results
+):
+    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
+    results = [{'number': '1234567', 'slug': 'thing'}]
+    mock_get_results_and_count.return_value = (results, 20)
+
+    response = client.get(reverse('company-search'), {'term': '123'})
+
+    assert response.status_code == 200
+    assert response.context_data['pagination'].paginator.count == 20
+
+
+@patch('api_client.api_client.company.search')
+def test_company_search_pagination_param(
+    mock_search, settings, client, search_results, api_response_search_200
+):
+    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
+    mock_search.return_value = api_response_search_200
+
+    url = reverse('company-search')
+    response = client.get(url, {'term': '123', 'page': 1})
+
+    assert response.status_code == 200
+    mock_search.assert_called_once_with(page=1, size=10, term='123')
+
+
+@patch('api_client.api_client.company.search')
+def test_company_search_pagination_empty_page(
+    mock_search, settings, client, search_results, api_response_search_200
+):
+    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
+    mock_search.return_value = api_response_search_200
+
+    url = reverse('company-search')
+    response = client.get(url, {'term': '123', 'page': 100})
+
+    assert response.status_code == 302
+    assert response.get('Location') == '/search?term=123'
+
+
+@patch('company.views.CompanySearchView.get_results_and_count')
 def test_company_search_not_submit_without_params(
-    mock_get_results, settings, client
+    mock_get_results_and_count, settings, client
 ):
     settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
 
     response = client.get(reverse('company-search'))
 
     assert response.status_code == 200
-    mock_get_results.assert_not_called()
+    mock_get_results_and_count.assert_not_called()
 
 
 def test_company_search_sets_active_view_name(settings, client):
@@ -632,7 +670,10 @@ def test_company_search_api_success(
     api_response_search_200, client
 ):
     mock_search.return_value = api_response_search_200
-    mock_get_results_from_search_response.return_value = {'results': []}
+    mock_get_results_from_search_response.return_value = {
+        'results': [],
+        'hits': {'total': 2}
+    }
     response = client.get(reverse('company-search'), {'term': '123'})
 
     assert response.status_code == 200

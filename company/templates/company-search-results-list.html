@@ -38,7 +38,7 @@
 					{% endif %}
 				</div>
 				<div class="span4" style="text-align: right;">
-					{% include 'company-list-paginator.html' %}
+					{% include 'company-search-results-paginator.html' %}
 				</div>
 			</div>
 			{% for company in results %}
@@ -93,7 +93,15 @@
 				</div>
 			</div>
 			{% endfor %}
-
+			{% if results %}
+				<div class="row-fluid company-profile-details-body-toolbar company-profile-details-body-toolbar-bottom">
+					<div class="offset8 span4" style="text-align: right;">
+						{% include 'company-search-results-paginator.html' %}
+					</div>
+				</div>
+			{% else %}
+				<br>
+			{% endif %}
 		</div>
 		{% include 'anonymous-subscribe-form.html' with form=subscribe.form %}
 	</div>

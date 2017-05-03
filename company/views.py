@@ -3,7 +3,7 @@ import http
 import requests
 
 from django.conf import settings
-from django.core.paginator import Paginator
+from django.core.paginator import EmptyPage, Paginator
 from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.shortcuts import redirect
@@ -30,6 +30,7 @@ class SubmitFormOnGetMixin:
 class CompanySearchView(SubmitFormOnGetMixin, FormView):
     template_name = 'company-search-results-list.html'
     form_class = forms.CompanySearchForm
+    page_size = 10
 
     def dispatch(self, *args, **kwargs):
         if not settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED:
@@ -42,18 +43,37 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
             **kwargs,
         )
 
-    def get_results(self, form):
+    def form_valid(self, form):
+        results, count = self.get_results_and_count(form)
+        try:
+            paginator = Paginator(range(count), self.page_size)
+            pagination = paginator.page(form.cleaned_data['page'])
+        except EmptyPage:
+            return self.handle_empty_page(form)
+        else:
+            context = self.get_context_data(
+                results=results,
+                pagination=pagination,
+            )
+            return TemplateResponse(self.request, self.template_name, context)
+
+    def get_results_and_count(self, form):
         response = api_client.company.search(
-            term=form.cleaned_data['term']
+            term=form.cleaned_data['term'],
+            page=form.cleaned_data['page'],
+            size=self.page_size,
         )
         response.raise_for_status()
         formatted = helpers.get_results_from_search_response(response)
-        return formatted['results']
+        return formatted['results'], formatted['hits']['total']
 
-    def form_valid(self, form):
-        results = self.get_results(form)
-        context = self.get_context_data(results=results)
-        return TemplateResponse(self.request, self.template_name, context)
+    @staticmethod
+    def handle_empty_page(form):
+        url = '{url}?term={term}'.format(
+            url=reverse('company-search'),
+            term=form.cleaned_data['term']
+        )
+        return redirect(url)
 
 
 class PublishedProfileListView(SubmitFormOnGetMixin, FormView):
