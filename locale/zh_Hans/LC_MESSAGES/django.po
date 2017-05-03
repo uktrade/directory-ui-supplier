@@ -141,7 +141,7 @@ msgstr "英国是盛产创新、优质产品和服务的国度。"
 msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
-msgstr ""
+msgstr "&nbsp;"
 
 #: enrolment/templates/landing-page-international.html:32
 msgid ""
