@@ -18,6 +18,12 @@ def format_date_of_creation(raw_date_of_creation):
     return datetime.datetime.strptime(raw_date_of_creation, '%Y-%m-%d')
 
 
+def format_date_modified(raw_date):
+    if not raw_date:
+        return raw_date
+    return datetime.datetime.strptime(raw_date, '%Y-%m-%dT%H:%M:%S.%fZ')
+
+
 def get_employees_label(employees_value):
     if not employees_value:
         return employees_value
@@ -78,36 +84,26 @@ def get_results_from_search_response(response):
 
 def format_company_details(details):
     date_of_creation = format_date_of_creation(details.get('date_of_creation'))
-    case_studies = map(format_case_study, details['supplier_case_studies'])
-
+    case_studies = map(
+        format_case_study, details.get('supplier_case_studies', [])
+    )
     return {
         'website': details['website'],
         'description': details['description'],
         'summary': details['summary'],
         'number': details['number'],
         'date_of_creation': date_of_creation,
-        'sectors': pair_sector_values_with_label(details['sectors']),
-        'logo': details['logo'],
+        'sectors': pair_sector_values_with_label(details.get('sectors', [])),
+        'logo': details.get('logo'),
         'name': details['name'],
         'keywords': details['keywords'],
         'employees': get_employees_label(details['employees']),
         'supplier_case_studies': list(case_studies),
-        'modified': datetime.datetime.strptime(
-            details['modified'], '%Y-%m-%dT%H:%M:%S.%fZ'),
-        'verified_with_code': details['verified_with_code'],
-        'postal_full_name': details['postal_full_name'],
-        'address_line_1': details['address_line_1'],
-        'address_line_2': details['address_line_2'],
-        'locality': details['locality'],
-        'country': details['country'],
-        'postal_code': details['postal_code'],
-        'po_box': details['po_box'],
-        'mobile_number': details['mobile_number'],
+        'modified': format_date_modified(details['modified']),
         'twitter_url': details['twitter_url'],
         'facebook_url': details['facebook_url'],
         'linkedin_url': details['linkedin_url'],
-        'email_address': details['email_address'],
-        'email_full_name': details['email_full_name'],
+        'email_address': details.get('email_address'),
         'slug': details['slug'],
         'has_social_links': bool(
             details['twitter_url'] or
