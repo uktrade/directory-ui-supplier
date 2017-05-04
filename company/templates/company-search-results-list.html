@@ -21,6 +21,7 @@
 	<div class="clearfix"></div>
 	<div class="container">
 		<div class="company-profile-details-body">
+			{% if form.is_bound %}
 			<div class="row-fluid company-profile-details-body-toolbar">
 				<div class="span8">
 					{% if results %}
@@ -33,6 +34,7 @@
 					{% include 'company-search-results-paginator.html' %}
 				</div>
 			</div>
+			{% endif %}
 			{% for company in results %}
 			<div class="public-company-profiles-result-item">
 				<div class="row-fluid ">
