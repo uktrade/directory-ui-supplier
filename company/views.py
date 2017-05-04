@@ -54,6 +54,7 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
             context = self.get_context_data(
                 results=results,
                 pagination=pagination,
+                form=form,
             )
             return TemplateResponse(self.request, self.template_name, context)
 
