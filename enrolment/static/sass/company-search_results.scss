@@ -424,51 +424,6 @@
   }
 }
 
-
-.public-company-profiles-search-form {
-  background-color: #2A0348;
-  color: #ffffff;
-  padding-top: 50px;
-  padding-bottom: 20px;
-  h2 {
-    font-size: 36px;
-    font-weight: normal;
-    font-style: normal;
-    letter-spacing: -0.4px;
-    margin-bottom: 30px;
-  }
-  .span12 {
-    margin-left: 0;
-  }
-  .input-field-container {
-    margin-top: 10px;
-    margin-bottom: 0;
-    select {
-      width: 277px;
-      margin-left: 5px;
-    }
-    label {
-      display: inline-block;
-      color: white;
-      font-size: 18px
-    }
-  }
-  .btn-container {
-    margin-top: 8px;
-    margin-bottom: 0;
-  }
-  .button {
-    background: white;
-    border: 2px solid #004f95;
-    color: #004f95;
-    font-weight: bold;
-    margin-left: 10px;
-    padding: 15px;
-    text-align: center;
-    width: 162px;
-  }
-}
-
 .public-company-profiles-result-item-updated {
   font-size: 18px;
   font-weight: 300;
@@ -482,8 +437,103 @@
   }
 }
 
-/* Mobile */
+
+/* Start: Counter Bootstrap nonsense 
+  (Remove if Bootstrap is ditched) */
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  border-radius: 0;
+  line-height: 1.4em;
+  margin-bottom: 0;
+  &:focus {
+    box-shadow: none;
+    outline: 3px solid #ffbf47;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+}
+/* End: Counter Bootstrap nonsense */
+
+
+/* Desktop 
+ *****************/
+h1 {
+  color: $white;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.1em;
+  margin: 0 0 40px 0;
+}
+
+.supplier-search-form {
+  background-color: $grey-1;
+  border-radius: 3px;
+  padding: 25px;
+  margin: 25px 0;
+  
+  .button {
+    float: right;
+    font-size: 24px;
+    padding: 15px 0;
+    position: relative;
+    top: -5px;
+    width: 25%;
+  }
+  
+  input[type="text"] {
+    background-color: $white;
+    border: $grey-2 solid 1px;
+    color: $grey-2;
+    font-size: 16px;
+    height: auto;
+    padding: 12px;
+    width: 70%;
+  }
+  
+  label {
+    color: $dark-grey;
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+}
+
+#fassearch-intro {
+  background-color: $great-primary;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+
+/* Tablet 
+ *****************/
+@media (max-width: 800px) {
+  h1 {
+    font-size: 36px;
+  }
+  
+  .supplier-search-form {
+    input[type="text"] {
+      width: 100%;
+    }
+
+    .button {
+      float: none;
+      margin: 20px 0;
+      padding: 15px 12px;
+      width: 100%;
+    }
+  }
+}
+
+
+/* Mobile 
+ *****************/
 @media (max-width: 640px) {
+  h1 {
+    font-size: 30px;
+  }
+  
   .company-logo .logo-container {
     margin-left: auto;
     margin-right: auto;
@@ -491,6 +541,10 @@
 
   .company-profile-details-body .company-logo:first-child {
     margin-left: 0;
+  }
+  
+  .supplier-search-form {
+    padding: 15px;
   }
 }
 

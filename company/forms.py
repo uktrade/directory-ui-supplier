@@ -11,8 +11,11 @@ SELECT_LABEL = 'Please select your industry'
 
 class CompanySearchForm(forms.Form):
     term = forms.CharField(
-        label='term:',
+        label='Search by product, service or company keyword',
         max_length=255,
+        widget=forms.TextInput(
+            attrs={'placeholder': 'Search for UK suppliers'}
+        )
     )
     page = forms.IntegerField(
         required=False,
