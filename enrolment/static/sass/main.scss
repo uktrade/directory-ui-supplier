@@ -51,12 +51,17 @@ input[type="file"] {
   line-height: 1em;
 }
 
-p {
-  margin-bottom: 10px;
+li, ul {
+  list-style: none;
 }
 
-ul, li {
-    list-style: none;
+li:before {
+  content: "\25CF";
+  margin-right: 10px;
+}
+
+p {
+  margin-bottom: 10px;
 }
 
 .screen-reader-only { 
@@ -111,9 +116,19 @@ ul, li {
   }
 }
 
+.list-header {
+  font-weight: bold;
+}
+
 .list-inset {
   list-style-type: circle;
   margin-left: 2.5em;
+}
+
+.nav {
+  li:before {
+    display: none;
+  }
 }
 
 .grid-row.grid-row--great {
@@ -945,7 +960,7 @@ a.ed-filled-button-primary {
 
 
 .ed-landing-page-form-container {
-  border-bottom: 7px solid #B00D23;
+  border-bottom: 7px solid $flag-red;
   margin-bottom: 40px;
   .ed-landing-page-form-inner {
     padding:20px;

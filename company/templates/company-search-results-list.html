@@ -21,6 +21,7 @@
 	<div class="clearfix"></div>
 	<div class="container">
 		<div class="company-profile-details-body">
+			
 			{% if form.is_bound %}
 			<div class="row-fluid company-profile-details-body-toolbar">
 				<div class="span8">
@@ -35,6 +36,7 @@
 				</div>
 			</div>
 			{% endif %}
+			
 			{% for company in results %}
 			<div class="public-company-profiles-result-item">
 				<div class="row-fluid ">
@@ -97,6 +99,18 @@
 				<br>
 			{% endif %}
 		</div>
-		{% include 'anonymous-subscribe-form.html' with form=subscribe.form %}
+		{% if results %}
+			{% include 'anonymous-subscribe-form.html' with form=subscribe.form %}
+		{% else %}
+			<div id="fassearch-initial-content">
+				<p class="intro">Our UK supplier profiles will give you the insight you need to contact the right people in the right company.</p>
+				<p class="list-header">The profiles give you:</p>
+				<ul>
+					<li>a company summary and key facts such as location, age, and size</li>
+					<li>real life examples of outstanding UK projects, goods, and services</li>
+					<li>direct access to a member of a sales or business development team</li>
+				</ul>
+			</div>
+		{% endif %}
 	</div>
 {% endblock %}
