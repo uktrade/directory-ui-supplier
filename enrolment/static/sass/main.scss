@@ -55,9 +55,13 @@ li, ul {
   list-style: none;
 }
 
-li:before {
-  content: "\25CF";
-  margin-right: 10px;
+li {
+  text-indent: -10px;
+  &:before {
+    content: "\25CF";
+    left: -10px;
+    position: relative;
+  }
 }
 
 p {
@@ -126,8 +130,12 @@ p {
 }
 
 .nav {
-  li:before {
-    display: none;
+  li {
+    text-indent: 0;
+    &:before {
+      display: none;
+      position: static;
+    }
   }
 }
 
