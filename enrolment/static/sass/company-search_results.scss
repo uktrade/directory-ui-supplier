@@ -1,7 +1,6 @@
 @import 'main.scss';
 
 .company-profile-details-body {
-  margin-top: 25px;
   position: relative;
   h3 {
     line-height: 1em;
@@ -270,7 +269,7 @@
 
 .company-profile-details-body-toolbar-bottom {
   border-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .public-company-profiles-result-item {
@@ -498,33 +497,27 @@ h1 {
   }
 }
 
+#fassearch-content {
+  margin-top: 40px;
+}
+
 #fassearch-intro {
   background-color: $great-primary;
   padding-top: 50px;
   padding-bottom: 20px;
 }
-
-#fassearch-initial-content {
+  
+#fassearch-initial-content,
+#fassearch-no-results-content {
   border: $grey-3 solid 1px;
   border-bottom: none;
   margin-bottom: 50px;
   padding: 50px 25px;
   position: relative;
-  
-  li {
-    margin-bottom: 10px;
-  }
-  
-  p {
-    font-size: 18px;
-    line-height: 1.2em;
-  }
-  
-  .intro {
+
+  .message {
     font-color: $grey-4;
     font-size: 24px;
-    margin-bottom: 40px;
-    max-width: 80%;
   }
   
   &:after {
@@ -539,6 +532,33 @@ h1 {
     width: 100%;
   }
   
+}
+
+#fassearch-initial-content {
+  li {
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.2em;
+  }
+  
+  .message {
+    margin-bottom: 40px;
+    max-width: 80%;
+  }
+}
+
+#fassearch-no-results-content {
+  .message {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .term {
+    font-weight: bold;
+  }
 }
 
 
