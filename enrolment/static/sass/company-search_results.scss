@@ -561,6 +561,12 @@ h1 {
       width: 100%;
     }
   }
+  
+  #fassearch-initial-content {
+    .intro {
+      max-width: 100%;
+    }
+  }
 }
 
 
@@ -587,7 +593,6 @@ h1 {
   #fassearch-initial-content {
     .intro {
       font-size: 18px;
-      max-width: 100%;
     }
   }
 }
