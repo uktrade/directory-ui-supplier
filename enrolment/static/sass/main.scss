@@ -332,15 +332,15 @@ label, input, button, select, textarea {
   }
 
   input, select, textarea {
-    background-color: white;
+    background-color: $white;
     border-radius: 0;
+    color: $grey-4;
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     height: 50px;
-    width: 100%;
-    color: #4a4a4a;
-    background-color: #fafafa;
     margin-bottom: 10px;
-    font-family: 'Roboto', sans-serif;
+    width: 100%;
+
     &:focus {
       border-color: rgba(82,168,236,0.8);
     }
@@ -428,7 +428,7 @@ label, input, button, select, textarea {
 }
 
 body {
-  background-color: #fafafa;
+  background-color: $white;
 
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
