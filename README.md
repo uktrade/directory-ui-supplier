@@ -29,6 +29,7 @@ Requires all host environment variables to be set.
 
 ### Run debug webserver in Docker
 
+    $ brew link gettext --force (OS X only)
     $ make docker_debug
 
 ### Run tests in Docker
@@ -95,7 +96,7 @@ Signed cookies are used as the session backend to avoid using a database. We the
 To make sso work locally add the following to your `/etc/hosts`:
 127.0.0.1 buyer.trade.great.dev
 127.0.0.1 supplier.trade.great.dev
-127.0.0.1 sso.trade.great.
+127.0.0.1 sso.trade.great.dev
 127.0.0.1 api.trade.great.dev
 
 Then log into `directory-sso` via `sso.trade.great.dev:8001`, and use `directory-ui-supplier` on `buyer.trade.great.dev:8001`
