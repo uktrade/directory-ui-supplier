@@ -51,12 +51,21 @@ input[type="file"] {
   line-height: 1em;
 }
 
-p {
-  margin-bottom: 10px;
+li, ul {
+  list-style: none;
 }
 
-ul, li {
-    list-style: none;
+li {
+  text-indent: -10px;
+  &:before {
+    content: "\25CF";
+    left: -10px;
+    position: relative;
+  }
+}
+
+p {
+  margin-bottom: 10px;
 }
 
 .screen-reader-only { 
@@ -111,9 +120,23 @@ ul, li {
   }
 }
 
+.list-header {
+  font-weight: bold;
+}
+
 .list-inset {
   list-style-type: circle;
   margin-left: 2.5em;
+}
+
+.nav {
+  li {
+    text-indent: 0;
+    &:before {
+      display: none;
+      position: static;
+    }
+  }
 }
 
 .grid-row.grid-row--great {
@@ -309,15 +332,15 @@ label, input, button, select, textarea {
   }
 
   input, select, textarea {
-    background-color: white;
+    background-color: $white;
     border-radius: 0;
+    color: $grey-4;
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     height: 50px;
-    width: 100%;
-    color: #4a4a4a;
-    background-color: #fafafa;
     margin-bottom: 10px;
-    font-family: 'Roboto', sans-serif;
+    width: 100%;
+
     &:focus {
       border-color: rgba(82,168,236,0.8);
     }
@@ -405,7 +428,7 @@ label, input, button, select, textarea {
 }
 
 body {
-  background-color: #fafafa;
+  background-color: $white;
 
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
@@ -945,7 +968,7 @@ a.ed-filled-button-primary {
 
 
 .ed-landing-page-form-container {
-  border-bottom: 7px solid #B00D23;
+  border-bottom: 7px solid $flag-red;
   margin-bottom: 40px;
   .ed-landing-page-form-inner {
     padding:20px;
