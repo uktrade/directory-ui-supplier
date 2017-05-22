@@ -6,7 +6,7 @@
 {% endblock %}
 {% block hero_title %}Browse UK company trade profiles{% endblock %}
 {% block sub_header %}
-	<section  id="fassearch-intro">
+	<section id="fassearch-intro">
 		<div class="container">
 			<h1>Find UK Suppliers</h1>
 			<form action="" method="get" class="supplier-search-form">
@@ -19,24 +19,27 @@
 {% endblock %}
 {% block content %}
 	<div class="clearfix"></div>
-	<div class="container">
-		<div class="company-profile-details-body">
+	<div id="fassearch-content" class="container">
+			
 			{% if form.is_bound %}
-			<div class="row-fluid company-profile-details-body-toolbar">
-				<div class="span8">
-					{% if results %}
-						<span>Displaying {{ results|length }} {{results|length|pluralize:'result,results'}}</span>
-					{% else %}
-						<span>No results found</span>
-					{% endif %}
-				</div>
-				<div class="span4" style="text-align: right;">
-					{% include 'company-search-results-paginator.html' %}
-				</div>
-			</div>
+				{% if results %}
+					<div class="row-fluid company-profile-details-body-toolbar">
+						<div class="span8">
+							<span>Displaying {{ results|length }} {{results|length|pluralize:'result,results'}}</span>
+						</div>
+						<div class="span4" style="text-align: right;">
+							{% include 'company-search-results-paginator.html' %}
+						</div>
+					</div>
+				{% else %}
+					<div id="fassearch-no-results-content">
+						<p class="message">Your search &quot;<span class="term">{{ form.cleaned_data.term }}</span>&quot; did not match any UK trade profiles.</p>
+					</div>
+				{% endif %}
 			{% endif %}
+			
 			{% for company in results %}
-			<div class="public-company-profiles-result-item">
+			<div class="public-company-profiles-result-item company-profile-details-body">
 				<div class="row-fluid ">
 					<!-- Company Logo area -->
 					<div class="span2 company-logo">
@@ -87,16 +90,30 @@
 				</div>
 			</div>
 			{% endfor %}
+			
 			{% if results %}
 				<div class="row-fluid company-profile-details-body-toolbar company-profile-details-body-toolbar-bottom">
 					<div class="offset8 span4" style="text-align: right;">
 						{% include 'company-search-results-paginator.html' %}
 					</div>
 				</div>
-			{% else %}
-				<br>
 			{% endif %}
-		</div>
-		{% include 'anonymous-subscribe-form.html' with form=subscribe.form %}
+		
+		{% if results %}
+			{% include 'anonymous-subscribe-form.html' with form=subscribe.form %}
+		{% else %}
+			{% if not form.is_bound %}
+			<div id="fassearch-initial-content">
+				<p class="message">Our UK trade profiles will help you contact the right people in the right company.</p>
+				<p class="list-header">Trade profiles give you:</p>
+				<ul>
+					<li>a company summary</li>
+					<li>examples of outstanding projects, goods and services</li>
+					<li>direct contact with a member of a sales or business development team</li>
+				</ul>
+			</div>
+			{% endif %}
+		{% endif %}
+		
 	</div>
 {% endblock %}
