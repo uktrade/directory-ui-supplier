@@ -2,9 +2,15 @@
 {% load trans from i18n %}
 <header class="ed-header-gov-row">
     <div class="container">
-        <a href="https://www.gov.uk/" target="_blank" style="display: inline-block; height: 40px;">
+        <div id="header-gov-links">
+          <a class="header-gov-link" href="https://www.gov.uk/" target="_blank">
             <img src="{% static 'images/hmg-logo.png' %}" alt="HMG Logo">
-        </a>
+          </a>
+          <span class="separator">|</span>
+          <a class="header-gov-link" href="https://www.great.gov.uk/" target="_blank">
+            Part of <span class="site">great.gov.uk</span>
+          </a>
+        </div>
         <div class="pull-right">
           {% include 'language_switcher.html' %}
         </div>
