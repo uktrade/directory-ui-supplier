@@ -1016,3 +1016,35 @@ a.ed-filled-button-primary {
   line-height: 1.4;
   color: #4a4a4a;
 }
+
+.header-gov-link {
+  &:hover,
+  &:link,
+  &:visited {
+    color: $white;
+    display: inline-block;
+    font-size: 14px; 
+    border-left: 1px solid white;
+    line-height: 22px;
+    margin-right: 5px;
+    padding: 0 5px 0 10px;
+    vertical-align: bottom;
+  }
+  
+  &:first-child {
+    border: none;
+    padding: 0;
+  }
+  
+  .site {
+    font-weight: bold;
+  }
+}
+
+#header-gov-links {
+  display: inline-block;
+  height: 40px;
+  .separator {
+    display: none;
+  }
+}
