@@ -169,7 +169,7 @@
 		<div class="span6" style="padding-top: 25px;">
 			<a href="mailto:help@digital.trade.gov.uk?subject=Report%20profile%20{{company.number}}">Report profile</a>
 		</div>
-		<div class="span6 pull-right" style="text-align: right;">
+		<div class="span6 ed-contact-company-contianer">
 			{% if company.email_address %}
 				<a class="ed-filled-button-primary ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=company.number %}">Contact company</a>
 			{% endif %}
