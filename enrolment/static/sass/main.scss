@@ -51,17 +51,8 @@ input[type="file"] {
   line-height: 1em;
 }
 
-li, ul {
+ul, li {
   list-style: none;
-}
-
-li {
-  text-indent: -10px;
-  &:before {
-    content: "\25CF";
-    left: -10px;
-    position: relative;
-  }
 }
 
 p {

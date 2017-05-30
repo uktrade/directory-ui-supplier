@@ -515,6 +515,19 @@ h1 {
   padding: 50px 25px;
   position: relative;
 
+  li, ul {
+    list-style: none;
+  }
+
+  li {
+    text-indent: -10px;
+    &:before {
+      content: "\25CF";
+      left: -10px;
+      position: relative;
+    }
+  }
+
   .message {
     font-color: $grey-4;
     font-size: 24px;
