@@ -482,6 +482,15 @@
   }
 }
 
+.ed-contact-company-contianer {
+  @media (min-width: 640px) {
+    text-align: right;
+  }
+  @media (max-width: 640px) {
+    margin-top: 25px;
+  }
+}
+
 /* Mobile */
 @media (max-width: 640px) {
   .company-logo .logo-container {
