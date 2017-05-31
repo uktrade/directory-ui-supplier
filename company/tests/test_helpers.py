@@ -69,7 +69,7 @@ def test_get_company_profile_from_response(retrieve_profile_data):
     response = requests.Response()
     response.json = lambda: retrieve_profile_data
     expected = {
-        'keywords': 'word1 word2',
+        'keywords': ['word1', 'word2'],
         'website': 'http://example.com',
         'linkedin_url': 'http://www.linkedin.com',
         'email_address': 'test@example.com',
@@ -126,7 +126,7 @@ def test_get_public_company_profile_from_response(retrieve_profile_data):
         'summary': 'good',
         'linkedin_url': 'http://www.linkedin.com',
         'employees': '501-1,000',
-        'keywords': 'word1 word2',
+        'keywords': ['word1', 'word2'],
         'name': 'Great company',
         'slug': 'great-company',
     }
@@ -143,7 +143,7 @@ def test_get_company_list_from_response(public_companies):
         'results': [
             {
                 'logo': 'nice.jpg',
-                'keywords': 'word1 word2',
+                'keywords': ['word1', 'word2'],
                 'email_address': 'test@example.com',
                 'employees': '501-1,000',
                 'number': '01234567',
@@ -211,7 +211,7 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
             'sectors': [{'value': 'SECURITY', 'label': 'Security'}],
             'facebook_url': 'http://www.facebook.com',
             'twitter_url': 'http://www.twitter.com',
-            'keywords': 'word1 word2',
+            'keywords': ['word1', 'word2'],
             'number': '01234567',
             'date_of_creation': datetime(2015, 3, 2, 0, 0),
             'website': 'http://example.com',
@@ -237,3 +237,12 @@ def test_get_company_profile_from_response_without_date():
     ]
     for provided, expected in pairs:
         assert helpers.format_date_of_creation(provided) == expected
+
+
+def test_format_company_details_handles_keywords_empty(retrieve_profile_data):
+    for value in ['', None, []]:
+        retrieve_profile_data['keywords'] = value
+
+        formatted = helpers.format_company_details(retrieve_profile_data)
+
+        assert formatted['keywords'] == []

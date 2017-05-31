@@ -18,7 +18,7 @@ def retrieve_profile_data():
         'logo': 'nice.jpg',
         'name': 'Great company',
         'slug': 'great-company',
-        'keywords': 'word1 word2',
+        'keywords': 'word1, word2',
         'employees': '501-1000',
         'date_of_creation': '2015-03-02',
         'verified_with_code': True,
