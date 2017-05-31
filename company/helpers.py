@@ -2,6 +2,7 @@ import datetime
 import http
 
 from directory_validators.constants import choices
+from directory_validators.helpers import tokenize_keywords
 
 from django.http import Http404
 
@@ -87,6 +88,7 @@ def format_company_details(details):
     case_studies = map(
         format_case_study, details.get('supplier_case_studies', [])
     )
+    keywords = details['keywords']
     return {
         'website': details['website'],
         'description': details['description'],
@@ -96,7 +98,7 @@ def format_company_details(details):
         'sectors': pair_sector_values_with_label(details.get('sectors', [])),
         'logo': details.get('logo'),
         'name': details['name'],
-        'keywords': details['keywords'],
+        'keywords': tokenize_keywords(keywords) if keywords else [],
         'employees': get_employees_label(details['employees']),
         'supplier_case_studies': list(case_studies),
         'modified': format_date_modified(details['modified']),

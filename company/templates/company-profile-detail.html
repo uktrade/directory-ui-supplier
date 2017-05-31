@@ -156,9 +156,10 @@
 				<div class="span6">
 					<div class=" company-profile-module-inner company-profile-keywords">
 						<h3>Keywords</h3>
-						{% if company.keywords %}
-							<p class="dont-break-out">{{company.keywords}}</p>
-						{% endif %}
+						{% for keyword in company.keywords %}
+							<a href="{% url 'company-search' %}?term={{ keyword }}" target="_self" class="ed-keyword dont-break-out">{{ keyword }}</a>{% if not forloop.last %}, {% endif %}
+						{% endfor %}
+
 					</div>
 				</div>
 			</div>

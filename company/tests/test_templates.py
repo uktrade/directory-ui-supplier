@@ -472,3 +472,12 @@ def test_case_study_handles_not_present_image_one():
     html = render_to_string('supplier-case-study-detail.html', context)
 
     assert 'None' not in html
+
+
+def test_company_profile_details_renders_keywords():
+    template_name = 'company-profile-detail.html'
+    html = render_to_string(template_name, default_context)
+
+    assert default_context['company']['keywords']
+    for keyword in default_context['company']['keywords']:
+        assert keyword in html
