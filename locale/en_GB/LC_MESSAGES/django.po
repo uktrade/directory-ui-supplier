@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-01 12:58+0000\n"
+"POT-Creation-Date: 2017-06-01 13:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,6 +41,7 @@ msgid "i-limb quantum™ user"
 msgstr ""
 
 #: enrolment/constants.py:33
+#: enrolment/templates/landing-page-international-sector-list.html:40
 msgid "Healthcare and life sciences"
 msgstr ""
 
@@ -156,6 +157,7 @@ msgid ""
 msgstr ""
 
 #: enrolment/constants.py:214
+#: enrolment/templates/landing-page-international-sector-list.html:87
 msgid "Food and drink"
 msgstr ""
 
@@ -302,6 +304,101 @@ msgstr ""
 msgid "Industries"
 msgstr ""
 
+#: enrolment/templates/landing-page-international-sector-list.html:11
+msgid "Discover the UK's capability in these key industries"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:20
+#: enrolment/templates/landing-page-international.html:65
+msgid "UK industries"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:27
+msgid ""
+"As a decision-maker in an international business you need look no further "
+"than the UK for innovative, high-quality products and services. It is the "
+"place to make the right trade connections with major corporations and "
+"smaller enterprises across every sector of industry."
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:30
+msgid ""
+"We can help you make vital business connections with ideal companies. Choose "
+"from the businesses in these UK industries to work with you."
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:43
+#: enrolment/templates/landing-page-international.html:74
+msgid "Healthcare and life sciences in the UK"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:45
+#: enrolment/templates/landing-page-international.html:76
+msgid ""
+"Get access to the UK health and life sciences supply-chain, delivering high "
+"quality, innovative services to the world."
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:48
+#: enrolment/templates/landing-page-international.html:80
+msgid "Find out more about the UK’s healthcare and life sciences"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:54
+msgid "Advanced technology"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:57
+#: enrolment/templates/landing-page-international.html:90
+msgid "The UK's advanced technology"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:59
+msgid ""
+"Check out the latest cutting-edge technological innovations that the UK is "
+"bringing to the world."
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:64
+#: enrolment/templates/landing-page-international.html:98
+msgid "Find out more about UK technology"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:72
+msgid "Creative services"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:75
+#: enrolment/templates/landing-page-international.html:110
+msgid "The UK's creative services"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:77
+msgid ""
+"Whether you need buildings designed, films made, or a fresh approach to "
+"marketing, the UK is the first place to look."
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:81
+#: enrolment/templates/landing-page-international.html:117
+msgid "Find out more about the UK’s creative services"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:90
+msgid "The UK’s food and drink"
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:92
+msgid ""
+"Whether you want the most innovative food brands or exceptional quality "
+"drinks, the UK should be first on your list."
+msgstr ""
+
+#: enrolment/templates/landing-page-international-sector-list.html:96
+#: enrolment/templates/landing-page-international.html:134
+msgid "Find out more about UK food and drink"
+msgstr ""
+
 #: enrolment/templates/landing-page-international.html:9
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
@@ -342,40 +439,10 @@ msgid ""
 "Choose from the hundreds of businesses in the UK to work with you today."
 msgstr ""
 
-#: enrolment/templates/landing-page-international.html:65
-msgid "UK industries"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:74
-msgid "Healthcare and life sciences in the UK"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:76
-msgid ""
-"Get access to the UK health and life sciences supply-chain, delivering high "
-"quality, innovative services to the world."
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:80
-msgid "Find out more about the UK’s healthcare and life sciences"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:90
-msgid "The UK's advanced technology"
-msgstr ""
-
 #: enrolment/templates/landing-page-international.html:92
 msgid ""
 "Check out the latest cutting-edge technologies that the UK is bringing to "
 "the world."
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:98
-msgid "Find out more about UK technology"
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:110
-msgid "The UK's creative services"
 msgstr ""
 
 #: enrolment/templates/landing-page-international.html:112
@@ -383,10 +450,6 @@ msgstr ""
 msgid ""
 "Whether you need buildings designed, films made or a fresh approach to "
 "marketing, the UK is the first place to look."
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:117
-msgid "Find out more about the UK’s creative services"
 msgstr ""
 
 #: enrolment/templates/landing-page-international.html:127
@@ -397,10 +460,6 @@ msgstr ""
 msgid ""
 "Whether you want the most innovative food brands or exceptional quality "
 "drinks, the UK is the first place to look."
-msgstr ""
-
-#: enrolment/templates/landing-page-international.html:134
-msgid "Find out more about UK food and drink"
 msgstr ""
 
 #: enrolment/templates/language_switcher.html:9
