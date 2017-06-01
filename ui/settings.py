@@ -105,12 +105,22 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-LANGUAGES = [
-  ('en-gb', 'English'),
-  ('de', 'Deutsch'),  # German
-  ('ja', '日本語'),  # Japanese
-  ('zh-hans', '简体中文'),  # Simplified Chinese
-]
+DISABLED_LANGUAGES = os.getenv('DISABLED_LANGUAGES', '').split(',')
+# https://github.com/django/django/blob/master/django/conf/locale/__init__.py
+LANGUAGES = helpers.remove_disabled_languages(
+    disabled_languages=DISABLED_LANGUAGES,
+    languages=[
+        ('en-gb', 'English'),               # English
+        ('de', 'Deutsch'),                  # German
+        ('ja', '日本語'),                    # Japanese
+        ('zh-hans', '简体中文'),             # Simplified Chinese
+        ('fr', 'Français'),                 # French
+        ('es', 'español'),                  # Spanish,
+        ('pt-br', 'Português Brasileiro'),  # Portuguese (Brazilian),
+        ('ar', 'العربيّة'),                 # Arabic
+    ]
+)
+
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )

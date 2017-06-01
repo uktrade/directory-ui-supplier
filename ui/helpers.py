@@ -39,3 +39,9 @@ def get_language_from_querystring(request):
     language_codes = translation.trans_real.get_languages()
     if language_code and language_code in language_codes:
         return language_code
+
+
+def remove_disabled_languages(disabled_languages, languages):
+    return [
+        (key, name) for key, name in languages if key not in disabled_languages
+    ]
