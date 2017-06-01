@@ -1,6 +1,7 @@
 from django import forms
 from django.conf import settings
 from django.utils import translation
+from django.utils.translation import ugettext as _
 
 from directory_validators.constants import choices
 
@@ -33,18 +34,18 @@ class AnonymousSubscribeForm(forms.Form):
 
 class LeadGenerationForm(forms.Form):
     error_css_class = 'input-field-container has-error'
-    PLEASE_SELECT_LABEL = 'Please select an industry'
-    TERMS_CONDITIONS_MESSAGE = (
+    PLEASE_SELECT_LABEL = _('Please select an industry')
+    TERMS_CONDITIONS_MESSAGE = _(
         'Tick the box to confirm you agree to the terms and conditions.'
     )
 
-    full_name = forms.CharField(label='Your name')
-    email_address = forms.EmailField(label='Email address')
-    company_name = forms.CharField(label='Organisation name')
-    country = forms.CharField(label='Country')
+    full_name = forms.CharField(label=_('Your name'))
+    email_address = forms.EmailField(label=_('Email address'))
+    company_name = forms.CharField(label=_('Organisation name'))
+    country = forms.CharField(label=_('Country'))
     comment = forms.CharField(
-        label='Describe what you need',
-        help_text='Maximum 1000 characters.',
+        label=_('Describe what you need'),
+        help_text=_('Maximum 1000 characters.'),
         max_length=1000,
         widget=forms.Textarea,
     )

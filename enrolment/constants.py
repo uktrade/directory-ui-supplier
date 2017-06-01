@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.utils.translation import ugettext as _
 
 
 links = settings.SECTOR_LINKS
@@ -9,9 +10,9 @@ HEALTH_SECTOR_CONTEXT = {
     'sector_value': 'HEALTHCARE_AND_MEDICAL',
     'case_study': {
         'image_url': '/static/images/touch-bionics-right-hand.png',
-        'image_caption': 'Rebekah Marine: i-limbTM user',
+        'image_caption': _('Rebekah Marine: i-limbTM user'),
         'title': 'Touch Bionics',
-        'synopsis': (
+        'synopsis': _(
             'Touch Bionics has transformed thousands of lives in '
             'dozens of countries through world-leading prosthetic '
             'technologies. We have a range of myoelectric prosthetic '
@@ -19,25 +20,25 @@ HEALTH_SECTOR_CONTEXT = {
             'their independence and confidence.'
         ),
         'url': links['HEALTHCARE_AND_MEDICAL']['case_study'],
-        'testimonial': (
+        'testimonial': _(
             'The i-limb™ quantum is the next best thing to real hands and as '
             'a bilateral amputee having the ability to do what I want to do '
             'independently is truly remarkable.'
         ),
         'testimonial_name': 'Jason',
-        'testimonial_company': 'i-limb quantum™ user',
+        'testimonial_company': _('i-limb quantum™ user'),
         'company_name': 'Touch Bionics',
         'sectors': [
             {
-                'label': 'Healthcare and life sciences',
+                'label': _('Healthcare and life sciences'),
                 'value': 'HEALTHCARE_AND_MEDICAL'
             },
             {
-                'label': 'Technology',
+                'label': _('Technology'),
                 'value': 'SOFTWARE_AND_COMPUTER_SERVICES'
             }
         ],
-        'keywords': (
+        'keywords': _(
             'prosthetics, bionics, robotics, healthcare, technology, limb loss'
         ),
     },
@@ -45,7 +46,7 @@ HEALTH_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/r-d-biomed.png',
             'name': 'RD Biomed',
-            'description': (
+            'description': _(
                 'RD Biomed designs and makes Peptest&trade;- the world’s '
                 'first non-invasive reflux diagnostic test. RD Biomed '
                 'specialises in diagnostics for gastroenterology and '
@@ -56,7 +57,7 @@ HEALTH_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/touch-bionics-left-hand.png',
             'name': 'Touch Bionics',
-            'description': (
+            'description': _(
                 'Touch Bionics is responsible for developing and improving '
                 'the world’s first bionic hand with 5 independently '
                 'moving fingers, transforming lives across the globe.'
@@ -72,7 +73,7 @@ TECH_SECTOR_CONTEXT = {
         'image_url': '/static/images/evrythng.jpg',
         'image_caption': 'EVRYTHNG',
         'title': 'EVRYTHNG',
-        'synopsis': (
+        'synopsis': _(
             'EVRYTHNG’s commercial Internet of Things traceability '
             'solution allows brands to track and report the status, '
             'location and history of everything they produce from '
@@ -82,7 +83,7 @@ TECH_SECTOR_CONTEXT = {
             'pallets can be identified and mapped.'
         ),
         'url': links['SOFTWARE_AND_COMPUTER_SERVICES']['case_study'],
-        'testimonial': (
+        'testimonial': _(
             'Companies can transform the value of their physical assets '
             'in the EVRYTHNG cloud by adding an intelligent, personalised '
             'layer of digital content, services and data analytics.'
@@ -92,11 +93,11 @@ TECH_SECTOR_CONTEXT = {
         'company_name': 'EVRYTHNG',
         'sectors': [
             {
-                'label': 'Technology',
+                'label': _('Technology'),
                 'value': 'SOFTWARE_AND_COMPUTER_SERVICES',
             },
         ],
-        'keywords': (
+        'keywords': _(
             'Internet of Things, data analytics, traceability, connectivity'
         ),
     },
@@ -104,7 +105,7 @@ TECH_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/evrything.png',
             'name': 'EVRYTHNG',
-            'description': (
+            'description': _(
                 'EVRYTHNG is an Internet of Things software company that '
                 'helps manufacturers <i>digitalise</i> their physical '
                 'products by connecting them to the web. From everyday '
@@ -118,7 +119,7 @@ TECH_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/arkessa.png',
             'name': 'Arkessa',
-            'description': (
+            'description': _(
                 'Arkessa enables devices and applications developers to '
                 'connect to the Internet of Things (IoT), regardless of '
                 'location, network operator or wireless technology. It '
@@ -137,7 +138,7 @@ CREATIVE_SECTOR_CONTEXT = {
         'image_url': '/static/images/immersive-hero.jpg',
         'image_caption': '',
         'title': 'Immersive',
-        'synopsis': (
+        'synopsis': _(
             'For Adidas’ 2014 World Cup campaign, Immersive developed '
             'concepts, storyboards and produced final audio and video '
             'designs. It also produced the entire technical event, which '
@@ -145,7 +146,7 @@ CREATIVE_SECTOR_CONTEXT = {
             'consulting on live-camera press shot positions'
         ),
         'url': links['CREATIVE_AND_MEDIA']['case_study'],
-        'testimonial': (
+        'testimonial': _(
             'Creating the grandest projection mapping the world has ever seen.'
         ),
         'testimonial_name': '',
@@ -153,11 +154,11 @@ CREATIVE_SECTOR_CONTEXT = {
         'company_name': 'Immersive',
         'sectors': [
             {
-                'label': 'Creative',
+                'label': _('Creative'),
                 'value': 'CREATIVE_AND_MEDIA',
             },
         ],
-        'keywords': (
+        'keywords': _(
             'Interactive installations, video content, projection mapping'
         ),
     },
@@ -165,7 +166,7 @@ CREATIVE_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/immersive.png',
             'name': 'Immersive',
-            'description': (
+            'description': _(
                 'Immersive is a complete solution provider for audio-visual '
                 'projects of any scale. Immersive uses new media technology '
                 '(such as LED, holograms, projection, virtual reality and '
@@ -177,7 +178,7 @@ CREATIVE_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/blippar.png',
             'name': 'Blippar',
-            'description': (
+            'description': _(
                 'Blippar is the leading visual discovery app, harnessing '
                 'augmented reality, image-recognition technology and '
                 'artificial intelligence to bring the physical world to '
@@ -192,16 +193,16 @@ FOOD_SECTOR_CONTEXT = {
     'sector_value': 'FOOD_AND_DRINK',
     'case_study': {
         'image_url': '/static/images/fever-tree-pour.png',
-        'image_caption': 'Clementine and cinnamon tonic water',
-        'title': 'Clementine and cinnamon tonic water',
-        'synopsis': (
+        'image_caption': _('Clementine and cinnamon tonic water'),
+        'title': _('Clementine and cinnamon tonic water'),
+        'synopsis': _(
             'Fever-Tree has established itself as the mixer drink '
             'specialist, crafting a range of fourteen products sourced '
             'from the highest quality natural ingredients for the best '
             'tasting mixers.'
         ),
         'url': links['FOOD_AND_DRINK']['case_study'],
-        'testimonial': (
+        'testimonial': _(
             'If three-quarters of your gin and tonic is the tonic, make sure '
             'you use the best.'
         ),
@@ -210,17 +211,17 @@ FOOD_SECTOR_CONTEXT = {
         'company_name': 'Fever-Tree',
         'sectors': [
             {
-                'label': 'Food and drink',
+                'label': _('Food and drink'),
                 'value': 'FOOD_AND_DRINK',
             },
         ],
-        'keywords': 'Mixers, Quality, Taste',
+        'keywords': _('Mixers, Quality, Taste'),
     },
     'companies': [
         {
             'image_url': '/static/images/joe-and-steph.png',
             'name': "Joe & Seph's",
-            'description': (
+            'description': _(
                 'All Joe & Seph’s popcorn is handmade in small batches to '
                 'ensure superior texture and an intense flavour. The '
                 'ingredients used are 100% natural and the kernels are '
@@ -232,7 +233,7 @@ FOOD_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/fever-tree.png',
             'name': 'Fever-Tree',
-            'description': (
+            'description': _(
                 'Fever-Tree has pioneered premium mixers and is now the '
                 'world’s leading premium mixer company.'
             ),
@@ -281,9 +282,9 @@ GLOBAL_SPORTS_INFRASTRUCTURE_CONTEXT = {
             '/static/images/'
             'Queen-Elizabeth-Olympic-Park---Movement-Strategies.jpg'
         ),
-        'image_caption': 'Queen Elizabeth Olympic Park, London',
-        'title': 'London 2012 Olympic and Paralympic Games',
-        'synopsis': (
+        'image_caption': _('Queen Elizabeth Olympic Park, London'),
+        'title': _('London 2012 Olympic and Paralympic Games'),
+        'synopsis': _(
             'Movement Strategies leads design standards for '
             'major events such as the Olympic Games, helping plan '
             'crowd movement and safety, and driving increased '
@@ -296,17 +297,17 @@ GLOBAL_SPORTS_INFRASTRUCTURE_CONTEXT = {
         'company_name': 'Movement Strategies',
         'sectors': [
             {
-                'label': 'Global sports infrastructure',
+                'label': _('Global sports infrastructure'),
                 'value': 'Global_sports_infrastructure',
             },
         ],
-        'keywords': 'Crowd safety, Pedestrian flow, Movement analytics',
+        'keywords': _('Crowd safety, Pedestrian flow, Movement analytics'),
     },
     'companies': [
         {
             'image_url': '/static/images/Movement-Strategies---Baku.jpg',
             'name': 'Movement Strategies',
-            'description': (
+            'description': _(
                 'Movement Strategies is the largest and most '
                 'experienced independent, specialist people movement '
                 'consultancy in the world.'
@@ -316,7 +317,7 @@ GLOBAL_SPORTS_INFRASTRUCTURE_CONTEXT = {
         {
             'image_url': '/static/images/Fortress---The-London-Stadium.jpg',
             'name': 'Fortress GB',
-            'description': (
+            'description': _(
                 'Fortress GB proved its reputation as the market-leading '
                 'e-ticketing provider by being selected to '
                 'install and manage the very latest in turnstile '
