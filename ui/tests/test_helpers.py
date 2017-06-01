@@ -96,3 +96,19 @@ def test_parse_sector_links_missing():
 
     with pytest.raises(jsonschema.exceptions.ValidationError):
         helpers.parse_sector_links(json.dumps(invalid))
+
+
+def test_remove_disabled_languages_removes_disabled_languages():
+    actual = helpers.remove_disabled_languages(
+        disabled_languages=['de'],
+        languages=[
+            ('en-gb', 'English'),
+            ('de', 'Deutsch'),
+            ('ja', '日本語'),
+        ]
+    )
+
+    assert actual == [
+        ('en-gb', 'English'),
+        ('ja', '日本語'),
+    ]
