@@ -21,24 +21,28 @@ ZENPY_CREDENTIALS = {
 zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
-class EnableTranslationsMixin:
+class ConditionalEnableTranslationsMixin:
+
+    translations_enabled = True
 
     def __init__(self, *args, **kwargs):
         dependency = 'ui.middleware.ForceDefaultLocale'
         assert dependency in settings.MIDDLEWARE_CLASSES
 
     def dispatch(self, request, *args, **kwargs):
-        translation.activate(request.LANGUAGE_CODE)
+        if self.translations_enabled:
+            translation.activate(request.LANGUAGE_CODE)
         return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context['language_switcher'] = {
-            'show': True,
-            'form': forms.LanguageForm(
-                initial=forms.get_language_form_initial_data(),
-            )
-        }
+        if self.translations_enabled:
+            context['language_switcher'] = {
+                'show': True,
+                'form': forms.LanguageForm(
+                    initial=forms.get_language_form_initial_data(),
+                )
+            }
         return context
 
 
@@ -87,7 +91,8 @@ class AnonymousSubscribeFormView(FormView):
         return TemplateResponse(self.request, self.success_template)
 
 
-class InternationalLandingView(EnableTranslationsMixin, TemplateView):
+class InternationalLandingView(ConditionalEnableTranslationsMixin,
+                               TemplateView):
     template_name = 'landing-page-international.html'
 
     def get_context_data(self, **kwargs):
@@ -96,8 +101,13 @@ class InternationalLandingView(EnableTranslationsMixin, TemplateView):
         return context
 
 
-class InternationalLandingSectorListView(TemplateView):
+class InternationalLandingSectorListView(ConditionalEnableTranslationsMixin,
+                                         TemplateView):
     template_name = 'landing-page-international-sector-list.html'
+
+    @property
+    def translations_enabled(self):
+        return settings.FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -113,7 +123,12 @@ class TermsView(TemplateView):
     template_name = 'terms-and-conditions.html'
 
 
-class InternationalLandingSectorDetailView(TemplateView):
+class InternationalLandingSectorDetailView(ConditionalEnableTranslationsMixin,
+                                           TemplateView):
+
+    @property
+    def translations_enabled(self):
+        return settings.FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED
 
     @classmethod
     def get_active_pages(cls):
