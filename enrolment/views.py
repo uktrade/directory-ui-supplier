@@ -1,5 +1,3 @@
-import abc
-
 from zenpy import Zenpy
 from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
@@ -23,10 +21,10 @@ ZENPY_CREDENTIALS = {
 zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
-class ConditionalEnableTranslationsMixin(abc.ABC):
+class ConditionalEnableTranslationsMixin:
 
     translations_enabled = True
-    template_name_bidi = abc.abstractproperty()
+    template_name_bidi = None
 
     def __init__(self, *args, **kwargs):
         dependency = 'ui.middleware.ForceDefaultLocale'
@@ -39,6 +37,7 @@ class ConditionalEnableTranslationsMixin(abc.ABC):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
+        context['LANGUAGE_BIDI'] = translation.get_language_bidi()
         if self.translations_enabled:
             context['language_switcher'] = {
                 'show': True,
@@ -135,7 +134,7 @@ class TermsView(TemplateView):
 
 class InternationalLandingSectorDetailView(ConditionalEnableTranslationsMixin,
                                            TemplateView):
-    
+
     template_name_bidi = None
 
     @property
@@ -194,5 +193,4 @@ class InternationalLandingSectorDetailView(ConditionalEnableTranslationsMixin,
         context.update(pages[self.kwargs['slug']]['context'])
         context['show_proposition'] = 'verbose' in self.request.GET
         context['slug'] = self.kwargs['slug']
-        context['LANGUAGE_BIDI'] = translation.get_language_bidi()
         return context

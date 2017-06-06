@@ -3,7 +3,7 @@
 <section>
 	<div class="ed-landing-page-find-other-companies-container ed-landing-page-find-other-companies-container-bottom">
 		<div class="row-fluid">
-			<div class="span4">
+			<div class="span3">
 				<div class="btn-container pull-left">
 					{% if features.FEATURE_COMPANY_SEARCH_VIEW_ENABLED %}
 						<a class="button" href="{% url 'company-search' %}">{% trans "Find a supplier" %}</a>
@@ -12,9 +12,9 @@
 					{% endif %}
 				</div>
 			</div>
-			<div class="span8">
+			<div class="span9">
 				<div class="row-fluid">
-					<div class="span10">
+					<div class="span11">
 						<h3>
 							{% block footer_title %}
 								{% trans "Find great UK companies" %}
@@ -25,8 +25,8 @@
 						<img src="{% static 'images/globe-icon.png' %}" alt="" />
 					</div>
 				</div>
-				<div class="row-fluid ">
-					<div class="span11">
+				<div class="row-fluid">
+					<div class="span12">
 						<p>
 							{% block footer_text %}
 								{% trans "Exceptionally innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service." %}

@@ -1,7 +1,5 @@
 {% load static from staticfiles %}
-{% load get_current_language_bidi from i18n %}
 
-{% get_current_language_bidi as LANGUAGE_BIDI %} 
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--><html lang="en" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}><!--<![endif]-->
@@ -42,7 +40,7 @@
         <!--[if IE 8]><link href="{% static 'ie8fixes.css' %}" media="screen" rel="stylesheet" /><![endif]-->
     </head>
 
-    <body>
+    <body {% if LANGUAGE_BIDI %}class="bidi"{% endif %}>
         {% include 'google_tag_manager_body.html' %}
         <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 

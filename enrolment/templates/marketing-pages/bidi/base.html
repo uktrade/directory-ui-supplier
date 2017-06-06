@@ -5,7 +5,10 @@
 	<link href="{% static 'landing-page.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
-{% block hero_title %}
+{% block hero_title_container %}
+    <h2 class="span6 ed-hero-sub-header-title pull-right">
+        {% block hero_title %}{% endblock %}
+    </h2>
 {% endblock %}
 
 {% block content %}
@@ -103,14 +106,14 @@
 					<b>{{ case_study.company_name }}</b>
 				</b>
 				<p>
-					<span>{% trans "Industries" %}: </span>
 					{% comment %}Do NOT move the forloop if to new line as this causes extra space before comma{% endcomment %}
 					{% for sector in case_study.sectors %}
 						<a href="{% url 'public-company-profiles-list' %}?sectors={{sector.value }}">{{ sector.label }}</a>{% if not forloop.last %}, {% endif %}
 					{% endfor %}
+					<span>:{% trans "Industries" %}</span>
 				</p>
 				<p>
-					<span>{% trans "keywords" %}: </span><i>{{ case_study.keywords }}</i>
+					<i>{{ case_study.keywords }}</i><span> :{% trans "keywords" %}</span>
 				</p>
 			</div>
 			{% if case_study.testimonial %}

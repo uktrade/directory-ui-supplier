@@ -25,8 +25,8 @@
       </a>
       <div class="nav-collapse collapse pull-left">
         <ul class="nav navbar-nav dit-main-nav-list pull-left">
-            <li  {% if active_view_name == 'international-sector-list'%}class="active"{% endif %}>
-                <a href="{% url 'international-sector-list' %}">{% trans "Industries" %}</a>
+            <li {% if active_view_name == 'international-sector-list'%}class="active"{% endif %}>
+                <a style="border-left: 1px solid #D8D8D8;" href="{% url 'international-sector-list' %}">{% trans "Industries" %}</a>
             </li>
             <li {% if active_view_name == 'public-company-profiles-list'%}class="active"{% endif %}>
 
@@ -37,7 +37,7 @@
               {% endif %}
             </li>
             <li {% if active_view_name == 'index'%}class="active"{% endif %}>
-                <a style="border-left: 1px solid #D8D8D8;" href="{% url 'index' %}">{% trans "Home" %}</a>
+                <a href="{% url 'index' %}">{% trans "Home" %}</a>
             </li>
         </ul>
       </div>

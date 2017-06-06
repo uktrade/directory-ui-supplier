@@ -1015,6 +1015,7 @@ a.ed-filled-button-primary {
     color: $white;
     display: inline-block;
     font-size: 14px; 
+    border-left: 1px solid white;
     line-height: 22px;
     margin-right: 5px;
     padding: 0 5px 0 10px;
@@ -1029,11 +1030,6 @@ a.ed-filled-button-primary {
   .site {
     font-weight: bold;
   }
-}
-
-.ed-header-hm-gov {
-  padding-right: 5px;
-  border-right: 1px solid #fff;  
 }
 
 #header-gov-links {

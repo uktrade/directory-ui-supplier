@@ -4,11 +4,7 @@
 {% load trans from i18n %}
 
 {% block hero_image %}{% static 'images/covers/technology.jpg' %}{% endblock %}
-{% block hero_title_container %}
-    <h2 class="span6 ed-hero-sub-header-title pull-right">
-        {% trans "UK technology" %}
-    </h2>
-{% endblock %}
+{% block hero_title %}{% trans "UK technology" %}{% endblock%}
 {% block synopsis %}
     <p>{% trans "Whether you need electronic systems, data analytics, artificial intelligence or semiconductors, the UK is the first place to look." %}</p>
     <div class="ed-landing-page-read-more">
