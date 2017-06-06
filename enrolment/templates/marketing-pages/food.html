@@ -1,10 +1,15 @@
-{% extends 'marketing-pages/base.html' %}
+{% extends LANGUAGE_BIDI|yesno:'marketing-pages/bidi/base.html,marketing-pages/base.html' %}
 
 {% load trans from i18n %}
 {% load static from staticfiles %}
 
 {% block hero_image %}{% static 'images/covers/food.jpg' %}{% endblock %}
-{% block hero_title %}UK food and drink{% endblock%}
+{% block hero_title_container %}
+    <h2 class="span6 ed-hero-sub-header-title pull-right">
+        {% trans "UK food and drink" %}
+    </h2>
+{% endblock %}
+
 {% block synopsis %}
 	<p>{% trans "Whether you want the most delicious food brands or exceptional quality drinks, the UK is the first place to look." %}</p>
     <div class="ed-landing-page-read-more">

@@ -1,17 +1,21 @@
-{% extends 'marketing-pages/base.html' %}
+{% extends LANGUAGE_BIDI|yesno:'marketing-pages/bidi/base.html,marketing-pages/base.html' %}
 
 {% load static from staticfiles %}
 {% load trans from i18n %}
 
 {% block hero_image %}{% static 'images/covers/technology.jpg' %}{% endblock %}
-{% block hero_title %}{% trans "UK technology" %}{% endblock%}
+{% block hero_title_container %}
+    <h2 class="span6 ed-hero-sub-header-title pull-right">
+        {% trans "UK technology" %}
+    </h2>
+{% endblock %}
 {% block synopsis %}
     <p>{% trans "Whether you need electronic systems, data analytics, artificial intelligence or semiconductors, the UK is the first place to look." %}</p>
     <div class="ed-landing-page-read-more">
         <a href="?verbose=true">{% trans "Read more about technology in the UK" %}</a>
     </div>
 {% endblock %}
-    
+
 {% block proposition %}
     <section>
         <h2>{% trans "If you need the best technology, look no further than the UK." %}</h2>

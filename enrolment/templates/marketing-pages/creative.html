@@ -1,10 +1,16 @@
-{% extends 'marketing-pages/base.html' %}
+{% extends LANGUAGE_BIDI|yesno:'marketing-pages/bidi/base.html,marketing-pages/base.html' %}
 
 {% load trans from i18n %}
 {% load static from staticfiles %}
 
 {% block hero_image %}{% static 'images/covers/creative.jpg' %}{% endblock %}
-{% block hero_title %}{% trans "Delivering exceptional creative services" %}{% endblock%}
+
+{% block hero_title_container %}
+    <h2 class="span6 ed-hero-sub-header-title pull-right">
+        {% trans "Delivering exceptional creative services" %}
+    </h2>
+{% endblock %}
+
 {% block synopsis %}
     <p>{% trans "Whether you need buildings designed, films made or a fresh approach to marketing, the UK is the first place to look." %}</p>
     <div class="ed-landing-page-read-more">

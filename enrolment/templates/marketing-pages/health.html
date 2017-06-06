@@ -1,9 +1,13 @@
-{% extends 'marketing-pages/base.html' %}
+{% extends LANGUAGE_BIDI|yesno:'marketing-pages/bidi/base.html,marketing-pages/base.html' %}
 
 {% load static from staticfiles %}
 {% load trans from i18n %}
 
-{% block hero_title %}{% trans "Delivering the exceptional in healthcare and life sciences" %}{% endblock%}
+{% block hero_title_container %}
+    <h2 class="span6 ed-hero-sub-header-title pull-right">
+        {% trans "Delivering the exceptional in healthcare and life sciences" %}
+    </h2>
+{% endblock %}
 {% block hero_image %}{% static 'images/covers/health.jpg' %}{% endblock %}
 {% block synopsis %}
     <p>

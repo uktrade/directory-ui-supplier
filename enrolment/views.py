@@ -135,6 +135,8 @@ class TermsView(TemplateView):
 
 class InternationalLandingSectorDetailView(ConditionalEnableTranslationsMixin,
                                            TemplateView):
+    
+    template_name_bidi = None
 
     @property
     def translations_enabled(self):
@@ -192,4 +194,5 @@ class InternationalLandingSectorDetailView(ConditionalEnableTranslationsMixin,
         context.update(pages[self.kwargs['slug']]['context'])
         context['show_proposition'] = 'verbose' in self.request.GET
         context['slug'] = self.kwargs['slug']
+        context['LANGUAGE_BIDI'] = translation.get_language_bidi()
         return context

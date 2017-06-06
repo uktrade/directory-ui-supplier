@@ -1,10 +1,14 @@
-{% extends 'marketing-pages/base.html' %}
+{% extends LANGUAGE_BIDI|yesno:'marketing-pages/bidi/base.html,marketing-pages/base.html' %}
 
 {% load static from staticfiles %}
 {% load trans from i18n %}
 
 {% block hero_image %}{% static 'images/covers/fas-sports-hero.png' %}{% endblock %}
-{% block hero_title %}{% trans "The UK's global sports infrastructure services" %}{% endblock%}
+{% block hero_title_container %}
+    <h2 class="span6 ed-hero-sub-header-title pull-right">
+        {% trans "The UK's global sports infrastructure services" %}
+    </h2>
+{% endblock %}
 {% block synopsis %}
     <p>{% trans "UK companies bring in-depth knowledge of the demands of global sports audiences with an understanding of event owners’ needs. Our expertise runs through all stages of sports infrastructure from concept and construction, to event delivery and legacy." %}</p>
     <div class="ed-landing-page-read-more">
