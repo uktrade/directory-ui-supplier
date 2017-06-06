@@ -101,8 +101,8 @@ class AnonymousSubscribeFormView(FormView):
 
 class InternationalLandingView(ConditionalEnableTranslationsMixin,
                                TemplateView):
-    template_name = 'landing-page-international.html'
-    template_name_bidi = 'bidi/landing-page-international.html'
+    template_name = 'landing-page.html'
+    template_name_bidi = 'bidi/landing-page.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
