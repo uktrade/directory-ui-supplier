@@ -1,12 +1,11 @@
 {% load static from static %}
 {% load trans from i18n %}
-<header class="ed-header-gov-row">
+<header class="ed-header-gov-row ed-bidirectional-layout">
     <div class="container">
         <div id="header-gov-links">
           <a class="header-gov-link" href="https://www.gov.uk/" target="_blank">
-            <img src="{% static 'images/hmg-logo.png' %}" alt="HMG Logo">
+            <img src="{% static 'images/hmg-logo.png' %}" alt="HMG Logo" class="ed-header-hm-gov">
           </a>
-          <span class="separator">|</span>
           <a class="header-gov-link" href="https://www.great.gov.uk/" target="_blank">
             Part of <span class="site">great.gov.uk</span>
           </a>
@@ -16,7 +15,7 @@
         </div>
     </div>
 </header>
-<div class="navbar ed-header-buttons">
+<div class="navbar ed-header-buttons ed-bidirectional-layout">
   <div class="navbar-inner">
     <div class="container">
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">

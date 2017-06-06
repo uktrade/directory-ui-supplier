@@ -1,6 +1,8 @@
 {% load static from staticfiles %}
+{% load get_current_language_bidi from i18n %}
 
-<!DOCTYPE html>
+{% get_current_language_bidi as LANGUAGE_BIDI %} 
+<!DOCTYPE html {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
     <head>
@@ -40,7 +42,7 @@
         <!--[if IE 8]><link href="{% static 'ie8fixes.css' %}" media="screen" rel="stylesheet" /><![endif]-->
     </head>
 
-    <body>
+    <body {% if LANGUAGE_BIDI %}class="ed-bidirectional-layout-wrapper"{% endif %}>
         {% include 'google_tag_manager_body.html' %}
         <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
@@ -50,7 +52,7 @@
             </div>
         </div>
 
-        {% include 'header.html' %}
+        {% include LANGUAGE_BIDI|yesno:'bidi/header.html,header.html' %}
         {% block sub_header %}
             <section class="ed-hero-sub-header" style="background-image: url({% block hero_image %}{% static 'images/covers/agnostic.jpg' %}){% endblock %}">
                 <div class="container">
@@ -71,7 +73,7 @@
             {% block content %}
             {% endblock content %}
         </div>
-        {% include 'footer.html' %}
+        {% include LANGUAGE_BIDI|yesno:'bidi/footer.html,footer.html' %}
 
         <div id="global-app-error" class="app-error hidden"></div>
 

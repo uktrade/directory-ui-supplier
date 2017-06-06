@@ -1,12 +1,14 @@
+import abc
+
+from zenpy import Zenpy
+from zenpy.lib.api_objects import Ticket, User as ZendeskUser
+
 from django.conf import settings
 from django.shortcuts import Http404
 from django.template.response import TemplateResponse
 from django.utils import translation
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
-
-from zenpy import Zenpy
-from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
 from api_client import api_client
 from enrolment import constants, forms
@@ -21,9 +23,10 @@ ZENPY_CREDENTIALS = {
 zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
-class ConditionalEnableTranslationsMixin:
+class ConditionalEnableTranslationsMixin(abc.ABC):
 
     translations_enabled = True
+    template_name_bidi = abc.abstractproperty()
 
     def __init__(self, *args, **kwargs):
         dependency = 'ui.middleware.ForceDefaultLocale'
@@ -44,6 +47,11 @@ class ConditionalEnableTranslationsMixin:
                 )
             }
         return context
+
+    def get_template_names(self):
+        if translation.get_language_bidi():
+            return [self.template_name_bidi]
+        return super().get_template_names()
 
 
 class LeadGenerationFormView(FormView):
@@ -94,6 +102,7 @@ class AnonymousSubscribeFormView(FormView):
 class InternationalLandingView(ConditionalEnableTranslationsMixin,
                                TemplateView):
     template_name = 'landing-page-international.html'
+    template_name_bidi = 'bidi/landing-page-international.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
