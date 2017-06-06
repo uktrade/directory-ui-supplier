@@ -1,0 +1,107 @@
+{% extends './govuk_layout.html' %}
+
+{% load static from staticfiles %}
+{% load trans from i18n %}
+
+{% block css %}
+	<link href="{% static 'landing-page.css' %}" media="all" rel="stylesheet" />
+{% endblock %}
+
+{% block hero_title_container %}
+    <h2 class="span6 ed-hero-sub-header-title pull-right">
+		{% trans "Discover the UK's capability in these key industries" %}
+    </h2>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div style="margin-top: -100px;" class="ed-landing-page-gap">
+		<div class="row-fluid">
+			<div class="span12 great-blue-bar">
+				<h1 class="element-within company-name-title">
+					<span class="dont-break-out">{% trans "UK industries" %}</span>
+				</h1>
+			</div>
+		</div>
+		<div class="ed-landing-page-synopsis">
+			<div class="row-fluid">
+				<p>
+					{% trans "As a decision-maker in an international business you need look no further than the UK for innovative, high-quality products and services. It is the place to make the right trade connections with major corporations and smaller enterprises across every sector of industry." %}
+				</p>
+				<p>
+					{% trans "We can help you make vital business connections with ideal companies. Choose from the businesses in these UK industries to work with you." %}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<div class="row-fluid ed-landing-page-gap">
+			<div class="span6 ed-landing-page-sector-container ed-landing-page-sector-container-min-height">
+				<div class="span4">
+					<img class="ed-landing-page-sector-image" src="{% static 'images/square-health.jpg' %}" alt="{% trans "Healthcare and life sciences" %}"/>
+				</div>
+				<div class="span8">
+					<h2>{% trans "Healthcare and life sciences in the UK" %}</h2>
+					<p class="ed-landing-page-sector-synopsis">
+						{% trans "Get access to the UK health and life sciences supply-chain, delivering high quality, innovative services to the world." %}
+					</p>
+					<p class="ed-landing-page-sector-link-container">
+						<a href="{% url 'international-sector-detail' slug='health' %}">{% trans "Find out more about the UK’s healthcare and life sciences" %}</a>
+					</p>
+				</div>
+			</div>
+			<div class="span6 ed-landing-page-sector-container ed-landing-page-sector-container-min-height">
+				<div class="span4">
+					<img class="ed-landing-page-sector-image"  src="{% static 'images/square-technology.jpg' %}"  alt="{% trans "Advanced technology" %}"/>
+				</div>
+				<div class="span8">
+					<h2>{% trans "The UK's advanced technology" %}</h2>
+					<p class="ed-landing-page-sector-synopsis">
+						{% trans "Check out the latest cutting-edge technological innovations that the UK is bringing to the world." %}
+					</p>
+					<br>
+					<br>
+					<p class="ed-landing-page-sector-link-container">
+						<a href="{% url 'international-sector-detail' slug='tech' %}">{% trans "Find out more about UK technology" %}</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid ed-landing-page-gap">
+			<div class="span6 ed-landing-page-sector-container ed-landing-page-sector-container-min-height">
+				<div class="span4">
+					<img class="ed-landing-page-sector-image" src="{% static 'images/square-creative.jpg' %}" alt="{% trans "Creative services" %}" />
+				</div>
+				<div class="span8">
+					<h2>{% trans "The UK's creative services" %}</h2>
+					<p class="ed-landing-page-sector-synopsis">
+						{% trans "Whether you need buildings designed, films made, or a fresh approach to marketing, the UK is the first place to look." %}
+					</p>
+					<br>
+					<p class="ed-landing-page-sector-link-container">
+						<a href="{% url 'international-sector-detail' slug='creative' %}">{% trans "Find out more about the UK’s creative services" %}</a>
+					</p>
+				</div>
+			</div>
+			<div class="span6 ed-landing-page-sector-container ed-landing-page-sector-container-min-height">
+				<div class="span4">
+					<img class="ed-landing-page-sector-image"  src="{% static 'images/square-food.jpg' %}" alt="{% trans "Food and drink" %}" />
+				</div>
+				<div class="span8">
+					<h2>{% trans "The UK’s food and drink" %}</h2>
+					<p class="ed-landing-page-sector-synopsis">
+						{% trans "Whether you want the most innovative food brands or exceptional quality drinks, the UK should be first on your list." %}
+					</p>
+					<br>
+					<p class="ed-landing-page-sector-link-container">
+						<a href="{% url 'international-sector-detail' slug='food-and-drink' %}">{% trans "Find out more about UK food and drink" %}</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+    {% include 'bidi/browse-companies.html' %}
+	{% include 'bidi/lead-generation-form.html' with form=lead_generation.form %}
+</div>
+{% endblock content %}

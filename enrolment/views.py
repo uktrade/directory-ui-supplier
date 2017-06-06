@@ -113,6 +113,7 @@ class InternationalLandingView(ConditionalEnableTranslationsMixin,
 class InternationalLandingSectorListView(ConditionalEnableTranslationsMixin,
                                          TemplateView):
     template_name = 'landing-page-international-sector-list.html'
+    template_name_bidi = 'bidi/landing-page-international-sector-list.html'
 
     @property
     def translations_enabled(self):
