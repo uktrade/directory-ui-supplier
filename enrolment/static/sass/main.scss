@@ -914,6 +914,9 @@ a.ed-filled-button-primary {
   }
   form {
     margin: 0;
+    option {
+      background-color: $grey-1;
+    }
     select {
       background: transparent;
       border: none;
