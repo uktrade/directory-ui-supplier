@@ -10,7 +10,7 @@ HEALTH_SECTOR_CONTEXT = {
     'sector_value': 'HEALTHCARE_AND_MEDICAL',
     'case_study': {
         'image_url': '/static/images/touch-bionics-right-hand.png',
-        'image_caption': _('Rebekah Marine: i-limbTM user'),
+        'image_caption': _('Rebekah Marine: i-limb&trade; user'),
         'title': 'Touch Bionics',
         'synopsis': _(
             'Touch Bionics has transformed thousands of lives in '
