@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.utils.translation import ugettext as _
+from django.utils.safestring import mark_safe
 
 
 links = settings.SECTOR_LINKS
@@ -10,7 +11,7 @@ HEALTH_SECTOR_CONTEXT = {
     'sector_value': 'HEALTHCARE_AND_MEDICAL',
     'case_study': {
         'image_url': '/static/images/touch-bionics-right-hand.png',
-        'image_caption': _('Rebekah Marine: i-limb&trade; user'),
+        'image_caption': mark_safe(_('Rebekah Marine: i-limb&trade; user')),
         'title': 'Touch Bionics',
         'synopsis': _(
             'Touch Bionics has transformed thousands of lives in '
@@ -20,13 +21,13 @@ HEALTH_SECTOR_CONTEXT = {
             'their independence and confidence.'
         ),
         'url': links['HEALTHCARE_AND_MEDICAL']['case_study'],
-        'testimonial': _(
-            'The i-limb™ quantum is the next best thing to real hands and as '
+        'testimonial': mark_safe(_(
+            'The i-limb&trade; quantum is the next best thing to real hands and as '
             'a bilateral amputee having the ability to do what I want to do '
             'independently is truly remarkable.'
-        ),
+        )),
         'testimonial_name': 'Jason',
-        'testimonial_company': _('i-limb quantum™ user'),
+        'testimonial_company': mark_safe(_('i-limb quantum&trade; user')),
         'company_name': 'Touch Bionics',
         'sectors': [
             {
@@ -46,12 +47,12 @@ HEALTH_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/r-d-biomed.png',
             'name': 'RD Biomed',
-            'description': _(
+            'description': mark_safe(_(
                 'RD Biomed designs and makes Peptest&trade;- the world’s '
                 'first non-invasive reflux diagnostic test. RD Biomed '
                 'specialises in diagnostics for gastroenterology and '
                 'respiratory conditions.'
-            ),
+            )),
             'url': links['HEALTHCARE_AND_MEDICAL']['company_one'],
         },
         {
