@@ -41,6 +41,11 @@
       padding-bottom: 0;
     }
   }
+  
+  .company-profile-module-description {
+    word-wrap: break-word;
+  }  
+  
   .company-profile-module-details {
     a {
       display: inline-block;
@@ -506,6 +511,15 @@
   
   .company-profile-details-body .company-logo:first-child {
     margin-left: 0;
+  }
+}
+
+/* Tablet */
+@media (max-width: 767px) {
+  .company-profile-details-body {
+    .company-profile-module-description {
+      padding-right: 40px;
+    }
   }
 }
 
