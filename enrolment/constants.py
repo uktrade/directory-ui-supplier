@@ -106,7 +106,7 @@ TECH_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/evrything.png',
             'name': 'EVRYTHNG',
-            'description': _(
+            'description': mark_safe(_(
                 'EVRYTHNG is an Internet of Things software company that '
                 'helps manufacturers <i>digitalise</i> their physical '
                 'products by connecting them to the web. From everyday '
@@ -114,7 +114,7 @@ TECH_SECTOR_CONTEXT = {
                 'and smartphones, to fully-connected smart home '
                 'appliances, each individual item managed in the EVRYTHNG '
                 'cloud has a unique Active Digital Identity'
-            ),
+            )),
             'url': links['SOFTWARE_AND_COMPUTER_SERVICES']['company_one'],
         },
         {
