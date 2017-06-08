@@ -22,9 +22,9 @@ HEALTH_SECTOR_CONTEXT = {
         ),
         'url': links['HEALTHCARE_AND_MEDICAL']['case_study'],
         'testimonial': mark_safe(_(
-            'The i-limb&trade; quantum is the next best thing to real hands and as '
-            'a bilateral amputee having the ability to do what I want to do '
-            'independently is truly remarkable.'
+            'The i-limb&trade; quantum is the next best thing to real hands '
+            'and as a bilateral amputee having the ability to do what I want '
+            'to do independently is truly remarkable.'
         )),
         'testimonial_name': 'Jason',
         'testimonial_company': mark_safe(_('i-limb quantum&trade; user')),
