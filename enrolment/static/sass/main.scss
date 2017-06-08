@@ -883,7 +883,9 @@ a.ed-filled-button-primary {
 }
 
 .ed-language-switcher {
+  border-left: 1px solid #ffffff;
   color: #ffffff;
+  margin: 8px 0;
   .ed-not-translated {
     img {
       height: 22px;
@@ -901,20 +903,18 @@ a.ed-filled-button-primary {
     color: #333333;
   }
   form {
-    margin-bottom: 0;
-    padding: 0 5px 0 5px;
-    border-left: 1px solid #ffffff;
-    border-right: 1px solid #ffffff;
+    margin: 0;
+    option {
+      background-color: $grey-1;
+    }
     select {
-      font-size: 15px;
-      padding: 0;
-      padding-bottom: 2px;
-      margin: 0;
-      height: 40px;
       background: transparent;
+      border: none;
       color: #ffffff;
-      border: 0;
-      border-radius: 0;
+      font-size: 15px;
+      height: 24px;
+      margin: 0;
+      padding: 0 5px;
       width: 90px;
       option {
         color: black;
