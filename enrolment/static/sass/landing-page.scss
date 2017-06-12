@@ -417,3 +417,14 @@ a.ed-landing-page-see-more-button {
 .ed-landing-page-read-more {
   margin-top: 15px;
 }
+
+body.bidi {
+  .ed-landing-page-sector-container {
+    .span4 {
+      margin-left: 20px;
+    }
+    .span7 {
+      margin-left: 0;
+    }
+  }  
+}

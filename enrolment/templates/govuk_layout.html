@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}><!--<![endif]-->
     <head>
         {% include 'google_tag_manager_head.html' %}
         {% include 'social.html' %}
@@ -40,22 +40,18 @@
         <!--[if IE 8]><link href="{% static 'ie8fixes.css' %}" media="screen" rel="stylesheet" /><![endif]-->
     </head>
 
-    <body>
+    <body {% if LANGUAGE_BIDI %}class="bidi"{% endif %}>
         {% include 'google_tag_manager_body.html' %}
         <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
-        <div id="skiplink-container">
-            <div>
-                <a href="#content" class="skiplink">Skip to main content</a>
-            </div>
-        </div>
-
-        {% include 'header.html' %}
+        {% include LANGUAGE_BIDI|yesno:'bidi/header.html,header.html' %}
         {% block sub_header %}
             <section class="ed-hero-sub-header" style="background-image: url({% block hero_image %}{% static 'images/covers/agnostic.jpg' %}){% endblock %}">
                 <div class="container">
                     <div class="row-fluid">
-                        <h2 class="span6 ed-hero-sub-header-title">{% block hero_title %}{% endblock %}</h2>
+                        {% block hero_title_container %}
+                            <h2 class="span6 ed-hero-sub-header-title">{% block hero_title %}{% endblock %}</h2>
+                        {% endblock %}
                     </div>
                     <div class="row-fluid ed-hero-sub-header-synopsis">
                         <span class="span9">
@@ -71,7 +67,7 @@
             {% block content %}
             {% endblock content %}
         </div>
-        {% include 'footer.html' %}
+        {% include LANGUAGE_BIDI|yesno:'bidi/footer.html,footer.html' %}
 
         <div id="global-app-error" class="app-error hidden"></div>
 

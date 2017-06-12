@@ -4,7 +4,6 @@
     <div class="ed-language-switcher">
     {% if language_switcher.show %}
         <form method="get">
-            <label class="screen-reader-only" for="{{ language_switcher.form.lang.id_for_label }}">{{ language_switcher.form.lang.label }}</label>
             {{ language_switcher.form.lang }}
             <button>{% trans "Select" %}</button>
         </form>

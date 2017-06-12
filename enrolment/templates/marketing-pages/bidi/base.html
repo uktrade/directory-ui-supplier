@@ -5,7 +5,10 @@
 	<link href="{% static 'landing-page.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
-{% block hero_title %}
+{% block hero_title_container %}
+    <h2 class="span6 ed-hero-sub-header-title pull-right">
+        {% block hero_title %}{% endblock %}
+    </h2>
 {% endblock %}
 
 {% block content %}
@@ -41,33 +44,17 @@
 		</div>
 
 		<div class="row-fluid">
-			{% for company in companies %}
-				<div class="span4">
-					<div class="row-fluid">
-						<img class="ed-landing-page-sector-company-image" src="{{ company.image_url }}" alt="{% trans "The company" %} '{{ company.name }}'"/>
-					</div>
-					<div class="row-fluid">
-						<h2 style="font-size: 21px;">{{ company.name }}</h2>
-						<p class="ed-landing-page-sector-synopsis">
-							{{ company.description }}
-						</p>
-						<p>
-							<a href="{{ company.url }}">{% trans "Read more about the company" %}</a>
-						</p>
-					</div>
-				</div>
-			{% endfor %}
 			{% if sector_value %}
 				<div class="span4 ed-landing-page-find-other-companies-container">
 					<div class="row-fluid">
-						<div class="span8">
-							<h3>{% trans "Find other great UK companies" %}</h3>
-						</div>
 						<div class="span4 ed-globe-icon-container">
 							<img src="{% static 'images/globe-icon.png' %}" alt="" />
 						</div>
+						<div class="span8">
+							<h3>{% trans "Find other great UK companies" %}</h3>
+						</div>
 					</div>
-					<p class="ed-landing-page-sector-synopsis">
+					<p>
 						{% block company_box_text %}
 							{% trans "Innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service." %}
 						{% endblock %}
@@ -81,6 +68,22 @@
 					</p>
 				</div>
 			{% endif %}
+			{% for company in companies %}
+				<div class="span4">
+					<div class="row-fluid">
+						<img class="ed-landing-page-sector-company-image" src="{{ company.image_url }}" alt="{% trans "The company" %} '{{ company.name }}'"/>
+					</div>
+					<div class="row-fluid">
+						<h2 style="font-size: 21px;">{{ company.name }}</h2>
+						<p>
+							{{ company.description|safe }}
+						</p>
+						<p>
+							<a href="{{ company.url }}">{% trans "Read more about the company" %}</a>
+						</p>
+					</div>
+				</div>
+			{% endfor %}
 		</div>
 	</section>
 
@@ -98,38 +101,38 @@
 			<h2>{{ case_study.title }}</h2>
 		</div>
 		<div class="row-fluid ed-landing-page-sector-case-study-inner">
-			<div class="{{ case_study.testimonial|yesno:'span4,span8' }}">
-				<p>{{ case_study.synopsis|linebreaks }}</p>
+			<div class="span4 ed-landing-page-case-study-company-details">
 				<p>
-					<a href="{{ case_study.url }}">{% trans "Read case study" %}</a>
+					<b>{{ case_study.company_name }}</b>
+				</b>
+				<p>
+					{% comment %}Do NOT move the forloop if to new line as this causes extra space before comma{% endcomment %}
+					{% for sector in case_study.sectors %}
+						<a href="{% url 'public-company-profiles-list' %}?sectors={{sector.value }}">{{ sector.label }}</a>{% if not forloop.last %}, {% endif %}
+					{% endfor %}
+					<span>:{% trans "Industries" %}</span>
+				</p>
+				<p>
+					<i>{{ case_study.keywords }}</i><span> :{% trans "keywords" %}</span>
 				</p>
 			</div>
 			{% if case_study.testimonial %}
 			<div class="span4 ed-arrow_box ed-landing-page-case-study-testomonial-container">
-				<p class="ed-landing-page-sector-synopsis">
+				<p>
 					<b>"{{ case_study.testimonial }}"</b>
 				</p>
 				<div>{{ case_study.testimonial_name }}</div>
 				<div>{{ case_study.testimonial_company }}</div>
 			</div>
 			{% endif %}
-			<div class="span4 ed-landing-page-case-study-company-details">
+			<div class="{{ case_study.testimonial|yesno:'span4,span8' }}">
+				<p>{{ case_study.synopsis|linebreaks }}</p>
 				<p>
-					<b>{{ case_study.company_name }}</b>
-				</b>
-				<p>
-					<span>{% trans "Industries" %}: </span>
-					{% comment %}Do NOT move the forloop if to new line as this causes extra space before comma{% endcomment %}
-					{% for sector in case_study.sectors %}
-						<a href="{% url 'public-company-profiles-list' %}?sectors={{sector.value }}">{{ sector.label }}</a>{% if not forloop.last %}, {% endif %}
-					{% endfor %}
-				</p>
-				<p>
-					<span>{% trans "keywords" %}: </span><i>{{ case_study.keywords }}</i>
+					<a href="{{ case_study.url }}">{% trans "Read case study" %}</a>
 				</p>
 			</div>
 		</div>
 	</section>
-	{% include 'lead-generation-form.html' with form=lead_generation.form %}
+	{% include 'bidi/lead-generation-form.html' with form=lead_generation.form %}
 </div>
 {% endblock content %}
