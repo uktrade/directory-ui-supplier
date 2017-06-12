@@ -830,16 +830,6 @@ a.ed-filled-button-primary {
   min-height: 40px;
   width: 100%;
   z-index: 1;
-  img {
-    height: 24px;
-    margin-top: 8px;
-    margin-left: -2px;
-    image-rendering: -moz-crisp-edges;         /* Firefox */
-    image-rendering:   -o-crisp-edges;         /* Opera */
-    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
-  }
 }
 
 .ed-header-buttons {
@@ -1017,14 +1007,20 @@ a.ed-filled-button-primary {
     font-size: 14px; 
     border-left: 1px solid white;
     line-height: 22px;
-    margin-right: 5px;
     padding: 0 5px 0 10px;
     vertical-align: bottom;
   }
   
-  &:first-child {
-    border: none;
-    padding: 0;
+  img {
+    height: 24px;
+    margin-left: -2px;
+    max-width: 141px;
+    width: 100%;
+    image-rendering: -moz-crisp-edges;         /* Firefox */
+    image-rendering:   -o-crisp-edges;         /* Opera */
+    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
   }
   
   .site {
@@ -1034,7 +1030,7 @@ a.ed-filled-button-primary {
 
 #header-gov-links {
   display: inline-block;
-  height: 40px;
+  padding: 8px 0;
   .separator {
     display: none;
   }
