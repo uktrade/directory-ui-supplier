@@ -1027,8 +1027,8 @@ a.ed-filled-button-primary {
   }
 }
 
-
-.browse-companies-container {
+.browse-companies-container,
+.search-companies-container {
   background-color: $aqua;
   color: $white;
   margin-bottom: 20px;
@@ -1066,7 +1066,8 @@ a.ed-filled-button-primary {
 /* Mobile
  *****************/
 @media (max-width: 640px) {
-  .browse-companies-container {
+  .browse-companies-container,
+  .search-companies-container {
     h3 {
       background-position: right center;
       padding-left: 0;

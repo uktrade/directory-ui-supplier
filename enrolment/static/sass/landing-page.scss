@@ -229,33 +229,6 @@ a .register-interest-btn {
   border: 1px solid #dedede;
   border-top: none;
   padding:20px;
-  
-  .browse-companies-container {
-    margin-bottom: 0;  
-  }
-  
-  @media (min-width: 768px) {
-    p:last-child {
-      margin-bottom: 0;
-    }
-    
-    .browse-companies-container {
-      h3 {
-        background-position: right center;
-        padding: 0 51px 0 0;
-      }
-    
-      p {
-        margin-bottom: 25px;
-        width: auto;
-      }
-    
-      .button {
-        position: static;
-        width: 100%;
-      }
-    }
-  }
 }
 
 .ed-landing-page-read-more-subtitle {
@@ -418,13 +391,31 @@ a.ed-landing-page-see-more-button {
   margin-top: 15px;
 }
 
-body.bidi {
-  .ed-landing-page-sector-container {
-    .span4 {
-      margin-left: 20px;
+
+.ed-landing-page-sector-companies-list .browse-companies-container,
+.ed-landing-page-synopsis .search-companies-container {
+  margin-bottom: 0;  
+}
+
+@media (min-width: 768px) {
+  
+  .ed-landing-page-sector-companies-list .browse-companies-container,
+  .ed-landing-page-synopsis .search-companies-container {
+    padding: 10px 25px 25px 25px;
+    
+    h3 {
+      background-position: right center;
+      padding: 15px 51px 0 0;
     }
-    .span7 {
-      margin-left: 0;
+  
+    p {
+      margin-bottom: 25px;
+      width: auto;
     }
-  }  
+  
+    .button {
+      position: static;
+      width: 100%;
+    }
+  }
 }

@@ -1,19 +1,13 @@
 {% load trans from i18n %}
 {% load static from staticfiles %}
 <div class="browse-companies-container">
-	<h3>
-		{% block footer_title %}
-			{% trans "Find great UK companies" %}
-		{% endblock %}
-	</h3>
+	<h3>{% trans "Find other great UK companies" %}</h3>
 	<p class="ed-landing-page-sector-synopsis">
-		{% block footer_text %}
-			{% trans "Exceptionally innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service." %}
+		{% block company_box_text %}
+			{% trans "Innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service." %}
 		{% endblock %}
 	</p>
-	{% if features.FEATURE_COMPANY_SEARCH_VIEW_ENABLED %}
-		<a class="button" href="{% url 'company-search' %}">{% trans "Find a supplier" %}</a>
-	{% else %}
-		<a class="button" href="{% url 'public-company-profiles-list' %}">{% trans "Browse UK companies" %}</a>
-	{% endif %}
+	<a class="button" href="{% url 'public-company-profiles-list' %}?sectors={{sector_value}}">
+		{% trans "Browse UK companies" %}
+	</a>
 </div>
