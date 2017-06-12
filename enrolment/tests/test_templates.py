@@ -1,7 +1,3 @@
-import os
-from unittest.mock import Mock
-
-from django.conf import settings
 from django.template.loader import render_to_string
 
 
@@ -42,28 +38,6 @@ def test_google_tag_manager():
     # sanity check
     assert 'www.googletagmanager.com' in expected_head
     assert 'www.googletagmanager.com' in expected_body
-
-
-def test_templates_render_successfully():
-
-    template_list = []
-    template_dirs = [
-        os.path.join(settings.BASE_DIR, 'enrolment/templates'),
-        os.path.join(settings.BASE_DIR, 'supplier/templates'),
-    ]
-    for template_dir in template_dirs:
-        for dir, dirnames, filenames in os.walk(template_dir):
-            for filename in filenames:
-                path = os.path.join(dir, filename).replace(template_dir, '')
-                template_list.append(path.lstrip('/'))
-
-    default_context = {
-        'supplier': None,
-        'form': Mock(),
-    }
-    assert template_list
-    for template in template_list:
-        render_to_string(template, default_context)
 
 
 def test_social_share_all_populated():

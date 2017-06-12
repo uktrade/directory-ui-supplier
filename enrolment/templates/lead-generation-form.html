@@ -17,7 +17,7 @@
 					<div class="span6">
 						<div class="{{ form.full_name.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.full_name.id_for_label }}">
-								<span>{{ form.full_name.label }}</span>
+								<span>{% trans form.full_name.label %}</span>
 								{{ form.full_name.errors }}
 								{{ form.full_name }}
 							</label>
@@ -27,7 +27,7 @@
 					<div class="span6">
 						<div class="{{ form.email_address.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.email_address.id_for_label }}">
-								<span>{{ form.email_address.label }}</span>
+								<span>{% trans form.email_address.label %}</span>
 								{{ form.email_address.errors }}
 								{{ form.email_address }}
 							</label>
@@ -40,7 +40,7 @@
 					<div class="span6">
 						<div class="{{ form.company_name.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.company_name.id_for_label }}">
-								<span>{{ form.company_name.label }}</span>
+								<span>{% trans form.company_name.label %}</span>
 								{{ form.company_name.errors }}
 								{{ form.company_name }}
 							</label>
@@ -50,7 +50,7 @@
 					<div class="span6">
 						<div class="{{ form.country.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.country.id_for_label }}">
-								<span>{{ form.country.label }}</span>
+								<span>{% trans  form.country.label %}</span>
 								{{ form.country.errors }}
 								{{ form.country }}
 							</label>
@@ -62,10 +62,10 @@
 					<div class="span12">
 						<div class="{{ form.comment.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.comment.id_for_label }}">
-								<span>{{ form.comment.label }}</span>
+								<span>{% trans  form.comment.label %}</span>
 								{{ form.comment.errors }}
 								{{ form.comment }}
-								<p class="helptext">{{ form.comment.help_text }}</p>
+								<p class="helptext">{% trans form.comment.help_text %}</p>
 							</label>
 						</div>
 					</div>

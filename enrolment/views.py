@@ -54,10 +54,15 @@ class ConditionalEnableTranslationsMixin:
         return super().get_template_names()
 
 
-class LeadGenerationFormView(FormView):
+class LeadGenerationFormView(ConditionalEnableTranslationsMixin, FormView):
     success_template = 'lead-generation-success.html'
     template_name = 'lead-generation.html'
+    template_name_bidi = 'lead-generation.html'
     form_class = forms.LeadGenerationForm
+
+    @property
+    def translations_enabled(self):
+        return settings.FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED
 
     def get_or_create_zendesk_user(self, cleaned_data):
         zendesk_user = ZendeskUser(

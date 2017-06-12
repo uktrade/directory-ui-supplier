@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-15 16:43+0000\n"
+"POT-Creation-Date: 2017-06-13 17:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,6 +34,10 @@ msgid ""
 "The i-limb&trade; quantum is the next best thing to real hands and as a "
 "bilateral amputee having the ability to do what I want to do independently "
 "is truly remarkable."
+msgstr ""
+
+#: enrolment/constants.py:29
+msgid "Jason"
 msgstr ""
 
 #: enrolment/constants.py:30
@@ -117,6 +121,10 @@ msgstr ""
 msgid "Creating the grandest projection mapping the world has ever seen."
 msgstr ""
 
+#: enrolment/constants.py:154
+msgid "Fast Company magazine"
+msgstr ""
+
 #: enrolment/constants.py:158
 msgid "Creative"
 msgstr ""
@@ -157,6 +165,10 @@ msgid ""
 "best."
 msgstr ""
 
+#: enrolment/constants.py:210
+msgid "Tim Warrillow"
+msgstr ""
+
 #: enrolment/constants.py:215
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:88
 #: enrolment/templates/landing-page-international-sector-list.html:87
@@ -170,8 +182,8 @@ msgstr ""
 #: enrolment/constants.py:226
 msgid ""
 "All Joe & Seph’s popcorn is handmade in small batches to ensure superior "
-"texture and an intense flavour. The ingredients used are 100% natural and "
-"the kernels are all air-popped – a healthier cooking method compared to "
+"texture and an intense flavour. The ingredients used are 100&#37; natural "
+"and the kernels are all air-popped – a healthier cooking method compared to "
 "frying."
 msgstr ""
 
@@ -217,28 +229,36 @@ msgid ""
 "technology at West Ham’s new home at the London Stadium."
 msgstr ""
 
-#: enrolment/forms.py:37
+#: enrolment/forms.py:15 enrolment/forms.py:37
 msgid "Please select an industry"
 msgstr ""
 
-#: enrolment/forms.py:39
+#: enrolment/forms.py:17 enrolment/forms.py:39
 msgid "Tick the box to confirm you agree to the terms and conditions."
 msgstr ""
 
-#: enrolment/forms.py:42
+#: enrolment/forms.py:20 enrolment/forms.py:42
 msgid "Your name"
 msgstr ""
 
-#: enrolment/forms.py:43
+#: enrolment/forms.py:21 enrolment/forms.py:43
 msgid "Email address"
+msgstr ""
+
+#: enrolment/forms.py:23
+msgid "Industry"
+msgstr ""
+
+#: enrolment/forms.py:28
+msgid "Company name"
+msgstr ""
+
+#: enrolment/forms.py:29 enrolment/forms.py:45
+msgid "Country"
 msgstr ""
 
 #: enrolment/forms.py:44
 msgid "Organisation name"
-msgstr ""
-
-#: enrolment/forms.py:45
-msgid "Country"
 msgstr ""
 
 #: enrolment/forms.py:47
@@ -247,6 +267,40 @@ msgstr ""
 
 #: enrolment/forms.py:48
 msgid "Maximum 1000 characters."
+msgstr ""
+
+#: enrolment/templates/bidi/browse-companies.html:9
+#: enrolment/templates/bidi/header.html:34
+#: enrolment/templates/bidi/landing-page.html:41
+#: enrolment/templates/browse-companies.html:32
+#: enrolment/templates/header.html:35 enrolment/templates/header.html:37
+#: enrolment/templates/landing-page.html:55
+msgid "Find a supplier"
+msgstr ""
+
+#: enrolment/templates/bidi/browse-companies.html:11
+#: enrolment/templates/bidi/landing-page.html:43
+#: enrolment/templates/browse-companies.html:34
+#: enrolment/templates/landing-page.html:57
+#: enrolment/templates/marketing-pages/base.html:78
+#: enrolment/templates/marketing-pages/bidi/base.html:65
+msgid "Browse UK companies"
+msgstr ""
+
+#: enrolment/templates/bidi/browse-companies.html:20
+#: enrolment/templates/bidi/landing-page.html:33
+#: enrolment/templates/browse-companies.html:14
+#: enrolment/templates/landing-page.html:44
+msgid "Find great UK companies"
+msgstr ""
+
+#: enrolment/templates/bidi/browse-companies.html:32
+#: enrolment/templates/bidi/landing-page.html:37
+#: enrolment/templates/browse-companies.html:23
+#: enrolment/templates/landing-page.html:51
+msgid ""
+"Exceptionally innovative and creative UK trade partners are ready to work "
+"with you. Discover them on the Find a Supplier service."
 msgstr ""
 
 #: enrolment/templates/bidi/footer.html:11 enrolment/templates/footer.html:11
@@ -270,17 +324,12 @@ msgid "Crown Copyright 2016"
 msgstr ""
 
 #: enrolment/templates/bidi/header.html:29 enrolment/templates/header.html:41
-#: enrolment/templates/marketing-pages/base.html:102
-#: enrolment/templates/marketing-pages/bidi/base.html:96
+#: enrolment/templates/marketing-pages/base.html:121
+#: enrolment/templates/marketing-pages/bidi/base.html:111
 msgid "Industries"
 msgstr ""
 
-#: enrolment/templates/bidi/header.html:34 enrolment/templates/header.html:35
-#: enrolment/templates/search-companies.html:15
-msgid "Find a supplier"
-msgstr ""
-
-#: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:37
+#: enrolment/templates/bidi/header.html:36
 msgid "Find a Supplier"
 msgstr ""
 
@@ -294,9 +343,9 @@ msgid "Discover the UK's capability in these key industries"
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:22
-#: enrolment/templates/bidi/landing-page.html:52
+#: enrolment/templates/bidi/landing-page.html:68
 #: enrolment/templates/landing-page-international-sector-list.html:20
-#: enrolment/templates/landing-page.html:48
+#: enrolment/templates/landing-page.html:65
 msgid "UK industries"
 msgstr ""
 
@@ -317,25 +366,25 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:45
-#: enrolment/templates/bidi/landing-page.html:61
+#: enrolment/templates/bidi/landing-page.html:77
 #: enrolment/templates/landing-page-international-sector-list.html:43
-#: enrolment/templates/landing-page.html:57
+#: enrolment/templates/landing-page.html:74
 msgid "Healthcare and life sciences in the UK"
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:47
-#: enrolment/templates/bidi/landing-page.html:63
+#: enrolment/templates/bidi/landing-page.html:79
 #: enrolment/templates/landing-page-international-sector-list.html:45
-#: enrolment/templates/landing-page.html:59
+#: enrolment/templates/landing-page.html:76
 msgid ""
 "Get access to the UK health and life sciences supply-chain, delivering high "
 "quality, innovative services to the world."
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:50
-#: enrolment/templates/bidi/landing-page.html:67
+#: enrolment/templates/bidi/landing-page.html:83
 #: enrolment/templates/landing-page-international-sector-list.html:48
-#: enrolment/templates/landing-page.html:63
+#: enrolment/templates/landing-page.html:80
 msgid "Find out more about the UK’s healthcare and life sciences"
 msgstr ""
 
@@ -345,23 +394,23 @@ msgid "Advanced technology"
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:59
-#: enrolment/templates/bidi/landing-page.html:77
+#: enrolment/templates/bidi/landing-page.html:93
 #: enrolment/templates/landing-page-international-sector-list.html:57
-#: enrolment/templates/landing-page.html:73
+#: enrolment/templates/landing-page.html:90
 msgid "The UK's advanced technology"
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:61
 #: enrolment/templates/landing-page-international-sector-list.html:59
 msgid ""
-"Check out the cutting-edge technological innovations that the UK is bringing "
-"to the world."
+"Check out the latest cutting-edge technological innovations that the UK is "
+"bringing to the world."
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:65
-#: enrolment/templates/bidi/landing-page.html:84
+#: enrolment/templates/bidi/landing-page.html:100
 #: enrolment/templates/landing-page-international-sector-list.html:64
-#: enrolment/templates/landing-page.html:81
+#: enrolment/templates/landing-page.html:98
 msgid "Find out more about UK technology"
 msgstr ""
 
@@ -371,9 +420,9 @@ msgid "Creative services"
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:76
-#: enrolment/templates/bidi/landing-page.html:96
+#: enrolment/templates/bidi/landing-page.html:112
 #: enrolment/templates/landing-page-international-sector-list.html:75
-#: enrolment/templates/landing-page.html:93
+#: enrolment/templates/landing-page.html:110
 msgid "The UK's creative services"
 msgstr ""
 
@@ -385,9 +434,9 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:82
-#: enrolment/templates/bidi/landing-page.html:103
+#: enrolment/templates/bidi/landing-page.html:119
 #: enrolment/templates/landing-page-international-sector-list.html:81
-#: enrolment/templates/landing-page.html:100
+#: enrolment/templates/landing-page.html:117
 msgid "Find out more about the UK’s creative services"
 msgstr ""
 
@@ -399,87 +448,89 @@ msgstr ""
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:93
 #: enrolment/templates/landing-page-international-sector-list.html:92
 msgid ""
-"Whether you want the best food brands or exceptional quality drinks, the UK "
-"should be first on your list."
+"Whether you want the most innovative food brands or exceptional quality "
+"drinks, the UK should be first on your list."
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:97
-#: enrolment/templates/bidi/landing-page.html:120
+#: enrolment/templates/bidi/landing-page.html:136
 #: enrolment/templates/landing-page-international-sector-list.html:96
-#: enrolment/templates/landing-page.html:117
+#: enrolment/templates/landing-page.html:134
 msgid "Find out more about UK food and drink"
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page.html:12
+#: enrolment/templates/bidi/landing-page.html:11
 #: enrolment/templates/landing-page.html:9
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
 "business"
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page.html:22
+#: enrolment/templates/bidi/landing-page.html:21
 #: enrolment/templates/landing-page.html:18
 msgid "Find UK companies to do business with"
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page.html:33
+#: enrolment/templates/bidi/landing-page.html:49
 #: enrolment/templates/landing-page.html:26
 msgid ""
 "The UK is a great place to find innovative, high-quality products and "
 "services."
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page.html:36
+#: enrolment/templates/bidi/landing-page.html:52
 #: enrolment/templates/landing-page.html:29
 msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page.html:39
+#: enrolment/templates/bidi/landing-page.html:55
 #: enrolment/templates/landing-page.html:32
 msgid ""
-"UK companies work with businesses and governments around the world to run "
-"high quality services and deliver the best experiences."
+"UK companies work with businesses and governments around the world to create "
+"new living and working environments, run high quality services and deliver "
+"the best experiences."
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page.html:42
+#: enrolment/templates/bidi/landing-page.html:58
 #: enrolment/templates/landing-page.html:35
 msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
 "is hard to beat."
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page.html:45
+#: enrolment/templates/bidi/landing-page.html:61
 #: enrolment/templates/landing-page.html:38
 msgid ""
 "Choose from the hundreds of businesses in the UK to work with you today."
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page.html:79
-#: enrolment/templates/landing-page.html:75
+#: enrolment/templates/bidi/landing-page.html:95
+#: enrolment/templates/landing-page.html:92
 msgid ""
-"Check out the cutting-edge technologies that the UK is bringing to the world."
+"Check out the latest cutting-edge technologies that the UK is bringing to "
+"the world."
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page.html:98
-#: enrolment/templates/landing-page.html:95
+#: enrolment/templates/bidi/landing-page.html:114
+#: enrolment/templates/landing-page.html:112
 #: enrolment/templates/marketing-pages/creative.html:9
 msgid ""
 "Whether you need buildings designed, films made or a fresh approach to "
 "marketing, the UK is the first place to look."
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page.html:113
-#: enrolment/templates/landing-page.html:110
+#: enrolment/templates/bidi/landing-page.html:129
+#: enrolment/templates/landing-page.html:127
 msgid "The UK's food and drink"
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page.html:115
-#: enrolment/templates/landing-page.html:112
+#: enrolment/templates/bidi/landing-page.html:131
+#: enrolment/templates/landing-page.html:129
 msgid ""
-"Whether you want the best food brands or exceptional quality drinks, the UK "
-"is the first place to look."
+"Whether you want the most innovative food brands or exceptional quality "
+"drinks, the UK is the first place to look."
 msgstr ""
 
 #: enrolment/templates/bidi/lead-generation-form.html:6
@@ -509,22 +560,6 @@ msgstr ""
 msgid "terms and conditions"
 msgstr ""
 
-#: enrolment/templates/browse-companies.html:4
-msgid "Find other great UK companies"
-msgstr ""
-
-#: enrolment/templates/browse-companies.html:7
-#: enrolment/templates/search-companies.html:11
-msgid ""
-"Exceptional and creative UK trade partners are ready to work with you. "
-"Discover them on the Find a Supplier service."
-msgstr ""
-
-#: enrolment/templates/browse-companies.html:11
-#: enrolment/templates/search-companies.html:17
-msgid "Browse UK companies"
-msgstr ""
-
 #: enrolment/templates/language_switcher.html:8
 msgid "Select"
 msgstr ""
@@ -534,33 +569,49 @@ msgid "Page in English only"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/base.html:19
-#: enrolment/templates/marketing-pages/bidi/base.html:23
+#: enrolment/templates/marketing-pages/bidi/base.html:22
 msgid "Find your UK trade partner"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/base.html:47
-#: enrolment/templates/marketing-pages/bidi/base.html:56
+#: enrolment/templates/marketing-pages/bidi/base.html:74
 msgid "The company"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/base.html:55
-#: enrolment/templates/marketing-pages/bidi/base.html:64
+#: enrolment/templates/marketing-pages/bidi/base.html:82
 msgid "Read more about the company"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/base.html:70
-#: enrolment/templates/marketing-pages/bidi/base.html:74
+#: enrolment/templates/marketing-pages/base.html:64
+#: enrolment/templates/marketing-pages/bidi/base.html:54
+msgid "Find other great UK companies"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/base.html:72
+#: enrolment/templates/marketing-pages/bidi/base.html:59
+msgid ""
+"Innovative and creative UK trade partners are ready to work with you. "
+"Discover them on the Find a Supplier service."
+msgstr ""
+
+#: enrolment/templates/marketing-pages/base.html:89
+#: enrolment/templates/marketing-pages/bidi/base.html:92
 msgid "Company showcase"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/base.html:85
-#: enrolment/templates/marketing-pages/bidi/base.html:114
+#: enrolment/templates/marketing-pages/base.html:104
+#: enrolment/templates/marketing-pages/bidi/base.html:132
 msgid "Read case study"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/base.html:110
-#: enrolment/templates/marketing-pages/bidi/base.html:99
+#: enrolment/templates/marketing-pages/base.html:129
+#: enrolment/templates/marketing-pages/bidi/base.html:117
 msgid "keywords"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/bidi/base.html:95
+msgid "case study"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:7
@@ -1429,8 +1480,4 @@ msgstr ""
 msgid ""
 "Get access to the UK technology supply chain. Register to be notified as "
 "soon as companies that match your needs have created trade profiles."
-msgstr ""
-
-#: enrolment/templates/search-companies.html:6
-msgid "Find great UK companies"
 msgstr ""

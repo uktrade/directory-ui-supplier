@@ -1,27 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# This file was generated from ar.xlsx
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-15 16:43+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
+"POT-Creation-Date: 2017-06-13 17:01+0000\n"
+"PO-Revision-Date: 2017-06-13 15:19+0100\n"
+"Language: ar\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Generated-By: xls-to-po 1.0\n"
 
 #: enrolment/constants.py:14
 msgid "Rebekah Marine: i-limb&trade; user"
-msgstr ""
+msgstr "ريبيكا مارين: مستخدمة i-limbTM"
 
 #: enrolment/constants.py:17
 msgid ""
@@ -30,6 +20,10 @@ msgid ""
 "myoelectric prosthetic hands and prosthetic fingers that help people "
 "increase their independence and confidence."
 msgstr ""
+"استطاعت شركة Touch Bionics تغيير حياة آلاف الأشخاص في العشرات من البلدان من "
+"خلال تقنيات الأعضاء الصناعية الرائدة على مستوى العالم. نحن نملك مجموعة من "
+"الأيدي الاصطناعية والأصابع الاصطناعية المتصلة بكهربية العضل التي تساعد "
+"الأفراد في تعزيز استقلاليتهم وثقتهم بأنفسهم."
 
 #: enrolment/constants.py:25
 msgid ""
@@ -37,24 +31,31 @@ msgid ""
 "bilateral amputee having the ability to do what I want to do independently "
 "is truly remarkable."
 msgstr ""
+"يعتبر i-limb™ quantum أفضل خيار بعد اليد الحقيقية، وكشخص مبتور الأطراف من "
+"الجهتين فإن التمكن من القيام بكل ما أريد بشكل مستقل أمر رائع حقًا."
+
+#: enrolment/constants.py:29
+msgid "Jason"
+msgstr "جايسون"
 
 #: enrolment/constants.py:30
 msgid "i-limb quantum&trade; user"
-msgstr ""
+msgstr "مستخدم i-limb quantum™‎"
 
 #: enrolment/constants.py:34
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:42
 #: enrolment/templates/landing-page-international-sector-list.html:40
 msgid "Healthcare and life sciences"
-msgstr ""
+msgstr "الرعاية الصحية وعلوم الحياة"
 
 #: enrolment/constants.py:38 enrolment/constants.py:97
 msgid "Technology"
-msgstr ""
+msgstr "التكنولوجيا"
 
 #: enrolment/constants.py:43
 msgid "prosthetics, bionics, robotics, healthcare, technology, limb loss"
 msgstr ""
+"أطراف اصطناعية، اصطناعي، روبوتات، الرعاية الصحية، التكنولوجيا، فقدان الأطراف"
 
 #: enrolment/constants.py:51
 msgid ""
@@ -62,6 +63,9 @@ msgid ""
 "reflux diagnostic test. RD Biomed specialises in diagnostics for "
 "gastroenterology and respiratory conditions."
 msgstr ""
+"تتولى شركة RD Biomed تصميم وانتاج Peptest™‎، وهو أول اختبار تشخيصي غير جراحي "
+"للارتجاع في العالم. تتخصص شركة RD Biomed في تشخيص إصابات الجهاز الهضمي "
+"والجهاز التنفسي."
 
 #: enrolment/constants.py:62
 msgid ""
@@ -69,6 +73,9 @@ msgid ""
 "bionic hand with 5 independently moving fingers, transforming lives across "
 "the globe."
 msgstr ""
+"إن شركة Touch Bionics مسؤولة عن تطوير أول يد اصطناعية في العالم مزوّدة بـ 5 "
+"أصابع تتحرك بشكل مستقل، وإجراء تحسينات عليها، وهي بذلك تساهم في تغيير حياة "
+"الناس في كافة أنحاء العالم."
 
 #: enrolment/constants.py:78
 msgid ""
@@ -78,6 +85,11 @@ msgid ""
 "enables the complex, interlinked hierarchy of component parts, finished "
 "product, batches, cases and pallets can be identified and mapped."
 msgstr ""
+"يسمح حل تتبّع إنترنت الأشياء التجاري الذي تقدمه شركة EVRYTHNG للعلامات "
+"التجارية بتتبع حالة وموقع وسجل منتجاتها من المصنع ووصولاً إلى المنزل وتقديم "
+"تقارير بشأنها. يتيح نموذج البيانات المرن الذي تقدمه EVRYTHNG التسلسل الهرمي "
+"المعقّد والمترابط للأجزاء المكونة؛ يمكن تحديد المنتج النهائي والدُفعات "
+"والحالات والمنصات كما وتعيينها."
 
 #: enrolment/constants.py:88
 msgid ""
@@ -85,10 +97,12 @@ msgid ""
 "cloud by adding an intelligent, personalised layer of digital content, "
 "services and data analytics."
 msgstr ""
+"تستطيع الشركات تحويل قيمة أصولها الفعلية في سحابة EVRYTHNG من خلال إضافة "
+"طبقة ذكية ومخصصة من المحتوى الرقمي والخدمات وتحليلات البيانات."
 
 #: enrolment/constants.py:102
 msgid "Internet of Things, data analytics, traceability, connectivity"
-msgstr ""
+msgstr "إنترنت الأشياء، تحليلات بيانات، تتبّع، اتصال"
 
 #: enrolment/constants.py:110
 msgid ""
@@ -98,6 +112,11 @@ msgid ""
 "smartphones, to fully-connected smart home appliances, each individual item "
 "managed in the EVRYTHNG cloud has a unique Active Digital Identity"
 msgstr ""
+"EVRYTHNG هي شركة برمجيات في مجال إنترنت الأشياء تساعد الشركات المصنّعة في "
+"رقمنة منتجاتها الفعلية عبر توصيلها بشبكة الإنترنت. بدءًا من المنتجات "
+"الاستهلاكية اليومية المُحزمة المتصلة عن طريق الحزم الذكية والهواتف الذكية، "
+"ووصولاً إلى الأجهزة المنزلية الذكية المتصلة بالكامل، يملك كل عنصر فردي تتم "
+"إدارته في سحابة EVRYTHNG هوية رقمية نشطة مميزة"
 
 #: enrolment/constants.py:124
 msgid ""
@@ -106,6 +125,10 @@ msgid ""
 "wireless technology. It provides enterprises with a secure and future-proof "
 "mobility platform that is easy to adopt, integrate and scale."
 msgstr ""
+"تمكّن شركة Arkessa مطورّي التطبيقات والأجهزة من الاتصال بإنترنت الأشياء (IoT)، "
+"بغض النظر عن الموقع أو مشغّل الشبكة أو التقنية اللاسلكية. وهي تقدّم للشركات "
+"منصة تنقّل آمنة قادرة على التكيف مع التطورات المستقبلية يسهل اعتمادها ودمجها "
+"وتوسيع حجمها."
 
 #: enrolment/constants.py:143
 msgid ""
@@ -114,18 +137,27 @@ msgid ""
 "entire technical event, which included projection mapping on the mansion and "
 "a 2m ball and consulting on live-camera press shot positions"
 msgstr ""
+"من أجل حملة كأس العالم لعام 2014 التابعة لشركة أديداس، طوّرت شركة Immersive "
+"المفاهيم والقصص المصورة وأنتجت تصاميم الفيديو والصوت النهائية. بالإضافة إلى "
+"ذلك، أنتجت الشركة الحدث التقني برمّته، والذي شمل إعداد خرائط للقصر ولكرة بحجم "
+"2 م وإسقاط المرئيات عليهما، كما قدمت استشارة حول أنسب المواقع لالتقاط صور "
+"بواسطة الكاميرات ذات البث الحيّ من قبل وسائل الإعلام"
 
 #: enrolment/constants.py:151
 msgid "Creating the grandest projection mapping the world has ever seen."
-msgstr ""
+msgstr "إنشاء أروع إسقاط للمرئيات على الخرائط في العالم على الإطلاق."
+
+#: enrolment/constants.py:154
+msgid "Fast Company magazine"
+msgstr "مجلة Fast Company"
 
 #: enrolment/constants.py:158
 msgid "Creative"
-msgstr ""
+msgstr "الخدمات الإبداعية"
 
 #: enrolment/constants.py:163
 msgid "Interactive installations, video content, projection mapping"
-msgstr ""
+msgstr "تركيبات تفاعلية، محتوى الفيديو، إسقاط المرئيات على الخرائط"
 
 #: enrolment/constants.py:171
 msgid ""
@@ -134,6 +166,10 @@ msgid ""
 "projection, virtual reality and augmented reality) to design and create "
 "cutting-edge lighting, video and interactive installations."
 msgstr ""
+"Immersive هو موفر حلول كاملة لمشاريع سمعية وبصرية من أي حجم كانت. تستخدم "
+"Immersive تقنية إعلامية جديدة (مثل أضواء LED والصور المجسّمة، والإسقاط، "
+"والواقع الافتراضي والواقع المعزّز) لتصميم الإضاءة والفيديوهات والتركيبات "
+"التفاعلية المتطورة وإنشائها."
 
 #: enrolment/constants.py:183
 msgid ""
@@ -141,10 +177,13 @@ msgid ""
 "image-recognition technology and artificial intelligence to bring the "
 "physical world to life through smartphones."
 msgstr ""
+"Blippar هو تطبيق الاكتشاف البصري الرائد القائم على صقل الواقع المعزز "
+"وتكنولوجيا التعرّف على الصور والذكاء الاصطناعي لبعث الحياة في العالم المادي "
+"من خلال الهواتف الذكية."
 
 #: enrolment/constants.py:197 enrolment/constants.py:198
 msgid "Clementine and cinnamon tonic water"
-msgstr ""
+msgstr "مياه غازية معدنية بنكهة الكليمنتين والقرفة"
 
 #: enrolment/constants.py:200
 msgid ""
@@ -152,36 +191,50 @@ msgid ""
 "range of fourteen products sourced from the highest quality natural "
 "ingredients for the best tasting mixers."
 msgstr ""
+"رسّخت Fever-Tree اسمها كشركة متخصصة في المشروبات المخلوطة، عن طريق تحضير "
+"مجموعة من أربعة عشر منتجًا مصدرها المكونات الطبيعية ذات أعلى جودة بهدف تقديم "
+"أفضل المشروبات المخلوطة اللذيذة."
 
 #: enrolment/constants.py:207
 msgid ""
 "If three-quarters of your gin and tonic is the tonic, make sure you use the "
 "best."
 msgstr ""
+"إذا كان ثلاثة أرباع مشروب الجين والمياه الغازية المعدنية قائمًا على المياه "
+"الغازية، فاحرص على استخدام الأفضل."
+
+#: enrolment/constants.py:210
+msgid "Tim Warrillow"
+msgstr "تيم واريلو"
 
 #: enrolment/constants.py:215
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:88
 #: enrolment/templates/landing-page-international-sector-list.html:87
 msgid "Food and drink"
-msgstr ""
+msgstr "الأغذية والمشروبات"
 
 #: enrolment/constants.py:219
 msgid "Mixers, Quality, Taste"
-msgstr ""
+msgstr "مشروبات مخلوطة، جودة، نكهة"
 
 #: enrolment/constants.py:226
 msgid ""
 "All Joe & Seph’s popcorn is handmade in small batches to ensure superior "
-"texture and an intense flavour. The ingredients used are 100% natural and "
-"the kernels are all air-popped – a healthier cooking method compared to "
+"texture and an intense flavour. The ingredients used are 100&#37; natural "
+"and the kernels are all air-popped – a healthier cooking method compared to "
 "frying."
 msgstr ""
+"يتم صنع كل الفشار لدى Joe & Seph’s باليد على دفعات صغيرة لضمان تقديم قوام "
+"ممتاز ونكهة قوية لا تقاوم. إن المكونات المستخدمة هي طبيعية 100%، ويتم طهي كل "
+"حبة ذرة بواسطة الهواء، وهي طريقة طهي صحية أكثر مقارنةً مع القلي."
 
 #: enrolment/constants.py:238
 msgid ""
 "Fever-Tree has pioneered premium mixers and is now the world’s leading "
 "premium mixer company."
 msgstr ""
+"أتت شركة Fever-Tree في المقدمة في مجال المشروبات المخلوطة، وهي الآن شركة "
+"المشروبات المخلوطة الفاخرة الرائدة عالميًا."
 
 #: enrolment/constants.py:286
 msgid "Queen Elizabeth Olympic Park, London"
@@ -219,88 +272,127 @@ msgid ""
 "technology at West Ham’s new home at the London Stadium."
 msgstr ""
 
-#: enrolment/forms.py:37
+#: enrolment/forms.py:15 enrolment/forms.py:37
 msgid "Please select an industry"
 msgstr ""
 
-#: enrolment/forms.py:39
+#: enrolment/forms.py:17 enrolment/forms.py:39
 msgid "Tick the box to confirm you agree to the terms and conditions."
-msgstr ""
+msgstr "حدد المربع لتؤكد أنك توافق على البنود والشروط."
 
-#: enrolment/forms.py:42
+#: enrolment/forms.py:20 enrolment/forms.py:42
 msgid "Your name"
-msgstr ""
+msgstr "اسمك"
 
-#: enrolment/forms.py:43
+#: enrolment/forms.py:21 enrolment/forms.py:43
 msgid "Email address"
-msgstr ""
+msgstr "عنوان البريد الإلكتروني"
+
+#: enrolment/forms.py:23
+msgid "Industry"
+msgstr "الصناعة"
+
+#: enrolment/forms.py:28
+msgid "Company name"
+msgstr "اسم الشركة"
+
+#: enrolment/forms.py:29 enrolment/forms.py:45
+msgid "Country"
+msgstr "البلد"
 
 #: enrolment/forms.py:44
 msgid "Organisation name"
-msgstr ""
-
-#: enrolment/forms.py:45
-msgid "Country"
-msgstr ""
+msgstr "اسم المؤسسة"
 
 #: enrolment/forms.py:47
 msgid "Describe what you need"
-msgstr ""
+msgstr "اكتب وصفًا لما تحتاج إليه"
 
 #: enrolment/forms.py:48
 msgid "Maximum 1000 characters."
+msgstr "1000 حرف كحد أقصى."
+
+#: enrolment/templates/bidi/browse-companies.html:9
+#: enrolment/templates/bidi/header.html:34
+#: enrolment/templates/bidi/landing-page.html:41
+#: enrolment/templates/browse-companies.html:32
+#: enrolment/templates/header.html:35 enrolment/templates/header.html:37
+#: enrolment/templates/landing-page.html:55
+msgid "Find a supplier"
+msgstr "العثور على مورّد"
+
+#: enrolment/templates/bidi/browse-companies.html:11
+#: enrolment/templates/bidi/landing-page.html:43
+#: enrolment/templates/browse-companies.html:34
+#: enrolment/templates/landing-page.html:57
+#: enrolment/templates/marketing-pages/base.html:78
+#: enrolment/templates/marketing-pages/bidi/base.html:65
+msgid "Browse UK companies"
+msgstr "تصفح الشركات في المملكة المتحدة"
+
+#: enrolment/templates/bidi/browse-companies.html:20
+#: enrolment/templates/bidi/landing-page.html:33
+#: enrolment/templates/browse-companies.html:14
+#: enrolment/templates/landing-page.html:44
+msgid "Find great UK companies"
+msgstr "العثور على شركات رائعة في المملكة المتحدة"
+
+#: enrolment/templates/bidi/browse-companies.html:32
+#: enrolment/templates/bidi/landing-page.html:37
+#: enrolment/templates/browse-companies.html:23
+#: enrolment/templates/landing-page.html:51
+msgid ""
+"Exceptionally innovative and creative UK trade partners are ready to work "
+"with you. Discover them on the Find a Supplier service."
 msgstr ""
+"شركاء تجاريون مبدعون بشكل استثنائي على استعداد للعمل معك في المملكة المتحدة. "
+"اكتشفهم بواسطة خدمة العثور على مورّد."
 
 #: enrolment/templates/bidi/footer.html:11 enrolment/templates/footer.html:11
 msgid "Department for International Trade"
-msgstr ""
+msgstr "إدارة التجارة الدولية"
 
 #: enrolment/templates/bidi/footer.html:17 enrolment/templates/footer.html:17
 msgid "Contact us"
-msgstr ""
+msgstr "الاتصال بنا"
 
 #: enrolment/templates/bidi/footer.html:23 enrolment/templates/footer.html:23
 msgid "Privacy and cookies"
-msgstr ""
+msgstr "الخصوصية وملفات تعريف الارتباط"
 
 #: enrolment/templates/bidi/footer.html:29 enrolment/templates/footer.html:29
 msgid "Terms &amp; conditions"
-msgstr ""
+msgstr "البنود والشروط"
 
 #: enrolment/templates/bidi/footer.html:42 enrolment/templates/footer.html:42
 msgid "Crown Copyright 2016"
-msgstr ""
+msgstr "Crown Copyright 2016"
 
 #: enrolment/templates/bidi/header.html:29 enrolment/templates/header.html:41
-#: enrolment/templates/marketing-pages/base.html:102
-#: enrolment/templates/marketing-pages/bidi/base.html:96
+#: enrolment/templates/marketing-pages/base.html:121
+#: enrolment/templates/marketing-pages/bidi/base.html:111
 msgid "Industries"
-msgstr ""
+msgstr "الصناعات"
 
-#: enrolment/templates/bidi/header.html:34 enrolment/templates/header.html:35
-#: enrolment/templates/search-companies.html:15
-msgid "Find a supplier"
-msgstr ""
-
-#: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:37
+#: enrolment/templates/bidi/header.html:36
 msgid "Find a Supplier"
 msgstr ""
 
 #: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:30
 msgid "Home"
-msgstr ""
+msgstr "الصفحة الرئيسية"
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:12
 #: enrolment/templates/landing-page-international-sector-list.html:11
 msgid "Discover the UK's capability in these key industries"
-msgstr ""
+msgstr "اكتشف إمكانيات المملكة المتحدة في هذه الصناعات الرئيسية"
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:22
-#: enrolment/templates/bidi/landing-page.html:52
+#: enrolment/templates/bidi/landing-page.html:68
 #: enrolment/templates/landing-page-international-sector-list.html:20
-#: enrolment/templates/landing-page.html:48
+#: enrolment/templates/landing-page.html:65
 msgid "UK industries"
-msgstr ""
+msgstr "صناعات المملكة المتحدة"
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:29
 #: enrolment/templates/landing-page-international-sector-list.html:27
@@ -310,6 +402,10 @@ msgid ""
 "place to make the right trade connections with major corporations and "
 "smaller enterprises across every sector of industry."
 msgstr ""
+"بصفتك صانع قرار في شركة عالمية، يكفي أن تبحث داخل المملكة المتحدة للحصول على "
+"خدمات ومنتجات مبتكرة وذات جودة عالية. فالمملكة المتحدة هي المكان المثالي "
+"لتأسيس العلاقات التجارية المناسبة مع شركات رئيسية وشركات أصغر منتشرة في كل "
+"القطاعات."
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:32
 #: enrolment/templates/landing-page-international-sector-list.html:30
@@ -317,29 +413,33 @@ msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
 msgstr ""
+"ونحن بإمكاننا مساعدتك في إنشاء علاقات تجارية أساسية مع أفضل الشركات. اختر من "
+"ضمن الشركات في هذه الصناعات المنتشرة في المملكة المتحدة للعمل معك."
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:45
-#: enrolment/templates/bidi/landing-page.html:61
+#: enrolment/templates/bidi/landing-page.html:77
 #: enrolment/templates/landing-page-international-sector-list.html:43
-#: enrolment/templates/landing-page.html:57
+#: enrolment/templates/landing-page.html:74
 msgid "Healthcare and life sciences in the UK"
-msgstr ""
+msgstr "الرعاية الصحية وعلوم الحياة في المملكة المتحدة"
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:47
-#: enrolment/templates/bidi/landing-page.html:63
+#: enrolment/templates/bidi/landing-page.html:79
 #: enrolment/templates/landing-page-international-sector-list.html:45
-#: enrolment/templates/landing-page.html:59
+#: enrolment/templates/landing-page.html:76
 msgid ""
 "Get access to the UK health and life sciences supply-chain, delivering high "
 "quality, innovative services to the world."
 msgstr ""
+"بإمكانك الوصول إلى سلسلة التوريد في مجال الصحة وعلوم الحياة في المملكة "
+"المتحدة، التي تقدّم خدمات مبتكرة عالية الجودة للعالم."
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:50
-#: enrolment/templates/bidi/landing-page.html:67
+#: enrolment/templates/bidi/landing-page.html:83
 #: enrolment/templates/landing-page-international-sector-list.html:48
-#: enrolment/templates/landing-page.html:63
+#: enrolment/templates/landing-page.html:80
 msgid "Find out more about the UK’s healthcare and life sciences"
-msgstr ""
+msgstr "اكتشف المزيد حول مجال الرعاية الصحية وعلوم الحياة في المملكة المتحدة"
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:56
 #: enrolment/templates/landing-page-international-sector-list.html:54
@@ -347,25 +447,31 @@ msgid "Advanced technology"
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:59
-#: enrolment/templates/bidi/landing-page.html:77
+#: enrolment/templates/bidi/landing-page.html:93
 #: enrolment/templates/landing-page-international-sector-list.html:57
-#: enrolment/templates/landing-page.html:73
+#: enrolment/templates/landing-page.html:90
 msgid "The UK's advanced technology"
-msgstr ""
+msgstr "التكنولوجيا المتقدمة في المملكة المتحدة"
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:61
 #: enrolment/templates/landing-page-international-sector-list.html:59
+#, fuzzy
+#| msgid ""
+#| "Check out the latest cutting-edge technologies that the UK is bringing to "
+#| "the world."
 msgid ""
-"Check out the cutting-edge technological innovations that the UK is bringing "
-"to the world."
+"Check out the latest cutting-edge technological innovations that the UK is "
+"bringing to the world."
 msgstr ""
+"ألقِ نظرة على أحدث الابتكارات التكنولوجية المتطورة التي تقدمها المملكة "
+"المتحدة إلى العالم."
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:65
-#: enrolment/templates/bidi/landing-page.html:84
+#: enrolment/templates/bidi/landing-page.html:100
 #: enrolment/templates/landing-page-international-sector-list.html:64
-#: enrolment/templates/landing-page.html:81
+#: enrolment/templates/landing-page.html:98
 msgid "Find out more about UK technology"
-msgstr ""
+msgstr "اكتشف المزيد حول قطاع التكنولوجيا في المملكة المتحدة"
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:73
 #: enrolment/templates/landing-page-international-sector-list.html:72
@@ -373,11 +479,11 @@ msgid "Creative services"
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:76
-#: enrolment/templates/bidi/landing-page.html:96
+#: enrolment/templates/bidi/landing-page.html:112
 #: enrolment/templates/landing-page-international-sector-list.html:75
-#: enrolment/templates/landing-page.html:93
+#: enrolment/templates/landing-page.html:110
 msgid "The UK's creative services"
-msgstr ""
+msgstr "الخدمات الإبداعية في المملكة المتحدة"
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:78
 #: enrolment/templates/landing-page-international-sector-list.html:77
@@ -385,109 +491,134 @@ msgid ""
 "Whether you need buildings designed, films made, or a fresh approach to "
 "marketing, the UK is the first place to look."
 msgstr ""
+"سواء كنت بحاجة إلى تصميم مبانٍ أو تصوير أفلام أو العثور على مقاربة جديدة "
+"للتسويق، فإن المملكة المتحدة هي أول مكان يجب أن تتجه أنظارك إليه."
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:82
-#: enrolment/templates/bidi/landing-page.html:103
+#: enrolment/templates/bidi/landing-page.html:119
 #: enrolment/templates/landing-page-international-sector-list.html:81
-#: enrolment/templates/landing-page.html:100
+#: enrolment/templates/landing-page.html:117
 msgid "Find out more about the UK’s creative services"
-msgstr ""
+msgstr "اكتشف المزيد حول الخدمات الإبداعية في المملكة المتحدة"
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:91
 #: enrolment/templates/landing-page-international-sector-list.html:90
 msgid "The UK’s food and drink"
-msgstr ""
+msgstr "قطاع الأغذية والمشروبات في المملكة المتحدة"
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:93
 #: enrolment/templates/landing-page-international-sector-list.html:92
 msgid ""
-"Whether you want the best food brands or exceptional quality drinks, the UK "
-"should be first on your list."
+"Whether you want the most innovative food brands or exceptional quality "
+"drinks, the UK should be first on your list."
 msgstr ""
+"سواء كنت تريد التعامل مع العلامات التجارية الغذائية الأكثر ابتكارًا في السوق "
+"أو شركات المشروبات ذات الجودة الاستثنائية، فيجب أن تضع المملكة المتحدة على "
+"رأس القائمة."
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:97
-#: enrolment/templates/bidi/landing-page.html:120
+#: enrolment/templates/bidi/landing-page.html:136
 #: enrolment/templates/landing-page-international-sector-list.html:96
-#: enrolment/templates/landing-page.html:117
+#: enrolment/templates/landing-page.html:134
 msgid "Find out more about UK food and drink"
-msgstr ""
+msgstr "اكتشف المزيد حول قطاع الأغذية والمشروبات في المملكة المتحدة"
 
-#: enrolment/templates/bidi/landing-page.html:12
+#: enrolment/templates/bidi/landing-page.html:11
 #: enrolment/templates/landing-page.html:9
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
 "business"
 msgstr ""
+"أهلاً بك في بريطانيا العظمى وإيرلندا الشمالية، المكان المناسب لممارسة الأعمال "
+"التجارية"
 
-#: enrolment/templates/bidi/landing-page.html:22
+#: enrolment/templates/bidi/landing-page.html:21
 #: enrolment/templates/landing-page.html:18
 msgid "Find UK companies to do business with"
-msgstr ""
+msgstr "العثور على شركات في المملكة المتحدة للتعامل معها"
 
-#: enrolment/templates/bidi/landing-page.html:33
+#: enrolment/templates/bidi/landing-page.html:49
 #: enrolment/templates/landing-page.html:26
 msgid ""
 "The UK is a great place to find innovative, high-quality products and "
 "services."
 msgstr ""
+"تُعتبر المملكة المتحدة مكانًا رائعًا للعثور على منتجات وخدمات مبتكرة عالية "
+"الجودة."
 
-#: enrolment/templates/bidi/landing-page.html:36
+#: enrolment/templates/bidi/landing-page.html:52
 #: enrolment/templates/landing-page.html:29
 msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
 msgstr ""
+"يمكنك تأسيس العلاقات التجارية المناسبة في المملكة المتحدة مع الشركات "
+"العالمية والشركات الأصغر المنتشرة في كل القطاعات."
 
-#: enrolment/templates/bidi/landing-page.html:39
+#: enrolment/templates/bidi/landing-page.html:55
 #: enrolment/templates/landing-page.html:32
 msgid ""
-"UK companies work with businesses and governments around the world to run "
-"high quality services and deliver the best experiences."
+"UK companies work with businesses and governments around the world to create "
+"new living and working environments, run high quality services and deliver "
+"the best experiences."
 msgstr ""
+"تعمل الشركات في المملكة المتحدة مع شركات وحكومات حول العالم لإنشاء بيئات "
+"جديدة للمعيشة والعمل، وتوفير خدمات عالية الجودة وتقديم أفضل التجارب."
 
-#: enrolment/templates/bidi/landing-page.html:42
+#: enrolment/templates/bidi/landing-page.html:58
 #: enrolment/templates/landing-page.html:35
 msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
 "is hard to beat."
 msgstr ""
+"عندما تحتاج إلى شريك تجاري، لا شيء يضاهي الموثوقية والخبرة اللتين ستعثر "
+"عليهما في الشركات الموجودة في المملكة المتحدة."
 
-#: enrolment/templates/bidi/landing-page.html:45
+#: enrolment/templates/bidi/landing-page.html:61
 #: enrolment/templates/landing-page.html:38
 msgid ""
 "Choose from the hundreds of businesses in the UK to work with you today."
 msgstr ""
+"اختر من بين مئات الشركات في المملكة المتحدة لممارسة الأعمال معها اليوم."
 
-#: enrolment/templates/bidi/landing-page.html:79
-#: enrolment/templates/landing-page.html:75
+#: enrolment/templates/bidi/landing-page.html:95
+#: enrolment/templates/landing-page.html:92
 msgid ""
-"Check out the cutting-edge technologies that the UK is bringing to the world."
+"Check out the latest cutting-edge technologies that the UK is bringing to "
+"the world."
 msgstr ""
+"ألقِ نظرة على أحدث الابتكارات التكنولوجية المتطورة التي تقدمها المملكة "
+"المتحدة إلى العالم."
 
-#: enrolment/templates/bidi/landing-page.html:98
-#: enrolment/templates/landing-page.html:95
+#: enrolment/templates/bidi/landing-page.html:114
+#: enrolment/templates/landing-page.html:112
 #: enrolment/templates/marketing-pages/creative.html:9
 msgid ""
 "Whether you need buildings designed, films made or a fresh approach to "
 "marketing, the UK is the first place to look."
 msgstr ""
+"سواء كنت بحاجة إلى تصميم مبانٍ أو تصوير أفلام أو العثور على مقاربة جديدة "
+"للتسويق، فإن المملكة المتحدة هي أول مكان يجب أن تتجه أنظارك إليه."
 
-#: enrolment/templates/bidi/landing-page.html:113
-#: enrolment/templates/landing-page.html:110
+#: enrolment/templates/bidi/landing-page.html:129
+#: enrolment/templates/landing-page.html:127
 msgid "The UK's food and drink"
-msgstr ""
+msgstr "الأغذية والمشروبات في المملكة المتحدة"
 
-#: enrolment/templates/bidi/landing-page.html:115
-#: enrolment/templates/landing-page.html:112
+#: enrolment/templates/bidi/landing-page.html:131
+#: enrolment/templates/landing-page.html:129
 msgid ""
-"Whether you want the best food brands or exceptional quality drinks, the UK "
-"is the first place to look."
+"Whether you want the most innovative food brands or exceptional quality "
+"drinks, the UK is the first place to look."
 msgstr ""
+"سواء كنت تريد التعامل مع العلامات التجارية الغذائية الأكثر ابتكارًا في السوق "
+"أو شركات المشروبات ذات الجودة الاستثنائية، فيجب أن تضع المملكة المتحدة على "
+"رأس القائمة."
 
 #: enrolment/templates/bidi/lead-generation-form.html:6
 #: enrolment/templates/lead-generation-form.html:6
 msgid "Get UK companies to fulfil your business needs"
-msgstr ""
+msgstr "دع الشركات في المملكة المتحدة تفي بما لديك من احتياجات عمل"
 
 #: enrolment/templates/bidi/lead-generation-form.html:12
 #: enrolment/templates/lead-generation-form.html:12
@@ -495,11 +626,13 @@ msgid ""
 "Tell us what kind of goods or services you need. We'll put you in touch with "
 "relevant UK suppliers."
 msgstr ""
+"أخبرنا ما هي نوع السلع أو الخدمات التي أنت بحاجة إليها. سنساعدك في التواصل "
+"مع المورّدين المناسبين في المملكة المتحدة."
 
 #: enrolment/templates/bidi/lead-generation-form.html:77
 #: enrolment/templates/lead-generation-form.html:84
 msgid "Send"
-msgstr ""
+msgstr "إرسال"
 
 #: enrolment/templates/bidi/lead-generation-form.html:84
 #: enrolment/templates/lead-generation-form.html:79
@@ -511,22 +644,6 @@ msgstr ""
 msgid "terms and conditions"
 msgstr ""
 
-#: enrolment/templates/browse-companies.html:4
-msgid "Find other great UK companies"
-msgstr ""
-
-#: enrolment/templates/browse-companies.html:7
-#: enrolment/templates/search-companies.html:11
-msgid ""
-"Exceptional and creative UK trade partners are ready to work with you. "
-"Discover them on the Find a Supplier service."
-msgstr ""
-
-#: enrolment/templates/browse-companies.html:11
-#: enrolment/templates/search-companies.html:17
-msgid "Browse UK companies"
-msgstr ""
-
 #: enrolment/templates/language_switcher.html:8
 msgid "Select"
 msgstr ""
@@ -536,38 +653,56 @@ msgid "Page in English only"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/base.html:19
-#: enrolment/templates/marketing-pages/bidi/base.html:23
+#: enrolment/templates/marketing-pages/bidi/base.html:22
 msgid "Find your UK trade partner"
-msgstr ""
+msgstr "العثور على شريكك التجاري في المملكة المتحدة"
 
 #: enrolment/templates/marketing-pages/base.html:47
-#: enrolment/templates/marketing-pages/bidi/base.html:56
+#: enrolment/templates/marketing-pages/bidi/base.html:74
 msgid "The company"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/base.html:55
-#: enrolment/templates/marketing-pages/bidi/base.html:64
+#: enrolment/templates/marketing-pages/bidi/base.html:82
 msgid "Read more about the company"
+msgstr "اقرأ المزيد حول الشركة"
+
+#: enrolment/templates/marketing-pages/base.html:64
+#: enrolment/templates/marketing-pages/bidi/base.html:54
+msgid "Find other great UK companies"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/base.html:70
-#: enrolment/templates/marketing-pages/bidi/base.html:74
+#: enrolment/templates/marketing-pages/base.html:72
+#: enrolment/templates/marketing-pages/bidi/base.html:59
+msgid ""
+"Innovative and creative UK trade partners are ready to work with you. "
+"Discover them on the Find a Supplier service."
+msgstr ""
+
+#: enrolment/templates/marketing-pages/base.html:89
+#: enrolment/templates/marketing-pages/bidi/base.html:92
 msgid "Company showcase"
-msgstr ""
+msgstr "عرض حالة للشركة"
 
-#: enrolment/templates/marketing-pages/base.html:85
-#: enrolment/templates/marketing-pages/bidi/base.html:114
+#: enrolment/templates/marketing-pages/base.html:104
+#: enrolment/templates/marketing-pages/bidi/base.html:132
 msgid "Read case study"
-msgstr ""
+msgstr "اقرأ عن دراسة حالة"
 
-#: enrolment/templates/marketing-pages/base.html:110
-#: enrolment/templates/marketing-pages/bidi/base.html:99
+#: enrolment/templates/marketing-pages/base.html:129
+#: enrolment/templates/marketing-pages/bidi/base.html:117
 msgid "keywords"
-msgstr ""
+msgstr "الكلمات الرئيسية"
+
+#: enrolment/templates/marketing-pages/bidi/base.html:95
+#, fuzzy
+#| msgid "Read case study"
+msgid "case study"
+msgstr "اقرأ عن دراسة حالة"
 
 #: enrolment/templates/marketing-pages/creative.html:7
 msgid "Delivering exceptional creative services"
-msgstr ""
+msgstr "تقديم خدمات إبداعية استثنائية"
 
 #: enrolment/templates/marketing-pages/creative.html:11
 msgid "Read more about creative services"
@@ -578,6 +713,8 @@ msgid ""
 "If you need intelligent, creative ideas and rich, high-quality designs and "
 "media, look no further than the UK"
 msgstr ""
+"إذا كنت بحاجة إلى أفكار ذكية وخلاقة وتصميمات ووسائط غنية وعالية الجودة، فلا "
+"تبحث خارج المملكة المتحدة."
 
 #: enrolment/templates/marketing-pages/creative.html:19
 msgid ""
@@ -585,14 +722,16 @@ msgid ""
 "movies, designing fashionable furniture fabrics and developing world-class "
 "computer games."
 msgstr ""
+"الشركات الإبداعية في المملكة المتحدة مسؤولة عن إنتاج أفلام ذات ميزانية ضخمة، "
+"وتصميم أقمشة مفروشات عصرية وتطوير ألعاب كمبيوتر ذات مستوى عالمي."
 
 #: enrolment/templates/marketing-pages/creative.html:26
 msgid "Work with the best in film, TV and visual effects"
-msgstr ""
+msgstr "تعامل مع الأفضل في مجال التلفزيون والسينما والتأثيرات البصرية"
 
 #: enrolment/templates/marketing-pages/creative.html:27
 msgid "The UK is one of the world's largest makers of original content."
-msgstr ""
+msgstr "تُعدّ المملكة المتحدة واحدة من أكبر صناع المحتوى الأصلي في العالم."
 
 #: enrolment/templates/marketing-pages/creative.html:28
 msgid ""
@@ -600,6 +739,9 @@ msgid ""
 "facilities suitable for big movie productions and an amazing diversity of "
 "film locations."
 msgstr ""
+"نحن موطن أفلام مثل Star Wars (حرب النجوم)، ونقدّم أجهزة حديثة للتصوير في "
+"الاستديوهات مناسبة لإنتاج الأفلام الضخمة، فضلاً عن مواقع متنوعة ومذهلة لتصوير "
+"الأفلام."
 
 #: enrolment/templates/marketing-pages/creative.html:29
 msgid ""
@@ -607,12 +749,17 @@ msgid ""
 "television production comprising more than 1,500 independent TV companies in "
 "the UK."
 msgstr ""
+"وفي قلب الصناعة الإبداعية في المملكة المتحدة تجد الأفلام والإنتاجات "
+"التلفزيونية الحائزة على جوائز والتي تضم أكثر من 1500 شركة إنتاج تلفزيوني "
+"مستقلة في المملكة المتحدة."
 
 #: enrolment/templates/marketing-pages/creative.html:30
 msgid ""
 "We're also the world leaders in exporting TV formats and localising those "
 "first commissioned in the UK."
 msgstr ""
+"ونحن أيضًا رائدون عالميًا في تصدير التنسيقات التلفزيونية وتوطين تلك التي تم "
+"أولاً تكليف القيام بها في المملكة المتحدة."
 
 #: enrolment/templates/marketing-pages/creative.html:34
 #: enrolment/templates/marketing-pages/food.html:45
@@ -620,37 +767,45 @@ msgstr ""
 #: enrolment/templates/marketing-pages/sports-infrastructure.html:32
 #: enrolment/templates/marketing-pages/tech.html:40
 msgid "Key facts"
-msgstr ""
+msgstr "حقائق رئيسية"
 
 #: enrolment/templates/marketing-pages/creative.html:36
 msgid "UK companies gave the world £19.1 billion of creative services in 2014"
 msgstr ""
+"قدّمت شركات المملكة المتحدة إلى العالم خدمات إبداعية بقيمة 19,1 مليار جنيه "
+"إسترليني في العام 2014"
 
 #: enrolment/templates/marketing-pages/creative.html:37
 #, python-format
 msgid "9%% of all UK service exports are in the creative services in 2014"
 msgstr ""
+"9%% من صادرات الخدمات في المملكة المتحدة للعام 2014 أتت من الخدمات الإبداعية"
 
 #: enrolment/templates/marketing-pages/creative.html:38
 #, python-format
 msgid "Growth of creative services exports was 10.9%% in 2014"
-msgstr ""
+msgstr "سجّلت صادرات الخدمات الإبداعية نموًا قدره 10,9%% في العام 2014"
 
 #: enrolment/templates/marketing-pages/creative.html:46
 msgid "Our creative digital experience"
-msgstr ""
+msgstr "تجربتنا الرقمية الإبداعية"
 
 #: enrolment/templates/marketing-pages/creative.html:48
 msgid ""
 "The UK has one of the most world's most advanced games industries, with more "
 "than 30 years experience of innovation and commercial success."
 msgstr ""
+"تضم المملكة المتحدة في كنفها إحدى أكثر صناعات الألعاب تقدمًا في العالم، مع "
+"أكثر من 30 عامًا من الخبرة في الابتكار والنجاح التجاري."
 
 #: enrolment/templates/marketing-pages/creative.html:51
 msgid ""
 "UK games companies have adopted social and mobile platforms, with more than "
 "a third of UK studios focusing on the mobile market."
 msgstr ""
+"لقد اعتمدت شركات الألعاب في المملكة المتحدة منصات التواصل الاجتماعي والمنصات "
+"المتنقلة، مع تركيز أكثر من ثلث الاستوديوهات في المملكة المتحدة على سوق "
+"الأجهزة المتنقلة."
 
 #: enrolment/templates/marketing-pages/creative.html:54
 msgid ""
@@ -658,10 +813,12 @@ msgid ""
 "help further the creative reach of the likes of National Geographic and "
 "Universal Studios."
 msgstr ""
+"يعمل متخصصو الواقع المعزّز في المملكة المتحدة على خلق تجارب غامرة تساعد في "
+"زيادة الوصول الإبداعي لشركات مثل National Geographic وUniversal Studios."
 
 #: enrolment/templates/marketing-pages/creative.html:58
 msgid "A publishing powerhouse"
-msgstr ""
+msgstr "وجهة قوية للنشر"
 
 #: enrolment/templates/marketing-pages/creative.html:60
 msgid ""
@@ -669,6 +826,10 @@ msgid ""
 "commercial models alongside moving content online. British news journalism "
 "remains a powerful force, uncovering important stories around the world."
 msgstr ""
+"كان لقطاع النشر في المملكة المتحدة دورًا رياديًا في تنسيقات الطباعة والنماذج "
+"التجارية الجديدة إلى جانب نقل المحتوى ونشره عبر الإنترنت. ولا تزال الصحافة "
+"الإخبارية البريطانية قوة لا يستهان بها، وذلك من خلال كشفها عن قصص مهمة من "
+"كافة أنحاء العالم."
 
 #: enrolment/templates/marketing-pages/creative.html:63
 msgid ""
@@ -677,58 +838,64 @@ msgid ""
 "of the top 20 global box office successes of the last 11 years were based on "
 "novels by UK writers."
 msgstr ""
+"يعتبر معرض لندن للكتاب أحد الأحداث الرئيسية في العالم للتفاوض بشأن حقوق "
+"الملكية الفكرية وبيع المحتوى وتوزيعه. استند نصف أفضل النجاحات العالمية الـ "
+"20 في شباك التذاكر خلال السنوات الـ 11 الماضية على روايات لكتّاب من المملكة "
+"المتحدة."
 
 #: enrolment/templates/marketing-pages/creative.html:67
 msgid "UK design talent is bringing beauty and strength to the world"
-msgstr ""
+msgstr "موهبة التصميم في المملكة المتحدة تضفي على العالم جمالاً وقوة"
 
 #: enrolment/templates/marketing-pages/creative.html:69
 msgid ""
 "UK architects are responsible for some of the world’s most stunning "
 "buildings, such as"
-msgstr ""
+msgstr "تحمل بعض المباني الأكثر روعة وإدهاشًا في العالم توقيع مهندسين معماريين من المملكة المتحدة، مثل"
 
 #: enrolment/templates/marketing-pages/creative.html:69
 msgid "the Galaxy Soho urban village in Beijing"
-msgstr ""
+msgstr "قرية \"سوهو غلاكسي\" المدنية في بكين"
 
 #: enrolment/templates/marketing-pages/creative.html:69
 msgid "and reshaping environments, such as"
-msgstr ""
+msgstr "والبيئات المعاد تشكيلها، مثل"
 
 #: enrolment/templates/marketing-pages/creative.html:69
 msgid "Singapore’s Gardens by the Bay"
-msgstr ""
+msgstr "حدائق الخليج في سنغافورة"
 
 #: enrolment/templates/marketing-pages/creative.html:72
 msgid ""
 "We're also responsible for designing usable industrial and commercial spaces "
 "such as the new"
-msgstr ""
+msgstr "ونحن أيضًا مسؤولون عن تصميم أماكن صناعية وتجارية قابلة للاستخدام مثل قاعدة "
 
 #: enrolment/templates/marketing-pages/creative.html:72
 msgid "Spaceport America"
-msgstr ""
+msgstr "سبيس بورت أمريكا الجديدة."
 
 #: enrolment/templates/marketing-pages/creative.html:75
 msgid ""
 "As well as designing the built environment, UK firms are designing vehicles "
 "and interiors around the world: including helping to design"
-msgstr ""
+msgstr "فضلاً عن تصميم البيئة المبنية، تقوم شركات المملكة المتحدة بتصميم المركبات والديكور الداخلي في أنحاء العالم: بما في ذلك المساعدة في تصميم"
 
 #: enrolment/templates/marketing-pages/creative.html:75
 msgid "the world’s fastest passenger train in China."
-msgstr ""
+msgstr "أسرع قطار ركاب في العالم في الصين."
 
 #: enrolment/templates/marketing-pages/creative.html:80
 msgid "Arts: heritage and innovation"
-msgstr ""
+msgstr "الفن: تراث وإبداع"
 
 #: enrolment/templates/marketing-pages/creative.html:83
 msgid ""
 "From Shakespeare to Adele, the UK continues to produce the best-known "
 "artists, writers, singers and performers the world has ever seen."
 msgstr ""
+"من شكسبير إلى أديل، لا تزال المملكة المتحدة تقدّم أشهر الفنانين والكتاب "
+"والمغنين والمؤدين الذين عرفهم العالم على الإطلاق."
 
 #: enrolment/templates/marketing-pages/creative.html:86
 msgid ""
@@ -738,6 +905,10 @@ msgid ""
 "have an ongoing reputation for protecting Intellectual Property for "
 "performers and producers alike."
 msgstr ""
+"فضلاً عن الموسيقى الموجهة لسوق المستهلكين، تقدّم الموسيقى التجارية ووكالات "
+"الصوت المزدهرة في المملكة المتحدة الموسيقى المرافقة والمسارات الموسيقية "
+"لأفلام تم انتاجها من أجل بوينغ ومرسيدس بنز. وتتمتّع شركات إدارة الحقوق لدينا "
+"بسمعة متواصلة لحماية الملكية الفكرية للمؤدّين والمنتجين على حد سواء."
 
 #: enrolment/templates/marketing-pages/creative.html:89
 msgid ""
@@ -745,32 +916,36 @@ msgid ""
 "lasting partnerships and collection-sharing with their peers from countries "
 "as diverse as Russia and Malawi."
 msgstr ""
+"أما المتاحف الوطنية في المملكة المتحدة فتجذب الزوار من كافة أنحاء العالم "
+"ولديها شراكات دائمة وتقوم بمشاركة المجموعات الفنية مع نظرائها من بلدان "
+"مختلفة مثل روسيا وملاوي."
 
 #: enrolment/templates/marketing-pages/creative.html:92
 msgid "The UK is alive with exceptional talent and ingenuity."
-msgstr ""
+msgstr "تنبض المملكة المتحدة حياةً بالمواهب الاستثنائية والبراعة."
 
 #: enrolment/templates/marketing-pages/creative.html:96
 msgid "Find your UK creative partner today"
-msgstr ""
+msgstr "العثور على شريكك التجاري الإبداعي في المملكة المتحدة"
 
 #: enrolment/templates/marketing-pages/creative.html:101
 msgid "See the UK's creative services providers on the Find a supplier service"
 msgstr ""
+"اطّلع على مقدمي الخدمات الإبداعية في المملكة المتحدة في خدمة العثور على مورّد"
 
 #: enrolment/templates/marketing-pages/food.html:7
 msgid "UK food and drink"
-msgstr ""
+msgstr "قطاع الأغذية والمشروبات في المملكة المتحدة"
 
 #: enrolment/templates/marketing-pages/food.html:9
 msgid ""
 "Whether you want the most delicious food brands or exceptional quality "
 "drinks, the UK is the first place to look."
-msgstr ""
-
+msgstr "سواء كنت بحاجة إلى أطيب المنتجات الغذائية أو مشروبات من نوعية إستثناءية، فالمملكة المتحدة أول وجهة تستحق عنايتك"
+ 
 #: enrolment/templates/marketing-pages/food.html:11
 msgid "Read more about UK food and drink"
-msgstr ""
+msgstr "اقرأ المزيد عن الأغذية والمشروبات في المملكة المتحدة"
 
 #: enrolment/templates/marketing-pages/food.html:19
 msgid ""
@@ -778,6 +953,9 @@ msgid ""
 "food trends that we share with the world. Every day millions of "
 "international consumers enjoy British products."
 msgstr ""
+"إن المملكة المتحدة دولة اجتمعت فيها تأثيرات فن الطهي لخلق اتجاهات طعام "
+"نشاركها مع العالم. هناك يوميًا الملايين من المستهلكين العالميين الذين "
+"يستمتعون بالمنتجات البريطانية."
 
 #: enrolment/templates/marketing-pages/food.html:22
 msgid ""
@@ -786,22 +964,31 @@ msgid ""
 "class produce with excellent provenance and thousands of new products are "
 "brought to the market every year."
 msgstr ""
+"إن \"العلامة التجارية\" البريطانية معترف بها ومقدّرة ومرغوب فيها عالميًا: نحن "
+"نملك تراثًا غنيًا من الأغذية والمشروبات التقليدية المعروفة. فضلاً عن ذلك، نحن "
+"نقدّم منتجات من الدرجة الأولى من مصادر ممتازة، ويتم توزيع آلاف المنتجات "
+"الجديدة إلى السوق كل عام."
 
 #: enrolment/templates/marketing-pages/food.html:25
 msgid ""
 "We rank among the world’s best nations for in food quality, traceability and "
 "safety."
 msgstr ""
+"وليس ذلك فحسب، بل نحن موجودون على لائحة أفضل الدول في العالم من حيث نوعية "
+"الطعام وقابلية تتبع الأغذية وسلامة المنتجات."
 
 #: enrolment/templates/marketing-pages/food.html:32
 msgid "British heritage shared globally"
-msgstr ""
+msgstr "مشاركة التراث البريطاني مع العالم"
 
 #: enrolment/templates/marketing-pages/food.html:34
 msgid ""
 "From famous Scottish and Northern Irish whiskies to our traditional tea and "
 "cakes, the UK has centuries of experience to share."
 msgstr ""
+"بدءًا من الويسكي الشهير الذي تنتجه كل من اسكتلندا وإيرلندا الشمالية ووصولاً "
+"إلى الشاي والكيك التقليدي الذي نقدمه، تحمل المملكة المتحدة في طيّها قرونًا من "
+"الخبرة لمشاركتها مع العالم أجمعه."
 
 #: enrolment/templates/marketing-pages/food.html:37
 msgid ""
@@ -809,6 +996,9 @@ msgid ""
 "over the world including craft beers, ciders, gin and award-winning "
 "sparkling wine."
 msgstr ""
+"نحن ندخل بعض التغيرات الجديدة على منتجاتنا البريطانية الكلاسيكية التي يتم "
+"تصديرها إلى كافة أنحاء العالم بما في ذلك البيرة والجن ونبيذ التفاح والنبيذ "
+"الفوار الحائز على جوائز."
 
 #: enrolment/templates/marketing-pages/food.html:40
 msgid ""
@@ -816,24 +1006,31 @@ msgid ""
 "influences, tastes and ideas and we have a wealth of ethnic and specialist "
 "foods made in the UK to offer back to the world."
 msgstr ""
+"أدى تاريخنا التجاري والثقافي المميز إلى استقطاب مكونات وتأثيرات وأذواق "
+"وأفكار جديدة. ونحن نملك ثروة من الأطعمة العرقية والمتخصصة التي يتم تحضيرها "
+"في المملكة المتحدة وتقديمها إلى العالم."
 
 #: enrolment/templates/marketing-pages/food.html:47
 msgid "The UK exported £12.3 billion of food and non-alcoholic drinks in 2015"
 msgstr ""
+"صدّرت المملكة المتحدة أغذية ومشروبات غير كحولية بقيمة 12,3 مليار جنيه "
+"إسترليني في العام 2015"
 
 #: enrolment/templates/marketing-pages/food.html:48
 msgid "Our main exports include chocolate, cheese and whisky"
-msgstr ""
+msgstr "تشمل صادراتنا الرئيسية الشوكولاتة والجبن والويسكي"
 
 #: enrolment/templates/marketing-pages/food.html:49
 msgid ""
 "We have thousands of suppliers manufacturing to standards accepted in 123 "
 "countries worldwide"
 msgstr ""
+"لدينا آلاف الموردين الذين يقومون بالتصنيع وفقًا لمعايير مقبولة في 123 دولة في "
+"العالم"
 
 #: enrolment/templates/marketing-pages/food.html:59
 msgid "Innovation in food and drink"
-msgstr ""
+msgstr "الابتكار في قطاع الأغذية والمشروبات"
 
 #: enrolment/templates/marketing-pages/food.html:61
 msgid ""
@@ -841,6 +1038,9 @@ msgid ""
 "each year. UK companies were the first to pioneer frozen food and instant "
 "coffee."
 msgstr ""
+"تعمد العلامات التجارية للأغذية والمشروبات في المملكة المتحدة إلى تطوير آلاف "
+"المنتجات الجديدة كل سنة وبيعها. وكانت شركات المملكة المتحدة من أوائل "
+"المبتكرين في مجال الأغذية المثلّجة والقهوة السريعة التحضير."
 
 #: enrolment/templates/marketing-pages/food.html:64
 msgid ""
@@ -848,10 +1048,13 @@ msgid ""
 "development and trends such as organic, gluten-free, dairy-free and health "
 "foods."
 msgstr ""
+"نحن في الطليعة في مجال الأبحاث والتكنولوجيا المتصلة بقطاع الأغذية، ‎بالإضافة "
+"الى تطوير المنتجات الجديدة والاتجاهات مثل الأطعمة الصحية العضوية والخالية من "
+"الغلوتين ومن منتجات الألبان."
 
 #: enrolment/templates/marketing-pages/food.html:68
 msgid "Food quality and safety"
-msgstr ""
+msgstr "جودة الأغذية وسلامتها"
 
 #: enrolment/templates/marketing-pages/food.html:70
 msgid ""
@@ -859,48 +1062,56 @@ msgid ""
 "and shellfish and our soil and climate provides bountiful agricultural "
 "resources for crops, dairy and meat."
 msgstr ""
+"يساعدنا موقع الجزيرة والمياه النظيفة في الوصول إلى مخزونات غنية من الأسماك "
+"والمحاريات، وتقدّم الأرض والمناخ موارد زراعية وفيرة من محاصيل ومنتجات الألبان "
+"واللحوم."
 
 #: enrolment/templates/marketing-pages/food.html:73
 msgid ""
 "Our manufacturing sector complies with rigorous international safety "
 "standards and our brands are trusted around the world."
 msgstr ""
+"بالإضافة إلى ذلك، يتوافق قطاع التصنيع لدينا مع معايير السلامة الدولية "
+"الصارمة ويتم الوثوق بعلاماتنا التجارية في كافة أرجاء العالم."
 
 #: enrolment/templates/marketing-pages/food.html:76
 msgid "We care about the food we produce: 89,000 farmers comply with"
-msgstr ""
+msgstr "نحن نهتم بالطعام الذي ننتجه: يمتثل 89000 مزارع"
 
 #: enrolment/templates/marketing-pages/food.html:76
 msgid "voluntary farm standards scheme"
-msgstr ""
+msgstr "لمخطط معايير المَزارع الطوعي"
 
 #: enrolment/templates/marketing-pages/food.html:76
 msgid "that assure animal and worker welfare and our"
-msgstr ""
+msgstr "الذي يضمن مصلحة الحيوانات والعمّال على حدّ سواء، وقد تم اعتماد "
 
 #: enrolment/templates/marketing-pages/food.html:76
 msgid "British Retail Consortium manufacturing standards"
-msgstr ""
+msgstr "معايير التصنيع الخاصة بالاتحاد البريطاني لتجارة التجزئة"
 
 #: enrolment/templates/marketing-pages/food.html:76
 msgid ""
 "have been adopted by 23,000 certificated suppliers, not only in the UK but "
 "in 123 other countries."
-msgstr ""
+msgstr "من قبل 23000 مورّد معتمد ليس فقط في المملكة المتحدة ولكن في 123 بلدًا آخر."
 
 #: enrolment/templates/marketing-pages/food.html:79
 msgid ""
 "Our customers recognise us for our excellent service and know that we can "
 "deliver."
 msgstr ""
+"يعترف عملاؤنا بخدمتنا الممتازة ويدركون جيدًا أننا قادرون على الإيفاء بوعودنا."
 
 #: enrolment/templates/marketing-pages/food.html:83
 msgid "Find your UK trade partner in food and drink today"
 msgstr ""
+"العثور على شريكك التجاري في قطاع الأغذية والمشروبات في المملكة المتحدة اليوم"
 
 #: enrolment/templates/marketing-pages/food.html:89
 msgid "See the UK's food and drink companies on the Find a supplier service"
 msgstr ""
+"راجع شركات الأغذية والمشروبات في المملكة المتحدة في خدمة العثور على مورّد"
 
 #: enrolment/templates/marketing-pages/food.html:92
 msgid ""
@@ -922,27 +1133,30 @@ msgstr ""
 #: enrolment/templates/marketing-pages/health.html:6
 msgid "Delivering the exceptional in healthcare and life sciences"
 msgstr ""
+"تقديم الخدمات والمنتجات الاستثنائية في مجال الرعاية الصحية وعلوم الحياة"
 
 #: enrolment/templates/marketing-pages/health.html:10
 msgid ""
 "Whether you need hospitals built, primary care services managed, or reliable "
 "suppliers of the latest medical technology and pharmaceutical advances, the "
 "UK is the first place to look."
-msgstr ""
+msgstr "سواء احتجت إلى بناء مستشفيات، أو إدارة الرعاية الصحية الأولية، أو مزودين معتمدين لأحدث التكنولوجيات الطبية والمبتكرات الدوائية فالمملكة المتحدة أول وجهة تستحق عنايتك"
 
 #: enrolment/templates/marketing-pages/health.html:13
 msgid "Read more about healthcare and life sciences"
-msgstr ""
+msgstr "اقرأ المزيد عن الصحة وعلوم الحياة"
 
 #: enrolment/templates/marketing-pages/health.html:19
 msgid "Healthcare and life sciences from the UK"
-msgstr ""
+msgstr "الرعاية الصحية وعلوم الحياة من المملكة المتحدة"
 
 #: enrolment/templates/marketing-pages/health.html:27
 msgid ""
 "If you need innovative, high-quality healthcare products and services, the "
 "UK is the best place to find new suppliers."
 msgstr ""
+"إذا كنت بحاجة إلى خدمات ومنتجات مبتكرة وعالية الجودة في مجال الرعاية الصحية، "
+"فالمملكة المتحدة هي أفضل مكان للبحث عن مورّدين جدد."
 
 #: enrolment/templates/marketing-pages/health.html:29
 msgid ""
@@ -951,12 +1165,18 @@ msgid ""
 "record of excellence means you can rely on the UK for cutting-edge market-"
 "ready ideas."
 msgstr ""
+"نحن مقرّ لـ 4 من أفضل 10 جامعات في العالم، وقد أثمر امتيازنا عن 23 فائزًا "
+"بجوائز نوبل للطب. يضمن مقر العلوم ذو المستوى العالمي هذا وسجل الإنجازات "
+"المتميزة التي حققناها إمكانية اعتمادك على المملكة المتحدة للحصول على أفكار "
+"متقدمة جاهزة للسوق."
 
 #: enrolment/templates/marketing-pages/health.html:37
 msgid ""
 "The UK is internationally renowned for its National Health Service, with its "
 "70 years of research and public delivery."
 msgstr ""
+"تشتهر المملكة المتحدة عالميًا بهيئة الخدمات الصحية الوطنية، مع ما تتمتّع به من "
+"تاريخ حافل بالأبحاث وتقديم الخدمات العامة يمتّد على 70 عامًا."
 
 #: enrolment/templates/marketing-pages/health.html:40
 msgid ""
@@ -964,6 +1184,9 @@ msgid ""
 "translate the best medical technology into high-quality, cost-effective and "
 "market-ready solutions."
 msgstr ""
+"تساعد المقاربة الفريدة من نوعها التي تتبعها المملكة المتحدة لتطوير الرعاية "
+"الصحية والمنتجات في ترجمة أفضل التقنيات الطبية الموجودة وتحويلها إلى حلول "
+"عالية الجودة ذات تكلفة معقولة جاهزة للسوق."
 
 #: enrolment/templates/marketing-pages/health.html:43
 msgid ""
@@ -971,22 +1194,29 @@ msgid ""
 "are more than 5,000 life sciences companies in the UK and we have a growing "
 "market in digital health products and apps."
 msgstr ""
+"تتخذ شركتان من بين أكبر 10 شركات صيدلانية عالمية من المملكة المتحدة مقرًا "
+"لها. وثمة أكثر من 5000 شركة معنية بعلوم الحياة في المملكة المتحدة، كما "
+"ولدينا سوقًا متنامية من المنتجات والتطبيقات الصحية الرقمية."
 
 #: enrolment/templates/marketing-pages/health.html:50
 msgid ""
 "There are more than 5,600 health and life sciences companies across the full "
 "UK supply chain"
 msgstr ""
+"ثمة أكثر من 5600 شركة في مجال الصحة وعلوم الحياة في كافة أنحاء سلسلة التوريد "
+"في المملكة المتحدة"
 
 #: enrolment/templates/marketing-pages/health.html:51
 msgid ""
 "The UK has the world’s largest integrated health system as a test bed for "
 "world-class products and services"
 msgstr ""
+"تتمتّع المملكة المتحدة بأكبر نظام متكامل للصحة في العالم، يُستخدم كمنصة اختبار "
+"للخدمات والمنتجات ذات المستوى العالمي"
 
 #: enrolment/templates/marketing-pages/health.html:52
 msgid "More than 80 Nobel Prizes underpin the UK’s top biomedical innovations"
-msgstr ""
+msgstr "أكثر من 80 جائزة نوبل تدعم أفضل الابتكارات الطبية في المملكة المتحدة"
 
 #: enrolment/templates/marketing-pages/health.html:60
 msgid ""
@@ -994,18 +1224,21 @@ msgid ""
 "diagnostic device, particularly single-use technology and orthopaedic "
 "devices. The UK also has companies specialising in:"
 msgstr ""
+"يُنتج قطاع التكنولوجيا الطبية في المملكة المتحدة مجموعة واسعة من الأجهزة "
+"الطبية والتشخيصية، لا سيما التكنولوجيا الأحادية الاستخدام وأجهزة تقويم "
+"العظام. بالإضافة إلى ذلك، تضمّ المملكة المتحدة شركات متخصصة في:"
 
 #: enrolment/templates/marketing-pages/health.html:62
 msgid "novel drug delivery systems"
-msgstr ""
+msgstr "الأنظمة الحديثة لتسليم الأدوية"
 
 #: enrolment/templates/marketing-pages/health.html:63
 msgid "single-use biotechnology facilities"
-msgstr ""
+msgstr "مرافق التكنولوجيا الحيوية ذات الاستخدام الواحد"
 
 #: enrolment/templates/marketing-pages/health.html:64
 msgid "medical imaging"
-msgstr ""
+msgstr "التصوير الطبي"
 
 #: enrolment/templates/marketing-pages/health.html:68
 msgid ""
@@ -1014,16 +1247,22 @@ msgid ""
 "pharmaceutical industry remains highly competitive in complex formulations "
 "and continuous manufacturing processes."
 msgstr ""
+"تحتلّ المملكة المتحدة مركز الصدارة في مجال الطب التجديدي، وتشتهر بالعلاج "
+"الجيني والمنتجات والخدمات الخاصة بهندسة الأنسجة. وتبقى صناعة الأدوية في "
+"المملكة المتحدة تنافسية للغاية في مجال التركيبات المعقدة وعمليات التصنيع "
+"المستمر."
 
 #: enrolment/templates/marketing-pages/health.html:71
 msgid ""
 "With a comprehensive regulatory framework, robust compliance and quality "
 "assurance culture in the UK, product safety and effectiveness are assured."
 msgstr ""
+"يضمن وجود إطار تنظيمي شامل وامتثال قوي وثقافة ضمان الجودة في المملكة "
+"المتحدة، سلامة المنتجات وفعاليتها."
 
 #: enrolment/templates/marketing-pages/health.html:77
 msgid "Work with the UK to create first-rate healthcare"
-msgstr ""
+msgstr "اعمل مع المملكة المتحدة لإنشاء رعاية صحية من الدرجة الأولى"
 
 #: enrolment/templates/marketing-pages/health.html:79
 msgid ""
@@ -1031,6 +1270,9 @@ msgid ""
 "or extend the skills of your workforce, the UK has unrivalled experience of "
 "successful healthcare innovation and delivery."
 msgstr ""
+"إذا كنت بحاجة إلى تطوير الخدمات السريرية أو تطبيق الأنظمة الصحية الرقمية أو "
+"تعزيز مهارات القوى العاملة لديك، فما عليك سوى اختيار المملكة المتحدة التي "
+"تملك خبرة لا مثيل لها في الابتكار والتسليم الناجحين في مجال الرعاية الصحية."
 
 #: enrolment/templates/marketing-pages/health.html:82
 msgid ""
@@ -1040,12 +1282,19 @@ msgid ""
 "regulators and health technology assessment bodies, ensuring the best "
 "possible safety, outcomes and cost-effectiveness."
 msgstr ""
+"تنبع المعايير الاستثنائية للرعاية الصحية من هيئة الخدمات الصحية الوطنية في "
+"المملكة المتحدة، التي احتلت مرتبة أفضل نظام رعاية صحية لـ 11 دولة كبرى في "
+"العام 2013. يتم دعم هذه المعايير على يد منظمي الرعاية الصحية المحترفين "
+"ومنظمي أنظمة الصحة وهيئات تقييم تكنولوجيا الرعاية الصحية، ما يضمن أفضل مستوى "
+"ممكنًا للسلامة والنتائج والفعالية من حيث التكلفة."
 
 #: enrolment/templates/marketing-pages/health.html:85
 msgid ""
 "Building on the strong foundations of the NHS, the UK’s thriving and diverse "
 "commercial healthcare sector caters for all needs."
 msgstr ""
+"اعتمادًا على الأسس القوية لهيئة الخدمات الصحية الوطنية، يلبي قطاع الرعاية "
+"الصحية التجاري المزدهر والمتنوع في المملكة المتحدة كل الاحتياجات."
 
 #: enrolment/templates/marketing-pages/health.html:88
 msgid ""
@@ -1053,6 +1302,10 @@ msgid ""
 "organisations has created a rich pool of innovative providers, ready to "
 "adapt their solutions to the needs of customers overseas."
 msgstr ""
+"أدّى التعاون الذي استمر لعقود بين هيئة الخدمات الصحية الوطنية والمؤسسات "
+"الأكاديمية ومؤسسات القطاع الخاص إلى إنشاء مجموعة غنية من مقدمي الخدمات "
+"المبتكرة الذين هم دائمًا على استعداد لتكييف الحلول التي يقدمونها لتتناسب "
+"واحتياجات العملاء في الخارج."
 
 #: enrolment/templates/marketing-pages/health.html:91
 msgid ""
@@ -1061,6 +1314,10 @@ msgid ""
 "the most of current delivery models in your country and identify ways to "
 "improve efficiency, patient experiences and clinical outcomes."
 msgstr ""
+"في مجال خدمات إدارة المستشفيات، تقدّم المقاربة المجرّبة والمختبرة على صعيد "
+"الأمراض الحادة والرعاية الثالثية في المملكة المتحدة معرفة دقيقة وعميقة. يمكن "
+"لخدماتنا مساعدتك في الاستفادة إلى أقصى حد من نماذج التسليم الحالية في بلدك، "
+"وتحديد طرق لتحسين الكفاءة وتجارب المرضى والنتائج السريرية."
 
 #: enrolment/templates/marketing-pages/health.html:94
 msgid ""
@@ -1068,6 +1325,9 @@ msgid ""
 "services - replicating world-class services offered in the UK through "
 "training, support and visiting consultant programmes."
 msgstr ""
+"تقود هيئة الخدمات الصحية الوطنية في الكويت مهمة تطوير خدمات رعاية سرطان "
+"الأطفال الجديدة عبر إنشاء خدمات ذات مستوى عالمي مشابهة لتلك التي تقدمها "
+"المملكة المتحدة، وذلك من خلال برامج التدريب والدعم والاستشاريين الزائرين."
 
 #: enrolment/templates/marketing-pages/health.html:97
 msgid ""
@@ -1075,6 +1335,9 @@ msgid ""
 "commercially-driven UK healthcare services which are being delivered by "
 "expatriate and local staff."
 msgstr ""
+"وفي الصين، يتم دعم خدمات رعاية الأمراض الحادة وإعادة التأهيل بواسطة خدمات "
+"الرعاية الصحية في المملكة المتحدة التي تحرّكها الدوافع التجارية والتي يقدّمها "
+"موظفون محليون وأجانب."
 
 #: enrolment/templates/marketing-pages/health.html:100
 msgid ""
@@ -1084,12 +1347,20 @@ msgid ""
 "and modelling services needed for successful, resource-efficient "
 "infrastructure projects."
 msgstr ""
+"فضلاً عن ذلك، تُعدّ المملكة المتحدة دولة مبتكرة ريادية في مجال تمويل المشاريع، "
+"لا سيما الشراكات بين القطاعين العام والخاص (PPP) التي بإمكانها ضمان توفير "
+"خدمات عامة منخفضة التكلفة وعالية الجودة. وتستطيع الشركات في المملكة المتحدة "
+"توفير النطاق الكامل لخدمات التخطيط ووضع النماذج اللازمة لنجاح مشاريع البنية "
+"التحتية الفعالة من حيث استخدام الموارد."
 
 #: enrolment/templates/marketing-pages/health.html:103
 msgid ""
 "UK companies are delivering one of the world's biggest healthcare PPP "
 "programmes, to meet Turkey's growing demand for healthcare facilities."
 msgstr ""
+"تعمد شركات المملكة المتحدة إلى تقديم أحد أكبر برامج الشراكات بين القطاعين "
+"العام والخاص في مجال الرعاية الصحية في العالم، وذلك بهدف تلبية الطلب "
+"المتزايد في تركيا لمرافق الرعاية الصحية."
 
 #: enrolment/templates/marketing-pages/health.html:106
 msgid ""
@@ -1097,12 +1368,17 @@ msgid ""
 "need reliable suppliers of the latest medical technology pharmaceutical "
 "advances, the UK is the first place to look."
 msgstr ""
+"سواء أكنت بحاجة إلى بناء مستشفيات وإدارة خدمات الرعاية الصحية الأولية، أو "
+"إلى موردين يمكن الاعتماد عليهم يقدمون أحدث التطورات التقنية الطبية في المجال "
+"الصيدلاني، فالمملكة المتحدة هي المكان الأول الذي يجب أن تبحث فيه."
 
 #: enrolment/templates/marketing-pages/health.html:111
 msgid ""
 "See the UK's healthcare and life sciences providers on the Find a supplier "
 "service"
 msgstr ""
+"اطّلع على مقدمي الرعاية الصحية وعلوم الحياة في المملكة المتحدة في خدمة العثور "
+"على مورّد"
 
 #: enrolment/templates/marketing-pages/health.html:113
 msgid "Find UK healthcare and life sciences companies to meet your needs"
@@ -1280,21 +1556,25 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/tech.html:7
 msgid "UK technology"
-msgstr ""
+msgstr "التكنولوجيا في المملكة المتحدة"
 
 #: enrolment/templates/marketing-pages/tech.html:9
 msgid ""
 "Whether you need electronic systems, data analytics, artificial intelligence "
 "or semiconductors, the UK is the first place to look."
-msgstr ""
+msgstr 
+"سواء احتجت إلى أنظمة إلكترونية، أو تحليل البيانات، أو الذكاء الاصطنائي، "
+"أو أشباه الموصلات فالمملكة المتحدة أول وجهة تستحق عنايتك"
 
 #: enrolment/templates/marketing-pages/tech.html:11
 msgid "Read more about technology in the UK"
-msgstr ""
+msgstr "اقرأ المزيد عن التكنولوجيا في المملكة المتحدة" 
 
 #: enrolment/templates/marketing-pages/tech.html:17
 msgid "If you need the best technology, look no further than the UK."
 msgstr ""
+"إذا كنت بحاجة إلى أفضل التقنيات الموجودة في السوق، فلا تنظر أبعد من المملكة "
+"المتحدة."
 
 #: enrolment/templates/marketing-pages/tech.html:19
 msgid ""
@@ -1302,6 +1582,9 @@ msgid ""
 "technology according to the Good Country Index and third in the Global "
 "Innovation Index."
 msgstr ""
+"المملكة المتحدة رائدة عالميًا: ففي العام 2016، احتلينا المرتبة الأولى في مجال "
+"العلوم والتكنولوجيا وفقًا لمؤشر البلدان الجيدة والمرتبة الثالثة في المؤشر "
+"العالمي للابتكار."
 
 #: enrolment/templates/marketing-pages/tech.html:22
 msgid ""
@@ -1309,6 +1592,10 @@ msgid ""
 "– from financial services and high-value manufacturing, to retail and "
 "agriculture – and continues to expand at an extraordinary pace."
 msgstr ""
+"يشكّل قطاع التكنولوجيا في المملكة المتحدة الأساس الداعم لعدد كبير من قطاعات "
+"الأعمال الناجحة، بدءًا من الخدمات المالية، مرورًا بالصناعات التحويلية ذات "
+"القيمة العالية، وصولاً إلى البيع بالتجزئة والزراعة، وهو يواصل التوسّع بوتيرة "
+"استثنائية."
 
 #: enrolment/templates/marketing-pages/tech.html:27
 msgid ""
@@ -1316,6 +1603,9 @@ msgid ""
 "innovation, and we are proud that we provide a technological springboard for "
 "companies worldwide."
 msgstr ""
+"يستفيد عدد كبير من الشركات الأكثر شهرة ونجاحًا في العالم من الابتكار في "
+"المملكة المتحدة، ونحن فخورون بأن نقدم نقطة انطلاق تكنولوجية للشركات في كافة "
+"أنحاء العالم."
 
 #: enrolment/templates/marketing-pages/tech.html:29
 msgid ""
@@ -1324,21 +1614,27 @@ msgid ""
 "radio-frequency electronics, such as the first single-chip implementation of "
 "Bluetooth and the international NarrowBand-Internet of Things standard"
 msgstr ""
+"يعتبر قطاع التكنولوجيا في المملكة المتحدة أحد أكبر القطاعات في العالم، وهو "
+"منبر لمهارات الإبداع والتصميم لدينا. تركّز المملكة المتحدة بالأخص على: "
+"إلكترونيات التردد الراديوي ذات الطاقة المنخفضة، مثل أول تطبيق للشريحة "
+"المنفردة المزوّدة بتقنية Bluetooth ومعيار إنترنت الأشياء بالنطاق الضيق"
 
 #: enrolment/templates/marketing-pages/tech.html:30
 msgid ""
 "development of 5G communications, which will underpin the development of "
 "connected devices"
 msgstr ""
+"تطوير اتصالات الجيل الخامس، الذي بدوره سيشكّل ركيزة تطوير الأجهزة المتصلة"
 
 #: enrolment/templates/marketing-pages/tech.html:31
 msgid ""
 "data analytics to create real-time consumer trends, behaviour and insights"
 msgstr ""
+"تحليلات البيانات لإنشاء اتجاهات المستهلكين وسلوكهم ورؤاهم في الوقت الحقيقي"
 
 #: enrolment/templates/marketing-pages/tech.html:32
 msgid "data centres - we have the largest market capacity in Europe"
-msgstr ""
+msgstr "مراكز البيانات: لدينا أكبر قدرة استيعابية للسوق في أوروبا"
 
 #: enrolment/templates/marketing-pages/tech.html:33
 msgid ""
@@ -1346,34 +1642,40 @@ msgid ""
 "intelligence (AI) start-up companies, especially those specialising in "
 "machine learning, deep learning and natural language processing"
 msgstr ""
+"الذكاء الاصطناعي - نحن موطن لعدد كبير من شركات الذكاء الاصطناعي (AI) الناشئة "
+"الناجحة، لا سيما تلك التي تتخصص في التعلم الآلي والتعلم العميق ومعالجة "
+"اللغات الطبيعية"
 
 #: enrolment/templates/marketing-pages/tech.html:34
 msgid ""
 "producing compound semiconductor materials producing frontier-based sensor "
 "technologies."
 msgstr ""
+"إنتاج مواد بشبه موصلات مركّبة منتجة لتقنيات الاستشعار المستندة إلى الحدود."
 
 #: enrolment/templates/marketing-pages/tech.html:42
 msgid "The UK has the largest technology market in Europe"
-msgstr ""
+msgstr "تضمّ المملكة المتحدة أكبر سوق تكنولوجيا في أوروبا"
 
 #: enrolment/templates/marketing-pages/tech.html:43
 msgid "The second largest telecoms service exporter globally is from the UK"
-msgstr ""
+msgstr "ثاني أكبر مصّدر لخدمة الاتصالات على الصعيد العالمي مقرّه المملكة المتحدة"
 
 #: enrolment/templates/marketing-pages/tech.html:44
 msgid "The UK has the largest data centre market in Europe"
-msgstr ""
+msgstr "المملكة المتحدة لديها أكبر سوق مركز بيانات في أوروبا"
 
 #: enrolment/templates/marketing-pages/tech.html:57
 msgid "UK technology firms are global success stories"
-msgstr ""
+msgstr "شركات التكنولوجيا في المملكة المتحدة عبارة عن قصص نجاح عالمية"
 
 #: enrolment/templates/marketing-pages/tech.html:59
 msgid ""
 "There are thousands of technology start-ups in the UK, thanks to our strong "
 "entrepreneurial culture."
 msgstr ""
+"هناك الآلاف من شركات التكنولوجيا الناشئة في المملكة المتحدة وذلك بفضل ثقافة "
+"ريادة الأعمال القوية التي نعتمدها."
 
 #: enrolment/templates/marketing-pages/tech.html:62
 msgid ""
@@ -1381,41 +1683,49 @@ msgid ""
 "you're looking to grow your business through technology, the UK is an ideal "
 "place to find a trade partner."
 msgstr ""
+"يمكن العثور على شركات التكنولوجيا الناجحة في كافة أنحاء البلاد، وإذا كنت "
+"تبحث عن فرصة لتنمية أعمالك من خلال التكنولوجيا، فالمملكة المتحدة هي المكان "
+"المثالي للعثور على شريك تجاري."
 
 #: enrolment/templates/marketing-pages/tech.html:65
 msgid ""
 "Our flourishing start-ups complement a host of established global technology "
 "companies based here. UK technology success stories include:"
 msgstr ""
+"تكمّل الشركات الناشئة المزدهرة المتواجدة لدينا مجموعة من شركات التكنولوجيا "
+"العالمية الراسخة التي تتخذ من المملكة المتحدة مقرًا لها. تشمل قصص نجاح قطاع "
+"التكنولوجيا في المملكة المتحدة ما يلي:"
 
 #: enrolment/templates/marketing-pages/tech.html:67
 msgid ""
 "a telecommunications services company that operates in 180 markets with "
 "revenue of more than £19 billion"
 msgstr ""
+"شركة خدمات اتصالات تعمل في 180 سوقًا في العالم، مع إيرادات تصل إلى أكثر من 19 "
+"مليار جنيه إسترليني"
 
 #: enrolment/templates/marketing-pages/tech.html:68
 msgid ""
 "the world's third-largest supplier of enterprise resource planning software"
-msgstr ""
+msgstr "ثالث أكبر مورّد لبرنامج تخطيط موارد المؤسسات في العالم"
 
 #: enrolment/templates/marketing-pages/tech.html:69
 msgid "a mobile virtual network operator in 21 countries worldwide"
-msgstr ""
+msgstr "مشغّل شبكة افتراضية للأجهزة المحمولة في 21 بلدًا في كافة أرجاء العالم"
 
 #: enrolment/templates/marketing-pages/tech.html:70
 msgid ""
 "the world's second biggest mobile telecomms network (by number of "
 "connections)"
-msgstr ""
+msgstr "ثاني أكبر شبكة اتصالات للهواتف المحمولة في العالم (بحسب عدد الاتصالات)"
 
 #: enrolment/templates/marketing-pages/tech.html:74
 msgid "Find your UK technology trade partner"
-msgstr ""
+msgstr "العثور على شريكك التجاري في قطاع التكنولوجيا في المملكة المتحدة"
 
 #: enrolment/templates/marketing-pages/tech.html:79
 msgid "See the UK's technology providers on the Find a supplier service"
-msgstr ""
+msgstr "اطّلع على مقدمي التكنولوجيا في المملكة المتحدة في خدمة العثور على مورّد"
 
 #: enrolment/templates/marketing-pages/tech.html:82
 msgid ""
@@ -1433,6 +1743,88 @@ msgid ""
 "soon as companies that match your needs have created trade profiles."
 msgstr ""
 
-#: enrolment/templates/search-companies.html:6
-msgid "Find great UK companies"
-msgstr ""
+#~ msgid "This page is only in English"
+#~ msgstr "هذه الصفحة باللغة الإنجليزية فقط"
+
+#~ msgid "RD Biomed"
+#~ msgstr "RD Biomed"
+
+#~ msgid "Touch Bionics"
+#~ msgstr "Touch Bionics"
+
+#~ msgid "EVRYTHNG"
+#~ msgstr "EVRYTHNG"
+
+#~ msgid "Arkessa"
+#~ msgstr "Arkessa"
+
+#~ msgid ""
+#~ "We care about the food we produce: 89,000 farmers comply with voluntary "
+#~ "farm standards scheme that assure animal and worker welfare and our "
+#~ "British Retail Consortium manufacturing standards have been adopted by "
+#~ "23,000 certificated suppliers, not only in the UK but in 123 other "
+#~ "countries."
+#~ msgstr ""
+#~ "نحن نهتم بالطعام الذي ننتجه: يمتثل 89000 مزارع لمخطط معايير المَزارع "
+#~ "الطوعي الذي يضمن مصلحة الحيوانات والعمّال على حدّ سواء، وقد تم اعتماد "
+#~ "معايير التصنيع الخاصة بـ \"الاتحاد البريطاني لتجارة التجزئة\" من قبل "
+#~ "23000 مورّد معتمد ليس فقط في المملكة المتحدة ولكن في 123 بلدًا آخر."
+
+#~ msgid "Joe & Seph's"
+#~ msgstr "Joe & Seph's"
+
+#~ msgid ""
+#~ "UK architects are responsible for some of the world’s most stunning "
+#~ "buildings, such as the Galaxy Soho urban village in Beijing and reshaping "
+#~ "environments, such as Singapore’s Gardens by the Bay."
+#~ msgstr ""
+#~ "تحمل بعض المباني الأكثر روعة وإدهاشًا في العالم توقيع مهندسين معماريين من "
+#~ "المملكة المتحدة، مثل قرية \"سوهو غلاكسي\" المدنية في بكين، والبيئات "
+#~ "المعاد تشكيلها، مثل حدائق الخليج في سنغافورة."
+
+#~ msgid ""
+#~ "We're also responsible for designing usable industrial and commercial "
+#~ "spaces such as the new Spaceport America."
+#~ msgstr ""
+#~ "ونحن أيضًا مسؤولون عن تصميم أماكن صناعية وتجارية قابلة للاستخدام مثل قاعدة "
+#~ "سبيس بورت أمريكا الجديدة."
+
+#~ msgid ""
+#~ "As well as designing the built environment, UK firms are designing "
+#~ "vehicles and interiors around the world: including helping to design the "
+#~ "world’s fastest passenger train in China."
+#~ msgstr ""
+#~ "فضلاً عن تصميم البيئة المبنية، تقوم شركات المملكة المتحدة بتصميم المركبات "
+#~ "والديكور الداخلي في أنحاء العالم: بما في ذلك المساعدة في تصميم أسرع قطار "
+#~ "ركاب في العالم في الصين."
+
+#~ msgid "#"
+#~ msgstr "الفنون: التراث والابتكار"
+
+#~ msgid "Immersive"
+#~ msgstr "Immersive"
+
+#~ msgid "Blippar"
+#~ msgstr "Blippar"
+
+#~ msgid "select"
+#~ msgstr "تحديد"
+
+#~ msgid "I agree to the great.gov.uk terms and conditions."
+#~ msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
+
+#~ msgid "This field is required."
+#~ msgstr "هذا الحقل مطلوب."
+
+#~ msgid "Receive email updates of the latest UK companies in your industry"
+#~ msgstr ""
+#~ "تلقي تحديثات بالبريد الإلكتروني حول أحدث شركات المملكة المتحدة في القطاع "
+#~ "الذي تعمل فيه"
+
+#~ msgid ""
+#~ "Please include an '@' in the email address. '[data]' is missing an '@'"
+#~ msgstr ""
+#~ "يُرجى تضمين \"@\" في عنوان البريد الإلكتروني. لا يوجد \"@'\" في '[data]'"
+
+#~ msgid "Welcome to Great Britain and Northern Ireland"
+#~ msgstr "أهلاً بك في بريطانيا العظمى وإيرلندا الشمالية"
