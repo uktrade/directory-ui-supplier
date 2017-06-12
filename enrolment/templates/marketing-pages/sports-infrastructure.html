@@ -1,4 +1,4 @@
-{% extends 'marketing-pages/base.html' %}
+{% extends LANGUAGE_BIDI|yesno:'marketing-pages/bidi/base.html,marketing-pages/base.html' %}
 
 {% load static from staticfiles %}
 {% load trans from i18n %}

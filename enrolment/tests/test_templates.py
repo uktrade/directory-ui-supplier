@@ -179,7 +179,7 @@ def test_international_landing_page_button_feature_flag_on():
             'FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED': True,
         }
     }
-    html = render_to_string('landing-page-international.html', context)
+    html = render_to_string('landing-page.html', context)
 
     assert MORE_INDUSTRIES_LABEL in html
 
@@ -190,6 +190,6 @@ def test_international_landing_page_button_feature_flag_off():
             'FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED': False,
         }
     }
-    html = render_to_string('landing-page-international.html', context)
+    html = render_to_string('landing-page.html', context)
 
     assert MORE_INDUSTRIES_LABEL not in html

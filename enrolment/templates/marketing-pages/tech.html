@@ -1,4 +1,4 @@
-{% extends 'marketing-pages/base.html' %}
+{% extends LANGUAGE_BIDI|yesno:'marketing-pages/bidi/base.html,marketing-pages/base.html' %}
 
 {% load static from staticfiles %}
 {% load trans from i18n %}
@@ -11,7 +11,7 @@
         <a href="?verbose=true">{% trans "Read more about technology in the UK" %}</a>
     </div>
 {% endblock %}
-    
+
 {% block proposition %}
     <section>
         <h2>{% trans "If you need the best technology, look no further than the UK." %}</h2>
