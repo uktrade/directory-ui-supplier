@@ -1,12 +1,12 @@
+from zenpy import Zenpy
+from zenpy.lib.api_objects import Ticket, User as ZendeskUser
+
 from django.conf import settings
 from django.shortcuts import Http404
 from django.template.response import TemplateResponse
 from django.utils import translation
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
-
-from zenpy import Zenpy
-from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
 from api_client import api_client
 from enrolment import constants, forms
@@ -24,6 +24,7 @@ zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 class ConditionalEnableTranslationsMixin:
 
     translations_enabled = True
+    template_name_bidi = None
 
     def __init__(self, *args, **kwargs):
         dependency = 'ui.middleware.ForceDefaultLocale'
@@ -36,6 +37,7 @@ class ConditionalEnableTranslationsMixin:
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
+        context['LANGUAGE_BIDI'] = translation.get_language_bidi()
         if self.translations_enabled:
             context['language_switcher'] = {
                 'show': True,
@@ -44,6 +46,11 @@ class ConditionalEnableTranslationsMixin:
                 )
             }
         return context
+
+    def get_template_names(self):
+        if translation.get_language_bidi():
+            return [self.template_name_bidi]
+        return super().get_template_names()
 
 
 class LeadGenerationFormView(FormView):
@@ -93,7 +100,8 @@ class AnonymousSubscribeFormView(FormView):
 
 class InternationalLandingView(ConditionalEnableTranslationsMixin,
                                TemplateView):
-    template_name = 'landing-page-international.html'
+    template_name = 'landing-page.html'
+    template_name_bidi = 'bidi/landing-page.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -104,6 +112,7 @@ class InternationalLandingView(ConditionalEnableTranslationsMixin,
 class InternationalLandingSectorListView(ConditionalEnableTranslationsMixin,
                                          TemplateView):
     template_name = 'landing-page-international-sector-list.html'
+    template_name_bidi = 'bidi/landing-page-international-sector-list.html'
 
     @property
     def translations_enabled(self):
@@ -125,6 +134,8 @@ class TermsView(TemplateView):
 
 class InternationalLandingSectorDetailView(ConditionalEnableTranslationsMixin,
                                            TemplateView):
+
+    template_name_bidi = None
 
     @property
     def translations_enabled(self):
