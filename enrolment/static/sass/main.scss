@@ -932,15 +932,6 @@ a.ed-filled-button-primary {
   }
 }
 
-.ed-globe-icon-container {
-  text-align: right;
-  padding-right: 5px;
-  img {
-    width: 39px;
-    margin-top: 5px;
-  }
-}
-
 .ed-truncate-single-line {
   white-space: nowrap;
   overflow: hidden;
@@ -1035,3 +1026,65 @@ a.ed-filled-button-primary {
     display: none;
   }
 }
+
+.browse-companies-container,
+.search-companies-container {
+  background-color: $aqua;
+  color: $white;
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding: 25px;
+  position: relative;
+  
+  h3 {
+    background-image: url(/static/images/globe-icon.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 1.1em;
+    margin: 0 0 20px 0;
+    padding: 10px 0 10px 51px;
+  }
+  p {
+    line-height: 1.3em;
+    margin-bottom: 0;
+    width: 60%;
+  }
+  .button {
+    background-color: $white;
+    border: 2px solid $blue-2;
+    bottom: 25px;
+    position: absolute;
+    text-align: center;
+    right: 25px;
+  }
+}
+
+
+/* Mobile
+ *****************/
+@media (max-width: 640px) {
+  .browse-companies-container,
+  .search-companies-container {
+    h3 {
+      background-position: right center;
+      padding-left: 0;
+      padding-right: 51px;
+    }
+    
+    p {
+      margin-bottom: 25px;
+      width: auto;
+    }
+    
+    .button {
+      position: static;
+      width: 100%;
+    }
+  }
+}
+
+
+

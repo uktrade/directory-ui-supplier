@@ -1,0 +1,24 @@
+@import 'main-bidi.scss';
+
+body.bidi {
+  .ed-landing-page-sector-container {
+    .span4 {
+      margin-left: 20px;
+    }
+    .span7 {
+      margin-left: 0;
+    }
+  }  
+}
+
+
+@media (min-width: 768px) {
+  
+  .ed-landing-page-sector-companies-list .browse-companies-container,
+  .ed-landing-page-synopsis .search-companies-container {  
+    h3 {
+      background-position: left center;
+      padding: 15px 0 0 51px;
+    }
+  }
+}

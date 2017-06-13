@@ -224,11 +224,11 @@ a .register-interest-btn {
 }
 
 .ed-landing-page-synopsis {
-  padding:20px;
-  border: 1px solid #dedede;
-  border-top: none;
   background-color: #FAFAFA;
   line-height: 1.55em;
+  border: 1px solid #dedede;
+  border-top: none;
+  padding:20px;
 }
 
 .ed-landing-page-read-more-subtitle {
@@ -296,47 +296,6 @@ a.ed-landing-page-see-more-button {
   width: 100%; 
 }
 
-.ed-landing-page-find-other-companies-container {
-  background: #007EA3;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  color: white;
-  line-height: 1.33;
-  h3 {
-    line-height: 1em;
-    font-weight: 300;
-    font-size: 21px;
-    margin-bottom: 20px;
-    margin-top: 0;
-  }
-  a.button {
-    width: 100%;
-    background-color: white;
-    color: #004f95;
-    border: 2px solid #004f95;
-    &:focus {
-      background-color: white;
-    }
-  }
-}
-
-.ed-landing-page-find-other-companies-container-bottom {
-  margin-bottom: 20px;
-  padding: 25px;
-  h3 {
-    margin-bottom: 30px;
-    margin-top: 10px;
-  }
-  .btn-container {
-      margin-bottom: 20px;
-      margin-top: 25px;
-      .button {
-        text-align: center;
-      }
-  }
-}
-
 .ed-landing-page-sector-companies-list {
   border: 1px solid #dedede;
   padding: 20px;
@@ -389,39 +348,6 @@ a.ed-landing-page-see-more-button {
   }
 }
 
-.ed-landing-page-browse-companies-container {
-  background-color: #007EA3;
-  color: white;
-  padding: 20px;
-  h2 {
-    margin-top: 0;
-    font-weight: 300;
-    line-height: 1.14em;
-    font-size: 21px;
-    margin-bottom: 20px;
-  }
-  p {
-    line-height: 1.33;
-  }
-  .btn-container {
-    margin-top: 20px;
-    margin-bottom: 0;
-    .button:focus {
-      background: white;
-      outline: 3px solid #ffbf47;
-    }
-  }
-  .button {
-    border: 2px solid #004f95;
-    color: #004f95;
-    padding: 15px;
-    text-align: center;
-    font-weight: bold;
-    display: block;
-    background: white;
-  }
-}
-
 .ed-landing-page-sector-specific-container {
   h1, h2, h3 {
     font-weight: 300;
@@ -465,13 +391,31 @@ a.ed-landing-page-see-more-button {
   margin-top: 15px;
 }
 
-body.bidi {
-  .ed-landing-page-sector-container {
-    .span4 {
-      margin-left: 20px;
+
+.ed-landing-page-sector-companies-list .browse-companies-container,
+.ed-landing-page-synopsis .search-companies-container {
+  margin-bottom: 0;  
+}
+
+@media (min-width: 768px) {
+  
+  .ed-landing-page-sector-companies-list .browse-companies-container,
+  .ed-landing-page-synopsis .search-companies-container {
+    padding: 10px 25px 25px 25px;
+    
+    h3 {
+      background-position: right center;
+      padding: 15px 51px 0 0;
     }
-    .span7 {
-      margin-left: 0;
+  
+    p {
+      margin-bottom: 25px;
+      width: auto;
     }
-  }  
+  
+    .button {
+      position: static;
+      width: 100%;
+    }
+  }
 }

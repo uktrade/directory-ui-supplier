@@ -38,25 +38,8 @@
 						{% trans "Choose from the hundreds of businesses in the UK to work with you today." %}
 					</p>
 				</div>
-				<div class="span4 ed-landing-page-browse-companies-container">
-					<div class="row-fluid">
-						<div class="span8">
-							<h2>{% trans "Find great UK companies" %}</h2>
-						</div>
-						<div class="span4 ed-globe-icon-container">
-							<img src="{% static 'images/globe-icon.png' %}" width="39" alt="" />
-						</div>
-					</div>
-					<p>
-						{% trans "Exceptionally innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service." %}
-					</p>
-					<div class="btn-container">
-						{% if features.FEATURE_COMPANY_SEARCH_VIEW_ENABLED %}
-							<a class="button" href="{% url 'company-search' %}">{% trans "Find a supplier" %}</a>
-						{% else %}
-							<a class="button" href="{% url 'public-company-profiles-list' %}">{% trans "Browse UK companies" %}</a>
-						{% endif %}
-					</div>
+				<div class="span4">
+					{% include 'search-companies.html' %}
 				</div>
 			</div>
 		</div>
@@ -143,6 +126,6 @@
 			</div>
 		{% endif %}
 	</div>
-	{% include 'browse-companies.html' %}
+	{% include 'search-companies.html' %}
 </div>
 {% endblock content %}

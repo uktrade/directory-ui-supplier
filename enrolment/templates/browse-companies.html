@@ -1,40 +1,13 @@
 {% load trans from i18n %}
 {% load static from staticfiles %}
-<section>
-	<div class="ed-landing-page-find-other-companies-container ed-landing-page-find-other-companies-container-bottom">
-		<div class="row-fluid">
-			<div class="span8">
-				<div class="row-fluid">
-					<div class="span1 ed-globe-icon-container">
-						<img src="{% static 'images/globe-icon.png' %}" alt="" />
-					</div>
-					<div class="span9">
-						<h3>
-							{% block footer_title %}
-								{% trans "Find great UK companies" %}
-							{% endblock %}
-						</h3>
-					</div>
-				</div>
-				<div class="row-fluid ">
-					<div class="span11">
-						<p class="ed-landing-page-sector-synopsis">
-							{% block footer_text %}
-								{% trans "Exceptionally innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service." %}
-							{% endblock %}
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="span4">
-				<div class="btn-container pull-right">
-					{% if features.FEATURE_COMPANY_SEARCH_VIEW_ENABLED %}
-						<a class="button" href="{% url 'company-search' %}">{% trans "Find a supplier" %}</a>
-					{% else %}
-						<a class="button" href="{% url 'public-company-profiles-list' %}">{% trans "Browse UK companies" %}</a>
-					{% endif %}
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+<div class="browse-companies-container">
+	<h3>{% trans "Find other great UK companies" %}</h3>
+	<p>
+		{% block company_box_text %}
+			{% trans "Innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service." %}
+		{% endblock %}
+	</p>
+	<a class="button" href="{% url 'public-company-profiles-list' %}?sectors={{sector_value}}">
+		{% trans "Browse UK companies" %}
+	</a>
+</div>
