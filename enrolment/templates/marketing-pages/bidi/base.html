@@ -3,6 +3,7 @@
 {% load trans from i18n %}
 {% block css %}
 	<link href="{% static 'landing-page.css' %}" media="all" rel="stylesheet" />
+	<link href="{% static 'landing-page-bidi.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
 {% block hero_title_container %}
@@ -45,27 +46,8 @@
 
 		<div class="row-fluid">
 			{% if sector_value %}
-				<div class="span4 ed-landing-page-find-other-companies-container">
-					<div class="row-fluid">
-						<div class="span4 ed-globe-icon-container">
-							<img src="{% static 'images/globe-icon.png' %}" alt="" />
-						</div>
-						<div class="span8">
-							<h3>{% trans "Find other great UK companies" %}</h3>
-						</div>
-					</div>
-					<p>
-						{% block company_box_text %}
-							{% trans "Innovative and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service." %}
-						{% endblock %}
-					</p>
-					<p>
-						<div class="btn-container">
-							<a class="button" href="{% url 'public-company-profiles-list' %}?sectors={{sector_value}}">
-								{% trans "Browse UK companies" %}
-							</a>
-						</div>
-					</p>
+				<div class="span4">
+					{% include 'browse-companies.html' %}
 				</div>
 			{% endif %}
 			{% for company in companies %}
