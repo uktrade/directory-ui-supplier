@@ -26,8 +26,8 @@ HEALTH_SECTOR_CONTEXT = {
             'and as a bilateral amputee having the ability to do what I want '
             'to do independently is truly remarkable.'
         )),
-        'testimonial_name': 'Jason',
-        'testimonial_company': mark_safe(_('i-limb&trade; quantum user')),
+        'testimonial_name': _('Jason'),
+        'testimonial_company': mark_safe(_('i-limb quantum&trade; user')),
         'company_name': 'Touch Bionics',
         'sectors': [
             {
@@ -207,7 +207,7 @@ FOOD_SECTOR_CONTEXT = {
             'If three-quarters of your gin and tonic is the tonic, make sure '
             'you use the best.'
         ),
-        'testimonial_name': 'Tim Warrillow',
+        'testimonial_name': _('Tim Warrillow'),
         'testimonial_company': 'Fever-Tree',
         'company_name': 'Fever-Tree',
         'sectors': [

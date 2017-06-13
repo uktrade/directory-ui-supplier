@@ -62,7 +62,10 @@ class LeadGenerationFormView(ConditionalEnableTranslationsMixin, FormView):
 
     @property
     def translations_enabled(self):
-        return settings.FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED
+        return (
+            self.request.LANGUAGE_CODE not in
+            settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE
+        )
 
     def get_or_create_zendesk_user(self, cleaned_data):
         zendesk_user = ZendeskUser(
