@@ -7,7 +7,7 @@
 
 ## Coverage
 
-[![codecov](https://codecov.io/gh/uktrade/directory-ui-buyer/branch/master/graph/badge.svg)](https://codecov.io/gh/uktrade/directory-ui-buyer)
+[![codecov](https://codecov.io/gh/uktrade/directory-ui-supplier/branch/master/graph/badge.svg)](https://codecov.io/gh/uktrade/directory-ui-supplier)
 
 ## Requirements
 
