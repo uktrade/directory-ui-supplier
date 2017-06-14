@@ -5,6 +5,10 @@
 
 [![CircleCI](https://circleci.com/gh/uktrade/directory-ui-supplier/tree/master.svg?style=svg)](https://circleci.com/gh/uktrade/directory-ui-supplier/tree/master)
 
+## Coverage
+
+[![codecov](https://codecov.io/gh/uktrade/directory-ui-buyer/branch/master/graph/badge.svg)](https://codecov.io/gh/uktrade/directory-ui-buyer)
+
 ## Requirements
 
 ### Python
