@@ -11,9 +11,13 @@ FLAKE8 := flake8 . --exclude=migrations,.venv
 PYTEST := pytest . --cov=. --cov-config=.coveragerc --capture=no $(pytest_args)
 COLLECT_STATIC := python manage.py collectstatic --noinput
 COMPILE_TRANSLATIONS := python manage.py compilemessages
+CODECOV := \
+	if [ "$$CODECOV_REPO_TOKEN" != "" ]; then \
+	   codecov --token=$$CODECOV_REPO_TOKEN ;\
+	fi
 
 test:
-	$(COLLECT_STATIC) && $(COMPILE_TRANSLATIONS) && $(FLAKE8) && $(PYTEST)
+	$(COLLECT_STATIC) && $(COMPILE_TRANSLATIONS) && $(FLAKE8) && $(PYTEST) && $(CODECOV)
 
 DJANGO_WEBSERVER := \
 	python manage.py collectstatic --noinput && \
@@ -52,7 +56,7 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_FEATURE_SPORTS_INFRASTRUCTURE_ENABLED=true; \
 	export DIRECTORY_UI_SUPPLIER_FEATURE_COMPANY_SEARCH_VIEW_ENABLED=true; \
 	export DIRECTORY_UI_SUPPLIER_COVERALLS_REPO_TOKEN=$$COVERALLS_REPO_TOKEN; \
-	export DIRECTORY_UI_SUPPLIER_FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED=true 
+	export DIRECTORY_UI_SUPPLIER_FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED=true
 
 
 DOCKER_REMOVE_ALL := \
