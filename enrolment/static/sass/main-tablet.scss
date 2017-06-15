@@ -1,0 +1,63 @@
+/* Tablet
+ ******************/
+@media (max-width: 979px) {
+  .navbar {
+    .ExpanderControl {
+      margin-right: 20px;
+    }
+  }
+  
+  #site-logo {
+    height: auto;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 799px) {
+  .navbar {
+    .ExpanderControl {
+      background: none;
+      border: $grey-4 solid 1px;
+      display: inline-block;
+      float: right;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 0.9em;
+      margin-top: 15px;
+      padding: 11px 12px 9px 12px;
+    }
+  
+    .bar {
+      background-color: $grey-4;
+      clear: left;
+      display: block;
+      float: left;
+      height: 2px;
+      margin: 0 6px 3px 0;
+      width: 16px;
+    }
+  }
+  
+  #menu {
+    border-top: 1px solid $grey-3;
+    clear: both;
+    float: none;
+    
+    li {
+      border-bottom: 1px solid $grey-3;
+      border-right: none;
+      display: block;
+      width: 100%;
+    }
+    
+    a {
+      text-align: center;
+    }
+  }
+
+  #site-logo {
+    margin-left: 15px;
+    max-width: 296px;
+    width: 65%;
+  }
+}
