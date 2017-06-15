@@ -25,6 +25,7 @@ class ConditionalEnableTranslationsMixin:
 
     translations_enabled = True
     template_name_bidi = None
+    language_form_class = forms.LanguageForm
 
     def __init__(self, *args, **kwargs):
         dependency = 'ui.middleware.ForceDefaultLocale'
@@ -41,7 +42,7 @@ class ConditionalEnableTranslationsMixin:
         if self.translations_enabled:
             context['language_switcher'] = {
                 'show': True,
-                'form': forms.LanguageForm(
+                'form': self.language_form_class(
                     initial=forms.get_language_form_initial_data(),
                 )
             }
@@ -113,10 +114,14 @@ class InternationalLandingSectorListView(ConditionalEnableTranslationsMixin,
                                          TemplateView):
     template_name = 'landing-page-international-sector-list.html'
     template_name_bidi = 'bidi/landing-page-international-sector-list.html'
+    language_form_class = forms.LanguageIndustriesForm
 
     @property
     def translations_enabled(self):
-        return settings.FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED
+        return (
+            self.request.LANGUAGE_CODE not in
+            settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE
+        )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -136,10 +141,14 @@ class InternationalLandingSectorDetailView(ConditionalEnableTranslationsMixin,
                                            TemplateView):
 
     template_name_bidi = None
+    language_form_class = forms.LanguageIndustriesForm
 
     @property
     def translations_enabled(self):
-        return settings.FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED
+        return (
+            self.request.LANGUAGE_CODE not in
+            settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE
+        )
 
     @classmethod
     def get_active_pages(cls):
