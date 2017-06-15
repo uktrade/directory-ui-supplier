@@ -26,20 +26,16 @@
     padding: 0 15px;  
   }
   
-  .navbar {
-    .ExpanderControl {
-      margin-right: 15px;
-      margin-top: 11px;
-    }
+  #menu-control {
+    margin-right: 15px;
+    margin-top: 11px;
   }
 }
 
 @media (max-width: 320px) {
-  .navbar {
-    .ExpanderControl {
-      margin-top: 11px;
-      margin-bottom: 11px;
-    }
+  #menu-control {
+    margin-top: 11px;
+    margin-bottom: 11px;
   }
   
   #site-logo {

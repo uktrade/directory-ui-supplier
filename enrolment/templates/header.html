@@ -18,13 +18,13 @@
 <div class="navbar">
 	<div class="container">
 		<img  id="site-logo" class="dit-iigb-logo" alt="Welcome to Great Britain &amp; Northern Ireland" src="{% static 'images/welcome-to-great-logo.png' %}">
-		<button class="accessibility ExpanderControl" aria-controls="menu" aria-expanded="false" aria-haspopup="true" tabindex="0">
+		<button id="menu-control">
 			<span class="bar"></span>
 			<span class="bar"></span>
 			<span class="bar"></span>
 			All
 		</button>
-		<nav  id="menu" aria-label="Site Navigation" id="site-navigation">
+		<nav  id="menu" aria-label="Site Navigation">
 			<ul>
 				<li {% if active_view_name == 'index'%}class="active"{% endif %}>
 					<a href="{% url 'index' %}">{% trans "Home" %}</a>

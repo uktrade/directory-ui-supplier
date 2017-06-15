@@ -989,12 +989,6 @@ a.ed-filled-button-primary {
   }
 }
 
-.navbar {
-  .ExpanderControl {
-    display: none; /* only on mobile */
-  }
-}
-
 #menu {
   border-left: 1px solid $grey-3;
   float: right;
@@ -1024,6 +1018,10 @@ a.ed-filled-button-primary {
   .active {
     background-color: $grey-5;
   }
+}
+
+#menu-control {
+  display: none; /* only on tablet+mobile */
 }
 
 #site-logo {
