@@ -17,12 +17,6 @@ GOVUK.utils = (new function() {
     var results = regex.exec(qs);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
-
-  /* Try to dynamically generate a unique String value.
-   **/
-  this.uniqueString = function() {
-    return "_" + ((new Date().getTime()) + "_" + Math.random().toString()).replace(/[^\w]*/mig, "");
-  }
 });
 
 /*
