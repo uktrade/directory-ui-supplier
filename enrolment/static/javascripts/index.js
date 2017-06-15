@@ -140,63 +140,6 @@ GOVUK.utm = (new function() {
 });
 
 
-/*
-  General reusable component classes
-  ==================================== */
-GOVUK.components = (new function() {
-
-  /* Attach accessible open and close functionality to an element (e.g. DIV).
-   * The toggle functionality only adds CSS "expanded" class so you have full
-   * control over actual visual change(s) in stylesheet.
-   *
-   * @$target (jQuery node) Target element that should toggle
-   **/
-  this.Expander = Expander;
-  function Expander($control, $target) {
-    var EXPANDER = this;
-    var id = $target.attr("id") || GOVUK.utils.uniqueString("auto_");
-
-    if ($control.length && $target.length) {
-      this.$control = Expander.setupControl($control, id);
-      this.$target = $target;
-      this.$target.attr("id", id);
-
-      this.$control.on("click.Expander", function(e){
-        e.preventDefault();
-        if(EXPANDER.$target.hasClass("expanded")) {
-          EXPANDER.close();
-        }
-        else {
-          EXPANDER.open();
-        }
-      });
-    }
-  }
-  
-  Expander.setupControl = function($control, id) {
-    $control.attr("aria-controls", id);
-    $control.attr("aria-expanded", "false");
-    $control.attr("aria-haspopup", "true");
-    $control.attr("tabindex", 0);
-    return $control;
-  }
-
-  Expander.prototype = {};
-  Expander.prototype.open = function() {
-    this.$target.addClass("expanded");
-    this.$control.attr("aria-expanded", "true");
-    $("a", this.$target).eq(0).focus();
-  }
-
-  Expander.prototype.close = function(blur) {
-    this.$target.removeClass("expanded");
-    this.$control.attr("aria-expanded", "false");
-  }
-
-});
-
-
-
 /* In test mode we don't want the code to 
  * run immediately because we have to compensate
  * for not having a browser environment first.
@@ -206,7 +149,6 @@ GOVUK.page = (new function() {
   // What to run on every page (called from <body>).
   this.init = function() {
     captureUtmValue();
-    addExpanders();
   }
   
   /* Attempt to capture UTM information if we haven't already
@@ -216,16 +158,6 @@ GOVUK.page = (new function() {
     var captured = GOVUK.utm.get();
     if(!captured && document.location.search.substring(1)) {
       GOVUK.utm.set();
-    }
-  }
-  
-  /* Setup Accessible Expander component functionality.
-   **/
-  function addExpanders() {
-    var $control = $("#menu-control");
-    var $target = $("#menu");
-    if($control.length && $target.length) {
-      new GOVUK.components.Expander($control, $target);
     }
   }
 });

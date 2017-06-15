@@ -16,8 +16,8 @@
   #menu {
     border-top: 1px solid $grey-3;
     clear: both;
-    display: none;
     float: none;
+    height: 0;
     
     li {
       border-bottom: 1px solid $grey-3;
@@ -28,10 +28,6 @@
     
     a {
       text-align: center;
-    }
-    
-    &.expanded {
-      display: block;
     }
   }
   
