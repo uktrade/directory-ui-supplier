@@ -133,7 +133,6 @@ GOVUK.utm = (new function() {
   
 });
 
-
 /* In test mode we don't want the code to 
  * run immediately because we have to compensate
  * for not having a browser environment first.
@@ -155,7 +154,3 @@ GOVUK.page = (new function() {
     }
   }
 });
-
-
-
-
