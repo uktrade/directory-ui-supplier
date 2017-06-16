@@ -26,8 +26,8 @@ HEALTH_SECTOR_CONTEXT = {
             'and as a bilateral amputee having the ability to do what I want '
             'to do independently is truly remarkable.'
         )),
-        'testimonial_name': 'Jason',
-        'testimonial_company': mark_safe(_('i-limb&trade; quantum user')),
+        'testimonial_name': _('Jason'),
+        'testimonial_company': mark_safe(_('i-limb quantum&trade; user')),
         'company_name': 'Touch Bionics',
         'sectors': [
             {
@@ -89,8 +89,8 @@ TECH_SECTOR_CONTEXT = {
             'in the EVRYTHNG cloud by adding an intelligent, personalised '
             'layer of digital content, services and data analytics.'
         ),
-        'testimonial_name': None,
-        'testimonial_company': None,
+        'testimonial_name': '',
+        'testimonial_company': '',
         'company_name': 'EVRYTHNG',
         'sectors': [
             {
@@ -151,7 +151,7 @@ CREATIVE_SECTOR_CONTEXT = {
             'Creating the grandest projection mapping the world has ever seen.'
         ),
         'testimonial_name': '',
-        'testimonial_company': 'Fast Company magazine',
+        'testimonial_company': _('Fast Company magazine'),
         'company_name': 'Immersive',
         'sectors': [
             {
@@ -207,7 +207,7 @@ FOOD_SECTOR_CONTEXT = {
             'If three-quarters of your gin and tonic is the tonic, make sure '
             'you use the best.'
         ),
-        'testimonial_name': 'Tim Warrillow',
+        'testimonial_name': _('Tim Warrillow'),
         'testimonial_company': 'Fever-Tree',
         'company_name': 'Fever-Tree',
         'sectors': [
@@ -222,13 +222,13 @@ FOOD_SECTOR_CONTEXT = {
         {
             'image_url': '/static/images/joe-and-steph.png',
             'name': "Joe & Seph's",
-            'description': _(
+            'description': mark_safe(_(
                 'All Joe & Seph’s popcorn is handmade in small batches to '
                 'ensure superior texture and an intense flavour. The '
-                'ingredients used are 100% natural and the kernels are '
+                'ingredients used are 100&#37; natural and the kernels are '
                 'all air-popped – a healthier cooking method compared to '
                 'frying.'
-            ),
+            )),
             'url': links['FOOD_AND_DRINK']['company_one'],
         },
         {

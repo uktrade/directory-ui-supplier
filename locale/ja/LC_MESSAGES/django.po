@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-15 16:43+0000\n"
+"POT-Creation-Date: 2017-06-16 12:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,6 +35,10 @@ msgid ""
 "The i-limb&trade; quantum is the next best thing to real hands and as a "
 "bilateral amputee having the ability to do what I want to do independently "
 "is truly remarkable."
+msgstr ""
+
+#: enrolment/constants.py:29
+msgid "Jason"
 msgstr ""
 
 #: enrolment/constants.py:30
@@ -120,6 +124,10 @@ msgstr ""
 msgid "Creating the grandest projection mapping the world has ever seen."
 msgstr ""
 
+#: enrolment/constants.py:154
+msgid "Fast Company magazine"
+msgstr ""
+
 #: enrolment/constants.py:158
 msgid "Creative"
 msgstr ""
@@ -160,6 +168,10 @@ msgid ""
 "best."
 msgstr ""
 
+#: enrolment/constants.py:210
+msgid "Tim Warrillow"
+msgstr ""
+
 #: enrolment/constants.py:215
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:88
 #: enrolment/templates/landing-page-international-sector-list.html:87
@@ -175,8 +187,8 @@ msgstr ""
 #: enrolment/constants.py:226
 msgid ""
 "All Joe & Seph’s popcorn is handmade in small batches to ensure superior "
-"texture and an intense flavour. The ingredients used are 100% natural and "
-"the kernels are all air-popped – a healthier cooking method compared to "
+"texture and an intense flavour. The ingredients used are 100&#37; natural "
+"and the kernels are all air-popped – a healthier cooking method compared to "
 "frying."
 msgstr ""
 
@@ -222,35 +234,45 @@ msgid ""
 "technology at West Ham’s new home at the London Stadium."
 msgstr ""
 
-#: enrolment/forms.py:37
+#: enrolment/forms.py:19 enrolment/forms.py:41
 msgid "Please select an industry"
 msgstr ""
 
-#: enrolment/forms.py:39
+#: enrolment/forms.py:21 enrolment/forms.py:43
 msgid "Tick the box to confirm you agree to the terms and conditions."
 msgstr ""
 
-#: enrolment/forms.py:42
+#: enrolment/forms.py:24 enrolment/forms.py:46
 msgid "Your name"
 msgstr ""
 
-#: enrolment/forms.py:43
+#: enrolment/forms.py:25 enrolment/forms.py:47
 msgid "Email address"
 msgstr ""
 
-#: enrolment/forms.py:44
-msgid "Organisation name"
+#: enrolment/forms.py:27
+#, fuzzy
+#| msgid "Industries"
+msgid "Industry"
+msgstr "産業"
+
+#: enrolment/forms.py:32
+msgid "Company name"
 msgstr ""
 
-#: enrolment/forms.py:45
+#: enrolment/forms.py:33 enrolment/forms.py:49
 msgid "Country"
 msgstr ""
 
-#: enrolment/forms.py:47
+#: enrolment/forms.py:48
+msgid "Organisation name"
+msgstr ""
+
+#: enrolment/forms.py:51
 msgid "Describe what you need"
 msgstr ""
 
-#: enrolment/forms.py:48
+#: enrolment/forms.py:52
 msgid "Maximum 1000 characters."
 msgstr ""
 
@@ -274,26 +296,26 @@ msgstr "利用規約"
 msgid "Crown Copyright 2016"
 msgstr ""
 
-#: enrolment/templates/bidi/header.html:29 enrolment/templates/header.html:41
-#: enrolment/templates/marketing-pages/base.html:102
-#: enrolment/templates/marketing-pages/bidi/base.html:96
-msgid "Industries"
-msgstr "産業"
+#: enrolment/templates/bidi/header.html:30 enrolment/templates/header.html:30
+msgid "Home"
+msgstr "トップページ"
 
-#: enrolment/templates/bidi/header.html:34 enrolment/templates/header.html:35
+#: enrolment/templates/bidi/header.html:34 enrolment/templates/header.html:34
 #: enrolment/templates/search-companies.html:15
 #, fuzzy
 #| msgid "Find a Supplier"
 msgid "Find a supplier"
 msgstr "サプライヤー検索"
 
-#: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:37
+#: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:36
 msgid "Find a Supplier"
 msgstr "サプライヤー検索"
 
-#: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:30
-msgid "Home"
-msgstr "トップページ"
+#: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:40
+#: enrolment/templates/marketing-pages/base.html:102
+#: enrolment/templates/marketing-pages/bidi/base.html:93
+msgid "Industries"
+msgstr "産業"
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:12
 #: enrolment/templates/landing-page-international-sector-list.html:11
@@ -550,17 +572,17 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/bidi/lead-generation-form.html:77
-#: enrolment/templates/lead-generation-form.html:84
+#: enrolment/templates/lead-generation-form.html:90
 msgid "Send"
 msgstr ""
 
 #: enrolment/templates/bidi/lead-generation-form.html:84
-#: enrolment/templates/lead-generation-form.html:79
+#: enrolment/templates/lead-generation-form.html:85
 msgid "I agree to the great.gov.uk"
 msgstr ""
 
 #: enrolment/templates/bidi/lead-generation-form.html:84
-#: enrolment/templates/lead-generation-form.html:79
+#: enrolment/templates/lead-generation-form.html:85
 #, fuzzy
 #| msgid "Terms &amp; conditions"
 msgid "terms and conditions"
@@ -628,6 +650,10 @@ msgstr ""
 #: enrolment/templates/marketing-pages/base.html:110
 #: enrolment/templates/marketing-pages/bidi/base.html:99
 msgid "keywords"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/bidi/base.html:77
+msgid "case study"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:7
@@ -1573,14 +1599,6 @@ msgstr ""
 #: enrolment/templates/search-companies.html:6
 msgid "Find great UK companies"
 msgstr "優良な英国企業を検索する"
-
-#~ msgid ""
-#~ "UK companies work with businesses and governments around the world to "
-#~ "create new living and working environments, run high quality services and "
-#~ "deliver the best experiences."
-#~ msgstr ""
-#~ "英国企業は世界中の事業や政府と協力して新しい生活環境や仕事環境を生み出し、"
-#~ "質の良いサービスを提供し、ベストなエクスペリエンスを実現しています。"
 
 #~ msgid ""
 #~ "Whether you want the most innovative food brands or exceptional quality "

@@ -16,21 +16,21 @@ class LanguageIndustriesForm(forms.Form):
 
 class AnonymousSubscribeForm(forms.Form):
     error_css_class = 'input-field-container has-error'
-    PLEASE_SELECT_LABEL = 'Please select an industry'
-    TERMS_CONDITIONS_MESSAGE = (
+    PLEASE_SELECT_LABEL = _('Please select an industry')
+    TERMS_CONDITIONS_MESSAGE = _(
         'Tick the box to confirm you agree to the terms and conditions.'
     )
 
-    full_name = forms.CharField(label='Your name')
-    email_address = forms.EmailField(label='Email address')
+    full_name = forms.CharField(label=_('Your name'))
+    email_address = forms.EmailField(label=_('Email address'))
     sector = forms.ChoiceField(
-        label='Industry',
+        label=_('Industry'),
         choices=(
             [['', PLEASE_SELECT_LABEL]] + list(choices.COMPANY_CLASSIFICATIONS)
         )
     )
-    company_name = forms.CharField(label='Company name')
-    country = forms.CharField(label='Country')
+    company_name = forms.CharField(label=_('Company name'))
+    country = forms.CharField(label=_('Country'))
     terms = forms.BooleanField(
         error_messages={'required': TERMS_CONDITIONS_MESSAGE}
     )
