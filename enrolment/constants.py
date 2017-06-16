@@ -27,7 +27,7 @@ HEALTH_SECTOR_CONTEXT = {
             'to do independently is truly remarkable.'
         )),
         'testimonial_name': 'Jason',
-        'testimonial_company': mark_safe(_('i-limb quantum&trade; user')),
+        'testimonial_company': mark_safe(_('i-limb&trade; quantum user')),
         'company_name': 'Touch Bionics',
         'sectors': [
             {
