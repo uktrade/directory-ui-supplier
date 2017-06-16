@@ -1,0 +1,49 @@
+/* Mobile
+ *****************/
+@media (max-width: 640px) {
+  .browse-companies-container,
+  .search-companies-container {
+    h3 {
+      background-position: right center;
+      padding-left: 0;
+      padding-right: 51px;
+    }
+    
+    p {
+      margin-bottom: 25px;
+      width: auto;
+    }
+    
+    .button {
+      position: static;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  body .container {
+    padding: 0 15px;  
+  }
+  
+  #menu-control {
+    margin-right: 15px;
+    margin-top: 11px;
+  }
+}
+
+@media (max-width: 320px) {
+  #menu-control {
+    margin-top: 11px;
+    margin-bottom: 11px;
+  }
+  
+  #site-logo {
+    height: 27px;
+    margin-bottom: 16px;
+    width: auto;
+  }
+}
+
+
+
