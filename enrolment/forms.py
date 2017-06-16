@@ -10,6 +10,10 @@ class LanguageForm(forms.Form):
     lang = forms.ChoiceField(choices=settings.LANGUAGES)
 
 
+class LanguageIndustriesForm(forms.Form):
+    lang = forms.ChoiceField(choices=settings.LANGUAGES_INDUSTRIY_PAGES)
+
+
 class AnonymousSubscribeForm(forms.Form):
     error_css_class = 'input-field-container has-error'
     PLEASE_SELECT_LABEL = 'Please select an industry'

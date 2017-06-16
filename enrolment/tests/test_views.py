@@ -287,8 +287,8 @@ def test_international_landing_page_flag_off_advanced_manufacturing(settings):
     assert 'advanced-manufacturing' not in view.get_active_pages()
 
 
-def test_industry_list_page_flag_on_translations(settings, client):
-    settings.FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED = True
+def test_industry_list_page_enabled_language_translations(settings, client):
+    settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE = []  # all languages enabled
 
     url = reverse('international-sector-list')
 
@@ -298,8 +298,8 @@ def test_industry_list_page_flag_on_translations(settings, client):
     assert 'language_switcher' in response.context_data
 
 
-def test_industry_list_page_flag_off_translations(settings, client):
-    settings.FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED = False
+def test_industry_list_page_disabled_language_translations(settings, client):
+    settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE = ['en-gb']
 
     url = reverse('international-sector-list')
 
@@ -309,8 +309,8 @@ def test_industry_list_page_flag_off_translations(settings, client):
     assert 'language_switcher' not in response.context_data
 
 
-def test_industry_page_flag_on_translations(settings, client):
-    settings.FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED = True
+def test_industry_page_enabled_language_translations(settings, client):
+    settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE = []  # all languages enabled
 
     url = reverse('international-sector-detail', kwargs={'slug': 'health'})
 
@@ -320,8 +320,8 @@ def test_industry_page_flag_on_translations(settings, client):
     assert 'language_switcher' in response.context_data
 
 
-def test_industry_page_flag_off_translations(client):
-    settings.FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED = False
+def test_industry_page_disabled_language_translations(client):
+    settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE = ['en-gb']
 
     url = reverse('international-sector-detail', kwargs={'slug': 'health'})
 
