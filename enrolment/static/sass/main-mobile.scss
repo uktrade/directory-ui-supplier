@@ -19,6 +19,13 @@
       width: 100%;
     }
   }
+  
+  .LanguageSelectTracker {
+    .code:after,
+    .lang {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -32,15 +39,36 @@
   }
 }
 
+@media (max-width: 420px) {
+  .header-gov-link .text {
+    display: none;
+  }
+}
+
+
 @media (max-width: 320px) {
+  body .container {
+  	padding: 0 10px;
+  }
+  
+  .header-gov-link {
+    &:hover, 
+    &:link, 
+    &:visited {
+      padding: 0 0 0 7px;
+    }
+  }
+
   #menu-control {
-    margin-top: 11px;
     margin-bottom: 11px;
+    margin-right: 10px;
+    margin-top: 11px;
   }
   
   #site-logo {
     height: 27px;
     margin-bottom: 16px;
+    margin-left: 10px;
     width: auto;
   }
 }

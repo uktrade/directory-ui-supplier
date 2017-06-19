@@ -177,10 +177,15 @@ GOVUK.components = (new function() {
   LanguageSelectTracker.prototype = new SelectTracker;
   LanguageSelectTracker.prototype.update = function() {
     var $code = $(document.createElement("span"));
-    this.$node.empty();
+    var $lang = $(document.createElement("span"));
     SelectTracker.prototype.update.call(this);
+    $lang.addClass("lang");
+    $code.addClass("code");
+    $lang.text(this.$node.text());
     $code.text(this.$select.val());
-    this.$node.prepend($code);
+    this.$node.empty();
+    this.$node.append($code);
+    this.$node.append($lang);
   }
   
   
