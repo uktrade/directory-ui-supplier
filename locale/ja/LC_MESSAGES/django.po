@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-16 16:54+0000\n"
+"POT-Creation-Date: 2017-06-19 11:56+0000\n"
 "PO-Revision-Date: 2017-06-16 17:01+0100\n"
 "Language: ja\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -819,40 +819,29 @@ msgstr "世界に美と力をもたらす英国の優秀なデザイナーたち
 #: enrolment/templates/marketing-pages/creative.html:69
 msgid ""
 "UK architects are responsible for some of the world’s most stunning "
-"buildings, such as"
+"buildings, such as the Galaxy Soho urban village in Beijing and reshaping "
+"environments, such as Singapore’s Gardens by the Bay."
 msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:69
-msgid "the Galaxy Soho urban village in Beijing"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:69
-msgid "and reshaping environments, such as"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:69
-msgid "Singapore’s Gardens by the Bay"
-msgstr ""
+"英国の建築家は、北京の Galaxy Soho アーバンビレッジといった世界で最も美しい建"
+"物の建設を担当したり、シンガポールの Gardens by the Bay のような環境の再形成"
+"を行ったりしています。"
 
 #: enrolment/templates/marketing-pages/creative.html:72
 msgid ""
 "We're also responsible for designing usable industrial and commercial spaces "
-"such as the new"
+"such as the new Spaceport America."
 msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:72
-msgid "Spaceport America"
-msgstr ""
+"また、新しい Spaceport America のような、便利な産業地区や商業地区の設計も担当"
+"しています。"
 
 #: enrolment/templates/marketing-pages/creative.html:75
 msgid ""
 "As well as designing the built environment, UK firms are designing vehicles "
-"and interiors around the world: including helping to design"
+"and interiors around the world: including helping to design the world’s "
+"fastest passenger train in China."
 msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:75
-msgid "the world’s fastest passenger train in China."
-msgstr ""
+"英国の企業は構築環境の設計だけでなく、中国の世界最速の旅客列車の設計など、世"
+"界中で乗り物やインテリアも設計しています。"
 
 #: enrolment/templates/marketing-pages/creative.html:80
 msgid "Arts: heritage and innovation"
@@ -1038,26 +1027,16 @@ msgstr ""
 "す。"
 
 #: enrolment/templates/marketing-pages/food.html:76
-msgid "We care about the food we produce: 89,000 farmers comply with"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:76
-msgid "voluntary farm standards scheme"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:76
-msgid "that assure animal and worker welfare and our"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:76
-msgid "British Retail Consortium manufacturing standards"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:76
 msgid ""
-"have been adopted by 23,000 certificated suppliers, not only in the UK but "
-"in 123 other countries."
+"We care about the food we produce: 89,000 farmers comply with voluntary farm "
+"standards scheme that assure animal and worker welfare and our British "
+"Retail Consortium manufacturing standards have been adopted by 23,000 "
+"certificated suppliers, not only in the UK but in 123 other countries."
 msgstr ""
+"英国は自分たちが生産している食品を大切なものと考えています。89,000 の農業従事"
+"者が自発的な農業基準に従って家畜や労働者の福祉を守っています。また、英国小売"
+"業協会の生産基準は、英国とその他 123 か国の 23,000 の認定サプライヤによって承"
+"認されています。"
 
 #: enrolment/templates/marketing-pages/food.html:79
 msgid ""
@@ -1896,47 +1875,11 @@ msgstr "優秀な英国企業を探す"
 #~ msgid "Arkessa"
 #~ msgstr "Arkessa"
 
-#~ msgid ""
-#~ "We care about the food we produce: 89,000 farmers comply with voluntary "
-#~ "farm standards scheme that assure animal and worker welfare and our "
-#~ "British Retail Consortium manufacturing standards have been adopted by "
-#~ "23,000 certificated suppliers, not only in the UK but in 123 other "
-#~ "countries."
-#~ msgstr ""
-#~ "英国は自分たちが生産している食品を大切なものと考えています。89,000 の農業"
-#~ "従事者が自発的な農業基準に従って家畜や労働者の福祉を守っています。また、英"
-#~ "国小売業協会の生産基準は、英国とその他 123 か国の 23,000 の認定サプライヤ"
-#~ "によって承認されています。"
-
 #~ msgid "Joe & Seph's"
 #~ msgstr "Joe & Seph's"
 
 #~ msgid "Fever-Tree"
 #~ msgstr "Fever-Tree"
-
-#~ msgid ""
-#~ "UK architects are responsible for some of the world’s most stunning "
-#~ "buildings, such as the Galaxy Soho urban village in Beijing and reshaping "
-#~ "environments, such as Singapore’s Gardens by the Bay."
-#~ msgstr ""
-#~ "英国の建築家は、北京の Galaxy Soho アーバンビレッジといった世界で最も美し"
-#~ "い建物の建設を担当したり、シンガポールの Gardens by the Bay のような環境の"
-#~ "再形成を行ったりしています。"
-
-#~ msgid ""
-#~ "We're also responsible for designing usable industrial and commercial "
-#~ "spaces such as the new Spaceport America."
-#~ msgstr ""
-#~ "また、新しい Spaceport America のような、便利な産業地区や商業地区の設計も"
-#~ "担当しています。"
-
-#~ msgid ""
-#~ "As well as designing the built environment, UK firms are designing "
-#~ "vehicles and interiors around the world: including helping to design the "
-#~ "world’s fastest passenger train in China."
-#~ msgstr ""
-#~ "英国の企業は構築環境の設計だけでなく、中国の世界最速の旅客列車の設計など、"
-#~ "世界中で乗り物やインテリアも設計しています。"
 
 #~ msgid "Immersive"
 #~ msgstr "Immersive"
