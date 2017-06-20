@@ -536,84 +536,6 @@ h1 {
   }
 }
 
-#footer.ed-footer {
-  background: #444444;
-  padding: 40px 40px 50px;
-  img {
-    image-rendering: -moz-crisp-edges;         /* Firefox */
-    image-rendering:   -o-crisp-edges;         /* Opera */
-    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
-    height: 40px;
-    max-width: inherit;
-  }
-  @media (max-width: 960px) {
-    padding: 40px 0;
-
-    .footer-section {
-      border-top: 1px solid #fff;
-      padding: 30px 0;
-
-    }
-
-    .container {
-      .grid-row {
-        display: flex;
-        flex-flow: column;
-        .logo {
-          order: 3;
-          width: 100%;
-        }
-        .links {
-          margin-left: 0;
-          order: 2;
-          width: 100%;
-        }
-        .subscribe {
-          margin-left: 0;
-          order: 1;
-          width: 100%;
-          .footer-section {
-            border-top: 0;
-            padding-top: 0;
-          }
-        }
-      }
-    }
-  }
-  .footer-wrapper {
-    background: #1E1348;
-  }
-  a {
-    color: $white;
-    font-size: 17px;
-  }
-  a:focus {
-    background: #007EA3;
-    color: #ffffff;
-    cursor: pointer;
-  }
-  .ed-text-divider {
-    padding: 5px;
-    color: white;
-  }
-  .hmg-logo {
-    img {
-      max-width: 250px;
-    }
-  }
-  .eig-logo-footer {
-    img {
-      max-width: 200px;
-    }
-  }
-  .copyright-text {
-    color: white;
-    font-size: 17px;
-  }
-}
-
 .form-wrapper-btn-container {
   line-height: 3em;
   clear: both; // needed for IE8 compatibility with multi column lists
@@ -1072,6 +994,68 @@ a.ed-filled-button-primary {
   image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
   max-width: 326px;
+}
+
+
+/* Footer
+ ******************/
+#footer {
+  background-color: $grey-6;
+  border: none;
+  color: $white;
+  font-size: 17px;
+  padding: 40px 0;
+  
+  a, a:hover {
+    color: $white;
+   
+    img {
+      border-left: 1px solid white;
+      padding-left: 5px;
+    }
+  }
+  
+  img {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    max-width: inherit;
+  }
+}
+
+#footer-credits {
+  display: table-cell;
+  width: 220px;
+  
+  .copyright-text {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+}
+
+#footer-links {
+  display: table-cell;
+  margin: 0;
+  padding-right: 40px;
+  width: 740px;
+  
+  li {
+    display: inline-block;
+    &:before {
+      color: $white;
+  	  content: "|";
+  	  display: inline-block;
+  	  padding: 0 5px;
+    } 
+    &:first-child {
+      &:before {
+        display: none;
+      }
+    }
+  }
 }
 
 
