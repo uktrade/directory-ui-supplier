@@ -10,3 +10,35 @@
     right: auto;
   }
 }
+
+.ed-language-switcher {
+	float: left;
+  
+  .trackedSelect {
+    left: 0;
+    right: initial;
+    width: auto;
+  }
+}
+
+.header-gov-link {
+  &:hover,
+  &:link, 
+  &:visited {
+    border-left: none;
+    border-right: 1px solid white;
+    padding: 0 10px 0 5px;
+  }
+}
+
+
+/* Tablet and mobile tweaks */
+@media (max-width: 320px) {
+  .header-gov-link {
+    &:hover, 
+    &:link, 
+    &:visited {
+	    padding: 0 7px 0 0;
+    }
+  }
+}
