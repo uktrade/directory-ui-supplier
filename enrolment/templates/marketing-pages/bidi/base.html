@@ -58,7 +58,7 @@
 					<div class="row-fluid">
 						<h2 style="font-size: 21px;">{{ company.name }}</h2>
 						<p>
-							{{ company.description|safe }}
+							{% trans company.description %}
 						</p>
 						<p>
 							<a href="{{ company.url }}">{% trans "Read more about the company" %}</a>
@@ -74,13 +74,13 @@
 			<h2>{% trans "Company showcase" %}</h2>
 		</div>
 		<div class="row-fluid ed-image-caption">
-			<img class="span12" src="{{ case_study.image_url }}" alt="'{{ case_study.title }}' case study" />
+			<img class="span12" src="{{ case_study.image_url }}" alt="'{% trans case_study.title %}' {% trans 'case study' %}" />
 			{% if case_study.image_caption %}
-				<div style="bottom: 1px; left: 1px;">{{ case_study.image_caption }}</div>
+				<div style="bottom: 1px; left: 1px;">{% trans case_study.image_caption %}</div>
 			{% endif %}
 		</div>
 		<div class="row-fluid">
-			<h2>{{ case_study.title }}</h2>
+			<h2>{% trans case_study.title %}</h2>
 		</div>
 		<div class="row-fluid ed-landing-page-sector-case-study-inner">
 			<div class="span4 ed-landing-page-case-study-company-details">
@@ -89,26 +89,26 @@
 				</b>
 				<p>
 					{% comment %}Do NOT move the forloop if to new line as this causes extra space before comma{% endcomment %}
+					<span>{% trans "Industries" %}:</span>
 					{% for sector in case_study.sectors %}
-						<a href="{% url 'public-company-profiles-list' %}?sectors={{sector.value }}">{{ sector.label }}</a>{% if not forloop.last %}, {% endif %}
+						<a href="{% url 'public-company-profiles-list' %}?sectors={{sector.value }}">{% trans sector.label %}</a>{% if not forloop.last %}, {% endif %}
 					{% endfor %}
-					<span>:{% trans "Industries" %}</span>
 				</p>
 				<p>
-					<i>{{ case_study.keywords }}</i><span> :{% trans "keywords" %}</span>
+					<span>{% trans case_study.keywords %}</i>{% trans "keywords" %}:</span><i>
 				</p>
 			</div>
 			{% if case_study.testimonial %}
 			<div class="span4 ed-arrow_box ed-landing-page-case-study-testomonial-container">
 				<p>
-					<b>"{{ case_study.testimonial }}"</b>
+					<b>"{% trans case_study.testimonial %}"</b>
 				</p>
-				<div>{{ case_study.testimonial_name }}</div>
-				<div>{{ case_study.testimonial_company }}</div>
+				<div>{% trans case_study.testimonial_name %}</div>
+				<div>{% trans case_study.testimonial_company %}</div>
 			</div>
 			{% endif %}
 			<div class="{{ case_study.testimonial|yesno:'span4,span8' }}">
-				<p>{{ case_study.synopsis|linebreaks }}</p>
+				<p>{% trans case_study.synopsis|linebreaks %}</p>
 				<p>
 					<a href="{{ case_study.url }}">{% trans "Read case study" %}</a>
 				</p>

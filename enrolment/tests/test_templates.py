@@ -4,6 +4,8 @@ from unittest.mock import Mock
 from django.conf import settings
 from django.template.loader import render_to_string
 
+from enrolment import forms
+
 
 supplier_context = {
     'supplier': {
@@ -45,21 +47,43 @@ def test_google_tag_manager():
 
 
 def test_templates_render_successfully():
-
     template_list = []
     template_dirs = [
         os.path.join(settings.BASE_DIR, 'enrolment/templates'),
         os.path.join(settings.BASE_DIR, 'supplier/templates'),
     ]
+    # some templates cannot effectively be tested this way e.g., if they
+    # translate form help text. Tests these separately.
+    blacklisted_filenames = [
+        'lead-generation-form.html',
+    ]
     for template_dir in template_dirs:
         for dir, dirnames, filenames in os.walk(template_dir):
-            for filename in filenames:
-                path = os.path.join(dir, filename).replace(template_dir, '')
-                template_list.append(path.lstrip('/'))
+            for name in filenames:
+                if name not in blacklisted_filenames:
+                    path = os.path.join(dir, name).replace(template_dir, '')
+                    template_list.append(path.lstrip('/'))
 
     default_context = {
         'supplier': None,
         'form': Mock(),
+        'case_study': {
+            'image_caption': '',
+            'title': '',
+            'synopsis': '',
+            'testimonial': '',
+            'testimonial_name': '',
+            'testimonial_company': '',
+            'company_name': '',
+            'sectors': [],
+            'keywords': '',
+        },
+        'companies': [
+            {
+                'name': '',
+                'description': '',
+            },
+        ]
     }
     assert template_list
     for template in template_list:
@@ -193,3 +217,12 @@ def test_international_landing_page_button_feature_flag_off():
     html = render_to_string('landing-page.html', context)
 
     assert MORE_INDUSTRIES_LABEL not in html
+
+
+def test_lead_generation_form():
+    context = {
+        'form': forms.LeadGenerationForm()
+    }
+    html = render_to_string('lead-generation.html', context)
+
+    assert html

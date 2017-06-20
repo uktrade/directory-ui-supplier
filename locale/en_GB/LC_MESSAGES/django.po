@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-15 16:43+0000\n"
+"POT-Creation-Date: 2017-06-19 11:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,6 +34,10 @@ msgid ""
 "The i-limb&trade; quantum is the next best thing to real hands and as a "
 "bilateral amputee having the ability to do what I want to do independently "
 "is truly remarkable."
+msgstr ""
+
+#: enrolment/constants.py:29
+msgid "Jason"
 msgstr ""
 
 #: enrolment/constants.py:30
@@ -117,6 +121,10 @@ msgstr ""
 msgid "Creating the grandest projection mapping the world has ever seen."
 msgstr ""
 
+#: enrolment/constants.py:154
+msgid "Fast Company magazine"
+msgstr ""
+
 #: enrolment/constants.py:158
 msgid "Creative"
 msgstr ""
@@ -157,6 +165,10 @@ msgid ""
 "best."
 msgstr ""
 
+#: enrolment/constants.py:210
+msgid "Tim Warrillow"
+msgstr ""
+
 #: enrolment/constants.py:215
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:88
 #: enrolment/templates/landing-page-international-sector-list.html:87
@@ -170,8 +182,8 @@ msgstr ""
 #: enrolment/constants.py:226
 msgid ""
 "All Joe & Seph’s popcorn is handmade in small batches to ensure superior "
-"texture and an intense flavour. The ingredients used are 100% natural and "
-"the kernels are all air-popped – a healthier cooking method compared to "
+"texture and an intense flavour. The ingredients used are 100&#37; natural "
+"and the kernels are all air-popped – a healthier cooking method compared to "
 "frying."
 msgstr ""
 
@@ -217,35 +229,43 @@ msgid ""
 "technology at West Ham’s new home at the London Stadium."
 msgstr ""
 
-#: enrolment/forms.py:37
+#: enrolment/forms.py:19 enrolment/forms.py:41
 msgid "Please select an industry"
 msgstr ""
 
-#: enrolment/forms.py:39
+#: enrolment/forms.py:21 enrolment/forms.py:43
 msgid "Tick the box to confirm you agree to the terms and conditions."
 msgstr ""
 
-#: enrolment/forms.py:42
+#: enrolment/forms.py:24 enrolment/forms.py:46
 msgid "Your name"
 msgstr ""
 
-#: enrolment/forms.py:43
+#: enrolment/forms.py:25 enrolment/forms.py:47
 msgid "Email address"
 msgstr ""
 
-#: enrolment/forms.py:44
-msgid "Organisation name"
+#: enrolment/forms.py:27
+msgid "Industry"
 msgstr ""
 
-#: enrolment/forms.py:45
+#: enrolment/forms.py:32
+msgid "Company name"
+msgstr ""
+
+#: enrolment/forms.py:33 enrolment/forms.py:49
 msgid "Country"
 msgstr ""
 
-#: enrolment/forms.py:47
+#: enrolment/forms.py:48
+msgid "Organisation name"
+msgstr ""
+
+#: enrolment/forms.py:51
 msgid "Describe what you need"
 msgstr ""
 
-#: enrolment/forms.py:48
+#: enrolment/forms.py:52
 msgid "Maximum 1000 characters."
 msgstr ""
 
@@ -269,23 +289,23 @@ msgstr ""
 msgid "Crown Copyright 2016"
 msgstr ""
 
-#: enrolment/templates/bidi/header.html:29 enrolment/templates/header.html:41
-#: enrolment/templates/marketing-pages/base.html:102
-#: enrolment/templates/marketing-pages/bidi/base.html:96
-msgid "Industries"
+#: enrolment/templates/bidi/header.html:30 enrolment/templates/header.html:30
+msgid "Home"
 msgstr ""
 
-#: enrolment/templates/bidi/header.html:34 enrolment/templates/header.html:35
+#: enrolment/templates/bidi/header.html:34 enrolment/templates/header.html:34
 #: enrolment/templates/search-companies.html:15
 msgid "Find a supplier"
 msgstr ""
 
-#: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:37
+#: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:36
 msgid "Find a Supplier"
 msgstr ""
 
-#: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:30
-msgid "Home"
+#: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:40
+#: enrolment/templates/marketing-pages/base.html:102
+#: enrolment/templates/marketing-pages/bidi/base.html:93
+msgid "Industries"
 msgstr ""
 
 #: enrolment/templates/bidi/landing-page-international-sector-list.html:12
@@ -495,17 +515,17 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/bidi/lead-generation-form.html:77
-#: enrolment/templates/lead-generation-form.html:84
+#: enrolment/templates/lead-generation-form.html:90
 msgid "Send"
 msgstr ""
 
 #: enrolment/templates/bidi/lead-generation-form.html:84
-#: enrolment/templates/lead-generation-form.html:79
+#: enrolment/templates/lead-generation-form.html:85
 msgid "I agree to the great.gov.uk"
 msgstr ""
 
 #: enrolment/templates/bidi/lead-generation-form.html:84
-#: enrolment/templates/lead-generation-form.html:79
+#: enrolment/templates/lead-generation-form.html:85
 msgid "terms and conditions"
 msgstr ""
 
@@ -561,6 +581,10 @@ msgstr ""
 #: enrolment/templates/marketing-pages/base.html:110
 #: enrolment/templates/marketing-pages/bidi/base.html:99
 msgid "keywords"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/bidi/base.html:77
+msgid "case study"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:7
@@ -683,39 +707,21 @@ msgstr ""
 #: enrolment/templates/marketing-pages/creative.html:69
 msgid ""
 "UK architects are responsible for some of the world’s most stunning "
-"buildings, such as"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:69
-msgid "the Galaxy Soho urban village in Beijing"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:69
-msgid "and reshaping environments, such as"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:69
-msgid "Singapore’s Gardens by the Bay"
+"buildings, such as the Galaxy Soho urban village in Beijing and reshaping "
+"environments, such as Singapore’s Gardens by the Bay."
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:72
 msgid ""
 "We're also responsible for designing usable industrial and commercial spaces "
-"such as the new"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:72
-msgid "Spaceport America"
+"such as the new Spaceport America."
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:75
 msgid ""
 "As well as designing the built environment, UK firms are designing vehicles "
-"and interiors around the world: including helping to design"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:75
-msgid "the world’s fastest passenger train in China."
+"and interiors around the world: including helping to design the world’s "
+"fastest passenger train in China."
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:80
@@ -865,25 +871,11 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:76
-msgid "We care about the food we produce: 89,000 farmers comply with"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:76
-msgid "voluntary farm standards scheme"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:76
-msgid "that assure animal and worker welfare and our"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:76
-msgid "British Retail Consortium manufacturing standards"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:76
 msgid ""
-"have been adopted by 23,000 certificated suppliers, not only in the UK but "
-"in 123 other countries."
+"We care about the food we produce: 89,000 farmers comply with voluntary farm "
+"standards scheme that assure animal and worker welfare and our British "
+"Retail Consortium manufacturing standards have been adopted by 23,000 "
+"certificated suppliers, not only in the UK but in 123 other countries."
 msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:79

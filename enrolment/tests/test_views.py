@@ -227,6 +227,7 @@ def test_lead_generation_view_submit_with_comment(
     mock_ticket_create, mock_user_create_or_update, buyer_request,
     buyer_form_data
 ):
+    buyer_request.LANGUAGE_CODE = 'en-gb'
     mock_user_create_or_update.return_value = Mock(id=999)
     response = LeadGenerationFormView.as_view()(buyer_request)
 
