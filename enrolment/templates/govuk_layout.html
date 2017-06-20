@@ -10,11 +10,11 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no">
         <title>{% block head_title %}Find a Supplier - GOV.UK{% endblock %}</title>
-					<!--[if IE 8]>
-					    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-							<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-					<![endif]-->
-						
+        <!--[if IE 8]>
+          <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <![endif]-->
+	
         <!--[if gt IE 8]><!--><link href="{% static 'govuk-0.18.0/assets/stylesheets/govuk-template.css' %}" media="screen" rel="stylesheet" /><!--<![endif]-->
         <!--[if IE 6]><link href="{% static 'govuk-0.18.0/assets/stylesheets/govuk-template-ie6.css' %}" media="screen" rel="stylesheet" /><![endif]-->
         <!--[if IE 7]><link href="{% static 'govuk-0.18.0/assets/stylesheets/govuk-template-ie7.css' %}" media="screen" rel="stylesheet" /><![endif]-->
@@ -74,10 +74,10 @@
         {% include LANGUAGE_BIDI|yesno:'bidi/footer.html,footer.html' %}
 
         <div id="global-app-error" class="app-error hidden"></div>
-					<!--[if gte IE 9]><!-->
-        		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-						<script src="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
-					<!--<![endif]-->
+        <!--[if gte IE 9]><!-->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <!--<![endif]-->
         <script type="text/javascript" src="{% static 'javascripts/index.js' %}"></script>
         <script type="text/javascript">GOVUK.page.init();</script>
         {% block bodyScripts %}{% endblock bodyScripts %}
