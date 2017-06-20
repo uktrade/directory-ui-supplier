@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-16 12:09+0000\n"
+"POT-Creation-Date: 2017-06-19 11:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -707,39 +707,21 @@ msgstr ""
 #: enrolment/templates/marketing-pages/creative.html:69
 msgid ""
 "UK architects are responsible for some of the world’s most stunning "
-"buildings, such as"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:69
-msgid "the Galaxy Soho urban village in Beijing"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:69
-msgid "and reshaping environments, such as"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:69
-msgid "Singapore’s Gardens by the Bay"
+"buildings, such as the Galaxy Soho urban village in Beijing and reshaping "
+"environments, such as Singapore’s Gardens by the Bay."
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:72
 msgid ""
 "We're also responsible for designing usable industrial and commercial spaces "
-"such as the new"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:72
-msgid "Spaceport America"
+"such as the new Spaceport America."
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:75
 msgid ""
 "As well as designing the built environment, UK firms are designing vehicles "
-"and interiors around the world: including helping to design"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:75
-msgid "the world’s fastest passenger train in China."
+"and interiors around the world: including helping to design the world’s "
+"fastest passenger train in China."
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:80
@@ -889,25 +871,11 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:76
-msgid "We care about the food we produce: 89,000 farmers comply with"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:76
-msgid "voluntary farm standards scheme"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:76
-msgid "that assure animal and worker welfare and our"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:76
-msgid "British Retail Consortium manufacturing standards"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:76
 msgid ""
-"have been adopted by 23,000 certificated suppliers, not only in the UK but "
-"in 123 other countries."
+"We care about the food we produce: 89,000 farmers comply with voluntary farm "
+"standards scheme that assure animal and worker welfare and our British "
+"Retail Consortium manufacturing standards have been adopted by 23,000 "
+"certificated suppliers, not only in the UK but in 123 other countries."
 msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:79
