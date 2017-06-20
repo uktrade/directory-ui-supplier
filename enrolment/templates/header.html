@@ -1,46 +1,46 @@
 {% load static from static %}
 {% load trans from i18n %}
-<header class="ed-header-gov-row">
-    <div class="container">
-        <div id="header-gov-links">
-          <a class="header-gov-link" href="https://www.gov.uk/" target="_blank">
-            <img src="{% static 'images/hmg-logo.png' %}" alt="HMG Logo" class="ed-header-hm-gov">
-          </a>
-          <a class="header-gov-link" href="https://www.great.gov.uk/" target="_blank">
-            <span class="text">Part of</span>
-						<span class="site">great.gov.uk</span>
-          </a>
-        </div>
-        
-				{% include 'language_switcher.html' %}
-    </div>
-		
-		<div class="navbar">
-			<div class="container">
-				<img  id="site-logo" class="dit-iigb-logo" alt="Welcome to Great Britain &amp; Northern Ireland" src="{% static 'images/welcome-to-great-logo.png' %}">
-				<button id="menu-control" data-toggle="collapse" data-target="#menu">
-					<span class="bar"></span>
-					<span class="bar"></span>
-					<span class="bar"></span>
-					All
-				</button>
-				<nav id="menu" aria-label="Site Navigation" class="collapse">
-					<ul>
-						<li {% if active_view_name == 'index'%}class="active"{% endif %}>
-							<a href="{% url 'index' %}">{% trans "Home" %}</a>
-						</li>
-						<li {% if active_view_name == 'public-company-profiles-list'%}class="active"{% endif %}>
-							{% if features.FEATURE_COMPANY_SEARCH_VIEW_ENABLED %}
-							<a href="{% url 'company-search' %}">{% trans "Find a supplier" %}</a>
-							{% else %}
-							<a href="{% url 'public-company-profiles-list' %}">{% trans "Find a Supplier" %}</a>
-							{% endif %}
-						</li>
-						<li {% if active_view_name == 'international-sector-list'%}class="active"{% endif %}>
-							<a href="{% url 'international-sector-list' %}">{% trans "Industries" %}</a>
-						</li>
-					</ul>
-				</nav>
-		  </div>
+<header class="ed-header-gov-row" id="header">
+	<div class="container">
+		<div id="header-gov-links">
+			<a class="header-gov-link" href="https://www.gov.uk/" target="_blank">
+				<img src="{% static 'images/hmg-logo.png' %}" alt="HMG Logo" class="ed-header-hm-gov">
+			</a>
+			<a class="header-gov-link" href="https://www.great.gov.uk/" target="_blank">
+				<span class="text">Part of</span>
+				<span class="site">great.gov.uk</span>
+			</a>
 		</div>
+        
+		{% include 'language_switcher.html' %}
+	</div>
+		
+	<div class="navbar">
+		<div class="container">
+			<img  id="site-logo" class="dit-iigb-logo" alt="Welcome to Great Britain &amp; Northern Ireland" src="{% static 'images/welcome-to-great-logo.png' %}">
+			<button id="menu-control" data-toggle="collapse" data-target="#menu">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+				All
+			</button>
+			<nav id="menu" aria-label="Site Navigation" class="collapse">
+				<ul>
+					<li {% if active_view_name == 'index'%}class="active"{% endif %}>
+						<a href="{% url 'index' %}">{% trans "Home" %}</a>
+					</li>
+					<li {% if active_view_name == 'public-company-profiles-list'%}class="active"{% endif %}>
+						{% if features.FEATURE_COMPANY_SEARCH_VIEW_ENABLED %}
+						<a href="{% url 'company-search' %}">{% trans "Find a supplier" %}</a>
+						{% else %}
+						<a href="{% url 'public-company-profiles-list' %}">{% trans "Find a Supplier" %}</a>
+						{% endif %}
+					</li>
+					<li {% if active_view_name == 'international-sector-list'%}class="active"{% endif %}>
+						<a href="{% url 'international-sector-list' %}">{% trans "Industries" %}</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
 </header>

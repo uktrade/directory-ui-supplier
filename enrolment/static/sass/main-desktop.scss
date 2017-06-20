@@ -914,13 +914,12 @@ a.ed-filled-button-primary {
   
   .trackedSelect {
     border: none;
+    opacity: 0;
     position: absolute;
     right: 0;
     text-indent: -1000px;
     top: 0;
     width: 100%;
-    -moz-appearance: initial;
-    -webkit-appearance: initial;
   }
 }
 
