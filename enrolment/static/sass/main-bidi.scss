@@ -31,8 +31,22 @@
   }
 }
 
+#menu {
+	float: left;
+}
+
+#site-logo {
+  float: right;
+}
+
 
 /* Tablet and mobile tweaks */
+@media (max-width: 799px) {
+  #menu-control {
+    float: left;
+  }
+}
+
 @media (max-width: 320px) {
   .header-gov-link {
     &:hover, 

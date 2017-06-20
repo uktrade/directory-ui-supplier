@@ -1,18 +1,12 @@
 /* Tablet
  ******************/
 @media (max-width: 979px) {
-  #menu-control  {
-    margin-right: 20px;
-  }
-  
   #site-logo {
     height: auto;
-    margin-left: 20px;
   }
 }
 
 @media (max-width: 799px) {
-
   #menu {
     border-top: 1px solid $grey-3;
     clear: both;
@@ -54,7 +48,6 @@
   }
 
   #site-logo {
-    margin-left: 15px;
     max-width: 296px;
     width: 65%;
   }
