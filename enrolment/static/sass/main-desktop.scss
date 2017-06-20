@@ -847,6 +847,8 @@ a.ed-filled-button-primary {
   color: $white;
   float: right;
   margin: 8px 0;
+  position: relative;
+  z-index: 0;
   
   .ed-not-translated {
     img {
@@ -920,6 +922,9 @@ a.ed-filled-button-primary {
     text-indent: -1000px;
     top: 0;
     width: 100%;
+    &:focus {
+      min-width: 150px;
+    }
   }
 }
 
@@ -1023,6 +1028,8 @@ a.ed-filled-button-primary {
 #header-gov-links {
   display: inline-block;
   padding: 8px 0;
+  position: relative;
+  z-index: 1;
   .separator {
     display: none;
   }
