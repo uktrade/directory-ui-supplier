@@ -221,6 +221,9 @@ GOVUK.page = (new function() {
     var $select = $("#id_lang");
     if($select.length) {
       new GOVUK.components.LanguageSelectTracker($select);
+      $select.on("change", function() {
+        this.form.submit();
+      })
     }
   }
 });
