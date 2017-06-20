@@ -312,6 +312,26 @@ a.ed-landing-page-see-more-button {
   padding: 20px;
   padding-top: 0;
   margin-bottom: 20px;
+  dd, dt {
+    display: inline;
+    font-weight: 300;
+    margin: 0;
+  }
+  
+  dl {
+    margin-top: 0;
+  }
+  
+  dt {
+    &:after {
+      content: ":";
+    }
+    &:before {
+      content: "";
+      display: block;
+      margin-top: 1em;
+    }
+  }
 
   img {
     padding: 0

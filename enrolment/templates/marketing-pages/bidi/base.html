@@ -86,17 +86,18 @@
 			<div class="span4 ed-landing-page-case-study-company-details">
 				<p>
 					<b>{{ case_study.company_name }}</b>
-				</b>
-				<p>
+				</p>
+				<dl>
+					<dt>{% trans "Industries" %}</dt>
+					<dd>
 					{% comment %}Do NOT move the forloop if to new line as this causes extra space before comma{% endcomment %}
-					<span>{% trans "Industries" %}:</span>
 					{% for sector in case_study.sectors %}
 						<a href="{% url 'public-company-profiles-list' %}?sectors={{sector.value }}">{% trans sector.label %}</a>{% if not forloop.last %}, {% endif %}
 					{% endfor %}
-				</p>
-				<p>
-					<span>{% trans "keywords" %}: </span><i>{% trans case_study.keywords %}</i>
-				</p>
+					</dd>
+					<dt>{% trans "keywords" %}</dt>
+					<dd><i>{% trans case_study.keywords %}</i></dd>
+				</dl>
 			</div>
 			{% if case_study.testimonial %}
 			<div class="span4 ed-arrow_box ed-landing-page-case-study-testomonial-container">
