@@ -239,20 +239,33 @@ a .register-interest-btn {
 
 .ed-landing-page-sector-container {
   border: 1px solid #dedede;
-  &.ed-landing-page-sector-container-min-height {
-    min-height: 250px;
-  }
+  min-height: 250px;
+  padding: 10px;
   h2 {
+    font-size: 25px;
     font-weight: 300;
     line-height: 1.25em;
+    margin-top: 0;
   }
-  @media (max-width: 767px) {
-    h2, p {
-      padding: 0 20px;
-    }
+  img {
+    margin: 0;
+    padding: 0px;
+  }
+  p {
+    padding: 0;
+  }
+  .image {
+    display: inline-block;
+    padding: 10px;
+    vertical-align: top;
+    width: 30%;
+  }
+  .text {
+    display: inline-block;
+    padding: 4px;
+    width: 68%;
   }
 }
-
 
 .ed-landing-page-sector-image {
   padding: 10px;
@@ -417,7 +430,13 @@ a.ed-landing-page-see-more-button {
   margin-bottom: 0;  
 }
 
-@media (min-width: 768px) {
+/* Tablet
+ ******************/
+@media (max-width: 799px) {
+  #content .ed-landing-page-sector-container {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
   
   .ed-landing-page-sector-companies-list .browse-companies-container,
   .ed-landing-page-synopsis .search-companies-container {
@@ -439,3 +458,16 @@ a.ed-landing-page-see-more-button {
     }
   }
 }
+
+/* Mobile
+ *****************/
+@media (max-width: 640px) {
+  .ed-landing-page-sector-container {
+    .image,
+    .text {
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
