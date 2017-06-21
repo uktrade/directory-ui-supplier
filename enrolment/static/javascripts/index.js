@@ -133,6 +133,64 @@ GOVUK.utm = (new function() {
   
 });
 
+GOVUK.components = (new function() {
+  
+  /* Adds a label element to mirror the matched selected option
+   * text of a <select> input, for enhanced display purpose.
+   * @$select (jQuery node) Target input element
+   **/
+  this.SelectTracker = SelectTracker;
+  function SelectTracker($select) {
+    var SELECT_TRACKER = this;
+    var button, code, lang;
+    
+    if(arguments.length && $select.length) {
+      this.$node = $(document.createElement("p"));
+      this.$node.attr("aria-hidden", "true");
+      this.$node.addClass("SelectTracker");
+      this.$select = $select;
+      this.$select.addClass("trackedSelect");
+      this.$select.before(this.$node);
+      this.$select.on("change.SelectTracker", function() {
+        SELECT_TRACKER.update();
+      });
+      
+      // Initial value
+      this.update();
+    }
+  }
+  SelectTracker.prototype = {};
+  SelectTracker.prototype.update = function() {
+    this.$node.text(this.$select.find(":selected").text());
+  }
+  
+  /* Extends SelectTracker to meet additional display requirement
+   * @$select (jQuery node) Target input element
+   **/
+  this.LanguageSelectTracker = LanguageSelectTracker;
+  function LanguageSelectTracker($select) {
+    SelectTracker.call(this, $select);
+    if(this.$node) {
+      this.$node.addClass("LanguageSelectTracker");
+    }
+  }
+  LanguageSelectTracker.prototype = new SelectTracker;
+  LanguageSelectTracker.prototype.update = function() {
+    var $code = $(document.createElement("span"));
+    var $lang = $(document.createElement("span"));
+    SelectTracker.prototype.update.call(this);
+    $lang.addClass("lang");
+    $code.addClass("code");
+    $lang.text(this.$node.text());
+    $code.text(this.$select.val());
+    this.$node.empty();
+    this.$node.append($code);
+    this.$node.append($lang);
+  }
+  
+  
+});
+
 /* In test mode we don't want the code to 
  * run immediately because we have to compensate
  * for not having a browser environment first.
@@ -142,6 +200,7 @@ GOVUK.page = (new function() {
   // What to run on every page (called from <body>).
   this.init = function() {
     captureUtmValue();
+    enhanceLanguageSwitcher();
   }
   
   /* Attempt to capture UTM information if we haven't already
@@ -151,6 +210,20 @@ GOVUK.page = (new function() {
     var captured = GOVUK.utm.get();
     if(!captured && document.location.search.substring(1)) {
       GOVUK.utm.set();
+    }
+  }
+  
+  
+  /* Adapt the language switcher <select> to enable
+   * a more aesthetically pleasing view.
+   **/
+  function enhanceLanguageSwitcher() {
+    var $select = $("#id_lang");
+    if($select.length) {
+      new GOVUK.components.LanguageSelectTracker($select);
+      $select.on("change", function() {
+        this.form.submit();
+      })
     }
   }
 });
