@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-19 11:56+0000\n"
+"POT-Creation-Date: 2017-06-22 15:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -522,12 +522,7 @@ msgstr ""
 
 #: enrolment/templates/bidi/lead-generation-form.html:84
 #: enrolment/templates/lead-generation-form.html:85
-msgid "I agree to the great.gov.uk"
-msgstr ""
-
-#: enrolment/templates/bidi/lead-generation-form.html:84
-#: enrolment/templates/lead-generation-form.html:85
-msgid "terms and conditions"
+msgid "I agree to the great.gov.uk terms and conditions"
 msgstr ""
 
 #: enrolment/templates/browse-companies.html:4
