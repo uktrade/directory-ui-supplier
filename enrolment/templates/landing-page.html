@@ -9,42 +9,44 @@
 	{% endif %}
 {% endblock %}
 
+{% block css_layout_class %}
+fas-home-content
+{% endblock %}
+
 {% block hero_title %}
 {% trans "Welcome to Great Britain and Northern Ireland - the right place to do business" %}
 {% endblock %}
 
 {% block content %}
 <div class="container">
-	<div style="margin-top: -100px;">
-		<div class="row-fluid">
-			<div class="span12 great-blue-bar">
-				<h1 class="element-within company-name-title">
-					<span class="dont-break-out">{% trans "Find UK companies to do business with" %}</span>
-				</h1>
-			</div>
+	<div class="row-fluid">
+		<div class="span12 great-blue-bar">
+			<h1 class="element-within company-name-title">
+				<span class="dont-break-out">{% trans "Find UK companies to do business with" %}</span>
+			</h1>
 		</div>
-		<div class="ed-landing-page-synopsis">
-			<div class="row-fluid">
-				<div class="span8">
-					<p>
-						{% trans "The UK is a great place to find innovative, high-quality products and services." %}
-					</p>
-					<p>
-						{% trans "You can make the right trade connections in the UK with global corporations and smaller enterprises across every industry." %}
-					</p>
-					<p>
-						{% trans "UK companies work with businesses and governments around the world to run high quality services and deliver the best experiences." %}
-					</p>
-					<p>
-						{% trans "When you need a trade partner, the reliability and expertise of UK companies is hard to beat." %}
-					</p>
-					<p>
-						{% trans "Choose from the hundreds of businesses in the UK to work with you today." %}
-					</p>
-				</div>
-				<div class="span4">
-					{% include 'search-companies.html' %}
-				</div>
+	</div>
+	<div class="ed-landing-page-synopsis">
+		<div class="row-fluid">
+			<div class="span8">
+				<p>
+					{% trans "The UK is a great place to find innovative, high-quality products and services." %}
+				</p>
+				<p>
+					{% trans "You can make the right trade connections in the UK with global corporations and smaller enterprises across every industry." %}
+				</p>
+				<p>
+					{% trans "UK companies work with businesses and governments around the world to run high quality services and deliver the best experiences." %}
+				</p>
+				<p>
+					{% trans "When you need a trade partner, the reliability and expertise of UK companies is hard to beat." %}
+				</p>
+				<p>
+					{% trans "Choose from the hundreds of businesses in the UK to work with you today." %}
+				</p>
+			</div>
+			<div class="span4">
+				{% include 'search-companies.html' %}
 			</div>
 		</div>
 	</div>

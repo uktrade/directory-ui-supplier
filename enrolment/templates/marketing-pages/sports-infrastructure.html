@@ -3,6 +3,7 @@
 {% load static from staticfiles %}
 {% load trans from i18n %}
 
+{% block css_layout_class %}fas-marketing-page fas-sports{% endblock %}
 {% block hero_image %}{% static 'images/covers/fas-sports-hero.png' %}{% endblock %}
 {% block hero_title %}{% trans "The UK's global sports infrastructure services" %}{% endblock%}
 {% block synopsis %}

@@ -514,25 +514,24 @@ h1 {
 }
 
 .ed-hero-sub-header {
-  color: white;
-  min-height: 275px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  background-color: #0D1019;
+  background-image: url(/static/images/covers/agnostic.jpg);
+  background-position: top left;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-color: #0D1019;
+  color: $white;
+  min-height: 275px;
+  margin-bottom: 20px;
+  padding-top: 50px;
+
   .ed-hero-sub-header-title {
-    margin-top: 30px;
+    display: inline-block;
     font-size: 24px;
     font-weight: 300;
     line-height: 1.25em;
-    margin-bottom: 20px;
-    @media (max-width: 979px) {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+    width: 50%;
   }
 }
 

@@ -313,7 +313,6 @@ a.ed-landing-page-see-more-button {
   border: 1px solid #dedede;
   padding: 20px;
   padding-top: 0;
-  margin-bottom: 20px;
   h2 {
     font-weight: 300;
     font-size: 24px;
@@ -324,7 +323,6 @@ a.ed-landing-page-see-more-button {
   border: 1px solid #dedede;
   padding: 20px;
   padding-top: 0;
-  margin-bottom: 20px;
   dd, dt {
     display: inline;
     font-weight: 300;
@@ -385,6 +383,9 @@ a.ed-landing-page-see-more-button {
   h1, h2, h3 {
     font-weight: 300;
   }
+  section {
+    margin-bottom: 20px;
+  }
 }
 
 .ed-proposition-container {
@@ -429,6 +430,7 @@ a.ed-landing-page-see-more-button {
 .ed-landing-page-synopsis .search-companies-container {
   margin-bottom: 0;  
 }
+
 
 /* Tablet
  ******************/

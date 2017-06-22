@@ -7,13 +7,17 @@
 	<link href="{% static 'landing-page.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
+{% block css_layout_class %}
+fas-industries-content
+{% endblock %}
+
 {% block hero_title %}
-	{% trans "Discover the UK's capability in these key industries" %}
+{% trans "Discover the UK's capability in these key industries" %}
 {% endblock %}
 
 {% block content %}
 <div class="container">
-	<div style="margin-top: -100px;" class="ed-landing-page-gap">
+	<div class="ed-landing-page-gap">
 		<div class="row-fluid">
 			<div class="span12 great-blue-bar">
 				<h1 class="element-within company-name-title">

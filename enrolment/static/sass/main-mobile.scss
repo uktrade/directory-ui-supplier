@@ -1,6 +1,7 @@
 /* Mobile
  *****************/
 @media (max-width: 640px) {
+  
   .browse-companies-container,
   .search-companies-container {
     h3 {
@@ -20,10 +21,25 @@
     }
   }
   
+  .ed-hero-sub-header {
+    .ed-hero-sub-header-title {
+      width: 75%;
+    }
+  }
+  
   .LanguageSelectTracker {
     .code:after,
     .lang {
       display: none;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .ed-hero-sub-header {
+    .ed-hero-sub-header-title {
+      text-align: center;
+      width: 100%;
     }
   }
 }

@@ -3,6 +3,7 @@
 {% load trans from i18n %}
 {% load static from staticfiles %}
 
+{% block css_layout_class %}fas-marketing-page fas-food{% endblock %}
 {% block hero_image %}{% static 'images/covers/food.jpg' %}{% endblock %}
 {% block hero_title %}{% trans "UK food and drink" %}{% endblock%}
 {% block synopsis %}

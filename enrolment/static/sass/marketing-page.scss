@@ -1,0 +1,38 @@
+@import 'landing-page.scss';
+
+
+.fas-manufacturing {
+  .ed-hero-sub-header {
+    background-image: url(/static/images/covers/agnostic.jpg);
+  }
+}
+  
+.fas-creative {
+  .ed-hero-sub-header {
+    background-image: url(/static/images/covers/creative.jpg);
+  }
+}  
+
+.fas-food {
+  .ed-hero-sub-header {
+    background-image: url(/static/images/covers/food.jpg);
+  }
+}
+  
+.fas-health {
+  .ed-hero-sub-header {
+    background-image: url(/static/images/covers/health.jpg);
+  }
+}
+  
+.fas-sports {
+  .ed-hero-sub-header {
+    background-image: url(/static/images/covers/fas-sports-hero.jpg);
+  }
+}
+  
+.fas-technology {
+  .ed-hero-sub-header {
+    background-image: url(/static/images/covers/technology.jpg);
+  }
+}

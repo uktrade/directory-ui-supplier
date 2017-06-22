@@ -3,6 +3,7 @@
 {% load static from staticfiles %}
 {% load trans from i18n %}
 
+{% block css_layout_class %}fas-marketing-page fas-technology{% endblock %}
 {% block hero_image %}{% static 'images/covers/technology.jpg' %}{% endblock %}
 {% block hero_title %}{% trans "UK technology" %}{% endblock%}
 {% block synopsis %}
