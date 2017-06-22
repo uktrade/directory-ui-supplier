@@ -29,12 +29,12 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: 3px solid #ffbf47;
+  outline: 3px solid $focus;
 }
 
 html {
   a:focus {
-    outline: 3px solid #ffbf47;
+    outline: 3px solid $focus;
     color: #007EA3;
     background-color: transparent;
   }
@@ -298,7 +298,7 @@ label, input, button, select, textarea {
   font-weight: 400;
   line-height: 1.4;
   &:focus {
-    outline: 3px solid #ffbf47;
+    outline: 3px solid $focus;
   }
 }
 
@@ -394,7 +394,7 @@ label, input, button, select, textarea {
   line-height: 1;
   font-family: 'Roboto', sans-serif;
   &:focus {
-    outline: 3px solid #ffbf47;
+    outline: 3px solid $focus;
   }
 }
 
@@ -832,6 +832,9 @@ a.ed-filled-button-primary {
     width: 100%;
     &:focus {
       min-width: 150px;
+      & + p {
+        outline: 3px solid $focus;
+      }
     }
   }
 }

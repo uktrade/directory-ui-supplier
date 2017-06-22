@@ -150,7 +150,7 @@ GOVUK.components = (new function() {
       this.$node.addClass("SelectTracker");
       this.$select = $select;
       this.$select.addClass("trackedSelect");
-      this.$select.before(this.$node);
+      this.$select.after(this.$node);
       this.$select.on("change.SelectTracker", function() {
         SELECT_TRACKER.update();
       });
