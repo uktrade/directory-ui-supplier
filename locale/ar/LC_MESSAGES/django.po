@@ -625,7 +625,7 @@ msgstr ""
 
 #: enrolment/templates/language_switcher.html:13
 msgid "Page in English only"
-msgstr ""
+msgstr "هذه الصفحة باللغة الإنجليزية فقط"
 
 #: enrolment/templates/marketing-pages/base.html:19
 #: enrolment/templates/marketing-pages/bidi/base.html:23
@@ -1753,9 +1753,6 @@ msgstr "العثور على شركات رائعة في المملكة المتح
 #~ "سواء كنت تريد التعامل مع العلامات التجارية الغذائية الأكثر ابتكارًا في "
 #~ "السوق أو شركات المشروبات ذات الجودة الاستثنائية، فيجب أن تضع المملكة "
 #~ "المتحدة على رأس القائمة."
-
-#~ msgid "This page is only in English"
-#~ msgstr "هذه الصفحة باللغة الإنجليزية فقط"
 
 #~ msgid "RD Biomed"
 #~ msgstr "RD Biomed"
