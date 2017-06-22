@@ -52,6 +52,10 @@
 
 /* Tablet and mobile tweaks */
 @media (max-width: 799px) {
+  #menu {
+    float: none;
+  }
+  
   #menu-control {
     float: left;
   }
