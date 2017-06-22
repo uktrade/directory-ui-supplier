@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-19 11:56+0000\n"
+"POT-Creation-Date: 2017-06-22 15:45+0000\n"
 "PO-Revision-Date: 2017-06-16 17:01+0100\n"
 "Language: ja\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -602,15 +602,8 @@ msgstr "送信"
 
 #: enrolment/templates/bidi/lead-generation-form.html:84
 #: enrolment/templates/lead-generation-form.html:85
-msgid "I agree to the great.gov.uk"
-msgstr ""
-
-#: enrolment/templates/bidi/lead-generation-form.html:84
-#: enrolment/templates/lead-generation-form.html:85
-#, fuzzy
-#| msgid "Terms &amp; conditions"
-msgid "terms and conditions"
-msgstr "利用規約"
+msgid "I agree to the great.gov.uk terms and conditions"
+msgstr "great.gov.uk の利用規約に同意します。"
 
 #: enrolment/templates/browse-companies.html:4
 msgid "Find other great UK companies"
@@ -1698,6 +1691,11 @@ msgstr ""
 msgid "Find great UK companies"
 msgstr "優秀な英国企業を探す"
 
+#, fuzzy
+#~| msgid "Terms &amp; conditions"
+#~ msgid "terms and conditions"
+#~ msgstr "利用規約"
+
 #~ msgid ""
 #~ "UK companies work with businesses and governments around the world to "
 #~ "create new living and working environments, run high quality services and "
@@ -1896,9 +1894,6 @@ msgstr "優秀な英国企業を探す"
 #~ msgstr ""
 #~ "すぐに取引可能な、非常に革新的でクリエイティブな英国の取引相手が揃っていま"
 #~ "す。［サプライヤ検索］サービスでご確認ください。"
-
-#~ msgid "I agree to the great.gov.uk terms and conditions."
-#~ msgstr "great.gov.uk の利用規約に同意します。"
 
 #~ msgid "Receive email updates of the latest UK companies in your industry"
 #~ msgstr "業界をリードする英国企業から最新情報のメールを受信できます"
