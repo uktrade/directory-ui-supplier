@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-19 11:56+0000\n"
+"POT-Creation-Date: 2017-06-22 15:45+0000\n"
 "PO-Revision-Date: 2017-06-13 15:19+0100\n"
 "Language: ar\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -598,13 +598,8 @@ msgstr "إرسال"
 
 #: enrolment/templates/bidi/lead-generation-form.html:84
 #: enrolment/templates/lead-generation-form.html:85
-msgid "I agree to the great.gov.uk"
-msgstr ""
-
-#: enrolment/templates/bidi/lead-generation-form.html:84
-#: enrolment/templates/lead-generation-form.html:85
-msgid "terms and conditions"
-msgstr ""
+msgid "I agree to the great.gov.uk terms and conditions"
+msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
 
 #: enrolment/templates/browse-companies.html:4
 msgid "Find other great UK companies"
@@ -1788,9 +1783,6 @@ msgstr "العثور على شركات رائعة في المملكة المتح
 
 #~ msgid "select"
 #~ msgstr "تحديد"
-
-#~ msgid "I agree to the great.gov.uk terms and conditions."
-#~ msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
 
 #~ msgid "This field is required."
 #~ msgstr "هذا الحقل مطلوب."

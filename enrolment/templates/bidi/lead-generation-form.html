@@ -81,7 +81,7 @@
 						{{ form.terms.errors }}
 						<label for="{{ form.terms.id_for_label }}" style="margin-top: 15px; font-weight: 300;">
 							<input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox" style="vertical-align: top; margin-top: 7px;">
-							{% trans "I agree to the great.gov.uk" %} <a target="_self" href="{% url 'terms-and-conditions' %}">{% trans "terms and conditions" %}</a>.
+							<a target="_self" href="{% url 'terms-and-conditions' %}">{% trans "I agree to the great.gov.uk terms and conditions" %}</a>.
 						</label>
 					</div>
 				</div>

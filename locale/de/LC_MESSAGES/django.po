@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-19 11:56+0000\n"
+"POT-Creation-Date: 2017-06-22 15:45+0000\n"
 "PO-Revision-Date: 2017-06-12 12:17+0100\n"
 "Language: de\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -644,13 +644,8 @@ msgstr "Absenden"
 
 #: enrolment/templates/bidi/lead-generation-form.html:84
 #: enrolment/templates/lead-generation-form.html:85
-msgid "I agree to the great.gov.uk"
+msgid "I agree to the great.gov.uk terms and conditions"
 msgstr "Ich stimme der great.gov.uk"
-
-#: enrolment/templates/bidi/lead-generation-form.html:84
-#: enrolment/templates/lead-generation-form.html:85
-msgid "terms and conditions"
-msgstr "AGB"
 
 #: enrolment/templates/browse-companies.html:4
 msgid "Find other great UK companies"
@@ -902,7 +897,6 @@ msgstr ""
 "Neben der Gestaltung der bebauten Umwelt entwerfen Unternehmen aus "
 "Großbritannien Fahrzeuge und Interieure auf der ganzen Welt. U. a. helfen "
 "sie bei der Entwicklung des weltweit schnellsten Passagierzugs in China."
-
 
 #: enrolment/templates/marketing-pages/creative.html:80
 msgid "Arts: heritage and innovation"
@@ -1804,6 +1798,9 @@ msgstr ""
 #: enrolment/templates/search-companies.html:6
 msgid "Find great UK companies"
 msgstr "Finden Sie erstklassige britische Unternehmen"
+
+#~ msgid "terms and conditions"
+#~ msgstr "AGB"
 
 #~ msgid "the Galaxy Soho urban village in Beijing"
 #~ msgstr "das Galaxy Soho Urban Village in Peking"
