@@ -90,12 +90,14 @@
 				</p>
 			</div>
 			{% if case_study.testimonial %}
-			<div class="span4 ed-arrow_box case-study-testomonial">
-				<p>
-					<b>"{% trans case_study.testimonial %}"</b>
-				</p>
-				<div>{% trans case_study.testimonial_name %}</div>
-				<div>{% trans case_study.testimonial_company %}</div>
+			<div class="span4 case-study-testomonial">
+				<blockquote class="ed-arrow_box">
+					<span class="text">{% trans case_study.testimonial %}</span>
+					<cite>
+						<span class="name">{% trans case_study.testimonial_name %}</span>
+						<span class="company">{% trans case_study.testimonial_company %}</span>
+					</cite>
+				</blockquote>
 			</div>
 			{% endif %}
 			<div class="span4 case-study-info">

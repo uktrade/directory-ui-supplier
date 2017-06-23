@@ -1,3 +1,13 @@
+blockquote {
+  .text {
+    &:after,
+    &:before {
+      display: none;
+    }
+  }
+}
+
+
 .browse-companies-container,
 .search-companies-container {
   h3 {
