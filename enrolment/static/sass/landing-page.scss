@@ -392,6 +392,15 @@ a.ed-landing-page-see-more-button {
 .ed-landing-page-sector-companies-list .browse-companies-container,
 .ed-landing-page-synopsis .search-companies-container {
   margin-bottom: 0;  
+  p {
+    margin-bottom: 1em;
+    width: 100%;
+  }
+  .button {
+    padding: 21px 10px;
+    position: static;
+    width: 100%;
+  }
 }
 
 
