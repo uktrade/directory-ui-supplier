@@ -45,11 +45,6 @@
 		</div>
 
 		<div class="row-fluid">
-			{% if sector_value %}
-				<div class="span4">
-					{% include 'browse-companies.html' %}
-				</div>
-			{% endif %}
 			{% for company in companies %}
 				<div class="span4">
 					<div class="row-fluid">
@@ -66,6 +61,11 @@
 					</div>
 				</div>
 			{% endfor %}
+			{% if sector_value %}
+				<div class="span4">
+					{% include 'browse-companies.html' %}
+				</div>
+			{% endif %}
 		</div>
 	</section>
 
