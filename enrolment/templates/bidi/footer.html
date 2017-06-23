@@ -1,6 +1,7 @@
 {% load static %}
 {% load trans from i18n %}
 {% load external_url from constants_tags %}
+
 <footer id="footer">
 	<div class="container">
 		<ul id="footer-links">
@@ -29,7 +30,7 @@
 			<a href="https://www.gov.uk/" target="_blank">
 				<img src="{% static 'images/hmg-logo.png' %}" alt="HM Government" width="162">
 			</a>
-			<span class="copyright-text">&copy; {% trans "Crown Copyright 2016" %}</span>
+			<span class="copyright-text">&copy; {% trans "Crown Copyright" %} {% now "Y" %}</span>
 			<img class="dit-iigb-logo" alt="Welcome to Great Britain &amp; Northern Ireland" src="{% static 'images/welcome-to-great-logo-white.png' %}" width="220"> 
 		</p>
 	</div>
