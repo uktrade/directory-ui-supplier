@@ -49,7 +49,7 @@ ul, li {
 }
 
 p {
-  margin-bottom: 10px;
+  margin-bottom: 1em;
 }
 
 .screen-reader-only { 
@@ -660,18 +660,16 @@ a.no-focus-highlight {
 }
 
 .ed-arrow_box:after {
-  top: 100%;
-  left: 50px;
   border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(237, 237, 237, 0);
   border-top-color: #d8d8d8;
   border-width: 20px 20px 0px 0px;
-  margin-left: -20px;
+  left: 20px;
+  content: " ";
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  width: 0;
 }
 
 // do not remove the `a.` prefix - it increases the specificity

@@ -86,17 +86,17 @@
 				</p>
 			</div>
 			{% if case_study.testimonial %}
-			<div class="span4 ed-arrow_box ed-landing-page-case-study-testomonial-container">
-				<p class="ed-landing-page-sector-synopsis">
+			<div class="span4 ed-arrow_box case-study-testomonial">
+				<p>
 					<b>"{% trans case_study.testimonial %}"</b>
 				</p>
 				<div>{% trans case_study.testimonial_name %}</div>
 				<div>{% trans case_study.testimonial_company %}</div>
 			</div>
 			{% endif %}
-			<div class="span4 ed-landing-page-case-study-company-details">
+			<div class="span4 case-study-info">
 				<p>
-					<b>{% trans case_study.company_name %}</b>
+					<b>{{ case_study.company_name }}</b>
 				</p>
 				<dl>
 					<dt>{% trans "Industries" %}</dt>

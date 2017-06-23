@@ -1,5 +1,29 @@
 @import 'landing-page-bidi.scss';
 
+.case-study-info {
+  dt {
+    &:after {
+      content: "";
+    }
+  }
+}
+
+.ed-arrow_box::after {
+  border-width: 20px 0 0 20px;
+}
+
+.ed-landing-page-sector-case-study-inner {
+  .span4 {
+    float: right;
+    margin-left: 0;
+    &:first-child {
+      margin-left: 20px;
+    }
+    &:last-child {
+      float: left;
+    }
+  }
+}
 
 .fas-manufacturing {
   .ed-hero-sub-header {
@@ -34,5 +58,21 @@
 .fas-technology {
   .ed-hero-sub-header {
     background-image: url(/static/images/covers/technology-rtl.jpg);
+  }
+}
+
+
+/* Tablet 
+ *******************/
+@media (max-width: 767px) {
+  /* page class only to override bootstrap */
+  .fas-marketing-page {
+    .case-study-info {
+      border-width: 0 10px 10px 0;
+    }
+    
+    .case-study-testomonial  {
+      border-width: 0 0 10px 10px;
+    }
   }
 }

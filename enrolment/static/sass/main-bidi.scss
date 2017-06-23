@@ -11,6 +11,12 @@
   }
 }
 
+.ed-arrow_box::after {
+	border-width: 20px 0 0 20px;
+  left: auto;
+  right: 20px;
+}
+
 .ed-hero-sub-header {
   background-image: url(/static/images/covers/Generic-Hero-arabic.jpg);
   background-position: top right;

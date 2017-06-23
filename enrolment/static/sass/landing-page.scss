@@ -321,47 +321,10 @@ a.ed-landing-page-see-more-button {
 
 .ed-landing-page-sector-case-study-container {
   border: 1px solid #dedede;
-  padding: 20px;
-  padding-top: 0;
-  dd, dt {
-    display: inline;
-    font-weight: 300;
-    margin: 0;
-  }
-  
-  dl {
-    margin-top: 0;
-  }
-  
-  dt {
-    &:after {
-      content: ":";
-    }
-    &:before {
-      content: "";
-      display: block;
-      margin-top: 1em;
-    }
-  }
+  padding: 0 20px 20px 20px;
 
   img {
     padding: 0
-  }
-  .ed-landing-page-sector-case-study-inner {
-    margin-bottom: 20px;
-  }
-  .ed-landing-page-case-study-testomonial-container {
-    padding: 20px;
-  }
-  .ed-landing-page-case-study-company-details {
-    background: #007EA3;
-    padding: 20px;
-    color: white;
-    a {
-      color: white;
-      text-decoration: underline;
-      font-weight: 500;
-    }
   }
 }
 
