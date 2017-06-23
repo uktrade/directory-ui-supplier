@@ -26,15 +26,15 @@
             <div class="span6">
                 <p>
                     {% trans "Many of the world’s best-known and successful companies take advantage of UK innovation, and we are proud that we provide a technological springboard for companies worldwide." %}
-                    <ul>
-                        <li>{% trans "Our technology industry is one of the world’s largest and shows the UK’s creativity and design skills. The UK is particularly focussed on: low-power radio-frequency electronics, such as the first single-chip implementation of Bluetooth and the international NarrowBand-Internet of Things standard" %}</li>
-                        <li>{% trans "development of 5G communications, which will underpin the development of connected devices" %}</li>
-                        <li>{% trans "data analytics to create real-time consumer trends, behaviour and insights" %}</li>
-                        <li>{% trans "data centres - we have the largest market capacity in Europe" %}</li>
-                        <li>{% trans "artificial intelligence - we are home to  many successful artificial intelligence (AI) start-up companies, especially those specialising in machine learning, deep learning and natural language processing" %}</li>
-                        <li>{% trans "producing compound semiconductor materials producing frontier-based sensor technologies." %}</li>
-                    </ul>
                 </p>
+                <ul>
+                    <li>{% trans "Our technology industry is one of the world’s largest and shows the UK’s creativity and design skills. The UK is particularly focussed on: low-power radio-frequency electronics, such as the first single-chip implementation of Bluetooth and the international NarrowBand-Internet of Things standard" %}</li>
+                    <li>{% trans "development of 5G communications, which will underpin the development of connected devices" %}</li>
+                    <li>{% trans "data analytics to create real-time consumer trends, behaviour and insights" %}</li>
+                    <li>{% trans "data centres - we have the largest market capacity in Europe" %}</li>
+                    <li>{% trans "artificial intelligence - we are home to  many successful artificial intelligence (AI) start-up companies, especially those specialising in machine learning, deep learning and natural language processing" %}</li>
+                    <li>{% trans "producing compound semiconductor materials producing frontier-based sensor technologies." %}</li>
+                </ul>
             </div>
             <div class="span6">
                 <div class="ed-key-facts-container">
@@ -49,12 +49,6 @@
         </div>
     </section>
     <section>
-        <div class="row-fluid">
-            <div class="span12">
-            </div>
-        </div>
-    </section>
-    <section>
         <h2>{% trans "UK technology firms are global success stories" %}</h2>
         <p>
             {% trans "There are thousands of technology start-ups in the UK, thanks to our strong entrepreneurial culture." %}
@@ -64,13 +58,13 @@
         </p>
         <p>
             {% trans "Our flourishing start-ups complement a host of established global technology companies based here. UK technology success stories include:" %}
-            <ul>
-                <li>{% trans "a telecommunications services company that operates in 180 markets with revenue of more than £19 billion" %}</li>
-                <li>{% trans "the world's third-largest supplier of enterprise resource planning software" %}</li>
-                <li>{% trans "a mobile virtual network operator in 21 countries worldwide" %}</li>
-                <li>{% trans "the world's second biggest mobile telecomms network (by number of connections)" %}</li>
-            </ul>
         </p>
+        <ul>
+            <li>{% trans "a telecommunications services company that operates in 180 markets with revenue of more than £19 billion" %}</li>
+            <li>{% trans "the world's third-largest supplier of enterprise resource planning software" %}</li>
+            <li>{% trans "a mobile virtual network operator in 21 countries worldwide" %}</li>
+            <li>{% trans "the world's second biggest mobile telecomms network (by number of connections)" %}</li>
+        </ul>
         <div>
             <a href="{% url 'public-company-profiles-list' %}?sectors={{ sector_value }}">{% trans "Find your UK technology trade partner" %}</a>
         </div>
