@@ -29,12 +29,12 @@ select:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: 3px solid #ffbf47;
+  outline: 3px solid $focus;
 }
 
 html {
   a:focus {
-    outline: 3px solid #ffbf47;
+    outline: 3px solid $focus;
     color: #007EA3;
     background-color: transparent;
   }
@@ -49,7 +49,7 @@ ul, li {
 }
 
 p {
-  margin-bottom: 10px;
+  margin-bottom: 1em;
 }
 
 .screen-reader-only { 
@@ -298,7 +298,7 @@ label, input, button, select, textarea {
   font-weight: 400;
   line-height: 1.4;
   &:focus {
-    outline: 3px solid #ffbf47;
+    outline: 3px solid $focus;
   }
 }
 
@@ -394,7 +394,7 @@ label, input, button, select, textarea {
   line-height: 1;
   font-family: 'Roboto', sans-serif;
   &:focus {
-    outline: 3px solid #ffbf47;
+    outline: 3px solid $focus;
   }
 }
 
@@ -514,103 +514,24 @@ h1 {
 }
 
 .ed-hero-sub-header {
-  color: white;
-  min-height: 275px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  background-color: #0D1019;
+  background-image: url(/static/images/covers/agnostic.jpg);
+  background-position: top left;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-color: #0D1019;
+  color: $white;
+  min-height: 275px;
+  margin-bottom: 20px;
+  padding-top: 50px;
+
   .ed-hero-sub-header-title {
-    margin-top: 30px;
+    display: inline-block;
     font-size: 24px;
     font-weight: 300;
     line-height: 1.25em;
-    margin-bottom: 20px;
-    @media (max-width: 979px) {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-  }
-}
-
-#footer.ed-footer {
-  background: #444444;
-  padding: 40px 40px 50px;
-  img {
-    image-rendering: -moz-crisp-edges;         /* Firefox */
-    image-rendering:   -o-crisp-edges;         /* Opera */
-    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
-    height: 40px;
-    max-width: inherit;
-  }
-  @media (max-width: 960px) {
-    padding: 40px 0;
-
-    .footer-section {
-      border-top: 1px solid #fff;
-      padding: 30px 0;
-
-    }
-
-    .container {
-      .grid-row {
-        display: flex;
-        flex-flow: column;
-        .logo {
-          order: 3;
-          width: 100%;
-        }
-        .links {
-          margin-left: 0;
-          order: 2;
-          width: 100%;
-        }
-        .subscribe {
-          margin-left: 0;
-          order: 1;
-          width: 100%;
-          .footer-section {
-            border-top: 0;
-            padding-top: 0;
-          }
-        }
-      }
-    }
-  }
-  .footer-wrapper {
-    background: #1E1348;
-  }
-  a {
-    color: $white;
-    font-size: 17px;
-  }
-  a:focus {
-    background: #007EA3;
-    color: #ffffff;
-    cursor: pointer;
-  }
-  .ed-text-divider {
-    padding: 5px;
-    color: white;
-  }
-  .hmg-logo {
-    img {
-      max-width: 250px;
-    }
-  }
-  .eig-logo-footer {
-    img {
-      max-width: 200px;
-    }
-  }
-  .copyright-text {
-    color: white;
-    font-size: 17px;
+    width: 50%;
   }
 }
 
@@ -739,18 +660,16 @@ a.no-focus-highlight {
 }
 
 .ed-arrow_box:after {
-  top: 100%;
-  left: 50px;
   border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(237, 237, 237, 0);
   border-top-color: #d8d8d8;
   border-width: 20px 20px 0px 0px;
-  margin-left: -20px;
+  left: 20px;
+  content: " ";
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  width: 0;
 }
 
 // do not remove the `a.` prefix - it increases the specificity
@@ -823,20 +742,6 @@ a.ed-filled-button-primary {
   min-height: 40px;
   width: 100%;
   z-index: 1;
-}
-
-.navbar {
-  background-color: $white;
-  margin-bottom: 0;
-  img {
-    height: 40px;
-    margin: 16px 0 10px 0;
-    image-rendering: -moz-crisp-edges;         /* Firefox */
-    image-rendering:   -o-crisp-edges;         /* Opera */
-    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
-  }
 }
 
 .ed-special-bottom-border {
@@ -924,6 +829,9 @@ a.ed-filled-button-primary {
     width: 100%;
     &:focus {
       min-width: 150px;
+      & + p {
+        outline: 3px solid $focus;
+      }
     }
   }
 }
@@ -1071,9 +979,83 @@ a.ed-filled-button-primary {
   display: none; /* only on tablet+mobile */
 }
 
+#navbar {
+  background-color: $white;
+  margin-bottom: 0;
+}
+
 #site-logo {
   float: left;
+  height: 40px;
+  margin: 16px 0 10px 0;
+  image-rendering: -moz-crisp-edges;         /* Firefox */
+  image-rendering:   -o-crisp-edges;         /* Opera */
+  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
   max-width: 326px;
+}
+
+
+/* Footer
+ ******************/
+#footer {
+  background-color: $grey-6;
+  border: none;
+  color: $white;
+  font-size: 17px;
+  padding: 40px 0;
+  
+  a, a:hover {
+    color: $white;
+   
+    img {
+      border-left: 1px solid white;
+      padding-left: 5px;
+    }
+  }
+  
+  img {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    max-width: inherit;
+  }
+}
+
+#footer-credits {
+  display: table-cell;
+  width: 220px;
+  
+  .copyright-text {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+}
+
+#footer-links {
+  display: table-cell;
+  margin: 0;
+  padding-right: 40px;
+  width: 740px;
+  
+  li {
+    display: inline-block;
+    &:before {
+      color: $white;
+  	  content: "|";
+  	  display: inline-block;
+  	  padding: 0 5px;
+    } 
+    &:first-child {
+      &:before {
+        display: none;
+      }
+    }
+  }
 }
 
 

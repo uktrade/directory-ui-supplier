@@ -3,6 +3,7 @@
 {% load trans from i18n %}
 {% load static from staticfiles %}
 
+{% block css_layout_class %}fas-marketing-page fas-creative{% endblock %}
 {% block hero_image %}{% static 'images/covers/creative.jpg' %}{% endblock %}
 {% block hero_title %}{% trans "Delivering exceptional creative services" %}{% endblock%}
 {% block synopsis %}

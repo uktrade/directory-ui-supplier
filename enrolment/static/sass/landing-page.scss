@@ -239,20 +239,33 @@ a .register-interest-btn {
 
 .ed-landing-page-sector-container {
   border: 1px solid #dedede;
-  &.ed-landing-page-sector-container-min-height {
-    min-height: 250px;
-  }
+  min-height: 250px;
+  padding: 10px;
   h2 {
+    font-size: 25px;
     font-weight: 300;
     line-height: 1.25em;
+    margin-top: 0;
   }
-  @media (max-width: 767px) {
-    h2, p {
-      padding: 0 20px;
-    }
+  img {
+    margin: 0;
+    padding: 0px;
+  }
+  p {
+    padding: 0;
+  }
+  .image {
+    display: inline-block;
+    padding: 10px;
+    vertical-align: top;
+    width: 30%;
+  }
+  .text {
+    display: inline-block;
+    padding: 4px;
+    width: 68%;
   }
 }
-
 
 .ed-landing-page-sector-image {
   padding: 10px;
@@ -300,7 +313,6 @@ a.ed-landing-page-see-more-button {
   border: 1px solid #dedede;
   padding: 20px;
   padding-top: 0;
-  margin-bottom: 20px;
   h2 {
     font-weight: 300;
     font-size: 24px;
@@ -309,28 +321,10 @@ a.ed-landing-page-see-more-button {
 
 .ed-landing-page-sector-case-study-container {
   border: 1px solid #dedede;
-  padding: 20px;
-  padding-top: 0;
-  margin-bottom: 20px;
+  padding: 0 20px 20px 20px;
 
   img {
     padding: 0
-  }
-  .ed-landing-page-sector-case-study-inner {
-    margin-bottom: 20px;
-  }
-  .ed-landing-page-case-study-testomonial-container {
-    padding: 20px;
-  }
-  .ed-landing-page-case-study-company-details {
-    background: #007EA3;
-    padding: 20px;
-    color: white;
-    a {
-      color: white;
-      text-decoration: underline;
-      font-weight: 500;
-    }
   }
 }
 
@@ -351,6 +345,9 @@ a.ed-landing-page-see-more-button {
 .ed-landing-page-sector-specific-container {
   h1, h2, h3 {
     font-weight: 300;
+  }
+  section {
+    margin-bottom: 20px;
   }
 }
 
@@ -395,9 +392,25 @@ a.ed-landing-page-see-more-button {
 .ed-landing-page-sector-companies-list .browse-companies-container,
 .ed-landing-page-synopsis .search-companies-container {
   margin-bottom: 0;  
+  p {
+    margin-bottom: 1em;
+    width: 100%;
+  }
+  .button {
+    padding: 21px 10px;
+    position: static;
+    width: 100%;
+  }
 }
 
-@media (min-width: 768px) {
+
+/* Tablet
+ ******************/
+@media (max-width: 799px) {
+  #content .ed-landing-page-sector-container {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
   
   .ed-landing-page-sector-companies-list .browse-companies-container,
   .ed-landing-page-synopsis .search-companies-container {
@@ -419,3 +432,16 @@ a.ed-landing-page-see-more-button {
     }
   }
 }
+
+/* Mobile
+ *****************/
+@media (max-width: 640px) {
+  .ed-landing-page-sector-container {
+    .image,
+    .text {
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+

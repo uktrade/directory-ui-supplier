@@ -44,19 +44,17 @@
         <!--[if IE 8]><link href="{% static 'ie8fixes.css' %}" media="screen" rel="stylesheet" /><![endif]-->
     </head>
 
-    <body {% if LANGUAGE_BIDI %}class="bidi"{% endif %}>
+    <body class="{% block css_layout_class %}{% endblock css_layout_class %} {% if LANGUAGE_BIDI %}bidi{% endif %}">
         {% include 'google_tag_manager_body.html' %}
         <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
         {% include LANGUAGE_BIDI|yesno:'bidi/header.html,header.html' %}
         {% block sub_header %}
-            <section class="ed-hero-sub-header" style="background-image: url({% block hero_image %}{% static 'images/covers/agnostic.jpg' %}){% endblock %}">
+            <section class="ed-hero-sub-header">
                 <div class="container">
-                    <div class="row-fluid">
-                        {% block hero_title_container %}
-                            <h2 class="span6 ed-hero-sub-header-title">{% block hero_title %}{% endblock %}</h2>
-                        {% endblock %}
-                    </div>
+                    {% block hero_title_container %}
+                        <h2 class="ed-hero-sub-header-title">{% block hero_title %}{% endblock %}</h2>
+                    {% endblock %}
                     <div class="row-fluid ed-hero-sub-header-synopsis">
                         <span class="span9">
                             <span>{% block hero_text %}{% endblock %}</span>
@@ -67,10 +65,10 @@
             </section>
         {% endblock sub_header %}
 
-        <div id="content" class="enrolment-content">
+        <main id="content" class="enrolment-content">
             {% block content %}
             {% endblock content %}
-        </div>
+        </main>
         {% include LANGUAGE_BIDI|yesno:'bidi/footer.html,footer.html' %}
 
         <div id="global-app-error" class="app-error hidden"></div>

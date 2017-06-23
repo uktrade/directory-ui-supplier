@@ -2,8 +2,8 @@
 {% load static from staticfiles %}
 {% load trans from i18n %}
 {% block css %}
-	<link href="{% static 'landing-page.css' %}" media="all" rel="stylesheet" />
-	<link href="{% static 'landing-page-bidi.css' %}" media="all" rel="stylesheet" />
+	<link href="{% static 'marketing-page.css' %}" media="all" rel="stylesheet" />
+	<link href="{% static 'marketing-page-bidi.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
 {% block hero_title_container %}
@@ -14,7 +14,7 @@
 
 {% block content %}
 <div class="container ed-landing-page-sector-specific-container">
-	<section style="margin-top: -100px; margin-bottom: 20px;">
+	<section>
 		<div class="row-fluid">
 			<div class="span12 great-blue-bar">
 				<h1 class="element-within company-name-title">
@@ -45,11 +45,6 @@
 		</div>
 
 		<div class="row-fluid">
-			{% if sector_value %}
-				<div class="span4">
-					{% include 'browse-companies.html' %}
-				</div>
-			{% endif %}
 			{% for company in companies %}
 				<div class="span4">
 					<div class="row-fluid">
@@ -66,6 +61,11 @@
 					</div>
 				</div>
 			{% endfor %}
+			{% if sector_value %}
+				<div class="span4">
+					{% include 'browse-companies.html' %}
+				</div>
+			{% endif %}
 		</div>
 	</section>
 
@@ -83,23 +83,14 @@
 			<h2>{% trans case_study.title %}</h2>
 		</div>
 		<div class="row-fluid ed-landing-page-sector-case-study-inner">
-			<div class="span4 ed-landing-page-case-study-company-details">
+			<div class="{{ case_study.testimonial|yesno:'span4,span8' }}">
+				<p>{% trans case_study.synopsis|linebreaks %}</p>
 				<p>
-					<b>{{ case_study.company_name }}</b>
-				</b>
-				<p>
-					{% comment %}Do NOT move the forloop if to new line as this causes extra space before comma{% endcomment %}
-					<span>{% trans "Industries" %}:</span>
-					{% for sector in case_study.sectors %}
-						<a href="{% url 'public-company-profiles-list' %}?sectors={{sector.value }}">{% trans sector.label %}</a>{% if not forloop.last %}, {% endif %}
-					{% endfor %}
-				</p>
-				<p>
-					<span>{% trans case_study.keywords %}</i>{% trans "keywords" %}:</span><i>
+					<a href="{{ case_study.url }}">{% trans "Read case study" %}</a>
 				</p>
 			</div>
 			{% if case_study.testimonial %}
-			<div class="span4 ed-arrow_box ed-landing-page-case-study-testomonial-container">
+			<div class="span4 ed-arrow_box case-study-testomonial">
 				<p>
 					<b>"{% trans case_study.testimonial %}"</b>
 				</p>
@@ -107,11 +98,21 @@
 				<div>{% trans case_study.testimonial_company %}</div>
 			</div>
 			{% endif %}
-			<div class="{{ case_study.testimonial|yesno:'span4,span8' }}">
-				<p>{% trans case_study.synopsis|linebreaks %}</p>
+			<div class="span4 case-study-info">
 				<p>
-					<a href="{{ case_study.url }}">{% trans "Read case study" %}</a>
+					<b>{{ case_study.company_name }}</b>
 				</p>
+				<dl>
+					<dt>{% trans "Industries" %}</dt>
+					<dd>
+					{% comment %}Do NOT move the forloop if to new line as this causes extra space before comma{% endcomment %}
+					{% for sector in case_study.sectors %}
+						<a href="{% url 'public-company-profiles-list' %}?sectors={{sector.value }}">{% trans sector.label %}</a>{% if not forloop.last %}, {% endif %}
+					{% endfor %}
+					</dd>
+					<dt>{% trans "keywords" %}</dt>
+					<dd><i>{% trans case_study.keywords %}</i></dd>
+				</dl>
 			</div>
 		</div>
 	</section>

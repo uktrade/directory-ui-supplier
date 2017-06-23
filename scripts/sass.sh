@@ -20,6 +20,8 @@ input_output_map="\
 	enrolment/static/sass/supplier-profile-details.scss:enrolment/static/supplier-profile-details.css \
 	enrolment/static/sass/landing-page.scss:enrolment/static/landing-page.css \
 	enrolment/static/sass/landing-page-bidi.scss:enrolment/static/landing-page-bidi.css \
+	enrolment/static/sass/marketing-page.scss:enrolment/static/marketing-page.css \
+	enrolment/static/sass/marketing-page-bidi.scss:enrolment/static/marketing-page-bidi.css \
 	enrolment/static/sass/legal.scss:enrolment/static/legal.css \
 	enrolment/static/sass/ie8fixes.scss:enrolment/static/ie8fixes.css \
 	enrolment/static/sass/company-search_results.scss:enrolment/static/company-search_results.css \

@@ -1,51 +1,37 @@
 {% load static %}
 {% load trans from i18n %}
 {% load external_url from constants_tags %}
-<footer class="group ed-footer" id="footer">
-    <div class="container">
-        <div class="row-fluid grid-row">
-            <div class="span9 subscribe">
-                <div class="footer-section">
-                    <span class="footer-links">
-                        <a href="{% external_url 'DIT' %}" title="">
-                            {% trans "Department for International Trade" %}
-                        </a>
-                    </span>
-                    <span class="ed-text-divider">|</span>
-                    <span class="footer-links">
-                        <a href="{% external_url 'contact_directory' %}" title="">
-                            {% trans "Contact us" %}
-                        </a>
-                    </span>
-                    <span class="ed-text-divider">|</span>
-                    <span class="footer-links">
-                        <a href="{% url 'privacy-and-cookies' %}" title="">
-                            {% trans "Privacy and cookies" %}
-                        </a>
-                    </span>
-                    <span class="ed-text-divider">|</span>
-                    <span class="footer-links">
-                        <a href="{% url 'terms-and-conditions' %}" title="">
-                            {% trans "Terms &amp; conditions" %}
-                        </a>
-                    </span>
-                </div>
-            </div>
-            <div class="span3 logo">
-                <div class="footer-section footer-section--first">
-                    <p style="margin-bottom: 0;">
-                        <a href="https://www.gov.uk/" target="_blank">
-                            <img src="{% static 'images/hmg-logo.png' %}" alt="HMG Logo" height="30">
-                        </a>
-                    </p>
-                    <p class="copyright-text">
-                        &copy; {% trans "Crown Copyright" %} {% now "Y" %}</p>
-                    <p>
-                      <img class="dit-iigb-logo" alt="Brand" src="{% static 'images/welcome-to-great-logo-white.png' %}" height="40"> 
-                    </p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
+
+<footer id="footer">
+	<div class="container">
+		<ul id="footer-links">
+			<li>
+				<a href="{% external_url 'DIT' %}" title="">
+					{% trans "Department for International Trade" %}
+				</a>
+			</li>
+			<li>
+				<a href="{% external_url 'contact_directory' %}" title="">
+					{% trans "Contact us" %}
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'privacy-and-cookies' %}" title="">
+					{% trans "Privacy and cookies" %}
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'terms-and-conditions' %}" title="">
+					{% trans "Terms &amp; conditions" %}
+				</a>
+			</li>
+		</ul>
+		<p id="footer-credits">
+			<a href="https://www.gov.uk/" target="_blank">
+				<img src="{% static 'images/hmg-logo.png' %}" alt="HM Government" width="162">
+			</a>
+			<span class="copyright-text">&copy; {% trans "Crown Copyright" %} {% now "Y" %}</span>
+			<img class="dit-iigb-logo" alt="Welcome to Great Britain &amp; Northern Ireland" src="{% static 'images/welcome-to-great-logo-white.png' %}" width="220"> 
+		</p>
+	</div>
 </footer>
