@@ -17,7 +17,6 @@ fas-home-content
 
 {% block content %}
 <div class="container">
-
 	<div class="row-fluid">
 		<div class="span12 great-blue-bar">
 			<h1 class="element-within company-name-title">
@@ -27,9 +26,6 @@ fas-home-content
 	</div>
 	<div class="ed-landing-page-synopsis">
 		<div class="row-fluid">
-			<div class="span4">
-				{% include 'search-companies.html' %}
-			</div>
 			<div class="span8">
 				<p>
 					{% trans "The UK is a great place to find innovative, high-quality products and services." %}
@@ -46,6 +42,9 @@ fas-home-content
 				<p>
 					{% trans "Choose from the hundreds of businesses in the UK to work with you today." %}
 				</p>
+			</div>
+			<div class="span4">
+				{% include 'search-companies.html' %}
 			</div>
 		</div>
 	</div>
