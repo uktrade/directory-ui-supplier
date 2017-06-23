@@ -84,7 +84,7 @@
 		</div>
 		<div class="row-fluid ed-landing-page-sector-case-study-inner">
 			<div class="{{ case_study.testimonial|yesno:'span4,span8' }}">
-				<p>{% trans case_study.synopsis|linebreaks %}</p>
+				{% trans case_study.synopsis|linebreaks %}
 				<p>
 					<a href="{{ case_study.url }}">{% trans "Read case study" %}</a>
 				</p>
