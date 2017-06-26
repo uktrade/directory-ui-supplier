@@ -10,18 +10,15 @@
 -e git+https://github.com/uktrade/directory-signature-auth.git@v0.2.0#egg=sigauth
 cachetools==2.0.0         # via zenpy
 codecov==2.0.9
-configparser==3.5.0       # via flake8
 contextlib2==0.5.5        # via raven
 coverage==4.4.1           # via codecov, pytest-cov
 django==1.9.13            # via django-recaptcha
 django_recaptcha==1.2.0
 djangorestframework==3.4.7
-enum34==1.1.6             # via flake8
 flake8==3.0.4
 freezegun==0.3.8
-functools32==3.2.3.post2  # via jsonschema
 gunicorn==19.5.0
-jsonschema==2.5.1
+jsonschema==2.6.0
 mccabe==0.5.3             # via flake8
 monotonic==1.2
 olefile==0.44             # via pillow

@@ -13,9 +13,8 @@ contextlib2==0.5.5        # via raven
 django==1.9.13            # via django-recaptcha
 django_recaptcha==1.2.0
 djangorestframework==3.4.7
-functools32==3.2.3.post2  # via jsonschema
 gunicorn==19.5.0
-jsonschema==2.5.1
+jsonschema==2.6.0
 monotonic==1.2
 olefile==0.44             # via pillow
 phonenumberslite==7.7.4
