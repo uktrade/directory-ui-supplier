@@ -24,6 +24,8 @@
     clear: both;
     float: none;
     height: 0;
+    position: relative;
+    top: 1px;
     
     li {
       border-bottom: 1px solid $grey-3;
