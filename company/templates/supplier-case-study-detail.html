@@ -77,13 +77,13 @@
 								<a class="ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=case_study.company.number %}">Email company</a>
 							</p>
 							<p class="ed-truncate-single-line" >
-								<a href="{{ case_study.company.website }}" taget="_blank">{{ case_study.company.website }}</a>
-							</b>
+								<a href="{{ case_study.company.website }}" target="_blank">{{ case_study.company.website }}</a>
+							</p>
 						</div>
 						<div class="row ed-company-profile-case-study-company-details" style="padding: 20px;  margin-top: 20px; margin-left: 20px;">
 							<p>
 								<b>{{ case_study.company.name }}</b>
-							</b>
+							</p>
 							<p>
 								<span>Incorporated: </span>{{ case_study.company.date_of_creation|date:'Y' }}
 							</p>
