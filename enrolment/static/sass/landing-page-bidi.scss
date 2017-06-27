@@ -18,7 +18,8 @@ body.bidi {
   }
 }
 
-
+/* Tablet
+ ******************/
 @media (min-width: 768px) {
   
   .ed-landing-page-sector-companies-list .browse-companies-container,
@@ -26,6 +27,15 @@ body.bidi {
     h3 {
       background-position: left center;
       padding: 15px 0 0 51px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ed-proposition-container {
+    .ed-key-facts-container {
+      float: none;
+      margin: 0 0 20px 0;
     }
   }
 }

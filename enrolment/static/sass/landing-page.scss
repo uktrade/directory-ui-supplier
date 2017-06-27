@@ -436,6 +436,16 @@ a.ed-landing-page-see-more-button {
   }
 }
 
+@media (max-width: 768px) {
+  .ed-proposition-container {
+    .ed-key-facts-container {
+      float: none;
+      margin: 0 0 20px 0;
+      width: auto;
+    }
+  }
+}
+
 /* Mobile
  *****************/
 @media (max-width: 640px) {
