@@ -60,15 +60,13 @@
 						{{ company.description|linebreaks }}
 					</p>
 				{% else %}
-					<p>
-						{% if company.summary %}
-							{{ company.summary|linebreaks }}
-						{% elif company.description %}
-							{{ company.description|truncatechars:200|linebreaks }}
-						{% endif %}
-						{# reload current page with querystring #}
-						<a href="?verbose=true">Read full company profile</a>
-					</p>
+					{% if company.summary %}
+						{{ company.summary|linebreaks }}
+					{% elif company.description %}
+						{{ company.description|truncatechars:200|linebreaks }}
+					{% endif %}
+					{# reload current page with querystring #}
+					<p><a href="?verbose=true">Read full company profile</a></p>
 				{% endif %}
 			</div>
 
@@ -127,7 +125,7 @@
 						</div>
 						<h3>{{ case_study.title }}</h3>
 						<div class="content">
-							<p>{{ case_study.short_summary|linebreaks }}</p>
+							{{ case_study.short_summary|linebreaks }}
 							<p class="supplier-case-study-read-more-cta">
 								<a href="{% url 'case-study-details' id=case_study.pk slug=case_study.slug %}">Read case study</a>
 							</p>
