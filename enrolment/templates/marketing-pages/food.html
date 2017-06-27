@@ -9,7 +9,7 @@
 {% block synopsis %}
 	<p>{% trans "Whether you want the most delicious food brands or exceptional quality drinks, the UK is the first place to look." %}</p>
 	<div class="ed-landing-page-read-more">
-		<a href="?verbose=true">{% trans "Read more about UK food and drink" %}</a>
+		<a href="{% url 'sector-detail-verbose' slug=slug %}">{% trans "Read more about UK food and drink" %}</a>
 	</div>
 {% endblock %}
 

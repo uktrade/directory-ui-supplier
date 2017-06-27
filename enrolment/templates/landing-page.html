@@ -64,7 +64,7 @@ fas-home-content
 					{% trans "Get access to the UK health and life sciences supply-chain, delivering high quality, innovative services to the world." %}
 				</p>
 				<p class="ed-landing-page-sector-link-container">
-					<a href="{% url 'international-sector-detail' slug='health' %}">
+					<a href="{% url 'sector-detail-summary' slug='health' %}">
 						{% trans "Find out more about the UK’s healthcare and life sciences" %}
 					</a>
 				</p>
@@ -82,7 +82,7 @@ fas-home-content
 				<br>
 				<br>
 				<p class="ed-landing-page-sector-link-container">
-					<a href="{% url 'international-sector-detail' slug='tech' %}">
+					<a href="{% url 'sector-detail-summary' slug='tech' %}">
 						{% trans "Find out more about UK technology" %}
 					</a>
 				</p>
@@ -100,7 +100,7 @@ fas-home-content
 					{% trans "Whether you need buildings designed, films made or a fresh approach to marketing, the UK is the first place to look." %}
 				</p>
 				<p class="ed-landing-page-sector-link-container">
-					<a href="{% url 'international-sector-detail' slug='creative' %}">
+					<a href="{% url 'sector-detail-summary' slug='creative' %}">
 						{% trans "Find out more about the UK’s creative services" %}
 					</a>
 				</p>
@@ -117,7 +117,7 @@ fas-home-content
 				</p>
 				<br>
 				<p class="ed-landing-page-sector-link-container">
-					<a href="{% url 'international-sector-detail' slug='food-and-drink' %}">
+					<a href="{% url 'sector-detail-summary' slug='food-and-drink' %}">
 						{% trans "Find out more about UK food and drink" %}
 					</a>
 				</p>
@@ -127,7 +127,7 @@ fas-home-content
 	
 	{% if features.FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED %}
 		<div class="ed-landing-page-gap">
-			<a class="ed-naked-button-primary" href="{% url 'international-sector-list' %}">{% trans "See more industries" %}</a>
+			<a class="ed-naked-button-primary" href="{% url 'sector-list' %}">{% trans "See more industries" %}</a>
 		</div>
 	{% endif %}
 
