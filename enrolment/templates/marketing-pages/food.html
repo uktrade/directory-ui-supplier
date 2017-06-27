@@ -14,75 +14,61 @@
 {% endblock %}
 
 {% block proposition %}
+	<p>
+		{% trans "The UK is a nation where culinary influences have come together to create food trends that we share with the world. Every day millions of international consumers enjoy British products." %}
+	</p>
+	<p>
+		{% trans "The British “brand” is globally recognised, valued and desirable: we have a rich heritage of well-known, traditional food and drink, we offer first-class produce with excellent provenance and thousands of new products are brought to the market every year." %}
+	</p>
+	<p>
+		{% trans "We rank among the world’s best nations for in food quality, traceability and safety." %}
+	</p>
+	
+	<div class="ed-key-facts-container">
+		<h2>{% trans "Key facts" %}</h2>
+		<ul>
+			<li>{% trans "The UK exported £12.3 billion of food and non-alcoholic drinks in 2015" %}</li>
+			<li>{% trans "Our main exports include chocolate, cheese and whisky" %}</li>
+			<li>{% trans "We have thousands of suppliers manufacturing to standards accepted in 123 countries worldwide" %}</li>
+		</ul>
+	</div>
 
-    <section>
-        <p>
-            {% trans "The UK is a nation where culinary influences have come together to create food trends that we share with the world. Every day millions of international consumers enjoy British products." %}
-        </p>
-        <p>
-            {% trans "The British “brand” is globally recognised, valued and desirable: we have a rich heritage of well-known, traditional food and drink, we offer first-class produce with excellent provenance and thousands of new products are brought to the market every year." %}
- 		</p>
- 		<p>
-			{% trans "We rank among the world’s best nations for in food quality, traceability and safety." %}
-        </p>
-    </section>
+	<h2>{% trans "British heritage shared globally" %}</h2>
+	<p>
+		{% trans "From famous Scottish and Northern Irish whiskies to our traditional tea and cakes, the UK has centuries of experience to share." %}
+	</p>
+	<p>
+		{% trans "We bring new twists to our classic British products, which are exported all over the world including craft beers, ciders, gin and award-winning sparkling wine." %}
+	</p>
+	<p>
+		{% trans "Our unique trading and cultural history has brought us new ingredients, influences, tastes and ideas and we have a wealth of ethnic and specialist foods made in the UK to offer back to the world." %}
+	</p>
 
-    <section>
-        <div class="row-fluid">
-            <div class="span6">
-                <h2>{% trans "British heritage shared globally" %}</h2>
-                <p>
-                    {% trans "From famous Scottish and Northern Irish whiskies to our traditional tea and cakes, the UK has centuries of experience to share." %}
-                </p>
-                <p>
-                    {% trans "We bring new twists to our classic British products, which are exported all over the world including craft beers, ciders, gin and award-winning sparkling wine." %}
-                </p>
-                <p>
-					{% trans "Our unique trading and cultural history has brought us new ingredients, influences, tastes and ideas and we have a wealth of ethnic and specialist foods made in the UK to offer back to the world." %}
-                </p>
-            </div>
-            <div class="span6">
-                <div class="ed-key-facts-container">
-                    <h2>{% trans "Key facts" %}</h2>
-                    <ul>
-                        <li>{% trans "The UK exported £12.3 billion of food and non-alcoholic drinks in 2015" %}</li>
-                        <li>{% trans "Our main exports include chocolate, cheese and whisky" %}</li>
-                        <li>{% trans "We have thousands of suppliers manufacturing to standards accepted in 123 countries worldwide" %}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+	<h2>{% trans "Innovation in food and drink" %}</h2>
+	<p>
+		{% trans "The UK’s food and drink brands develop and sell thousands of new products each year. UK companies were the first to pioneer frozen food and instant coffee." %}
+	</p>
+	<p>
+		{% trans "We’re leading the way in food research and technology, new product development and trends such as organic, gluten-free, dairy-free and health foods." %}
+	</p>
 
+	<h2>{% trans "Food quality and safety" %}</h2>
+	<p>
+		{% trans "Our island location and clean waters give us access to rich stocks of fish and shellfish and our soil and climate provides bountiful agricultural resources for crops, dairy and meat." %}
+	</p>
+	<p>
+		{% trans "Our manufacturing sector complies with rigorous international safety standards and our brands are trusted around the world." %}
+	</p>
+	<p>
+		{% trans "We care about the food we produce: 89,000 farmers comply with voluntary farm standards scheme that assure animal and worker welfare and our British Retail Consortium manufacturing standards have been adopted by 23,000 certificated suppliers, not only in the UK but in 123 other countries." %}
+	</p>
+	<p>
+		{% trans "Our customers recognise us for our excellent service and know that we can deliver." %}
+	</p>
 
-
-    <section>
-        <h2>{% trans "Innovation in food and drink" %}</h2>
-        <p>
-        	{% trans "The UK’s food and drink brands develop and sell thousands of new products each year. UK companies were the first to pioneer frozen food and instant coffee." %}
-        </p>
-        <p>
-        	{% trans "We’re leading the way in food research and technology, new product development and trends such as organic, gluten-free, dairy-free and health foods." %}
-        </p>
-    </section>
-    <section>
-        <h2>{% trans "Food quality and safety" %}</h2>
-        <p>
-		    {% trans "Our island location and clean waters give us access to rich stocks of fish and shellfish and our soil and climate provides bountiful agricultural resources for crops, dairy and meat." %}
-        </p>
-        <p>
-		    {% trans "Our manufacturing sector complies with rigorous international safety standards and our brands are trusted around the world." %}
-        </p>
-		<p>
-			{% trans "We care about the food we produce: 89,000 farmers comply with voluntary farm standards scheme that assure animal and worker welfare and our British Retail Consortium manufacturing standards have been adopted by 23,000 certificated suppliers, not only in the UK but in 123 other countries." %}
-		</p>
-		<p>
-			{% trans "Our customers recognise us for our excellent service and know that we can deliver." %}
-		</p>
-    </section>
-    <div>
-        <a href="{% url 'public-company-profiles-list' %}?sectors={{ sector_value }}">{% trans "Find your UK trade partner in food and drink today" %}</a>
-    </div>
+	<div>
+		<a href="{% url 'public-company-profiles-list' %}?sectors={{ sector_value }}">{% trans "Find your UK trade partner in food and drink today" %}</a>
+	</div>
 {% endblock %}
 
 
