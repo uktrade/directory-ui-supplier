@@ -373,14 +373,17 @@ a.ed-landing-page-see-more-button {
   }
 
   .ed-key-facts-container {
-    margin-top: 10px;
-    h2 {
-      margin-top: 0;
-      color: white;
-    }
     background-color: #007ea3;
+    color: $white;
+    float: right;
+    margin: 0 0 20px 20px;
     padding: 20px;
-    color: white;
+    width: 50%;
+    
+    h2 {
+      color: $white;      
+      margin-top: 0;
+    }
   }
 }
 
