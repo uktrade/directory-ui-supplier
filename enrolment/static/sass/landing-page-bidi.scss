@@ -11,6 +11,13 @@ body.bidi {
   }  
 }
 
+.ed-proposition-container {
+  .ed-key-facts-container {
+    float: left;
+    margin: 0 20px 20px 0;
+  }
+}
+
 
 @media (min-width: 768px) {
   
