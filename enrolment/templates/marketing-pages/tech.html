@@ -21,31 +21,27 @@
 	<p>
 		{% trans "The UK technology industry underpins many of our successful business sectors – from financial services and high-value manufacturing, to retail and agriculture – and continues to expand at an extraordinary pace." %}
 	</p>
-	<div class="row-fluid">
-		<div class="span6">
-			<p>
-				{% trans "Many of the world’s best-known and successful companies take advantage of UK innovation, and we are proud that we provide a technological springboard for companies worldwide." %}
-			</p>
-			<ul>
-				<li>{% trans "Our technology industry is one of the world’s largest and shows the UK’s creativity and design skills. The UK is particularly focussed on: low-power radio-frequency electronics, such as the first single-chip implementation of Bluetooth and the international NarrowBand-Internet of Things standard" %}</li>
-				<li>{% trans "development of 5G communications, which will underpin the development of connected devices" %}</li>
-				<li>{% trans "data analytics to create real-time consumer trends, behaviour and insights" %}</li>
-				<li>{% trans "data centres - we have the largest market capacity in Europe" %}</li>
-				<li>{% trans "artificial intelligence - we are home to  many successful artificial intelligence (AI) start-up companies, especially those specialising in machine learning, deep learning and natural language processing" %}</li>
-				<li>{% trans "producing compound semiconductor materials producing frontier-based sensor technologies." %}</li>
-			</ul>
-		</div>
-		<div class="span6">
-			<div class="ed-key-facts-container">
-				<h2>{% trans "Key facts" %}</h2>
-				<ul>
-					<li>{% trans "The UK has the largest technology market in Europe" %}</li>
-					<li>{% trans "The second largest telecoms service exporter globally is from the UK" %}</li>
-					<li>{% trans "The UK has the largest data centre market in Europe" %}</li>
-				</ul>
-			</div>
-		</div>
+
+	<div class="ed-key-facts-container">
+		<h2>{% trans "Key facts" %}</h2>
+		<ul>
+			<li>{% trans "The UK has the largest technology market in Europe" %}</li>
+			<li>{% trans "The second largest telecoms service exporter globally is from the UK" %}</li>
+			<li>{% trans "The UK has the largest data centre market in Europe" %}</li>
+		</ul>
 	</div>
+	
+	<p>
+		{% trans "Many of the world’s best-known and successful companies take advantage of UK innovation, and we are proud that we provide a technological springboard for companies worldwide." %}
+	</p>
+	<ul>
+		<li>{% trans "Our technology industry is one of the world’s largest and shows the UK’s creativity and design skills. The UK is particularly focussed on: low-power radio-frequency electronics, such as the first single-chip implementation of Bluetooth and the international NarrowBand-Internet of Things standard" %}</li>
+		<li>{% trans "development of 5G communications, which will underpin the development of connected devices" %}</li>
+		<li>{% trans "data analytics to create real-time consumer trends, behaviour and insights" %}</li>
+		<li>{% trans "data centres - we have the largest market capacity in Europe" %}</li>
+		<li>{% trans "artificial intelligence - we are home to  many successful artificial intelligence (AI) start-up companies, especially those specialising in machine learning, deep learning and natural language processing" %}</li>
+		<li>{% trans "producing compound semiconductor materials producing frontier-based sensor technologies." %}</li>
+	</ul>
 
 	<h2>{% trans "UK technology firms are global success stories" %}</h2>
 	<p>
@@ -63,6 +59,7 @@
 		<li>{% trans "a mobile virtual network operator in 21 countries worldwide" %}</li>
 		<li>{% trans "the world's second biggest mobile telecomms network (by number of connections)" %}</li>
 	</ul>
+
 	<div>
 		<a href="{% url 'public-company-profiles-list' %}?sectors={{ sector_value }}">{% trans "Find your UK technology trade partner" %}</a>
 	</div>
