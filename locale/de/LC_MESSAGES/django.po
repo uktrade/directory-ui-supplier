@@ -653,10 +653,6 @@ msgstr "Finden sie hervorragende britische Unternehmen"
 
 #: enrolment/templates/browse-companies.html:7
 #: enrolment/templates/search-companies.html:11
-#, fuzzy
-#| msgid ""
-#| "Exceptionally innovative and creative UK trade partners are ready to work "
-#| "with you. Discover them on the Find a Supplier service."
 msgid ""
 "Exceptional and creative UK trade partners are ready to work with you. "
 "Discover them on the Find a Supplier service."
