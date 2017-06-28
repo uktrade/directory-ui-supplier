@@ -56,7 +56,7 @@ class ConditionalEnableTranslationsMixin:
 class LeadGenerationFormView(ConditionalEnableTranslationsMixin, FormView):
     success_template = 'lead-generation-success.html'
     template_name = 'lead-generation.html'
-    template_name_bidi = 'lead-generation.html'
+    template_name_bidi = 'bidi/lead-generation.html'
     form_class = forms.LeadGenerationForm
 
     @property
@@ -117,8 +117,8 @@ class LandingView(ConditionalEnableTranslationsMixin, TemplateView):
 
 
 class SectorListView(ConditionalEnableTranslationsMixin, TemplateView):
-    template_name = 'landing-page-sector-list.html'
-    template_name_bidi = 'bidi/landing-page-sector-list.html'
+    template_name = 'sector-list.html'
+    template_name_bidi = 'bidi/sector-list.html'
     language_form_class = forms.LanguageIndustriesForm
 
     @property
