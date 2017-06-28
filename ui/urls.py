@@ -12,9 +12,9 @@ from company.views import (
 from enrolment.views import (
     AnonymousSubscribeFormView,
     LeadGenerationFormView,
-    InternationalLandingSectorDetailView,
-    InternationalLandingSectorListView,
-    InternationalLandingView,
+    SectorDetailView,
+    SectorListView,
+    LandingView,
     PrivacyCookiesView,
     TermsView,
 )
@@ -46,7 +46,7 @@ urlpatterns = [
     ),
     url(
         r"^$",
-        InternationalLandingView.as_view(),
+        LandingView.as_view(),
         name="index"
     ),
     url(
@@ -77,13 +77,20 @@ urlpatterns = [
     ),
     url(
         r'^industries$',
-        InternationalLandingSectorListView.as_view(),
-        name='international-sector-list',
+        SectorListView.as_view(),
+        name='sector-list',
+    ),
+    url(
+        r'^industries/(?P<slug>.+)/summary$',
+        SectorDetailView.as_view(),
+        {'show_proposition': False},
+        name='sector-detail-summary',
     ),
     url(
         r'^industries/(?P<slug>.+)$',
-        InternationalLandingSectorDetailView.as_view(),
-        name='international-sector-detail',
+        SectorDetailView.as_view(),
+        {'show_proposition': True},
+        name='sector-detail-verbose',
     ),
     url(
         r'^case-study/(?P<id>.+)/(?P<slug>.+)$',

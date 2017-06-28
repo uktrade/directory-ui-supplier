@@ -9,11 +9,11 @@ class SectorLandingPageSitemap(sitemaps.Sitemap):
     changefreq = 'daily'
 
     def items(self):
-        pages = views.InternationalLandingSectorDetailView.get_active_pages()
+        pages = views.SectorDetailView.get_active_pages()
         return list(pages.keys())
 
     def location(self, item):
-        return reverse('international-sector-detail', kwargs={'slug': item})
+        return reverse('sector-detail-summary', kwargs={'slug': item})
 
 
 class StaticViewSitemap(sitemaps.Sitemap):
@@ -24,7 +24,7 @@ class StaticViewSitemap(sitemaps.Sitemap):
         return [
             'index',
             'public-company-profiles-list',
-            'international-sector-list',
+            'sector-list',
             'subscribe',
         ]
 

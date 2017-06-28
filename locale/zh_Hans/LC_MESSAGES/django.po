@@ -45,8 +45,8 @@ msgid "i-limb quantum&trade; user"
 msgstr ""
 
 #: enrolment/constants.py:34
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:42
-#: enrolment/templates/landing-page-international-sector-list.html:40
+#: enrolment/templates/bidi/landing-page-sector-list.html:42
+#: enrolment/templates/landing-page-sector-list.html:40
 #, fuzzy
 #| msgid "Healthcare and life sciences in the UK"
 msgid "Healthcare and life sciences"
@@ -172,8 +172,8 @@ msgid "Tim Warrillow"
 msgstr ""
 
 #: enrolment/constants.py:215
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:88
-#: enrolment/templates/landing-page-international-sector-list.html:87
+#: enrolment/templates/bidi/landing-page-sector-list.html:88
+#: enrolment/templates/landing-page-sector-list.html:87
 #, fuzzy
 #| msgid "The UK's food and drink"
 msgid "Food and drink"
@@ -316,20 +316,20 @@ msgstr "寻找供应商"
 msgid "Industries"
 msgstr "产业"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:12
-#: enrolment/templates/landing-page-international-sector-list.html:11
+#: enrolment/templates/bidi/landing-page-sector-list.html:12
+#: enrolment/templates/landing-page-sector-list.html:11
 msgid "Discover the UK's capability in these key industries"
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:22
+#: enrolment/templates/bidi/landing-page-sector-list.html:22
 #: enrolment/templates/bidi/landing-page.html:52
-#: enrolment/templates/landing-page-international-sector-list.html:20
+#: enrolment/templates/landing-page-sector-list.html:20
 #: enrolment/templates/landing-page.html:48
 msgid "UK industries"
 msgstr "英国贸易部门"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:29
-#: enrolment/templates/landing-page-international-sector-list.html:27
+#: enrolment/templates/bidi/landing-page-sector-list.html:29
+#: enrolment/templates/landing-page-sector-list.html:27
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -337,52 +337,52 @@ msgid ""
 "smaller enterprises across every sector of industry."
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:32
-#: enrolment/templates/landing-page-international-sector-list.html:30
+#: enrolment/templates/bidi/landing-page-sector-list.html:32
+#: enrolment/templates/landing-page-sector-list.html:30
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
 msgstr ""
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:45
+#: enrolment/templates/bidi/landing-page-sector-list.html:45
 #: enrolment/templates/bidi/landing-page.html:61
-#: enrolment/templates/landing-page-international-sector-list.html:43
+#: enrolment/templates/landing-page-sector-list.html:43
 #: enrolment/templates/landing-page.html:57
 msgid "Healthcare and life sciences in the UK"
 msgstr "英国的医疗保健和生命科学"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:47
+#: enrolment/templates/bidi/landing-page-sector-list.html:47
 #: enrolment/templates/bidi/landing-page.html:63
-#: enrolment/templates/landing-page-international-sector-list.html:45
+#: enrolment/templates/landing-page-sector-list.html:45
 #: enrolment/templates/landing-page.html:59
 msgid ""
 "Get access to the UK health and life sciences supply-chain, delivering high "
 "quality, innovative services to the world."
 msgstr "进入英国医疗保健和生命科学供应链，向全世界交付高质量的创新服务。\t"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:50
+#: enrolment/templates/bidi/landing-page-sector-list.html:50
 #: enrolment/templates/bidi/landing-page.html:67
-#: enrolment/templates/landing-page-international-sector-list.html:48
+#: enrolment/templates/landing-page-sector-list.html:48
 #: enrolment/templates/landing-page.html:63
 msgid "Find out more about the UK’s healthcare and life sciences"
 msgstr "详细了解英国医疗保健和生命科学"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:56
-#: enrolment/templates/landing-page-international-sector-list.html:54
+#: enrolment/templates/bidi/landing-page-sector-list.html:56
+#: enrolment/templates/landing-page-sector-list.html:54
 #, fuzzy
 #| msgid "The UK's advanced technology"
 msgid "Advanced technology"
 msgstr "英国的先进技术"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:59
+#: enrolment/templates/bidi/landing-page-sector-list.html:59
 #: enrolment/templates/bidi/landing-page.html:77
-#: enrolment/templates/landing-page-international-sector-list.html:57
+#: enrolment/templates/landing-page-sector-list.html:57
 #: enrolment/templates/landing-page.html:73
 msgid "The UK's advanced technology"
 msgstr "英国的先进技术"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:61
-#: enrolment/templates/landing-page-international-sector-list.html:59
+#: enrolment/templates/bidi/landing-page-sector-list.html:61
+#: enrolment/templates/landing-page-sector-list.html:59
 #, fuzzy
 #| msgid ""
 #| "Check out the latest cutting-edge technologies that the UK is bringing to "
@@ -392,29 +392,29 @@ msgid ""
 "to the world."
 msgstr "察看英国带给世界的尖端创新技术。"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:65
+#: enrolment/templates/bidi/landing-page-sector-list.html:65
 #: enrolment/templates/bidi/landing-page.html:84
-#: enrolment/templates/landing-page-international-sector-list.html:64
+#: enrolment/templates/landing-page-sector-list.html:64
 #: enrolment/templates/landing-page.html:81
 msgid "Find out more about UK technology"
 msgstr "详细了解英国的技术"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:73
-#: enrolment/templates/landing-page-international-sector-list.html:72
+#: enrolment/templates/bidi/landing-page-sector-list.html:73
+#: enrolment/templates/landing-page-sector-list.html:72
 #, fuzzy
 #| msgid "The UK's creative services"
 msgid "Creative services"
 msgstr "来自英国的创新服务"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:76
+#: enrolment/templates/bidi/landing-page-sector-list.html:76
 #: enrolment/templates/bidi/landing-page.html:96
-#: enrolment/templates/landing-page-international-sector-list.html:75
+#: enrolment/templates/landing-page-sector-list.html:75
 #: enrolment/templates/landing-page.html:93
 msgid "The UK's creative services"
 msgstr "来自英国的创新服务"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:78
-#: enrolment/templates/landing-page-international-sector-list.html:77
+#: enrolment/templates/bidi/landing-page-sector-list.html:78
+#: enrolment/templates/landing-page-sector-list.html:77
 #, fuzzy
 #| msgid ""
 #| "Whether you need buildings designed, films made or a fresh approach to "
@@ -425,22 +425,22 @@ msgid ""
 msgstr ""
 "无论您需要设计建筑、制作电影还是构思新颖的营销方法，英国都将是您的不二之选。"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:82
+#: enrolment/templates/bidi/landing-page-sector-list.html:82
 #: enrolment/templates/bidi/landing-page.html:103
-#: enrolment/templates/landing-page-international-sector-list.html:81
+#: enrolment/templates/landing-page-sector-list.html:81
 #: enrolment/templates/landing-page.html:100
 msgid "Find out more about the UK’s creative services"
 msgstr "详细了解来自英国的创意服务"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:91
-#: enrolment/templates/landing-page-international-sector-list.html:90
+#: enrolment/templates/bidi/landing-page-sector-list.html:91
+#: enrolment/templates/landing-page-sector-list.html:90
 #, fuzzy
 #| msgid "The UK's food and drink"
 msgid "The UK’s food and drink"
 msgstr "来自英国的食品和饮料"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:93
-#: enrolment/templates/landing-page-international-sector-list.html:92
+#: enrolment/templates/bidi/landing-page-sector-list.html:93
+#: enrolment/templates/landing-page-sector-list.html:92
 #, fuzzy
 #| msgid ""
 #| "Whether you want the most innovative food brands or exceptional quality "
@@ -452,9 +452,9 @@ msgstr ""
 "无论您是需要具有创新精神的食品品牌，还是需要具有卓越品质的优质饮料，英国都将"
 "是您的不二之选。"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:97
+#: enrolment/templates/bidi/landing-page-sector-list.html:97
 #: enrolment/templates/bidi/landing-page.html:120
-#: enrolment/templates/landing-page-international-sector-list.html:96
+#: enrolment/templates/landing-page-sector-list.html:96
 #: enrolment/templates/landing-page.html:117
 msgid "Find out more about UK food and drink"
 msgstr "详细了解来自英国的食品和饮料"

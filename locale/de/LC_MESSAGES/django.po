@@ -44,8 +44,8 @@ msgid "i-limb quantum&trade; user"
 msgstr "i-limb quantum™-Nutzer"
 
 #: enrolment/constants.py:34
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:42
-#: enrolment/templates/landing-page-international-sector-list.html:40
+#: enrolment/templates/bidi/landing-page-sector-list.html:42
+#: enrolment/templates/landing-page-sector-list.html:40
 msgid "Healthcare and life sciences"
 msgstr "Gesundheitswesen und Biowissenschaften in Großbritannien"
 
@@ -216,8 +216,8 @@ msgid "Tim Warrillow"
 msgstr ""
 
 #: enrolment/constants.py:215
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:88
-#: enrolment/templates/landing-page-international-sector-list.html:87
+#: enrolment/templates/bidi/landing-page-sector-list.html:88
+#: enrolment/templates/landing-page-sector-list.html:87
 msgid "Food and drink"
 msgstr "Lebensmittel und Getränke"
 
@@ -364,21 +364,21 @@ msgstr "Anbieter finden"
 msgid "Industries"
 msgstr "Branchen"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:12
-#: enrolment/templates/landing-page-international-sector-list.html:11
+#: enrolment/templates/bidi/landing-page-sector-list.html:12
+#: enrolment/templates/landing-page-sector-list.html:11
 msgid "Discover the UK's capability in these key industries"
 msgstr ""
 "Entdecken Sie die Kapazität Großbritanniens in diesen Schlüsselbranchen"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:22
+#: enrolment/templates/bidi/landing-page-sector-list.html:22
 #: enrolment/templates/bidi/landing-page.html:52
-#: enrolment/templates/landing-page-international-sector-list.html:20
+#: enrolment/templates/landing-page-sector-list.html:20
 #: enrolment/templates/landing-page.html:48
 msgid "UK industries"
 msgstr "Branchen in Großbritannien & Nordirland"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:29
-#: enrolment/templates/landing-page-international-sector-list.html:27
+#: enrolment/templates/bidi/landing-page-sector-list.html:29
+#: enrolment/templates/landing-page-sector-list.html:27
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -390,8 +390,8 @@ msgstr ""
 "Dienstleistungen. Hier können Sie die richtigen Handelsbeziehungen zu großen "
 "Konzernen und kleineren Unternehmen in jeder Branche knüpfen."
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:32
-#: enrolment/templates/landing-page-international-sector-list.html:30
+#: enrolment/templates/bidi/landing-page-sector-list.html:32
+#: enrolment/templates/landing-page-sector-list.html:30
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
@@ -400,16 +400,16 @@ msgstr ""
 "Sie Unternehmen in diesen britischen Branchen, die mit Ihnen "
 "zusammenarbeiten können."
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:45
+#: enrolment/templates/bidi/landing-page-sector-list.html:45
 #: enrolment/templates/bidi/landing-page.html:61
-#: enrolment/templates/landing-page-international-sector-list.html:43
+#: enrolment/templates/landing-page-sector-list.html:43
 #: enrolment/templates/landing-page.html:57
 msgid "Healthcare and life sciences in the UK"
 msgstr "Gesundheitswesen und Life Sciences in Großbritannien & Nordirland"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:47
+#: enrolment/templates/bidi/landing-page-sector-list.html:47
 #: enrolment/templates/bidi/landing-page.html:63
-#: enrolment/templates/landing-page-international-sector-list.html:45
+#: enrolment/templates/landing-page-sector-list.html:45
 #: enrolment/templates/landing-page.html:59
 msgid ""
 "Get access to the UK health and life sciences supply-chain, delivering high "
@@ -419,28 +419,28 @@ msgstr ""
 "Großbritannien, die hochwertige, innovative Dienstleistungen für die Welt "
 "erbringt."
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:50
+#: enrolment/templates/bidi/landing-page-sector-list.html:50
 #: enrolment/templates/bidi/landing-page.html:67
-#: enrolment/templates/landing-page-international-sector-list.html:48
+#: enrolment/templates/landing-page-sector-list.html:48
 #: enrolment/templates/landing-page.html:63
 msgid "Find out more about the UK’s healthcare and life sciences"
 msgstr ""
 "Erfahren Sie mehr über Gesundheitswesen und Life Sciences in Großbritannien"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:56
-#: enrolment/templates/landing-page-international-sector-list.html:54
+#: enrolment/templates/bidi/landing-page-sector-list.html:56
+#: enrolment/templates/landing-page-sector-list.html:54
 msgid "Advanced technology"
 msgstr "Die fortschrittliche Technologie Großbritanniens"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:59
+#: enrolment/templates/bidi/landing-page-sector-list.html:59
 #: enrolment/templates/bidi/landing-page.html:77
-#: enrolment/templates/landing-page-international-sector-list.html:57
+#: enrolment/templates/landing-page-sector-list.html:57
 #: enrolment/templates/landing-page.html:73
 msgid "The UK's advanced technology"
 msgstr "Modernste Technologie in Großbritannien & Nordirland"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:61
-#: enrolment/templates/landing-page-international-sector-list.html:59
+#: enrolment/templates/bidi/landing-page-sector-list.html:61
+#: enrolment/templates/landing-page-sector-list.html:59
 #, fuzzy
 #| msgid ""
 #| "Check out the latest cutting-edge technological innovations that the UK "
@@ -452,27 +452,27 @@ msgstr ""
 "Sehen Sie die neuesten technischen Innovationen, die aus Großbritannien "
 "kommen."
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:65
+#: enrolment/templates/bidi/landing-page-sector-list.html:65
 #: enrolment/templates/bidi/landing-page.html:84
-#: enrolment/templates/landing-page-international-sector-list.html:64
+#: enrolment/templates/landing-page-sector-list.html:64
 #: enrolment/templates/landing-page.html:81
 msgid "Find out more about UK technology"
 msgstr "Erfahren Sie mehr über Technologie in Großbritannien"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:73
-#: enrolment/templates/landing-page-international-sector-list.html:72
+#: enrolment/templates/bidi/landing-page-sector-list.html:73
+#: enrolment/templates/landing-page-sector-list.html:72
 msgid "Creative services"
 msgstr "Großbritanniens kreative Dienstleistungen"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:76
+#: enrolment/templates/bidi/landing-page-sector-list.html:76
 #: enrolment/templates/bidi/landing-page.html:96
-#: enrolment/templates/landing-page-international-sector-list.html:75
+#: enrolment/templates/landing-page-sector-list.html:75
 #: enrolment/templates/landing-page.html:93
 msgid "The UK's creative services"
 msgstr "Kreative Dienstleistungen in Großbritannien & Nordirland"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:78
-#: enrolment/templates/landing-page-international-sector-list.html:77
+#: enrolment/templates/bidi/landing-page-sector-list.html:78
+#: enrolment/templates/landing-page-sector-list.html:77
 msgid ""
 "Whether you need buildings designed, films made, or a fresh approach to "
 "marketing, the UK is the first place to look."
@@ -481,20 +481,20 @@ msgstr ""
 "frischen Marketing-Ansatz benötigen: Die besten Partner finden Sie in "
 "Großbritannien."
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:82
+#: enrolment/templates/bidi/landing-page-sector-list.html:82
 #: enrolment/templates/bidi/landing-page.html:103
-#: enrolment/templates/landing-page-international-sector-list.html:81
+#: enrolment/templates/landing-page-sector-list.html:81
 #: enrolment/templates/landing-page.html:100
 msgid "Find out more about the UK’s creative services"
 msgstr "Erfahren Sie mehr über kreative Dienstleistungen in Großbritannien"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:91
-#: enrolment/templates/landing-page-international-sector-list.html:90
+#: enrolment/templates/bidi/landing-page-sector-list.html:91
+#: enrolment/templates/landing-page-sector-list.html:90
 msgid "The UK’s food and drink"
 msgstr "Lebensmittel und Getränke in Großbritannien & Nordirland"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:93
-#: enrolment/templates/landing-page-international-sector-list.html:92
+#: enrolment/templates/bidi/landing-page-sector-list.html:93
+#: enrolment/templates/landing-page-sector-list.html:92
 #, fuzzy
 #| msgid ""
 #| "Whether you want the most innovative food brands or exceptional quality "
@@ -506,9 +506,9 @@ msgstr ""
 "In Großbritannien finden Sie innovative Lebensmittelmarken und hochwertige "
 "Getränke."
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:97
+#: enrolment/templates/bidi/landing-page-sector-list.html:97
 #: enrolment/templates/bidi/landing-page.html:120
-#: enrolment/templates/landing-page-international-sector-list.html:96
+#: enrolment/templates/landing-page-sector-list.html:96
 #: enrolment/templates/landing-page.html:117
 msgid "Find out more about UK food and drink"
 msgstr "Erfahren Sie mehr über Lebensmittel und Getränke in Großbritannien"
