@@ -42,8 +42,8 @@ msgid "i-limb quantum&trade; user"
 msgstr "i-limb quantum™ ユーザー"
 
 #: enrolment/constants.py:34
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:42
-#: enrolment/templates/landing-page-international-sector-list.html:40
+#: enrolment/templates/bidi/landing-page-sector-list.html:42
+#: enrolment/templates/landing-page-sector-list.html:40
 msgid "Healthcare and life sciences"
 msgstr "医療・ライフサイエンス"
 
@@ -204,8 +204,8 @@ msgid "Tim Warrillow"
 msgstr "Tim Warrillow 様"
 
 #: enrolment/constants.py:215
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:88
-#: enrolment/templates/landing-page-international-sector-list.html:87
+#: enrolment/templates/bidi/landing-page-sector-list.html:88
+#: enrolment/templates/landing-page-sector-list.html:87
 msgid "Food and drink"
 msgstr "飲食品"
 
@@ -347,20 +347,20 @@ msgstr "サプライヤー検索"
 msgid "Industries"
 msgstr "産業"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:12
-#: enrolment/templates/landing-page-international-sector-list.html:11
+#: enrolment/templates/bidi/landing-page-sector-list.html:12
+#: enrolment/templates/landing-page-sector-list.html:11
 msgid "Discover the UK's capability in these key industries"
 msgstr "主要産業における英国のパワーをご覧ください"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:22
+#: enrolment/templates/bidi/landing-page-sector-list.html:22
 #: enrolment/templates/bidi/landing-page.html:52
-#: enrolment/templates/landing-page-international-sector-list.html:20
+#: enrolment/templates/landing-page-sector-list.html:20
 #: enrolment/templates/landing-page.html:48
 msgid "UK industries"
 msgstr "英国の産業"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:29
-#: enrolment/templates/landing-page-international-sector-list.html:27
+#: enrolment/templates/bidi/landing-page-sector-list.html:29
+#: enrolment/templates/landing-page-sector-list.html:27
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -371,8 +371,8 @@ msgstr ""
 "以外を探す必要はありません。英国では、大手企業から小規模な企業まで、あらゆる"
 "産業において最適な取引相手が見つかります。"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:32
-#: enrolment/templates/landing-page-international-sector-list.html:30
+#: enrolment/templates/bidi/landing-page-sector-list.html:32
+#: enrolment/templates/landing-page-sector-list.html:30
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
@@ -380,16 +380,16 @@ msgstr ""
 "理想的な企業と大切な取引ができるよう、私たちがお手伝いいたします。以下のよう"
 "な産業英国企業をお選びいただけます。"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:45
+#: enrolment/templates/bidi/landing-page-sector-list.html:45
 #: enrolment/templates/bidi/landing-page.html:61
-#: enrolment/templates/landing-page-international-sector-list.html:43
+#: enrolment/templates/landing-page-sector-list.html:43
 #: enrolment/templates/landing-page.html:57
 msgid "Healthcare and life sciences in the UK"
 msgstr "英国における医療とライフサイエンス"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:47
+#: enrolment/templates/bidi/landing-page-sector-list.html:47
 #: enrolment/templates/bidi/landing-page.html:63
-#: enrolment/templates/landing-page-international-sector-list.html:45
+#: enrolment/templates/landing-page-sector-list.html:45
 #: enrolment/templates/landing-page.html:59
 msgid ""
 "Get access to the UK health and life sciences supply-chain, delivering high "
@@ -398,57 +398,57 @@ msgstr ""
 "高品質で革新的なサービスを世界中に提供している、英国の医療／ライフサイエンス"
 "のサプライチェーンをぜひご活用ください。"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:50
+#: enrolment/templates/bidi/landing-page-sector-list.html:50
 #: enrolment/templates/bidi/landing-page.html:67
-#: enrolment/templates/landing-page-international-sector-list.html:48
+#: enrolment/templates/landing-page-sector-list.html:48
 #: enrolment/templates/landing-page.html:63
 msgid "Find out more about the UK’s healthcare and life sciences"
 msgstr "英国の医療とライフサイエンスの詳細は、こちらからご覧ください"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:56
-#: enrolment/templates/landing-page-international-sector-list.html:54
+#: enrolment/templates/bidi/landing-page-sector-list.html:56
+#: enrolment/templates/landing-page-sector-list.html:54
 #, fuzzy
 #| msgid "The UK's advanced technology"
 msgid "Advanced technology"
 msgstr "英国の高度なテクノロジー"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:59
+#: enrolment/templates/bidi/landing-page-sector-list.html:59
 #: enrolment/templates/bidi/landing-page.html:77
-#: enrolment/templates/landing-page-international-sector-list.html:57
+#: enrolment/templates/landing-page-sector-list.html:57
 #: enrolment/templates/landing-page.html:73
 msgid "The UK's advanced technology"
 msgstr "英国の先端技術"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:61
-#: enrolment/templates/landing-page-international-sector-list.html:59
+#: enrolment/templates/bidi/landing-page-sector-list.html:61
+#: enrolment/templates/landing-page-sector-list.html:59
 msgid ""
 "Check out the cutting-edge technological innovations that the UK is bringing "
 "to the world."
 msgstr "英国から世界にお届けしている最新のテクノロジーについてご覧ください。"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:65
+#: enrolment/templates/bidi/landing-page-sector-list.html:65
 #: enrolment/templates/bidi/landing-page.html:84
-#: enrolment/templates/landing-page-international-sector-list.html:64
+#: enrolment/templates/landing-page-sector-list.html:64
 #: enrolment/templates/landing-page.html:81
 msgid "Find out more about UK technology"
 msgstr "英国の技術の詳細は、こちらからご覧ください"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:73
-#: enrolment/templates/landing-page-international-sector-list.html:72
+#: enrolment/templates/bidi/landing-page-sector-list.html:73
+#: enrolment/templates/landing-page-sector-list.html:72
 #, fuzzy
 #| msgid "The UK's creative services"
 msgid "Creative services"
 msgstr "英国のクリエイティブ･サービス"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:76
+#: enrolment/templates/bidi/landing-page-sector-list.html:76
 #: enrolment/templates/bidi/landing-page.html:96
-#: enrolment/templates/landing-page-international-sector-list.html:75
+#: enrolment/templates/landing-page-sector-list.html:75
 #: enrolment/templates/landing-page.html:93
 msgid "The UK's creative services"
 msgstr "英国のクリエイティブ事業サービス"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:78
-#: enrolment/templates/landing-page-international-sector-list.html:77
+#: enrolment/templates/bidi/landing-page-sector-list.html:78
+#: enrolment/templates/landing-page-sector-list.html:77
 msgid ""
 "Whether you need buildings designed, films made, or a fresh approach to "
 "marketing, the UK is the first place to look."
@@ -456,20 +456,20 @@ msgstr ""
 "建築設計、映画製作、新しいマーケティングアプローチなど、どのようなサービスを"
 "お求めの場合も、ぜひ英国を第 1 候補としてご検討ください。"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:82
+#: enrolment/templates/bidi/landing-page-sector-list.html:82
 #: enrolment/templates/bidi/landing-page.html:103
-#: enrolment/templates/landing-page-international-sector-list.html:81
+#: enrolment/templates/landing-page-sector-list.html:81
 #: enrolment/templates/landing-page.html:100
 msgid "Find out more about the UK’s creative services"
 msgstr "英国のクリエイティブ事業サービスの詳細は、こちらからご覧ください"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:91
-#: enrolment/templates/landing-page-international-sector-list.html:90
+#: enrolment/templates/bidi/landing-page-sector-list.html:91
+#: enrolment/templates/landing-page-sector-list.html:90
 msgid "The UK’s food and drink"
 msgstr "英国の飲料品＆食品"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:93
-#: enrolment/templates/landing-page-international-sector-list.html:92
+#: enrolment/templates/bidi/landing-page-sector-list.html:93
+#: enrolment/templates/landing-page-sector-list.html:92
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "should be first on your list."
@@ -477,9 +477,9 @@ msgstr ""
 "革新的な食品ブランド、最高品質の飲料品など、どのようなものをお探しであって"
 "も、ぜひ最初に英国をご検討ください。"
 
-#: enrolment/templates/bidi/landing-page-international-sector-list.html:97
+#: enrolment/templates/bidi/landing-page-sector-list.html:97
 #: enrolment/templates/bidi/landing-page.html:120
-#: enrolment/templates/landing-page-international-sector-list.html:96
+#: enrolment/templates/landing-page-sector-list.html:96
 #: enrolment/templates/landing-page.html:117
 msgid "Find out more about UK food and drink"
 msgstr "英国の飲料品の詳細は、こちらからご覧ください"
