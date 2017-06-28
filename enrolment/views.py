@@ -2,7 +2,7 @@ from zenpy import Zenpy
 from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
 from django.conf import settings
-from django.shortcuts import Http404
+from django.shortcuts import redirect, Http404
 from django.template.response import TemplateResponse
 from django.utils import translation
 from django.views.generic import TemplateView
@@ -22,7 +22,6 @@ zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
 class ConditionalEnableTranslationsMixin:
-
     translations_enabled = True
     template_name_bidi = None
     language_form_class = forms.LanguageForm
@@ -107,8 +106,7 @@ class AnonymousSubscribeFormView(FormView):
         return TemplateResponse(self.request, self.success_template)
 
 
-class InternationalLandingView(ConditionalEnableTranslationsMixin,
-                               TemplateView):
+class LandingView(ConditionalEnableTranslationsMixin, TemplateView):
     template_name = 'landing-page.html'
     template_name_bidi = 'bidi/landing-page.html'
 
@@ -118,10 +116,9 @@ class InternationalLandingView(ConditionalEnableTranslationsMixin,
         return context
 
 
-class InternationalLandingSectorListView(ConditionalEnableTranslationsMixin,
-                                         TemplateView):
-    template_name = 'landing-page-international-sector-list.html'
-    template_name_bidi = 'bidi/landing-page-international-sector-list.html'
+class SectorListView(ConditionalEnableTranslationsMixin, TemplateView):
+    template_name = 'landing-page-sector-list.html'
+    template_name_bidi = 'bidi/landing-page-sector-list.html'
     language_form_class = forms.LanguageIndustriesForm
 
     @property
@@ -133,7 +130,7 @@ class InternationalLandingSectorListView(ConditionalEnableTranslationsMixin,
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['active_view_name'] = 'international-sector-list'
+        context['active_view_name'] = 'sector-list'
         return context
 
 
@@ -145,9 +142,7 @@ class TermsView(TemplateView):
     template_name = 'terms-and-conditions.html'
 
 
-class InternationalLandingSectorDetailView(ConditionalEnableTranslationsMixin,
-                                           TemplateView):
-
+class SectorDetailView(ConditionalEnableTranslationsMixin, TemplateView):
     template_name_bidi = None
     language_form_class = forms.LanguageIndustriesForm
 
@@ -195,6 +190,9 @@ class InternationalLandingSectorDetailView(ConditionalEnableTranslationsMixin,
         return {key: val for key, val in pages.items() if val['is_active']}
 
     def dispatch(self, request, *args, **kwargs):
+        # handling legacy "show summary/verbose description" url: ED-1471
+        if 'verbose' in self.request.GET:
+            return redirect('sector-detail-verbose', slug=self.kwargs['slug'])
         if self.kwargs['slug'] not in self.get_active_pages():
             raise Http404()
         return super().dispatch(request, *args, **kwargs)
@@ -208,6 +206,6 @@ class InternationalLandingSectorDetailView(ConditionalEnableTranslationsMixin,
         pages = self.get_active_pages()
         context = super().get_context_data(*args, **kwargs)
         context.update(pages[self.kwargs['slug']]['context'])
-        context['show_proposition'] = 'verbose' in self.request.GET
+        context['show_proposition'] = self.kwargs['show_proposition']
         context['slug'] = self.kwargs['slug']
         return context

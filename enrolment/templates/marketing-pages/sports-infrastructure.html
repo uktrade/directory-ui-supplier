@@ -9,7 +9,7 @@
 {% block synopsis %}
     <p>{% trans "UK companies bring in-depth knowledge of the demands of global sports audiences with an understanding of event owners’ needs. Our expertise runs through all stages of sports infrastructure from concept and construction, to event delivery and legacy." %}</p>
     <div class="ed-landing-page-read-more">
-        <a href="?verbose=true">{% trans "Read more about the UK's global sports infrastructure" %}</a>.
+        <a href="{% url 'sector-detail-verbose' slug=slug %}">{% trans "Read more about the UK's global sports infrastructure" %}</a>.
     </div>
 {% endblock %}
 

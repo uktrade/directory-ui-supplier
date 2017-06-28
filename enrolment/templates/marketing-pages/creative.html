@@ -9,7 +9,7 @@
 {% block synopsis %}
     <p>{% trans "Whether you need buildings designed, films made or a fresh approach to marketing, the UK is the first place to look." %}</p>
     <div class="ed-landing-page-read-more">
-        <a href="?verbose=true">{% trans "Read more about creative services" %} </a>
+        <a href="{% url 'sector-detail-verbose' slug=slug %}">{% trans "Read more about creative services" %} </a>
     </div>
 {% endblock %}
 

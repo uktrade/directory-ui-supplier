@@ -83,7 +83,8 @@ def test_templates_render_successfully():
                 'name': '',
                 'description': '',
             },
-        ]
+        ],
+        'slug': 'CREATIVE_AND_MEDIA',
     }
     assert template_list
     for template in template_list:

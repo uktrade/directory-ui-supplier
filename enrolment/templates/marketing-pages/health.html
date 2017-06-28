@@ -11,7 +11,7 @@
         {% trans "Whether you need hospitals built, primary care services managed, or reliable suppliers of the latest medical technology and pharmaceutical advances, the UK is the first place to look." %}
     </p>
     <div class="ed-landing-page-read-more">
-        <a href="?verbose=true">{% trans "Read more about healthcare and life sciences" %}</a>
+        <a href="{% url 'sector-detail-verbose' slug=slug %}">{% trans "Read more about healthcare and life sciences" %}</a>
     </div>
 {% endblock %}
 
