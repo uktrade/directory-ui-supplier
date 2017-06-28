@@ -27,7 +27,7 @@ input_output_map="\
 	enrolment/static/sass/company-search_results.scss:enrolment/static/company-search_results.css \
 "
 
-prod_command="sass --style compressed"
+prod_command="sass --sourcemap=none --style compressed"
 
 eval 'rm enrolment/static/*.css'
 eval $prod_command$libraries$input_output_map
