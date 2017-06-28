@@ -599,7 +599,7 @@ msgstr ""
 #: enrolment/templates/bidi/landing-page.html:113
 #: enrolment/templates/landing-page.html:110
 msgid "The UK's food and drink"
-msgstr ""
+msgstr "Alimentación y bebidas en el Reino Unido"
 
 #: enrolment/templates/bidi/landing-page.html:115
 #: enrolment/templates/landing-page.html:112
@@ -607,6 +607,8 @@ msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "is the first place to look."
 msgstr ""
+"Si desea las marcas de alimentos más innovadoras o bebidas de calidad "
+"excepcional, el Reino Unido debería ser el primero en su lista."
 
 #: enrolment/templates/bidi/lead-generation-form.html:6
 #: enrolment/templates/lead-generation-form.html:6
@@ -702,6 +704,7 @@ msgstr "Servicios creativos excepcionales"
 #: enrolment/templates/marketing-pages/creative.html:11
 msgid "Read more about creative services"
 msgstr ""
+"Descubra más sobre los servicios creativos del Reino Unido"
 
 #: enrolment/templates/marketing-pages/creative.html:17
 msgid ""
@@ -939,10 +942,13 @@ msgid ""
 "Whether you want the most delicious food brands or exceptional quality "
 "drinks, the UK is the first place to look."
 msgstr ""
+"Si desea las marcas de alimentos más innovadoras o bebidas de calidad "
+"excepcional, el Reino Unido debería ser el primero en su lista."
 
 #: enrolment/templates/marketing-pages/food.html:11
 msgid "Read more about UK food and drink"
 msgstr ""
+"Descubra más sobre alimentación y bebidas del Reino Unido"
 
 #: enrolment/templates/marketing-pages/food.html:19
 msgid ""
@@ -1141,6 +1147,8 @@ msgstr ""
 #: enrolment/templates/marketing-pages/health.html:13
 msgid "Read more about healthcare and life sciences"
 msgstr ""
+"Obtenga más información acerca de la sanidad y las ciencias de la vida del "
+"Reino Unido"
 
 #: enrolment/templates/marketing-pages/health.html:19
 msgid "Healthcare and life sciences from the UK"
@@ -1571,10 +1579,12 @@ msgid ""
 "Whether you need electronic systems, data analytics, artificial intelligence "
 "or semiconductors, the UK is the first place to look."
 msgstr ""
+"Si usted necesita sistemas electrónicos, análisis de datos, inteligencia "
+"artificial o semiconductores, el Reino Unido es el primer lugar para mirar."
 
 #: enrolment/templates/marketing-pages/tech.html:11
 msgid "Read more about technology in the UK"
-msgstr ""
+msgstr "Lea más sobre la tecnología en el Reino Unido"
 
 #: enrolment/templates/marketing-pages/tech.html:17
 msgid "If you need the best technology, look no further than the UK."
