@@ -9,93 +9,78 @@
 {% block synopsis %}
     <p>{% trans "Whether you need buildings designed, films made or a fresh approach to marketing, the UK is the first place to look." %}</p>
     <div class="ed-landing-page-read-more">
-        <a href="?verbose=true">{% trans "Read more about creative services" %} </a>
+        <a href="{% url 'sector-detail-verbose' slug=slug %}">{% trans "Read more about creative services" %} </a>
     </div>
 {% endblock %}
 
 {% block proposition %}
-    <section>
-        <h2>{% trans "If you need intelligent, creative ideas and rich, high-quality designs and media, look no further than the UK" %}.</h2>
-        <p>
-            {% trans "Creative companies in the UK are responsible for producing big budget movies, designing fashionable furniture fabrics and developing world-class computer games." %}
-        </p>
-    </section>
+	<h2>{% trans "If you need intelligent, creative ideas and rich, high-quality designs and media, look no further than the UK" %}.</h2>
+	<p>
+	{% trans "Creative companies in the UK are responsible for producing big budget movies, designing fashionable furniture fabrics and developing world-class computer games." %}
+	</p>
+	
+	<div class="ed-key-facts-container">
+		<h2>{% trans "Key facts" %}</h2>
+		<ul>
+			<li>{% trans "UK companies gave the world £19.1 billion of creative services in 2014" %}</li>
+			<li>{% trans "9% of all UK service exports are in the creative services in 2014" %}</li>
+			<li>{% trans "Growth of creative services exports was 10.9% in 2014" %}</li>
+		</ul>
+	</div>
+	
+	<h2>{% trans "Work with the best in film, TV and visual effects" %}</h2>
+	<p>{% trans "The UK is one of the world's largest makers of original content." %}</p>
+	<p>{% trans "We are the home of films such as Star Wars and offer state-of-the-art studio facilities suitable for big movie productions and an amazing diversity of film locations." %}</p>
+	<p>{% trans "At the heart of the UK’s creative industry is its award-winning film and television production comprising more than 1,500 independent TV companies in the UK." %}</p>
+	<p>{% trans "We're also the world leaders in exporting TV formats and localising those first commissioned in the UK." %}</p>
 
-    <section>
-        <div class="row-fluid">
-            <div class="span6">
-                <h2>{% trans "Work with the best in film, TV and visual effects" %}</h2>
-                    <p>{% trans "The UK is one of the world's largest makers of original content." %}</p>
-                    <p>{% trans "We are the home of films such as Star Wars and offer state-of-the-art studio facilities suitable for big movie productions and an amazing diversity of film locations." %}</p>
-                    <p>{% trans "At the heart of the UK’s creative industry is its award-winning film and television production comprising more than 1,500 independent TV companies in the UK." %}</p>
-                    <p>{% trans "We're also the world leaders in exporting TV formats and localising those first commissioned in the UK." %}</p>
-            </div>
-            <div class="span6">
-                <div class="ed-key-facts-container">
-                    <h2>{% trans "Key facts" %}</h2>
-                    <ul>
-                        <li>{% trans "UK companies gave the world £19.1 billion of creative services in 2014" %}</li>
-                        <li>{% trans "9% of all UK service exports are in the creative services in 2014" %}</li>
-                        <li>{% trans "Growth of creative services exports was 10.9% in 2014" %}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+	<h2>{% trans "Our creative digital experience" %}</h2>
+	<p>
+		{% trans "The UK has one of the most world's most advanced games industries, with more than 30 years experience of innovation and commercial success." %}
+	</p>
+	<p>
+		{% trans "UK games companies have adopted social and mobile platforms, with more than a third of UK studios focusing on the mobile market." %}
+	</p>
+	<p>
+		{% trans "The UK's augmented reality specialists create immersive experiences that help further the creative reach of the likes of National Geographic and Universal Studios." %}
+	</p>
 
-    <section>
-        <h2>{% trans "Our creative digital experience" %}</h2>
-        <p>
-            {% trans "The UK has one of the most world's most advanced games industries, with more than 30 years experience of innovation and commercial success." %}
-        </p>
-        <p>
-            {% trans "UK games companies have adopted social and mobile platforms, with more than a third of UK studios focusing on the mobile market." %}
-        </p>
-        <p>
-            {% trans "The UK's augmented reality specialists create immersive experiences that help further the creative reach of the likes of National Geographic and Universal Studios." %}
-        </p>
-    </section>
-    <section>
-        <h2>{% trans "A publishing powerhouse" %}</h2>
-        <p>
-            {% trans "The publishing sector in the UK has pioneered new print formats and commercial models alongside moving content online. British news journalism remains a powerful force, uncovering important stories around the world." %}
-        </p>
-        <p>
-            {% trans "The London Book Fair is one of the world’s leading events for intellectual property rights negotiation and the sale and distribution of content. Half of the top 20 global box office successes of the last 11 years were based on novels by UK writers." %}
-        </p>
-    </section>
-    <section>
-        <h2>{% trans "UK design talent is bringing beauty and strength to the world" %}</h2>
-        <p>
-            {% trans "UK architects are responsible for some of the world’s most stunning buildings, such as the Galaxy Soho urban village in Beijing and reshaping environments, such as Singapore’s Gardens by the Bay." %}
-        </p>
-        <p>
-            {% trans "We're also responsible for designing usable industrial and commercial spaces such as the new Spaceport America." %}</a>
-        </p>
-        <p>
-            {% trans "As well as designing the built environment, UK firms are designing vehicles and interiors around the world: including helping to design the world’s fastest passenger train in China." %}</a>
-        </p>
-    </section>
+	<h2>{% trans "A publishing powerhouse" %}</h2>
+	<p>
+		{% trans "The publishing sector in the UK has pioneered new print formats and commercial models alongside moving content online. British news journalism remains a powerful force, uncovering important stories around the world." %}
+	</p>
+	<p>
+		{% trans "The London Book Fair is one of the world’s leading events for intellectual property rights negotiation and the sale and distribution of content. Half of the top 20 global box office successes of the last 11 years were based on novels by UK writers." %}
+	</p>
 
-    <section>
-        <h2>{% trans "Arts: heritage and innovation" %}</h2>
+	<h2>{% trans "UK design talent is bringing beauty and strength to the world" %}</h2>
+	<p>
+		{% trans "UK architects are responsible for some of the world’s most stunning buildings, such as the Galaxy Soho urban village in Beijing and reshaping environments, such as Singapore’s Gardens by the Bay." %}
+	</p>
+	<p>
+		{% trans "We're also responsible for designing usable industrial and commercial spaces such as the new Spaceport America." %}</a>
+	</p>
+	<p>
+		{% trans "As well as designing the built environment, UK firms are designing vehicles and interiors around the world: including helping to design the world’s fastest passenger train in China." %}</a>
+	</p>
 
-        <p>
-            {% trans "From Shakespeare to Adele, the UK continues to produce the best-known artists, writers, singers and performers the world has ever seen." %}"
-        </p>
-        <p>
-            {% trans "As well as music for the consumer market, the UK’s thriving commercial music and audio agencies are providing the scores and tracks for films made for the likes of Boeing and Mercedes-Benz. And our rights management companies have an ongoing reputation for protecting Intellectual Property for performers and producers alike." %}
-        </p>
-        <p>
-            {% trans "The UK’s national museums attract visitors from around the world and have lasting partnerships and collection-sharing with their peers from countries as diverse as Russia and Malawi." %}
-        </p>
-        <p>
-            {% trans "The UK is alive with exceptional talent and ingenuity." %}
-        </p>
-    </section>
-    <div>
-        <a href="{% url 'public-company-profiles-list' %}?sectors={{ sector_value }}">{% trans "Find your UK creative partner today" %}</a>
-    </div>
+	<h2>{% trans "Arts: heritage and innovation" %}</h2>
+	<p>
+		{% trans "From Shakespeare to Adele, the UK continues to produce the best-known artists, writers, singers and performers the world has ever seen." %}"
+	</p>
+	<p>
+		{% trans "As well as music for the consumer market, the UK’s thriving commercial music and audio agencies are providing the scores and tracks for films made for the likes of Boeing and Mercedes-Benz. And our rights management companies have an ongoing reputation for protecting Intellectual Property for performers and producers alike." %}
+	</p>
+	<p>
+		{% trans "The UK’s national museums attract visitors from around the world and have lasting partnerships and collection-sharing with their peers from countries as diverse as Russia and Malawi." %}
+	</p>
+	<p>
+		{% trans "The UK is alive with exceptional talent and ingenuity." %}
+	</p>
+
+	<div>
+		<a href="{% url 'public-company-profiles-list' %}?sectors={{ sector_value }}">{% trans "Find your UK creative partner today" %}</a>
+	</div>
 {% endblock %}
 
 {% block company_list_title %}
