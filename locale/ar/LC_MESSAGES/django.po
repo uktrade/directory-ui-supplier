@@ -603,7 +603,7 @@ msgstr "أوافق على البنود والشروط الواردة في موق
 
 #: enrolment/templates/browse-companies.html:4
 msgid "Find other great UK companies"
-msgstr ""
+msgstr "تصفح الشركات في المملكة المتحدة"
 
 #: enrolment/templates/browse-companies.html:7
 #: enrolment/templates/search-companies.html:11
@@ -667,7 +667,7 @@ msgstr "تقديم خدمات إبداعية استثنائية"
 
 #: enrolment/templates/marketing-pages/creative.html:11
 msgid "Read more about creative services"
-msgstr ""
+msgstr "اقرأ المزيد"
 
 #: enrolment/templates/marketing-pages/creative.html:17
 msgid ""
@@ -1351,7 +1351,7 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/sports-infrastructure.html:11
 msgid "Read more about the UK's global sports infrastructure"
-msgstr ""
+msgstr "اقرأ المزيد"
 
 #: enrolment/templates/marketing-pages/sports-infrastructure.html:17
 msgid "Global sports infrastructure services from the UK"
