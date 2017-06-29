@@ -6,10 +6,7 @@
 	<link href="{% static 'marketing-page-bidi.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
-{% block hero_title_container %}
-    <h2 class="span6 ed-hero-sub-header-title pull-right">
-        {% block hero_title %}{% endblock %}
-    </h2>
+{% block hero_title %}
 {% endblock %}
 
 {% block content %}
@@ -51,7 +48,7 @@
 						<img class="ed-landing-page-sector-company-image" src="{{ company.image_url }}" />
 					</div>
 					<div class="row-fluid">
-						<h2 style="font-size: 21px;">{{ company.name }}</h2>
+						<h3 style="font-size: 21px;">{{ company.name }}</h3>
 						<p>
 							{% trans company.description %}
 						</p>
@@ -80,7 +77,7 @@
 			{% endif %}
 		</div>
 		<div class="row-fluid">
-			<h2>{% trans case_study.title %}</h2>
+			<h3>{% trans case_study.title %}</h3>
 		</div>
 		<div class="row-fluid ed-landing-page-sector-case-study-inner">
 			<div class="{{ case_study.testimonial|yesno:'span4,span8' }}">
