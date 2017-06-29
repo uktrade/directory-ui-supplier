@@ -56,6 +56,9 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_FEATURE_SPORTS_INFRASTRUCTURE_ENABLED=true; \
 	export DIRECTORY_UI_SUPPLIER_FEATURE_COMPANY_SEARCH_VIEW_ENABLED=true
 
+docker_test_env_files:
+	$(DOCKER_SET_DEBUG_ENV_VARS) && \
+	$(DOCKER_COMPOSE_CREATE_ENVS)
 
 DOCKER_REMOVE_ALL := \
 	docker ps -a | \
@@ -129,10 +132,10 @@ heroku_deploy_dev:
 	docker build -t registry.heroku.com/directory-ui-supplier-dev/web .
 	docker push registry.heroku.com/directory-ui-supplier-dev/web
 
-smoke_tests:
+integration_tests:
 	cd $(mktemp -d) && \
 	git clone https://github.com/uktrade/directory-tests && \
 	cd directory-tests && \
-	make docker_smoke_test
+	make docker_integration_tests
 
 .PHONY: build clean test_requirements docker_run docker_debug docker_webserver_bash docker_test debug_webserver debug_test debug heroku_deploy_dev heroku_deploy_demo
