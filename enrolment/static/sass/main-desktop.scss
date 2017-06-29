@@ -1095,8 +1095,23 @@ a.ed-filled-button-primary {
   overflow: hidden;
   padding: 25px;
   position: relative;
+
+  p {
+    line-height: 1.3em;
+    margin-bottom: 0;
+    width: 60%;
+  }
+    
+  .button {
+    background-color: $white;
+    border: 2px solid $blue-2;
+    bottom: 25px;
+    position: absolute;
+    text-align: center;
+    right: 25px;
+  }
   
-  h2 {
+  .title {
     background-image: url(/static/images/globe-icon.png);
     background-position: left center;
     background-repeat: no-repeat;
@@ -1106,18 +1121,5 @@ a.ed-filled-button-primary {
     line-height: 1.1em;
     margin: 0 0 20px 0;
     padding: 10px 0 10px 51px;
-  }
-  p {
-    line-height: 1.3em;
-    margin-bottom: 0;
-    width: 60%;
-  }
-  .button {
-    background-color: $white;
-    border: 2px solid $blue-2;
-    bottom: 25px;
-    position: absolute;
-    text-align: center;
-    right: 25px;
   }
 }
