@@ -1,69 +1,56 @@
-{% extends 'marketing-pages/base.html' %}
+{% extends LANGUAGE_BIDI|yesno:'marketing-pages/bidi/base.html,marketing-pages/base.html' %}
 
 {% load static from staticfiles %}
 {% load trans from i18n %}
 
+{% block css_layout_class %}fas-marketing-page fas-sports{% endblock %}
 {% block hero_image %}{% static 'images/covers/fas-sports-hero.png' %}{% endblock %}
 {% block hero_title %}{% trans "The UK's global sports infrastructure services" %}{% endblock%}
 {% block synopsis %}
     <p>{% trans "UK companies bring in-depth knowledge of the demands of global sports audiences with an understanding of event owners’ needs. Our expertise runs through all stages of sports infrastructure from concept and construction, to event delivery and legacy." %}</p>
     <div class="ed-landing-page-read-more">
-        <a href="?verbose=true">{% trans "Read more about the UK's global sports infrastructure" %}</a>.
+        <a href="{% url 'sector-detail-verbose' slug=slug %}">{% trans "Read more about the UK's global sports infrastructure" %}</a>.
     </div>
 {% endblock %}
 
 {% block proposition %}
-    <section>
-        <h2>{% trans "Global sports infrastructure services from the UK" %}</h2>
-        <p>{% trans "The UK has a long sporting heritage and continues to deliver competitive global events. Over the past few years UK expertise and capability has ensured the success of the football World Cup, the Commonwealth Games, Wimbledon Tennis Championships and many more." %}</p>
-        <p>{% trans "UK companies bring in-depth knowledge of the demands of global sports audiences with an understanding of the needs of event organisers. Our expertise runs through all stages of sports infrastructure from concept and construction to event delivery and legacy." %}</p>
-        <p>{% trans "The planning and design of major sports events is among the largest and most complex challenges a city or country can face. UK companies have proven experience in concept design and bidding. We have proven capability in addressing the complex issues and themes involved and providing the technical input to put together a successful bid." %}</p>
-		<p>{% trans "UK companies can provide the reassurance of quality and safety in every area, from cost-effective assessing venue needs and measuring the sustainability of events, to ticketing and transport planning." %}</p>
-</section>
+	<h2>{% trans "Global sports infrastructure services from the UK" %}</h2>
+	<p>{% trans "The UK has a long sporting heritage and continues to deliver competitive global events. Over the past few years UK expertise and capability has ensured the success of the football World Cup, the Commonwealth Games, Wimbledon Tennis Championships and many more." %}</p>
+	<p>{% trans "UK companies bring in-depth knowledge of the demands of global sports audiences with an understanding of the needs of event organisers. Our expertise runs through all stages of sports infrastructure from concept and construction to event delivery and legacy." %}</p>
+	<p>{% trans "The planning and design of major sports events is among the largest and most complex challenges a city or country can face. UK companies have proven experience in concept design and bidding. We have proven capability in addressing the complex issues and themes involved and providing the technical input to put together a successful bid." %}</p>
+	<p>{% trans "UK companies can provide the reassurance of quality and safety in every area, from cost-effective assessing venue needs and measuring the sustainability of events, to ticketing and transport planning." %}</p>
 
-    <section>
-        <div class="row-fluid">
-            <div class="span6">
-                <h2>ANOTHER VALUE PROPOSITION TITLE</h2>
-                <p>ANOTHER VALUE PROPOSITION PARAGRAPH</p>
-            </div>
-            <div class="span6">
-                <div class="ed-key-facts-container">
-                    <h2>{% trans "Key facts" %}</h2>
-                    <ul>
-                        <li>{% trans "The London 2012 Olympics and Paralympics and the Glasgow 2014 Commonwealth Games were hugely successful global events, with more than 10 million attendees between them" %}</li>
-                        <li>{% trans "The English Premier League is the highest revenue-earning soccer league in the world" %}</li>
-                        <li>{% trans "Six of the 10 Formula 1 racing teams have their headquarters in the UK" %}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>{% trans "Iconic and innovative sporting events" %}</h2>
-        <p>{% trans "The UK’s architects, engineers, cost consultants, project managers and programme managers have been at the forefront of international sports venue construction services for 20 years. They have played a significant role in delivering innovative, iconic and cost-effective results. UK companies made major design and architecture contributions to the Bird’s Nest Olympic stadium in Beijing and the Rio Olympic Park." %}</p>
-		<p>{% trans "The UK is recognised for its expertise in:" %}</p>
+	<div class="ed-key-facts-container">
+		<h2>{% trans "Key facts" %}</h2>
 		<ul>
-			<li>{% trans "construction and project delivery" %}</li>
-			<li>{% trans "sustainability" %}</li>
-			<li>{% trans "seating and sightlines" %}</li>
-			<li>{% trans "software development" %}</li>
-			<li>{% trans "crowd movement and safety" %}</li>
-			<li>{% trans "commercial opportunities and fan experience" %}</li>
-			<li>{% trans "supply chain delivery" %}</li>
+			<li>{% trans "The London 2012 Olympics and Paralympics and the Glasgow 2014 Commonwealth Games were hugely successful global events, with more than 10 million attendees between them" %}</li>
+			<li>{% trans "The English Premier League is the highest revenue-earning soccer league in the world" %}</li>
+			<li>{% trans "Six of the 10 Formula 1 racing teams have their headquarters in the UK" %}</li>
 		</ul>
-    </section>
+	</div>
 
-    <section>
-        <h2>{% trans "The UK: global sports specialists" %}</h2>
-        <p>{% trans "Leading sports authorities around the world already call on UK suppliers for specialist technology and equipment. For example, UK companies have collaborated with sports authorities to develop roofing systems that provide both shelter and natural light. We’re making global sports venues fit for the future using techniques. These include data-driven sports venue management and supplying the software that boosts revenue and creates commercially viable fan databases." %}</p>
-        <p>{% trans "The UK is a centre of global excellence in “overlay architecture”: the creation of temporary venues and the installation of temporary elements in existing and new venues. The London 2012 Olympics delivered a larger and more complex event overlay than any previous games, in all aspects ranging from seating to signage." %}</p>
-		<p>{% trans "Security and safety is a crucial element of a well-organised sports event at home and abroad. UK suppliers have given event security and safety training to the South Africa 2010 FIFA World Cup, London 2012 and the Glasgow 2014 Commonwealth Games, as well as many of the world’s top soccer clubs." %}</p>
-		<p>{% trans "UK companies have a reputation for delivering creative events, ensuring extraordinary opening and closing ceremonies and a seamless games-time experience for major sports events around the world." %}</p>
-		<p><a href="/">{% trans "Find your UK global sports partner" %}</a>.</p>
-	</section>
+	<h2>ANOTHER VALUE PROPOSITION TITLE</h2>
+	<p>ANOTHER VALUE PROPOSITION PARAGRAPH</p>
 
+	<h2>{% trans "Iconic and innovative sporting events" %}</h2>
+	<p>{% trans "The UK’s architects, engineers, cost consultants, project managers and programme managers have been at the forefront of international sports venue construction services for 20 years. They have played a significant role in delivering innovative, iconic and cost-effective results. UK companies made major design and architecture contributions to the Bird’s Nest Olympic stadium in Beijing and the Rio Olympic Park." %}</p>
+	<p>{% trans "The UK is recognised for its expertise in:" %}</p>
+	<ul>
+		<li>{% trans "construction and project delivery" %}</li>
+		<li>{% trans "sustainability" %}</li>
+		<li>{% trans "seating and sightlines" %}</li>
+		<li>{% trans "software development" %}</li>
+		<li>{% trans "crowd movement and safety" %}</li>
+		<li>{% trans "commercial opportunities and fan experience" %}</li>
+		<li>{% trans "supply chain delivery" %}</li>
+	</ul>
+
+	<h2>{% trans "The UK: global sports specialists" %}</h2>
+	<p>{% trans "Leading sports authorities around the world already call on UK suppliers for specialist technology and equipment. For example, UK companies have collaborated with sports authorities to develop roofing systems that provide both shelter and natural light. We’re making global sports venues fit for the future using techniques. These include data-driven sports venue management and supplying the software that boosts revenue and creates commercially viable fan databases." %}</p>
+	<p>{% trans "The UK is a centre of global excellence in “overlay architecture”: the creation of temporary venues and the installation of temporary elements in existing and new venues. The London 2012 Olympics delivered a larger and more complex event overlay than any previous games, in all aspects ranging from seating to signage." %}</p>
+	<p>{% trans "Security and safety is a crucial element of a well-organised sports event at home and abroad. UK suppliers have given event security and safety training to the South Africa 2010 FIFA World Cup, London 2012 and the Glasgow 2014 Commonwealth Games, as well as many of the world’s top soccer clubs." %}</p>
+	<p>{% trans "UK companies have a reputation for delivering creative events, ensuring extraordinary opening and closing ceremonies and a seamless games-time experience for major sports events around the world." %}</p>
+	<p><a href="/">{% trans "Find your UK global sports partner" %}</a>.</p>
 {% endblock %}
 
 {% block company_list_title %}

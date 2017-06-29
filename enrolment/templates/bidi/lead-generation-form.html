@@ -1,0 +1,92 @@
+{% load trans from i18n %}
+<div class="ed-landing-page-form-container">
+	<div class="row-fluid">
+		<div class="span12 great-blue-bar">
+			<h1 class="element-within company-name-title">
+				<span class="dont-break-out">{% trans "Get UK companies to fulfil your business needs" %}</span>
+			</h1>
+		</div>
+	</div>
+	<div class="ed-landing-page-form-inner">
+		<div>
+			{% trans "Tell us what kind of goods or services you need. We'll put you in touch with relevant UK suppliers." %}
+		</div>
+		<div class="row-fluid">
+			<form action="{% url 'lead-generation' %}" method="post" style="margin-top: 30px;">
+				<div class="row-fluid">
+					<div class="span6">
+						<div class="{{ form.full_name.css_classes|default:'input-field-container' }}">
+							<label for="{{ form.full_name.id_for_label }}">
+								<span>{% trans form.full_name.label %}</span>
+								{{ form.full_name.errors }}
+								{{ form.full_name }}
+							</label>
+						</div>
+					</div>
+
+					<div class="span6">
+						<div class="{{ form.email_address.css_classes|default:'input-field-container' }}">
+							<label for="{{ form.email_address.id_for_label }}">
+								<span>{% trans form.email_address.label %}</span>
+								{{ form.email_address.errors }}
+								{{ form.email_address }}
+							</label>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="row-fluid">
+					<div class="span6">
+						<div class="{{ form.company_name.css_classes|default:'input-field-container' }}">
+							<label for="{{ form.company_name.id_for_label }}">
+								<span>{% trans form.company_name.label %}</span>
+								{{ form.company_name.errors }}
+								{{ form.company_name }}
+							</label>
+						</div>
+					</div>
+
+					<div class="span6">
+						<div class="{{ form.country.css_classes|default:'input-field-container' }}">
+							<label for="{{ form.country.id_for_label }}">
+								<span>{% trans form.country.label %}</span>
+								{{ form.country.errors }}
+								{{ form.country }}
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="{{ form.comment.css_classes|default:'input-field-container' }}">
+							<label for="{{ form.comment.id_for_label }}">
+								<span>{% trans form.comment.label %}</span>
+								{{ form.comment.errors }}
+								{{ form.comment }}
+								<span class="helptext">{% trans form.comment.help_text %}</span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="row-fluid">
+					<div class="span2 btn-container ed-landing-page-register-button-container">
+						<button class="button" style="border-radius: 4px;">
+							{% trans "Send" %}
+						</button>
+					</div>
+					<div class="span10 ed-checkbox-container {{ form.terms.css_classes|default:'input-field-container' }}">
+						{{ form.terms.errors }}
+						<label for="{{ form.terms.id_for_label }}" style="margin-top: 15px; font-weight: 300;">
+							<input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox" style="vertical-align: top; margin-top: 7px;">
+							<a target="_self" href="{% url 'terms-and-conditions' %}">{% trans "I agree to the great.gov.uk terms and conditions" %}</a>.
+						</label>
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>

@@ -105,7 +105,12 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+# languages that are disabled across all pages
 DISABLED_LANGUAGES = os.getenv('DISABLED_LANGUAGES', '').split(',')
+# of the languages that are not disabled, disable these on industries page
+DISABLED_LANGUAGES_INDUSTRIES_PAGE = (
+    os.getenv('DISABLED_LANGUAGES_INDUSTRIES_PAGE', '').split(',')
+)
 # https://github.com/django/django/blob/master/django/conf/locale/__init__.py
 LANGUAGES = helpers.remove_disabled_languages(
     disabled_languages=DISABLED_LANGUAGES,
@@ -119,6 +124,11 @@ LANGUAGES = helpers.remove_disabled_languages(
         ('pt-br', 'Português Brasileiro'),  # Portuguese (Brazilian),
         ('ar', 'العربيّة'),                 # Arabic
     ]
+)
+
+LANGUAGES_INDUSTRIY_PAGES = helpers.remove_disabled_languages(
+    disabled_languages=DISABLED_LANGUAGES_INDUSTRIES_PAGE,
+    languages=LANGUAGES,
 )
 
 LOCALE_PATHS = (

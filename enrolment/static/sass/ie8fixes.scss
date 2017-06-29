@@ -1,3 +1,17 @@
+
+/* General workarounds for IE8 */
+body .container {
+  max-width: 960px;
+  width: 1000px;
+}
+
+.ed-language-switcher {
+  .trackedSelect {
+    filter: alpha(opacity=0);
+  }
+}
+
+
 /*
   Compensation for lack of nth-child support.
 

@@ -1,0 +1,89 @@
+/* Mobile
+ *****************/
+@media (max-width: 640px) {
+  
+  .browse-companies-container,
+  .search-companies-container {
+    h3 {
+      background-position: right center;
+      padding-left: 0;
+      padding-right: 51px;
+    }
+    
+    p {
+      margin-bottom: 25px;
+      width: auto;
+    }
+    
+    .button {
+      position: static;
+      width: 100%;
+    }
+  }
+  
+  .ed-hero-sub-header {
+    .ed-hero-sub-header-title {
+      width: 75%;
+    }
+  }
+  
+  .LanguageSelectTracker {
+    .code:after,
+    .lang {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .ed-hero-sub-header {
+    .ed-hero-sub-header-title {
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  body .container {
+    padding: 0 15px;  
+  }
+  
+  #menu-control {
+    margin-top: 11px;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-gov-link .text {
+    display: none;
+  }
+}
+
+
+@media (max-width: 340px) {
+  body .container {
+  	padding: 0 10px;
+  }
+  
+  .header-gov-link {
+    &:hover, 
+    &:link, 
+    &:visited {
+      padding: 0 0 0 7px;
+    }
+  }
+
+  #menu-control {
+    margin-bottom: 11px;
+  }
+  
+  #site-logo {
+    height: 27px;
+    margin-bottom: 16px;
+    width: auto;
+  }
+}
+
+
+

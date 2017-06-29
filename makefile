@@ -11,9 +11,13 @@ FLAKE8 := flake8 . --exclude=migrations,.venv
 PYTEST := pytest . --cov=. --cov-config=.coveragerc --capture=no $(pytest_args)
 COLLECT_STATIC := python manage.py collectstatic --noinput
 COMPILE_TRANSLATIONS := python manage.py compilemessages
+CODECOV := \
+	if [ "$$CODECOV_REPO_TOKEN" != "" ]; then \
+	   codecov --token=$$CODECOV_REPO_TOKEN ;\
+	fi
 
 test:
-	$(COLLECT_STATIC) && $(COMPILE_TRANSLATIONS) && $(FLAKE8) && $(PYTEST)
+	$(COLLECT_STATIC) && $(COMPILE_TRANSLATIONS) && $(FLAKE8) && $(PYTEST) && $(CODECOV)
 
 DJANGO_WEBSERVER := \
 	python manage.py collectstatic --noinput && \
@@ -52,6 +56,9 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_FEATURE_SPORTS_INFRASTRUCTURE_ENABLED=true; \
 	export DIRECTORY_UI_SUPPLIER_FEATURE_COMPANY_SEARCH_VIEW_ENABLED=true
 
+docker_test_env_files:
+	$(DOCKER_SET_DEBUG_ENV_VARS) && \
+	$(DOCKER_COMPOSE_CREATE_ENVS)
 
 DOCKER_REMOVE_ALL := \
 	docker ps -a | \
@@ -101,8 +108,8 @@ DEBUG_SET_ENV_VARS := \
 	export UTM_COOKIE_DOMAIN=.great.dev; \
 	export FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED=true; \
 	export FEATURE_SPORTS_INFRASTRUCTURE_ENABLED=true; \
-	export FEATURE_COMPANY_SEARCH_VIEW_ENABLED=true
-
+	export FEATURE_COMPANY_SEARCH_VIEW_ENABLED=true; \
+	export DISABLED_LANGUAGES_INDUSTRIES_PAGE=zh-hans,fr,pt-br
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)

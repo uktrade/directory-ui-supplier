@@ -1,0 +1,42 @@
+@import 'main-bidi.scss';
+@import 'landing-page.css';
+
+body.bidi {
+  .ed-landing-page-sector-container {
+    .span4 {
+      margin-left: 20px;
+    }
+    .span7 {
+      margin-left: 0;
+    }
+  }  
+}
+
+.ed-proposition-container {
+  .ed-key-facts-container {
+    float: left;
+    margin: 0 20px 20px 0;
+  }
+}
+
+/* Tablet
+ ******************/
+@media (min-width: 768px) {
+  
+  .ed-landing-page-sector-companies-list .browse-companies-container,
+  .ed-landing-page-synopsis .search-companies-container {  
+    h3 {
+      background-position: left center;
+      padding: 15px 0 0 51px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ed-proposition-container {
+    .ed-key-facts-container {
+      float: none;
+      margin: 0 0 20px 0;
+    }
+  }
+}
