@@ -23,9 +23,9 @@ body.bidi {
  ******************/
 @media (min-width: 768px) {
   
-  .ed-landing-page-sector-companies-list .browse-companies-container,
-  .ed-landing-page-synopsis .search-companies-container {  
-    h3 {
+  .browse-companies-container,
+  .search-companies-container {  
+    .title {
       background-position: left center;
       padding: 15px 0 0 51px;
     }

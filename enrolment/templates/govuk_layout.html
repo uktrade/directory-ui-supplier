@@ -49,11 +49,13 @@
         <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
         {% include LANGUAGE_BIDI|yesno:'bidi/header.html,header.html' %}
-        {% block sub_header %}
+
+        <main id="content" class="enrolment-content">
+            {% block sub_header %}
             <section class="ed-hero-sub-header">
                 <div class="container">
                     {% block hero_title_container %}
-                        <h2 class="ed-hero-sub-header-title">{% block hero_title %}{% endblock %}</h2>
+                        <p class="ed-hero-sub-header-title">{% block hero_title %}{% endblock %}</p>
                     {% endblock %}
                     <div class="row-fluid ed-hero-sub-header-synopsis">
                         <span class="span9">
@@ -63,12 +65,12 @@
                     <div class="clearfix"></div>
                 </div>
             </section>
-        {% endblock sub_header %}
+            {% endblock sub_header %}
 
-        <main id="content" class="enrolment-content">
             {% block content %}
             {% endblock content %}
         </main>
+				
         {% include LANGUAGE_BIDI|yesno:'bidi/footer.html,footer.html' %}
 
         <div id="global-app-error" class="app-error hidden"></div>

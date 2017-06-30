@@ -241,12 +241,7 @@ a .register-interest-btn {
   border: 1px solid #dedede;
   min-height: 250px;
   padding: 10px;
-  h2 {
-    font-size: 25px;
-    font-weight: 300;
-    line-height: 1.25em;
-    margin-top: 0;
-  }
+
   img {
     margin: 0;
     padding: 0px;
@@ -264,6 +259,12 @@ a .register-interest-btn {
     display: inline-block;
     padding: 4px;
     width: 68%;
+  }
+  .title {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 1.25em;
+    margin-top: 0;
   }
 }
 
@@ -415,14 +416,9 @@ a.ed-landing-page-see-more-button {
     width: 100%;
   }
   
-  .ed-landing-page-sector-companies-list .browse-companies-container,
-  .ed-landing-page-synopsis .search-companies-container {
+  .browse-companies-container,
+  .search-companies-container {
     padding: 10px 25px 25px 25px;
-    
-    h3 {
-      background-position: right center;
-      padding: 15px 51px 0 0;
-    }
   
     p {
       margin-bottom: 25px;
@@ -432,6 +428,11 @@ a.ed-landing-page-see-more-button {
     .button {
       position: static;
       width: 100%;
+    }
+    
+    .title {
+      background-position: right center;
+      padding: 15px 51px 0 0;
     }
   }
 }
