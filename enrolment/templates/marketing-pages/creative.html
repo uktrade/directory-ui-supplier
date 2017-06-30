@@ -3,6 +3,7 @@
 {% load trans from i18n %}
 {% load static from staticfiles %}
 
+{% block meta_description %}{% trans "From Shakespeare to Star Wars, the UK leads the world in arts, theatre, film, animation, games, architecture, graphic design and publishing" %}{% endblock %}
 {% block css_layout_class %}fas-marketing-page fas-creative{% endblock %}
 {% block hero_image %}{% static 'images/covers/creative.jpg' %}{% endblock %}
 {% block hero_title %}{% trans "Delivering exceptional creative services" %}{% endblock%}

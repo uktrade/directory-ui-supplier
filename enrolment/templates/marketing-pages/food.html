@@ -3,6 +3,7 @@
 {% load trans from i18n %}
 {% load static from staticfiles %}
 
+{% block meta_description %}{% trans "We're not just tea, cakes and whisky: our productive innovation and globally used production standards make the UK a leader in food and drink" %}{% endblock %}
 {% block css_layout_class %}fas-marketing-page fas-food{% endblock %}
 {% block hero_image %}{% static 'images/covers/food.jpg' %}{% endblock %}
 {% block hero_title %}{% trans "UK food and drink" %}{% endblock%}
