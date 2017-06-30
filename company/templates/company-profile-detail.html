@@ -4,6 +4,7 @@
 	<link href="{% static 'company-profile-details.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 {% block meta_description %}{{ social.description|truncatechars:150|linebreaks }}{% endblock %}
+{% block head_title %}{{company.name}}: trade profile{% endblock %}
 {% block hero_title %}Find a Buyer{% endblock %}
 {% block sub_header %}{% endblock %}
 {% block content %}
