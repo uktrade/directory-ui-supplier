@@ -1,4 +1,5 @@
 {% load static from staticfiles %}
+{% load trans from i18n %}
 
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
@@ -10,7 +11,7 @@
         <meta id="utmCookieDomain" value="{{ analytics.UTM_COOKIE_DOMAIN }}" />
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no">
-        <title>{% block head_title %}Find a Supplier - GOV.UK{% endblock %}</title>
+        <title>{% block head_title %}{% trans "Find trade profiles for reliable UK suppliers - trade.great.gov.uk" %}{% endblock %}</title>
         <!--[if IE 8]>
           <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
