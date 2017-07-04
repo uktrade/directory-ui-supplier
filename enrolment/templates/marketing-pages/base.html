@@ -1,6 +1,9 @@
 {% extends './govuk_layout.html' %}
 {% load static from staticfiles %}
 {% load trans from i18n %}
+{% block canonical_link %}
+	<link rel="canonical" href="https://trade.great.gov.uk{% url 'sector-detail-verbose' slug=slug %}" />
+{% endblock %}
 {% block css %}
 	<link href="{% static 'marketing-page.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
