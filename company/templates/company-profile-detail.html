@@ -142,7 +142,7 @@
 			<div class="row-fluid company-profile-module-container" style="margin-bottom: 0; border-bottom: 0;">
 				<div class="span6">
 					<div class="company-profile-module-inner company-profile-industries">
-						<h3>Industries of interest</h3>
+						<h2>Industries of interest</h2>
 						<p>
 						{% for sector in company.sectors %}
 							<a class="stone-label" href="{% url 'public-company-profiles-list' %}?sectors={{ sector.value }}">{{ sector.label }}</a>
@@ -155,7 +155,7 @@
 				</div>
 				<div class="span6">
 					<div class=" company-profile-module-inner company-profile-keywords">
-						<h3>Keywords</h3>
+						<h2>Keywords</h2>
 						{% for keyword in company.keywords %}
 							<a href="{% url 'company-search' %}?term={{ keyword }}" target="_self" class="ed-keyword dont-break-out">{{ keyword }}</a>{% if not forloop.last %}, {% endif %}
 						{% endfor %}
