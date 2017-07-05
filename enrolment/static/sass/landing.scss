@@ -403,6 +403,9 @@ a.ed-landing-page-see-more-button {
     position: static;
     width: 100%;
   }
+  .title {
+    padding-top: 0;
+  }
 }
 
 
@@ -430,8 +433,23 @@ a.ed-landing-page-see-more-button {
     
     .title {
       background-position: right center;
-      padding: 15px 51px 0 0;
+      margin-top: 5px;
+      padding: 10px 51px 0 0;
     }
+  }
+  
+  .ed-landing-page-sector-companies-list .browse-companies-container,
+  .ed-landing-page-synopsis .search-companies-container {
+    .title {
+      padding-top: 10px;
+    }
+  }
+  
+  .ed-landing-page-synopsis [class*="span"] {
+  	display: block;
+  	float: none;
+  	margin-left: 0;
+  	width: auto;
   }
 }
 
