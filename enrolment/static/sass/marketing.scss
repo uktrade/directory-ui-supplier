@@ -94,7 +94,7 @@
 
 /* Tablet 
  *******************/
-@media (max-width: 767px) {
+@media (max-width: 799px) {
   .ed-landing-page-sector-companies-list {
     .span4 {
       width: 48.61%;
@@ -111,7 +111,9 @@
       }
     }
   }
-  
+}
+
+@media (max-width: 767px) {  
   /* page class only to override bootstrap */
   .fas-marketing-page {    
     .case-study-info,

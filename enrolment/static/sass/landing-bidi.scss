@@ -16,17 +16,6 @@ body.bidi {
   }
 }
 
-.ed-landing-page-sector-companies-list {
-  .span4 {
-    padding-left: 0;
-    padding-right: 2.12%; /* based on Bootstrap measurement */
-    
-    &:first-child {
-    	padding-right: 0;
-    }
-  }
-}
-
 .ed-landing-page-synopsis {
   [class*="span"] {
     padding-left: 0;
@@ -36,6 +25,7 @@ body.bidi {
     }
   }
 }
+
 
 /* Tablet
  ******************/

@@ -23,6 +23,20 @@
   }
 }
 
+.ed-landing-page-sector-companies-list {
+  .span4 {
+    &:first-child {
+      padding-left: 10px;
+      padding-right: 0;
+    }
+    
+    &:last-child {
+      padding-left: 0;
+      padding-right: 10px;
+    }
+  }
+}
+
 .fas-manufacturing {
   .ed-hero-sub-header {
     background-image: url(/static/images/covers/Generic-Hero-arabic.jpg);
@@ -62,6 +76,23 @@
 
 /* Tablet 
  *******************/
+@media (max-width: 799px) {
+  .ed-landing-page-sector-companies-list {
+    .span4 {
+      
+      &:last-child {
+        margin-right: 0;
+        padding: 0;
+      }
+      
+      &:nth-child(2) {
+        padding-left: 0;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
 @media (max-width: 767px) {
   /* page class only to override bootstrap */
   .fas-marketing-page {
@@ -71,6 +102,21 @@
     
     .case-study-testomonial  {
       border-width: 0 0 10px 10px;
+    }
+  }
+}
+
+
+/* Mobile 
+ *******************/
+@media (max-width: 540px) {
+  .ed-landing-page-sector-companies-list {
+    .span4 {
+      &:first-child,
+      &:last-child,
+      &:nth-child(2) {
+        padding: 0;
+      }
     }
   }
 }
