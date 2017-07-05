@@ -316,6 +316,17 @@ a.ed-landing-page-see-more-button {
     font-weight: 300;
     font-size: 24px;
   }
+  
+  .span4 {
+    display: table-cell;
+    float: none;
+    padding-left: 2.12%; /* based on Bootstrap measurement */
+    vertical-align: top;
+    
+    &:first-child {
+    	padding-left: 0;
+    }
+  }
 }
 
 .ed-landing-page-sector-case-study-container {
