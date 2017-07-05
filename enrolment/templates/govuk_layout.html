@@ -50,10 +50,10 @@
 
         <main id="content" class="enrolment-content">
             {% block sub_header %}
-            <section class="ed-hero-sub-header">
+            <div class="ed-hero-sub-header">
                 <div class="container">
                     {% block hero_title_container %}
-                        <p class="ed-hero-sub-header-title">{% block hero_title %}{% endblock %}</p>
+                        <h1 class="ed-hero-sub-header-title">{% block hero_title %}{% endblock %}</h1>
                     {% endblock %}
                     <div class="row-fluid ed-hero-sub-header-synopsis">
                         <span class="span9">
@@ -62,7 +62,7 @@
                     </div>
                     <div class="clearfix"></div>
                 </div>
-            </section>
+            </div>
             {% endblock sub_header %}
 
             {% block content %}

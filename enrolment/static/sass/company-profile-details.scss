@@ -87,6 +87,9 @@
   .company-profile-industries,
   .company-profile-keywords {
     padding-top: 20px;
+    h2 {
+      font-size: 24.5px;
+    }
   }
   ul {
     li {
@@ -394,9 +397,30 @@
     border: 1px solid #dedede;
     margin-bottom: 20px;
     padding: 20px 20px 0 20px;
+    h2 {
+      font-size: 17.5px;
+    }
   }
 }
 
+.ed-company-profile-case-study-company-details {
+  h2 {
+    font-size: 18px;
+    line-height: 1.2em;
+    text-transform: uppercase;
+  }
+  
+  dd, dt {
+    display: inline;
+    font-weight: 100;
+  }
+
+  dd:after {
+  	content: "";
+  	display: block;
+  	margin-bottom: 10px;
+  }
+}
 
 .ed-envelope-container {
   margin-top: 40px; 
@@ -441,7 +465,7 @@
   color: #ffffff;
   padding-top: 50px;
   padding-bottom: 20px;
-  h2 {
+  h1 {
     font-size: 36px;
     font-weight: normal;
     font-style: normal;
