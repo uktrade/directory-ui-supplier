@@ -16,20 +16,28 @@ body.bidi {
   }
 }
 
-/* Tablet
- ******************/
-@media (min-width: 768px) {
-  
-  .browse-companies-container,
-  .search-companies-container {  
-    .title {
-      background-position: left center;
-      padding: 15px 0 0 51px;
+.ed-landing-page-synopsis {
+  [class*="span"] {
+    padding-left: 0;
+    
+    &:first-child {
+      padding-left: 2.12%; /* based on Bootstrap margin */
     }
   }
 }
 
+/* Tablet
+ ******************/
 @media (max-width: 768px) {
+  .browse-companies-container,
+  .search-companies-container {  
+    .title {
+      background-position: left center;
+      padding-left: 51px;
+      padding-right: 0;
+    }
+  }
+  
   .ed-proposition-container {
     .ed-key-facts-container {
       float: none;

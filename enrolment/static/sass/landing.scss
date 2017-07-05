@@ -446,10 +446,9 @@ a.ed-landing-page-see-more-button {
   }
   
   .ed-landing-page-synopsis [class*="span"] {
-  	display: block;
-  	float: none;
-  	margin-left: 0;
-  	width: auto;
+    display: block;
+    margin-left: 0;
+    width: auto;
   }
 }
 
@@ -462,6 +461,24 @@ a.ed-landing-page-see-more-button {
     }
   }
 }
+
+
+/* Desktop only */
+@media (min-width: 800px) {
+  .ed-landing-page-synopsis {
+    [class*="span"] {
+      display: table-cell;
+      float: none;
+      padding-left: 2.12%; /* based on Bootstrap margin */
+      vertical-align: top;
+    
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
 
 /* Mobile
  *****************/
