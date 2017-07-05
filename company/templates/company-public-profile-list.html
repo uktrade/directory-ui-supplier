@@ -8,10 +8,9 @@
 {% block head_title %}UK {{ selected_sector_label }} company trade profiles{% endblock %}
 {% block hero_title %}Browse UK company trade profiles{% endblock %}
 {% block sub_header %}
-	<h1 class="screen-reader-only">Find a Supplier</h1>
 	<div class="row-fluid public-company-profiles-search-form">
 		<div class="container">
-			<h2>Browse UK company profiles</h2>
+			<h1>Browse UK company profiles</h1>
 			<div class="span12">
 				<form action="" method="get">
 					<div class="span12">
@@ -34,6 +33,7 @@
 			<div class="row-fluid company-profile-details-body-toolbar">
 				<div class="span8">
 					{% if companies %}
+						<h2 class="screen-reader-only">UK companies in the {{ selected_sector_label }} industry</h2>
 						{% if show_companies_count %}
 							<span>Displaying {{ companies|length }} of {{ pagination.paginator.count }} {{ selected_sector_label }} {{pagination.paginator.count|pluralize:'company,companies'}}</span>
 						{% else %}

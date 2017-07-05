@@ -19,7 +19,7 @@
 		<div class="company-profile-module-container ed-case-study-details-container ed-special-bottom-border">
 			<div class="company-profile-module-inner">
 				<div class="row-fluid">
-					<h3>{{ case_study.title }}</h3>
+					<h2>{{ case_study.title }}</h2>
 				</div>
 				{% if case_study.image_one %}
 					<div class="row-fluid">
@@ -72,7 +72,7 @@
 						</p>
 						
 						<div class="contact-details">
-							<h4 style="margin-top: 0;">Contact</h4>
+							<h2 style="margin-top: 0;">Contact</h2>
 							<p class="ed-truncate-single-line">
 								<a class="ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=case_study.company.number %}">Email company</a>
 							</p>
@@ -82,16 +82,13 @@
 						</div>
 						
 						<div class="ed-company-profile-case-study-company-details">
-							<p>
-								<b>{{ case_study.company.name }}</b>
-							</p>
-							<p>
-								<span>Incorporated: </span>{{ case_study.company.date_of_creation|date:'Y' }}
-							</p>
-							<p>
-								<span>Industry: </span>
-								<span>{{ case_study.sector.label }}</span>
-							</p>
+							<h2>{{ case_study.company.name }}</h2>
+							<dl>
+								<dt>Incorporated: </dt>
+								<dd>{{ case_study.company.date_of_creation|date:'Y' }}</dd>
+								<dt>Industry: </dt>
+								<dd>{{ case_study.sector.label }}</dd>
+							</dl>
 						</div>
 						{% if case_study.testimonial %}
 							<div class="ed-company-profile-case-study-testomonial-container">
