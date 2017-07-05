@@ -7,12 +7,13 @@
     <head>
         {% include 'google_tag_manager_head.html' %}
         {% include 'social.html' %}
-        <meta name="description" content="{% block meta_description %}Find the right UK company to do business with from thousands of international trade profiles{% endblock %}">
+        <meta name="description" content="{% block meta_description %}Find suppliers of products and services and build your import supply chain from reliable, innovative British companies{% endblock %}">
         <meta id="utmCookieDomain" value="{{ analytics.UTM_COOKIE_DOMAIN }}" />
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no">
         <title>{% block head_title %}{% trans "Find trade profiles of reliable UK suppliers - trade.great.gov.uk" %}{% endblock %}</title>
         {% block canonical_link %}{% endblock %}
+
         <!--[if IE 8]>
           <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -51,10 +52,10 @@
 
         <main id="content" class="enrolment-content">
             {% block sub_header %}
-            <section class="ed-hero-sub-header">
+            <div class="ed-hero-sub-header">
                 <div class="container">
                     {% block hero_title_container %}
-                        <p class="ed-hero-sub-header-title">{% block hero_title %}{% endblock %}</p>
+                        <h1 class="ed-hero-sub-header-title">{% block hero_title %}{% endblock %}</h1>
                     {% endblock %}
                     <div class="row-fluid ed-hero-sub-header-synopsis">
                         <span class="span9">
@@ -63,7 +64,7 @@
                     </div>
                     <div class="clearfix"></div>
                 </div>
-            </section>
+            </div>
             {% endblock sub_header %}
 
             {% block content %}
