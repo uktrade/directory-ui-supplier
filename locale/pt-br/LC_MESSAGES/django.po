@@ -19,7 +19,7 @@ msgstr ""
 
 #: enrolment/constants.py:14
 msgid "Rebekah Marine: i-limb&trade; user"
-msgstr ""
+msgstr "Rebekah Marine: usuária do i-limbTM"
 
 #: enrolment/constants.py:17
 msgid ""
@@ -27,7 +27,11 @@ msgid ""
 "through world-leading prosthetic technologies. We have a range of "
 "myoelectric prosthetic hands and prosthetic fingers that help people "
 "increase their independence and confidence."
-msgstr ""
+msgstr 
+"A Touch Bionics transformou milhares de vidas em dezenas de países, "
+"com tecnologias de próteses líderes mundiais. Temos uma variedade de "
+"próteses mioelétricas de mãos e dedos que ajudam as pessoas a aumentar sua "
+"independência e confiança."
 
 #: enrolment/constants.py:25
 msgid ""
@@ -38,25 +42,25 @@ msgstr ""
 
 #: enrolment/constants.py:29
 msgid "Jason"
-msgstr ""
+msgstr "Jason"
 
 #: enrolment/constants.py:30
 msgid "i-limb quantum&trade; user"
-msgstr ""
+msgstr "Usuário do i-limb quantum™"
 
 #: enrolment/constants.py:34
 #: enrolment/templates/bidi/landing-page-sector-list.html:42
 #: enrolment/templates/landing-page-sector-list.html:40
 msgid "Healthcare and life sciences"
-msgstr ""
+msgstr "Ciências da saúde e da vida"
 
 #: enrolment/constants.py:38 enrolment/constants.py:97
 msgid "Technology"
-msgstr ""
+msgstr "Tecnologia"
 
 #: enrolment/constants.py:43
 msgid "prosthetics, bionics, robotics, healthcare, technology, limb loss"
-msgstr ""
+msgstr "prótese, biônico, robótica, saúde, tecnologia, perda de membro"
 
 #: enrolment/constants.py:51
 msgid ""
@@ -64,6 +68,9 @@ msgid ""
 "reflux diagnostic test. RD Biomed specialises in diagnostics for "
 "gastroenterology and respiratory conditions."
 msgstr ""
+"A RD Biomed projetou e criou o Peptest™, primeiro teste não invasivo no "
+"mundo para diagnóstico de refluxo. A RD Biomed é especialista no diagnóstico de "
+"condições gastrenterológicas e respiratórias."
 
 #: enrolment/constants.py:62
 msgid ""
@@ -71,6 +78,9 @@ msgid ""
 "bionic hand with 5 independently moving fingers, transforming lives across "
 "the globe."
 msgstr ""
+"A Touch Bionics é responsável por desenvolver e aprimorar a primeira mão biônica do mundo "
+"com cinco dedos que se movem de maneira independente, transformando vidas em "
+"todo o mundo."
 
 #: enrolment/constants.py:78
 msgid ""
@@ -80,6 +90,11 @@ msgid ""
 "enables the complex, interlinked hierarchy of component parts, finished "
 "product, batches, cases and pallets can be identified and mapped."
 msgstr ""
+"A solução de rastreabilidade comercial de Internet das Coisas da EVRYTHNG permite "
+"que as marcas rastreiem e informem o status, a localização e o histórico "
+"de tudo o que elas produzem, desde a fabricação até as residências. O modelo flexível "
+de dados da EVRYTHNG permite que a hierarquia complexa e interligada de componentes, "
+"produtos acabados, lotes, caixas e paletes possa ser identificada e mapeada."
 
 #: enrolment/constants.py:88
 msgid ""
@@ -87,10 +102,14 @@ msgid ""
 "cloud by adding an intelligent, personalised layer of digital content, "
 "services and data analytics."
 msgstr ""
+"As empresas podem transformar o valor de seus ativos físicos na nuvem da EVRYTHNG, "
+"adicionando uma camada inteligente e personalizada de conteúdo digital, "
+"serviços e análise de dados."
 
 #: enrolment/constants.py:102
 msgid "Internet of Things, data analytics, traceability, connectivity"
 msgstr ""
+"Internet das Coisas, análise de dados, rastreabilidade, conectividade"
 
 #: enrolment/constants.py:110
 msgid ""
@@ -100,6 +119,13 @@ msgid ""
 "smartphones, to fully-connected smart home appliances, each individual item "
 "managed in the EVRYTHNG cloud has a unique Active Digital Identity"
 msgstr ""
+"A EVRYTHNG é uma empresa de software de Internet das Coisas que ajuda os "
+"fabricantes a digitalizar seus produtos físicos conectando-os à Internet. Desde "
+"produtos embalados de consumo diário, conectados por meio de embalagens "
+"inteligentes e smartphones, a dispositivos domésticos inteligentes totalmente "
+"conectados, cada item individual gerenciado na nuvem da EVRYTHNG possui "
+"uma exclusiva identidade digital ativa"
+"
 
 #: enrolment/constants.py:124
 msgid ""
@@ -108,6 +134,11 @@ msgid ""
 "wireless technology. It provides enterprises with a secure and future-proof "
 "mobility platform that is easy to adopt, integrate and scale."
 msgstr ""
+"A Arkessa permite que os desenvolvedores de dispositivos e aplicativos se "
+"conectem à Internet das Coisas (IoT), independentemente da localização, do "
+"operador de rede ou da tecnologia sem fio. Ela fornece às empresas uma "
+"plataforma de mobilidade segura e preparada para o futuro, que é fácil de "
+"adotar, integrar e dimensionar."
 
 #: enrolment/constants.py:143
 msgid ""
@@ -116,22 +147,27 @@ msgid ""
 "entire technical event, which included projection mapping on the mansion and "
 "a 2m ball and consulting on live-camera press shot positions"
 msgstr ""
+"For Adidas’ 2014 World Cup campaign, Immersive developed concepts, "
+"storyboards and produced final audio and video designs. It also produced "
+"the entire technical event, which included projection mapping on the mansion "
+"and a 2m ball and consulting on live-camera press shot positions"
 
 #: enrolment/constants.py:151
 msgid "Creating the grandest projection mapping the world has ever seen."
 msgstr ""
+"Criando o maior mapeamento de projeção que o mundo já viu."
 
 #: enrolment/constants.py:154
 msgid "Fast Company magazine"
-msgstr ""
+msgstr "Revista Fast Company"
 
 #: enrolment/constants.py:158
 msgid "Creative"
-msgstr ""
+msgstr "Criatividade"
 
 #: enrolment/constants.py:163
 msgid "Interactive installations, video content, projection mapping"
-msgstr ""
+msgstr "Instalações interativas, conteúdo de vídeo, mapeamento de projeção"
 
 #: enrolment/constants.py:171
 msgid ""
@@ -140,6 +176,10 @@ msgid ""
 "projection, virtual reality and augmented reality) to design and create "
 "cutting-edge lighting, video and interactive installations."
 msgstr ""
+"A Immersive é uma fornecedora de soluções completas para projetos "
+"audiovisuais de qualquer tamanho. A Immersive usa a nova tecnologia de mídia "
+"(como LED, hologramas, projeção, realidade virtual e realidade aumentada) "
+"para projetar e criar iluminação de ponta, vídeo e instalações interativas."
 
 #: enrolment/constants.py:183
 msgid ""
@@ -147,10 +187,13 @@ msgid ""
 "image-recognition technology and artificial intelligence to bring the "
 "physical world to life through smartphones."
 msgstr ""
+"O Blippar é o principal aplicativo de detecção visual, que aproveita a "
+"realidade aumentada, a tecnologia de reconhecimento de imagem e a "
+"inteligência artificial para dar vida ao mundo físico usando smartphones."
 
 #: enrolment/constants.py:197 enrolment/constants.py:198
 msgid "Clementine and cinnamon tonic water"
-msgstr ""
+msgstr "Água tônica de canela e tangerina"
 
 #: enrolment/constants.py:200
 msgid ""
@@ -167,7 +210,7 @@ msgstr ""
 
 #: enrolment/constants.py:210
 msgid "Tim Warrillow"
-msgstr ""
+msgstr "Tim Warrillow"
 
 #: enrolment/constants.py:215
 #: enrolment/templates/bidi/landing-page-sector-list.html:88
