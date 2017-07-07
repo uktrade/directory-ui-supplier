@@ -93,7 +93,7 @@ msgstr ""
 "A solução de rastreabilidade comercial de Internet das Coisas da EVRYTHNG permite "
 "que as marcas rastreiem e informem o status, a localização e o histórico "
 "de tudo o que elas produzem, desde a fabricação até as residências. O modelo flexível "
-de dados da EVRYTHNG permite que a hierarquia complexa e interligada de componentes, "
+"de dados da EVRYTHNG permite que a hierarquia complexa e interligada de componentes, "
 "produtos acabados, lotes, caixas e paletes possa ser identificada e mapeada."
 
 #: enrolment/constants.py:88
@@ -201,12 +201,16 @@ msgid ""
 "range of fourteen products sourced from the highest quality natural "
 "ingredients for the best tasting mixers."
 msgstr ""
+"A Fever-Tree estabeleceu-se como especialista em bebidas mixer, criando uma "
+"variedade de catorze produtos provenientes dos ingredientes naturais da mais "
+"alta qualidade para as misturas mais saborosas."
 
 #: enrolment/constants.py:207
 msgid ""
 "If three-quarters of your gin and tonic is the tonic, make sure you use the "
 "best."
-msgstr ""
+msgstr "Se 3/4 de sua gin e tônica é a tônica, não deixe de usar o que há "
+"de melhor."
 
 #: enrolment/constants.py:210
 msgid "Tim Warrillow"
@@ -216,11 +220,11 @@ msgstr "Tim Warrillow"
 #: enrolment/templates/bidi/landing-page-sector-list.html:88
 #: enrolment/templates/landing-page-sector-list.html:87
 msgid "Food and drink"
-msgstr ""
+msgstr "Comida e bebida"
 
 #: enrolment/constants.py:219
 msgid "Mixers, Quality, Taste"
-msgstr ""
+msgstr "Mixers, qualidade, sabor"
 
 #: enrolment/constants.py:226
 msgid ""
@@ -229,12 +233,18 @@ msgid ""
 "and the kernels are all air-popped – a healthier cooking method compared to "
 "frying."
 msgstr ""
+"Toda a pipoca da Joe & Seph’s é feita artesanalmente em pequenos lotes "
+"para garantir uma textura superior e um sabor intenso. Os ingredientes "
+"utilizados são 100% naturais e os grãos estouram no ar, um método de "
+"cozimento mais saudável em relação à fritura."
 
 #: enrolment/constants.py:238
 msgid ""
 "Fever-Tree has pioneered premium mixers and is now the world’s leading "
 "premium mixer company."
 msgstr ""
+"A Fever-Tree foi pioneira em bebidas mixer de alta qualidade e agora é a "
+"principal empresa do mundo nesse segmento."
 
 #: enrolment/constants.py:286
 msgid "Queen Elizabeth Olympic Park, London"
@@ -274,15 +284,16 @@ msgstr ""
 
 #: enrolment/forms.py:19 enrolment/forms.py:41
 msgid "Please select an industry"
-msgstr ""
+msgstr "Selecione o setor"
 
 #: enrolment/forms.py:21 enrolment/forms.py:43
 msgid "Tick the box to confirm you agree to the terms and conditions."
-msgstr ""
+msgstr "Marque esta caixa para confirmar que você concorda com os termos "
+"e condições."
 
 #: enrolment/forms.py:24 enrolment/forms.py:46
 msgid "Your name"
-msgstr ""
+msgstr "Seu nome"
 
 #: enrolment/forms.py:25 enrolment/forms.py:47
 msgid "Email address"
@@ -290,15 +301,15 @@ msgstr ""
 
 #: enrolment/forms.py:27
 msgid "Industry"
-msgstr ""
+msgstr "Setor"
 
 #: enrolment/forms.py:32
 msgid "Company name"
-msgstr ""
+msgstr "Nome da empresa"
 
 #: enrolment/forms.py:33 enrolment/forms.py:49
 msgid "Country"
-msgstr ""
+msgstr "País"
 
 #: enrolment/forms.py:48
 msgid "Organisation name"
@@ -306,62 +317,63 @@ msgstr ""
 
 #: enrolment/forms.py:51
 msgid "Describe what you need"
-msgstr ""
+msgstr "
+"
 
 #: enrolment/forms.py:52
 msgid "Maximum 1000 characters."
-msgstr ""
+msgstr "No máximo 1.000 caracteres."
 
 #: enrolment/templates/bidi/footer.html:11 enrolment/templates/footer.html:11
 msgid "Department for International Trade"
-msgstr ""
+msgstr "Ministério do Comércio Internacional do Reino Unido"
 
 #: enrolment/templates/bidi/footer.html:17 enrolment/templates/footer.html:17
 msgid "Contact us"
-msgstr ""
+msgstr "Fale conosco"
 
 #: enrolment/templates/bidi/footer.html:23 enrolment/templates/footer.html:23
 msgid "Privacy and cookies"
-msgstr ""
+msgstr "Privacidade e cookies"
 
 #: enrolment/templates/bidi/footer.html:29 enrolment/templates/footer.html:29
 msgid "Terms &amp; conditions"
-msgstr ""
+msgstr "Termos e condições"
 
 #: enrolment/templates/bidi/footer.html:42 enrolment/templates/footer.html:42
 msgid "Crown Copyright 2016"
-msgstr ""
+msgstr "Crown Copyright 2016"
 
 #: enrolment/templates/bidi/header.html:30 enrolment/templates/header.html:30
 msgid "Home"
-msgstr ""
+msgstr "Início"
 
 #: enrolment/templates/bidi/header.html:34 enrolment/templates/header.html:34
 #: enrolment/templates/search-companies.html:15
 msgid "Find a supplier"
-msgstr ""
+msgstr "Encontrar um fornecedor"
 
 #: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:36
 msgid "Find a Supplier"
-msgstr ""
+msgstr "Encontrar um fornecedor"
 
 #: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:40
 #: enrolment/templates/marketing-pages/base.html:102
 #: enrolment/templates/marketing-pages/bidi/base.html:93
 msgid "Industries"
-msgstr ""
+msgstr "Indústrias"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:12
 #: enrolment/templates/landing-page-sector-list.html:11
 msgid "Discover the UK's capability in these key industries"
-msgstr ""
+msgstr "Descubra a capacidade do Reino Unido nesses setores importantes"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:22
 #: enrolment/templates/bidi/landing-page.html:52
 #: enrolment/templates/landing-page-sector-list.html:20
 #: enrolment/templates/landing-page.html:48
 msgid "UK industries"
-msgstr ""
+msgstr "Setores do Reino Unido"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:29
 #: enrolment/templates/landing-page-sector-list.html:27
@@ -384,7 +396,7 @@ msgstr ""
 #: enrolment/templates/landing-page-sector-list.html:43
 #: enrolment/templates/landing-page.html:57
 msgid "Healthcare and life sciences in the UK"
-msgstr ""
+msgstr "Ciências da vida e da saúde no Reino Unido"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:47
 #: enrolment/templates/bidi/landing-page.html:63
@@ -400,45 +412,46 @@ msgstr ""
 #: enrolment/templates/landing-page-sector-list.html:48
 #: enrolment/templates/landing-page.html:63
 msgid "Find out more about the UK’s healthcare and life sciences"
-msgstr ""
+msgstr "Saiba mais sobre as ciências da vida e da saúde no Reino Unido"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:56
 #: enrolment/templates/landing-page-sector-list.html:54
 msgid "Advanced technology"
-msgstr ""
+msgstr "Tecnologia avançada"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:59
 #: enrolment/templates/bidi/landing-page.html:77
 #: enrolment/templates/landing-page-sector-list.html:57
 #: enrolment/templates/landing-page.html:73
 msgid "The UK's advanced technology"
-msgstr ""
+msgstr "A tecnologia avançada do Reino Unido"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:61
 #: enrolment/templates/landing-page-sector-list.html:59
 msgid ""
 "Check out the cutting-edge technological innovations that the UK is bringing "
 "to the world."
-msgstr ""
+msgstr "Confira as mais recentes inovações tecnológicas que o Reino Unido está "
+"trazendo para o mundo."
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:65
 #: enrolment/templates/bidi/landing-page.html:84
 #: enrolment/templates/landing-page-sector-list.html:64
 #: enrolment/templates/landing-page.html:81
 msgid "Find out more about UK technology"
-msgstr ""
+msgstr "Descubra mais sobre a tecnologia do Reino Unido"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:73
 #: enrolment/templates/landing-page-sector-list.html:72
 msgid "Creative services"
-msgstr ""
+msgstr "Serviços criativos"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:76
 #: enrolment/templates/bidi/landing-page.html:96
 #: enrolment/templates/landing-page-sector-list.html:75
 #: enrolment/templates/landing-page.html:93
 msgid "The UK's creative services"
-msgstr ""
+msgstr "Os serviços criativos do Reino Unido"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:78
 #: enrolment/templates/landing-page-sector-list.html:77
@@ -452,19 +465,21 @@ msgstr ""
 #: enrolment/templates/landing-page-sector-list.html:81
 #: enrolment/templates/landing-page.html:100
 msgid "Find out more about the UK’s creative services"
-msgstr ""
+msgstr "Saiba mais sobre os serviços criativos do Reino Unido"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:91
 #: enrolment/templates/landing-page-sector-list.html:90
 msgid "The UK’s food and drink"
-msgstr ""
+msgstr "A comida e a bebida do Reino Unido"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:93
 #: enrolment/templates/landing-page-sector-list.html:92
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "should be first on your list."
-msgstr ""
+msgstr "Se o que você procura são as marcas de alimentos mais inovadoras ou "
+"bebidas de qualidade excepcional, o Reino Unido precisa estar no topo da "
+"sua lista."
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:97
 #: enrolment/templates/bidi/landing-page.html:120
@@ -483,28 +498,32 @@ msgstr ""
 #: enrolment/templates/bidi/landing-page.html:22
 #: enrolment/templates/landing-page.html:18
 msgid "Find UK companies to do business with"
-msgstr ""
+msgstr "Saiba mais sobre a comida e a bebida do Reino Unido"
 
 #: enrolment/templates/bidi/landing-page.html:33
 #: enrolment/templates/landing-page.html:26
 msgid ""
 "The UK is a great place to find innovative, high-quality products and "
 "services."
-msgstr ""
+msgstr "O Reino Unido é um ótimo lugar para encontrar produtos e serviços "
+"inovadores e de alta qualidade."
 
 #: enrolment/templates/bidi/landing-page.html:36
 #: enrolment/templates/landing-page.html:29
 msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
-msgstr ""
+msgstr "Você pode fazer as relações comerciais certas no Reino Unido com "
+"corporações globais e empresas de porte menor em todos os setores."
 
 #: enrolment/templates/bidi/landing-page.html:39
 #: enrolment/templates/landing-page.html:32
 msgid ""
 "UK companies work with businesses and governments around the world to run "
 "high quality services and deliver the best experiences."
-msgstr ""
+msgstr "As empresas do Reino Unido trabalham com companhias e governos do "
+"mundo todo para criar novos ambientes de trabalho e de convívio, entregando "
+"serviços de alta qualidade e proporcionando as melhores experiências."
 
 #: enrolment/templates/bidi/landing-page.html:42
 #: enrolment/templates/landing-page.html:35
@@ -517,13 +536,15 @@ msgstr ""
 #: enrolment/templates/landing-page.html:38
 msgid ""
 "Choose from the hundreds of businesses in the UK to work with you today."
-msgstr ""
+msgstr "Escolha hoje mesmo entre as centenas de empresas do Reino Unido com as "
+"quais você pode trabalhar."
 
 #: enrolment/templates/bidi/landing-page.html:79
 #: enrolment/templates/landing-page.html:75
 msgid ""
 "Check out the cutting-edge technologies that the UK is bringing to the world."
-msgstr ""
+msgstr "Confira as mais recentes inovações tecnológicas que o Reino Unido está trazendo "
+"para o mundo."
 
 #: enrolment/templates/bidi/landing-page.html:98
 #: enrolment/templates/landing-page.html:95
@@ -531,65 +552,70 @@ msgstr ""
 msgid ""
 "Whether you need buildings designed, films made or a fresh approach to "
 "marketing, the UK is the first place to look."
-msgstr ""
+msgstr "Se você precisa projetar edifícios, fazer filmes ou obter uma nova "
+"estratégia de marketing, o Reino Unido é a primeira opção."
 
 #: enrolment/templates/bidi/landing-page.html:113
 #: enrolment/templates/landing-page.html:110
 msgid "The UK's food and drink"
-msgstr ""
+msgstr "A comida e a bebida do Reino Unido"
 
 #: enrolment/templates/bidi/landing-page.html:115
 #: enrolment/templates/landing-page.html:112
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "is the first place to look."
-msgstr ""
+msgstr "Se o que você procura são as marcas de alimentos mais inovadoras ou bebidas "
+"de qualidade excepcional, o Reino Unido precisa estar no topo da sua lista."
 
 #: enrolment/templates/bidi/lead-generation-form.html:6
 #: enrolment/templates/lead-generation-form.html:6
 msgid "Get UK companies to fulfil your business needs"
-msgstr ""
+msgstr "Encontre empresas do Reino Unido que atendem às suas necessidades de negócio"
 
 #: enrolment/templates/bidi/lead-generation-form.html:12
 #: enrolment/templates/lead-generation-form.html:12
 msgid ""
 "Tell us what kind of goods or services you need. We'll put you in touch with "
 "relevant UK suppliers."
-msgstr ""
+msgstr "Informe o tipo de produto ou serviço de que você necessita. Vamos colocar "
+"você em contato com fornecedores relevantes do Reino Unido."
 
 #: enrolment/templates/bidi/lead-generation-form.html:77
 #: enrolment/templates/lead-generation-form.html:90
 msgid "Send"
-msgstr ""
+msgstr "Enviar"
 
 #: enrolment/templates/bidi/lead-generation-form.html:84
 #: enrolment/templates/lead-generation-form.html:85
 msgid "I agree to the great.gov.uk terms and conditions"
-msgstr ""
+msgstr "Concordo com os termos e condições do site great.gov.uk."
 
 #: enrolment/templates/browse-companies.html:4
 msgid "Find other great UK companies"
-msgstr ""
+msgstr "Encontrar empresas excelentes no Reino Unido"
 
 #: enrolment/templates/browse-companies.html:7
 #: enrolment/templates/search-companies.html:11
 msgid ""
 "Exceptional and creative UK trade partners are ready to work with you. "
 "Discover them on the Find a Supplier service."
-msgstr ""
+msgstr Parceiros comerciais excepcionalmente inovadores e criativos do Reino "
+"Unido estão prontos para trabalhar com você. Encontre-os no serviço ""
+"Encontrar um fornecedor.""
 
 #: enrolment/templates/browse-companies.html:11
 #: enrolment/templates/search-companies.html:17
 msgid "Browse UK companies"
-msgstr ""
+msgstr "Procurar perfis de empresas do Reino Unido"
 
 #: enrolment/templates/language_switcher.html:8
 msgid "Select"
-msgstr ""
+msgstr "Selecionar"
 
 #: enrolment/templates/language_switcher.html:13
 msgid "Page in English only"
-msgstr ""
+msgstr "Esta página está disponível somente em inglês"
 
 #: enrolment/templates/marketing-pages/base.html:19
 #: enrolment/templates/marketing-pages/bidi/base.html:23
