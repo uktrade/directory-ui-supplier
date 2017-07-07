@@ -620,12 +620,12 @@ msgstr "Esta página está disponível somente em inglês"
 #: enrolment/templates/marketing-pages/base.html:19
 #: enrolment/templates/marketing-pages/bidi/base.html:23
 msgid "Find your UK trade partner"
-msgstr ""
+msgstr "Encontre o seu parceiro comercial no Reino Unido"
 
 #: enrolment/templates/marketing-pages/base.html:47
 #: enrolment/templates/marketing-pages/bidi/base.html:56
 msgid "The company"
-msgstr ""
+msgstr "A empresa"
 
 #: enrolment/templates/marketing-pages/base.html:55
 #: enrolment/templates/marketing-pages/bidi/base.html:64
@@ -635,70 +635,78 @@ msgstr ""
 #: enrolment/templates/marketing-pages/base.html:70
 #: enrolment/templates/marketing-pages/bidi/base.html:74
 msgid "Company showcase"
-msgstr ""
+msgstr "Leia mais sobre a empresa"
 
 #: enrolment/templates/marketing-pages/base.html:85
 #: enrolment/templates/marketing-pages/bidi/base.html:114
 msgid "Read case study"
-msgstr ""
+msgstr "Leia o estudo de caso"
 
 #: enrolment/templates/marketing-pages/base.html:110
 #: enrolment/templates/marketing-pages/bidi/base.html:99
 msgid "keywords"
-msgstr ""
+msgstr "Palavras-chave:"
 
 #: enrolment/templates/marketing-pages/bidi/base.html:77
 msgid "case study"
-msgstr ""
+msgstr "Estudo de caso"
 
 #: enrolment/templates/marketing-pages/creative.html:7
 msgid "Delivering exceptional creative services"
-msgstr ""
+msgstr "Prestação de serviços criativos excepcionais"
 
 #: enrolment/templates/marketing-pages/creative.html:11
 msgid "Read more about creative services"
-msgstr ""
+msgstr "Leia mais sobre a serviços criativos"
 
 #: enrolment/templates/marketing-pages/creative.html:17
 msgid ""
 "If you need intelligent, creative ideas and rich, high-quality designs and "
 "media, look no further than the UK"
-msgstr ""
+msgstr "Se você precisa de ideias inteligentes e criativas e de projetos e mídias "
+"ricos e de alta qualidade, procure direto no Reino Unido."
 
 #: enrolment/templates/marketing-pages/creative.html:19
 msgid ""
 "Creative companies in the UK are responsible for producing big budget "
 "movies, designing fashionable furniture fabrics and developing world-class "
 "computer games."
-msgstr ""
+msgstr "As empresas criativas do Reino Unido são responsáveis por produzir "
+"filmes de grande orçamento, projetar tecidos de mobiliário moderno e "
+"desenvolver jogos de computador de nível mundial."
 
 #: enrolment/templates/marketing-pages/creative.html:26
 msgid "Work with the best in film, TV and visual effects"
-msgstr ""
+msgstr "Trabalhe com o que há de melhor em filmes, TV e efeitos visuais"
 
 #: enrolment/templates/marketing-pages/creative.html:27
 msgid "The UK is one of the world's largest makers of original content."
-msgstr ""
+msgstr "O Reino Unido é um dos maiores criadores de conteúdo original do mundo."
 
 #: enrolment/templates/marketing-pages/creative.html:28
 msgid ""
 "We are the home of films such as Star Wars and offer state-of-the-art studio "
 "facilities suitable for big movie productions and an amazing diversity of "
 "film locations."
-msgstr ""
+msgstr "Somos o celeiro de filmes como Star Wars e oferecemos estúdios de última geração, "
+"adequados para grandes produções cinematográficas, além de uma incrível "
+"diversidade de locais para filmagem."
 
 #: enrolment/templates/marketing-pages/creative.html:29
 msgid ""
 "At the heart of the UK’s creative industry is its award-winning film and "
 "television production comprising more than 1,500 independent TV companies in "
 "the UK."
-msgstr ""
+msgstr "No coração da indústria criativa do Reino Unido está sua premiada produção "
+"de cinema e televisão, composta por mais de 1.500 empresas de TV "
+"independentes no Reino Unido."
 
 #: enrolment/templates/marketing-pages/creative.html:30
 msgid ""
 "We're also the world leaders in exporting TV formats and localising those "
 "first commissioned in the UK."
-msgstr ""
+msgstr "Nós também somos líderes mundiais na exportação de formatos de TV e na "
+"localização dos primeiros formatos comissionados no Reino Unido."
 
 #: enrolment/templates/marketing-pages/creative.html:34
 #: enrolment/templates/marketing-pages/food.html:45
@@ -706,55 +714,62 @@ msgstr ""
 #: enrolment/templates/marketing-pages/sports-infrastructure.html:32
 #: enrolment/templates/marketing-pages/tech.html:40
 msgid "Key facts"
-msgstr ""
+msgstr "Fatos importantes"
 
 #: enrolment/templates/marketing-pages/creative.html:36
 msgid "UK companies gave the world £19.1 billion of creative services in 2014"
-msgstr ""
+msgstr "As empresas do Reino Unido produziram GBP 19,1 bilhões em serviços criativos em 2014"
 
 #: enrolment/templates/marketing-pages/creative.html:37
 #, python-format
 msgid "9%% of all UK service exports are in the creative services in 2014"
-msgstr ""
+msgstr "9% de todas as exportações de serviços do Reino Unido foram de serviços criativos em 2014"
 
 #: enrolment/templates/marketing-pages/creative.html:38
 #, python-format
 msgid "Growth of creative services exports was 10.9%% in 2014"
-msgstr ""
+msgstr "O crescimento das exportações de serviços criativos foi de 10,9% em 2014"
 
 #: enrolment/templates/marketing-pages/creative.html:46
 msgid "Our creative digital experience"
-msgstr ""
+msgstr "Nossa experiência digital criativa"
 
 #: enrolment/templates/marketing-pages/creative.html:48
 msgid ""
 "The UK has one of the most world's most advanced games industries, with more "
 "than 30 years experience of innovation and commercial success."
-msgstr ""
+msgstr "O Reino Unido tem uma das indústrias de jogos mais avançadas do mundo, com "
+"mais de 30 anos de experiência em inovação e sucesso comercial."
 
 #: enrolment/templates/marketing-pages/creative.html:51
 msgid ""
 "UK games companies have adopted social and mobile platforms, with more than "
 "a third of UK studios focusing on the mobile market."
-msgstr ""
+msgstr "As empresas de jogos do Reino Unido adotaram plataformas sociais e móveis, "
+"com mais de um terço dos estúdios no Reino Unido focados no mercado móvel."
 
 #: enrolment/templates/marketing-pages/creative.html:54
 msgid ""
 "The UK's augmented reality specialists create immersive experiences that "
 "help further the creative reach of the likes of National Geographic and "
 "Universal Studios."
-msgstr ""
+msgstr "Os especialistas em realidade aumentada do Reino Unido criam experiências "
+"imersivas que ajudam a ampliar o alcance de estúdios como a National "
+"Geographic e a Universal Studios."
 
 #: enrolment/templates/marketing-pages/creative.html:58
 msgid "A publishing powerhouse"
-msgstr ""
+msgstr "Uma potência editorial"
 
 #: enrolment/templates/marketing-pages/creative.html:60
 msgid ""
 "The publishing sector in the UK has pioneered new print formats and "
 "commercial models alongside moving content online. British news journalism "
 "remains a powerful force, uncovering important stories around the world."
-msgstr ""
+msgstr "O setor editorial no Reino Unido foi pioneiro em novos formatos de "
+"impressão e modelos comerciais e também na movimentação de conteúdo "
+"on-line. O jornalismo de notícias britânico continua sendo uma força "
+"poderosa, descobrindo histórias importantes em todo o mundo."
 
 #: enrolment/templates/marketing-pages/creative.html:63
 msgid ""
@@ -762,41 +777,50 @@ msgid ""
 "property rights negotiation and the sale and distribution of content. Half "
 "of the top 20 global box office successes of the last 11 years were based on "
 "novels by UK writers."
-msgstr ""
+msgstr "A London Book Fair é um dos principais eventos mundiais de negociação "
+"de direitos de propriedade intelectual e venda e distribuição de conteúdo. "
+"Metade dos 20 maiores sucessos de bilheteria globais dos últimos 11 anos "
+"basearam-se em romances de escritores do Reino Unido."
 
 #: enrolment/templates/marketing-pages/creative.html:67
 msgid "UK design talent is bringing beauty and strength to the world"
-msgstr ""
+msgstr "O talento para designs do Reino Unido traz beleza e força para o mundo"
 
 #: enrolment/templates/marketing-pages/creative.html:69
 msgid ""
 "UK architects are responsible for some of the world’s most stunning "
 "buildings, such as the Galaxy Soho urban village in Beijing and reshaping "
 "environments, such as Singapore’s Gardens by the Bay."
-msgstr ""
+msgstr "Os arquitetos do Reino Unido são responsáveis​por alguns dos "
+"edifícios mais impressionantes do mundo, como a vila urbana Galaxy "
+"Soho em Pequim, e ambientes reformados, como os Jardins da Baía de Cingapura."
 
 #: enrolment/templates/marketing-pages/creative.html:72
 msgid ""
 "We're also responsible for designing usable industrial and commercial spaces "
 "such as the new Spaceport America."
-msgstr ""
+msgstr "Também somos responsáveis por projetar espaços industriais e comerciais "
+"utilizáveis, como o novo Spaceport America."
 
 #: enrolment/templates/marketing-pages/creative.html:75
 msgid ""
 "As well as designing the built environment, UK firms are designing vehicles "
 "and interiors around the world: including helping to design the world’s "
 "fastest passenger train in China."
-msgstr ""
+msgstr "Além de projetar o ambiente construído, as empresas do Reino Unido "
+"estão desenvolvendo veículos e interiores em todo o mundo: ajudando "
+"inclusive a projetar o trem de passageiros mais rápido do mundo na China."
 
 #: enrolment/templates/marketing-pages/creative.html:80
 msgid "Arts: heritage and innovation"
-msgstr ""
+msgstr "Artes: tradição e inovação"
 
 #: enrolment/templates/marketing-pages/creative.html:83
-msgid ""
-"From Shakespeare to Adele, the UK continues to produce the best-known "
+msgid "From Shakespeare to Adele, the UK continues to produce the best-known "
 "artists, writers, singers and performers the world has ever seen."
-msgstr ""
+msgstr "De Shakespeare a Adele, o Reino Unido continua a produzir os "
+"artistas, escritores, cantores e músicos mais conhecidos que o mundo 
+"já viu."
 
 #: enrolment/templates/marketing-pages/creative.html:86
 msgid ""
@@ -812,23 +836,28 @@ msgid ""
 "The UK’s national museums attract visitors from around the world and have "
 "lasting partnerships and collection-sharing with their peers from countries "
 "as diverse as Russia and Malawi."
-msgstr ""
+msgstr "Além de música para o mercado de consumo, as prósperas agências "
+"comerciais de áudio e música do Reino Unido estão fornecendo letras e "
+"trilhas a filmes feitos para empresas como a Boeing e a Mercedes-Benz. Além "
+"disso, nossas empresas de gestão de direitos são famosas por proteger a "
+"Propriedade Intelectual, tanto de artistas como de produtores."
 
 #: enrolment/templates/marketing-pages/creative.html:92
 msgid "The UK is alive with exceptional talent and ingenuity."
-msgstr ""
+msgstr "O Reino Unido está repleto de talento e inventividade excepcionais."
 
 #: enrolment/templates/marketing-pages/creative.html:96
 msgid "Find your UK creative partner today"
-msgstr ""
+msgstr "Encontre o seu parceiro criativo no Reino Unido hoje mesmo"
 
 #: enrolment/templates/marketing-pages/creative.html:101
 msgid "See the UK's creative services providers on the Find a supplier service"
-msgstr ""
+msgstr "Consulte o serviço Encontrar um fornecedor e veja os fornecedores de "
+"serviços criativos do Reino Unido"
 
 #: enrolment/templates/marketing-pages/food.html:7
 msgid "UK food and drink"
-msgstr ""
+msgstr "Comida e bebida do Reino Unido"
 
 #: enrolment/templates/marketing-pages/food.html:9
 msgid ""
@@ -838,14 +867,16 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:11
 msgid "Read more about UK food and drink"
-msgstr ""
+msgstr "Leia mais sobre a comida e bebida"
 
 #: enrolment/templates/marketing-pages/food.html:19
 msgid ""
 "The UK is a nation where culinary influences have come together to create "
 "food trends that we share with the world. Every day millions of "
 "international consumers enjoy British products."
-msgstr ""
+msgstr "O Reino Unido é uma nação onde as influências culinárias se uniram "
+"para criar tendências alimentares que compartilhamos com o mundo. Todos os "
+"dias, milhões de consumidores internacionais desfrutam de produtos britânicos."
 
 #: enrolment/templates/marketing-pages/food.html:22
 msgid ""
@@ -853,86 +884,104 @@ msgid ""
 "rich heritage of well-known, traditional food and drink, we offer first-"
 "class produce with excellent provenance and thousands of new products are "
 "brought to the market every year."
-msgstr ""
+msgstr "A "marca" britânica é globalmente reconhecida, valorizada e desejável: "
+"temos uma rica tradição de comidas e bebidas bem conhecidas e tradicionais, "
+"oferecemos produtos de primeira classe com excelente proveniência, e milhares "
+"de novos produtos são lançados no mercado todos os anos."
 
 #: enrolment/templates/marketing-pages/food.html:25
 msgid ""
 "We rank among the world’s best nations for in food quality, traceability and "
 "safety."
-msgstr ""
+msgstr "Estamos entre as melhores nações do mundo em matéria de qualidade de alimentos, "
+"rastreabilidade e segurança."
 
 #: enrolment/templates/marketing-pages/food.html:32
 msgid "British heritage shared globally"
-msgstr ""
+msgstr Tradição britânica compartilhada globalmente""
 
 #: enrolment/templates/marketing-pages/food.html:34
 msgid ""
 "From famous Scottish and Northern Irish whiskies to our traditional tea and "
 "cakes, the UK has centuries of experience to share."
-msgstr ""
+msgstr "Dos famosos uísques escocês e irlandês ao nosso chá e bolos tradicionais, "
+"o Reino Unido tem séculos de experiência para compartilhar."
 
 #: enrolment/templates/marketing-pages/food.html:37
 msgid ""
 "We bring new twists to our classic British products, which are exported all "
 "over the world including craft beers, ciders, gin and award-winning "
 "sparkling wine."
-msgstr ""
+msgstr "Damos um toque de novidade aos nossos clássicos produtos britânicos, "
+"incluindo cervejas artesanais, sidras, gim e vinhos espumantes premiados, que "
+"são exportados para todo o mundo."
 
 #: enrolment/templates/marketing-pages/food.html:40
 msgid ""
 "Our unique trading and cultural history has brought us new ingredients, "
 "influences, tastes and ideas and we have a wealth of ethnic and specialist "
 "foods made in the UK to offer back to the world."
-msgstr ""
+msgstr "Nossa exclusiva história comercial e cultural nos trouxe novos ingredientes, "
+"influências, gostos e ideias, e temos uma riqueza de alimentos étnicos e 
+"especializados produzidos no Reino Unido para oferecer ao mundo."
 
 #: enrolment/templates/marketing-pages/food.html:47
 msgid "The UK exported £12.3 billion of food and non-alcoholic drinks in 2015"
-msgstr ""
+msgstr "O Reino Unido exportou £ 12,3 bilhões em alimentos e bebidas não alcoólicas em 2015"
 
 #: enrolment/templates/marketing-pages/food.html:48
 msgid "Our main exports include chocolate, cheese and whisky"
-msgstr ""
+msgstr "Nossas principais exportações incluem chocolate, queijo e uísque"
 
 #: enrolment/templates/marketing-pages/food.html:49
 msgid ""
 "We have thousands of suppliers manufacturing to standards accepted in 123 "
 "countries worldwide"
-msgstr ""
+msgstr "Temos milhares de fornecedores que fabricam segundo padrões aceitos em "
+"123 países do mundo todo"
 
 #: enrolment/templates/marketing-pages/food.html:59
 msgid "Innovation in food and drink"
-msgstr ""
+msgstr "Inovação em alimentos e bebidas"
 
 #: enrolment/templates/marketing-pages/food.html:61
 msgid ""
 "The UK’s food and drink brands develop and sell thousands of new products "
 "each year. UK companies were the first to pioneer frozen food and instant "
 "coffee."
-msgstr ""
+msgstr "As marcas de alimentos e bebidas do Reino Unido desenvolvem e "
+"comercializam milhares de novos produtos todos os anos. As empresas do "
+"Reino Unido foram as primeiras a criar alimentos congelados e "
+"café instantâneo."
 
 #: enrolment/templates/marketing-pages/food.html:64
 msgid ""
 "We’re leading the way in food research and technology, new product "
 "development and trends such as organic, gluten-free, dairy-free and health "
 "foods."
-msgstr ""
+msgstr "Somos líderes em pesquisa e tecnologia de alimentos, em "
+"desenvolvimento de novos produtos e em tendências, como alimentos orgânicos, "
+"sem glúten, sem lácteos e saudáveis."
 
 #: enrolment/templates/marketing-pages/food.html:68
 msgid "Food quality and safety"
-msgstr ""
+msgstr "Qualidade e segurança dos alimentos"
 
 #: enrolment/templates/marketing-pages/food.html:70
 msgid ""
 "Our island location and clean waters give us access to rich stocks of fish "
 "and shellfish and our soil and climate provides bountiful agricultural "
 "resources for crops, dairy and meat."
-msgstr ""
+msgstr "Nossa localização insular e as águas limpas dão acesso a ricas unidades "
+"populacionais de peixes e mariscos, e o nosso solo e clima fornecem "
+"abundantes recursos agrícolas para lavouras, produtos lácteos e carnes."
 
 #: enrolment/templates/marketing-pages/food.html:73
 msgid ""
 "Our manufacturing sector complies with rigorous international safety "
 "standards and our brands are trusted around the world."
-msgstr ""
+msgstr "Nosso setor de fabricação segue rigorosos padrões internacionais "
+"de segurança, e o mundo confia em nossas marcas."
 
 #: enrolment/templates/marketing-pages/food.html:76
 msgid ""
@@ -940,21 +989,28 @@ msgid ""
 "standards scheme that assure animal and worker welfare and our British "
 "Retail Consortium manufacturing standards have been adopted by 23,000 "
 "certificated suppliers, not only in the UK but in 123 other countries."
-msgstr ""
+msgstr "Nós nos preocupamos com os alimentos que produzimos: 89.000 agricultores "
+"cumprem o esquema voluntário de padrões agrícolas que garante o bem-estar dos "
+"animais e dos trabalhadores, e os padrões de fabricação do British Retail "
+"Consortium (Consórcio Varejista Britânico) foram adotados por 23 mil "
+"fornecedores certificados, não só no Reino Unido, mas em outros 123 países."
 
 #: enrolment/templates/marketing-pages/food.html:79
 msgid ""
 "Our customers recognise us for our excellent service and know that we can "
 "deliver."
-msgstr ""
+msgstr "Nossos clientes reconhecem o nosso excelente serviço e sabem que "
+"cumprimos o que prometemos."
 
 #: enrolment/templates/marketing-pages/food.html:83
 msgid "Find your UK trade partner in food and drink today"
-msgstr ""
+msgstr "Encontre o seu parceiro comercial do Reino Unido para alimentos "
+"e bebidas hoje mesmo"
 
 #: enrolment/templates/marketing-pages/food.html:89
 msgid "See the UK's food and drink companies on the Find a supplier service"
-msgstr ""
+msgstr "Consulte o serviço Encontrar um fornecedor e veja as empresas de "
+"alimentos e bebidas do Reino Unido"
 
 #: enrolment/templates/marketing-pages/food.html:92
 msgid ""
@@ -964,7 +1020,7 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:95
 msgid "Find UK food and drink companies to meet your needs"
-msgstr ""
+msgstr "Encontrar empresas excelentes no Reino Unido"
 
 #: enrolment/templates/marketing-pages/food.html:98
 msgid ""
@@ -982,7 +1038,9 @@ msgid ""
 "Whether you need hospitals built, primary care services managed, or reliable "
 "suppliers of the latest medical technology and pharmaceutical advances, the "
 "UK is the first place to look."
-msgstr ""
+msgstr "Se você precisa construir hospitais, gerenciar serviços de cuidados "
+"primários ou obter fornecedores confiáveis dos últimos avanços farmacêuticos "
+"em tecnologia médica, basta procurar no Reino Unido."
 
 #: enrolment/templates/marketing-pages/health.html:13
 msgid "Read more about healthcare and life sciences"
@@ -990,13 +1048,14 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/health.html:19
 msgid "Healthcare and life sciences from the UK"
-msgstr ""
+msgstr "Leia mais sobre a ciências da saúde e da vida"
 
 #: enrolment/templates/marketing-pages/health.html:27
 msgid ""
 "If you need innovative, high-quality healthcare products and services, the "
 "UK is the best place to find new suppliers."
-msgstr ""
+msgstr "Se você precisa de produtos e serviços de saúde que sejam inovadores e de "
+"alta qualidade, o Reino Unido é o melhor lugar para encontrar novos fornecedores."
 
 #: enrolment/templates/marketing-pages/health.html:29
 msgid ""
@@ -1004,62 +1063,81 @@ msgid ""
 "Nobel prizewinners for medicine. This world-class science base and track-"
 "record of excellence means you can rely on the UK for cutting-edge market-"
 "ready ideas."
-msgstr ""
+msgstr "Nós abrigamos 4 das 10 maiores universidades do mundo e já alcançamos "
+"a marca de 23 laureados com o Prêmios Nobel de medicina. Essa base de "
+"ciência de nível mundial e o histórico de excelência significam que você "
+"pode confiar no Reino Unido quando o assunto são ideias de alto nível prontas "
+"para o mercado."
 
 #: enrolment/templates/marketing-pages/health.html:37
 msgid ""
 "The UK is internationally renowned for its National Health Service, with its "
 "70 years of research and public delivery."
-msgstr ""
+msgstr "O Serviço Nacional de Saúde do Reino Unido (NHS), com seus 70 anos de "
+"pesquisa e atendimento ao público, é reconhecido mundialmente."
 
 #: enrolment/templates/marketing-pages/health.html:40
 msgid ""
 "The UK’s unique approach to healthcare and product development helps "
 "translate the best medical technology into high-quality, cost-effective and "
 "market-ready solutions."
-msgstr ""
+msgstr "A exclusiva abordagem do Reino Unido quanto à saúde e ao "
+"desenvolvimento de produtos ajuda a transformar o que há de melhor em "
+"tecnologia médica em soluções de alta qualidade, econômicas e prontas para "
+"o mercado."
 
 #: enrolment/templates/marketing-pages/health.html:43
 msgid ""
 "Two of the top 10 global pharmaceutical companies are based in the UK. There "
 "are more than 5,000 life sciences companies in the UK and we have a growing "
 "market in digital health products and apps."
-msgstr ""
+msgstr "Duas das 10 principais empresas farmacêuticas do mundo estão situadas "
+"no Reino Unido. Existem mais de 5.000 empresas de ciências da vida no Reino Unido, "
+"que também conta com um mercado crescente em aplicativos e produtos digitais "
+"para saúde."
 
 #: enrolment/templates/marketing-pages/health.html:50
 msgid ""
 "There are more than 5,600 health and life sciences companies across the full "
 "UK supply chain"
-msgstr ""
+msgstr "Duas das 10 principais empresas farmacêuticas do mundo estão situadas "
+"no Reino Unido. Existem mais de 5.000 empresas de ciências da vida no Reino Unido, "
+"que também conta com um mercado crescente em aplicativos e produtos digitais "
+"para saúde."
 
 #: enrolment/templates/marketing-pages/health.html:51
 msgid ""
 "The UK has the world’s largest integrated health system as a test bed for "
 "world-class products and services"
-msgstr ""
+msgstr "O Reino Unido possui o maior sistema integrado de saúde do mundo como "
+"um celeiro de testes para produtos e serviços de nível mundial"
 
 #: enrolment/templates/marketing-pages/health.html:52
 msgid "More than 80 Nobel Prizes underpin the UK’s top biomedical innovations"
-msgstr ""
+msgstr "Mais de 80 Prêmios Nobel corroboram as principais inovações biomédicas "
+"do Reino Unido"
 
 #: enrolment/templates/marketing-pages/health.html:60
 msgid ""
 "The UK’s medical technology sector produces a vast range of medical and "
 "diagnostic device, particularly single-use technology and orthopaedic "
 "devices. The UK also has companies specialising in:"
-msgstr ""
+msgstr "O setor de tecnologia médica do Reino Unido produz um vasto leque de "
+"dispositivos médicos e de diagnóstico, principalmente tecnologia de uso "
+"único e dispositivos ortopédicos. O Reino Unido também possui empresas "
+"especializadas em:"
 
 #: enrolment/templates/marketing-pages/health.html:62
 msgid "novel drug delivery systems"
-msgstr ""
+msgstr "novos sistemas de fornecimento de medicamentos"
 
 #: enrolment/templates/marketing-pages/health.html:63
 msgid "single-use biotechnology facilities"
-msgstr ""
+msgstr "instalações de biotecnologia de uso único"
 
 #: enrolment/templates/marketing-pages/health.html:64
 msgid "medical imaging"
-msgstr ""
+msgstr "geração de imagens médicas"
 
 #: enrolment/templates/marketing-pages/health.html:68
 msgid ""
@@ -1067,24 +1145,34 @@ msgid ""
 "therapy and tissue-engineered products and services. And the UK’s "
 "pharmaceutical industry remains highly competitive in complex formulations "
 "and continuous manufacturing processes."
-msgstr ""
+msgstr "O Reino Unido está na vanguarda da medicina regenerativa e é "
+"reconhecido pela terapia genética e por produtos e serviços de engenharia de "
+"tecidos. Além disso, a indústria farmacêutica do Reino Unido continua "
+"extremamente competitiva em formulações complexas e processos de fabricação 
+"contínua."
 
 #: enrolment/templates/marketing-pages/health.html:71
 msgid ""
 "With a comprehensive regulatory framework, robust compliance and quality "
 "assurance culture in the UK, product safety and effectiveness are assured."
-msgstr ""
+msgstr "No Reino Unido, com uma cultura de abrangente estrutura regulamentar, "
+"sólida conformidade e garantia de qualidade, a segurança e a eficácia "
+"dos produtos são garantidas."
 
 #: enrolment/templates/marketing-pages/health.html:77
 msgid "Work with the UK to create first-rate healthcare"
-msgstr ""
+msgstr "Trabalhe com o Reino Unido para gerar cuidados de saúde de "
+"primeira linha"
 
 #: enrolment/templates/marketing-pages/health.html:79
 msgid ""
 "If you need to develop clinical services, implement digital health systems "
 "or extend the skills of your workforce, the UK has unrivalled experience of "
 "successful healthcare innovation and delivery."
-msgstr ""
+msgstr "Se você precisa desenvolver serviços clínicos, implementar sistemas "
+"digitais de saúde ou ampliar as habilidades de sua força de trabalho, o "
+"Reino Unido tem experiência incomparável em inovação e entrega de cuidados "
+"de saúde com muito sucesso."
 
 #: enrolment/templates/marketing-pages/health.html:82
 msgid ""
@@ -1093,20 +1181,29 @@ msgid ""
 "are sustained by our health professional regulators, health systems "
 "regulators and health technology assessment bodies, ensuring the best "
 "possible safety, outcomes and cost-effectiveness."
-msgstr ""
+msgstr "Os excepcionais padrões de saúde derivam do Sistema de Saúde do "
+"Reino Unido, que foi considerado o melhor sistema de saúde dentre 11 grandes "
+"nações em 2013. Esses padrões são mantidos por nossos reguladores profissionais "
+"de saúde, reguladores de sistemas de saúde e órgãos de avaliação de tecnologia "
+"da saúde, garantindo o que há de melhor em matéria de segurança, "
+"resultados e economia."
 
 #: enrolment/templates/marketing-pages/health.html:85
 msgid ""
 "Building on the strong foundations of the NHS, the UK’s thriving and diverse "
 "commercial healthcare sector caters for all needs."
-msgstr ""
+msgstr "Com base nos fortes fundamentos do NHS, o próspero e diversificado "
+"setor de saúde comercial do Reino Unido atende a todos os tipos de "
+"necessidades."
 
 #: enrolment/templates/marketing-pages/health.html:88
 msgid ""
 "Decades of collaboration between the NHS, academic and private-sector "
 "organisations has created a rich pool of innovative providers, ready to "
 "adapt their solutions to the needs of customers overseas."
-msgstr ""
+msgstr "Décadas de colaboração entre o NHS e organizações acadêmicas e "
+"do setor privado criaram um rico grupo de fornecedores inovadores, "
+"prontos para adaptar suas soluções às necessidades dos clientes no exterior."
 
 #: enrolment/templates/marketing-pages/health.html:91
 msgid ""
@@ -1114,21 +1211,30 @@ msgid ""
 "acute and tertiary care brings deep insight. Our services can help you make "
 "the most of current delivery models in your country and identify ways to "
 "improve efficiency, patient experiences and clinical outcomes."
-msgstr ""
+msgstr "Para os serviços de gestão hospitalar, a abordagem testada e "
+"aprovada do Reino Unido em relação a cuidados agudos e terciários oferece "
+"percepções profundas. Nossos serviços podem ajudar você a aproveitar ao "
+"máximo os modelos de entrega atuais em seu país e identificar maneiras de "
+"melhorar a eficiência, as experiências dos pacientes e os resultados clínicos."
 
 #: enrolment/templates/marketing-pages/health.html:94
 msgid ""
 "In Kuwait, the NHS is leading the development of new paediatric cancer care "
 "services - replicating world-class services offered in the UK through "
 "training, support and visiting consultant programmes."
-msgstr ""
+msgstr "No Kuwait, o NHS está liderando o desenvolvimento de novos serviços "
+"de tratamento de câncer pediátrico, replicando serviços de nível mundial "
+"oferecidos no Reino Unido por meio de programas de treinamento, suporte e "
+"consultoria visitante."
 
 #: enrolment/templates/marketing-pages/health.html:97
 msgid ""
 "And in China, acute care and rehabilitation services are being supported by "
 "commercially-driven UK healthcare services which are being delivered by "
 "expatriate and local staff."
-msgstr ""
+msgstr "Na China, os serviços de cuidados agudos e de reabilitação estão "
+"recebendo o apoio de serviços de saúde do Reino Unido voltados à "
+"comercialização, que são prestados por funcionários expatriados e locais."
 
 #: enrolment/templates/marketing-pages/health.html:100
 msgid ""
@@ -1137,30 +1243,40 @@ msgid ""
 "quality public services. UK companies can provide the full range of planning "
 "and modelling services needed for successful, resource-efficient "
 "infrastructure projects."
-msgstr ""
+msgstr "O Reino Unido é um inovador líder mundial em financiamento de "
+"projetos, principalmente em parcerias públicas e privadas (PPPs) que "
+"podem garantir serviços públicos econômicos e de alta qualidade. As "
+"empresas do Reino Unido podem fornecer uma gama completa de serviços "
+"de planejamento e modelagem necessários para projetos de infraestrutura "
+"bem-sucedidos e eficientes em termos de recursos."
 
 #: enrolment/templates/marketing-pages/health.html:103
 msgid ""
 "UK companies are delivering one of the world's biggest healthcare PPP "
 "programmes, to meet Turkey's growing demand for healthcare facilities."
-msgstr ""
+msgstr "As empresas do Reino Unido estão proporcionando um dos maiores "
+"programas de PPP de saúde do mundo, para atender à crescente demanda da "
+"Turquia por instalações de saúde."
 
 #: enrolment/templates/marketing-pages/health.html:106
 msgid ""
 "Whether you need: hospitals built and primary care services managed, or you "
 "need reliable suppliers of the latest medical technology pharmaceutical "
 "advances, the UK is the first place to look."
-msgstr ""
+msgstr "Se você precisa construir hospitais, gerenciar serviços de cuidados "
+"primários ou obter fornecedores confiáveis dos últimos avanços farmacêuticos "
+"em tecnologia médica, basta procurar no Reino Unido."
 
 #: enrolment/templates/marketing-pages/health.html:111
 msgid ""
 "See the UK's healthcare and life sciences providers on the Find a supplier "
 "service"
-msgstr ""
+msgstr "Consulte o serviço Encontrar um fornecedor e veja os fornecedores "
+"de ciências da saúde e da vida no Reino Unido"
 
 #: enrolment/templates/marketing-pages/health.html:113
 msgid "Find UK healthcare and life sciences companies to meet your needs"
-msgstr ""
+msgstr "Encontrar empresas excelentes no Reino Unido"
 
 #: enrolment/templates/marketing-pages/health.html:115
 msgid ""
