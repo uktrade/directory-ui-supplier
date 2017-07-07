@@ -1120,6 +1120,7 @@ a.ed-filled-button-primary {
     font-weight: 300;
     line-height: 1.1em;
     margin: 0 0 20px 0;
-    padding: 10px 0 10px 51px;
+    min-height: 40px;
+    padding: 10px 0 0 51px;
   }
 }
