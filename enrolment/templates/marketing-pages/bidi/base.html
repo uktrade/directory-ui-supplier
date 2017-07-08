@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 {% load trans from i18n %}
 {% block canonical_link %}
-	<link rel="canonical" href="{% url 'sector-detail-verbose' slug=slug %}" />
+	<link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{% url 'sector-detail-verbose' slug=slug %}" />
 {% endblock %}
 {% block css %}
 	<link href="{% static 'marketing-page-bidi.css' %}" media="all" rel="stylesheet" />
