@@ -980,11 +980,14 @@ msgid ""
 "Whether you need hospitals built, primary care services managed, or reliable "
 "suppliers of the latest medical technology and pharmaceutical advances, the "
 "UK is the first place to look."
-msgstr ""
+msgstr "Se necessitar de construção de hospitais e de gestão de serviços de "
+"cuidados primários, ou se precisar de fornecedores fiáveis dos mais recentes "
+"progressos farmacêuticos em tecnologia médica, o Reino Unido é o primeiro "
+"lugar onde deve procurar."
 
 #: enrolment/templates/marketing-pages/health.html:16
 msgid "Read more about healthcare and life sciences"
-msgstr ""
+msgstr "Leia mais sobre a saúde e ciências da vida "
 
 msgid "Healthcare and life sciences from the UK"
 msgstr "Saúde e ciências da vida no Reino Unido"
