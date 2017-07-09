@@ -485,7 +485,8 @@ msgstr "Podemos ajudá-lo a criar ligações comerciais indispensáveis com as "
 msgid ""
 "Check out the cutting-edge technological innovations that the UK is bringing "
 "to the world."
-msgstr ""
+msgstr "Não perca as mais recentes inovações tecnológicas que o Reino Unido "
+"traz para o mundo."
 
 msgid ""
 "Whether you need buildings designed, films made or a fresh approach to "
@@ -502,11 +503,12 @@ msgstr "Alimentos e bebidas no Reino Unido"
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "should be first on your list."
-msgstr ""
+msgstr "Quer procure as marcas alimentares mais inovadoras ou bebidas de "
+"qualidade excepcional, o Reino Unido deve ser o primeiro da sua lista."
 
 #: enrolment/templates/browse-companies.html:4
 msgid "Find other great UK companies"
-msgstr ""
+msgstr "Encontrar grandes empresas do Reino Unido"
 
 #: enrolment/templates/browse-companies.html:7
 #: enrolment/templates/search-companies.html:11
@@ -518,7 +520,7 @@ msgstr ""
 #: enrolment/templates/browse-companies.html:11
 #: enrolment/templates/search-companies.html:17
 msgid "Browse UK companies"
-msgstr ""
+msgstr "Procurar perfis de empresas no Reino Unido"
 
 #: enrolment/templates/govuk_layout.html:14
 msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
@@ -532,11 +534,11 @@ msgstr ""
 
 #: enrolment/templates/language_switcher.html:8
 msgid "Select"
-msgstr ""
+msgstr "Seleccione"
 
 #: enrolment/templates/language_switcher.html:13
 msgid "Page in English only"
-msgstr ""
+msgstr "Esta página apenas está disponível em inglês"
 
 msgid "Find your UK trade partner"
 msgstr "Encontre o seu parceiro comercial no Reino Unido"
@@ -553,7 +555,7 @@ msgstr "Leia o estudo de caso"
 #: enrolment/templates/marketing-pages/base.html:112
 #: enrolment/templates/marketing-pages/bidi/base.html:112
 msgid "keywords"
-msgstr ""
+msgstr "palavras-chave:"
 
 #: enrolment/templates/marketing-pages/creative.html:6
 msgid ""
@@ -563,107 +565,129 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:7
 msgid "Buy creative services from the UK"
-msgstr ""
+msgstr "Compre serviços criativos do Reino Unido"
 
 #: enrolment/templates/marketing-pages/creative.html:10
 msgid "Delivering exceptional creative services"
-msgstr ""
+msgstr "Oferta de serviços criativos excepcionais"
 
 #: enrolment/templates/marketing-pages/creative.html:14
 msgid "Read more about creative services"
-msgstr ""
+msgstr "Leia mais sobre a serviços criativos"
 
 #: enrolment/templates/marketing-pages/creative.html:19
 msgid ""
 "If you need intelligent, creative ideas and rich, high-quality designs and "
 "media, look no further than the UK"
-msgstr ""
+msgstr "Se necessita de ideias criativas e inteligentes, bem como de "
+"suportes e designs ricos e de alta qualidade, não precisa de ir mais "
+"longe: escolha o Reino Unido."
 
 #: enrolment/templates/marketing-pages/creative.html:21
 msgid ""
 "Creative companies in the UK are responsible for producing big budget "
 "movies, designing fashionable furniture fabrics and developing world-class "
 "computer games."
-msgstr ""
+msgstr "As empresas criativas do Reino Unido são responsáveis por produzir "
+"filmes de grandes orçamentos, pelo design de tecidos para mobiliário "
+"moderno e por desenvolver jogos de computador de classe mundial."
 
 msgid "Key facts"
 msgstr "Principais factos"
 
 #: enrolment/templates/marketing-pages/creative.html:27
 msgid "UK companies gave the world £19.1 billion of creative services in 2014"
-msgstr ""
+msgstr "As empresas do Reino Unido deram ao mundo 19,1 mil milhões de libras "
+"em serviços criativos em 2014"
 
 #: enrolment/templates/marketing-pages/creative.html:28
 #, python-format
 msgid "9%% of all UK service exports are in the creative services in 2014"
-msgstr ""
+msgstr "9% de todas as exportações de serviços do Reino Unido foram compostos "
+"por serviços criativos em 2014"
 
 #: enrolment/templates/marketing-pages/creative.html:29
 #, python-format
 msgid "Growth of creative services exports was 10.9%% in 2014"
-msgstr ""
+msgstr "O crescimento das exportações de serviços criativos foi de 10,9% "
+"em 2014"
 
 #: enrolment/templates/marketing-pages/creative.html:33
 msgid "Work with the best in film, TV and visual effects"
-msgstr ""
+msgstr "Trabalhe com os melhores em filmes, TV e efeitos visuais"
 
 #: enrolment/templates/marketing-pages/creative.html:34
 msgid "The UK is one of the world's largest makers of original content."
-msgstr ""
+msgstr "O Reino Unido é um dos maiores criadores de conteúdos originais "
+"em todo o mundo."
 
 #: enrolment/templates/marketing-pages/creative.html:35
 msgid ""
 "We are the home of films such as Star Wars and offer state-of-the-art studio "
 "facilities suitable for big movie productions and an amazing diversity of "
 "film locations."
-msgstr ""
+msgstr "Aqui foram criados filmes como Star Wars e oferecemos infra-estruturas "
+"de estúdio de última geração adequadas para produções de grandes filmes "
+"e uma diversidade fabulosa de cenários para filmagens."
 
 #: enrolment/templates/marketing-pages/creative.html:36
 msgid ""
 "At the heart of the UK’s creative industry is its award-winning film and "
 "television production comprising more than 1,500 independent TV companies in "
 "the UK."
-msgstr ""
+msgstr "No coração da indústria criativa do Reino Unido está a sua galardoada "
+"produção cinematográfica e televisiva, com mais de 1500 empresas de "
+"televisão independentes no Reino Unido."
 
 #: enrolment/templates/marketing-pages/creative.html:37
 msgid ""
 "We're also the world leaders in exporting TV formats and localising those "
 "first commissioned in the UK."
-msgstr ""
+msgstr "Além disso, somos líderes mundiais na exportação de formatos "
+"televisivos e localização dos formatos inicialmente destinados ao Reino "
+"Unido."
 
 #: enrolment/templates/marketing-pages/creative.html:39
 msgid "Our creative digital experience"
-msgstr ""
+msgstr "A nossa experiência digital criativa"
 
 #: enrolment/templates/marketing-pages/creative.html:41
 msgid ""
 "The UK has one of the most world's most advanced games industries, with more "
 "than 30 years experience of innovation and commercial success."
-msgstr ""
+msgstr "O Reino Unido tem uma das indústrias de jogos mais avançadas do "
+"mundo, com mais de 30 anos de experiência de inovação e de sucesso comercial."
 
 #: enrolment/templates/marketing-pages/creative.html:44
 msgid ""
 "UK games companies have adopted social and mobile platforms, with more than "
 "a third of UK studios focusing on the mobile market."
-msgstr ""
+msgstr "As empresas de jogos do Reino Unido adoptaram as plataformas móveis "
+"e sociais, com mais de um terço dos estúdios do Reino Unido a centrar-se "
+"no mercado móvel."
 
 #: enrolment/templates/marketing-pages/creative.html:47
 msgid ""
 "The UK's augmented reality specialists create immersive experiences that "
 "help further the creative reach of the likes of National Geographic and "
 "Universal Studios."
-msgstr ""
+msgstr "Os especialistas em realidade aumentada do Reino Unido criam "
+"experiências imersivas que ajudam a aumentar o alcance criativo de "
+"referências como a National Geographic e a Universal Studios."
 
 #: enrolment/templates/marketing-pages/creative.html:50
 msgid "A publishing powerhouse"
-msgstr ""
+msgstr "Uma potência em edição"
 
 #: enrolment/templates/marketing-pages/creative.html:52
 msgid ""
 "The publishing sector in the UK has pioneered new print formats and "
 "commercial models alongside moving content online. British news journalism "
 "remains a powerful force, uncovering important stories around the world."
-msgstr ""
+msgstr "O sector da edição no Reino Unido foi pioneiro em novos formatos de "
+"impressão e modelos comerciais, juntamente com a criação de conteúdo "
+"online. O jornalismo britânico mantém-se uma força poderosa, divulgando "
+"notícias importantes em todo o mundo."
 
 #: enrolment/templates/marketing-pages/creative.html:55
 msgid ""
@@ -671,41 +695,53 @@ msgid ""
 "property rights negotiation and the sale and distribution of content. Half "
 "of the top 20 global box office successes of the last 11 years were based on "
 "novels by UK writers."
-msgstr ""
+msgstr "A London Book Fair é um dos principais eventos do mundo para a "
+"negociação dos direitos de propriedade intelectual e a venda e distribuição "
+"de conteúdos. Metade dos principais 20 sucessos de bilheteira globais dos "
+"últimos 11 anos foram baseados em romances da autoria de escritores do "
+"Reino Unido."
 
 #: enrolment/templates/marketing-pages/creative.html:58
 msgid "UK design talent is bringing beauty and strength to the world"
-msgstr ""
+msgstr "O talento de design do Reino Unido traz beleza e força ao mundo"
 
 #: enrolment/templates/marketing-pages/creative.html:60
 msgid ""
 "UK architects are responsible for some of the world’s most stunning "
 "buildings, such as the Galaxy Soho urban village in Beijing and reshaping "
 "environments, such as Singapore’s Gardens by the Bay."
-msgstr ""
+msgstr "Os arquitectos do Reino Unido são responsáveis por alguns dos "
+"edifícios mais impressionantes do mundo, como, por exemplo, a aldeia "
+"urbana Galaxy Soho em Pequim, e pela reformulação de ambientes urbanos, "
+"como, por exemplo, nos Gardens by the Bay em Singapura."
 
 #: enrolment/templates/marketing-pages/creative.html:63
 msgid ""
 "We're also responsible for designing usable industrial and commercial spaces "
 "such as the new Spaceport America."
-msgstr ""
+msgstr "Além disso, somos responsáveis pelo design de espaços industriais e "
+"comerciais utilizáveis, como o novo Spaceport America."
 
 #: enrolment/templates/marketing-pages/creative.html:66
 msgid ""
 "As well as designing the built environment, UK firms are designing vehicles "
 "and interiors around the world: including helping to design the world’s "
 "fastest passenger train in China."
-msgstr ""
+msgstr "Além de serem responsáveis pelo design do ambiente construído, as "
+"firmas do Reino Unido estão a conceber veículos e interiores a nível "
+"mundial, auxiliando inclusivamente no design do comboio de passageiros "
+"mais rápido do mundo, na China."
 
 #: enrolment/templates/marketing-pages/creative.html:69
 msgid "Arts: heritage and innovation"
-msgstr ""
+msgstr "Artes: tradição e inovação"
 
 #: enrolment/templates/marketing-pages/creative.html:71
 msgid ""
 "From Shakespeare to Adele, the UK continues to produce the best-known "
 "artists, writers, singers and performers the world has ever seen."
-msgstr ""
+msgstr "Desde Shakespeare até Adele, o Reino Unido continua a produzir "
+"os artistas, escritores, cantores e intérpretes mais famosos do mundo."
 
 #: enrolment/templates/marketing-pages/creative.html:74
 msgid ""
@@ -714,26 +750,34 @@ msgid ""
 "the likes of Boeing and Mercedes-Benz. And our rights management companies "
 "have an ongoing reputation for protecting Intellectual Property for "
 "performers and producers alike."
-msgstr ""
+msgstr "Além da música para o mercado de consumo, as prósperas agências de "
+"música e áudio comercial do Reino Unido estão a fornecer bandas sonoras e "
+"faixas para filmes realizados para referências como a Boeing e a "
+"Mercedes-Benz. E as nossas empresas de gestão de direitos são reconhecidas "
+"por protegerem a propriedade intelectual tanto de artistas como de "
+"produtores."
 
 #: enrolment/templates/marketing-pages/creative.html:77
 msgid ""
 "The UK’s national museums attract visitors from around the world and have "
 "lasting partnerships and collection-sharing with their peers from countries "
 "as diverse as Russia and Malawi."
-msgstr ""
+msgstr "Os museus nacionais do Reino Unido atraem visitantes de todo o mundo "
+"e têm parcerias duradouras e partilha de colecções com outros museus de "
+"países tão diversificados como a Rússia e o Malawi."
 
 #: enrolment/templates/marketing-pages/creative.html:80
 msgid "The UK is alive with exceptional talent and ingenuity."
-msgstr ""
+msgstr "O Reino Unido ganha vida com talento e criatividade excepcionais."
 
 #: enrolment/templates/marketing-pages/creative.html:84
 msgid "Find your UK creative partner today"
-msgstr ""
+msgstr "Encontre hoje o seu parceiro criativo no Reino Unido"
 
 #: enrolment/templates/marketing-pages/creative.html:89
 msgid "See the UK's creative services providers on the Find a supplier service"
-msgstr ""
+msgstr "Consulte os fornecedores de serviços criativos no Reino Unido, "
+"em "Encontrar um fornecedor""
 
 #: enrolment/templates/marketing-pages/food.html:6
 msgid ""
@@ -756,7 +800,7 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:14
 msgid "Read more about UK food and drink"
-msgstr ""
+msgstr "Leia mais sobre a alimentos e bebidas"
 
 msgid ""
 "The UK is a nation where culinary influences have come together to create "
@@ -898,8 +942,8 @@ msgstr ""
 
 msgid "See the UK's food and drink companies on the Find a supplier service"
 msgstr ""
-"Consulte as empresas de alimentos e bebidas no Reino Unido, em \"Encontrar "
-"um fornecedor\""
+"Consulte as empresas de alimentos e bebidas no Reino Unido, em "Encontrar "
+"um fornecedor"
 
 #: enrolment/templates/marketing-pages/food.html:81
 msgid ""
