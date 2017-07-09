@@ -30,7 +30,7 @@ msgstr ""
 
 #: enrolment/constants.py:14
 msgid "Rebekah Marine: i-limb&trade; user"
-msgstr ""
+msgstr "Rebekah Marine: utilizadora do i-limb&trade;"
 
 msgid ""
 "Touch Bionics has transformed thousands of lives in dozens of countries "
@@ -48,33 +48,37 @@ msgid ""
 "The i-limb&trade; quantum is the next best thing to real hands and as a "
 "bilateral amputee having the ability to do what I want to do independently "
 "is truly remarkable."
-msgstr ""
+msgstr "O i-limb&trade; quantum é a melhor alternativa às mãos verdadeiras e, "
+"sendo amputado bilateralmente, ter a capacidade de fazer o que quero de "
+"forma independente é mesmo notável."
 
 msgid "Jason"
 msgstr "Jason"
 
 #: enrolment/constants.py:30
 msgid "i-limb quantum&trade; user"
-msgstr ""
+msgstr "utilizadora do i-limb&trade;"
 
 #: enrolment/constants.py:34
 msgid "Healthcare and life sciences"
-msgstr ""
+msgstr "Saúde e ciências da vida"
 
 #: enrolment/constants.py:38 enrolment/constants.py:97
 msgid "Technology"
-msgstr ""
+msgstr "Tecnologia"
 
 #: enrolment/constants.py:43
 msgid "prosthetics, bionics, robotics, healthcare, technology, limb loss"
-msgstr ""
+msgstr "próteses, biónica, robótica, cuidados de saúde, tecnologia, perda de membros"
 
 #: enrolment/constants.py:51
 msgid ""
 "RD Biomed designs and makes Peptest&trade;- the world’s first non-invasive "
 "reflux diagnostic test. RD Biomed specialises in diagnostics for "
 "gastroenterology and respiratory conditions."
-msgstr ""
+msgstr "A RD Biomed concebeu e produz o Peptest&trade;, o primeiro teste de diagnóstico "
+"de refluxo não invasivo do mundo. A RD Biomed é especializada em diagnóstico de "
+"gastroenterologia e de condições respiratórias."
 
 msgid ""
 "Touch Bionics is responsible for developing and improving the world’s first "
@@ -110,7 +114,7 @@ msgstr ""
 
 #: enrolment/constants.py:102
 msgid "Internet of Things, data analytics, traceability, connectivity"
-msgstr ""
+msgstr ""Internet das Coisas, análise de dados, rastreabilidade, conectividade"
 
 #: enrolment/constants.py:110
 msgid ""
@@ -119,7 +123,12 @@ msgid ""
 "From everyday consumer packaged products connected via smart packaging and "
 "smartphones, to fully-connected smart home appliances, each individual item "
 "managed in the EVRYTHNG cloud has a unique Active Digital Identity"
-msgstr ""
+msgstr "A EVRYTHNG é uma empresa de software da Internet das Coisas que ajuda "
+"os fabricantes a digitalizarem os seus produtos físicos, ligando-os à Web. "
+"Desde os quotidianos produtos de consumo embalados com ligação através de "
+"embalagens inteligentes e smartphones, até aos electrodomésticos para casas "
+"inteligentes totalmente ligados, cada artigo gerido na nuvem EVRYTHNG tem "
+"uma Identidade Digital Activa exclusiva."
 
 msgid ""
 "Arkessa enables devices and applications developers to connect to the "
@@ -138,23 +147,27 @@ msgid ""
 "storyboards and produced final audio and video designs. It also produced the "
 "entire technical event, which included projection mapping on the mansion and "
 "a 2m ball and consulting on live-camera press shot positions"
-msgstr ""
+msgstr "A Immersive desenvolveu conceitos e linhas de histórias e produziu o design "
+"final de vídeo e áudio para a campanha da Adidas para o Campeonato do Mundo "
+"de 2014. Além disso, também produziu todo o evento técnico, que incluiu o "
+"mapeamento de projecção na mansão e uma bola de 2 m, assim como a "
+"consultadoria quanto a posições para filmagens da comunicação social ao vivo."
 
 #: enrolment/constants.py:151
 msgid "Creating the grandest projection mapping the world has ever seen."
-msgstr ""
+msgstr "Criação do maior mapeamento de projecção que o mundo já viu."
 
 #: enrolment/constants.py:154
 msgid "Fast Company magazine"
-msgstr ""
+msgstr "Revista Fast Company"
 
 #: enrolment/constants.py:158
 msgid "Creative"
-msgstr ""
+msgstr "Criativo"
 
 #: enrolment/constants.py:163
 msgid "Interactive installations, video content, projection mapping"
-msgstr ""
+msgstr "instalações interactivas, conteúdo de vídeo, mapeamento de projecção"
 
 #: enrolment/constants.py:171
 msgid ""
@@ -169,7 +182,10 @@ msgid ""
 "Blippar is the leading visual discovery app, harnessing augmented reality, "
 "image-recognition technology and artificial intelligence to bring the "
 "physical world to life through smartphones."
-msgstr ""
+msgstr "A Blippar é a principal aplicação de descoberta visual, recorrendo à "
+"realidade aumentada, à tecnologia de reconhecimento de imagens e "
+"inteligência artificial, para dar vida ao mundo físico através de "
+"smartphones."
 
 msgid "Clementine and cinnamon tonic water"
 msgstr "Água tónica de clementina e canela"
@@ -198,7 +214,7 @@ msgstr "Alimentos e bebidas"
 
 #: enrolment/constants.py:219
 msgid "Mixers, Quality, Taste"
-msgstr ""
+msgstr "misturas, qualidade, sabor"
 
 #: enrolment/constants.py:226
 msgid ""
@@ -206,7 +222,11 @@ msgid ""
 "texture and an intense flavour. The ingredients used are 100&#37; natural "
 "and the kernels are all air-popped – a healthier cooking method compared to "
 "frying."
-msgstr ""
+msgstr "Todas as pipocas da Joe & Seph’s são confeccionadas à mão em pequenos "
+"lotes, para garantir uma textura superior e um sabor intenso. Os "
+"ingredientes utilizados são 100% naturais e os grãos são totalmente "
+"estourados com ar: um método mais saudável de cozinhar em comparação "
+"com a fritura."
 
 msgid ""
 "Fever-Tree has pioneered premium mixers and is now the world’s leading "
@@ -252,7 +272,7 @@ msgstr ""
 
 #: enrolment/forms.py:19 enrolment/forms.py:41
 msgid "Please select an industry"
-msgstr ""
+msgstr "Seleccione o seu sector da indústria"
 
 msgid "Tick the box to confirm you agree to the terms and conditions."
 msgstr "Assinale a caixa para confirmar que aceita os termos e condições."
@@ -292,11 +312,11 @@ msgstr "Privacidade e cookies"
 
 #: enrolment/templates/bidi/footer.html:25 enrolment/templates/footer.html:25
 msgid "Terms &amp; conditions"
-msgstr ""
+msgstr "Termos e condições"
 
 #: enrolment/templates/bidi/footer.html:33 enrolment/templates/footer.html:33
 msgid "Crown Copyright"
-msgstr ""
+msgstr "Crown Copyright"
 
 msgid "Home"
 msgstr "Início"
@@ -306,7 +326,7 @@ msgstr "Encontrar um fornecedor"
 
 #: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:36
 msgid "Find a Supplier"
-msgstr ""
+msgstr "Encontrar um fornecedor"
 
 msgid "Industries"
 msgstr "Sectores da indústria"
@@ -340,7 +360,9 @@ msgstr ""
 msgid ""
 "UK companies work with businesses and governments around the world to run "
 "high quality services and deliver the best experiences."
-msgstr ""
+msgstr "As empresas do Reino Unido trabalham com empresas e governos de "
+"todo o mundo para criar novos ambientes de vida e trabalho, executar "
+"serviços de alta qualidade e proporcionar as melhores experiências."
 
 msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
@@ -379,7 +401,8 @@ msgstr "Tecnologia avançada no Reino Unido"
 #: enrolment/templates/landing-page.html:81
 msgid ""
 "Check out the cutting-edge technologies that the UK is bringing to the world."
-msgstr ""
+msgstr "Não perca as mais recentes inovações tecnológicas que o Reino Unido "
+"traz para o mundo.
 
 msgid "Find out more about UK technology"
 msgstr "Mais informações sobre tecnologia no Reino Unido"
@@ -393,14 +416,15 @@ msgstr "Mais informações sobre serviços criativos no Reino Unido"
 #: enrolment/templates/bidi/landing-page.html:111
 #: enrolment/templates/landing-page.html:115
 msgid "The UK's food and drink"
-msgstr ""
+msgstr "Alimentos e bebidas no Reino Unido"
 
 #: enrolment/templates/bidi/landing-page.html:113
 #: enrolment/templates/landing-page.html:117
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "is the first place to look."
-msgstr ""
+msgstr "Quer procure as marcas alimentares mais inovadoras ou bebidas de "
+"qualidade excepcional, o Reino Unido deve ser o primeiro da sua lista."
 
 msgid "Find out more about UK food and drink"
 msgstr "Mais informações sobre alimentos e bebidas no Reino Unido"
@@ -428,7 +452,7 @@ msgstr "Enviar"
 #: enrolment/templates/bidi/lead-generation-form.html:84
 #: enrolment/templates/lead-generation-form.html:85
 msgid "I agree to the great.gov.uk terms and conditions"
-msgstr ""
+msgstr "Concordo com os termos e condições de great.gov.uk."
 
 msgid "Discover the UK's capability in these key industries"
 msgstr ""
@@ -441,14 +465,20 @@ msgid ""
 "than the UK for innovative, high-quality products and services. It is the "
 "place to make the right trade connections with major corporations and "
 "smaller enterprises across every sector of industry."
-msgstr ""
+msgstr "Enquanto responsável pelas decisões numa empresa internacional, "
+"não precisa de ir mais longe: escolha o Reino Unido para produtos e "
+"serviços inovadores e de alta qualidade. É a melhor forma de criar "
+"as ligações comerciais certas com grandes e pequenas empresas em "
+"todos os sectores da indústria."
 
 #: enrolment/templates/bidi/sector-list.html:34
 #: enrolment/templates/sector-list.html:37
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
-msgstr ""
+msgstr "Podemos ajudá-lo a criar ligações comerciais indispensáveis com as "
+"empresas ideais. Escolha uma das empresas nestes sectores da indústria do "
+"Reino Unido para iniciar uma colaboração.""
 
 #: enrolment/templates/bidi/sector-list.html:62
 #: enrolment/templates/sector-list.html:65
