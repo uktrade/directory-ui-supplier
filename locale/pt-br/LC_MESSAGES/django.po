@@ -125,7 +125,6 @@ msgstr ""
 "inteligentes e smartphones, a dispositivos domésticos inteligentes totalmente "
 "conectados, cada item individual gerenciado na nuvem da EVRYTHNG possui "
 "uma exclusiva identidade digital ativa"
-"
 
 #: enrolment/constants.py:124
 msgid ""
@@ -317,8 +316,7 @@ msgstr ""
 
 #: enrolment/forms.py:51
 msgid "Describe what you need"
-msgstr "
-"
+msgstr ""
 
 #: enrolment/forms.py:52
 msgid "Maximum 1000 characters."
@@ -601,9 +599,10 @@ msgstr "Encontrar empresas excelentes no Reino Unido"
 msgid ""
 "Exceptional and creative UK trade partners are ready to work with you. "
 "Discover them on the Find a Supplier service."
-msgstr Parceiros comerciais excepcionalmente inovadores e criativos do Reino "
+msgstr ""
+"Parceiros comerciais excepcionalmente inovadores e criativos do Reino "
 "Unido estão prontos para trabalhar com você. Encontre-os no serviço "
-"Encontrar um fornecedor.""
+"Encontrar um fornecedor."
 
 #: enrolment/templates/browse-companies.html:11
 #: enrolment/templates/search-companies.html:17
@@ -724,12 +723,15 @@ msgstr "As empresas do Reino Unido produziram GBP 19,1 bilhões em serviços cri
 #: enrolment/templates/marketing-pages/creative.html:37
 #, python-format
 msgid "9%% of all UK service exports are in the creative services in 2014"
-msgstr "9% de todas as exportações de serviços do Reino Unido foram de serviços criativos em 2014"
+msgstr ""
+"9%% de todas as exportações de serviços do Reino Unido foram de serviços "
+"criativos em 2014"
 
 #: enrolment/templates/marketing-pages/creative.html:38
 #, python-format
 msgid "Growth of creative services exports was 10.9%% in 2014"
-msgstr "O crescimento das exportações de serviços criativos foi de 10,9% em 2014"
+msgstr ""
+"O crescimento das exportações de serviços criativos foi de 10,9%% em 2014"
 
 #: enrolment/templates/marketing-pages/creative.html:46
 msgid "Our creative digital experience"
@@ -817,10 +819,12 @@ msgid "Arts: heritage and innovation"
 msgstr "Artes: tradição e inovação"
 
 #: enrolment/templates/marketing-pages/creative.html:83
-msgid "From Shakespeare to Adele, the UK continues to produce the best-known "
+msgid ""
+"From Shakespeare to Adele, the UK continues to produce the best-known "
 "artists, writers, singers and performers the world has ever seen."
-msgstr "De Shakespeare a Adele, o Reino Unido continua a produzir os "
-"artistas, escritores, cantores e músicos mais conhecidos que o mundo 
+msgstr ""
+"De Shakespeare a Adele, o Reino Unido continua a produzir os "
+"artistas, escritores, cantores e músicos mais conhecidos que o mundo "
 "já viu."
 
 #: enrolment/templates/marketing-pages/creative.html:86
@@ -885,7 +889,8 @@ msgid ""
 "rich heritage of well-known, traditional food and drink, we offer first-"
 "class produce with excellent provenance and thousands of new products are "
 "brought to the market every year."
-msgstr "A "marca" britânica é globalmente reconhecida, valorizada e desejável: "
+msgstr ""
+"A 'marca' britânica é globalmente reconhecida, valorizada e desejável: "
 "temos uma rica tradição de comidas e bebidas bem conhecidas e tradicionais, "
 "oferecemos produtos de primeira classe com excelente proveniência, e milhares "
 "de novos produtos são lançados no mercado todos os anos."
@@ -899,7 +904,7 @@ msgstr "Estamos entre as melhores nações do mundo em matéria de qualidade de 
 
 #: enrolment/templates/marketing-pages/food.html:32
 msgid "British heritage shared globally"
-msgstr Tradição britânica compartilhada globalmente""
+msgstr "Tradição britânica compartilhada globalmente"
 
 #: enrolment/templates/marketing-pages/food.html:34
 msgid ""
@@ -922,8 +927,9 @@ msgid ""
 "Our unique trading and cultural history has brought us new ingredients, "
 "influences, tastes and ideas and we have a wealth of ethnic and specialist "
 "foods made in the UK to offer back to the world."
-msgstr "Nossa exclusiva história comercial e cultural nos trouxe novos ingredientes, "
-"influências, gostos e ideias, e temos uma riqueza de alimentos étnicos e 
+msgstr ""
+"Nossa exclusiva história comercial e cultural nos trouxe novos ingredientes, "
+"influências, gostos e ideias, e temos uma riqueza de alimentos étnicos e "
 "especializados produzidos no Reino Unido para oferecer ao mundo."
 
 #: enrolment/templates/marketing-pages/food.html:47
@@ -1147,10 +1153,11 @@ msgid ""
 "therapy and tissue-engineered products and services. And the UK’s "
 "pharmaceutical industry remains highly competitive in complex formulations "
 "and continuous manufacturing processes."
-msgstr "O Reino Unido está na vanguarda da medicina regenerativa e é "
+msgstr ""
+"O Reino Unido está na vanguarda da medicina regenerativa e é "
 "reconhecido pela terapia genética e por produtos e serviços de engenharia de "
 "tecidos. Além disso, a indústria farmacêutica do Reino Unido continua "
-"extremamente competitiva em formulações complexas e processos de fabricação 
+"extremamente competitiva em formulações complexas e processos de fabricação "
 "contínua."
 
 #: enrolment/templates/marketing-pages/health.html:71
