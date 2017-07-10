@@ -30,6 +30,31 @@
   }
 }
 
+.ed-landing-page-sector-companies-list {
+  border: 1px solid #dedede;
+  padding: 20px;
+  padding-top: 0;
+  h2 {
+    font-weight: 300;
+    font-size: 24px;
+  }
+  
+  .span4 {
+    display: table-cell;
+    float: none;
+    padding: 0 10px;
+    vertical-align: top;
+    
+    &:first-child {
+      padding-left: 0;
+    }
+    
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
 .fas-manufacturing {
   .ed-hero-sub-header {
     background-image: url(/static/images/covers/agnostic.jpg);
@@ -69,7 +94,26 @@
 
 /* Tablet 
  *******************/
-@media (max-width: 767px) {
+@media (max-width: 799px) {
+  .ed-landing-page-sector-companies-list {
+    .span4 {
+      width: 48.61%;
+      
+      &:last-child {
+        display: block;
+        margin-left: 0;
+        padding: 0;
+        width: auto;
+      }
+      
+      &:nth-child(2) {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {  
   /* page class only to override bootstrap */
   .fas-marketing-page {    
     .case-study-info,
@@ -95,6 +139,15 @@
 /* Mobile 
  *******************/
 @media (max-width: 540px) {
+  .ed-landing-page-sector-companies-list {
+    .span4 {
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: auto;
+    }
+  }
+  
   .fas-marketing-page {    
     .case-study-info,
     .case-study-testomonial {

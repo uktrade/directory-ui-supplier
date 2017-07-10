@@ -308,16 +308,6 @@ a.ed-landing-page-see-more-button {
   width: 100%; 
 }
 
-.ed-landing-page-sector-companies-list {
-  border: 1px solid #dedede;
-  padding: 20px;
-  padding-top: 0;
-  h2 {
-    font-weight: 300;
-    font-size: 24px;
-  }
-}
-
 .ed-landing-page-sector-case-study-container {
   border: 1px solid #dedede;
   padding: 0 20px 20px 20px;
@@ -409,6 +399,23 @@ a.ed-landing-page-see-more-button {
 }
 
 
+/* Desktop only */
+@media (min-width: 800px) {
+  .ed-landing-page-synopsis {
+    [class*="span"] {
+      display: table-cell;
+      float: none;
+      padding-left: 2.12%; /* based on Bootstrap margin */
+      vertical-align: top;
+    
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+
 /* Tablet
  ******************/
 @media (max-width: 799px) {
@@ -463,23 +470,6 @@ a.ed-landing-page-see-more-button {
 }
 
 
-/* Desktop only */
-@media (min-width: 800px) {
-  .ed-landing-page-synopsis {
-    [class*="span"] {
-      display: table-cell;
-      float: none;
-      padding-left: 2.12%; /* based on Bootstrap margin */
-      vertical-align: top;
-    
-      &:first-child {
-        padding-left: 0;
-      }
-    }
-  }
-}
-
-
 /* Mobile
  *****************/
 @media (max-width: 640px) {
@@ -491,4 +481,3 @@ a.ed-landing-page-see-more-button {
     }
   }
 }
-
