@@ -118,7 +118,6 @@ DEBUG_SET_ENV_VARS := \
 	export FEATURE_INDUSTRIES_TRANSLATIONS_ENABLED=false; \
 	export FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED=true
 
-
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)
 
@@ -145,5 +144,13 @@ integration_tests:
 	git clone https://github.com/uktrade/directory-tests && \
 	cd directory-tests && \
 	make docker_integration_tests
+
+compile_requirements:
+	python3 -m piptools compile requirements.ini
+
+compile_test_requirements:
+	python3 -m piptools compile requirements_test.ini
+
+compile_all_requirements: compile_requirements compile_test_requirements
 
 .PHONY: build clean test_requirements docker_run docker_debug docker_webserver_bash docker_test debug_webserver debug_test debug heroku_deploy_dev heroku_deploy_demo
