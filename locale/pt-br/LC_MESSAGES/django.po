@@ -645,7 +645,7 @@ msgstr "Leia o estudo de caso"
 #: enrolment/templates/marketing-pages/base.html:110
 #: enrolment/templates/marketing-pages/bidi/base.html:99
 msgid "keywords"
-msgstr "Palavras-chave:"
+msgstr "Palavras-chave"
 
 #: enrolment/templates/marketing-pages/bidi/base.html:77
 msgid "case study"
