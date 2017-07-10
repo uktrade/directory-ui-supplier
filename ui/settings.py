@@ -120,8 +120,9 @@ LANGUAGES = helpers.remove_disabled_languages(
         ('ja', '日本語'),                    # Japanese
         ('zh-hans', '简体中文'),             # Simplified Chinese
         ('fr', 'Français'),                 # French
-        ('es', 'español'),                  # Spanish,
-        ('pt-br', 'Português Brasileiro'),  # Portuguese (Brazilian),
+        ('es', 'español'),                  # Spanish
+        ('pt', 'Português'),                # Portuguese
+        ('pt-br', 'Português Brasileiro'),  # Portuguese (Brazilian)
         ('ar', 'العربيّة'),                 # Arabic
     ]
 )
