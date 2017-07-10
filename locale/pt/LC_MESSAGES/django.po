@@ -114,7 +114,8 @@ msgstr ""
 
 #: enrolment/constants.py:102
 msgid "Internet of Things, data analytics, traceability, connectivity"
-msgstr ""Internet das Coisas, análise de dados, rastreabilidade, conectividade"
+msgstr ""
+"Internet das Coisas, análise de dados, rastreabilidade, conectividade"
 
 #: enrolment/constants.py:110
 msgid ""
@@ -401,8 +402,9 @@ msgstr "Tecnologia avançada no Reino Unido"
 #: enrolment/templates/landing-page.html:81
 msgid ""
 "Check out the cutting-edge technologies that the UK is bringing to the world."
-msgstr "Não perca as mais recentes inovações tecnológicas que o Reino Unido "
-"traz para o mundo.
+msgstr ""
+"Não perca as mais recentes inovações tecnológicas que o Reino Unido "
+"traz para o mundo."
 
 msgid "Find out more about UK technology"
 msgstr "Mais informações sobre tecnologia no Reino Unido"
@@ -476,9 +478,10 @@ msgstr "Enquanto responsável pelas decisões numa empresa internacional, "
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
-msgstr "Podemos ajudá-lo a criar ligações comerciais indispensáveis com as "
+msgstr ""
+"Podemos ajudá-lo a criar ligações comerciais indispensáveis com as "
 "empresas ideais. Escolha uma das empresas nestes sectores da indústria do "
-"Reino Unido para iniciar uma colaboração.""
+"Reino Unido para iniciar uma colaboração."
 
 #: enrolment/templates/bidi/sector-list.html:62
 #: enrolment/templates/sector-list.html:65
@@ -603,13 +606,14 @@ msgstr "As empresas do Reino Unido deram ao mundo 19,1 mil milhões de libras "
 #: enrolment/templates/marketing-pages/creative.html:28
 #, python-format
 msgid "9%% of all UK service exports are in the creative services in 2014"
-msgstr "9% de todas as exportações de serviços do Reino Unido foram compostos "
+msgstr ""
+"9%% de todas as exportações de serviços do Reino Unido foram compostos "
 "por serviços criativos em 2014"
 
 #: enrolment/templates/marketing-pages/creative.html:29
 #, python-format
 msgid "Growth of creative services exports was 10.9%% in 2014"
-msgstr "O crescimento das exportações de serviços criativos foi de 10,9% "
+msgstr "O crescimento das exportações de serviços criativos foi de 10,9%% "
 "em 2014"
 
 #: enrolment/templates/marketing-pages/creative.html:33
@@ -776,8 +780,9 @@ msgstr "Encontre hoje o seu parceiro criativo no Reino Unido"
 
 #: enrolment/templates/marketing-pages/creative.html:89
 msgid "See the UK's creative services providers on the Find a supplier service"
-msgstr "Consulte os fornecedores de serviços criativos no Reino Unido, "
-"em "Encontrar um fornecedor""
+msgstr ""
+"Consulte os fornecedores de serviços criativos no Reino Unido, "
+"em 'Encontrar um fornecedor'"
 
 #: enrolment/templates/marketing-pages/food.html:6
 msgid ""
@@ -942,8 +947,8 @@ msgstr ""
 
 msgid "See the UK's food and drink companies on the Find a supplier service"
 msgstr ""
-"Consulte as empresas de alimentos e bebidas no Reino Unido, em "Encontrar "
-"um fornecedor"
+"Consulte as empresas de alimentos e bebidas no Reino Unido, em 'Encontrar "
+"um fornecedor'"
 
 #: enrolment/templates/marketing-pages/food.html:81
 msgid ""
