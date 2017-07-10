@@ -353,8 +353,6 @@ msgid "Find a supplier"
 msgstr "Anbieter finden"
 
 #: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:36
-#, fuzzy
-#| msgid "Find a supplier"
 msgid "Find a Supplier"
 msgstr "Anbieter finden"
 
@@ -441,10 +439,6 @@ msgstr "Modernste Technologie in Großbritannien & Nordirland"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:61
 #: enrolment/templates/landing-page-sector-list.html:59
-#, fuzzy
-#| msgid ""
-#| "Check out the latest cutting-edge technological innovations that the UK "
-#| "is bringing to the world."
 msgid ""
 "Check out the cutting-edge technological innovations that the UK is bringing "
 "to the world."
@@ -495,10 +489,6 @@ msgstr "Lebensmittel und Getränke in Großbritannien & Nordirland"
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:93
 #: enrolment/templates/landing-page-sector-list.html:92
-#, fuzzy
-#| msgid ""
-#| "Whether you want the most innovative food brands or exceptional quality "
-#| "drinks, the UK should be first on your list."
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "should be first on your list."
@@ -549,11 +539,6 @@ msgstr ""
 
 #: enrolment/templates/bidi/landing-page.html:39
 #: enrolment/templates/landing-page.html:32
-#, fuzzy
-#| msgid ""
-#| "UK companies work with businesses and governments around the world to "
-#| "create new living and working environments, run high quality services and "
-#| "deliver the best experiences."
 msgid ""
 "UK companies work with businesses and governments around the world to run "
 "high quality services and deliver the best experiences."
@@ -582,10 +567,6 @@ msgstr ""
 
 #: enrolment/templates/bidi/landing-page.html:79
 #: enrolment/templates/landing-page.html:75
-#, fuzzy
-#| msgid ""
-#| "Check out the latest cutting-edge technologies that the UK is bringing to "
-#| "the world."
 msgid ""
 "Check out the cutting-edge technologies that the UK is bringing to the world."
 msgstr ""
@@ -610,10 +591,6 @@ msgstr "Großbritanniens Lebensmittel- und Getränkebranche"
 
 #: enrolment/templates/bidi/landing-page.html:115
 #: enrolment/templates/landing-page.html:112
-#, fuzzy
-#| msgid ""
-#| "Whether you want the most delicious food brands or exceptional quality "
-#| "drinks, the UK is the first place to look."
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "is the first place to look."
@@ -705,8 +682,6 @@ msgid "keywords"
 msgstr "Stichwörter"
 
 #: enrolment/templates/marketing-pages/bidi/base.html:77
-#, fuzzy
-#| msgid "Read case study"
 msgid "case study"
 msgstr "Fallstudie lesen"
 
@@ -789,19 +764,17 @@ msgstr ""
 "Dienstleistungen im Wert von 19,1 Mrd. GBP erbracht"
 
 #: enrolment/templates/marketing-pages/creative.html:37
-#, fuzzy, python-format
-#| msgid "9%% of all UK service exports are in the creative services in 2014"
+#, python-format
 msgid "9%% of all UK service exports are in the creative services in 2014"
 msgstr ""
-"9 % aller britischen Exporte für Dienstleistungen im Jahr 2014 entfielen auf "
+"9 %% aller britischen Exporte für Dienstleistungen im Jahr 2014 entfielen auf "
 "den kreativen Bereich"
 
 #: enrolment/templates/marketing-pages/creative.html:38
-#, fuzzy, python-format
-#| msgid "Growth of creative services exports was 10.9%% in 2014"
+#, python-format
 msgid "Growth of creative services exports was 10.9%% in 2014"
 msgstr ""
-"Das Exportwachstum für kreative Dienstleistungen im Jahr 2014 betrug 10,9 %"
+"Das Exportwachstum für kreative Dienstleistungen im Jahr 2014 betrug 10,9 %%"
 
 #: enrolment/templates/marketing-pages/creative.html:46
 msgid "Our creative digital experience"
@@ -1096,6 +1069,13 @@ msgid ""
 "Retail Consortium manufacturing standards have been adopted by 23,000 "
 "certificated suppliers, not only in the UK but in 123 other countries."
 msgstr ""
+"Die Qualität der von uns produzierten Lebensmittel ist uns sehr wichtig: "
+"89.000 Landwirtschaftsbetriebe erfüllen den "
+"freiwilligen Standard für Bauernhöfe, "
+"der das Wohlergehen von Tieren und Mitarbeitern garantiert."
+"Die Fertigungsstandards unseres British Retail Consortium (BRC)"
+"werden von 23.000 zertifizierten Anbietern nicht nur hier, sondern in 123 "
+"weiteren Ländern eingehalten."
 
 #: enrolment/templates/marketing-pages/food.html:79
 msgid ""
@@ -1809,27 +1789,6 @@ msgstr "Finden Sie erstklassige britische Unternehmen"
 
 #~ msgid "the world’s fastest passenger train in China."
 #~ msgstr "des weltweit schnellsten Passagierzugs in China"
-
-#~ msgid "We care about the food we produce: 89,000 farmers comply with"
-#~ msgstr ""
-#~ "Die Qualität der von uns produzierten Lebensmittel ist uns sehr wichtig: "
-#~ "89.000 Landwirtschaftsbetriebe erfüllen den"
-
-#~ msgid "voluntary farm standards scheme"
-#~ msgstr "freiwilligen Standard für Bauernhöfe"
-
-#~ msgid "that assure animal and worker welfare and our"
-#~ msgstr ", der das Wohlergehen von Tieren und Mitarbeitern garantiert."
-
-#~ msgid "British Retail Consortium manufacturing standards"
-#~ msgstr "Die Fertigungsstandards unseres British Retail Consortium (BRC)"
-
-#~ msgid ""
-#~ "have been adopted by 23,000 certificated suppliers, not only in the UK "
-#~ "but in 123 other countries."
-#~ msgstr ""
-#~ "werden von 23.000 zertifizierten Anbietern nicht nur hier, sondern in 123 "
-#~ "weiteren Ländern eingehalten."
 
 #~ msgid ""
 #~ "Whether you want the most innovative food brands or exceptional quality "
