@@ -54,7 +54,8 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_UTM_COOKIE_DOMAIN=.great.dev; \
 	export DIRECTORY_UI_SUPPLIER_FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED=true; \
 	export DIRECTORY_UI_SUPPLIER_FEATURE_SPORTS_INFRASTRUCTURE_ENABLED=true; \
-	export DIRECTORY_UI_SUPPLIER_FEATURE_COMPANY_SEARCH_VIEW_ENABLED=true
+	export DIRECTORY_UI_SUPPLIER_FEATURE_COMPANY_SEARCH_VIEW_ENABLED=true; \
+	export DIRECTORY_UI_SUPPLIER_FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED=true
 
 docker_test_env_files:
 	$(DOCKER_SET_DEBUG_ENV_VARS) && \
@@ -110,6 +111,7 @@ DEBUG_SET_ENV_VARS := \
 	export FEATURE_SPORTS_INFRASTRUCTURE_ENABLED=true; \
 	export FEATURE_COMPANY_SEARCH_VIEW_ENABLED=true; \
 	export DISABLED_LANGUAGES_INDUSTRIES_PAGE=zh-hans,fr,pt-br
+	export FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED=true
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)
@@ -137,5 +139,13 @@ integration_tests:
 	git clone https://github.com/uktrade/directory-tests && \
 	cd directory-tests && \
 	make docker_integration_tests
+
+compile_requirements:
+	python3 -m piptools compile requirements.ini
+
+compile_test_requirements:
+	python3 -m piptools compile requirements_test.ini
+
+compile_all_requirements: compile_requirements compile_test_requirements
 
 .PHONY: build clean test_requirements docker_run docker_debug docker_webserver_bash docker_test debug_webserver debug_test debug heroku_deploy_dev heroku_deploy_demo

@@ -4,8 +4,8 @@
 #
 #    pip-compile --output-file requirements_test.txt requirements_test.ini
 #
--e git+https://github.com/uktrade/directory-api-client.git@v4.5.1#egg=directory_api_client
--e git+https://github.com/uktrade/directory-constants.git@v2.1.0#egg=directory_constants
+-e git+https://github.com/uktrade/directory-api-client.git@v6.0.0#egg=directory_api_client
+-e git+https://github.com/uktrade/directory-constants.git@v2.2.0#egg=directory_constants
 -e git+https://github.com/uktrade/directory-validators.git@v2.2.0#egg=directory_validators
 -e git+https://github.com/uktrade/directory-signature-auth.git@v0.2.0#egg=sigauth
 cachetools==2.0.0         # via zenpy
@@ -30,11 +30,13 @@ pyflakes==1.2.3           # via flake8
 pytest-catchlog==1.2.2
 pytest-cov==2.3.1
 pytest-django==3.0.0
+pytest-sugar==0.8.0
 pytest==3.0.2
 python-dateutil==2.6.0    # via freezegun, zenpy
 raven==5.19.0
 requests==2.11.1
 requests_mock==1.1.0
 six==1.10.0               # via freezegun, python-dateutil, requests-mock
+termcolor==1.1.0          # via pytest-sugar
 whitenoise==3.1
 zenpy==1.1.10
