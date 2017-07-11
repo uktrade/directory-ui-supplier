@@ -15,11 +15,11 @@ class SubmitExportOpportunityView(FormView):
     def dispatch(self, request, *args, **kwargs):
         if not settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED:
             raise Http404()
-        super().dispatch(request, *args, **kwargs)
+        return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
         response = api_client.exportopportunity.create_opportunity(
-                form_data=form.cleaned_data
-            )
+            form_data=form.cleaned_data
+        )
         response.raise_for_status()
         return TemplateResponse(self.request, self.success_template)
