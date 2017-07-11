@@ -1,0 +1,31 @@
+{% extends 'govuk_layout.html' %}
+{% load trans from i18n %}
+{% load date_recency from company_tags %}
+{% load staticfiles %}
+{% block sub_header %}{% endblock %}
+{% block content %}
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span12 great-blue-bar">
+				<h1 class="element-within company-name-title">
+					<span class="dont-break-out">{% trans "Get UK companies to fulfil your business needs" %}</span>
+				</h1>
+			</div>
+		</div>
+		<div class="ed-landing-page-form-inner">
+			<div class="row-fluid">
+				<br>
+				<form method="post">
+					<div class="row-fluid">
+						{{ form.as_p }}
+						<div class="span2 btn-container ed-landing-page-register-button-container">
+							<button class="button">
+								{% trans "Submit" %}
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'govuk_layout.html' %}
+{% load staticfiles %}
+
+{% block sub_header %}{# prevent the subheader from showing on form pages #}{% endblock %}
+{% block content %}
+	<div class="container ed-international-success-container">
+		<h1>Export opportunity saved</h1>
+		<div class="ed-international-success-synopsis">
+			<p>
+				Your export opportunity has been saved.
+			</p>
+			<p>
+				<a href="{% url 'public-company-profiles-list' %}">Browse more companies</a>
+			</p>
+		</div>
+	</div>
+{% endblock content %}
