@@ -622,7 +622,7 @@ msgstr "Absenden"
 #: enrolment/templates/bidi/lead-generation-form.html:84
 #: enrolment/templates/lead-generation-form.html:85
 msgid "I agree to the great.gov.uk terms and conditions"
-msgstr "Ich stimme der great.gov.uk"
+msgstr "Ich akzeptiere die AGB von great.gov.uk"
 
 #: enrolment/templates/browse-companies.html:4
 msgid "Find other great UK companies"
