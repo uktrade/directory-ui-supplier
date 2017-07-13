@@ -74,7 +74,9 @@ HEALTH_SECTOR_CONTEXT = {
 TECH_SECTOR_CONTEXT = {
     'sector_value': 'SOFTWARE_AND_COMPUTER_SERVICES',
     'case_study': {
-        'image_alt': 'Mobile phone displaying evrythng\'s commercial traceability product',
+        'image_alt': _(
+            'Mobile phone displaying evrythng\'s commercial traceability '
+            'product'),
         'image_url': '/static/images/evrythng.jpg',
         'image_caption': 'EVRYTHNG',
         'title': 'EVRYTHNG',
@@ -108,7 +110,9 @@ TECH_SECTOR_CONTEXT = {
     },
     'companies': [
         {
-            'image_alt': 'Mobile phone being used to interact with a bottle of Johnnie Walker using evrythng technology',
+            'image_alt': _(
+                'Mobile phone being used to interact with a bottle of '
+                'Johnnie Walker using evrythng technology'),
             'image_url': '/static/images/evrything.png',
             'name': 'EVRYTHNG',
             'description': mark_safe(_(
@@ -142,7 +146,9 @@ TECH_SECTOR_CONTEXT = {
 CREATIVE_SECTOR_CONTEXT = {
     'sector_value': 'CREATIVE_AND_MEDIA',
     'case_study': {
-        'image_alt': 'Immersive projection on to Parque Large in the Royal Botanical Gardens of Rio de Janeiro',
+        'image_alt': _(
+            'Immersive projection on to Parque Large in the Royal Botanical '
+            'Gardens of Rio de Janeiro'),
         'image_url': '/static/images/immersive-hero.jpg',
         'image_caption': '',
         'title': 'Immersive',
@@ -185,7 +191,9 @@ CREATIVE_SECTOR_CONTEXT = {
             'url': links['CREATIVE_AND_MEDIA']['company_one'],
         },
         {
-            'image_alt': 'Interaction between the Blippar app on a smartphone and a ketchup bottle',
+            'image_alt': _(
+                'Interaction between the Blippar app on a smartphone and '
+                'a ketchup bottle'),
             'image_url': '/static/images/blippar.png',
             'name': 'Blippar',
             'description': _(
@@ -202,7 +210,9 @@ CREATIVE_SECTOR_CONTEXT = {
 FOOD_SECTOR_CONTEXT = {
     'sector_value': 'FOOD_AND_DRINK',
     'case_study': {
-        'image_alt': 'Fever-Tree Clementine and cinnamon tonic water being poured from a bottle into a glass',
+        'image_alt': _(
+            'Fever-Tree Clementine and cinnamon tonic water being poured '
+            'from a bottle into a glass'),
         'image_url': '/static/images/fever-tree-pour.png',
         'image_caption': _('Clementine and cinnamon tonic water'),
         'title': _('Clementine and cinnamon tonic water'),
