@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-14 10:09+0000\n"
+"POT-Creation-Date: 2017-07-14 14:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: enrolment/constants.py:13
+msgid "Rebekah Marine using an i-limb"
+msgstr ""
 
 #: enrolment/constants.py:15
 msgid "Rebekah Marine: i-limb&trade; user"
@@ -50,7 +54,7 @@ msgstr ""
 msgid "Healthcare and life sciences"
 msgstr "英国的医疗保健和生命科学"
 
-#: enrolment/constants.py:39 enrolment/constants.py:103
+#: enrolment/constants.py:39 enrolment/constants.py:106
 msgid "Technology"
 msgstr ""
 
@@ -58,25 +62,33 @@ msgstr ""
 msgid "prosthetics, bionics, robotics, healthcare, technology, limb loss"
 msgstr ""
 
-#: enrolment/constants.py:53
+#: enrolment/constants.py:50
+msgid "Graphical representation of reflux in the stomach"
+msgstr ""
+
+#: enrolment/constants.py:55
 msgid ""
 "RD Biomed designs and makes Peptest&trade;- the world’s first non-invasive "
 "reflux diagnostic test. RD Biomed specialises in diagnostics for "
 "gastroenterology and respiratory conditions."
 msgstr ""
 
-#: enrolment/constants.py:65
+#: enrolment/constants.py:63
+msgid "Claudia Breidbach using an i-limb"
+msgstr ""
+
+#: enrolment/constants.py:67
 msgid ""
 "Touch Bionics is responsible for developing and improving the world’s first "
 "bionic hand with 5 independently moving fingers, transforming lives across "
 "the globe."
 msgstr ""
 
-#: enrolment/constants.py:78
+#: enrolment/constants.py:80
 msgid "Mobile phone displaying evrythng's commercial traceability product"
 msgstr ""
 
-#: enrolment/constants.py:84
+#: enrolment/constants.py:87
 msgid ""
 "EVRYTHNG’s commercial Internet of Things traceability solution allows brands "
 "to track and report the status, location and history of everything they "
@@ -85,24 +97,24 @@ msgid ""
 "product, batches, cases and pallets can be identified and mapped."
 msgstr ""
 
-#: enrolment/constants.py:94
+#: enrolment/constants.py:97
 msgid ""
 "Companies can transform the value of their physical assets in the EVRYTHNG "
 "cloud by adding an intelligent, personalised layer of digital content, "
 "services and data analytics."
 msgstr ""
 
-#: enrolment/constants.py:108
+#: enrolment/constants.py:111
 msgid "Internet of Things, data analytics, traceability, connectivity"
 msgstr ""
 
-#: enrolment/constants.py:114
+#: enrolment/constants.py:117
 msgid ""
 "Mobile phone being used to interact with a bottle of Johnnie Walker using "
 "evrythng technology"
 msgstr ""
 
-#: enrolment/constants.py:119
+#: enrolment/constants.py:123
 msgid ""
 "EVRYTHNG is an Internet of Things software company that helps manufacturers "
 "<i>digitalise</i> their physical products by connecting them to the web. "
@@ -112,6 +124,10 @@ msgid ""
 msgstr ""
 
 #: enrolment/constants.py:134
+msgid "Connectivity diagram of Arkessa's IoT services"
+msgstr ""
+
+#: enrolment/constants.py:138
 msgid ""
 "Arkessa enables devices and applications developers to connect to the "
 "Internet of Things (IoT), regardless of location, network operator or "
@@ -119,13 +135,13 @@ msgid ""
 "mobility platform that is easy to adopt, integrate and scale."
 msgstr ""
 
-#: enrolment/constants.py:150
+#: enrolment/constants.py:154
 msgid ""
 "Immersive projection on to Parque Large in the Royal Botanical Gardens of "
 "Rio de Janeiro"
 msgstr ""
 
-#: enrolment/constants.py:156
+#: enrolment/constants.py:161
 msgid ""
 "For Adidas’ 2014 World Cup campaign, Immersive developed concepts, "
 "storyboards and produced final audio and video designs. It also produced the "
@@ -133,23 +149,27 @@ msgid ""
 "a 2m ball and consulting on live-camera press shot positions"
 msgstr ""
 
-#: enrolment/constants.py:164
+#: enrolment/constants.py:169
 msgid "Creating the grandest projection mapping the world has ever seen."
 msgstr ""
 
-#: enrolment/constants.py:167
+#: enrolment/constants.py:172
 msgid "Fast Company magazine"
 msgstr ""
 
-#: enrolment/constants.py:171
+#: enrolment/constants.py:176
 msgid "Creative"
 msgstr ""
 
-#: enrolment/constants.py:176
+#: enrolment/constants.py:181
 msgid "Interactive installations, video content, projection mapping"
 msgstr ""
 
-#: enrolment/constants.py:185
+#: enrolment/constants.py:186
+msgid "An Immersive event lighting system"
+msgstr ""
+
+#: enrolment/constants.py:190
 msgid ""
 "Immersive is a complete solution provider for audio-visual projects of any "
 "scale. Immersive uses new media technology (such as LED, holograms, "
@@ -157,56 +177,60 @@ msgid ""
 "cutting-edge lighting, video and interactive installations."
 msgstr ""
 
-#: enrolment/constants.py:195
+#: enrolment/constants.py:200
 msgid ""
 "Interaction between the Blippar app on a smartphone and a ketchup bottle"
 msgstr ""
 
-#: enrolment/constants.py:200
+#: enrolment/constants.py:206
 msgid ""
 "Blippar is the leading visual discovery app, harnessing augmented reality, "
 "image-recognition technology and artificial intelligence to bring the "
 "physical world to life through smartphones."
 msgstr ""
 
-#: enrolment/constants.py:214
+#: enrolment/constants.py:220
 msgid ""
 "Fever-Tree Clementine and cinnamon tonic water being poured from a bottle "
 "into a glass"
 msgstr ""
 
-#: enrolment/constants.py:217 enrolment/constants.py:218
+#: enrolment/constants.py:224 enrolment/constants.py:225
 msgid "Clementine and cinnamon tonic water"
 msgstr ""
 
-#: enrolment/constants.py:220
+#: enrolment/constants.py:227
 msgid ""
 "Fever-Tree has established itself as the mixer drink specialist, crafting a "
 "range of fourteen products sourced from the highest quality natural "
 "ingredients for the best tasting mixers."
 msgstr ""
 
-#: enrolment/constants.py:227
+#: enrolment/constants.py:234
 msgid ""
 "If three-quarters of your gin and tonic is the tonic, make sure you use the "
 "best."
 msgstr ""
 
-#: enrolment/constants.py:230
+#: enrolment/constants.py:237
 msgid "Tim Warrillow"
 msgstr ""
 
-#: enrolment/constants.py:235
+#: enrolment/constants.py:242
 #, fuzzy
 #| msgid "The UK's food and drink"
 msgid "Food and drink"
 msgstr "来自英国的食品和饮料"
 
-#: enrolment/constants.py:239
+#: enrolment/constants.py:246
 msgid "Mixers, Quality, Taste"
 msgstr ""
 
-#: enrolment/constants.py:247
+#: enrolment/constants.py:251
+msgid "Packet of Joe and Seph's double chocolate popcorn"
+msgstr ""
+
+#: enrolment/constants.py:256
 msgid ""
 "All Joe & Seph’s popcorn is handmade in small batches to ensure superior "
 "texture and an intense flavour. The ingredients used are 100&#37; natural "
@@ -214,42 +238,46 @@ msgid ""
 "frying."
 msgstr ""
 
-#: enrolment/constants.py:260
+#: enrolment/constants.py:265
+msgid "Bottle and glass of Fever-Tree Madagascan Cola"
+msgstr ""
+
+#: enrolment/constants.py:269
 msgid ""
 "Fever-Tree has pioneered premium mixers and is now the world’s leading "
 "premium mixer company."
 msgstr ""
 
-#: enrolment/constants.py:308
+#: enrolment/constants.py:317
 msgid "Queen Elizabeth Olympic Park, London"
 msgstr ""
 
-#: enrolment/constants.py:309
+#: enrolment/constants.py:318
 msgid "London 2012 Olympic and Paralympic Games"
 msgstr ""
 
-#: enrolment/constants.py:311
+#: enrolment/constants.py:320
 msgid ""
 "Movement Strategies leads design standards for major events such as the "
 "Olympic Games, helping plan crowd movement and safety, and driving increased "
 "ticket sales."
 msgstr ""
 
-#: enrolment/constants.py:323
+#: enrolment/constants.py:332
 msgid "Global sports infrastructure"
 msgstr ""
 
-#: enrolment/constants.py:327
+#: enrolment/constants.py:336
 msgid "Crowd safety, Pedestrian flow, Movement analytics"
 msgstr ""
 
-#: enrolment/constants.py:334
+#: enrolment/constants.py:343
 msgid ""
 "Movement Strategies is the largest and most experienced independent, "
 "specialist people movement consultancy in the world."
 msgstr ""
 
-#: enrolment/constants.py:344
+#: enrolment/constants.py:353
 msgid ""
 "Fortress GB proved its reputation as the market-leading e-ticketing provider "
 "by being selected to install and manage the very latest in turnstile "
