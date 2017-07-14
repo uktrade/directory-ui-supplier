@@ -661,8 +661,8 @@ msgid ""
 "Exceptional and creative UK trade partners are ready to work with you. "
 "Discover them on the Find a Supplier service."
 msgstr "O Reino Unido tem parceiros comerciais excepcionalmente inovadores "
-"e criativos, prontos para trabalhar consigo. Descubra-os em "Encontrar"
-"um fornecedor"."
+"e criativos, prontos para trabalhar consigo. Descubra-os em \"Encontrar"
+"um fornecedor\"."
 
 #: enrolment/templates/browse-companies.html:11
 #: enrolment/templates/search-companies.html:17
