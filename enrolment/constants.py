@@ -10,7 +10,7 @@ COMPANIES_HOUSE_SEARCH_URL = 'https://beta.companieshouse.gov.uk'
 HEALTH_SECTOR_CONTEXT = {
     'sector_value': 'HEALTHCARE_AND_MEDICAL',
     'case_study': {
-        'image_alt': 'Rebekah Marine using an i-limb',
+        'image_alt': _('Rebekah Marine using an i-limb'),
         'image_url': '/static/images/touch-bionics-right-hand.png',
         'image_caption': mark_safe(_('Rebekah Marine: i-limb&trade; user')),
         'title': 'Touch Bionics',
@@ -46,7 +46,7 @@ HEALTH_SECTOR_CONTEXT = {
     },
     'companies': [
         {
-            'image_alt': 'Graphical representation of reflux in the stomach',
+            'image_alt': _('Graphical representation of reflux in the stomach'),
             'image_url': '/static/images/r-d-biomed.png',
             'name': 'RD Biomed',
             'description': mark_safe(_(
@@ -58,7 +58,7 @@ HEALTH_SECTOR_CONTEXT = {
             'url': links['HEALTHCARE_AND_MEDICAL']['company_one'],
         },
         {
-            'image_alt': 'Claudia Breidbach using an i-limb',
+            'image_alt': _('Claudia Breidbach using an i-limb'),
             'image_url': '/static/images/touch-bionics-left-hand.png',
             'name': 'Touch Bionics',
             'description': _(
@@ -76,7 +76,8 @@ TECH_SECTOR_CONTEXT = {
     'case_study': {
         'image_alt': _(
             'Mobile phone displaying evrythng\'s commercial traceability '
-            'product'),
+            'product'
+        ),
         'image_url': '/static/images/evrythng.jpg',
         'image_caption': 'EVRYTHNG',
         'title': 'EVRYTHNG',
@@ -112,7 +113,8 @@ TECH_SECTOR_CONTEXT = {
         {
             'image_alt': _(
                 'Mobile phone being used to interact with a bottle of '
-                'Johnnie Walker using evrythng technology'),
+                'Johnnie Walker using evrythng technology'
+            ),
             'image_url': '/static/images/evrything.png',
             'name': 'EVRYTHNG',
             'description': mark_safe(_(
@@ -127,7 +129,7 @@ TECH_SECTOR_CONTEXT = {
             'url': links['SOFTWARE_AND_COMPUTER_SERVICES']['company_one'],
         },
         {
-            'image_alt': 'Connectivity diagram of Arkessa\'s IoT services',
+            'image_alt': _('Connectivity diagram of Arkessa\'s IoT services'),
             'image_url': '/static/images/arkessa.png',
             'name': 'Arkessa',
             'description': _(
@@ -148,7 +150,8 @@ CREATIVE_SECTOR_CONTEXT = {
     'case_study': {
         'image_alt': _(
             'Immersive projection on to Parque Large in the Royal Botanical '
-            'Gardens of Rio de Janeiro'),
+            'Gardens of Rio de Janeiro'
+        ),
         'image_url': '/static/images/immersive-hero.jpg',
         'image_caption': '',
         'title': 'Immersive',
@@ -178,7 +181,7 @@ CREATIVE_SECTOR_CONTEXT = {
     },
     'companies': [
         {
-            'image_alt': 'An Immersive event lighting system',
+            'image_alt': _('An Immersive event lighting system'),
             'image_url': '/static/images/immersive.png',
             'name': 'Immersive',
             'description': _(
@@ -193,7 +196,8 @@ CREATIVE_SECTOR_CONTEXT = {
         {
             'image_alt': _(
                 'Interaction between the Blippar app on a smartphone and '
-                'a ketchup bottle'),
+                'a ketchup bottle'
+            ),
             'image_url': '/static/images/blippar.png',
             'name': 'Blippar',
             'description': _(
@@ -212,7 +216,8 @@ FOOD_SECTOR_CONTEXT = {
     'case_study': {
         'image_alt': _(
             'Fever-Tree Clementine and cinnamon tonic water being poured '
-            'from a bottle into a glass'),
+            'from a bottle into a glass'
+        ),
         'image_url': '/static/images/fever-tree-pour.png',
         'image_caption': _('Clementine and cinnamon tonic water'),
         'title': _('Clementine and cinnamon tonic water'),
@@ -240,7 +245,7 @@ FOOD_SECTOR_CONTEXT = {
     },
     'companies': [
         {
-            'image_alt': 'Packet of Joe and Seph\'s double chocolate popcorn',
+            'image_alt': _('Packet of Joe and Seph\'s double chocolate popcorn'),
             'image_url': '/static/images/joe-and-steph.png',
             'name': "Joe & Seph's",
             'description': mark_safe(_(
@@ -253,7 +258,7 @@ FOOD_SECTOR_CONTEXT = {
             'url': links['FOOD_AND_DRINK']['company_one'],
         },
         {
-            'image_alt': 'Bottle and glass of Fever-Tree Madagascan Cola',
+            'image_alt': _('Bottle and glass of Fever-Tree Madagascan Cola'),
             'image_url': '/static/images/fever-tree.png',
             'name': 'Fever-Tree',
             'description': _(
