@@ -487,7 +487,8 @@ msgstr "Se o que você procura são as marcas de alimentos mais inovadoras ou "
 #: enrolment/templates/landing-page-sector-list.html:96
 #: enrolment/templates/landing-page.html:117
 msgid "Find out more about UK food and drink"
-msgstr ""
+msgstr "Saiba mais sobre as ciências da vida e da saúde no "
+"Reino Unido"
 
 #: enrolment/templates/bidi/landing-page.html:12
 #: enrolment/templates/landing-page.html:9
