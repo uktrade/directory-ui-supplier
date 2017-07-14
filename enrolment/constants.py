@@ -46,7 +46,9 @@ HEALTH_SECTOR_CONTEXT = {
     },
     'companies': [
         {
-            'image_alt': _('Graphical representation of reflux in the stomach'),
+            'image_alt': _(
+                'Graphical representation of reflux in the stomach'
+            ),
             'image_url': '/static/images/r-d-biomed.png',
             'name': 'RD Biomed',
             'description': mark_safe(_(
@@ -245,7 +247,9 @@ FOOD_SECTOR_CONTEXT = {
     },
     'companies': [
         {
-            'image_alt': _('Packet of Joe and Seph\'s double chocolate popcorn'),
+            'image_alt': _(
+                'Packet of Joe and Seph\'s double chocolate popcorn'
+            ),
             'image_url': '/static/images/joe-and-steph.png',
             'name': "Joe & Seph's",
             'description': mark_safe(_(
