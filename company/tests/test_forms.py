@@ -126,8 +126,18 @@ def test_serialize_contact_company_form():
 
 
 def test_search_form():
-    form = forms.CompanySearchForm(data={'term': '123'})
+    form = forms.CompanySearchForm(data={
+        'term': '123',
+        'sector': 'AEROSPACE'
+    })
 
-    assert form.fields['term'].required is True
     assert form.is_valid() is True
     assert form.cleaned_data['term'] == '123'
+    assert form.cleaned_data['sector'] == 'AEROSPACE'
+
+
+def test_search_required_fields():
+    form = forms.CompanySearchForm()
+
+    assert form.fields['sector'].required is False
+    assert form.fields['term'].required is True
