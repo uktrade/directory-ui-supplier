@@ -2,18 +2,18 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-22 15:45+0000\n"
+"POT-Creation-Date: 2017-07-14 10:09+0000\n"
 "PO-Revision-Date: 2017-06-16 17:01+0100\n"
 "Language: ja\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: xls-to-po 1.0\n"
 
-#: enrolment/constants.py:14
+#: enrolment/constants.py:15
 msgid "Rebekah Marine: i-limb&trade; user"
 msgstr "Rebekah Marine 様：i-limb&trade; ユーザー"
 
-#: enrolment/constants.py:17
+#: enrolment/constants.py:18
 msgid ""
 "Touch Bionics has transformed thousands of lives in dozens of countries "
 "through world-leading prosthetic technologies. We have a range of "
@@ -24,7 +24,7 @@ msgstr ""
 "人々の生活を大きく変えてきました。当社は、人々の自立心と自信を高める、さまざ"
 "まな筋電義手や義指を提供しています。"
 
-#: enrolment/constants.py:25
+#: enrolment/constants.py:26
 msgid ""
 "The i-limb&trade; quantum is the next best thing to real hands and as a "
 "bilateral amputee having the ability to do what I want to do independently "
@@ -33,29 +33,27 @@ msgstr ""
 "i-limb™ quantum は本物の手の次にすばらしいものです。両手の切断手術を受けた者"
 "として、自分がやりたいことを自分でできるというのは、本当にすごいことです。"
 
-#: enrolment/constants.py:29
+#: enrolment/constants.py:30
 msgid "Jason"
 msgstr "Jason 様"
 
-#: enrolment/constants.py:30
+#: enrolment/constants.py:31
 msgid "i-limb quantum&trade; user"
 msgstr "i-limb quantum™ ユーザー"
 
-#: enrolment/constants.py:34
-#: enrolment/templates/bidi/landing-page-sector-list.html:42
-#: enrolment/templates/landing-page-sector-list.html:40
+#: enrolment/constants.py:35
 msgid "Healthcare and life sciences"
 msgstr "医療・ライフサイエンス"
 
-#: enrolment/constants.py:38 enrolment/constants.py:97
+#: enrolment/constants.py:39 enrolment/constants.py:103
 msgid "Technology"
 msgstr "技術"
 
-#: enrolment/constants.py:43
+#: enrolment/constants.py:44
 msgid "prosthetics, bionics, robotics, healthcare, technology, limb loss"
 msgstr "人工装具、生体工学、ロボット工学、医療、技術、四肢欠損"
 
-#: enrolment/constants.py:51
+#: enrolment/constants.py:53
 msgid ""
 "RD Biomed designs and makes Peptest&trade;- the world’s first non-invasive "
 "reflux diagnostic test. RD Biomed specialises in diagnostics for "
@@ -64,7 +62,7 @@ msgstr ""
 "RD Biomed は、世界初の非侵襲性逆流診断テストである Peptest™ を設計、開発して"
 "います。RD Biomed は、消化器病と呼吸状態の診断のを専門とする企業です。"
 
-#: enrolment/constants.py:62
+#: enrolment/constants.py:65
 msgid ""
 "Touch Bionics is responsible for developing and improving the world’s first "
 "bionic hand with 5 independently moving fingers, transforming lives across "
@@ -74,6 +72,10 @@ msgstr ""
 "独立して動くこの義手は、世界中の人たちの生活を大きく変えています。"
 
 #: enrolment/constants.py:78
+msgid "Mobile phone displaying evrythng's commercial traceability product"
+msgstr ""
+
+#: enrolment/constants.py:84
 msgid ""
 "EVRYTHNG’s commercial Internet of Things traceability solution allows brands "
 "to track and report the status, location and history of everything they "
@@ -87,7 +89,7 @@ msgstr ""
 "め、構成部品や完成品、バッチ、ケース、パレットが複雑につながった階層構造の識"
 "別やマッピングが可能です。"
 
-#: enrolment/constants.py:88
+#: enrolment/constants.py:94
 msgid ""
 "Companies can transform the value of their physical assets in the EVRYTHNG "
 "cloud by adding an intelligent, personalised layer of digital content, "
@@ -97,11 +99,17 @@ msgstr ""
 "イズしたインテリジェントな形で追加することにより、企業は物的資産の価値を変え"
 "ることができます。"
 
-#: enrolment/constants.py:102
+#: enrolment/constants.py:108
 msgid "Internet of Things, data analytics, traceability, connectivity"
 msgstr "Internet of Things、データ分析、トレーサビリティ、接続性"
 
-#: enrolment/constants.py:110
+#: enrolment/constants.py:114
+msgid ""
+"Mobile phone being used to interact with a bottle of Johnnie Walker using "
+"evrythng technology"
+msgstr ""
+
+#: enrolment/constants.py:119
 msgid ""
 "EVRYTHNG is an Internet of Things software company that helps manufacturers "
 "<i>digitalise</i> their physical products by connecting them to the web. "
@@ -115,7 +123,7 @@ msgstr ""
 "常時接続されたスマートホームアプライアンスまで、EVRYTHNG クラウドで個別に管理"
 "されるアイテムには、一意の Active Digital Identity が割り当てられます。"
 
-#: enrolment/constants.py:124
+#: enrolment/constants.py:134
 msgid ""
 "Arkessa enables devices and applications developers to connect to the "
 "Internet of Things (IoT), regardless of location, network operator or "
@@ -127,7 +135,13 @@ msgstr ""
 "す。導入、統合、拡張が容易で、将来も利用可能で安全性の高いモバイルプラット"
 "フォームを企業に提供しています。"
 
-#: enrolment/constants.py:143
+#: enrolment/constants.py:150
+msgid ""
+"Immersive projection on to Parque Large in the Royal Botanical Gardens of "
+"Rio de Janeiro"
+msgstr ""
+
+#: enrolment/constants.py:156
 msgid ""
 "For Adidas’ 2014 World Cup campaign, Immersive developed concepts, "
 "storyboards and produced final audio and video designs. It also produced the "
@@ -140,23 +154,23 @@ msgstr ""
 "ルへのプロジェクションマッピング、プレスショットを撮るライブカメラの配置のコ"
 "ンサルティングなども行いました。"
 
-#: enrolment/constants.py:151
+#: enrolment/constants.py:164
 msgid "Creating the grandest projection mapping the world has ever seen."
 msgstr "世界で類を見ないほど豪華なプロジェクションマッピングを作成しています。"
 
-#: enrolment/constants.py:154
+#: enrolment/constants.py:167
 msgid "Fast Company magazine"
 msgstr "『Fast Company』誌"
 
-#: enrolment/constants.py:158
+#: enrolment/constants.py:171
 msgid "Creative"
 msgstr "クリエイティブ"
 
-#: enrolment/constants.py:163
+#: enrolment/constants.py:176
 msgid "Interactive installations, video content, projection mapping"
 msgstr "対話型インストール、ビデオコンテンツ、プロジェクションマッピング"
 
-#: enrolment/constants.py:171
+#: enrolment/constants.py:185
 msgid ""
 "Immersive is a complete solution provider for audio-visual projects of any "
 "scale. Immersive uses new media technology (such as LED, holograms, "
@@ -168,7 +182,12 @@ msgstr ""
 "ム、投影、仮想現実、拡張現実など）を駆使して、最先端の照明、ビデオ、対話型イ"
 "ンストールを設計、開発しています。"
 
-#: enrolment/constants.py:183
+#: enrolment/constants.py:195
+msgid ""
+"Interaction between the Blippar app on a smartphone and a ketchup bottle"
+msgstr ""
+
+#: enrolment/constants.py:200
 msgid ""
 "Blippar is the leading visual discovery app, harnessing augmented reality, "
 "image-recognition technology and artificial intelligence to bring the "
@@ -178,11 +197,17 @@ msgstr ""
 "認識技術、人工知能を連携させ、スマートフォンを通して物質世界に命を吹き込みま"
 "す。"
 
-#: enrolment/constants.py:197 enrolment/constants.py:198
+#: enrolment/constants.py:214
+msgid ""
+"Fever-Tree Clementine and cinnamon tonic water being poured from a bottle "
+"into a glass"
+msgstr ""
+
+#: enrolment/constants.py:217 enrolment/constants.py:218
 msgid "Clementine and cinnamon tonic water"
 msgstr "クレメンタイン＆シナモントニックウォーター"
 
-#: enrolment/constants.py:200
+#: enrolment/constants.py:220
 msgid ""
 "Fever-Tree has established itself as the mixer drink specialist, crafting a "
 "range of fourteen products sourced from the highest quality natural "
@@ -192,28 +217,26 @@ msgstr ""
 "ら 14 種類もの製品を生産し、ミキサードリンクスペシャリストとしての地位を確立"
 "しています。"
 
-#: enrolment/constants.py:207
+#: enrolment/constants.py:227
 msgid ""
 "If three-quarters of your gin and tonic is the tonic, make sure you use the "
 "best."
 msgstr ""
 "ジントニックの 4 分の 3 をトニックにするなら、最高のものを使ってください。"
 
-#: enrolment/constants.py:210
+#: enrolment/constants.py:230
 msgid "Tim Warrillow"
 msgstr "Tim Warrillow 様"
 
-#: enrolment/constants.py:215
-#: enrolment/templates/bidi/landing-page-sector-list.html:88
-#: enrolment/templates/landing-page-sector-list.html:87
+#: enrolment/constants.py:235
 msgid "Food and drink"
 msgstr "飲食品"
 
-#: enrolment/constants.py:219
+#: enrolment/constants.py:239
 msgid "Mixers, Quality, Taste"
 msgstr "ミキサー、割り材、品質、味"
 
-#: enrolment/constants.py:226
+#: enrolment/constants.py:247
 msgid ""
 "All Joe & Seph’s popcorn is handmade in small batches to ensure superior "
 "texture and an intense flavour. The ingredients used are 100&#37; natural "
@@ -224,7 +247,7 @@ msgstr ""
 "量ずつ手作りしています。100 ％天然の材料を使用し、油を使うよりも健康的な調理"
 "方法のエアーポップ製法ですべて生産されています。"
 
-#: enrolment/constants.py:238
+#: enrolment/constants.py:260
 msgid ""
 "Fever-Tree has pioneered premium mixers and is now the world’s leading "
 "premium mixer company."
@@ -232,36 +255,36 @@ msgstr ""
 "Fever-Tree はプレミアムミキサードリンク（割り材）のパイオニアで、現在は世界を"
 "リードするプレミアムミキサードリンク企業となっています。"
 
-#: enrolment/constants.py:286
+#: enrolment/constants.py:308
 msgid "Queen Elizabeth Olympic Park, London"
 msgstr ""
 
-#: enrolment/constants.py:287
+#: enrolment/constants.py:309
 msgid "London 2012 Olympic and Paralympic Games"
 msgstr ""
 
-#: enrolment/constants.py:289
+#: enrolment/constants.py:311
 msgid ""
 "Movement Strategies leads design standards for major events such as the "
 "Olympic Games, helping plan crowd movement and safety, and driving increased "
 "ticket sales."
 msgstr ""
 
-#: enrolment/constants.py:301
+#: enrolment/constants.py:323
 msgid "Global sports infrastructure"
 msgstr "グローバルスポーツインフラ"
 
-#: enrolment/constants.py:305
+#: enrolment/constants.py:327
 msgid "Crowd safety, Pedestrian flow, Movement analytics"
 msgstr ""
 
-#: enrolment/constants.py:312
+#: enrolment/constants.py:334
 msgid ""
 "Movement Strategies is the largest and most experienced independent, "
 "specialist people movement consultancy in the world."
 msgstr ""
 
-#: enrolment/constants.py:322
+#: enrolment/constants.py:344
 msgid ""
 "Fortress GB proved its reputation as the market-leading e-ticketing provider "
 "by being selected to install and manage the very latest in turnstile "
@@ -308,24 +331,26 @@ msgstr "何をお求めかをご説明ください。"
 msgid "Maximum 1000 characters."
 msgstr "最大文字数は 1,000 文字です。"
 
-#: enrolment/templates/bidi/footer.html:11 enrolment/templates/footer.html:11
+#: enrolment/templates/bidi/footer.html:10 enrolment/templates/footer.html:10
 msgid "Department for International Trade"
 msgstr "国際通商省"
 
-#: enrolment/templates/bidi/footer.html:17 enrolment/templates/footer.html:17
+#: enrolment/templates/bidi/footer.html:15 enrolment/templates/footer.html:15
 msgid "Contact us"
 msgstr "連絡先"
 
-#: enrolment/templates/bidi/footer.html:23 enrolment/templates/footer.html:23
+#: enrolment/templates/bidi/footer.html:20 enrolment/templates/footer.html:20
 msgid "Privacy and cookies"
 msgstr "プライバシーと Cookie"
 
-#: enrolment/templates/bidi/footer.html:29 enrolment/templates/footer.html:29
+#: enrolment/templates/bidi/footer.html:25 enrolment/templates/footer.html:25
 msgid "Terms &amp; conditions"
 msgstr "利用規約"
 
-#: enrolment/templates/bidi/footer.html:42 enrolment/templates/footer.html:42
-msgid "Crown Copyright 2016"
+#: enrolment/templates/bidi/footer.html:33 enrolment/templates/footer.html:33
+#, fuzzy
+#| msgid "Crown Copyright 2016"
+msgid "Crown Copyright"
 msgstr "Crown Copyright 2016"
 
 #: enrolment/templates/bidi/header.html:30 enrolment/templates/header.html:30
@@ -342,150 +367,13 @@ msgid "Find a Supplier"
 msgstr "サプライヤー検索"
 
 #: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:40
-#: enrolment/templates/marketing-pages/base.html:102
-#: enrolment/templates/marketing-pages/bidi/base.html:93
+#: enrolment/templates/marketing-pages/base.html:107
+#: enrolment/templates/marketing-pages/bidi/base.html:107
 msgid "Industries"
 msgstr "産業"
 
-#: enrolment/templates/bidi/landing-page-sector-list.html:12
-#: enrolment/templates/landing-page-sector-list.html:11
-msgid "Discover the UK's capability in these key industries"
-msgstr "主要産業における英国のパワーをご覧ください"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:22
-#: enrolment/templates/bidi/landing-page.html:52
-#: enrolment/templates/landing-page-sector-list.html:20
-#: enrolment/templates/landing-page.html:48
-msgid "UK industries"
-msgstr "英国の産業"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:29
-#: enrolment/templates/landing-page-sector-list.html:27
-msgid ""
-"As a decision-maker in an international business you need look no further "
-"than the UK for innovative, high-quality products and services. It is the "
-"place to make the right trade connections with major corporations and "
-"smaller enterprises across every sector of industry."
-msgstr ""
-"国際企業の意思決定者として、革新的で質の高い製品やサービスをお求めなら、英国"
-"以外を探す必要はありません。英国では、大手企業から小規模な企業まで、あらゆる"
-"産業において最適な取引相手が見つかります。"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:32
-#: enrolment/templates/landing-page-sector-list.html:30
-msgid ""
-"We can help you make vital business connections with ideal companies. Choose "
-"from the businesses in these UK industries to work with you."
-msgstr ""
-"理想的な企業と大切な取引ができるよう、私たちがお手伝いいたします。以下のよう"
-"な産業英国企業をお選びいただけます。"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:45
-#: enrolment/templates/bidi/landing-page.html:61
-#: enrolment/templates/landing-page-sector-list.html:43
-#: enrolment/templates/landing-page.html:57
-msgid "Healthcare and life sciences in the UK"
-msgstr "英国における医療とライフサイエンス"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:47
-#: enrolment/templates/bidi/landing-page.html:63
-#: enrolment/templates/landing-page-sector-list.html:45
-#: enrolment/templates/landing-page.html:59
-msgid ""
-"Get access to the UK health and life sciences supply-chain, delivering high "
-"quality, innovative services to the world."
-msgstr ""
-"高品質で革新的なサービスを世界中に提供している、英国の医療／ライフサイエンス"
-"のサプライチェーンをぜひご活用ください。"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:50
-#: enrolment/templates/bidi/landing-page.html:67
-#: enrolment/templates/landing-page-sector-list.html:48
-#: enrolment/templates/landing-page.html:63
-msgid "Find out more about the UK’s healthcare and life sciences"
-msgstr "英国の医療とライフサイエンスの詳細は、こちらからご覧ください"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:56
-#: enrolment/templates/landing-page-sector-list.html:54
-#, fuzzy
-#| msgid "The UK's advanced technology"
-msgid "Advanced technology"
-msgstr "英国の高度なテクノロジー"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:59
-#: enrolment/templates/bidi/landing-page.html:77
-#: enrolment/templates/landing-page-sector-list.html:57
-#: enrolment/templates/landing-page.html:73
-msgid "The UK's advanced technology"
-msgstr "英国の先端技術"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:61
-#: enrolment/templates/landing-page-sector-list.html:59
-msgid ""
-"Check out the cutting-edge technological innovations that the UK is bringing "
-"to the world."
-msgstr "英国から世界にお届けしている最新のテクノロジーについてご覧ください。"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:65
-#: enrolment/templates/bidi/landing-page.html:84
-#: enrolment/templates/landing-page-sector-list.html:64
-#: enrolment/templates/landing-page.html:81
-msgid "Find out more about UK technology"
-msgstr "英国の技術の詳細は、こちらからご覧ください"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:73
-#: enrolment/templates/landing-page-sector-list.html:72
-#, fuzzy
-#| msgid "The UK's creative services"
-msgid "Creative services"
-msgstr "英国のクリエイティブ･サービス"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:76
-#: enrolment/templates/bidi/landing-page.html:96
-#: enrolment/templates/landing-page-sector-list.html:75
-#: enrolment/templates/landing-page.html:93
-msgid "The UK's creative services"
-msgstr "英国のクリエイティブ事業サービス"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:78
-#: enrolment/templates/landing-page-sector-list.html:77
-msgid ""
-"Whether you need buildings designed, films made, or a fresh approach to "
-"marketing, the UK is the first place to look."
-msgstr ""
-"建築設計、映画製作、新しいマーケティングアプローチなど、どのようなサービスを"
-"お求めの場合も、ぜひ英国を第 1 候補としてご検討ください。"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:82
-#: enrolment/templates/bidi/landing-page.html:103
-#: enrolment/templates/landing-page-sector-list.html:81
-#: enrolment/templates/landing-page.html:100
-msgid "Find out more about the UK’s creative services"
-msgstr "英国のクリエイティブ事業サービスの詳細は、こちらからご覧ください"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:91
-#: enrolment/templates/landing-page-sector-list.html:90
-msgid "The UK’s food and drink"
-msgstr "英国の飲料品＆食品"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:93
-#: enrolment/templates/landing-page-sector-list.html:92
-msgid ""
-"Whether you want the best food brands or exceptional quality drinks, the UK "
-"should be first on your list."
-msgstr ""
-"革新的な食品ブランド、最高品質の飲料品など、どのようなものをお探しであって"
-"も、ぜひ最初に英国をご検討ください。"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:97
-#: enrolment/templates/bidi/landing-page.html:120
-#: enrolment/templates/landing-page-sector-list.html:96
-#: enrolment/templates/landing-page.html:117
-msgid "Find out more about UK food and drink"
-msgstr "英国の飲料品の詳細は、こちらからご覧ください"
-
-#: enrolment/templates/bidi/landing-page.html:12
-#: enrolment/templates/landing-page.html:9
+#: enrolment/templates/bidi/landing-page.html:14
+#: enrolment/templates/landing-page.html:18
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
 "business"
@@ -494,19 +382,19 @@ msgstr ""
 "ようこそ"
 
 #: enrolment/templates/bidi/landing-page.html:22
-#: enrolment/templates/landing-page.html:18
+#: enrolment/templates/landing-page.html:26
 msgid "Find UK companies to do business with"
 msgstr "英国でのビジネスパートナーが見つかります"
 
-#: enrolment/templates/bidi/landing-page.html:33
-#: enrolment/templates/landing-page.html:26
+#: enrolment/templates/bidi/landing-page.html:30
+#: enrolment/templates/landing-page.html:34
 msgid ""
 "The UK is a great place to find innovative, high-quality products and "
 "services."
 msgstr "英国は、革新的で質の高い製品やサービスを見つけるのに最適の場所です。"
 
-#: enrolment/templates/bidi/landing-page.html:36
-#: enrolment/templates/landing-page.html:29
+#: enrolment/templates/bidi/landing-page.html:33
+#: enrolment/templates/landing-page.html:37
 msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
@@ -514,8 +402,8 @@ msgstr ""
 "英国では、グローバルな企業から小規模な企業まで、あらゆる産業で適切な取引相手"
 "を見つけることができます。"
 
-#: enrolment/templates/bidi/landing-page.html:39
-#: enrolment/templates/landing-page.html:32
+#: enrolment/templates/bidi/landing-page.html:36
+#: enrolment/templates/landing-page.html:40
 #, fuzzy
 #| msgid ""
 #| "UK companies work with businesses and governments around the world to "
@@ -528,8 +416,8 @@ msgstr ""
 "英国企業は世界中の事業や政府と協力して新しい生活環境や仕事環境を生み出し、質"
 "の良いサービスを提供し、ベストなエクスペリエンスを実現しています。"
 
-#: enrolment/templates/bidi/landing-page.html:42
-#: enrolment/templates/landing-page.html:35
+#: enrolment/templates/bidi/landing-page.html:39
+#: enrolment/templates/landing-page.html:43
 msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
 "is hard to beat."
@@ -537,14 +425,53 @@ msgstr ""
 "取引相手をお探しなら、高い信頼性と専門知識を備えた英国企業をぜひご検討くださ"
 "い。"
 
-#: enrolment/templates/bidi/landing-page.html:45
-#: enrolment/templates/landing-page.html:38
+#: enrolment/templates/bidi/landing-page.html:42
+#: enrolment/templates/landing-page.html:46
 msgid ""
 "Choose from the hundreds of businesses in the UK to work with you today."
 msgstr "英国の何百もの企業から取引相手をお選びいただけます。"
 
-#: enrolment/templates/bidi/landing-page.html:79
-#: enrolment/templates/landing-page.html:75
+#: enrolment/templates/bidi/landing-page.html:51
+#: enrolment/templates/bidi/sector-list.html:24
+#: enrolment/templates/landing-page.html:55
+#: enrolment/templates/sector-list.html:27
+msgid "UK industries"
+msgstr "英国の産業"
+
+#: enrolment/templates/bidi/landing-page.html:59
+#: enrolment/templates/bidi/sector-list.html:46
+#: enrolment/templates/landing-page.html:63
+#: enrolment/templates/sector-list.html:49
+msgid "Healthcare and life sciences in the UK"
+msgstr "英国における医療とライフサイエンス"
+
+#: enrolment/templates/bidi/landing-page.html:61
+#: enrolment/templates/bidi/sector-list.html:48
+#: enrolment/templates/landing-page.html:65
+#: enrolment/templates/sector-list.html:51
+msgid ""
+"Get access to the UK health and life sciences supply-chain, delivering high "
+"quality, innovative services to the world."
+msgstr ""
+"高品質で革新的なサービスを世界中に提供している、英国の医療／ライフサイエンス"
+"のサプライチェーンをぜひご活用ください。"
+
+#: enrolment/templates/bidi/landing-page.html:65
+#: enrolment/templates/bidi/sector-list.html:51
+#: enrolment/templates/landing-page.html:69
+#: enrolment/templates/sector-list.html:54
+msgid "Find out more about the UK’s healthcare and life sciences"
+msgstr "英国の医療とライフサイエンスの詳細は、こちらからご覧ください"
+
+#: enrolment/templates/bidi/landing-page.html:75
+#: enrolment/templates/bidi/sector-list.html:60
+#: enrolment/templates/landing-page.html:79
+#: enrolment/templates/sector-list.html:63
+msgid "The UK's advanced technology"
+msgstr "英国の先端技術"
+
+#: enrolment/templates/bidi/landing-page.html:77
+#: enrolment/templates/landing-page.html:81
 #, fuzzy
 #| msgid ""
 #| "Check out the latest cutting-edge technologies that the UK is bringing to "
@@ -553,9 +480,23 @@ msgid ""
 "Check out the cutting-edge technologies that the UK is bringing to the world."
 msgstr "英国から世界にお届けしている最新のテクノロジーについてご覧ください。"
 
-#: enrolment/templates/bidi/landing-page.html:98
-#: enrolment/templates/landing-page.html:95
-#: enrolment/templates/marketing-pages/creative.html:9
+#: enrolment/templates/bidi/landing-page.html:83
+#: enrolment/templates/bidi/sector-list.html:67
+#: enrolment/templates/landing-page.html:87
+#: enrolment/templates/sector-list.html:70
+msgid "Find out more about UK technology"
+msgstr "英国の技術の詳細は、こちらからご覧ください"
+
+#: enrolment/templates/bidi/landing-page.html:95
+#: enrolment/templates/bidi/sector-list.html:78
+#: enrolment/templates/landing-page.html:99
+#: enrolment/templates/sector-list.html:81
+msgid "The UK's creative services"
+msgstr "英国のクリエイティブ事業サービス"
+
+#: enrolment/templates/bidi/landing-page.html:97
+#: enrolment/templates/landing-page.html:101
+#: enrolment/templates/marketing-pages/creative.html:12
 msgid ""
 "Whether you need buildings designed, films made or a fresh approach to "
 "marketing, the UK is the first place to look."
@@ -563,13 +504,20 @@ msgstr ""
 "建築設計、映画制作、マーケティングへのアプローチなど、どのようなサービスをお"
 "求めであっても、ぜひ最初に英国をご検討ください。"
 
-#: enrolment/templates/bidi/landing-page.html:113
-#: enrolment/templates/landing-page.html:110
+#: enrolment/templates/bidi/landing-page.html:101
+#: enrolment/templates/bidi/sector-list.html:83
+#: enrolment/templates/landing-page.html:105
+#: enrolment/templates/sector-list.html:86
+msgid "Find out more about the UK’s creative services"
+msgstr "英国のクリエイティブ事業サービスの詳細は、こちらからご覧ください"
+
+#: enrolment/templates/bidi/landing-page.html:111
+#: enrolment/templates/landing-page.html:115
 msgid "The UK's food and drink"
 msgstr "英国の飲食品"
 
-#: enrolment/templates/bidi/landing-page.html:115
-#: enrolment/templates/landing-page.html:112
+#: enrolment/templates/bidi/landing-page.html:113
+#: enrolment/templates/landing-page.html:117
 #, fuzzy
 #| msgid ""
 #| "Whether you want the most innovative food brands or exceptional quality "
@@ -581,8 +529,23 @@ msgstr ""
 "革新的な食品ブランド、最高品質の飲料品など、どのようなものをお探しであって"
 "も、ぜひ最初に英国をご検討ください。"
 
+#: enrolment/templates/bidi/landing-page.html:118
+#: enrolment/templates/bidi/sector-list.html:98
+#: enrolment/templates/landing-page.html:122
+#: enrolment/templates/sector-list.html:101
+msgid "Find out more about UK food and drink"
+msgstr "英国の飲料品の詳細は、こちらからご覧ください"
+
+#: enrolment/templates/bidi/landing-page.html:127
+#: enrolment/templates/landing-page.html:131
+#, fuzzy
+#| msgid "UK industries"
+msgid "See more industries"
+msgstr "英国の産業"
+
 #: enrolment/templates/bidi/lead-generation-form.html:6
 #: enrolment/templates/lead-generation-form.html:6
+#: exportopportunity/templates/export-opportunity.html:11
 msgid "Get UK companies to fulfil your business needs"
 msgstr "ビジネスニーズを満たす英国企業を見つけることができます"
 
@@ -605,6 +568,62 @@ msgstr "送信"
 msgid "I agree to the great.gov.uk terms and conditions"
 msgstr "great.gov.uk の利用規約に同意します。"
 
+#: enrolment/templates/bidi/sector-list.html:15
+#: enrolment/templates/sector-list.html:18
+msgid "Discover the UK's capability in these key industries"
+msgstr "主要産業における英国のパワーをご覧ください"
+
+#: enrolment/templates/bidi/sector-list.html:31
+#: enrolment/templates/sector-list.html:34
+msgid ""
+"As a decision-maker in an international business you need look no further "
+"than the UK for innovative, high-quality products and services. It is the "
+"place to make the right trade connections with major corporations and "
+"smaller enterprises across every sector of industry."
+msgstr ""
+"国際企業の意思決定者として、革新的で質の高い製品やサービスをお求めなら、英国"
+"以外を探す必要はありません。英国では、大手企業から小規模な企業まで、あらゆる"
+"産業において最適な取引相手が見つかります。"
+
+#: enrolment/templates/bidi/sector-list.html:34
+#: enrolment/templates/sector-list.html:37
+msgid ""
+"We can help you make vital business connections with ideal companies. Choose "
+"from the businesses in these UK industries to work with you."
+msgstr ""
+"理想的な企業と大切な取引ができるよう、私たちがお手伝いいたします。以下のよう"
+"な産業英国企業をお選びいただけます。"
+
+#: enrolment/templates/bidi/sector-list.html:62
+#: enrolment/templates/sector-list.html:65
+msgid ""
+"Check out the cutting-edge technological innovations that the UK is bringing "
+"to the world."
+msgstr "英国から世界にお届けしている最新のテクノロジーについてご覧ください。"
+
+#: enrolment/templates/bidi/sector-list.html:80
+#: enrolment/templates/sector-list.html:83
+msgid ""
+"Whether you need buildings designed, films made, or a fresh approach to "
+"marketing, the UK is the first place to look."
+msgstr ""
+"建築設計、映画製作、新しいマーケティングアプローチなど、どのようなサービスを"
+"お求めの場合も、ぜひ英国を第 1 候補としてご検討ください。"
+
+#: enrolment/templates/bidi/sector-list.html:92
+#: enrolment/templates/sector-list.html:95
+msgid "The UK’s food and drink"
+msgstr "英国の飲料品＆食品"
+
+#: enrolment/templates/bidi/sector-list.html:94
+#: enrolment/templates/sector-list.html:97
+msgid ""
+"Whether you want the best food brands or exceptional quality drinks, the UK "
+"should be first on your list."
+msgstr ""
+"革新的な食品ブランド、最高品質の飲料品など、どのようなものをお探しであって"
+"も、ぜひ最初に英国をご検討ください。"
+
 #: enrolment/templates/browse-companies.html:4
 msgid "Find other great UK companies"
 msgstr "優良な英国企業を検索する"
@@ -623,6 +642,16 @@ msgstr ""
 msgid "Browse UK companies"
 msgstr "英国企業を閲覧する"
 
+#: enrolment/templates/govuk_layout.html:14
+msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
+msgstr ""
+
+#: enrolment/templates/landing-page.html:12
+msgid ""
+"Find the right UK company to do business with from thousands of "
+"international trade profiles"
+msgstr ""
+
 #: enrolment/templates/language_switcher.html:8
 msgid "Select"
 msgstr "言語の変更"
@@ -631,49 +660,52 @@ msgstr "言語の変更"
 msgid "Page in English only"
 msgstr "こちらのページは英語です"
 
-#: enrolment/templates/marketing-pages/base.html:19
-#: enrolment/templates/marketing-pages/bidi/base.html:23
+#: enrolment/templates/marketing-pages/base.html:22
+#: enrolment/templates/marketing-pages/bidi/base.html:22
 msgid "Find your UK trade partner"
 msgstr "英国の取引相手を探す"
 
-#: enrolment/templates/marketing-pages/base.html:47
-#: enrolment/templates/marketing-pages/bidi/base.html:56
-msgid "The company"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/base.html:55
-#: enrolment/templates/marketing-pages/bidi/base.html:64
+#: enrolment/templates/marketing-pages/base.html:58
+#: enrolment/templates/marketing-pages/bidi/base.html:58
 msgid "Read more about the company"
 msgstr "この企業の詳細は、こちらからご覧ください"
 
-#: enrolment/templates/marketing-pages/base.html:70
-#: enrolment/templates/marketing-pages/bidi/base.html:74
+#: enrolment/templates/marketing-pages/base.html:73
+#: enrolment/templates/marketing-pages/bidi/base.html:73
 msgid "Company showcase"
 msgstr "企業紹介"
 
-#: enrolment/templates/marketing-pages/base.html:85
-#: enrolment/templates/marketing-pages/bidi/base.html:114
+#: enrolment/templates/marketing-pages/base.html:88
+#: enrolment/templates/marketing-pages/bidi/base.html:88
 msgid "Read case study"
 msgstr "ケーススタディを読む"
 
-#: enrolment/templates/marketing-pages/base.html:110
-#: enrolment/templates/marketing-pages/bidi/base.html:99
+#: enrolment/templates/marketing-pages/base.html:115
+#: enrolment/templates/marketing-pages/bidi/base.html:115
 msgid "keywords"
 msgstr "キーワード"
 
-#: enrolment/templates/marketing-pages/bidi/base.html:77
-msgid "case study"
+#: enrolment/templates/marketing-pages/creative.html:6
+msgid ""
+"From Shakespeare to Star Wars, the UK leads the world in arts, theatre, "
+"film, animation, games, architecture, graphic design and publishing"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:7
+#, fuzzy
+#| msgid "Healthcare and life sciences from the UK"
+msgid "Buy creative services from the UK"
+msgstr "英国の医療とライフサイエンス"
+
+#: enrolment/templates/marketing-pages/creative.html:10
 msgid "Delivering exceptional creative services"
 msgstr "卓越したクリエイティブ事業サービスを提供"
 
-#: enrolment/templates/marketing-pages/creative.html:11
+#: enrolment/templates/marketing-pages/creative.html:14
 msgid "Read more about creative services"
 msgstr "英国のクリエイティブ･サービスについての詳細をご覧ください"
 
-#: enrolment/templates/marketing-pages/creative.html:17
+#: enrolment/templates/marketing-pages/creative.html:19
 msgid ""
 "If you need intelligent, creative ideas and rich, high-quality designs and "
 "media, look no further than the UK"
@@ -681,7 +713,7 @@ msgstr ""
 "インテリジェントでクリエイティブなアイデア、質の高いリッチなデザインやメディ"
 "アをお求めなら、英国以外を探す必要はありません。"
 
-#: enrolment/templates/marketing-pages/creative.html:19
+#: enrolment/templates/marketing-pages/creative.html:21
 msgid ""
 "Creative companies in the UK are responsible for producing big budget "
 "movies, designing fashionable furniture fabrics and developing world-class "
@@ -691,15 +723,39 @@ msgstr ""
 "の布地のデザイン、ワールドクラスのコンピューターゲームの開発などを担当してい"
 "ます。"
 
-#: enrolment/templates/marketing-pages/creative.html:26
+#: enrolment/templates/marketing-pages/creative.html:25
+#: enrolment/templates/marketing-pages/food.html:30
+#: enrolment/templates/marketing-pages/health.html:35
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:24
+#: enrolment/templates/marketing-pages/tech.html:28
+msgid "Key facts"
+msgstr "キーポイント"
+
+#: enrolment/templates/marketing-pages/creative.html:27
+msgid "UK companies gave the world £19.1 billion of creative services in 2014"
+msgstr ""
+"2014 年、英国の企業は 191 億ポンドのクリエイティブ事業サービスを世界に提供し"
+"ました。"
+
+#: enrolment/templates/marketing-pages/creative.html:28
+#, python-format
+msgid "9%% of all UK service exports are in the creative services in 2014"
+msgstr "2014 年の英国のサービス輸出の 9 ％はクリエイティブ事業サービスです。"
+
+#: enrolment/templates/marketing-pages/creative.html:29
+#, python-format
+msgid "Growth of creative services exports was 10.9%% in 2014"
+msgstr "2014 年のクリエイティブ事業サービス輸出の成長率は 10.9 ％でした。"
+
+#: enrolment/templates/marketing-pages/creative.html:33
 msgid "Work with the best in film, TV and visual effects"
 msgstr "映画、テレビ、視覚効果で最高のサービスを活用"
 
-#: enrolment/templates/marketing-pages/creative.html:27
+#: enrolment/templates/marketing-pages/creative.html:34
 msgid "The UK is one of the world's largest makers of original content."
 msgstr "英国は、世界最大規模のオリジナルコンテンツメーカーの 1 つです。"
 
-#: enrolment/templates/marketing-pages/creative.html:28
+#: enrolment/templates/marketing-pages/creative.html:35
 msgid ""
 "We are the home of films such as Star Wars and offer state-of-the-art studio "
 "facilities suitable for big movie productions and an amazing diversity of "
@@ -708,7 +764,7 @@ msgstr ""
 "英国は『スター・ウォーズ』などの映画が作られた場所であり、大作映画の製作に適"
 "した最新式のスタジオ設備や多様なすばらしいロケ地が揃っています。"
 
-#: enrolment/templates/marketing-pages/creative.html:29
+#: enrolment/templates/marketing-pages/creative.html:36
 msgid ""
 "At the heart of the UK’s creative industry is its award-winning film and "
 "television production comprising more than 1,500 independent TV companies in "
@@ -718,7 +774,7 @@ msgstr ""
 "ダクションです。これは、英国内の 1,500 を超える独立系のテレビ制作会社から成っ"
 "ています。"
 
-#: enrolment/templates/marketing-pages/creative.html:30
+#: enrolment/templates/marketing-pages/creative.html:37
 msgid ""
 "We're also the world leaders in exporting TV formats and localising those "
 "first commissioned in the UK."
@@ -726,35 +782,11 @@ msgstr ""
 "また、テレビ番組フォーマットの輸出を世界的に牽引し、英国で初めて放送される番"
 "組をローカライズしています。"
 
-#: enrolment/templates/marketing-pages/creative.html:34
-#: enrolment/templates/marketing-pages/food.html:45
-#: enrolment/templates/marketing-pages/health.html:48
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:32
-#: enrolment/templates/marketing-pages/tech.html:40
-msgid "Key facts"
-msgstr "キーポイント"
-
-#: enrolment/templates/marketing-pages/creative.html:36
-msgid "UK companies gave the world £19.1 billion of creative services in 2014"
-msgstr ""
-"2014 年、英国の企業は 191 億ポンドのクリエイティブ事業サービスを世界に提供し"
-"ました。"
-
-#: enrolment/templates/marketing-pages/creative.html:37
-#, python-format
-msgid "9%% of all UK service exports are in the creative services in 2014"
-msgstr "2014 年の英国のサービス輸出の 9 ％はクリエイティブ事業サービスです。"
-
-#: enrolment/templates/marketing-pages/creative.html:38
-#, python-format
-msgid "Growth of creative services exports was 10.9%% in 2014"
-msgstr "2014 年のクリエイティブ事業サービス輸出の成長率は 10.9 ％でした。"
-
-#: enrolment/templates/marketing-pages/creative.html:46
+#: enrolment/templates/marketing-pages/creative.html:39
 msgid "Our creative digital experience"
 msgstr "英国のクリエイティブなデジタル体験"
 
-#: enrolment/templates/marketing-pages/creative.html:48
+#: enrolment/templates/marketing-pages/creative.html:41
 msgid ""
 "The UK has one of the most world's most advanced games industries, with more "
 "than 30 years experience of innovation and commercial success."
@@ -762,7 +794,7 @@ msgstr ""
 "英国には世界で最も進んだゲーム産業があり、30 年以上にわたり技術革新を経験し、"
 "商業的な成功を収めています。"
 
-#: enrolment/templates/marketing-pages/creative.html:51
+#: enrolment/templates/marketing-pages/creative.html:44
 msgid ""
 "UK games companies have adopted social and mobile platforms, with more than "
 "a third of UK studios focusing on the mobile market."
@@ -770,7 +802,7 @@ msgstr ""
 "英国のゲーム会社はソーシャルプラットフォームとモバイルプラットフォームを導入"
 "しており、英国のスタジオの 3 分の 1 以上がモバイル市場に力を入れています。"
 
-#: enrolment/templates/marketing-pages/creative.html:54
+#: enrolment/templates/marketing-pages/creative.html:47
 msgid ""
 "The UK's augmented reality specialists create immersive experiences that "
 "help further the creative reach of the likes of National Geographic and "
@@ -780,11 +812,11 @@ msgstr ""
 "グラフィック』やユニバーサルスタジオなどの創造性をさらに広げることに役立って"
 "います。"
 
-#: enrolment/templates/marketing-pages/creative.html:58
+#: enrolment/templates/marketing-pages/creative.html:50
 msgid "A publishing powerhouse"
 msgstr "大手出版社"
 
-#: enrolment/templates/marketing-pages/creative.html:60
+#: enrolment/templates/marketing-pages/creative.html:52
 msgid ""
 "The publishing sector in the UK has pioneered new print formats and "
 "commercial models alongside moving content online. British news journalism "
@@ -794,7 +826,7 @@ msgstr ""
 "ンツをオンラインへ移行しています。英国のジャーナリズムは今も強い力を維持して"
 "おり、世界各地で重要な記事を発表しています。"
 
-#: enrolment/templates/marketing-pages/creative.html:63
+#: enrolment/templates/marketing-pages/creative.html:55
 msgid ""
 "The London Book Fair is one of the world’s leading events for intellectual "
 "property rights negotiation and the sale and distribution of content. Half "
@@ -805,11 +837,11 @@ msgstr ""
 "界をリードするイベントの 1 つです。過去 11 年間の興行成績上位 20 の映画のうち"
 "半分は、英国人作家の小説をもとにしています。"
 
-#: enrolment/templates/marketing-pages/creative.html:67
+#: enrolment/templates/marketing-pages/creative.html:58
 msgid "UK design talent is bringing beauty and strength to the world"
 msgstr "世界に美と力をもたらす英国の優秀なデザイナーたち"
 
-#: enrolment/templates/marketing-pages/creative.html:69
+#: enrolment/templates/marketing-pages/creative.html:60
 msgid ""
 "UK architects are responsible for some of the world’s most stunning "
 "buildings, such as the Galaxy Soho urban village in Beijing and reshaping "
@@ -819,7 +851,7 @@ msgstr ""
 "物の建設を担当したり、シンガポールの Gardens by the Bay のような環境の再形成"
 "を行ったりしています。"
 
-#: enrolment/templates/marketing-pages/creative.html:72
+#: enrolment/templates/marketing-pages/creative.html:63
 msgid ""
 "We're also responsible for designing usable industrial and commercial spaces "
 "such as the new Spaceport America."
@@ -827,7 +859,7 @@ msgstr ""
 "また、新しい Spaceport America のような、便利な産業地区や商業地区の設計も担当"
 "しています。"
 
-#: enrolment/templates/marketing-pages/creative.html:75
+#: enrolment/templates/marketing-pages/creative.html:66
 msgid ""
 "As well as designing the built environment, UK firms are designing vehicles "
 "and interiors around the world: including helping to design the world’s "
@@ -836,11 +868,11 @@ msgstr ""
 "英国の企業は構築環境の設計だけでなく、中国の世界最速の旅客列車の設計など、世"
 "界中で乗り物やインテリアも設計しています。"
 
-#: enrolment/templates/marketing-pages/creative.html:80
+#: enrolment/templates/marketing-pages/creative.html:69
 msgid "Arts: heritage and innovation"
 msgstr "アート：伝統と革新"
 
-#: enrolment/templates/marketing-pages/creative.html:83
+#: enrolment/templates/marketing-pages/creative.html:71
 msgid ""
 "From Shakespeare to Adele, the UK continues to produce the best-known "
 "artists, writers, singers and performers the world has ever seen."
@@ -848,7 +880,7 @@ msgstr ""
 "シェイクスピアからアデルまで、英国は世界に類を見ないほど、著名なアーティス"
 "ト、作家、歌手、パフォーマを輩出し続けています。"
 
-#: enrolment/templates/marketing-pages/creative.html:86
+#: enrolment/templates/marketing-pages/creative.html:74
 msgid ""
 "As well as music for the consumer market, the UK’s thriving commercial music "
 "and audio agencies are providing the scores and tracks for films made for "
@@ -861,7 +893,7 @@ msgstr ""
 "も提供しています。また、英国の権利管理企業は、パフォーマとプロデューサの知的"
 "財産を等しく保護することで継続的に高く評価されています。"
 
-#: enrolment/templates/marketing-pages/creative.html:89
+#: enrolment/templates/marketing-pages/creative.html:77
 msgid ""
 "The UK’s national museums attract visitors from around the world and have "
 "lasting partnerships and collection-sharing with their peers from countries "
@@ -870,25 +902,35 @@ msgstr ""
 "世界中から観光客が訪れる英国の国立博物館は、ロシアやマラウィなど、多様な国の"
 "博物館と持続的なパートナーシップを築き、コレクションを共有しています。"
 
-#: enrolment/templates/marketing-pages/creative.html:92
+#: enrolment/templates/marketing-pages/creative.html:80
 msgid "The UK is alive with exceptional talent and ingenuity."
 msgstr "英国は優れた人材と創造力に満ちた場所です。"
 
-#: enrolment/templates/marketing-pages/creative.html:96
+#: enrolment/templates/marketing-pages/creative.html:84
 msgid "Find your UK creative partner today"
 msgstr "英国のクリエイティブ分野の取引相手を探す"
 
-#: enrolment/templates/marketing-pages/creative.html:101
+#: enrolment/templates/marketing-pages/creative.html:89
 msgid "See the UK's creative services providers on the Find a supplier service"
 msgstr ""
 "［サプライヤ検索］サービスで、英国のクリエイティブ事業サービス分野のプロバイ"
 "ダを検索できます。"
 
+#: enrolment/templates/marketing-pages/food.html:6
+msgid ""
+"We're not just tea, cakes and whisky: our productive innovation and globally "
+"used production standards make the UK a leader in food and drink"
+msgstr ""
+
 #: enrolment/templates/marketing-pages/food.html:7
+msgid "Buy UK food and drink products and services"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/food.html:10
 msgid "UK food and drink"
 msgstr "英国の飲食品"
 
-#: enrolment/templates/marketing-pages/food.html:9
+#: enrolment/templates/marketing-pages/food.html:12
 msgid ""
 "Whether you want the most delicious food brands or exceptional quality "
 "drinks, the UK is the first place to look."
@@ -896,11 +938,11 @@ msgstr ""
 "革新的な食品ブランド、最高品質の飲料品など、どのようなものをお探しであって"
 "も、ぜひ最初に英国をご検討ください。"
 
-#: enrolment/templates/marketing-pages/food.html:11
+#: enrolment/templates/marketing-pages/food.html:14
 msgid "Read more about UK food and drink"
 msgstr "英国の飲食品についての詳細をご覧ください"
 
-#: enrolment/templates/marketing-pages/food.html:19
+#: enrolment/templates/marketing-pages/food.html:20
 msgid ""
 "The UK is a nation where culinary influences have come together to create "
 "food trends that we share with the world. Every day millions of "
@@ -910,7 +952,7 @@ msgstr ""
 "界に伝える国です。英国産の食品や飲料は毎日、世界中で何百万もの人々の食卓を"
 "彩っています。"
 
-#: enrolment/templates/marketing-pages/food.html:22
+#: enrolment/templates/marketing-pages/food.html:23
 msgid ""
 "The British “brand” is globally recognised, valued and desirable: we have a "
 "rich heritage of well-known, traditional food and drink, we offer first-"
@@ -921,7 +963,7 @@ msgstr ""
 "す。よく知られた伝統的な飲食品がある英国は、優れた生産地からの最高級の農産物"
 "に加え、数千もの新しい製品を毎年市場に投入しています。"
 
-#: enrolment/templates/marketing-pages/food.html:25
+#: enrolment/templates/marketing-pages/food.html:26
 msgid ""
 "We rank among the world’s best nations for in food quality, traceability and "
 "safety."
@@ -930,10 +972,25 @@ msgstr ""
 "としてランクされています。"
 
 #: enrolment/templates/marketing-pages/food.html:32
+msgid "The UK exported £12.3 billion of food and non-alcoholic drinks in 2015"
+msgstr "2015 年、英国は 123 億ポンドの食品とノンアルコール飲料を輸出しました。"
+
+#: enrolment/templates/marketing-pages/food.html:33
+msgid "Our main exports include chocolate, cheese and whisky"
+msgstr "英国の主な輸出品には、チョコレート、チーズ、ウイスキーなどがあります。"
+
+#: enrolment/templates/marketing-pages/food.html:34
+msgid ""
+"We have thousands of suppliers manufacturing to standards accepted in 123 "
+"countries worldwide"
+msgstr ""
+"数千ものサプライヤが、世界 123 か国で認められた基準に従って生産しています。"
+
+#: enrolment/templates/marketing-pages/food.html:38
 msgid "British heritage shared globally"
 msgstr "英国の伝統を世界に共有"
 
-#: enrolment/templates/marketing-pages/food.html:34
+#: enrolment/templates/marketing-pages/food.html:40
 msgid ""
 "From famous Scottish and Northern Irish whiskies to our traditional tea and "
 "cakes, the UK has centuries of experience to share."
@@ -942,7 +999,7 @@ msgstr ""
 "で、英国は何世紀にもわたって積み重ねてきた経験を世界に提供することができま"
 "す。"
 
-#: enrolment/templates/marketing-pages/food.html:37
+#: enrolment/templates/marketing-pages/food.html:43
 msgid ""
 "We bring new twists to our classic British products, which are exported all "
 "over the world including craft beers, ciders, gin and award-winning "
@@ -951,7 +1008,7 @@ msgstr ""
 "伝統的な英国の製品に新たな工夫を加えたクラフトビールやサイダー、ジン、そして"
 "さまざまな賞に輝くスパークリングワインなどを世界中に輸出しています。"
 
-#: enrolment/templates/marketing-pages/food.html:40
+#: enrolment/templates/marketing-pages/food.html:46
 msgid ""
 "Our unique trading and cultural history has brought us new ingredients, "
 "influences, tastes and ideas and we have a wealth of ethnic and specialist "
@@ -961,26 +1018,11 @@ msgstr ""
 "流入してきました。そして、エスニックな食品や特殊な要件を満たす食品が豊富に作"
 "られ、世界に還元されています。"
 
-#: enrolment/templates/marketing-pages/food.html:47
-msgid "The UK exported £12.3 billion of food and non-alcoholic drinks in 2015"
-msgstr "2015 年、英国は 123 億ポンドの食品とノンアルコール飲料を輸出しました。"
-
-#: enrolment/templates/marketing-pages/food.html:48
-msgid "Our main exports include chocolate, cheese and whisky"
-msgstr "英国の主な輸出品には、チョコレート、チーズ、ウイスキーなどがあります。"
-
 #: enrolment/templates/marketing-pages/food.html:49
-msgid ""
-"We have thousands of suppliers manufacturing to standards accepted in 123 "
-"countries worldwide"
-msgstr ""
-"数千ものサプライヤが、世界 123 か国で認められた基準に従って生産しています。"
-
-#: enrolment/templates/marketing-pages/food.html:59
 msgid "Innovation in food and drink"
 msgstr "飲食品における技術革新"
 
-#: enrolment/templates/marketing-pages/food.html:61
+#: enrolment/templates/marketing-pages/food.html:51
 msgid ""
 "The UK’s food and drink brands develop and sell thousands of new products "
 "each year. UK companies were the first to pioneer frozen food and instant "
@@ -989,7 +1031,7 @@ msgstr ""
 "英国の飲食品ブランドは、毎年何千もの新製品を開発し、販売しています。冷凍食品"
 "やインスタントコーヒーを最初に開発したのも英国の企業でした。"
 
-#: enrolment/templates/marketing-pages/food.html:64
+#: enrolment/templates/marketing-pages/food.html:54
 msgid ""
 "We’re leading the way in food research and technology, new product "
 "development and trends such as organic, gluten-free, dairy-free and health "
@@ -998,11 +1040,11 @@ msgstr ""
 "英国は、食品研究や技術、新製品の開発、そしてオーガニック、グルテンフリー、乳"
 "製品フリー、健康食品といったトレンドを牽引しています。"
 
-#: enrolment/templates/marketing-pages/food.html:68
+#: enrolment/templates/marketing-pages/food.html:57
 msgid "Food quality and safety"
 msgstr "食品の品質と安全性"
 
-#: enrolment/templates/marketing-pages/food.html:70
+#: enrolment/templates/marketing-pages/food.html:59
 msgid ""
 "Our island location and clean waters give us access to rich stocks of fish "
 "and shellfish and our soil and climate provides bountiful agricultural "
@@ -1011,7 +1053,7 @@ msgstr ""
 "良質な水の得られる島国である英国は、豊かな魚介類を得ることができます。また、"
 "英国の土壌や気候は穀物、乳製品、食肉生産に適しています。"
 
-#: enrolment/templates/marketing-pages/food.html:73
+#: enrolment/templates/marketing-pages/food.html:62
 msgid ""
 "Our manufacturing sector complies with rigorous international safety "
 "standards and our brands are trusted around the world."
@@ -1019,7 +1061,7 @@ msgstr ""
 "英国の生産分野は国際的な厳しい安全基準を満たしており、世界中で信頼されていま"
 "す。"
 
-#: enrolment/templates/marketing-pages/food.html:76
+#: enrolment/templates/marketing-pages/food.html:65
 msgid ""
 "We care about the food we produce: 89,000 farmers comply with voluntary farm "
 "standards scheme that assure animal and worker welfare and our British "
@@ -1031,7 +1073,7 @@ msgstr ""
 "業協会の生産基準は、英国とその他 123 か国の 23,000 の認定サプライヤによって承"
 "認されています。"
 
-#: enrolment/templates/marketing-pages/food.html:79
+#: enrolment/templates/marketing-pages/food.html:68
 msgid ""
 "Our customers recognise us for our excellent service and know that we can "
 "deliver."
@@ -1039,15 +1081,15 @@ msgstr ""
 "このように卓越した英国のサービスは、消費者から高く評価され、信頼されていま"
 "す。"
 
-#: enrolment/templates/marketing-pages/food.html:83
+#: enrolment/templates/marketing-pages/food.html:72
 msgid "Find your UK trade partner in food and drink today"
 msgstr "英国の飲食品分野の取引相手を今すぐ探す"
 
-#: enrolment/templates/marketing-pages/food.html:89
+#: enrolment/templates/marketing-pages/food.html:78
 msgid "See the UK's food and drink companies on the Find a supplier service"
 msgstr "［サプライヤ検索］サービスで、英国の飲食品企業を検索できます。"
 
-#: enrolment/templates/marketing-pages/food.html:92
+#: enrolment/templates/marketing-pages/food.html:81
 #, fuzzy
 #| msgid ""
 #| "Exceptionally innovative and creative UK trade partners are ready to work "
@@ -1059,11 +1101,11 @@ msgstr ""
 "革新的でクリエイティブな英国の優良企業が、貴社との取引を求めています。「サプ"
 "ライヤー検索」サービスでは、このような企業を検索できます。"
 
-#: enrolment/templates/marketing-pages/food.html:95
+#: enrolment/templates/marketing-pages/food.html:84
 msgid "Find UK food and drink companies to meet your needs"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:98
+#: enrolment/templates/marketing-pages/food.html:87
 msgid ""
 "Get access to the exceptional UK food and drink supply chain. Register to be "
 "notified as soon as companies that match your needs have created trade "
@@ -1071,10 +1113,26 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/health.html:6
+msgid ""
+"From medical imaging and gene therapy to hospital construction and primary "
+"care management - the UK is first for healthcare and life sciences"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/health.html:7
+#, fuzzy
+#| msgid ""
+#| "See the UK's healthcare and life sciences providers on the Find a "
+#| "supplier service"
+msgid "Buy UK healthcare and life sciences products and services"
+msgstr ""
+"［サプライヤ検索］サービスで、英国の医療・ライフサイエンス分野のプロバイダを"
+"検索できます。"
+
+#: enrolment/templates/marketing-pages/health.html:9
 msgid "Delivering the exceptional in healthcare and life sciences"
 msgstr "卓越した医療とライフサイエンスを実現"
 
-#: enrolment/templates/marketing-pages/health.html:10
+#: enrolment/templates/marketing-pages/health.html:13
 msgid ""
 "Whether you need hospitals built, primary care services managed, or reliable "
 "suppliers of the latest medical technology and pharmaceutical advances, the "
@@ -1083,15 +1141,15 @@ msgstr ""
 "建築設計、映画制作、マーケティングへのアプローチなど、どのようなサービスをお"
 "求めであっても、ぜひ最初に英国をご検討ください。"
 
-#: enrolment/templates/marketing-pages/health.html:13
+#: enrolment/templates/marketing-pages/health.html:16
 msgid "Read more about healthcare and life sciences"
 msgstr "英国の医療とライフサイエンスについて、詳しくご覧ください"
 
-#: enrolment/templates/marketing-pages/health.html:19
+#: enrolment/templates/marketing-pages/health.html:22
 msgid "Healthcare and life sciences from the UK"
 msgstr "英国の医療とライフサイエンス"
 
-#: enrolment/templates/marketing-pages/health.html:27
+#: enrolment/templates/marketing-pages/health.html:29
 msgid ""
 "If you need innovative, high-quality healthcare products and services, the "
 "UK is the best place to find new suppliers."
@@ -1099,7 +1157,7 @@ msgstr ""
 "革新的で質の高い医療製品やサービスをお求めなら、英国のサプライヤをお勧めしま"
 "す。"
 
-#: enrolment/templates/marketing-pages/health.html:29
+#: enrolment/templates/marketing-pages/health.html:31
 msgid ""
 "We’re home to 4 of the world’s top 10 universities and have produced 23 "
 "Nobel prizewinners for medicine. This world-class science base and track-"
@@ -1112,13 +1170,35 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/health.html:37
 msgid ""
+"There are more than 5,600 health and life sciences companies across the full "
+"UK supply chain"
+msgstr ""
+"英国のサプライチェーンには、5,600 を超える医療・ライフサイエンス企業が含まれ"
+"ています。"
+
+#: enrolment/templates/marketing-pages/health.html:38
+msgid ""
+"The UK has the world’s largest integrated health system as a test bed for "
+"world-class products and services"
+msgstr ""
+"英国には、ワールドクラスの製品やサービスを提供するための試験台として、世界最"
+"大の統合医療システムが整っています。"
+
+#: enrolment/templates/marketing-pages/health.html:39
+msgid "More than 80 Nobel Prizes underpin the UK’s top biomedical innovations"
+msgstr ""
+"英国の先端的な革新バイオメディカル技術の基礎にあるのは、80 を超えるノーベル賞"
+"受賞研究です。"
+
+#: enrolment/templates/marketing-pages/health.html:44
+msgid ""
 "The UK is internationally renowned for its National Health Service, with its "
 "70 years of research and public delivery."
 msgstr ""
 "英国のナショナルヘルスサービス（NHS）の 70 年にわたる研究や公共へのサービス提"
 "供は、国際的に高く評価されています。"
 
-#: enrolment/templates/marketing-pages/health.html:40
+#: enrolment/templates/marketing-pages/health.html:47
 msgid ""
 "The UK’s unique approach to healthcare and product development helps "
 "translate the best medical technology into high-quality, cost-effective and "
@@ -1127,7 +1207,7 @@ msgstr ""
 "医療や製品開発に対する英国独自のアプローチは、最高の医療技術を高品質でコスト"
 "効率に優れたソリューションに転換し、すぐに市場投入することに役立ちます。"
 
-#: enrolment/templates/marketing-pages/health.html:43
+#: enrolment/templates/marketing-pages/health.html:50
 msgid ""
 "Two of the top 10 global pharmaceutical companies are based in the UK. There "
 "are more than 5,000 life sciences companies in the UK and we have a growing "
@@ -1137,29 +1217,7 @@ msgstr ""
 "には 5,000 を超えるライフサイエンス企業があるうえ、デジタル医療製品やアプリ"
 "ケーション市場でも成長を続けています。"
 
-#: enrolment/templates/marketing-pages/health.html:50
-msgid ""
-"There are more than 5,600 health and life sciences companies across the full "
-"UK supply chain"
-msgstr ""
-"英国のサプライチェーンには、5,600 を超える医療・ライフサイエンス企業が含まれ"
-"ています。"
-
-#: enrolment/templates/marketing-pages/health.html:51
-msgid ""
-"The UK has the world’s largest integrated health system as a test bed for "
-"world-class products and services"
-msgstr ""
-"英国には、ワールドクラスの製品やサービスを提供するための試験台として、世界最"
-"大の統合医療システムが整っています。"
-
-#: enrolment/templates/marketing-pages/health.html:52
-msgid "More than 80 Nobel Prizes underpin the UK’s top biomedical innovations"
-msgstr ""
-"英国の先端的な革新バイオメディカル技術の基礎にあるのは、80 を超えるノーベル賞"
-"受賞研究です。"
-
-#: enrolment/templates/marketing-pages/health.html:60
+#: enrolment/templates/marketing-pages/health.html:53
 msgid ""
 "The UK’s medical technology sector produces a vast range of medical and "
 "diagnostic device, particularly single-use technology and orthopaedic "
@@ -1169,19 +1227,19 @@ msgstr ""
 "科用の機器を生み出しています。さらに、英国には以下を専門とする企業もありま"
 "す。"
 
-#: enrolment/templates/marketing-pages/health.html:62
+#: enrolment/templates/marketing-pages/health.html:56
 msgid "novel drug delivery systems"
 msgstr "新規薬物送達システム"
 
-#: enrolment/templates/marketing-pages/health.html:63
+#: enrolment/templates/marketing-pages/health.html:57
 msgid "single-use biotechnology facilities"
 msgstr "シングルユースバイオテクノロジ設備"
 
-#: enrolment/templates/marketing-pages/health.html:64
+#: enrolment/templates/marketing-pages/health.html:58
 msgid "medical imaging"
 msgstr "医用画像"
 
-#: enrolment/templates/marketing-pages/health.html:68
+#: enrolment/templates/marketing-pages/health.html:61
 msgid ""
 "The UK is at the forefront of regenerative medicine and is renowned for gene "
 "therapy and tissue-engineered products and services. And the UK’s "
@@ -1192,7 +1250,7 @@ msgstr ""
 "く評価されています。また、英国の製薬産業は、錯体製剤や連続製造プロセスにおい"
 "て高い競争力を維持しています。"
 
-#: enrolment/templates/marketing-pages/health.html:71
+#: enrolment/templates/marketing-pages/health.html:64
 msgid ""
 "With a comprehensive regulatory framework, robust compliance and quality "
 "assurance culture in the UK, product safety and effectiveness are assured."
@@ -1200,11 +1258,11 @@ msgstr ""
 "英国には規制に対する包括的な枠組みや確固たるコンプライアンス、品質保証の文化"
 "があるため、製品の安全性と有効性が確実です。"
 
-#: enrolment/templates/marketing-pages/health.html:77
+#: enrolment/templates/marketing-pages/health.html:67
 msgid "Work with the UK to create first-rate healthcare"
 msgstr "英国と協力して第一級の医療を"
 
-#: enrolment/templates/marketing-pages/health.html:79
+#: enrolment/templates/marketing-pages/health.html:69
 msgid ""
 "If you need to develop clinical services, implement digital health systems "
 "or extend the skills of your workforce, the UK has unrivalled experience of "
@@ -1214,7 +1272,7 @@ msgstr ""
 "力を高める場合も、お任せください。英国には、医療の革新と提供について、これ以"
 "上ないほどの経験があります。"
 
-#: enrolment/templates/marketing-pages/health.html:82
+#: enrolment/templates/marketing-pages/health.html:72
 msgid ""
 "Exceptional standards of healthcare stem from the UK’s NHS, which was ranked "
 "as the best healthcare system of 11 major nations in 2013. These standards "
@@ -1227,7 +1285,7 @@ msgstr ""
 "ムに対する規制機関や医療技術評価機関が、できる限り高い安全性と成果、コスト効"
 "率を確保することにより、維持されています。"
 
-#: enrolment/templates/marketing-pages/health.html:85
+#: enrolment/templates/marketing-pages/health.html:75
 msgid ""
 "Building on the strong foundations of the NHS, the UK’s thriving and diverse "
 "commercial healthcare sector caters for all needs."
@@ -1235,7 +1293,7 @@ msgstr ""
 "英国では、NHS の強固な基盤上に立脚し、多様な民間医療セクターがあらゆるニーズ"
 "を満たしています。"
 
-#: enrolment/templates/marketing-pages/health.html:88
+#: enrolment/templates/marketing-pages/health.html:78
 msgid ""
 "Decades of collaboration between the NHS, academic and private-sector "
 "organisations has created a rich pool of innovative providers, ready to "
@@ -1245,7 +1303,7 @@ msgstr ""
 "合わせてソリューションをすぐに調整できる、革新的なプロバイダが多数存在してい"
 "ます。"
 
-#: enrolment/templates/marketing-pages/health.html:91
+#: enrolment/templates/marketing-pages/health.html:81
 msgid ""
 "For hospital management services, the UK’s tried-and-tested approach to "
 "acute and tertiary care brings deep insight. Our services can help you make "
@@ -1257,7 +1315,7 @@ msgstr ""
 "する国での現在の実施モデルを最大限に活用し、効率性、患者さんの体験、臨床転帰"
 "を向上させる方法を特定できます。"
 
-#: enrolment/templates/marketing-pages/health.html:94
+#: enrolment/templates/marketing-pages/health.html:84
 msgid ""
 "In Kuwait, the NHS is leading the development of new paediatric cancer care "
 "services - replicating world-class services offered in the UK through "
@@ -1267,7 +1325,7 @@ msgstr ""
 "小児がん治療サービスを、NHS 主導で研修、サポート、出張コンサルティングプログ"
 "ラムを通して開発しています。"
 
-#: enrolment/templates/marketing-pages/health.html:97
+#: enrolment/templates/marketing-pages/health.html:87
 msgid ""
 "And in China, acute care and rehabilitation services are being supported by "
 "commercially-driven UK healthcare services which are being delivered by "
@@ -1276,7 +1334,7 @@ msgstr ""
 "また、中国では、英国の民間医療サービスのサポートを受けながら、海外駐在員と現"
 "地スタッフが救急治療やリハビリテーションサービスを提供しています。"
 
-#: enrolment/templates/marketing-pages/health.html:100
+#: enrolment/templates/marketing-pages/health.html:90
 msgid ""
 "The UK is a world-leading innovator in project financing, particularly "
 "public private partnerships (PPPs) that can ensure cost-effective and high-"
@@ -1289,7 +1347,7 @@ msgstr ""
 "の企業は、計画からモデリングまで、資源効率の高いインフラストラクチャプロジェ"
 "クトを成功させるために必要なあらゆるサービスを提供できます。"
 
-#: enrolment/templates/marketing-pages/health.html:103
+#: enrolment/templates/marketing-pages/health.html:93
 msgid ""
 "UK companies are delivering one of the world's biggest healthcare PPP "
 "programmes, to meet Turkey's growing demand for healthcare facilities."
@@ -1297,7 +1355,7 @@ msgstr ""
 "英国の企業は、トルコで拡大を続ける医療機関への需要を満たすため、世界最大級の"
 "医療 PPP プログラムを提供しています。"
 
-#: enrolment/templates/marketing-pages/health.html:106
+#: enrolment/templates/marketing-pages/health.html:96
 msgid ""
 "Whether you need: hospitals built and primary care services managed, or you "
 "need reliable suppliers of the latest medical technology pharmaceutical "
@@ -1306,7 +1364,7 @@ msgstr ""
 "病院の構築やプライマリケアサービスの管理、最新医療技術や信頼できる新薬サプラ"
 "イヤなど、ニーズがどのようなものであっても、ぜひ英国を最初にご検討ください。"
 
-#: enrolment/templates/marketing-pages/health.html:111
+#: enrolment/templates/marketing-pages/health.html:101
 msgid ""
 "See the UK's healthcare and life sciences providers on the Find a supplier "
 "service"
@@ -1314,13 +1372,13 @@ msgstr ""
 "［サプライヤ検索］サービスで、英国の医療・ライフサイエンス分野のプロバイダを"
 "検索できます。"
 
-#: enrolment/templates/marketing-pages/health.html:113
+#: enrolment/templates/marketing-pages/health.html:103
 #, fuzzy
 #| msgid "Find UK companies to do business with"
 msgid "Find UK healthcare and life sciences companies to meet your needs"
 msgstr "取引先候補になる英国企業を検索する"
 
-#: enrolment/templates/marketing-pages/health.html:115
+#: enrolment/templates/marketing-pages/health.html:105
 #, fuzzy
 #| msgid ""
 #| "Get access to the UK health and life sciences supply-chain, delivering "
@@ -1333,13 +1391,13 @@ msgstr ""
 "高品質で革新的なサービスを世界中にお届けしている、英国の医療･ライフサイエンス"
 "のサプライチェーンにアクセスしませんか。"
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:7
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:8
 #, fuzzy
 #| msgid "The UK's creative services"
 msgid "The UK's global sports infrastructure services"
 msgstr "英国のクリエイティブ･サービス"
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:9
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:10
 msgid ""
 "UK companies bring in-depth knowledge of the demands of global sports "
 "audiences with an understanding of event owners’ needs. Our expertise runs "
@@ -1347,7 +1405,7 @@ msgid ""
 "to event delivery and legacy."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:11
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:12
 msgid "Read more about the UK's global sports infrastructure"
 msgstr ""
 
@@ -1387,28 +1445,28 @@ msgid ""
 "sustainability of events, to ticketing and transport planning."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:34
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:26
 msgid ""
 "The London 2012 Olympics and Paralympics and the Glasgow 2014 Commonwealth "
 "Games were hugely successful global events, with more than 10 million "
 "attendees between them"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:35
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:27
 msgid ""
 "The English Premier League is the highest revenue-earning soccer league in "
 "the world"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:36
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:28
 msgid "Six of the 10 Formula 1 racing teams have their headquarters in the UK"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:44
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:35
 msgid "Iconic and innovative sporting events"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:45
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:36
 msgid ""
 "The UK’s architects, engineers, cost consultants, project managers and "
 "programme managers have been at the forefront of international sports venue "
@@ -1418,43 +1476,43 @@ msgid ""
 "stadium in Beijing and the Rio Olympic Park."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:46
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:37
 msgid "The UK is recognised for its expertise in:"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:48
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:39
 msgid "construction and project delivery"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:49
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:40
 msgid "sustainability"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:50
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:41
 msgid "seating and sightlines"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:51
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:42
 msgid "software development"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:52
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:43
 msgid "crowd movement and safety"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:53
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:44
 msgid "commercial opportunities and fan experience"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:54
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:45
 msgid "supply chain delivery"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:59
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:48
 msgid "The UK: global sports specialists"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:60
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:49
 msgid ""
 "Leading sports authorities around the world already call on UK suppliers for "
 "specialist technology and equipment. For example, UK companies have "
@@ -1465,7 +1523,7 @@ msgid ""
 "commercially viable fan databases."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:61
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:50
 msgid ""
 "The UK is a centre of global excellence in “overlay architecture”: the "
 "creation of temporary venues and the installation of temporary elements in "
@@ -1474,7 +1532,7 @@ msgid ""
 "from seating to signage."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:62
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:51
 msgid ""
 "Security and safety is a crucial element of a well-organised sports event at "
 "home and abroad. UK suppliers have given event security and safety training "
@@ -1482,27 +1540,39 @@ msgid ""
 "Commonwealth Games, as well as many of the world’s top soccer clubs."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:63
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:52
 msgid ""
 "UK companies have a reputation for delivering creative events, ensuring "
 "extraordinary opening and closing ceremonies and a seamless games-time "
 "experience for major sports events around the world."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:64
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:53
 msgid "Find your UK global sports partner"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:70
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:57
 msgid ""
 "See the UK's global sports infrastructure on the Find a supplier service"
 msgstr ""
 
+#: enrolment/templates/marketing-pages/tech.html:6
+msgid ""
+"5G, AI and semiconductors - the UK is at the forefront of the world's "
+"technological innovation"
+msgstr ""
+
 #: enrolment/templates/marketing-pages/tech.html:7
+#, fuzzy
+#| msgid "Find your UK technology trade partner"
+msgid "Buy UK technology products and services"
+msgstr "英国の技術分野の取引相手を探す"
+
+#: enrolment/templates/marketing-pages/tech.html:10
 msgid "UK technology"
 msgstr "英国の技術"
 
-#: enrolment/templates/marketing-pages/tech.html:9
+#: enrolment/templates/marketing-pages/tech.html:12
 msgid ""
 "Whether you need electronic systems, data analytics, artificial intelligence "
 "or semiconductors, the UK is the first place to look."
@@ -1510,15 +1580,15 @@ msgstr ""
 "革新的な食品ブランド、最高品質の飲料品など、どのようなものをお探しであって"
 "も、ぜひ最初に英国をご検討ください。"
 
-#: enrolment/templates/marketing-pages/tech.html:11
+#: enrolment/templates/marketing-pages/tech.html:14
 msgid "Read more about technology in the UK"
 msgstr "英国のテクノロジーについて、詳しくご覧ください"
 
-#: enrolment/templates/marketing-pages/tech.html:17
+#: enrolment/templates/marketing-pages/tech.html:19
 msgid "If you need the best technology, look no further than the UK."
 msgstr "最高の技術をお求めなら、英国以外を探す必要はありません。"
 
-#: enrolment/templates/marketing-pages/tech.html:19
+#: enrolment/templates/marketing-pages/tech.html:21
 msgid ""
 "The UK is a world leader: in 2016, we ranked first for science and "
 "technology according to the Good Country Index and third in the Global "
@@ -1527,7 +1597,7 @@ msgstr ""
 "英国は世界的なリーダーです。2016 年、英国は科学技術分野において Good Country "
 "Index では 1 位、Global Innovation Index では 3 位に評価されました。"
 
-#: enrolment/templates/marketing-pages/tech.html:22
+#: enrolment/templates/marketing-pages/tech.html:24
 msgid ""
 "The UK technology industry underpins many of our successful business sectors "
 "– from financial services and high-value manufacturing, to retail and "
@@ -1536,7 +1606,19 @@ msgstr ""
 "英国の技術産業は、金融サービスや高価値製造から小売業や農業まで、多くの事業分"
 "野における成功を支え、驚くべき速度での発展に貢献しています。"
 
-#: enrolment/templates/marketing-pages/tech.html:27
+#: enrolment/templates/marketing-pages/tech.html:30
+msgid "The UK has the largest technology market in Europe"
+msgstr "英国にはヨーロッパ最大の技術市場があります。"
+
+#: enrolment/templates/marketing-pages/tech.html:31
+msgid "The second largest telecoms service exporter globally is from the UK"
+msgstr "世界第 ２ の規模を持つ電気通信サービス輸出業者は英国の企業です。"
+
+#: enrolment/templates/marketing-pages/tech.html:32
+msgid "The UK has the largest data centre market in Europe"
+msgstr "英国にはヨーロッパ最大のデータセンタ市場があります。"
+
+#: enrolment/templates/marketing-pages/tech.html:37
 msgid ""
 "Many of the world’s best-known and successful companies take advantage of UK "
 "innovation, and we are proud that we provide a technological springboard for "
@@ -1546,7 +1628,7 @@ msgstr ""
 "ます。また、私たちも、世界中の企業に技術的な飛躍をもたらしていることに誇りを"
 "持っています。"
 
-#: enrolment/templates/marketing-pages/tech.html:29
+#: enrolment/templates/marketing-pages/tech.html:40
 msgid ""
 "Our technology industry is one of the world’s largest and shows the UK’s "
 "creativity and design skills. The UK is particularly focussed on: low-power "
@@ -1557,22 +1639,22 @@ msgstr ""
 "特に力を入れている分野：Bluetooth の最初のシングルチップの実装や NarrowBand-"
 "Internet of Things の国際標準など、低電力の無線電子機器"
 
-#: enrolment/templates/marketing-pages/tech.html:30
+#: enrolment/templates/marketing-pages/tech.html:41
 msgid ""
 "development of 5G communications, which will underpin the development of "
 "connected devices"
 msgstr "接続機器の開発を支える 5G 通信の開発"
 
-#: enrolment/templates/marketing-pages/tech.html:31
+#: enrolment/templates/marketing-pages/tech.html:42
 msgid ""
 "data analytics to create real-time consumer trends, behaviour and insights"
 msgstr "消費者の傾向、行動、洞察をリアルタイムで得られるデータ分析"
 
-#: enrolment/templates/marketing-pages/tech.html:32
+#: enrolment/templates/marketing-pages/tech.html:43
 msgid "data centres - we have the largest market capacity in Europe"
 msgstr "データセンタ - ヨーロッパ最大の市場規模"
 
-#: enrolment/templates/marketing-pages/tech.html:33
+#: enrolment/templates/marketing-pages/tech.html:44
 msgid ""
 "artificial intelligence - we are home to  many successful artificial "
 "intelligence (AI) start-up companies, especially those specialising in "
@@ -1581,29 +1663,17 @@ msgstr ""
 "人工知能 - 英国は人工知能（AI）、特に機械学習、ディープラーニング、自然言語処"
 "理に特化したスタートアップ企業を多数生み出しています。"
 
-#: enrolment/templates/marketing-pages/tech.html:34
+#: enrolment/templates/marketing-pages/tech.html:45
 msgid ""
 "producing compound semiconductor materials producing frontier-based sensor "
 "technologies."
 msgstr "最先端のセンサ技術を生み出す化合物半導体材料の生産"
 
-#: enrolment/templates/marketing-pages/tech.html:42
-msgid "The UK has the largest technology market in Europe"
-msgstr "英国にはヨーロッパ最大の技術市場があります。"
-
-#: enrolment/templates/marketing-pages/tech.html:43
-msgid "The second largest telecoms service exporter globally is from the UK"
-msgstr "世界第 ２ の規模を持つ電気通信サービス輸出業者は英国の企業です。"
-
-#: enrolment/templates/marketing-pages/tech.html:44
-msgid "The UK has the largest data centre market in Europe"
-msgstr "英国にはヨーロッパ最大のデータセンタ市場があります。"
-
-#: enrolment/templates/marketing-pages/tech.html:57
+#: enrolment/templates/marketing-pages/tech.html:48
 msgid "UK technology firms are global success stories"
 msgstr "英国の技術系企業はグローバルな成功事例"
 
-#: enrolment/templates/marketing-pages/tech.html:59
+#: enrolment/templates/marketing-pages/tech.html:50
 msgid ""
 "There are thousands of technology start-ups in the UK, thanks to our strong "
 "entrepreneurial culture."
@@ -1611,7 +1681,7 @@ msgstr ""
 "強力な起業文化があるため、英国には数千もの技術系スタートアップ企業が存在して"
 "います。"
 
-#: enrolment/templates/marketing-pages/tech.html:62
+#: enrolment/templates/marketing-pages/tech.html:53
 msgid ""
 "Successful technology companies can be found all over the country and if "
 "you're looking to grow your business through technology, the UK is an ideal "
@@ -1620,7 +1690,7 @@ msgstr ""
 "成功している技術系企業が国中に存在するため、技術を通したビジネスの成長を目指"
 "す場合、英国は取引相手を探すのに理想的な場所です。"
 
-#: enrolment/templates/marketing-pages/tech.html:65
+#: enrolment/templates/marketing-pages/tech.html:56
 msgid ""
 "Our flourishing start-ups complement a host of established global technology "
 "companies based here. UK technology success stories include:"
@@ -1629,7 +1699,7 @@ msgstr ""
 "系企業にない部分を補っています。英国の技術分野の成功事例には、以下のようなも"
 "のがあります。"
 
-#: enrolment/templates/marketing-pages/tech.html:67
+#: enrolment/templates/marketing-pages/tech.html:59
 msgid ""
 "a telecommunications services company that operates in 180 markets with "
 "revenue of more than £19 billion"
@@ -1637,33 +1707,33 @@ msgstr ""
 "180 の市場で事業を展開し、190 億ポンド以上の収益を上げている電気通信サービス"
 "企業"
 
-#: enrolment/templates/marketing-pages/tech.html:68
+#: enrolment/templates/marketing-pages/tech.html:60
 msgid ""
 "the world's third-largest supplier of enterprise resource planning software"
 msgstr ""
 "世界第 3 の規模を誇る、エンタープライズリソ\n"
 "ースプランニングソフトウェアサプライヤ"
 
-#: enrolment/templates/marketing-pages/tech.html:69
+#: enrolment/templates/marketing-pages/tech.html:61
 msgid "a mobile virtual network operator in 21 countries worldwide"
 msgstr "世界 21 か国で事業を展開している仮想移動体通信事業者"
 
-#: enrolment/templates/marketing-pages/tech.html:70
+#: enrolment/templates/marketing-pages/tech.html:62
 msgid ""
 "the world's second biggest mobile telecomms network (by number of "
 "connections)"
 msgstr "接続数世界第 2 位の移動体通信ネットワーク"
 
-#: enrolment/templates/marketing-pages/tech.html:74
+#: enrolment/templates/marketing-pages/tech.html:66
 msgid "Find your UK technology trade partner"
 msgstr "英国の技術分野の取引相手を探す"
 
-#: enrolment/templates/marketing-pages/tech.html:79
+#: enrolment/templates/marketing-pages/tech.html:70
 msgid "See the UK's technology providers on the Find a supplier service"
 msgstr ""
 "［サプライヤ検索］サービスで、英国の技術分野のプロバイダを検索できます。"
 
-#: enrolment/templates/marketing-pages/tech.html:82
+#: enrolment/templates/marketing-pages/tech.html:73
 #, fuzzy
 #| msgid ""
 #| "Exceptionally innovative and creative UK trade partners are ready to work "
@@ -1675,13 +1745,13 @@ msgstr ""
 "革新的でクリエイティブな英国の優良企業が、貴社との取引を求めています。「サプ"
 "ライヤー検索」サービスでは、このような企業を検索できます。"
 
-#: enrolment/templates/marketing-pages/tech.html:85
+#: enrolment/templates/marketing-pages/tech.html:76
 #, fuzzy
 #| msgid "Find UK companies to do business with"
 msgid "Find UK technology companies to meet your needs"
 msgstr "取引先候補になる英国企業を検索する"
 
-#: enrolment/templates/marketing-pages/tech.html:88
+#: enrolment/templates/marketing-pages/tech.html:79
 msgid ""
 "Get access to the UK technology supply chain. Register to be notified as "
 "soon as companies that match your needs have created trade profiles."
@@ -1690,6 +1760,28 @@ msgstr ""
 #: enrolment/templates/search-companies.html:6
 msgid "Find great UK companies"
 msgstr "優秀な英国企業を探す"
+
+#: enrolment/templates/sector-list.html:10
+msgid "Facts and figures about about the UK's strongest sectors and industries"
+msgstr ""
+
+#: enrolment/templates/sector-list.html:11
+msgid "The UK's strongest industrial sectors - trade.great.gov.uk"
+msgstr ""
+
+#: exportopportunity/templates/export-opportunity.html:23
+msgid "Submit"
+msgstr ""
+
+#, fuzzy
+#~| msgid "The UK's advanced technology"
+#~ msgid "Advanced technology"
+#~ msgstr "英国の高度なテクノロジー"
+
+#, fuzzy
+#~| msgid "The UK's creative services"
+#~ msgid "Creative services"
+#~ msgstr "英国のクリエイティブ･サービス"
 
 #, fuzzy
 #~| msgid "Terms &amp; conditions"
