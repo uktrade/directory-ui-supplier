@@ -457,7 +457,9 @@ msgstr "Os serviços criativos do Reino Unido"
 msgid ""
 "Whether you need buildings designed, films made, or a fresh approach to "
 "marketing, the UK is the first place to look."
-msgstr ""
+msgstr "Se precisa da concepção de um edifício, da realização de um filme "
+"ou de uma nova abordagem ao marketing, o Reino Unido é o primeiro "
+"lugar onde procurar."
 
 #: enrolment/templates/bidi/landing-page-sector-list.html:82
 #: enrolment/templates/bidi/landing-page.html:103
@@ -529,7 +531,9 @@ msgstr "As empresas do Reino Unido trabalham com companhias e governos do "
 msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
 "is hard to beat."
-msgstr ""
+msgstr "O Reino Unido tem parceiros comerciais excepcionalmente inovadores "
+"e criativos, prontos para trabalhar consigo. Descubra-os em "Encontrar"
+"um fornecedor"."
 
 #: enrolment/templates/bidi/landing-page.html:45
 #: enrolment/templates/landing-page.html:38
@@ -544,6 +548,7 @@ msgid ""
 "Check out the cutting-edge technologies that the UK is bringing to the world."
 msgstr "Confira as mais recentes inovações tecnológicas que o Reino Unido está trazendo "
 "para o mundo."
+msgstr ""
 
 #: enrolment/templates/bidi/landing-page.html:98
 #: enrolment/templates/landing-page.html:95
@@ -868,7 +873,9 @@ msgstr "Comida e bebida do Reino Unido"
 msgid ""
 "Whether you want the most delicious food brands or exceptional quality "
 "drinks, the UK is the first place to look."
-msgstr ""
+msgstr "Se o que você procura são as marcas de alimentos mais inovadoras "
+"ou bebidas de qualidade excepcional, o Reino Unido precisa estar no "
+"topo da sua lista."
 
 #: enrolment/templates/marketing-pages/food.html:11
 msgid "Read more about UK food and drink"
@@ -1466,7 +1473,8 @@ msgstr "Tecnologia do Reino Unido"
 msgid ""
 "Whether you need electronic systems, data analytics, artificial intelligence "
 "or semiconductors, the UK is the first place to look."
-msgstr ""
+msgstr "Se necessita da melhor tecnologia, não precisa de ir mais longe: "
+"escolha o Reino Unido."
 
 #: enrolment/templates/marketing-pages/tech.html:11
 msgid "Read more about technology in the UK"
