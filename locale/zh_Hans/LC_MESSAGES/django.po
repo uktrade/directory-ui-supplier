@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-22 15:45+0000\n"
+"POT-Creation-Date: 2017-07-14 10:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: enrolment/constants.py:14
+#: enrolment/constants.py:15
 msgid "Rebekah Marine: i-limb&trade; user"
 msgstr ""
 
-#: enrolment/constants.py:17
+#: enrolment/constants.py:18
 msgid ""
 "Touch Bionics has transformed thousands of lives in dozens of countries "
 "through world-leading prosthetic technologies. We have a range of "
@@ -29,45 +29,43 @@ msgid ""
 "increase their independence and confidence."
 msgstr ""
 
-#: enrolment/constants.py:25
+#: enrolment/constants.py:26
 msgid ""
 "The i-limb&trade; quantum is the next best thing to real hands and as a "
 "bilateral amputee having the ability to do what I want to do independently "
 "is truly remarkable."
 msgstr ""
 
-#: enrolment/constants.py:29
+#: enrolment/constants.py:30
 msgid "Jason"
 msgstr ""
 
-#: enrolment/constants.py:30
+#: enrolment/constants.py:31
 msgid "i-limb quantum&trade; user"
 msgstr ""
 
-#: enrolment/constants.py:34
-#: enrolment/templates/bidi/landing-page-sector-list.html:42
-#: enrolment/templates/landing-page-sector-list.html:40
+#: enrolment/constants.py:35
 #, fuzzy
 #| msgid "Healthcare and life sciences in the UK"
 msgid "Healthcare and life sciences"
 msgstr "英国的医疗保健和生命科学"
 
-#: enrolment/constants.py:38 enrolment/constants.py:97
+#: enrolment/constants.py:39 enrolment/constants.py:103
 msgid "Technology"
 msgstr ""
 
-#: enrolment/constants.py:43
+#: enrolment/constants.py:44
 msgid "prosthetics, bionics, robotics, healthcare, technology, limb loss"
 msgstr ""
 
-#: enrolment/constants.py:51
+#: enrolment/constants.py:53
 msgid ""
 "RD Biomed designs and makes Peptest&trade;- the world’s first non-invasive "
 "reflux diagnostic test. RD Biomed specialises in diagnostics for "
 "gastroenterology and respiratory conditions."
 msgstr ""
 
-#: enrolment/constants.py:62
+#: enrolment/constants.py:65
 msgid ""
 "Touch Bionics is responsible for developing and improving the world’s first "
 "bionic hand with 5 independently moving fingers, transforming lives across "
@@ -75,6 +73,10 @@ msgid ""
 msgstr ""
 
 #: enrolment/constants.py:78
+msgid "Mobile phone displaying evrythng's commercial traceability product"
+msgstr ""
+
+#: enrolment/constants.py:84
 msgid ""
 "EVRYTHNG’s commercial Internet of Things traceability solution allows brands "
 "to track and report the status, location and history of everything they "
@@ -83,18 +85,24 @@ msgid ""
 "product, batches, cases and pallets can be identified and mapped."
 msgstr ""
 
-#: enrolment/constants.py:88
+#: enrolment/constants.py:94
 msgid ""
 "Companies can transform the value of their physical assets in the EVRYTHNG "
 "cloud by adding an intelligent, personalised layer of digital content, "
 "services and data analytics."
 msgstr ""
 
-#: enrolment/constants.py:102
+#: enrolment/constants.py:108
 msgid "Internet of Things, data analytics, traceability, connectivity"
 msgstr ""
 
-#: enrolment/constants.py:110
+#: enrolment/constants.py:114
+msgid ""
+"Mobile phone being used to interact with a bottle of Johnnie Walker using "
+"evrythng technology"
+msgstr ""
+
+#: enrolment/constants.py:119
 msgid ""
 "EVRYTHNG is an Internet of Things software company that helps manufacturers "
 "<i>digitalise</i> their physical products by connecting them to the web. "
@@ -103,7 +111,7 @@ msgid ""
 "managed in the EVRYTHNG cloud has a unique Active Digital Identity"
 msgstr ""
 
-#: enrolment/constants.py:124
+#: enrolment/constants.py:134
 msgid ""
 "Arkessa enables devices and applications developers to connect to the "
 "Internet of Things (IoT), regardless of location, network operator or "
@@ -111,7 +119,13 @@ msgid ""
 "mobility platform that is easy to adopt, integrate and scale."
 msgstr ""
 
-#: enrolment/constants.py:143
+#: enrolment/constants.py:150
+msgid ""
+"Immersive projection on to Parque Large in the Royal Botanical Gardens of "
+"Rio de Janeiro"
+msgstr ""
+
+#: enrolment/constants.py:156
 msgid ""
 "For Adidas’ 2014 World Cup campaign, Immersive developed concepts, "
 "storyboards and produced final audio and video designs. It also produced the "
@@ -119,23 +133,23 @@ msgid ""
 "a 2m ball and consulting on live-camera press shot positions"
 msgstr ""
 
-#: enrolment/constants.py:151
+#: enrolment/constants.py:164
 msgid "Creating the grandest projection mapping the world has ever seen."
 msgstr ""
 
-#: enrolment/constants.py:154
+#: enrolment/constants.py:167
 msgid "Fast Company magazine"
 msgstr ""
 
-#: enrolment/constants.py:158
+#: enrolment/constants.py:171
 msgid "Creative"
 msgstr ""
 
-#: enrolment/constants.py:163
+#: enrolment/constants.py:176
 msgid "Interactive installations, video content, projection mapping"
 msgstr ""
 
-#: enrolment/constants.py:171
+#: enrolment/constants.py:185
 msgid ""
 "Immersive is a complete solution provider for audio-visual projects of any "
 "scale. Immersive uses new media technology (such as LED, holograms, "
@@ -143,47 +157,56 @@ msgid ""
 "cutting-edge lighting, video and interactive installations."
 msgstr ""
 
-#: enrolment/constants.py:183
+#: enrolment/constants.py:195
+msgid ""
+"Interaction between the Blippar app on a smartphone and a ketchup bottle"
+msgstr ""
+
+#: enrolment/constants.py:200
 msgid ""
 "Blippar is the leading visual discovery app, harnessing augmented reality, "
 "image-recognition technology and artificial intelligence to bring the "
 "physical world to life through smartphones."
 msgstr ""
 
-#: enrolment/constants.py:197 enrolment/constants.py:198
+#: enrolment/constants.py:214
+msgid ""
+"Fever-Tree Clementine and cinnamon tonic water being poured from a bottle "
+"into a glass"
+msgstr ""
+
+#: enrolment/constants.py:217 enrolment/constants.py:218
 msgid "Clementine and cinnamon tonic water"
 msgstr ""
 
-#: enrolment/constants.py:200
+#: enrolment/constants.py:220
 msgid ""
 "Fever-Tree has established itself as the mixer drink specialist, crafting a "
 "range of fourteen products sourced from the highest quality natural "
 "ingredients for the best tasting mixers."
 msgstr ""
 
-#: enrolment/constants.py:207
+#: enrolment/constants.py:227
 msgid ""
 "If three-quarters of your gin and tonic is the tonic, make sure you use the "
 "best."
 msgstr ""
 
-#: enrolment/constants.py:210
+#: enrolment/constants.py:230
 msgid "Tim Warrillow"
 msgstr ""
 
-#: enrolment/constants.py:215
-#: enrolment/templates/bidi/landing-page-sector-list.html:88
-#: enrolment/templates/landing-page-sector-list.html:87
+#: enrolment/constants.py:235
 #, fuzzy
 #| msgid "The UK's food and drink"
 msgid "Food and drink"
 msgstr "来自英国的食品和饮料"
 
-#: enrolment/constants.py:219
+#: enrolment/constants.py:239
 msgid "Mixers, Quality, Taste"
 msgstr ""
 
-#: enrolment/constants.py:226
+#: enrolment/constants.py:247
 msgid ""
 "All Joe & Seph’s popcorn is handmade in small batches to ensure superior "
 "texture and an intense flavour. The ingredients used are 100&#37; natural "
@@ -191,42 +214,42 @@ msgid ""
 "frying."
 msgstr ""
 
-#: enrolment/constants.py:238
+#: enrolment/constants.py:260
 msgid ""
 "Fever-Tree has pioneered premium mixers and is now the world’s leading "
 "premium mixer company."
 msgstr ""
 
-#: enrolment/constants.py:286
+#: enrolment/constants.py:308
 msgid "Queen Elizabeth Olympic Park, London"
 msgstr ""
 
-#: enrolment/constants.py:287
+#: enrolment/constants.py:309
 msgid "London 2012 Olympic and Paralympic Games"
 msgstr ""
 
-#: enrolment/constants.py:289
+#: enrolment/constants.py:311
 msgid ""
 "Movement Strategies leads design standards for major events such as the "
 "Olympic Games, helping plan crowd movement and safety, and driving increased "
 "ticket sales."
 msgstr ""
 
-#: enrolment/constants.py:301
+#: enrolment/constants.py:323
 msgid "Global sports infrastructure"
 msgstr ""
 
-#: enrolment/constants.py:305
+#: enrolment/constants.py:327
 msgid "Crowd safety, Pedestrian flow, Movement analytics"
 msgstr ""
 
-#: enrolment/constants.py:312
+#: enrolment/constants.py:334
 msgid ""
 "Movement Strategies is the largest and most experienced independent, "
 "specialist people movement consultancy in the world."
 msgstr ""
 
-#: enrolment/constants.py:322
+#: enrolment/constants.py:344
 msgid ""
 "Fortress GB proved its reputation as the market-leading e-ticketing provider "
 "by being selected to install and manage the very latest in turnstile "
@@ -275,24 +298,24 @@ msgstr ""
 msgid "Maximum 1000 characters."
 msgstr ""
 
-#: enrolment/templates/bidi/footer.html:11 enrolment/templates/footer.html:11
+#: enrolment/templates/bidi/footer.html:10 enrolment/templates/footer.html:10
 msgid "Department for International Trade"
 msgstr "国际贸易部"
 
-#: enrolment/templates/bidi/footer.html:17 enrolment/templates/footer.html:17
+#: enrolment/templates/bidi/footer.html:15 enrolment/templates/footer.html:15
 msgid "Contact us"
 msgstr "联系我们"
 
-#: enrolment/templates/bidi/footer.html:23 enrolment/templates/footer.html:23
+#: enrolment/templates/bidi/footer.html:20 enrolment/templates/footer.html:20
 msgid "Privacy and cookies"
 msgstr "隐私和 Cookie"
 
-#: enrolment/templates/bidi/footer.html:29 enrolment/templates/footer.html:29
+#: enrolment/templates/bidi/footer.html:25 enrolment/templates/footer.html:25
 msgid "Terms &amp; conditions"
 msgstr "条款和条件"
 
-#: enrolment/templates/bidi/footer.html:42 enrolment/templates/footer.html:42
-msgid "Crown Copyright 2016"
+#: enrolment/templates/bidi/footer.html:33 enrolment/templates/footer.html:33
+msgid "Crown Copyright"
 msgstr ""
 
 #: enrolment/templates/bidi/header.html:30 enrolment/templates/header.html:30
@@ -309,182 +332,39 @@ msgid "Find a Supplier"
 msgstr "寻找供应商"
 
 #: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:40
-#: enrolment/templates/marketing-pages/base.html:102
-#: enrolment/templates/marketing-pages/bidi/base.html:93
+#: enrolment/templates/marketing-pages/base.html:107
+#: enrolment/templates/marketing-pages/bidi/base.html:107
 msgid "Industries"
 msgstr "产业"
 
-#: enrolment/templates/bidi/landing-page-sector-list.html:12
-#: enrolment/templates/landing-page-sector-list.html:11
-msgid "Discover the UK's capability in these key industries"
-msgstr ""
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:22
-#: enrolment/templates/bidi/landing-page.html:52
-#: enrolment/templates/landing-page-sector-list.html:20
-#: enrolment/templates/landing-page.html:48
-msgid "UK industries"
-msgstr "英国贸易部门"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:29
-#: enrolment/templates/landing-page-sector-list.html:27
-msgid ""
-"As a decision-maker in an international business you need look no further "
-"than the UK for innovative, high-quality products and services. It is the "
-"place to make the right trade connections with major corporations and "
-"smaller enterprises across every sector of industry."
-msgstr ""
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:32
-#: enrolment/templates/landing-page-sector-list.html:30
-msgid ""
-"We can help you make vital business connections with ideal companies. Choose "
-"from the businesses in these UK industries to work with you."
-msgstr ""
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:45
-#: enrolment/templates/bidi/landing-page.html:61
-#: enrolment/templates/landing-page-sector-list.html:43
-#: enrolment/templates/landing-page.html:57
-msgid "Healthcare and life sciences in the UK"
-msgstr "英国的医疗保健和生命科学"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:47
-#: enrolment/templates/bidi/landing-page.html:63
-#: enrolment/templates/landing-page-sector-list.html:45
-#: enrolment/templates/landing-page.html:59
-msgid ""
-"Get access to the UK health and life sciences supply-chain, delivering high "
-"quality, innovative services to the world."
-msgstr "进入英国医疗保健和生命科学供应链，向全世界交付高质量的创新服务。\t"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:50
-#: enrolment/templates/bidi/landing-page.html:67
-#: enrolment/templates/landing-page-sector-list.html:48
-#: enrolment/templates/landing-page.html:63
-msgid "Find out more about the UK’s healthcare and life sciences"
-msgstr "详细了解英国医疗保健和生命科学"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:56
-#: enrolment/templates/landing-page-sector-list.html:54
-#, fuzzy
-#| msgid "The UK's advanced technology"
-msgid "Advanced technology"
-msgstr "英国的先进技术"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:59
-#: enrolment/templates/bidi/landing-page.html:77
-#: enrolment/templates/landing-page-sector-list.html:57
-#: enrolment/templates/landing-page.html:73
-msgid "The UK's advanced technology"
-msgstr "英国的先进技术"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:61
-#: enrolment/templates/landing-page-sector-list.html:59
-#, fuzzy
-#| msgid ""
-#| "Check out the latest cutting-edge technologies that the UK is bringing to "
-#| "the world."
-msgid ""
-"Check out the cutting-edge technological innovations that the UK is bringing "
-"to the world."
-msgstr "察看英国带给世界的尖端创新技术。"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:65
-#: enrolment/templates/bidi/landing-page.html:84
-#: enrolment/templates/landing-page-sector-list.html:64
-#: enrolment/templates/landing-page.html:81
-msgid "Find out more about UK technology"
-msgstr "详细了解英国的技术"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:73
-#: enrolment/templates/landing-page-sector-list.html:72
-#, fuzzy
-#| msgid "The UK's creative services"
-msgid "Creative services"
-msgstr "来自英国的创新服务"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:76
-#: enrolment/templates/bidi/landing-page.html:96
-#: enrolment/templates/landing-page-sector-list.html:75
-#: enrolment/templates/landing-page.html:93
-msgid "The UK's creative services"
-msgstr "来自英国的创新服务"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:78
-#: enrolment/templates/landing-page-sector-list.html:77
-#, fuzzy
-#| msgid ""
-#| "Whether you need buildings designed, films made or a fresh approach to "
-#| "marketing, the UK is the first place to look."
-msgid ""
-"Whether you need buildings designed, films made, or a fresh approach to "
-"marketing, the UK is the first place to look."
-msgstr ""
-"无论您需要设计建筑、制作电影还是构思新颖的营销方法，英国都将是您的不二之选。"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:82
-#: enrolment/templates/bidi/landing-page.html:103
-#: enrolment/templates/landing-page-sector-list.html:81
-#: enrolment/templates/landing-page.html:100
-msgid "Find out more about the UK’s creative services"
-msgstr "详细了解来自英国的创意服务"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:91
-#: enrolment/templates/landing-page-sector-list.html:90
-#, fuzzy
-#| msgid "The UK's food and drink"
-msgid "The UK’s food and drink"
-msgstr "来自英国的食品和饮料"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:93
-#: enrolment/templates/landing-page-sector-list.html:92
-#, fuzzy
-#| msgid ""
-#| "Whether you want the most innovative food brands or exceptional quality "
-#| "drinks, the UK is the first place to look."
-msgid ""
-"Whether you want the best food brands or exceptional quality drinks, the UK "
-"should be first on your list."
-msgstr ""
-"无论您是需要具有创新精神的食品品牌，还是需要具有卓越品质的优质饮料，英国都将"
-"是您的不二之选。"
-
-#: enrolment/templates/bidi/landing-page-sector-list.html:97
-#: enrolment/templates/bidi/landing-page.html:120
-#: enrolment/templates/landing-page-sector-list.html:96
-#: enrolment/templates/landing-page.html:117
-msgid "Find out more about UK food and drink"
-msgstr "详细了解来自英国的食品和饮料"
-
-#: enrolment/templates/bidi/landing-page.html:12
-#: enrolment/templates/landing-page.html:9
+#: enrolment/templates/bidi/landing-page.html:14
+#: enrolment/templates/landing-page.html:18
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
 "business"
 msgstr "欢迎来到大不列颠和北爱尔兰<br>理想的经商之地"
 
 #: enrolment/templates/bidi/landing-page.html:22
-#: enrolment/templates/landing-page.html:18
+#: enrolment/templates/landing-page.html:26
 msgid "Find UK companies to do business with"
 msgstr "寻找可以合作的英国公司"
 
-#: enrolment/templates/bidi/landing-page.html:33
-#: enrolment/templates/landing-page.html:26
+#: enrolment/templates/bidi/landing-page.html:30
+#: enrolment/templates/landing-page.html:34
 msgid ""
 "The UK is a great place to find innovative, high-quality products and "
 "services."
 msgstr "英国是盛产创新、优质产品和服务的国度。"
 
-#: enrolment/templates/bidi/landing-page.html:36
-#: enrolment/templates/landing-page.html:29
+#: enrolment/templates/bidi/landing-page.html:33
+#: enrolment/templates/landing-page.html:37
 msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
 msgstr "&nbsp;"
 
-#: enrolment/templates/bidi/landing-page.html:39
-#: enrolment/templates/landing-page.html:32
+#: enrolment/templates/bidi/landing-page.html:36
+#: enrolment/templates/landing-page.html:40
 msgid ""
 "UK companies work with businesses and governments around the world to run "
 "high quality services and deliver the best experiences."
@@ -492,8 +372,8 @@ msgstr ""
 "英国公司与全球企业和政府合作，共同打造出一个全新的商业环境能够提供优质服务和"
 "卓越体验。"
 
-#: enrolment/templates/bidi/landing-page.html:42
-#: enrolment/templates/landing-page.html:35
+#: enrolment/templates/bidi/landing-page.html:39
+#: enrolment/templates/landing-page.html:43
 msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
 "is hard to beat."
@@ -501,14 +381,51 @@ msgstr ""
 "如果您需要寻求一位贸易合作伙伴，那么英国公司的可靠性和专业知识无人能及，是您"
 "的不二之选。"
 
-#: enrolment/templates/bidi/landing-page.html:45
-#: enrolment/templates/landing-page.html:38
+#: enrolment/templates/bidi/landing-page.html:42
+#: enrolment/templates/landing-page.html:46
 msgid ""
 "Choose from the hundreds of businesses in the UK to work with you today."
 msgstr "如今，英国有数百家企业可以和您一起携手共进。"
 
-#: enrolment/templates/bidi/landing-page.html:79
-#: enrolment/templates/landing-page.html:75
+#: enrolment/templates/bidi/landing-page.html:51
+#: enrolment/templates/bidi/sector-list.html:24
+#: enrolment/templates/landing-page.html:55
+#: enrolment/templates/sector-list.html:27
+msgid "UK industries"
+msgstr "英国贸易部门"
+
+#: enrolment/templates/bidi/landing-page.html:59
+#: enrolment/templates/bidi/sector-list.html:46
+#: enrolment/templates/landing-page.html:63
+#: enrolment/templates/sector-list.html:49
+msgid "Healthcare and life sciences in the UK"
+msgstr "英国的医疗保健和生命科学"
+
+#: enrolment/templates/bidi/landing-page.html:61
+#: enrolment/templates/bidi/sector-list.html:48
+#: enrolment/templates/landing-page.html:65
+#: enrolment/templates/sector-list.html:51
+msgid ""
+"Get access to the UK health and life sciences supply-chain, delivering high "
+"quality, innovative services to the world."
+msgstr "进入英国医疗保健和生命科学供应链，向全世界交付高质量的创新服务。\t"
+
+#: enrolment/templates/bidi/landing-page.html:65
+#: enrolment/templates/bidi/sector-list.html:51
+#: enrolment/templates/landing-page.html:69
+#: enrolment/templates/sector-list.html:54
+msgid "Find out more about the UK’s healthcare and life sciences"
+msgstr "详细了解英国医疗保健和生命科学"
+
+#: enrolment/templates/bidi/landing-page.html:75
+#: enrolment/templates/bidi/sector-list.html:60
+#: enrolment/templates/landing-page.html:79
+#: enrolment/templates/sector-list.html:63
+msgid "The UK's advanced technology"
+msgstr "英国的先进技术"
+
+#: enrolment/templates/bidi/landing-page.html:77
+#: enrolment/templates/landing-page.html:81
 #, fuzzy
 #| msgid ""
 #| "Check out the latest cutting-edge technologies that the UK is bringing to "
@@ -517,22 +434,43 @@ msgid ""
 "Check out the cutting-edge technologies that the UK is bringing to the world."
 msgstr "察看英国带给世界的尖端创新技术。"
 
-#: enrolment/templates/bidi/landing-page.html:98
-#: enrolment/templates/landing-page.html:95
-#: enrolment/templates/marketing-pages/creative.html:9
+#: enrolment/templates/bidi/landing-page.html:83
+#: enrolment/templates/bidi/sector-list.html:67
+#: enrolment/templates/landing-page.html:87
+#: enrolment/templates/sector-list.html:70
+msgid "Find out more about UK technology"
+msgstr "详细了解英国的技术"
+
+#: enrolment/templates/bidi/landing-page.html:95
+#: enrolment/templates/bidi/sector-list.html:78
+#: enrolment/templates/landing-page.html:99
+#: enrolment/templates/sector-list.html:81
+msgid "The UK's creative services"
+msgstr "来自英国的创新服务"
+
+#: enrolment/templates/bidi/landing-page.html:97
+#: enrolment/templates/landing-page.html:101
+#: enrolment/templates/marketing-pages/creative.html:12
 msgid ""
 "Whether you need buildings designed, films made or a fresh approach to "
 "marketing, the UK is the first place to look."
 msgstr ""
 "无论您需要设计建筑、制作电影还是构思新颖的营销方法，英国都将是您的不二之选。"
 
-#: enrolment/templates/bidi/landing-page.html:113
-#: enrolment/templates/landing-page.html:110
+#: enrolment/templates/bidi/landing-page.html:101
+#: enrolment/templates/bidi/sector-list.html:83
+#: enrolment/templates/landing-page.html:105
+#: enrolment/templates/sector-list.html:86
+msgid "Find out more about the UK’s creative services"
+msgstr "详细了解来自英国的创意服务"
+
+#: enrolment/templates/bidi/landing-page.html:111
+#: enrolment/templates/landing-page.html:115
 msgid "The UK's food and drink"
 msgstr "来自英国的食品和饮料"
 
-#: enrolment/templates/bidi/landing-page.html:115
-#: enrolment/templates/landing-page.html:112
+#: enrolment/templates/bidi/landing-page.html:113
+#: enrolment/templates/landing-page.html:117
 #, fuzzy
 #| msgid ""
 #| "Whether you want the most innovative food brands or exceptional quality "
@@ -544,8 +482,23 @@ msgstr ""
 "无论您是需要具有创新精神的食品品牌，还是需要具有卓越品质的优质饮料，英国都将"
 "是您的不二之选。"
 
+#: enrolment/templates/bidi/landing-page.html:118
+#: enrolment/templates/bidi/sector-list.html:98
+#: enrolment/templates/landing-page.html:122
+#: enrolment/templates/sector-list.html:101
+msgid "Find out more about UK food and drink"
+msgstr "详细了解来自英国的食品和饮料"
+
+#: enrolment/templates/bidi/landing-page.html:127
+#: enrolment/templates/landing-page.html:131
+#, fuzzy
+#| msgid "UK industries"
+msgid "See more industries"
+msgstr "英国贸易部门"
+
 #: enrolment/templates/bidi/lead-generation-form.html:6
 #: enrolment/templates/lead-generation-form.html:6
+#: exportopportunity/templates/export-opportunity.html:11
 #, fuzzy
 #| msgid "Find UK companies to do business with"
 msgid "Get UK companies to fulfil your business needs"
@@ -568,6 +521,70 @@ msgstr ""
 msgid "I agree to the great.gov.uk terms and conditions"
 msgstr ""
 
+#: enrolment/templates/bidi/sector-list.html:15
+#: enrolment/templates/sector-list.html:18
+msgid "Discover the UK's capability in these key industries"
+msgstr ""
+
+#: enrolment/templates/bidi/sector-list.html:31
+#: enrolment/templates/sector-list.html:34
+msgid ""
+"As a decision-maker in an international business you need look no further "
+"than the UK for innovative, high-quality products and services. It is the "
+"place to make the right trade connections with major corporations and "
+"smaller enterprises across every sector of industry."
+msgstr ""
+
+#: enrolment/templates/bidi/sector-list.html:34
+#: enrolment/templates/sector-list.html:37
+msgid ""
+"We can help you make vital business connections with ideal companies. Choose "
+"from the businesses in these UK industries to work with you."
+msgstr ""
+
+#: enrolment/templates/bidi/sector-list.html:62
+#: enrolment/templates/sector-list.html:65
+#, fuzzy
+#| msgid ""
+#| "Check out the latest cutting-edge technologies that the UK is bringing to "
+#| "the world."
+msgid ""
+"Check out the cutting-edge technological innovations that the UK is bringing "
+"to the world."
+msgstr "察看英国带给世界的尖端创新技术。"
+
+#: enrolment/templates/bidi/sector-list.html:80
+#: enrolment/templates/sector-list.html:83
+#, fuzzy
+#| msgid ""
+#| "Whether you need buildings designed, films made or a fresh approach to "
+#| "marketing, the UK is the first place to look."
+msgid ""
+"Whether you need buildings designed, films made, or a fresh approach to "
+"marketing, the UK is the first place to look."
+msgstr ""
+"无论您需要设计建筑、制作电影还是构思新颖的营销方法，英国都将是您的不二之选。"
+
+#: enrolment/templates/bidi/sector-list.html:92
+#: enrolment/templates/sector-list.html:95
+#, fuzzy
+#| msgid "The UK's food and drink"
+msgid "The UK’s food and drink"
+msgstr "来自英国的食品和饮料"
+
+#: enrolment/templates/bidi/sector-list.html:94
+#: enrolment/templates/sector-list.html:97
+#, fuzzy
+#| msgid ""
+#| "Whether you want the most innovative food brands or exceptional quality "
+#| "drinks, the UK is the first place to look."
+msgid ""
+"Whether you want the best food brands or exceptional quality drinks, the UK "
+"should be first on your list."
+msgstr ""
+"无论您是需要具有创新精神的食品品牌，还是需要具有卓越品质的优质饮料，英国都将"
+"是您的不二之选。"
+
 #: enrolment/templates/browse-companies.html:4
 #, fuzzy
 #| msgid "Find great UK companies"
@@ -588,6 +605,16 @@ msgstr ""
 msgid "Browse UK companies"
 msgstr "浏览英国公司"
 
+#: enrolment/templates/govuk_layout.html:14
+msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
+msgstr ""
+
+#: enrolment/templates/landing-page.html:12
+msgid ""
+"Find the right UK company to do business with from thousands of "
+"international trade profiles"
+msgstr ""
+
 #: enrolment/templates/language_switcher.html:8
 msgid "Select"
 msgstr "更改语言"
@@ -596,152 +623,155 @@ msgstr "更改语言"
 msgid "Page in English only"
 msgstr "该页仅以英文显示"
 
-#: enrolment/templates/marketing-pages/base.html:19
-#: enrolment/templates/marketing-pages/bidi/base.html:23
+#: enrolment/templates/marketing-pages/base.html:22
+#: enrolment/templates/marketing-pages/bidi/base.html:22
 msgid "Find your UK trade partner"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/base.html:47
-#: enrolment/templates/marketing-pages/bidi/base.html:56
-msgid "The company"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/base.html:55
-#: enrolment/templates/marketing-pages/bidi/base.html:64
+#: enrolment/templates/marketing-pages/base.html:58
+#: enrolment/templates/marketing-pages/bidi/base.html:58
 #, fuzzy
 #| msgid "Find out more about UK technology"
 msgid "Read more about the company"
 msgstr "详细了解英国的技术"
 
-#: enrolment/templates/marketing-pages/base.html:70
-#: enrolment/templates/marketing-pages/bidi/base.html:74
+#: enrolment/templates/marketing-pages/base.html:73
+#: enrolment/templates/marketing-pages/bidi/base.html:73
 msgid "Company showcase"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/base.html:85
-#: enrolment/templates/marketing-pages/bidi/base.html:114
+#: enrolment/templates/marketing-pages/base.html:88
+#: enrolment/templates/marketing-pages/bidi/base.html:88
 msgid "Read case study"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/base.html:110
-#: enrolment/templates/marketing-pages/bidi/base.html:99
+#: enrolment/templates/marketing-pages/base.html:115
+#: enrolment/templates/marketing-pages/bidi/base.html:115
 msgid "keywords"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/bidi/base.html:77
-msgid "case study"
+#: enrolment/templates/marketing-pages/creative.html:6
+msgid ""
+"From Shakespeare to Star Wars, the UK leads the world in arts, theatre, "
+"film, animation, games, architecture, graphic design and publishing"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:7
+#, fuzzy
+#| msgid "Healthcare and life sciences in the UK"
+msgid "Buy creative services from the UK"
+msgstr "英国的医疗保健和生命科学"
+
+#: enrolment/templates/marketing-pages/creative.html:10
 #, fuzzy
 #| msgid "The UK's creative services"
 msgid "Delivering exceptional creative services"
 msgstr "来自英国的创新服务"
 
-#: enrolment/templates/marketing-pages/creative.html:11
+#: enrolment/templates/marketing-pages/creative.html:14
 #, fuzzy
 #| msgid "Find out more about the UK’s creative services"
 msgid "Read more about creative services"
 msgstr "详细了解来自英国的创意服务"
 
-#: enrolment/templates/marketing-pages/creative.html:17
+#: enrolment/templates/marketing-pages/creative.html:19
 msgid ""
 "If you need intelligent, creative ideas and rich, high-quality designs and "
 "media, look no further than the UK"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:19
+#: enrolment/templates/marketing-pages/creative.html:21
 msgid ""
 "Creative companies in the UK are responsible for producing big budget "
 "movies, designing fashionable furniture fabrics and developing world-class "
 "computer games."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:26
-msgid "Work with the best in film, TV and visual effects"
+#: enrolment/templates/marketing-pages/creative.html:25
+#: enrolment/templates/marketing-pages/food.html:30
+#: enrolment/templates/marketing-pages/health.html:35
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:24
+#: enrolment/templates/marketing-pages/tech.html:28
+msgid "Key facts"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:27
-msgid "The UK is one of the world's largest makers of original content."
+msgid "UK companies gave the world £19.1 billion of creative services in 2014"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:28
+#, python-format
+msgid "9%% of all UK service exports are in the creative services in 2014"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/creative.html:29
+#, python-format
+msgid "Growth of creative services exports was 10.9%% in 2014"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/creative.html:33
+msgid "Work with the best in film, TV and visual effects"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/creative.html:34
+msgid "The UK is one of the world's largest makers of original content."
+msgstr ""
+
+#: enrolment/templates/marketing-pages/creative.html:35
 msgid ""
 "We are the home of films such as Star Wars and offer state-of-the-art studio "
 "facilities suitable for big movie productions and an amazing diversity of "
 "film locations."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:29
+#: enrolment/templates/marketing-pages/creative.html:36
 msgid ""
 "At the heart of the UK’s creative industry is its award-winning film and "
 "television production comprising more than 1,500 independent TV companies in "
 "the UK."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:30
+#: enrolment/templates/marketing-pages/creative.html:37
 msgid ""
 "We're also the world leaders in exporting TV formats and localising those "
 "first commissioned in the UK."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:34
-#: enrolment/templates/marketing-pages/food.html:45
-#: enrolment/templates/marketing-pages/health.html:48
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:32
-#: enrolment/templates/marketing-pages/tech.html:40
-msgid "Key facts"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:36
-msgid "UK companies gave the world £19.1 billion of creative services in 2014"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:37
-#, python-format
-msgid "9%% of all UK service exports are in the creative services in 2014"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:38
-#, python-format
-msgid "Growth of creative services exports was 10.9%% in 2014"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/creative.html:46
+#: enrolment/templates/marketing-pages/creative.html:39
 msgid "Our creative digital experience"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:48
+#: enrolment/templates/marketing-pages/creative.html:41
 msgid ""
 "The UK has one of the most world's most advanced games industries, with more "
 "than 30 years experience of innovation and commercial success."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:51
+#: enrolment/templates/marketing-pages/creative.html:44
 msgid ""
 "UK games companies have adopted social and mobile platforms, with more than "
 "a third of UK studios focusing on the mobile market."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:54
+#: enrolment/templates/marketing-pages/creative.html:47
 msgid ""
 "The UK's augmented reality specialists create immersive experiences that "
 "help further the creative reach of the likes of National Geographic and "
 "Universal Studios."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:58
+#: enrolment/templates/marketing-pages/creative.html:50
 msgid "A publishing powerhouse"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:60
+#: enrolment/templates/marketing-pages/creative.html:52
 msgid ""
 "The publishing sector in the UK has pioneered new print formats and "
 "commercial models alongside moving content online. British news journalism "
 "remains a powerful force, uncovering important stories around the world."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:63
+#: enrolment/templates/marketing-pages/creative.html:55
 msgid ""
 "The London Book Fair is one of the world’s leading events for intellectual "
 "property rights negotiation and the sale and distribution of content. Half "
@@ -749,41 +779,41 @@ msgid ""
 "novels by UK writers."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:67
+#: enrolment/templates/marketing-pages/creative.html:58
 msgid "UK design talent is bringing beauty and strength to the world"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:69
+#: enrolment/templates/marketing-pages/creative.html:60
 msgid ""
 "UK architects are responsible for some of the world’s most stunning "
 "buildings, such as the Galaxy Soho urban village in Beijing and reshaping "
 "environments, such as Singapore’s Gardens by the Bay."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:72
+#: enrolment/templates/marketing-pages/creative.html:63
 msgid ""
 "We're also responsible for designing usable industrial and commercial spaces "
 "such as the new Spaceport America."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:75
+#: enrolment/templates/marketing-pages/creative.html:66
 msgid ""
 "As well as designing the built environment, UK firms are designing vehicles "
 "and interiors around the world: including helping to design the world’s "
 "fastest passenger train in China."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:80
+#: enrolment/templates/marketing-pages/creative.html:69
 msgid "Arts: heritage and innovation"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:83
+#: enrolment/templates/marketing-pages/creative.html:71
 msgid ""
 "From Shakespeare to Adele, the UK continues to produce the best-known "
 "artists, writers, singers and performers the world has ever seen."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:86
+#: enrolment/templates/marketing-pages/creative.html:74
 msgid ""
 "As well as music for the consumer market, the UK’s thriving commercial music "
 "and audio agencies are providing the scores and tracks for films made for "
@@ -792,32 +822,42 @@ msgid ""
 "performers and producers alike."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:89
+#: enrolment/templates/marketing-pages/creative.html:77
 msgid ""
 "The UK’s national museums attract visitors from around the world and have "
 "lasting partnerships and collection-sharing with their peers from countries "
 "as diverse as Russia and Malawi."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:92
+#: enrolment/templates/marketing-pages/creative.html:80
 msgid "The UK is alive with exceptional talent and ingenuity."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:96
+#: enrolment/templates/marketing-pages/creative.html:84
 msgid "Find your UK creative partner today"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:101
+#: enrolment/templates/marketing-pages/creative.html:89
 msgid "See the UK's creative services providers on the Find a supplier service"
 msgstr ""
 
+#: enrolment/templates/marketing-pages/food.html:6
+msgid ""
+"We're not just tea, cakes and whisky: our productive innovation and globally "
+"used production standards make the UK a leader in food and drink"
+msgstr ""
+
 #: enrolment/templates/marketing-pages/food.html:7
+msgid "Buy UK food and drink products and services"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/food.html:10
 #, fuzzy
 #| msgid "The UK's food and drink"
 msgid "UK food and drink"
 msgstr "来自英国的食品和饮料"
 
-#: enrolment/templates/marketing-pages/food.html:9
+#: enrolment/templates/marketing-pages/food.html:12
 #, fuzzy
 #| msgid ""
 #| "Whether you want the most innovative food brands or exceptional quality "
@@ -829,20 +869,20 @@ msgstr ""
 "无论您是需要具有创新精神的食品品牌，还是需要具有卓越品质的优质饮料，英国都将"
 "是您的不二之选。"
 
-#: enrolment/templates/marketing-pages/food.html:11
+#: enrolment/templates/marketing-pages/food.html:14
 #, fuzzy
 #| msgid "Find out more about UK food and drink"
 msgid "Read more about UK food and drink"
 msgstr "详细了解来自英国的食品和饮料"
 
-#: enrolment/templates/marketing-pages/food.html:19
+#: enrolment/templates/marketing-pages/food.html:20
 msgid ""
 "The UK is a nation where culinary influences have come together to create "
 "food trends that we share with the world. Every day millions of "
 "international consumers enjoy British products."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:22
+#: enrolment/templates/marketing-pages/food.html:23
 msgid ""
 "The British “brand” is globally recognised, valued and desirable: we have a "
 "rich heritage of well-known, traditional food and drink, we offer first-"
@@ -850,88 +890,88 @@ msgid ""
 "brought to the market every year."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:25
+#: enrolment/templates/marketing-pages/food.html:26
 msgid ""
 "We rank among the world’s best nations for in food quality, traceability and "
 "safety."
 msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:32
-msgid "British heritage shared globally"
+msgid "The UK exported £12.3 billion of food and non-alcoholic drinks in 2015"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/food.html:33
+msgid "Our main exports include chocolate, cheese and whisky"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:34
+msgid ""
+"We have thousands of suppliers manufacturing to standards accepted in 123 "
+"countries worldwide"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/food.html:38
+msgid "British heritage shared globally"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/food.html:40
 msgid ""
 "From famous Scottish and Northern Irish whiskies to our traditional tea and "
 "cakes, the UK has centuries of experience to share."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:37
+#: enrolment/templates/marketing-pages/food.html:43
 msgid ""
 "We bring new twists to our classic British products, which are exported all "
 "over the world including craft beers, ciders, gin and award-winning "
 "sparkling wine."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:40
+#: enrolment/templates/marketing-pages/food.html:46
 msgid ""
 "Our unique trading and cultural history has brought us new ingredients, "
 "influences, tastes and ideas and we have a wealth of ethnic and specialist "
 "foods made in the UK to offer back to the world."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:47
-msgid "The UK exported £12.3 billion of food and non-alcoholic drinks in 2015"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:48
-msgid "Our main exports include chocolate, cheese and whisky"
-msgstr ""
-
 #: enrolment/templates/marketing-pages/food.html:49
-msgid ""
-"We have thousands of suppliers manufacturing to standards accepted in 123 "
-"countries worldwide"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/food.html:59
 #, fuzzy
 #| msgid "The UK's food and drink"
 msgid "Innovation in food and drink"
 msgstr "来自英国的食品和饮料"
 
-#: enrolment/templates/marketing-pages/food.html:61
+#: enrolment/templates/marketing-pages/food.html:51
 msgid ""
 "The UK’s food and drink brands develop and sell thousands of new products "
 "each year. UK companies were the first to pioneer frozen food and instant "
 "coffee."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:64
+#: enrolment/templates/marketing-pages/food.html:54
 msgid ""
 "We’re leading the way in food research and technology, new product "
 "development and trends such as organic, gluten-free, dairy-free and health "
 "foods."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:68
+#: enrolment/templates/marketing-pages/food.html:57
 msgid "Food quality and safety"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:70
+#: enrolment/templates/marketing-pages/food.html:59
 msgid ""
 "Our island location and clean waters give us access to rich stocks of fish "
 "and shellfish and our soil and climate provides bountiful agricultural "
 "resources for crops, dairy and meat."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:73
+#: enrolment/templates/marketing-pages/food.html:62
 msgid ""
 "Our manufacturing sector complies with rigorous international safety "
 "standards and our brands are trusted around the world."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:76
+#: enrolment/templates/marketing-pages/food.html:65
 msgid ""
 "We care about the food we produce: 89,000 farmers comply with voluntary farm "
 "standards scheme that assure animal and worker welfare and our British "
@@ -939,23 +979,23 @@ msgid ""
 "certificated suppliers, not only in the UK but in 123 other countries."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:79
+#: enrolment/templates/marketing-pages/food.html:68
 msgid ""
 "Our customers recognise us for our excellent service and know that we can "
 "deliver."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:83
+#: enrolment/templates/marketing-pages/food.html:72
 #, fuzzy
 #| msgid "Find out more about UK food and drink"
 msgid "Find your UK trade partner in food and drink today"
 msgstr "详细了解来自英国的食品和饮料"
 
-#: enrolment/templates/marketing-pages/food.html:89
+#: enrolment/templates/marketing-pages/food.html:78
 msgid "See the UK's food and drink companies on the Find a supplier service"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:92
+#: enrolment/templates/marketing-pages/food.html:81
 #, fuzzy
 #| msgid ""
 #| "Exceptionally innovative and creative UK trade partners are ready to work "
@@ -967,11 +1007,11 @@ msgstr ""
 "极具创意和创新精神的英国贸易合作伙伴正期待着与您合作。在“寻找供应商”服务中发"
 "现他们吧。"
 
-#: enrolment/templates/marketing-pages/food.html:95
+#: enrolment/templates/marketing-pages/food.html:84
 msgid "Find UK food and drink companies to meet your needs"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/food.html:98
+#: enrolment/templates/marketing-pages/food.html:87
 msgid ""
 "Get access to the exceptional UK food and drink supply chain. Register to be "
 "notified as soon as companies that match your needs have created trade "
@@ -979,12 +1019,24 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/health.html:6
+msgid ""
+"From medical imaging and gene therapy to hospital construction and primary "
+"care management - the UK is first for healthcare and life sciences"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/health.html:7
+#, fuzzy
+#| msgid "Healthcare and life sciences in the UK"
+msgid "Buy UK healthcare and life sciences products and services"
+msgstr "英国的医疗保健和生命科学"
+
+#: enrolment/templates/marketing-pages/health.html:9
 #, fuzzy
 #| msgid "Find out more about the UK’s healthcare and life sciences"
 msgid "Delivering the exceptional in healthcare and life sciences"
 msgstr "详细了解英国医疗保健和生命科学"
 
-#: enrolment/templates/marketing-pages/health.html:10
+#: enrolment/templates/marketing-pages/health.html:13
 #, fuzzy
 #| msgid ""
 #| "Whether you need buildings designed, films made or a fresh approach to "
@@ -996,25 +1048,25 @@ msgid ""
 msgstr ""
 "无论您需要设计建筑、制作电影还是构思新颖的营销方法，英国都将是您的不二之选。"
 
-#: enrolment/templates/marketing-pages/health.html:13
+#: enrolment/templates/marketing-pages/health.html:16
 #, fuzzy
 #| msgid "Find out more about the UK’s healthcare and life sciences"
 msgid "Read more about healthcare and life sciences"
 msgstr "详细了解英国医疗保健和生命科学"
 
-#: enrolment/templates/marketing-pages/health.html:19
+#: enrolment/templates/marketing-pages/health.html:22
 #, fuzzy
 #| msgid "Healthcare and life sciences in the UK"
 msgid "Healthcare and life sciences from the UK"
 msgstr "英国的医疗保健和生命科学"
 
-#: enrolment/templates/marketing-pages/health.html:27
+#: enrolment/templates/marketing-pages/health.html:29
 msgid ""
 "If you need innovative, high-quality healthcare products and services, the "
 "UK is the best place to find new suppliers."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:29
+#: enrolment/templates/marketing-pages/health.html:31
 msgid ""
 "We’re home to 4 of the world’s top 10 universities and have produced 23 "
 "Nobel prizewinners for medicine. This world-class science base and track-"
@@ -1024,60 +1076,60 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/health.html:37
 msgid ""
+"There are more than 5,600 health and life sciences companies across the full "
+"UK supply chain"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/health.html:38
+msgid ""
+"The UK has the world’s largest integrated health system as a test bed for "
+"world-class products and services"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/health.html:39
+msgid "More than 80 Nobel Prizes underpin the UK’s top biomedical innovations"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/health.html:44
+msgid ""
 "The UK is internationally renowned for its National Health Service, with its "
 "70 years of research and public delivery."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:40
+#: enrolment/templates/marketing-pages/health.html:47
 msgid ""
 "The UK’s unique approach to healthcare and product development helps "
 "translate the best medical technology into high-quality, cost-effective and "
 "market-ready solutions."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:43
+#: enrolment/templates/marketing-pages/health.html:50
 msgid ""
 "Two of the top 10 global pharmaceutical companies are based in the UK. There "
 "are more than 5,000 life sciences companies in the UK and we have a growing "
 "market in digital health products and apps."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:50
-msgid ""
-"There are more than 5,600 health and life sciences companies across the full "
-"UK supply chain"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/health.html:51
-msgid ""
-"The UK has the world’s largest integrated health system as a test bed for "
-"world-class products and services"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/health.html:52
-msgid "More than 80 Nobel Prizes underpin the UK’s top biomedical innovations"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/health.html:60
+#: enrolment/templates/marketing-pages/health.html:53
 msgid ""
 "The UK’s medical technology sector produces a vast range of medical and "
 "diagnostic device, particularly single-use technology and orthopaedic "
 "devices. The UK also has companies specialising in:"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:62
+#: enrolment/templates/marketing-pages/health.html:56
 msgid "novel drug delivery systems"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:63
+#: enrolment/templates/marketing-pages/health.html:57
 msgid "single-use biotechnology facilities"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:64
+#: enrolment/templates/marketing-pages/health.html:58
 msgid "medical imaging"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:68
+#: enrolment/templates/marketing-pages/health.html:61
 msgid ""
 "The UK is at the forefront of regenerative medicine and is renowned for gene "
 "therapy and tissue-engineered products and services. And the UK’s "
@@ -1085,24 +1137,24 @@ msgid ""
 "and continuous manufacturing processes."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:71
+#: enrolment/templates/marketing-pages/health.html:64
 msgid ""
 "With a comprehensive regulatory framework, robust compliance and quality "
 "assurance culture in the UK, product safety and effectiveness are assured."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:77
+#: enrolment/templates/marketing-pages/health.html:67
 msgid "Work with the UK to create first-rate healthcare"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:79
+#: enrolment/templates/marketing-pages/health.html:69
 msgid ""
 "If you need to develop clinical services, implement digital health systems "
 "or extend the skills of your workforce, the UK has unrivalled experience of "
 "successful healthcare innovation and delivery."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:82
+#: enrolment/templates/marketing-pages/health.html:72
 msgid ""
 "Exceptional standards of healthcare stem from the UK’s NHS, which was ranked "
 "as the best healthcare system of 11 major nations in 2013. These standards "
@@ -1111,20 +1163,20 @@ msgid ""
 "possible safety, outcomes and cost-effectiveness."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:85
+#: enrolment/templates/marketing-pages/health.html:75
 msgid ""
 "Building on the strong foundations of the NHS, the UK’s thriving and diverse "
 "commercial healthcare sector caters for all needs."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:88
+#: enrolment/templates/marketing-pages/health.html:78
 msgid ""
 "Decades of collaboration between the NHS, academic and private-sector "
 "organisations has created a rich pool of innovative providers, ready to "
 "adapt their solutions to the needs of customers overseas."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:91
+#: enrolment/templates/marketing-pages/health.html:81
 msgid ""
 "For hospital management services, the UK’s tried-and-tested approach to "
 "acute and tertiary care brings deep insight. Our services can help you make "
@@ -1132,21 +1184,21 @@ msgid ""
 "improve efficiency, patient experiences and clinical outcomes."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:94
+#: enrolment/templates/marketing-pages/health.html:84
 msgid ""
 "In Kuwait, the NHS is leading the development of new paediatric cancer care "
 "services - replicating world-class services offered in the UK through "
 "training, support and visiting consultant programmes."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:97
+#: enrolment/templates/marketing-pages/health.html:87
 msgid ""
 "And in China, acute care and rehabilitation services are being supported by "
 "commercially-driven UK healthcare services which are being delivered by "
 "expatriate and local staff."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:100
+#: enrolment/templates/marketing-pages/health.html:90
 msgid ""
 "The UK is a world-leading innovator in project financing, particularly "
 "public private partnerships (PPPs) that can ensure cost-effective and high-"
@@ -1155,13 +1207,13 @@ msgid ""
 "infrastructure projects."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:103
+#: enrolment/templates/marketing-pages/health.html:93
 msgid ""
 "UK companies are delivering one of the world's biggest healthcare PPP "
 "programmes, to meet Turkey's growing demand for healthcare facilities."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:106
+#: enrolment/templates/marketing-pages/health.html:96
 #, fuzzy
 #| msgid ""
 #| "Whether you need buildings designed, films made or a fresh approach to "
@@ -1173,19 +1225,19 @@ msgid ""
 msgstr ""
 "无论您需要设计建筑、制作电影还是构思新颖的营销方法，英国都将是您的不二之选。"
 
-#: enrolment/templates/marketing-pages/health.html:111
+#: enrolment/templates/marketing-pages/health.html:101
 msgid ""
 "See the UK's healthcare and life sciences providers on the Find a supplier "
 "service"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:113
+#: enrolment/templates/marketing-pages/health.html:103
 #, fuzzy
 #| msgid "Healthcare and life sciences in the UK"
 msgid "Find UK healthcare and life sciences companies to meet your needs"
 msgstr "英国的医疗保健和生命科学"
 
-#: enrolment/templates/marketing-pages/health.html:115
+#: enrolment/templates/marketing-pages/health.html:105
 #, fuzzy
 #| msgid ""
 #| "Get access to the UK health and life sciences supply-chain, delivering "
@@ -1196,13 +1248,13 @@ msgid ""
 "created trade profiles."
 msgstr "进入英国医疗保健和生命科学供应链，向全世界交付高质量的创新服务。\t"
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:7
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:8
 #, fuzzy
 #| msgid "The UK's creative services"
 msgid "The UK's global sports infrastructure services"
 msgstr "来自英国的创新服务"
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:9
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:10
 msgid ""
 "UK companies bring in-depth knowledge of the demands of global sports "
 "audiences with an understanding of event owners’ needs. Our expertise runs "
@@ -1210,7 +1262,7 @@ msgid ""
 "to event delivery and legacy."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:11
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:12
 msgid "Read more about the UK's global sports infrastructure"
 msgstr ""
 
@@ -1250,28 +1302,28 @@ msgid ""
 "sustainability of events, to ticketing and transport planning."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:34
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:26
 msgid ""
 "The London 2012 Olympics and Paralympics and the Glasgow 2014 Commonwealth "
 "Games were hugely successful global events, with more than 10 million "
 "attendees between them"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:35
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:27
 msgid ""
 "The English Premier League is the highest revenue-earning soccer league in "
 "the world"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:36
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:28
 msgid "Six of the 10 Formula 1 racing teams have their headquarters in the UK"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:44
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:35
 msgid "Iconic and innovative sporting events"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:45
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:36
 msgid ""
 "The UK’s architects, engineers, cost consultants, project managers and "
 "programme managers have been at the forefront of international sports venue "
@@ -1281,43 +1333,43 @@ msgid ""
 "stadium in Beijing and the Rio Olympic Park."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:46
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:37
 msgid "The UK is recognised for its expertise in:"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:48
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:39
 msgid "construction and project delivery"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:49
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:40
 msgid "sustainability"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:50
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:41
 msgid "seating and sightlines"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:51
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:42
 msgid "software development"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:52
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:43
 msgid "crowd movement and safety"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:53
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:44
 msgid "commercial opportunities and fan experience"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:54
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:45
 msgid "supply chain delivery"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:59
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:48
 msgid "The UK: global sports specialists"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:60
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:49
 msgid ""
 "Leading sports authorities around the world already call on UK suppliers for "
 "specialist technology and equipment. For example, UK companies have "
@@ -1328,7 +1380,7 @@ msgid ""
 "commercially viable fan databases."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:61
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:50
 msgid ""
 "The UK is a centre of global excellence in “overlay architecture”: the "
 "creation of temporary venues and the installation of temporary elements in "
@@ -1337,7 +1389,7 @@ msgid ""
 "from seating to signage."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:62
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:51
 msgid ""
 "Security and safety is a crucial element of a well-organised sports event at "
 "home and abroad. UK suppliers have given event security and safety training "
@@ -1345,29 +1397,41 @@ msgid ""
 "Commonwealth Games, as well as many of the world’s top soccer clubs."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:63
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:52
 msgid ""
 "UK companies have a reputation for delivering creative events, ensuring "
 "extraordinary opening and closing ceremonies and a seamless games-time "
 "experience for major sports events around the world."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:64
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:53
 msgid "Find your UK global sports partner"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/sports-infrastructure.html:70
+#: enrolment/templates/marketing-pages/sports-infrastructure.html:57
 msgid ""
 "See the UK's global sports infrastructure on the Find a supplier service"
 msgstr ""
 
+#: enrolment/templates/marketing-pages/tech.html:6
+msgid ""
+"5G, AI and semiconductors - the UK is at the forefront of the world's "
+"technological innovation"
+msgstr ""
+
 #: enrolment/templates/marketing-pages/tech.html:7
+#, fuzzy
+#| msgid "Find out more about UK technology"
+msgid "Buy UK technology products and services"
+msgstr "详细了解英国的技术"
+
+#: enrolment/templates/marketing-pages/tech.html:10
 #, fuzzy
 #| msgid "The UK's advanced technology"
 msgid "UK technology"
 msgstr "英国的先进技术"
 
-#: enrolment/templates/marketing-pages/tech.html:9
+#: enrolment/templates/marketing-pages/tech.html:12
 #, fuzzy
 #| msgid ""
 #| "Whether you want the most innovative food brands or exceptional quality "
@@ -1379,38 +1443,50 @@ msgstr ""
 "无论您是需要具有创新精神的食品品牌，还是需要具有卓越品质的优质饮料，英国都将"
 "是您的不二之选。"
 
-#: enrolment/templates/marketing-pages/tech.html:11
+#: enrolment/templates/marketing-pages/tech.html:14
 #, fuzzy
 #| msgid "Find out more about UK technology"
 msgid "Read more about technology in the UK"
 msgstr "详细了解英国的技术"
 
-#: enrolment/templates/marketing-pages/tech.html:17
+#: enrolment/templates/marketing-pages/tech.html:19
 msgid "If you need the best technology, look no further than the UK."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:19
+#: enrolment/templates/marketing-pages/tech.html:21
 msgid ""
 "The UK is a world leader: in 2016, we ranked first for science and "
 "technology according to the Good Country Index and third in the Global "
 "Innovation Index."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:22
+#: enrolment/templates/marketing-pages/tech.html:24
 msgid ""
 "The UK technology industry underpins many of our successful business sectors "
 "– from financial services and high-value manufacturing, to retail and "
 "agriculture – and continues to expand at an extraordinary pace."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:27
+#: enrolment/templates/marketing-pages/tech.html:30
+msgid "The UK has the largest technology market in Europe"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/tech.html:31
+msgid "The second largest telecoms service exporter globally is from the UK"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/tech.html:32
+msgid "The UK has the largest data centre market in Europe"
+msgstr ""
+
+#: enrolment/templates/marketing-pages/tech.html:37
 msgid ""
 "Many of the world’s best-known and successful companies take advantage of UK "
 "innovation, and we are proud that we provide a technological springboard for "
 "companies worldwide."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:29
+#: enrolment/templates/marketing-pages/tech.html:40
 msgid ""
 "Our technology industry is one of the world’s largest and shows the UK’s "
 "creativity and design skills. The UK is particularly focussed on: low-power "
@@ -1418,101 +1494,89 @@ msgid ""
 "Bluetooth and the international NarrowBand-Internet of Things standard"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:30
+#: enrolment/templates/marketing-pages/tech.html:41
 msgid ""
 "development of 5G communications, which will underpin the development of "
 "connected devices"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:31
+#: enrolment/templates/marketing-pages/tech.html:42
 msgid ""
 "data analytics to create real-time consumer trends, behaviour and insights"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:32
+#: enrolment/templates/marketing-pages/tech.html:43
 msgid "data centres - we have the largest market capacity in Europe"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:33
+#: enrolment/templates/marketing-pages/tech.html:44
 msgid ""
 "artificial intelligence - we are home to  many successful artificial "
 "intelligence (AI) start-up companies, especially those specialising in "
 "machine learning, deep learning and natural language processing"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:34
+#: enrolment/templates/marketing-pages/tech.html:45
 msgid ""
 "producing compound semiconductor materials producing frontier-based sensor "
 "technologies."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:42
-msgid "The UK has the largest technology market in Europe"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/tech.html:43
-msgid "The second largest telecoms service exporter globally is from the UK"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/tech.html:44
-msgid "The UK has the largest data centre market in Europe"
-msgstr ""
-
-#: enrolment/templates/marketing-pages/tech.html:57
+#: enrolment/templates/marketing-pages/tech.html:48
 msgid "UK technology firms are global success stories"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:59
+#: enrolment/templates/marketing-pages/tech.html:50
 msgid ""
 "There are thousands of technology start-ups in the UK, thanks to our strong "
 "entrepreneurial culture."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:62
+#: enrolment/templates/marketing-pages/tech.html:53
 msgid ""
 "Successful technology companies can be found all over the country and if "
 "you're looking to grow your business through technology, the UK is an ideal "
 "place to find a trade partner."
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:65
+#: enrolment/templates/marketing-pages/tech.html:56
 msgid ""
 "Our flourishing start-ups complement a host of established global technology "
 "companies based here. UK technology success stories include:"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:67
+#: enrolment/templates/marketing-pages/tech.html:59
 msgid ""
 "a telecommunications services company that operates in 180 markets with "
 "revenue of more than £19 billion"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:68
+#: enrolment/templates/marketing-pages/tech.html:60
 msgid ""
 "the world's third-largest supplier of enterprise resource planning software"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:69
+#: enrolment/templates/marketing-pages/tech.html:61
 msgid "a mobile virtual network operator in 21 countries worldwide"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:70
+#: enrolment/templates/marketing-pages/tech.html:62
 msgid ""
 "the world's second biggest mobile telecomms network (by number of "
 "connections)"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:74
+#: enrolment/templates/marketing-pages/tech.html:66
 #, fuzzy
 #| msgid "Find out more about UK technology"
 msgid "Find your UK technology trade partner"
 msgstr "详细了解英国的技术"
 
-#: enrolment/templates/marketing-pages/tech.html:79
+#: enrolment/templates/marketing-pages/tech.html:70
 msgid "See the UK's technology providers on the Find a supplier service"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/tech.html:82
+#: enrolment/templates/marketing-pages/tech.html:73
 #, fuzzy
 #| msgid ""
 #| "Exceptionally innovative and creative UK trade partners are ready to work "
@@ -1524,13 +1588,13 @@ msgstr ""
 "极具创意和创新精神的英国贸易合作伙伴正期待着与您合作。在“寻找供应商”服务中发"
 "现他们吧。"
 
-#: enrolment/templates/marketing-pages/tech.html:85
+#: enrolment/templates/marketing-pages/tech.html:76
 #, fuzzy
 #| msgid "Find UK companies to do business with"
 msgid "Find UK technology companies to meet your needs"
 msgstr "寻找可以合作的英国公司"
 
-#: enrolment/templates/marketing-pages/tech.html:88
+#: enrolment/templates/marketing-pages/tech.html:79
 msgid ""
 "Get access to the UK technology supply chain. Register to be notified as "
 "soon as companies that match your needs have created trade profiles."
@@ -1539,6 +1603,28 @@ msgstr ""
 #: enrolment/templates/search-companies.html:6
 msgid "Find great UK companies"
 msgstr "寻找优秀的英国公司"
+
+#: enrolment/templates/sector-list.html:10
+msgid "Facts and figures about about the UK's strongest sectors and industries"
+msgstr ""
+
+#: enrolment/templates/sector-list.html:11
+msgid "The UK's strongest industrial sectors - trade.great.gov.uk"
+msgstr ""
+
+#: exportopportunity/templates/export-opportunity.html:23
+msgid "Submit"
+msgstr ""
+
+#, fuzzy
+#~| msgid "The UK's advanced technology"
+#~ msgid "Advanced technology"
+#~ msgstr "英国的先进技术"
+
+#, fuzzy
+#~| msgid "The UK's creative services"
+#~ msgid "Creative services"
+#~ msgstr "来自英国的创新服务"
 
 #, fuzzy
 #~| msgid "Terms &amp; conditions"
