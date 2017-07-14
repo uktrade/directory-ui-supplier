@@ -198,7 +198,11 @@ msgid ""
 "scale. Immersive uses new media technology (such as LED, holograms, "
 "projection, virtual reality and augmented reality) to design and create "
 "cutting-edge lighting, video and interactive installations."
-msgstr ""
+msgstr "A Immersive é um fornecedor de soluções completas para projectos "
+"audiovisuais de qualquer dimensão. A Immersive utiliza a nova tecnologia "
+"multimédia (como LED, hologramas, projecção, realidade virtual e "
+"realidade aumentada) para conceber e criar iluminação, vídeo e "
+"instalações interactivas de vanguarda."
 
 #: enrolment/constants.py:195
 msgid ""
@@ -656,7 +660,9 @@ msgstr "Encontrar grandes empresas do Reino Unido"
 msgid ""
 "Exceptional and creative UK trade partners are ready to work with you. "
 "Discover them on the Find a Supplier service."
-msgstr ""
+msgstr "O Reino Unido tem parceiros comerciais excepcionalmente inovadores "
+"e criativos, prontos para trabalhar consigo. Descubra-os em \"Encontrar"
+"um fornecedor\"."
 
 #: enrolment/templates/browse-companies.html:11
 #: enrolment/templates/search-companies.html:17
@@ -969,7 +975,8 @@ msgstr "Alimentos e bebidas no Reino Unido"
 msgid ""
 "Whether you want the most delicious food brands or exceptional quality "
 "drinks, the UK is the first place to look."
-msgstr ""
+msgstr "Quer procure as marcas alimentares mais inovadoras ou bebidas de "
+"qualidade excepcional, o Reino Unido deve ser o primeiro da sua lista."
 
 #: enrolment/templates/marketing-pages/food.html:14
 msgid "Read more about UK food and drink"
@@ -1623,11 +1630,12 @@ msgstr "Tecnologia no Reino Unido"
 msgid ""
 "Whether you need electronic systems, data analytics, artificial intelligence "
 "or semiconductors, the UK is the first place to look."
-msgstr ""
+msgstr "Se necessita da melhor tecnologia, não precisa de ir mais longe: "
+"escolha o Reino Unido."
 
 #: enrolment/templates/marketing-pages/tech.html:14
 msgid "Read more about technology in the UK"
-msgstr ""
+msgstr "Leia mais sobre a tecnologia no Reino Unido"
 
 #: enrolment/templates/marketing-pages/tech.html:19
 msgid "If you need the best technology, look no further than the UK."
