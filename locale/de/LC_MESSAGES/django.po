@@ -583,7 +583,7 @@ msgstr "Absenden"
 #: enrolment/templates/bidi/lead-generation-form.html:84
 #: enrolment/templates/lead-generation-form.html:85
 msgid "I agree to the great.gov.uk terms and conditions"
-msgstr "Ich stimme der great.gov.uk"
+msgstr "Ich akzeptiere die AGB von great.gov.uk"
 
 #: enrolment/templates/bidi/sector-list.html:15
 #: enrolment/templates/sector-list.html:18
@@ -1189,9 +1189,8 @@ msgid ""
 "suppliers of the latest medical technology and pharmaceutical advances, the "
 "UK is the first place to look."
 msgstr ""
-"Egal ob sie Gebäude entwerfen wollen, Filme drehen oder eine frische "
-"Perspektive für ihr Marketing suchen, Großbritannien ist ihre erste "
-"Anlaufstelle für ihre Vorhaben."
+"Hier finden Sie mühelos neue Anbieter innovativer, hochwertiger Produkte und "
+"Dienstleistungen für das Gesundheitswesen."
 
 #: enrolment/templates/marketing-pages/health.html:16
 msgid "Read more about healthcare and life sciences"
@@ -1649,9 +1648,7 @@ msgid ""
 "Whether you need electronic systems, data analytics, artificial intelligence "
 "or semiconductors, the UK is the first place to look."
 msgstr ""
-"Ganz gleich, ob Sie die innovativsten Lebensmittelmarken oder nach "
-"ausgezeichneten Qualitätsgetränken suchen, in Großbritannien werden sie sie "
-"finden."
+"Wenn Sie die beste Technologie benötigen, werden Sie in Großbritannien fündig."
 
 #: enrolment/templates/marketing-pages/tech.html:14
 msgid "Read more about technology in the UK"
