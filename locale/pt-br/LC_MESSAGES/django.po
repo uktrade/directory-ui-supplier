@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-14 10:09+0000\n"
+"POT-Creation-Date: 2017-07-14 14:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: enrolment/constants.py:13
+#, fuzzy
+#| msgid "Rebekah Marine: i-limb&trade; user"
+msgid "Rebekah Marine using an i-limb"
+msgstr "Rebekah Marine: usuária do i-limbTM"
 
 #: enrolment/constants.py:15
 msgid "Rebekah Marine: i-limb&trade; user"
@@ -52,7 +58,7 @@ msgstr "Usuário do i-limb quantum™"
 msgid "Healthcare and life sciences"
 msgstr "Ciências da saúde e da vida"
 
-#: enrolment/constants.py:39 enrolment/constants.py:103
+#: enrolment/constants.py:39 enrolment/constants.py:106
 msgid "Technology"
 msgstr "Tecnologia"
 
@@ -60,7 +66,11 @@ msgstr "Tecnologia"
 msgid "prosthetics, bionics, robotics, healthcare, technology, limb loss"
 msgstr "prótese, biônico, robótica, saúde, tecnologia, perda de membro"
 
-#: enrolment/constants.py:53
+#: enrolment/constants.py:50
+msgid "Graphical representation of reflux in the stomach"
+msgstr ""
+
+#: enrolment/constants.py:55
 msgid ""
 "RD Biomed designs and makes Peptest&trade;- the world’s first non-invasive "
 "reflux diagnostic test. RD Biomed specialises in diagnostics for "
@@ -70,7 +80,11 @@ msgstr ""
 "mundo para diagnóstico de refluxo. A RD Biomed é especialista no diagnóstico "
 "de condições gastrenterológicas e respiratórias."
 
-#: enrolment/constants.py:65
+#: enrolment/constants.py:63
+msgid "Claudia Breidbach using an i-limb"
+msgstr ""
+
+#: enrolment/constants.py:67
 msgid ""
 "Touch Bionics is responsible for developing and improving the world’s first "
 "bionic hand with 5 independently moving fingers, transforming lives across "
@@ -80,11 +94,11 @@ msgstr ""
 "biônica do mundo com cinco dedos que se movem de maneira independente, "
 "transformando vidas em todo o mundo."
 
-#: enrolment/constants.py:78
+#: enrolment/constants.py:80
 msgid "Mobile phone displaying evrythng's commercial traceability product"
 msgstr ""
 
-#: enrolment/constants.py:84
+#: enrolment/constants.py:87
 msgid ""
 "EVRYTHNG’s commercial Internet of Things traceability solution allows brands "
 "to track and report the status, location and history of everything they "
@@ -99,7 +113,7 @@ msgstr ""
 "complexa e interligada de componentes, produtos acabados, lotes, caixas e "
 "paletes possa ser identificada e mapeada."
 
-#: enrolment/constants.py:94
+#: enrolment/constants.py:97
 msgid ""
 "Companies can transform the value of their physical assets in the EVRYTHNG "
 "cloud by adding an intelligent, personalised layer of digital content, "
@@ -109,17 +123,17 @@ msgstr ""
 "EVRYTHNG, adicionando uma camada inteligente e personalizada de conteúdo "
 "digital, serviços e análise de dados."
 
-#: enrolment/constants.py:108
+#: enrolment/constants.py:111
 msgid "Internet of Things, data analytics, traceability, connectivity"
 msgstr "Internet das Coisas, análise de dados, rastreabilidade, conectividade"
 
-#: enrolment/constants.py:114
+#: enrolment/constants.py:117
 msgid ""
 "Mobile phone being used to interact with a bottle of Johnnie Walker using "
 "evrythng technology"
 msgstr ""
 
-#: enrolment/constants.py:119
+#: enrolment/constants.py:123
 msgid ""
 "EVRYTHNG is an Internet of Things software company that helps manufacturers "
 "<i>digitalise</i> their physical products by connecting them to the web. "
@@ -135,6 +149,10 @@ msgstr ""
 "da EVRYTHNG possui uma exclusiva identidade digital ativa"
 
 #: enrolment/constants.py:134
+msgid "Connectivity diagram of Arkessa's IoT services"
+msgstr ""
+
+#: enrolment/constants.py:138
 msgid ""
 "Arkessa enables devices and applications developers to connect to the "
 "Internet of Things (IoT), regardless of location, network operator or "
@@ -147,13 +165,13 @@ msgstr ""
 "plataforma de mobilidade segura e preparada para o futuro, que é fácil de "
 "adotar, integrar e dimensionar."
 
-#: enrolment/constants.py:150
+#: enrolment/constants.py:154
 msgid ""
 "Immersive projection on to Parque Large in the Royal Botanical Gardens of "
 "Rio de Janeiro"
 msgstr ""
 
-#: enrolment/constants.py:156
+#: enrolment/constants.py:161
 msgid ""
 "For Adidas’ 2014 World Cup campaign, Immersive developed concepts, "
 "storyboards and produced final audio and video designs. It also produced the "
@@ -165,23 +183,27 @@ msgstr ""
 "entire technical event, which included projection mapping on the mansion and "
 "a 2m ball and consulting on live-camera press shot positions"
 
-#: enrolment/constants.py:164
+#: enrolment/constants.py:169
 msgid "Creating the grandest projection mapping the world has ever seen."
 msgstr "Criando o maior mapeamento de projeção que o mundo já viu."
 
-#: enrolment/constants.py:167
+#: enrolment/constants.py:172
 msgid "Fast Company magazine"
 msgstr "Revista Fast Company"
 
-#: enrolment/constants.py:171
+#: enrolment/constants.py:176
 msgid "Creative"
 msgstr "Criatividade"
 
-#: enrolment/constants.py:176
+#: enrolment/constants.py:181
 msgid "Interactive installations, video content, projection mapping"
 msgstr "Instalações interativas, conteúdo de vídeo, mapeamento de projeção"
 
-#: enrolment/constants.py:185
+#: enrolment/constants.py:186
+msgid "An Immersive event lighting system"
+msgstr ""
+
+#: enrolment/constants.py:190
 msgid ""
 "Immersive is a complete solution provider for audio-visual projects of any "
 "scale. Immersive uses new media technology (such as LED, holograms, "
@@ -193,12 +215,12 @@ msgstr ""
 "(como LED, hologramas, projeção, realidade virtual e realidade aumentada) "
 "para projetar e criar iluminação de ponta, vídeo e instalações interativas."
 
-#: enrolment/constants.py:195
+#: enrolment/constants.py:200
 msgid ""
 "Interaction between the Blippar app on a smartphone and a ketchup bottle"
 msgstr ""
 
-#: enrolment/constants.py:200
+#: enrolment/constants.py:206
 msgid ""
 "Blippar is the leading visual discovery app, harnessing augmented reality, "
 "image-recognition technology and artificial intelligence to bring the "
@@ -208,17 +230,17 @@ msgstr ""
 "realidade aumentada, a tecnologia de reconhecimento de imagem e a "
 "inteligência artificial para dar vida ao mundo físico usando smartphones."
 
-#: enrolment/constants.py:214
+#: enrolment/constants.py:220
 msgid ""
 "Fever-Tree Clementine and cinnamon tonic water being poured from a bottle "
 "into a glass"
 msgstr ""
 
-#: enrolment/constants.py:217 enrolment/constants.py:218
+#: enrolment/constants.py:224 enrolment/constants.py:225
 msgid "Clementine and cinnamon tonic water"
 msgstr "Água tônica de canela e tangerina"
 
-#: enrolment/constants.py:220
+#: enrolment/constants.py:227
 msgid ""
 "Fever-Tree has established itself as the mixer drink specialist, crafting a "
 "range of fourteen products sourced from the highest quality natural "
@@ -228,26 +250,30 @@ msgstr ""
 "variedade de catorze produtos provenientes dos ingredientes naturais da mais "
 "alta qualidade para as misturas mais saborosas."
 
-#: enrolment/constants.py:227
+#: enrolment/constants.py:234
 msgid ""
 "If three-quarters of your gin and tonic is the tonic, make sure you use the "
 "best."
 msgstr ""
 "Se 3/4 de sua gin e tônica é a tônica, não deixe de usar o que há de melhor."
 
-#: enrolment/constants.py:230
+#: enrolment/constants.py:237
 msgid "Tim Warrillow"
 msgstr "Tim Warrillow"
 
-#: enrolment/constants.py:235
+#: enrolment/constants.py:242
 msgid "Food and drink"
 msgstr "Comida e bebida"
 
-#: enrolment/constants.py:239
+#: enrolment/constants.py:246
 msgid "Mixers, Quality, Taste"
 msgstr "Mixers, qualidade, sabor"
 
-#: enrolment/constants.py:247
+#: enrolment/constants.py:251
+msgid "Packet of Joe and Seph's double chocolate popcorn"
+msgstr ""
+
+#: enrolment/constants.py:256
 msgid ""
 "All Joe & Seph’s popcorn is handmade in small batches to ensure superior "
 "texture and an intense flavour. The ingredients used are 100&#37; natural "
@@ -259,7 +285,11 @@ msgstr ""
 "são 100% naturais e os grãos estouram no ar, um método de cozimento mais "
 "saudável em relação à fritura."
 
-#: enrolment/constants.py:260
+#: enrolment/constants.py:265
+msgid "Bottle and glass of Fever-Tree Madagascan Cola"
+msgstr ""
+
+#: enrolment/constants.py:269
 msgid ""
 "Fever-Tree has pioneered premium mixers and is now the world’s leading "
 "premium mixer company."
@@ -267,36 +297,36 @@ msgstr ""
 "A Fever-Tree foi pioneira em bebidas mixer de alta qualidade e agora é a "
 "principal empresa do mundo nesse segmento."
 
-#: enrolment/constants.py:308
+#: enrolment/constants.py:317
 msgid "Queen Elizabeth Olympic Park, London"
 msgstr ""
 
-#: enrolment/constants.py:309
+#: enrolment/constants.py:318
 msgid "London 2012 Olympic and Paralympic Games"
 msgstr ""
 
-#: enrolment/constants.py:311
+#: enrolment/constants.py:320
 msgid ""
 "Movement Strategies leads design standards for major events such as the "
 "Olympic Games, helping plan crowd movement and safety, and driving increased "
 "ticket sales."
 msgstr ""
 
-#: enrolment/constants.py:323
+#: enrolment/constants.py:332
 msgid "Global sports infrastructure"
 msgstr ""
 
-#: enrolment/constants.py:327
+#: enrolment/constants.py:336
 msgid "Crowd safety, Pedestrian flow, Movement analytics"
 msgstr ""
 
-#: enrolment/constants.py:334
+#: enrolment/constants.py:343
 msgid ""
 "Movement Strategies is the largest and most experienced independent, "
 "specialist people movement consultancy in the world."
 msgstr ""
 
-#: enrolment/constants.py:344
+#: enrolment/constants.py:353
 msgid ""
 "Fortress GB proved its reputation as the market-leading e-ticketing provider "
 "by being selected to install and manage the very latest in turnstile "
@@ -431,6 +461,9 @@ msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
 "is hard to beat."
 msgstr ""
+"O Reino Unido tem parceiros comerciais excepcionalmente inovadores e "
+"criativos, prontos para trabalhar consigo. Descubra-os em \"Encontrarum "
+"fornecedor\"."
 
 #: enrolment/templates/bidi/landing-page.html:42
 #: enrolment/templates/landing-page.html:46
@@ -537,7 +570,7 @@ msgstr ""
 #: enrolment/templates/landing-page.html:122
 #: enrolment/templates/sector-list.html:101
 msgid "Find out more about UK food and drink"
-msgstr ""
+msgstr "Saiba mais sobre as ciências da vida e da saúde no Reino Unido"
 
 #: enrolment/templates/bidi/landing-page.html:127
 #: enrolment/templates/landing-page.html:131
@@ -616,6 +649,10 @@ msgstr "A comida e a bebida do Reino Unido"
 
 #: enrolment/templates/bidi/sector-list.html:94
 #: enrolment/templates/sector-list.html:97
+#, fuzzy
+#| msgid ""
+#| "Whether you want the best food brands or exceptional quality drinks, the "
+#| "UK is the first place to look."
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "should be first on your list."
@@ -942,6 +979,8 @@ msgid ""
 "Whether you want the most delicious food brands or exceptional quality "
 "drinks, the UK is the first place to look."
 msgstr ""
+"Se o que você procura são as marcas de alimentos mais inovadoras ou bebidas "
+"de qualidade excepcional, o Reino Unido precisa estar no topo da sua lista."
 
 #: enrolment/templates/marketing-pages/food.html:14
 msgid "Read more about UK food and drink"
@@ -1604,6 +1643,8 @@ msgid ""
 "Whether you need electronic systems, data analytics, artificial intelligence "
 "or semiconductors, the UK is the first place to look."
 msgstr ""
+"Se necessita da melhor tecnologia, não precisa de ir mais longe: escolha o "
+"Reino Unido."
 
 #: enrolment/templates/marketing-pages/tech.html:14
 msgid "Read more about technology in the UK"
