@@ -1,5 +1,5 @@
 import http
-from unittest.mock import patch, Mock
+from unittest.mock import call, patch, Mock
 
 from directory_validators.constants import choices
 import pytest
@@ -517,7 +517,8 @@ def test_contact_company_view_feature_submit_success(
 
     assert response.status_code == http.client.OK
     assert response.template_name == view.success_template_name
-    mock_send_email.assert_called_once_with(expected_data)
+    assert mock_send_email.call_count == 1
+    assert mock_send_email.call_args == call(expected_data)
 
 
 @patch.object(views.api_client.company, 'send_email')
@@ -613,10 +614,13 @@ def test_company_search_pagination_param(
     mock_search.return_value = api_response_search_200
 
     url = reverse('company-search')
-    response = client.get(url, {'term': '123', 'page': 1})
+    response = client.get(
+        url, {'term': '123', 'page': 1, 'sector': 'AEROSPACE'}
+    )
 
     assert response.status_code == 200
-    mock_search.assert_called_once_with(page=1, size=10, term='123')
+    assert mock_search.call_count == 1
+    assert mock_search.call_args == call(page=1, size=10, term='123')
 
 
 @patch('api_client.api_client.company.search')
@@ -677,6 +681,7 @@ def test_company_search_api_success(
     response = client.get(reverse('company-search'), {'term': '123'})
 
     assert response.status_code == 200
-    mock_get_results_from_search_response.assert_called_once_with(
+    assert mock_get_results_from_search_response.call_count == 1
+    assert mock_get_results_from_search_response.call_args == call(
         api_response_search_200
     )

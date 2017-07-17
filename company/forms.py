@@ -22,6 +22,11 @@ class CompanySearchForm(forms.Form):
         widget=forms.HiddenInput,
         initial=1,
     )
+    sector = forms.ChoiceField(
+        required=False,
+        widget=forms.HiddenInput,
+        choices=choices.COMPANY_CLASSIFICATIONS,
+    )
 
     def clean_page(self):
         return self.cleaned_data['page'] or self.fields['page'].initial
