@@ -15,7 +15,8 @@ class CompanySearchForm(forms.Form):
         max_length=255,
         widget=forms.TextInput(
             attrs={'placeholder': 'Search for UK suppliers'}
-        )
+        ),
+        required=False,
     )
     page = forms.IntegerField(
         required=False,

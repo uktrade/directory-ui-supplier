@@ -64,6 +64,7 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
         response = api_client.company.search(
             term=form.cleaned_data['term'],
             page=form.cleaned_data['page'],
+            sector=form.cleaned_data['sector'],
             size=self.page_size,
         )
         response.raise_for_status()
