@@ -351,6 +351,31 @@ def test_public_profile_contact_button_no_email():
     assert CONTACT_COMPANY_LABEL not in html
 
 
+def test_public_profile_sectors_link_feature_flag_off():
+    context = {
+        'features': {
+            'FEATURE_SEARCH_FILTER_SECTOR_ENABLED': False
+        },
+        **default_context
+    }
+    html = render_to_string('company-profile-detail.html', context)
+    url = reverse('public-company-profiles-list') + '?sectors=SECTOR1'
+
+    assert url in html
+
+
+def test_public_profile_sectors_link_feature_flag_on():
+    context = {
+        'features': {
+            'FEATURE_SEARCH_FILTER_SECTOR_ENABLED': True
+        },
+        **default_context
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert reverse('company-search') + '?sector=SECTOR1' in html
+
+
 def test_public_profile_report_button():
     context = {
         'company': {
