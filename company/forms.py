@@ -10,6 +10,9 @@ SELECT_LABEL = 'Please select your industry'
 
 
 class CompanySearchForm(forms.Form):
+
+    MESSAGE_MISSING_SECTOR_TERM = 'Please specify a search term or a sector.'
+
     term = forms.CharField(
         label='Search by product, service or company keyword',
         max_length=255,
@@ -28,6 +31,12 @@ class CompanySearchForm(forms.Form):
         widget=forms.HiddenInput,
         choices=choices.COMPANY_CLASSIFICATIONS,
     )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        if not cleaned_data.get('term') and not cleaned_data.get('sector'):
+            raise forms.ValidationError(self.MESSAGE_MISSING_SECTOR_TERM)
+        return cleaned_data
 
     def clean_page(self):
         return self.cleaned_data['page'] or self.fields['page'].initial
