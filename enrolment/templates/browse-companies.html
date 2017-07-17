@@ -7,7 +7,14 @@
 			{% trans "Exceptional and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service." %}
 		{% endblock %}
 	</p>
-	<a class="button" href="{% url 'public-company-profiles-list' %}?sectors={{sector_value}}">
-		{% trans "Browse UK companies" %}
-	</a>
+	{% if features.FEATURE_SEARCH_FILTER_SECTOR_ENABLED %}
+		<a class="button"  href="{% url 'company-search' %}?sector={{sector_value }}">
+			{% trans "Browse UK companies" %}
+		</a>
+	{% else %}
+		<a class="button" href="{% url 'public-company-profiles-list' %}?sectors={{sector_value}}">
+			{% trans "Browse UK companies" %}
+		</a>
+	{% endif %}
+
 </div>

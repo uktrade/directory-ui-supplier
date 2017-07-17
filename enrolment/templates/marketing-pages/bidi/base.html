@@ -108,7 +108,11 @@
 					<dd>
 					{% comment %}Do NOT move the forloop if to new line as this causes extra space before comma{% endcomment %}
 					{% for sector in case_study.sectors %}
-						<a href="{% url 'public-company-profiles-list' %}?sectors={{sector.value }}">{% trans sector.label %}</a>{% if not forloop.last %}, {% endif %}
+						{% if features.FEATURE_SEARCH_FILTER_SECTOR_ENABLED %}
+							<a href="{% url 'company-search' %}?sector={{sector.value }}">{% trans sector.label %}</a>{% if not forloop.last %}, {% endif %}
+						{% else %}
+							<a href="{% url 'public-company-profiles-list' %}?sectors={{sector.value }}">{% trans sector.label %}</a>{% if not forloop.last %}, {% endif %}
+						{% endif %}
 					{% endfor %}
 					</dd>
 					<dt>{% trans "keywords" %}</dt>
