@@ -191,9 +191,22 @@ def test_public_profile_details_exposes_context(
     }
 
 
-def test_company_profile_list_exposes_context(
-    client, api_response_list_public_profile_200
+def test_company_profile_list_redirects_to_search(
+    client, settings
 ):
+    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = True
+
+    url = reverse('public-company-profiles-list')
+    response = client.get(url, {'sectors': 'AEROSPACE'})
+
+    assert response.status_code == 302
+    assert response.get('Location') == '/search?sector=AEROSPACE'
+
+
+def test_company_profile_list_exposes_context(
+    client, api_response_list_public_profile_200, settings
+):
+    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
     url = reverse('public-company-profiles-list')
     params = {'sectors': choices.COMPANY_CLASSIFICATIONS[1][0]}
     expected_companies = helpers.get_company_list_from_response(
@@ -211,8 +224,9 @@ def test_company_profile_list_exposes_context(
 
 
 def test_company_profile_list_exposes_context_show_companies_count(
-    client, api_response_list_public_profile_200
+    client, api_response_list_public_profile_200, settings
 ):
+    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
     url = reverse('public-company-profiles-list')
     params = {'sectors': choices.COMPANY_CLASSIFICATIONS[1][0]}
 
@@ -223,8 +237,9 @@ def test_company_profile_list_exposes_context_show_companies_count(
 
 
 def test_company_profile_list_exposes_context_hide_companies_count(
-    client, api_response_list_public_profile_200
+    client, api_response_list_public_profile_200, settings
 ):
+    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
     url = reverse('public-company-profiles-list')
 
     for params in [{}, {'sectors': ''}, {'sectors': ''}]:
@@ -234,7 +249,8 @@ def test_company_profile_list_exposes_context_hide_companies_count(
         assert response.context_data['show_companies_count'] is False
 
 
-def test_company_profile_list_general_context(client):
+def test_company_profile_list_general_context(client, settings):
+    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
     view_name = 'public-company-profiles-list'
     response = client.get(reverse(view_name))
 
@@ -281,7 +297,8 @@ def test_public_profile_details_handles_404(
     assert response.status_code == http.client.NOT_FOUND
 
 
-def test_company_profile_list_exposes_selected_sector_label(client):
+def test_company_profile_list_exposes_selected_sector_label(client, settings):
+    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
     url = reverse('public-company-profiles-list')
     params = {'sectors': choices.COMPANY_CLASSIFICATIONS[1][0]}
     response = client.get(url, params)
@@ -292,8 +309,9 @@ def test_company_profile_list_exposes_selected_sector_label(client):
 
 @patch.object(views.api_client.company, 'list_public_profiles')
 def test_company_profile_list_calls_api(
-    mock_list_public_profiles, client
+    mock_list_public_profiles, client, settings
 ):
+    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
     url = reverse('public-company-profiles-list')
     params = {'sectors': choices.COMPANY_CLASSIFICATIONS[1][0]}
     client.get(url, params)
@@ -305,8 +323,9 @@ def test_company_profile_list_calls_api(
 
 @patch.object(views.api_client.company, 'list_public_profiles')
 def test_company_profile_list_handles_bad_status(
-    mock_retrieve_public_profile, client, api_response_400
+    mock_retrieve_public_profile, client, api_response_400, settings
 ):
+    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
     mock_retrieve_public_profile.return_value = api_response_400
     url = reverse('public-company-profiles-list')
     params = {'sectors': choices.COMPANY_CLASSIFICATIONS[1][0]}
@@ -314,7 +333,8 @@ def test_company_profile_list_handles_bad_status(
         client.get(url, params)
 
 
-def test_company_profile_list_handles_no_form_data(client):
+def test_company_profile_list_handles_no_form_data(client, settings):
+    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
     url = reverse('public-company-profiles-list')
     response = client.get(url, {})
 
@@ -322,7 +342,10 @@ def test_company_profile_list_handles_no_form_data(client):
 
 
 @patch.object(views.api_client.company, 'list_public_profiles')
-def test_company_profile_list_handles_empty_page(mock_list_profiles, client):
+def test_company_profile_list_handles_empty_page(
+    mock_list_profiles, client, settings
+):
+    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
     mock_list_profiles.return_value = api_response_404()
     url = reverse('public-company-profiles-list')
     response = client.get(url, {'sectors': 'WATER', 'page': 10})
