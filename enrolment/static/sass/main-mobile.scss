@@ -21,12 +21,6 @@
     }
   }
   
-  .ed-hero-sub-header {
-    .ed-hero-sub-header-title {
-      width: 75%;
-    }
-  }
-  
   .LanguageSelectTracker {
     .code:after,
     .lang {
@@ -35,14 +29,21 @@
   }
 }
 
-@media (max-width: 540px) {
+
+@media (max-width: 580px) {
   .ed-hero-sub-header {
+    min-height: 350px;
+    padding-top: 132px;
+  
     .ed-hero-sub-header-title {
-      text-align: center;
-      width: 100%;
+      font-size: 24px;
+      line-height: 31px;
+      letter-spacing: -0.4px;
+      width: 317px;
     }
   }
 }
+
 
 @media (max-width: 480px) {
   body .container {

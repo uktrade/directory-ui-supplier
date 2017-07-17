@@ -7,7 +7,27 @@
   }
 }
 
+@media (max-width: 860px) {
+  .ed-hero-sub-header {
+    .ed-hero-sub-header-title {
+      font-size: 46px;
+    }
+  }
+}
+
 @media (max-width: 799px) {
+  
+  .ed-hero-sub-header {
+    padding-top: 265px;
+    
+    .ed-hero-sub-header-title {
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 40px;
+      letter-spacing: -0.7px;
+      width: 540px;
+    }
+  }
   
   #footer-links {
     border-bottom: 1px solid $white;
