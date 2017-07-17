@@ -1,7 +1,10 @@
 import os
 from unittest.mock import Mock
 
+import pytest
+
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
 
 from enrolment import forms
@@ -227,3 +230,40 @@ def test_lead_generation_form():
     html = render_to_string('lead-generation.html', context)
 
     assert html
+
+
+@pytest.mark.parametrize('template_name', [
+    'marketing-pages/bidi/base.html',
+    'marketing-pages/base.html',
+    'browse-companies.html',
+])
+def test_filter_search_feature_flag_on(template_name):
+    context = {
+        'features': {
+            'FEATURE_SEARCH_FILTER_SECTOR_ENABLED': True
+        },
+        'sector_value': 'AEROSPACE',
+        'slug': 'thing',   # marketing-pages/base.html
+    }
+    html = render_to_string(template_name, context)
+
+    assert reverse('company-search') + '?sector=AEROSPACE' in html
+
+
+@pytest.mark.parametrize('template_name', [
+    'marketing-pages/bidi/base.html',
+    'marketing-pages/base.html',
+    'browse-companies.html',
+])
+def test_filter_search_feature_flag_off(template_name):
+    context = {
+        'features': {
+            'FEATURE_SEARCH_FILTER_SECTOR_ENABLED': False
+        },
+        'sector_value': 'AEROSPACE',
+        'slug': 'thing',  # marketing-pages/base.html
+    }
+    html = render_to_string(template_name, context)
+    url = reverse('public-company-profiles-list') + '?sectors=AEROSPACE'
+
+    assert url in html
