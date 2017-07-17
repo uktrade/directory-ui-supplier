@@ -84,6 +84,15 @@ class PublishedProfileListView(SubmitFormOnGetMixin, FormView):
     template_name = 'company-public-profile-list.html'
     form_class = forms.PublicProfileSearchForm
 
+    def dispatch(self, *args, **kwargs):
+        if settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED:
+            url = '{url}?sector={sector}'.format(
+                url=reverse('company-search'),
+                sector=self.request.GET.get('sectors')
+            )
+            return redirect(url)
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['selected_sector_label'] = self.get_sector_label(context)
