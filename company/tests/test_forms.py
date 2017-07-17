@@ -140,4 +140,4 @@ def test_search_required_fields():
     form = forms.CompanySearchForm()
 
     assert form.fields['sector'].required is False
-    assert form.fields['term'].required is True
+    assert form.fields['term'].required is False

@@ -643,7 +643,9 @@ def test_company_search_pagination_param(
 
     assert response.status_code == 200
     assert mock_search.call_count == 1
-    assert mock_search.call_args == call(page=1, size=10, term='123')
+    assert mock_search.call_args == call(
+        page=1, size=10, term='123', sector='AEROSPACE',
+    )
 
 
 @patch('api_client.api_client.company.search')
