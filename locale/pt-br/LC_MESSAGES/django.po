@@ -641,6 +641,8 @@ msgid ""
 "Whether you need buildings designed, films made, or a fresh approach to "
 "marketing, the UK is the first place to look."
 msgstr ""
+"Se você precisa projetar edifícios, fazer filmes ou obter uma nova "
+"estratégia de marketing, o Reino Unido é a primeira opção."
 
 #: enrolment/templates/bidi/sector-list.html:92
 #: enrolment/templates/sector-list.html:95
