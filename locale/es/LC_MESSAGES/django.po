@@ -683,6 +683,8 @@ msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "should be first on your list."
 msgstr ""
+"Si desea las marcas de alimentos más innovadoras o bebidas de calidad "
+"excepcional, el Reino Unido debería ser el primero en su lista."
 
 #: enrolment/templates/browse-companies.html:4
 msgid "Find other great UK companies"

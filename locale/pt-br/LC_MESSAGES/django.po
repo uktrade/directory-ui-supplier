@@ -18,8 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: enrolment/constants.py:13
-#, fuzzy
-#| msgid "Rebekah Marine: i-limb&trade; user"
 msgid "Rebekah Marine using an i-limb"
 msgstr "Rebekah Marine: usuária do i-limbTM"
 
@@ -391,8 +389,6 @@ msgid "Terms &amp; conditions"
 msgstr "Termos e condições"
 
 #: enrolment/templates/bidi/footer.html:33 enrolment/templates/footer.html:33
-#, fuzzy
-#| msgid "Crown Copyright 2016"
 msgid "Crown Copyright"
 msgstr "Crown Copyright 2016"
 
@@ -574,8 +570,6 @@ msgstr "Saiba mais sobre as ciências da vida e da saúde no Reino Unido"
 
 #: enrolment/templates/bidi/landing-page.html:127
 #: enrolment/templates/landing-page.html:131
-#, fuzzy
-#| msgid "UK industries"
 msgid "See more industries"
 msgstr "Setores do Reino Unido"
 
@@ -651,10 +645,6 @@ msgstr "A comida e a bebida do Reino Unido"
 
 #: enrolment/templates/bidi/sector-list.html:94
 #: enrolment/templates/sector-list.html:97
-#, fuzzy
-#| msgid ""
-#| "Whether you want the best food brands or exceptional quality drinks, the "
-#| "UK is the first place to look."
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "should be first on your list."
@@ -731,8 +721,6 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:7
-#, fuzzy
-#| msgid "Healthcare and life sciences from the UK"
 msgid "Buy creative services from the UK"
 msgstr "Leia mais sobre a ciências da saúde e da vida"
 
@@ -1173,10 +1161,6 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/health.html:7
-#, fuzzy
-#| msgid ""
-#| "See the UK's healthcare and life sciences providers on the Find a "
-#| "supplier service"
 msgid "Buy UK healthcare and life sciences products and services"
 msgstr ""
 "Consulte o serviço Encontrar um fornecedor e veja os fornecedores de "
@@ -1631,8 +1615,6 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/tech.html:7
-#, fuzzy
-#| msgid "Find your UK technology trade partner"
 msgid "Buy UK technology products and services"
 msgstr "Encontre o seu parceiro comercial de tecnologia do Reino Unido"
 
