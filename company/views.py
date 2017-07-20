@@ -64,6 +64,7 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
         response = api_client.company.search(
             term=form.cleaned_data['term'],
             page=form.cleaned_data['page'],
+            sector=form.cleaned_data['sector'],
             size=self.page_size,
         )
         response.raise_for_status()
@@ -82,6 +83,15 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
 class PublishedProfileListView(SubmitFormOnGetMixin, FormView):
     template_name = 'company-public-profile-list.html'
     form_class = forms.PublicProfileSearchForm
+
+    def dispatch(self, *args, **kwargs):
+        if settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED:
+            url = '{url}?sector={sector}'.format(
+                url=reverse('company-search'),
+                sector=self.request.GET.get('sectors')
+            )
+            return redirect(url)
+        return super().dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

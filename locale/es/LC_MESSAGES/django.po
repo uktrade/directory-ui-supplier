@@ -465,11 +465,6 @@ msgstr ""
 
 #: enrolment/templates/bidi/landing-page.html:36
 #: enrolment/templates/landing-page.html:40
-#, fuzzy
-#| msgid ""
-#| "UK companies work with businesses and governments around the world to "
-#| "create new living and working environments, run high quality services and "
-#| "deliver the best experiences."
 msgid ""
 "UK companies work with businesses and governments around the world to run "
 "high quality services and deliver the best experiences."

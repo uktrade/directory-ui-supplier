@@ -140,4 +140,14 @@ def test_search_required_fields():
     form = forms.CompanySearchForm()
 
     assert form.fields['sector'].required is False
-    assert form.fields['term'].required is True
+    assert form.fields['term'].required is False
+
+
+def test_search_required_empty_sector_term():
+    form = forms.CompanySearchForm(data={'term': '', 'sector': ''})
+
+    assert form.is_valid() is False
+
+    assert form.errors == {
+        '__all__': [forms.CompanySearchForm.MESSAGE_MISSING_SECTOR_TERM]
+    }

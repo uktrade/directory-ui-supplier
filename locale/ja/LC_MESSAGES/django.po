@@ -434,11 +434,6 @@ msgstr ""
 
 #: enrolment/templates/bidi/landing-page.html:36
 #: enrolment/templates/landing-page.html:40
-#, fuzzy
-#| msgid ""
-#| "UK companies work with businesses and governments around the world to "
-#| "create new living and working environments, run high quality services and "
-#| "deliver the best experiences."
 msgid ""
 "UK companies work with businesses and governments around the world to run "
 "high quality services and deliver the best experiences."
@@ -502,10 +497,6 @@ msgstr "英国の先端技術"
 
 #: enrolment/templates/bidi/landing-page.html:77
 #: enrolment/templates/landing-page.html:81
-#, fuzzy
-#| msgid ""
-#| "Check out the latest cutting-edge technologies that the UK is bringing to "
-#| "the world."
 msgid ""
 "Check out the cutting-edge technologies that the UK is bringing to the world."
 msgstr "英国から世界にお届けしている最新のテクノロジーについてご覧ください。"
@@ -548,10 +539,6 @@ msgstr "英国の飲食品"
 
 #: enrolment/templates/bidi/landing-page.html:113
 #: enrolment/templates/landing-page.html:117
-#, fuzzy
-#| msgid ""
-#| "Whether you want the most innovative food brands or exceptional quality "
-#| "drinks, the UK is the first place to look."
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "is the first place to look."
