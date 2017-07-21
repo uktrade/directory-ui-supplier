@@ -16,7 +16,10 @@ body.bidi {
   }
 }
 
-.ed-landing-page-synopsis {
+
+/* Intro 
+ ******************/
+#intro {
   [class*="span"] {
     padding-left: 0;
     
@@ -25,6 +28,14 @@ body.bidi {
     }
   }
 }
+
+
+/* Industries
+ ******************/
+#industry-1 { border-width: 0 0 0 22px; }
+#industry-2 { border-width: 0 7px 0 15px; }
+#industry-3 { border-width: 0 15px 0 7px; }
+#industry-4 { border-width: 0 22px 0 0; }
 
 
 /* Tablet

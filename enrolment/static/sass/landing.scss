@@ -221,20 +221,6 @@ a .register-interest-btn {
   }
 }
 
-.ed-landing-page-synopsis {
-  background-color: #FAFAFA;
-  line-height: 1.55em;
-  border: 1px solid #dedede;
-  border-top: none;
-  padding:20px;
-}
-
-.ed-landing-page-read-more-subtitle {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-weight: 300;
-}
-
 .ed-landing-page-sector-container {
   border: 1px solid #dedede;
   min-height: 250px;
@@ -382,7 +368,7 @@ a.ed-landing-page-see-more-button {
 
 
 .ed-landing-page-sector-companies-list .browse-companies-container,
-.ed-landing-page-synopsis .search-companies-container {
+#intro .search-companies-container {
   margin-bottom: 0;  
   p {
     margin-bottom: 1em;
@@ -399,9 +385,92 @@ a.ed-landing-page-see-more-button {
 }
 
 
-/* Desktop only */
+/* General
+ ******************/
+.section-header {
+  font-family: $font-family;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  margin: 0 0 0.7em 0;
+}
+
+
+/* Intro 
+ ******************/
+#intro {
+  border: $grey-3 solid 1px;
+  margin-bottom: 20px;
+  padding: 30px 30px 30px 15px;
+}
+
+
+/* Industries
+ ******************/
+.industry {
+  border-color: $white;
+  border-style: solid;
+  display: table-cell;
+  padding-bottom: 30px;
+  padding-top: 17%;
+  position: relative;
+  width: 25%;
+  
+  img {
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+  
+  p {
+    font-size: 15px;
+    line-height: 23px;
+    min-height: 4.5em;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    line-height: 31px;
+    min-height: 2.5em;
+  }
+  
+  &:after {
+    background-color: $red-1;
+    bottom: 4px;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+#industry-1 { border-width: 0 22px 0 0; }
+#industry-2 { border-width: 0 15px 0 7px; }
+#industry-3 { border-width: 0 7px 0 15px; }
+#industry-4 { border-width: 0 0 0 22px; }
+
+
+#industry-design-break-for-tablet-only {
+  /* Matches horrible design-only element.
+     See tablet media query for details. */
+  display: none;
+}
+  
+#industries {
+  margin-bottom: 45px;
+  overflow: hidden;
+}
+
+
+/* DESKTOP ONLY
+ ******************/
 @media (min-width: 800px) {
-  .ed-landing-page-synopsis {
+  #intro {
     [class*="span"] {
       display: table-cell;
       float: none;
@@ -416,13 +485,9 @@ a.ed-landing-page-see-more-button {
 }
 
 
-/* Tablet
+/* TABLET
  ******************/
 @media (max-width: 799px) {
-  #content .ed-landing-page-sector-container {
-    margin: 0 0 20px 0;
-    width: 100%;
-  }
   
   .browse-companies-container,
   .search-companies-container {
@@ -446,16 +511,49 @@ a.ed-landing-page-see-more-button {
   }
   
   .ed-landing-page-sector-companies-list .browse-companies-container,
-  .ed-landing-page-synopsis .search-companies-container {
+  #intro .search-companies-container {
     .title {
       padding-top: 10px;
     }
   }
   
-  .ed-landing-page-synopsis [class*="span"] {
+  .industry {
+    padding-top: 36%;
+    width: 50%;
+    
+    .title {
+      font-size: 18px;
+      line-height: 25px;
+    }
+  }
+  
+  #content .ed-landing-page-sector-container {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+  
+  #industry-1 { border-width: 0 15px 0 0; }
+  #industry-2 { border-width: 0 0 0 15px; }
+  #industry-3 { border-width: 0 15px 0 0; }
+  #industry-4 { border-width: 0 0 0 15px; }
+  
+  #industry-design-break-for-tablet-only {
+    /* Matches horrible design-only element required to 
+       force break on the display:table-cell elements
+       trying accommodate table layout design without 
+       resorting to using actual HTML table elements */
     display: block;
-    margin-left: 0;
-    width: auto;
+    margin-bottom: 30px;
+  }
+  
+  #intro {
+    padding-right: 15px;
+    
+    [class*="span"] {
+      display: block;
+      margin-left: 0;
+      width: auto;
+    }
   }
 }
 
@@ -470,7 +568,7 @@ a.ed-landing-page-see-more-button {
 }
 
 
-/* Mobile
+/* MOBILE
  *****************/
 @media (max-width: 640px) {
   .ed-landing-page-sector-container {
@@ -479,5 +577,32 @@ a.ed-landing-page-see-more-button {
       margin: 0;
       width: 100%;
     }
+  }
+}
+
+@media (max-width: 375px) {
+  
+  .industry {
+    display: block;
+    margin-bottom: 30px;
+    padding-top: 73%;
+    width: auto;
+    
+    p,
+    .title {
+      min-height: initial;
+    }
+  }
+  
+  #industry-1,
+  #industry-2,
+  #industry-3,
+  #industry-4 { 
+    border: none; 
+  }
+  
+  #industry-design-break-for-tablet-only {
+    /* Not required for mobile */
+    display: none;
   }
 }

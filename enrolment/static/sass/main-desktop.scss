@@ -74,7 +74,7 @@ ul, ol {
 }
 
 p {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 .screen-reader-only { 
@@ -438,16 +438,16 @@ label, input, button, select, textarea {
 
 body {
   background-color: $white;
-
-  font-family: 'Roboto', sans-serif;
+  font-family: $font-family;
   font-size: 18px;
   font-weight: 300;
-  line-height: 24px;
+  line-height: 25px;
+  
   @media (max-width: 979px) {
     padding: 0;
     .container {
       max-width: 960px;
-      padding: 0 20px;
+      padding: 0 15px;
       width: 100%;
     }
   }
@@ -455,13 +455,14 @@ body {
   h2 {
     font-size: 26px;
   }
-
+  
   @media (min-width: 979px) {
     .container {
       max-width: 960px;
       width: 100%;
     }
   }
+
   #content {
     padding-bottom: 0;
     .container {
@@ -637,44 +638,6 @@ a.no-focus-highlight {
   background: transparent;
   border: none;
   margin-left: 20px;
-}
-
-.great-blue-bar {
-  background: $great-blue;
-  color: $white;
-  h1, h2 {
-    font-family: $font-heading;
-    font-size: 36px;
-    font-weight: 300;
-    line-height: 1.1em;
-    margin: 0;
-    padding: 16px 24px;
-  }
-  .company-name-title {
-    @media (max-width: 767px) {
-      font-size: 28px;
-    }
-  }
-
-  .element-within {
-    display: table-cell;
-    float: none;
-    vertical-align: middle;
-    a {
-      color: $white;
-      &:focus {
-        background: #007EA3;
-      }
-    }
-    .a11y {
-      color: $white;
-    }
-  }
-  @media (max-width: 767px) {
-    .element-within {
-      display: block;
-    }
-  }
 }
 
 .ed-arrow_box {
@@ -953,6 +916,7 @@ a.ed-filled-button-primary {
     font-weight: bold;
   }
 }
+
 
 /* Header
  *****************/
