@@ -906,10 +906,7 @@ a.ed-filled-button-primary {
     margin-left: -2px;
     max-width: 141px;
     width: 100%;
-    image-rendering: -moz-crisp-edges;         /* Firefox */
-    image-rendering:   -o-crisp-edges;         /* Opera */
     image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-    image-rendering: crisp-edges;
     -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
   }
   
@@ -977,10 +974,7 @@ a.ed-filled-button-primary {
   float: left;
   height: 40px;
   margin: 16px 0 10px 0;
-  image-rendering: -moz-crisp-edges;         /* Firefox */
-  image-rendering:   -o-crisp-edges;         /* Opera */
   image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-  image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
   max-width: 326px;
 }
@@ -1005,10 +999,7 @@ a.ed-filled-button-primary {
   }
   
   img {
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
     -ms-interpolation-mode: nearest-neighbor;
     max-width: inherit;
   }
