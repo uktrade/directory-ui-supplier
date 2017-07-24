@@ -464,6 +464,7 @@ body {
   }
 
   #content {
+    margin-bottom: 15px;
     padding-bottom: 0;
     .container {
       .enrolment-intro-container {
@@ -543,7 +544,7 @@ h1 {
   background-color: $great-blue;
   color: $white;
   min-height: 500px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   padding-top: 220px;
 
   .ed-hero-sub-header-title {
@@ -1053,7 +1054,7 @@ a.ed-filled-button-primary {
 .search-companies-container {
   background-color: $aqua;
   color: $white;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   overflow: hidden;
   padding: 25px;
   position: relative;
