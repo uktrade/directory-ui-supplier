@@ -17,7 +17,10 @@ class CompanySearchForm(forms.Form):
         label='Search by product, service or company keyword',
         max_length=255,
         widget=forms.TextInput(
-            attrs={'placeholder': 'Search for UK suppliers'}
+            attrs={
+                'placeholder': 'Search for UK suppliers',
+                'autofocus': 'autofocus',
+            }
         ),
         required=False,
     )
@@ -28,8 +31,8 @@ class CompanySearchForm(forms.Form):
     )
     sector = forms.ChoiceField(
         required=False,
-        widget=forms.HiddenInput,
         choices=choices.COMPANY_CLASSIFICATIONS,
+        widget=forms.RadioSelect()
     )
 
     def clean(self):

@@ -8,115 +8,125 @@
 {% block head_title %}Search the database of UK suppliers' trade profiles - trade.great.gov.uk{% endblock %}
 {% block hero_title %}Browse UK company trade profiles{% endblock %}
 {% block sub_header %}
+<form action="" method="get">
 	<section id="fassearch-intro">
 		<div class="container">
 			<h1>Find UK Suppliers</h1>
-			<form action="" method="get" class="supplier-search-form">
+			<div class="supplier-search-form">
 				<label for="{{ form.term.id_for_label }}">{{ form.term.label }}</label>
 				{{ form.term }}
 				<input class="button button-primary" type="submit" value="Search">
-			</form>
+			</div>
 		</div>
 	</section>
 {% endblock %}
 {% block content %}
 	<div class="clearfix"></div>
 	<div id="fassearch-content" class="container">
-			
-			{% if form.is_bound %}
-				{% if results %}
-					<div class="row-fluid company-profile-details-body-toolbar">
-						<div class="span8">
-							<h2 class="screen-reader-only">Search results</h2>
-							<span>Displaying {{ results|length }} {{results|length|pluralize:'result,results'}}</span>
+		<div>
+			<div class="span3" id="ed-search-filters-container">
+				<div class="company-profile-details-body-toolbar">
+					<div>
+						<h2 class="screen-reader-only">Search filters</h2>
+						<span>Filters</span>
+						{% if form.sector.value %}
+							<a href="?term={{ form.cleaned_data.term }}" class="pull-right">Clear all</a>
+						{% endif %}
+					</div>
+				</div>
+
+				<div id="ed-search-filters-list" class="mobile-hide">
+					<strong>Filter by industry</strong>
+					<div class="ed-pretty-radio-select">
+						{{ form.sector }}
+					</div>
+				</div>
+			</div>
+			<div class="span7" id="ed-search-list-container">
+				{% if form.is_bound %}
+					{% if results %}
+						<div class="row-fluid company-profile-details-body-toolbar">
+							<div class="span8">
+								<h2 class="screen-reader-only">Search results</h2>
+								<span>Your search found {{ results|length }} {{results|length|pluralize:'company,companies'}}</span>
+							</div>
+							<div class="span4" style="text-align: right;">
+								{% include 'company-search-results-paginator.html' %}
+							</div>
 						</div>
-						<div class="span4" style="text-align: right;">
+					{% else %}
+						<div id="fassearch-no-results-content">
+							<p class="message">Your search &quot;<span class="term">{{ form.cleaned_data.term }}</span>&quot; did not match any UK trade profiles.</p>
+						</div>
+					{% endif %}
+				{% endif %}
+				{% for company in results %}
+				<div class="public-company-profiles-result-item company-profile-details-body">
+					<div class="row-fluid ">
+						<!-- Company Logo area -->
+						<div class="span2 company-logo">
+							<div class="logo-container">
+								<div class="logo">
+									{% if company.logo %}
+									<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}">
+										<img src="{{company.logo}}" alt="{{ company.name }}" />
+									</a>
+									{% else %}
+										<img class="placeholder" src="/static/images/placeholder.png" alt="" />
+									{% endif %}
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="span9">
+							<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}">
+								<h3 class="ed-truncate-single-line">{{ company.name }}</h3>
+							</a>
+							{% if company.description or company.summary %}
+								<div class="ed-company-search-summary">
+									<span>{{company.summary|default:company.description|truncatechars:135}}</span>
+		                        </div>
+		                    {% endif %}
+								<div class="row-fluid">
+									<a class="pull-left" href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}" class="ed-public-company-profiles-result-item-profile-link">
+		                           view profile
+		                       		</a>
+									<i class="pull-right" class="public-company-profiles-result-item-updated">Updated: {{ company.modified|date_recency }}</i>
+		                       	</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				{% if results %}
+					<div class="row-fluid company-profile-details-body-toolbar company-profile-details-body-toolbar-bottom">
+						<div class="offset8 span4" style="text-align: right;">
 							{% include 'company-search-results-paginator.html' %}
 						</div>
 					</div>
-				{% else %}
-					<div id="fassearch-no-results-content">
-						<p class="message">Your search &quot;<span class="term">{{ form.cleaned_data.term }}</span>&quot; did not match any UK trade profiles.</p>
-					</div>
 				{% endif %}
-			{% endif %}
-			
-			{% for company in results %}
-			<div class="public-company-profiles-result-item company-profile-details-body">
-				<div class="row-fluid ">
-					<!-- Company Logo area -->
-					<div class="span2 company-logo">
-						<div class="logo-container">
-							<div class="logo">
-								{% if company.logo %}
-								<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}">
-									<img src="{{company.logo}}" alt="{{ company.name }}" />
-								</a>
-								{% else %}
-									<img class="placeholder" src="/static/images/placeholder.png" alt="" />
-								{% endif %}
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="span6">
-						<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}">
-							<h3 class="ed-truncate-single-line">{{ company.name }}</h3>
-						</a>
-						{% if company.description or company.summary %}
-							<div>
-								<span>{{company.summary|default:company.description|truncatechars:135}}</span>
-	                        </div>
-	                    {% endif %}
-						<div>
-							<a href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}" class="ed-public-company-profiles-result-item-profile-link">
-                           view profile
-                       		</a>
-                       	</div>
-					</div>
-					<div class="span3">
-						<p><b>At a glance</b><p>
-						<div>
-							{% if company.employees %}
-								<div>
-									Employees: {{company.employees}}
-								</div>
-							{% endif %}
-							{% if company.date_of_creation %}
-								<div>Date incorporated: {{ company.date_of_creation|date:'Y' }}</div>
-							{% endif %}
-							<i class="public-company-profiles-result-item-updated">Updated: {{ company.modified|date_recency }}</i>
-						</div>
-					</div>
-
-				</div>
 			</div>
-			{% endfor %}
-			
-			{% if results %}
-				<div class="row-fluid company-profile-details-body-toolbar company-profile-details-body-toolbar-bottom">
-					<div class="offset8 span4" style="text-align: right;">
-						{% include 'company-search-results-paginator.html' %}
-					</div>
-				</div>
-			{% endif %}
-		
-		{% if results %}
-			{% include 'anonymous-subscribe-form.html' with form=subscribe.form %}
-		{% else %}
-			{% if not form.is_bound %}
-			<div id="fassearch-initial-content">
-				<p class="message">Our UK trade profiles will help you contact the right people in the right company.</p>
-				<p class="list-header">Trade profiles give you:</p>
-				<ul>
-					<li>a company summary</li>
-					<li>examples of outstanding projects, goods and services</li>
-					<li>direct contact with a member of a sales or business development team</li>
-				</ul>
-			</div>
-			{% endif %}
-		{% endif %}
-		
+		</div>
 	</div>
+</form>
+<div class="container">
+	{% if results %}
+		{% include 'anonymous-subscribe-form.html' with form=subscribe.form %}
+	{% else %}
+		{% if not form.is_bound %}
+		<div id="fassearch-initial-content">
+			<p class="message">Our UK trade profiles will help you contact the right people in the right company.</p>
+			<p class="list-header">Trade profiles give you:</p>
+			<ul>
+				<li>a company summary</li>
+				<li>examples of outstanding projects, goods and services</li>
+				<li>direct contact with a member of a sales or business development team</li>
+			</ul>
+		</div>
+		{% endif %}
+	{% endif %}
+</div>
 {% endblock %}
+
+{% block bodyScripts %}
+    <script type="text/javascript" src="{% static 'javascripts/company-search.js' %}"></script>
+{% endblock bodyScripts %}

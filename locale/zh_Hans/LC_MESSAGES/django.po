@@ -49,8 +49,6 @@ msgid "i-limb quantum&trade; user"
 msgstr ""
 
 #: enrolment/constants.py:35
-#, fuzzy
-#| msgid "Healthcare and life sciences in the UK"
 msgid "Healthcare and life sciences"
 msgstr "英国的医疗保健和生命科学"
 
@@ -217,8 +215,6 @@ msgid "Tim Warrillow"
 msgstr ""
 
 #: enrolment/constants.py:242
-#, fuzzy
-#| msgid "The UK's food and drink"
 msgid "Food and drink"
 msgstr "来自英国的食品和饮料"
 
@@ -301,8 +297,6 @@ msgid "Email address"
 msgstr ""
 
 #: enrolment/forms.py:27
-#, fuzzy
-#| msgid "Industries"
 msgid "Industry"
 msgstr "产业"
 
@@ -454,10 +448,6 @@ msgstr "英国的先进技术"
 
 #: enrolment/templates/bidi/landing-page.html:77
 #: enrolment/templates/landing-page.html:81
-#, fuzzy
-#| msgid ""
-#| "Check out the latest cutting-edge technologies that the UK is bringing to "
-#| "the world."
 msgid ""
 "Check out the cutting-edge technologies that the UK is bringing to the world."
 msgstr "察看英国带给世界的尖端创新技术。"
@@ -499,10 +489,6 @@ msgstr "来自英国的食品和饮料"
 
 #: enrolment/templates/bidi/landing-page.html:113
 #: enrolment/templates/landing-page.html:117
-#, fuzzy
-#| msgid ""
-#| "Whether you want the most innovative food brands or exceptional quality "
-#| "drinks, the UK is the first place to look."
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "is the first place to look."
@@ -519,16 +505,12 @@ msgstr "详细了解来自英国的食品和饮料"
 
 #: enrolment/templates/bidi/landing-page.html:127
 #: enrolment/templates/landing-page.html:131
-#, fuzzy
-#| msgid "UK industries"
 msgid "See more industries"
 msgstr "英国贸易部门"
 
 #: enrolment/templates/bidi/lead-generation-form.html:6
 #: enrolment/templates/lead-generation-form.html:6
 #: exportopportunity/templates/export-opportunity.html:11
-#, fuzzy
-#| msgid "Find UK companies to do business with"
 msgid "Get UK companies to fulfil your business needs"
 msgstr "寻找可以合作的英国公司"
 
@@ -572,10 +554,6 @@ msgstr ""
 
 #: enrolment/templates/bidi/sector-list.html:62
 #: enrolment/templates/sector-list.html:65
-#, fuzzy
-#| msgid ""
-#| "Check out the latest cutting-edge technologies that the UK is bringing to "
-#| "the world."
 msgid ""
 "Check out the cutting-edge technological innovations that the UK is bringing "
 "to the world."
@@ -583,10 +561,6 @@ msgstr "察看英国带给世界的尖端创新技术。"
 
 #: enrolment/templates/bidi/sector-list.html:80
 #: enrolment/templates/sector-list.html:83
-#, fuzzy
-#| msgid ""
-#| "Whether you need buildings designed, films made or a fresh approach to "
-#| "marketing, the UK is the first place to look."
 msgid ""
 "Whether you need buildings designed, films made, or a fresh approach to "
 "marketing, the UK is the first place to look."
@@ -595,17 +569,11 @@ msgstr ""
 
 #: enrolment/templates/bidi/sector-list.html:92
 #: enrolment/templates/sector-list.html:95
-#, fuzzy
-#| msgid "The UK's food and drink"
 msgid "The UK’s food and drink"
 msgstr "来自英国的食品和饮料"
 
 #: enrolment/templates/bidi/sector-list.html:94
 #: enrolment/templates/sector-list.html:97
-#, fuzzy
-#| msgid ""
-#| "Whether you want the most innovative food brands or exceptional quality "
-#| "drinks, the UK is the first place to look."
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "should be first on your list."
@@ -614,8 +582,6 @@ msgstr ""
 "是您的不二之选。"
 
 #: enrolment/templates/browse-companies.html:4
-#, fuzzy
-#| msgid "Find great UK companies"
 msgid "Find other great UK companies"
 msgstr "寻找优秀的英国公司"
 
@@ -658,8 +624,6 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/base.html:58
 #: enrolment/templates/marketing-pages/bidi/base.html:58
-#, fuzzy
-#| msgid "Find out more about UK technology"
 msgid "Read more about the company"
 msgstr "详细了解英国的技术"
 
@@ -685,20 +649,14 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:7
-#, fuzzy
-#| msgid "Healthcare and life sciences in the UK"
 msgid "Buy creative services from the UK"
 msgstr "英国的医疗保健和生命科学"
 
 #: enrolment/templates/marketing-pages/creative.html:10
-#, fuzzy
-#| msgid "The UK's creative services"
 msgid "Delivering exceptional creative services"
 msgstr "来自英国的创新服务"
 
 #: enrolment/templates/marketing-pages/creative.html:14
-#, fuzzy
-#| msgid "Find out more about the UK’s creative services"
 msgid "Read more about creative services"
 msgstr "详细了解来自英国的创意服务"
 
@@ -880,16 +838,10 @@ msgid "Buy UK food and drink products and services"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:10
-#, fuzzy
-#| msgid "The UK's food and drink"
 msgid "UK food and drink"
 msgstr "来自英国的食品和饮料"
 
 #: enrolment/templates/marketing-pages/food.html:12
-#, fuzzy
-#| msgid ""
-#| "Whether you want the most innovative food brands or exceptional quality "
-#| "drinks, the UK is the first place to look."
 msgid ""
 "Whether you want the most delicious food brands or exceptional quality "
 "drinks, the UK is the first place to look."
@@ -898,8 +850,6 @@ msgstr ""
 "是您的不二之选。"
 
 #: enrolment/templates/marketing-pages/food.html:14
-#, fuzzy
-#| msgid "Find out more about UK food and drink"
 msgid "Read more about UK food and drink"
 msgstr "详细了解来自英国的食品和饮料"
 
@@ -963,8 +913,6 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:49
-#, fuzzy
-#| msgid "The UK's food and drink"
 msgid "Innovation in food and drink"
 msgstr "来自英国的食品和饮料"
 
@@ -1014,8 +962,6 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:72
-#, fuzzy
-#| msgid "Find out more about UK food and drink"
 msgid "Find your UK trade partner in food and drink today"
 msgstr "详细了解来自英国的食品和饮料"
 
@@ -1024,10 +970,6 @@ msgid "See the UK's food and drink companies on the Find a supplier service"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:81
-#, fuzzy
-#| msgid ""
-#| "Exceptionally innovative and creative UK trade partners are ready to work "
-#| "with you. Discover them on the Find a Supplier service."
 msgid ""
 "Creative UK businesses are ready to work with you. Discover them on the Find "
 "a Supplier service."
@@ -1053,22 +995,14 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/health.html:7
-#, fuzzy
-#| msgid "Healthcare and life sciences in the UK"
 msgid "Buy UK healthcare and life sciences products and services"
 msgstr "英国的医疗保健和生命科学"
 
 #: enrolment/templates/marketing-pages/health.html:9
-#, fuzzy
-#| msgid "Find out more about the UK’s healthcare and life sciences"
 msgid "Delivering the exceptional in healthcare and life sciences"
 msgstr "详细了解英国医疗保健和生命科学"
 
 #: enrolment/templates/marketing-pages/health.html:13
-#, fuzzy
-#| msgid ""
-#| "Whether you need buildings designed, films made or a fresh approach to "
-#| "marketing, the UK is the first place to look."
 msgid ""
 "Whether you need hospitals built, primary care services managed, or reliable "
 "suppliers of the latest medical technology and pharmaceutical advances, the "
@@ -1077,14 +1011,10 @@ msgstr ""
 "无论您需要设计建筑、制作电影还是构思新颖的营销方法，英国都将是您的不二之选。"
 
 #: enrolment/templates/marketing-pages/health.html:16
-#, fuzzy
-#| msgid "Find out more about the UK’s healthcare and life sciences"
 msgid "Read more about healthcare and life sciences"
 msgstr "详细了解英国医疗保健和生命科学"
 
 #: enrolment/templates/marketing-pages/health.html:22
-#, fuzzy
-#| msgid "Healthcare and life sciences in the UK"
 msgid "Healthcare and life sciences from the UK"
 msgstr "英国的医疗保健和生命科学"
 
@@ -1242,10 +1172,6 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/health.html:96
-#, fuzzy
-#| msgid ""
-#| "Whether you need buildings designed, films made or a fresh approach to "
-#| "marketing, the UK is the first place to look."
 msgid ""
 "Whether you need: hospitals built and primary care services managed, or you "
 "need reliable suppliers of the latest medical technology pharmaceutical "
@@ -1260,16 +1186,10 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/health.html:103
-#, fuzzy
-#| msgid "Healthcare and life sciences in the UK"
 msgid "Find UK healthcare and life sciences companies to meet your needs"
 msgstr "英国的医疗保健和生命科学"
 
 #: enrolment/templates/marketing-pages/health.html:105
-#, fuzzy
-#| msgid ""
-#| "Get access to the UK health and life sciences supply-chain, delivering "
-#| "high quality, innovative services to the world."
 msgid ""
 "Get access to the exceptional UK healthcare and life sciences supply chain. "
 "Register to be notified as soon as companies that match your needs have "
@@ -1277,8 +1197,6 @@ msgid ""
 msgstr "进入英国医疗保健和生命科学供应链，向全世界交付高质量的创新服务。\t"
 
 #: enrolment/templates/marketing-pages/sports-infrastructure.html:8
-#, fuzzy
-#| msgid "The UK's creative services"
 msgid "The UK's global sports infrastructure services"
 msgstr "来自英国的创新服务"
 
@@ -1448,22 +1366,14 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/tech.html:7
-#, fuzzy
-#| msgid "Find out more about UK technology"
 msgid "Buy UK technology products and services"
 msgstr "详细了解英国的技术"
 
 #: enrolment/templates/marketing-pages/tech.html:10
-#, fuzzy
-#| msgid "The UK's advanced technology"
 msgid "UK technology"
 msgstr "英国的先进技术"
 
 #: enrolment/templates/marketing-pages/tech.html:12
-#, fuzzy
-#| msgid ""
-#| "Whether you want the most innovative food brands or exceptional quality "
-#| "drinks, the UK is the first place to look."
 msgid ""
 "Whether you need electronic systems, data analytics, artificial intelligence "
 "or semiconductors, the UK is the first place to look."
@@ -1472,8 +1382,6 @@ msgstr ""
 "是您的不二之选。"
 
 #: enrolment/templates/marketing-pages/tech.html:14
-#, fuzzy
-#| msgid "Find out more about UK technology"
 msgid "Read more about technology in the UK"
 msgstr "详细了解英国的技术"
 
@@ -1605,10 +1513,6 @@ msgid "See the UK's technology providers on the Find a supplier service"
 msgstr ""
 
 #: enrolment/templates/marketing-pages/tech.html:73
-#, fuzzy
-#| msgid ""
-#| "Exceptionally innovative and creative UK trade partners are ready to work "
-#| "with you. Discover them on the Find a Supplier service."
 msgid ""
 "Creative UK trade partners are ready to work with you. Discover them on the "
 "Find a Supplier service."
@@ -1617,8 +1521,6 @@ msgstr ""
 "现他们吧。"
 
 #: enrolment/templates/marketing-pages/tech.html:76
-#, fuzzy
-#| msgid "Find UK companies to do business with"
 msgid "Find UK technology companies to meet your needs"
 msgstr "寻找可以合作的英国公司"
 
