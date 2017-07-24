@@ -1,7 +1,6 @@
 import http
 from unittest.mock import call, patch, Mock
 
-from directory_validators.constants import choices
 import pytest
 import requests
 
@@ -191,11 +190,7 @@ def test_public_profile_details_exposes_context(
     }
 
 
-def test_company_profile_list_redirects_to_search(
-    client, settings
-):
-    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = True
-
+def test_company_profile_list_with_params_redirects_to_search(client):
     url = reverse('public-company-profiles-list')
     response = client.get(url, {'sectors': 'AEROSPACE'})
 
@@ -203,58 +198,12 @@ def test_company_profile_list_redirects_to_search(
     assert response.get('Location') == '/search?sector=AEROSPACE'
 
 
-def test_company_profile_list_exposes_context(
-    client, api_response_list_public_profile_200, settings
-):
-    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
+def test_company_profile_list_redirects_to_search(client):
     url = reverse('public-company-profiles-list')
-    params = {'sectors': choices.COMPANY_CLASSIFICATIONS[1][0]}
-    expected_companies = helpers.get_company_list_from_response(
-        api_response_list_public_profile_200
-    )['results']
+    response = client.get(url)
 
-    response = client.get(url, params)
-    expected_template_name = views.PublishedProfileListView.template_name
-
-    assert response.status_code == http.client.OK
-    assert response.template_name == expected_template_name
-    assert response.context_data['companies'] == expected_companies
-    assert response.context_data['pagination'].paginator.count == 20
-    assert response.context_data['show_companies_count'] is True
-
-
-def test_company_profile_list_exposes_context_show_companies_count(
-    client, api_response_list_public_profile_200, settings
-):
-    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
-    url = reverse('public-company-profiles-list')
-    params = {'sectors': choices.COMPANY_CLASSIFICATIONS[1][0]}
-
-    response = client.get(url, params)
-
-    assert response.status_code == http.client.OK
-    assert response.context_data['show_companies_count'] is True
-
-
-def test_company_profile_list_exposes_context_hide_companies_count(
-    client, api_response_list_public_profile_200, settings
-):
-    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
-    url = reverse('public-company-profiles-list')
-
-    for params in [{}, {'sectors': ''}, {'sectors': ''}]:
-        response = client.get(url, {})
-
-        assert response.status_code == http.client.OK
-        assert response.context_data['show_companies_count'] is False
-
-
-def test_company_profile_list_general_context(client, settings):
-    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
-    view_name = 'public-company-profiles-list'
-    response = client.get(reverse(view_name))
-
-    assert response.context['active_view_name'] == view_name
+    assert response.status_code == 302
+    assert response.get('Location') == '/search'
 
 
 @patch.object(helpers, 'get_public_company_profile_from_response')
@@ -295,63 +244,6 @@ def test_public_profile_details_handles_404(
     response = client.get(url)
 
     assert response.status_code == http.client.NOT_FOUND
-
-
-def test_company_profile_list_exposes_selected_sector_label(client, settings):
-    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
-    url = reverse('public-company-profiles-list')
-    params = {'sectors': choices.COMPANY_CLASSIFICATIONS[1][0]}
-    response = client.get(url, params)
-
-    expected_label = choices.COMPANY_CLASSIFICATIONS[1][1]
-    assert response.context_data['selected_sector_label'] == expected_label
-
-
-@patch.object(views.api_client.company, 'list_public_profiles')
-def test_company_profile_list_calls_api(
-    mock_list_public_profiles, client, settings
-):
-    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
-    url = reverse('public-company-profiles-list')
-    params = {'sectors': choices.COMPANY_CLASSIFICATIONS[1][0]}
-    client.get(url, params)
-
-    assert mock_list_public_profiles.called_once_with(
-        sectors=choices.COMPANY_CLASSIFICATIONS[1][0],
-    )
-
-
-@patch.object(views.api_client.company, 'list_public_profiles')
-def test_company_profile_list_handles_bad_status(
-    mock_retrieve_public_profile, client, api_response_400, settings
-):
-    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
-    mock_retrieve_public_profile.return_value = api_response_400
-    url = reverse('public-company-profiles-list')
-    params = {'sectors': choices.COMPANY_CLASSIFICATIONS[1][0]}
-    with pytest.raises(requests.exceptions.HTTPError):
-        client.get(url, params)
-
-
-def test_company_profile_list_handles_no_form_data(client, settings):
-    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
-    url = reverse('public-company-profiles-list')
-    response = client.get(url, {})
-
-    assert response.context_data['form'].errors == {}
-
-
-@patch.object(views.api_client.company, 'list_public_profiles')
-def test_company_profile_list_handles_empty_page(
-    mock_list_profiles, client, settings
-):
-    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = False
-    mock_list_profiles.return_value = api_response_404()
-    url = reverse('public-company-profiles-list')
-    response = client.get(url, {'sectors': 'WATER', 'page': 10})
-
-    assert response.status_code == http.client.FOUND
-    assert response.get('Location') == '{url}?sectors=WATER'.format(url=url)
 
 
 @patch.object(views.api_client.company, 'retrieve_public_case_study')

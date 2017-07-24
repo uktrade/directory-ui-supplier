@@ -1,7 +1,3 @@
-import http
-
-import requests
-
 from django.conf import settings
 from django.core.paginator import EmptyPage, Paginator
 from django.core.urlresolvers import reverse
@@ -9,7 +5,7 @@ from django.http import Http404
 from django.shortcuts import redirect
 from django.template.response import TemplateResponse
 from django.utils.functional import cached_property
-from django.views.generic import TemplateView
+from django.views.generic import RedirectView, TemplateView
 from django.views.generic.edit import FormView
 
 from api_client import api_client
@@ -80,66 +76,15 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
         return redirect(url)
 
 
-class PublishedProfileListView(SubmitFormOnGetMixin, FormView):
-    template_name = 'company-public-profile-list.html'
-    form_class = forms.PublicProfileSearchForm
+class PublishedProfileListView(RedirectView):
 
-    def dispatch(self, *args, **kwargs):
-        if settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED:
-            url = '{url}?sector={sector}'.format(
-                url=reverse('company-search'),
-                sector=self.request.GET.get('sectors')
+    def get_redirect_url(self, *args, **kwargs):
+        sectors = self.request.GET.get('sectors')
+        if sectors:
+            return '{url}?sector={sector}'.format(
+                url=reverse('company-search'), sector=sectors
             )
-            return redirect(url)
-        return super().dispatch(*args, **kwargs)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['selected_sector_label'] = self.get_sector_label(context)
-        context['show_companies_count'] = self.get_show_companies_count()
-        context['active_view_name'] = 'public-company-profiles-list'
-        return context
-
-    def get_show_companies_count(self):
-        return bool(self.request.GET.get('sectors'))
-
-    def get_sector_label(self, context):
-        form = context['form']
-        if form.is_valid():
-            return helpers.get_sectors_label(form.cleaned_data['sectors'])
-        return ''
-
-    def get_results_and_count(self, form):
-        response = api_client.company.list_public_profiles(
-            sectors=form.cleaned_data['sectors'],
-            page=form.cleaned_data['page']
-        )
-        response.raise_for_status()
-        formatted = helpers.get_company_list_from_response(response)
-        return formatted['results'], formatted['count']
-
-    def handle_empty_page(self, form):
-        url = '{url}?sectors={sector}'.format(
-            url=reverse('public-company-profiles-list'),
-            sector=form.cleaned_data['sectors']
-        )
-        return redirect(url)
-
-    def form_valid(self, form):
-        try:
-            results, count = self.get_results_and_count(form)
-        except requests.exceptions.HTTPError as error:
-            if error.response.status_code == http.client.NOT_FOUND:
-                # supplier entered a page number returning no results, so
-                # redirect them back to the first page
-                return self.handle_empty_page(form)
-            raise
-        else:
-            context = self.get_context_data()
-            paginator = Paginator(range(count), 10)
-            context['pagination'] = paginator.page(form.cleaned_data['page'])
-            context['companies'] = results
-            return TemplateResponse(self.request, self.template_name, context)
+        return reverse('company-search')
 
 
 class PublishedProfileDetailView(TemplateView):
