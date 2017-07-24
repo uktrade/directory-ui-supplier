@@ -4,7 +4,7 @@
 {% load trans from i18n %}
 
 {% block css %}
-	<link href="{% static 'landing-page-bidi.css' %}" media="all" rel="stylesheet" />
+	<link href="{% static 'sector-list-page-bidi.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
 {% block css_layout_class %}
@@ -17,24 +17,14 @@ fas-industries-content
 
 {% block content %}
 <div class="container">
-	<div class="ed-landing-page-gap">
-		<div class="row-fluid">
-			<div class="span12 great-blue-bar">
-				<h1 class="element-within company-name-title">
-					<span class="dont-break-out">{% trans "UK industries" %}</span>
-				</h1>
-			</div>
-		</div>
-		<div class="ed-landing-page-synopsis">
-			<div class="row-fluid">
-				<p>
-					{% trans "As a decision-maker in an international business you need look no further than the UK for innovative, high-quality products and services. It is the place to make the right trade connections with major corporations and smaller enterprises across every sector of industry." %}
-				</p>
-				<p>
-					{% trans "We can help you make vital business connections with ideal companies. Choose from the businesses in these UK industries to work with you." %}
-				</p>
-			</div>
-		</div>
+	<div id="intro">
+		<h2 class="section-header">{% trans "UK industries" %}</h2>
+		<p>
+			{% trans "As a decision-maker in an international business you need look no further than the UK for innovative, high-quality products and services. It is the place to make the right trade connections with major corporations and smaller enterprises across every sector of industry." %}
+		</p>
+		<p>
+			{% trans "We can help you make vital business connections with ideal companies. Choose from the businesses in these UK industries to work with you." %}
+		</p>
 	</div>
 
 	<div class="row-fluid ed-landing-page-gap">

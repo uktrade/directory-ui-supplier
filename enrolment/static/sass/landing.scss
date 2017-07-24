@@ -385,27 +385,6 @@ a.ed-landing-page-see-more-button {
 }
 
 
-/* General
- ******************/
-.section-header {
-  font-family: $font-family;
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 40px;
-  letter-spacing: -0.6px;
-  margin: 0 0 0.7em 0;
-}
-
-
-/* Intro 
- ******************/
-#intro {
-  border: $grey-3 solid 1px;
-  margin-bottom: 20px;
-  padding: 30px 30px 30px 15px;
-}
-
-
 /* Industries
  ******************/
 .industry {
@@ -464,24 +443,6 @@ a.ed-landing-page-see-more-button {
 #industries {
   margin-bottom: 45px;
   overflow: hidden;
-}
-
-
-/* DESKTOP ONLY
- ******************/
-@media (min-width: 800px) {
-  #intro {
-    [class*="span"] {
-      display: table-cell;
-      float: none;
-      padding-left: 2.12%; /* based on Bootstrap margin */
-      vertical-align: top;
-    
-      &:first-child {
-        padding-left: 0;
-      }
-    }
-  }
 }
 
 
@@ -545,16 +506,7 @@ a.ed-landing-page-see-more-button {
     display: block;
     margin-bottom: 30px;
   }
-  
-  #intro {
-    padding-right: 15px;
-    
-    [class*="span"] {
-      display: block;
-      margin-left: 0;
-      width: auto;
-    }
-  }
+
 }
 
 @media (max-width: 768px) {

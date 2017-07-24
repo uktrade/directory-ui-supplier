@@ -1039,6 +1039,27 @@ a.ed-filled-button-primary {
 }
 
 
+/* General
+ ******************/
+.section-header {
+  font-family: $font-family;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  margin: 0 0 0.7em 0;
+}
+
+
+/* Intro 
+ ******************/
+#intro {
+  border: $grey-3 solid 1px;
+  margin-bottom: 20px;
+  padding: 30px 30px 30px 15px;
+}
+
+
 /* Components
  *****************/
 .browse-companies-container,
@@ -1076,5 +1097,24 @@ a.ed-filled-button-primary {
     margin: 0 0 20px 0;
     min-height: 40px;
     padding: 10px 0 0 51px;
+  }
+}
+
+
+
+/* DESKTOP ONLY
+ ******************/
+@media (min-width: 800px) {
+  #intro {
+    [class*="span"] {
+      display: table-cell;
+      float: none;
+      padding-left: 2.12%; /* based on Bootstrap margin */
+      vertical-align: top;
+    
+      &:first-child {
+        padding-left: 0;
+      }
+    }
   }
 }
