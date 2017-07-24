@@ -124,13 +124,10 @@
   .logo-container {
     display: table;
     @media (max-width: 767px) {
-        margin-bottom: 20px;
+      margin-bottom: 20px;
     }
     img {
       max-height: 135px;
-    }
-    .logo {
-      padding-top: 20px;
     }
   }
 }
@@ -269,14 +266,13 @@
 
 .company-profile-details-body-toolbar-bottom {
   border-top: 0;
-  margin-bottom: 40px;
 }
 
 .public-company-profiles-result-item {
   border: solid 1px #d8d8d8;
   border-top: 0;
   color: #4a4a4a;
-  padding: 20px;
+  padding: 20px 10px 20px 10px;
   word-wrap: break-word;
   h3 {
     font-size: 24px;
@@ -564,7 +560,11 @@ h1 {
   }
 }
 
+.ed-company-search-summary {
+  margin-bottom: 10px;
+}
 #fassearch-no-results-content {
+  min-height: 450px;
   .message {
     padding: 50px 0;
     text-align: center;
@@ -603,6 +603,28 @@ h1 {
   }
 }
 
+#ed-search-filters-container {
+  margin-left: 0;
+  .company-profile-details-body-toolbar {
+    padding-bottom: 32px;  
+  }
+}
+
+#ed-search-filters-list {
+  border: solid 1px #d8d8d8;
+  border-top: 0;
+  padding: 15px 0 15px 17px;
+}
+
+#id_sector {
+  margin-top: 10px;
+  margin: 0;
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-left: 4px;
+  padding-top: 4px;
+}
 
 /* Mobile 
  *****************/
@@ -621,7 +643,15 @@ h1 {
   }
   
   .supplier-search-form {
-    padding: 15px;
+    padding: 0;
+    background-color: transparent;
+    margin-bottom: 0;
+    label {
+      color: white;
+    }
+    .button {
+      margin-bottom: 0;
+    }
   }
   
   #fassearch-initial-content {
@@ -629,8 +659,28 @@ h1 {
       font-size: 18px;
     }
   }
+
+  #ed-search-filters-container {
+    margin-bottom: 20px;
+    background-color: #f6f4f1;
+  }
+
+  #ed-search-filters-list {
+    background-color: #ffffff;
+  }
+
+  body.js-enabled #ed-search-filters-list.mobile-hide {
+    display: none;
+  }
+
 }
 
+/* desktop */
+@media (min-width: 979px) {
+  #ed-search-list-container {
+    margin-left: 20px;
+  }
+}
 
 /* IE targeted hack because 10+ no longer supports Conditional Comments */
 @media screen\0 {
