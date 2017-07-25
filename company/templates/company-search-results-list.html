@@ -24,21 +24,20 @@
 	<div class="clearfix"></div>
 	<div id="fassearch-content" class="container">
 		<div>
-			<div class="span3" id="ed-search-filters-container">
+			<div class="span3 ed-js-filter-list-mobile-closed" id="ed-search-filters-container">
 				{% if form.is_bound %}
 					<div class="company-profile-details-body-toolbar">
 						<div>
 							<h2 class="screen-reader-only">Search filters</h2>
 							<span id="ed-search-filters-title">Filters</span>
 							{% if form.sector.value %}
-								<a href="?term={{ form.cleaned_data.term }}" class="pull-right">Clear all</a>
-							{% else %}
-								<img src="{% static 'images/icons/filters.svg' %}" class="pull-right ed-show-tablet" />
+								<a href="?term={{ form.cleaned_data.term }}" id="ed-filters-clear-all" class="pull-right">Clear all</a>
 							{% endif %}
+							<i id="ed-search-filters-icon" class="pull-right ed-show-tablet"></i>
 						</div>
 					</div>
 
-					<div id="ed-search-filters-list" class="mobile-hide">
+					<div id="ed-search-filters-list">
 						<strong>Filter by industry</strong>
 						<div class="ed-pretty-radio-select">
 							{{ form.sector }}
