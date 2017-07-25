@@ -614,17 +614,17 @@ h1 {
   border: solid 1px #d8d8d8;
   border-top: 0;
   padding: 15px 0 15px 17px;
+  ul {
+    margin-top: 10px;
+    margin: 0;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left: 4px;
+    padding-top: 4px;
+  }
 }
 
-#id_sector {
-  margin-top: 10px;
-  margin: 0;
-  height: 300px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  padding-left: 4px;
-  padding-top: 4px;
-}
 
 /* Mobile 
  *****************/
