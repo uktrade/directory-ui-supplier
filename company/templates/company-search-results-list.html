@@ -25,22 +25,24 @@
 	<div id="fassearch-content" class="container">
 		<div>
 			<div class="span3" id="ed-search-filters-container">
-				<div class="company-profile-details-body-toolbar">
-					<div>
-						<h2 class="screen-reader-only">Search filters</h2>
-						<span>Filters</span>
-						{% if form.sector.value %}
-							<a href="?term={{ form.cleaned_data.term }}" class="pull-right">Clear all</a>
-						{% endif %}
+				{% if form.is_bound %}
+					<div class="company-profile-details-body-toolbar">
+						<div>
+							<h2 class="screen-reader-only">Search filters</h2>
+							<span>Filters</span>
+							{% if form.sector.value %}
+								<a href="?term={{ form.cleaned_data.term }}" class="pull-right">Clear all</a>
+							{% endif %}
+						</div>
 					</div>
-				</div>
 
-				<div id="ed-search-filters-list" class="mobile-hide">
-					<strong>Filter by industry</strong>
-					<div class="ed-pretty-radio-select">
-						{{ form.sector }}
+					<div id="ed-search-filters-list" class="mobile-hide">
+						<strong>Filter by industry</strong>
+						<div class="ed-pretty-radio-select">
+							{{ form.sector }}
+						</div>
 					</div>
-				</div>
+				{% endif %}
 			</div>
 			<div class="span7" id="ed-search-list-container">
 				{% if form.is_bound %}

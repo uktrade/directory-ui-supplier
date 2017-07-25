@@ -3,6 +3,8 @@ from datetime import datetime, timedelta
 from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
 
+from company import forms
+
 
 default_context = {
     'company': {
@@ -28,6 +30,7 @@ NO_RESULTS_FOUND_LABEL = 'No companies found'
 CONTACT_COMPANY_LABEL = 'Contact company'
 EMAIL_COMPANY_LABEL = 'Email company'
 RECENT_PROJECTS_LABEL = 'Recent projects'
+SEARCH_FILTERS_LABEL = 'Search filters'
 
 
 def test_case_study_detail_report_button():
@@ -227,3 +230,27 @@ def test_company_profile_details_renders_keywords():
     assert default_context['company']['keywords']
     for keyword in default_context['company']['keywords']:
         assert keyword in html
+
+
+def test_company_search_unsubmitted_hides_filters():
+    template_name = 'company-search-results-list.html'
+    context = {
+        'form': forms.CompanySearchForm(),
+        **default_context,
+    }
+
+    html = render_to_string(template_name, context)
+
+    assert SEARCH_FILTERS_LABEL not in html
+
+
+def test_company_search_submitted_shows_filters():
+    template_name = 'company-search-results-list.html'
+    context = {
+        'form': forms.CompanySearchForm(data={'term': 'things'}),
+        **default_context,
+    }
+
+    html = render_to_string(template_name, context)
+
+    assert SEARCH_FILTERS_LABEL in html
