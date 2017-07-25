@@ -606,7 +606,6 @@ h1 {
 #ed-search-filters-container {
   margin-left: 0;
   .company-profile-details-body-toolbar {
-    padding-bottom: 32px;
     position: relative;
   }
 }
@@ -628,6 +627,10 @@ h1 {
 
 #ed-search-filters-container img {
   display: none;
+}
+
+#ed-search-filters-title {
+  font-size: 24px;
 }
 
 /* Mobile 
@@ -652,11 +655,6 @@ h1 {
       display: block;
     }
   }
-
-  #ed-search-filters-title {
-    font-size: 24px;
-  }
-
 
   h1 {
     font-size: 30px;
