@@ -12,9 +12,6 @@ def feature_flags(request):
             'FEATURE_COMPANY_SEARCH_VIEW_ENABLED': (
                 settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED
             ),
-            'FEATURE_SEARCH_FILTER_SECTOR_ENABLED': (
-                settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED
-            )
         }
     }
 

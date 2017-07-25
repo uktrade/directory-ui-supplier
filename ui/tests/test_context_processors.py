@@ -14,7 +14,6 @@ def test_feature_returns_expected_features(rf, settings):
 
     settings.FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED = True
     settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = False
-    settings.FEATURE_SEARCH_FILTER_SECTOR_ENABLED = True
     request = rf.get('/')
     actual = context_processors.feature_flags(request)
 
@@ -22,7 +21,6 @@ def test_feature_returns_expected_features(rf, settings):
         'features': {
             'FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED': True,
             'FEATURE_COMPANY_SEARCH_VIEW_ENABLED': False,
-            'FEATURE_SEARCH_FILTER_SECTOR_ENABLED': True,
         },
     }
 

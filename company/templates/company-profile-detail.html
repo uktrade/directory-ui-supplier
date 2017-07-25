@@ -145,11 +145,7 @@
 						<h2>Industries of interest</h2>
 						<p>
 						{% for sector in company.sectors %}
-							{% if features.FEATURE_SEARCH_FILTER_SECTOR_ENABLED %}
-								<a class="stone-label" href="{% url 'company-search' %}?sector={{ sector.value }}">{{ sector.label }}</a>
-							{% else %}
-								<a class="stone-label" href="{% url 'public-company-profiles-list' %}?sectors={{ sector.value }}">{{ sector.label }}</a>
-							{% endif %}
+							<a class="stone-label" href="{% url 'company-search' %}?sector={{ sector.value }}">{{ sector.label }}</a>
 						{% endfor %}
 						</p>
 						{% if company.sectors %}
