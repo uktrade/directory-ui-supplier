@@ -29,9 +29,11 @@
 					<div class="company-profile-details-body-toolbar">
 						<div>
 							<h2 class="screen-reader-only">Search filters</h2>
-							<span>Filters</span>
+							<span id="ed-search-filters-title">Filters</span>
 							{% if form.sector.value %}
 								<a href="?term={{ form.cleaned_data.term }}" class="pull-right">Clear all</a>
+							{% else %}
+								<img src="{% static 'images/icons/filters.svg' %}" class="pull-right ed-show-tablet" />
 							{% endif %}
 						</div>
 					</div>

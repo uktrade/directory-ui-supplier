@@ -625,10 +625,29 @@ h1 {
   }
 }
 
+#ed-search-filters-container img {
+  display: none;
+}
 
 /* Mobile 
  *****************/
 @media (max-width: 640px) {
+
+  #ed-search-filters-container {
+    .company-profile-details-body-toolbar {
+      padding: 14px 20px;
+      height: 60px;    
+    }
+    img {
+      display: block;
+    }
+  }
+
+  #ed-search-filters-title {
+    font-size: 24px;
+  }
+
+
   h1 {
     font-size: 30px;
   }
