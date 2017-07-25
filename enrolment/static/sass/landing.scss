@@ -434,7 +434,7 @@ a.ed-landing-page-see-more-button {
 #industry-4 { border-width: 0 0 0 22px; }
 
 
-#industry-design-break-for-tablet-only {
+#industry-design-break-only {
   /* Matches horrible design-only element.
      See tablet media query for details. */
   display: none;
@@ -485,6 +485,7 @@ a.ed-landing-page-see-more-button {
     .title {
       font-size: 18px;
       line-height: 25px;
+      min-height: 0;
     }
   }
   
@@ -498,7 +499,7 @@ a.ed-landing-page-see-more-button {
   #industry-3 { border-width: 0 15px 0 0; }
   #industry-4 { border-width: 0 0 0 15px; }
   
-  #industry-design-break-for-tablet-only {
+  #industry-design-break-only {
     /* Matches horrible design-only element required to 
        force break on the display:table-cell elements
        trying accommodate table layout design without 
@@ -553,7 +554,7 @@ a.ed-landing-page-see-more-button {
     border: none; 
   }
   
-  #industry-design-break-for-tablet-only {
+  #industry-design-break-only {
     /* Not required for mobile */
     display: none;
   }

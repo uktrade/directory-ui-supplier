@@ -36,55 +36,8 @@ fas-home-content
 		</div>
 	</div>
 
-	<section id="industries">
-		<h2 class="section-header">{% trans "UK industries" %}</h2>
-		<article class="industry" id="industry-1">
-			<h3 class="title">{% trans "Healthcare and life sciences in the UK" %}</h3>
-			<img src="{% static 'images/fas-industry-health.png' %}" alt="" />
-			<p class="text">
-				{% trans "Get access to the UK health and life sciences supply-chain, delivering high quality, innovative services to the world." %}
-			</p>
-			<a class="more" href="{% url 'sector-detail-summary' slug='health' %}">
-				{% trans "Find out more about the UK’s healthcare and life sciences" %}
-			</a>
-		</article>
-		
-		<article class="industry" id="industry-2">
-			<h3 class="title">{% trans "The UK's advanced technology" %}</h3>
-			<img src="{% static 'images/fas-industry-technology.png' %}" alt="" />
-			<p class="text">
-				{% trans "Check out the cutting-edge technologies that the UK is bringing to the world." %}
-			</p>
-			<a class="more" href="{% url 'sector-detail-summary' slug='tech' %}">
-				{% trans "Find out more about UK technology" %}
-			</a>
-		</article>
-		
-		<span id="industry-design-break-for-tablet-only"></span>
-		
-		<article class="industry" id="industry-3">
-			<h3 class="title">{% trans "The UK's creative services" %}</h3>
-			<img src="{% static 'images/fas-industry-creative.png' %}" alt="" />
-			<p class="text">
-				{% trans "Whether you need buildings designed, films made or a fresh approach to marketing, the UK is the first place to look." %}
-			</p>
-			<a class="more" href="{% url 'sector-detail-summary' slug='creative' %}">
-				{% trans "Find out more about the UK’s creative services" %}
-			</a>
-		</article>
-		
-		<article class="industry" id="industry-4">
-			<h3 class="title">{% trans "The UK's food and drink" %}</h3>
-			<img src="{% static 'images/fas-industry-food.png' %}" alt="" />
-			<p class="text">
-				{% trans "Whether you want the best food brands or exceptional quality drinks, the UK is the first place to look." %}
-			</p>
-			<a class="more" href="{% url 'sector-detail-summary' slug='food-and-drink' %}">
-				{% trans "Find out more about UK food and drink" %}
-			</a>
-		</article>
-	</section>
-	
+	{% include 'industry-teasers.html' %}	
+			
 	{% if features.FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED %}
 		<div class="ed-landing-page-gap">
 			<a class="ed-naked-button-primary" href="{% url 'sector-list' %}">{% trans "See more industries" %}</a>

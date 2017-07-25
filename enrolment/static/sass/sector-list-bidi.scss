@@ -1,0 +1,93 @@
+
+.industry {
+  a, p, .title {
+    margin-left: 0;
+    margin-right: 30%;
+  }
+  
+  img {
+    float: right;
+    
+    /* flip the images */
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+  }
+  
+  &:before {
+    left: 0;
+  }
+}
+
+#industry-1 {
+  img {
+    left: initial;
+    right: 0;
+  }
+}
+
+#industry-2,
+#industry-4 {
+  img {
+    left: initial;
+    right: -25px;
+  }
+}
+
+#industry-3 {
+  img {
+    right: -140px;
+  }
+}
+
+
+
+/* DESKTOP ONLY
+ ******************/
+@media (min-width: 800px) {
+  #industry-1 { 
+    border-left: $white solid 15px; 
+    border-right: none;
+  }
+
+  #industry-2 {
+    border-left: none; 
+    border-right: $white solid 15px;
+  }
+
+  #industry-3 { 
+    border-left: $white solid 15px; 
+    border-right: none;
+  }
+
+  #industry-4 { 
+    border-left: none; 
+    border-right: $white solid 15px; 
+  }
+
+}
+
+
+/* MOBILE
+ ******************/
+@media (max-width: 380px) {
+  .industry {
+    a, p, .title {
+  	  margin-right: 0;
+    }
+  }
+  
+  #industry-1,
+  #industry-2,
+  #industry-3,
+  #industry-4 { 
+    border: none;
+    img {
+      right: 0;
+    }
+  }
+
+}
