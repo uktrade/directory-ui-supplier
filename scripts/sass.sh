@@ -21,8 +21,6 @@ input_output_map="\
 	enrolment/static/sass/supplier-profile-details.scss:enrolment/static/supplier-profile-details.css \
 	enrolment/static/sass/landing-page.scss:enrolment/static/landing-page.css \
 	enrolment/static/sass/landing-page-bidi.scss:enrolment/static/landing-page-bidi.css \
-	enrolment/static/sass/sector-list-page.scss:enrolment/static/sector-list-page.css \
-	enrolment/static/sass/sector-list-page-bidi.scss:enrolment/static/sector-list-page-bidi.css \
 	enrolment/static/sass/marketing-page.scss:enrolment/static/marketing-page.css \
 	enrolment/static/sass/marketing-page-bidi.scss:enrolment/static/marketing-page-bidi.css \
 	enrolment/static/sass/legal.scss:enrolment/static/legal.css \
