@@ -546,6 +546,7 @@ h1 {
   min-height: 500px;
   margin-bottom: 30px;
   padding-top: 220px;
+  position: relative;
 
   .ed-hero-sub-header-title {
     color: $white2;
@@ -557,6 +558,16 @@ h1 {
     line-height: 55px;
     margin: 0;
     width: 800px;
+  }
+  
+  &:after {
+    background-color: $red-1;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 4px;
+    position: absolute;
+    width: 100%;
   }
 }
 
@@ -839,7 +850,7 @@ a.ed-filled-button-primary {
 
 
 .ed-landing-page-form-container {
-  border-bottom: 7px solid $flag-red;
+  border-bottom: 4px solid $red-1;
   margin-bottom: 40px;
   .ed-landing-page-form-inner {
     padding:20px;
