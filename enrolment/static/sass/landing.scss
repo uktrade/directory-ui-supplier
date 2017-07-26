@@ -16,51 +16,6 @@
   }
 }
 
-.ed-landing-page-sector-specific-container {
-  h1, h2, h3 {
-    font-weight: 300;
-  }
-  section {
-    margin-bottom: 20px;
-  }
-}
-
-.ed-proposition-container {
-  h2 {
-    font-size: 24px;
-    font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.04;
-    color: #4a4a4a;
-    margin-bottom: 24px;
-  }
-  p {
-    margin-top: 0;
-    margin-bottom: 24px;
-  }
-  ul {
-    li {
-      list-style-type: disc;
-      margin-bottom: 24px;
-    }
-  }
-
-  .ed-key-facts-container {
-    background-color: #007ea3;
-    color: $white;
-    float: right;
-    margin: 0 0 20px 20px;
-    padding: 20px;
-    width: 50%;
-    
-    h2 {
-      color: $white;      
-      margin-top: 0;
-    }
-  }
-}
-
 .ed-landing-page-read-more {
   margin-top: 15px;
 }
@@ -207,16 +162,6 @@
     margin-bottom: 30px;
   }
 
-}
-
-@media (max-width: 768px) {
-  .ed-proposition-container {
-    .ed-key-facts-container {
-      float: none;
-      margin: 0 0 20px 0;
-      width: auto;
-    }
-  }
 }
 
 

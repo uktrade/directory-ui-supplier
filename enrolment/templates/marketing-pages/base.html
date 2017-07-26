@@ -13,29 +13,18 @@
 
 {% block content %}
 <div class="container ed-landing-page-sector-specific-container">
-	<section>
-		<div class="row-fluid">
-			<div class="span12 great-blue-bar">
-				<h2 class="element-within company-name-title">
-					<span class="dont-break-out">
-						{% block content_header %}
-							{% trans "Find your UK trade partner" %}
-						{% endblock %}
-					</span>
-				</h2>
-			</div>
-		</div>
-		<div class="ed-landing-page-synopsis">
-			<div class="row-fluid">
-				{% if show_proposition %}
-					<div class="ed-proposition-container">
-						{% block proposition %}{% endblock %}
-					</div>
-				{% else %}
-					{% block synopsis %}{% endblock %}
-				{% endif %}
-			</div>
-		</div>
+	<section id="intro">
+		<h2 class="section-header">
+			{% block content_header %}
+				{% trans "Find your UK trade partner" %}
+			{% endblock %}
+		</h2>
+
+		{% if show_proposition %}
+			{% block proposition %}{% endblock %}
+		{% else %}
+			{% block synopsis %}{% endblock %}
+		{% endif %}
 	</section>
 
 	<section class="ed-landing-page-sector-companies-list">

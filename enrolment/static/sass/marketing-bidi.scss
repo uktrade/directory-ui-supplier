@@ -10,6 +10,11 @@
   border-width: 20px 0 0 20px;
 }
 
+.ed-key-facts-container {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+
 .ed-landing-page-sector-case-study-inner {
   .span4 {
     float: right;
@@ -94,6 +99,11 @@
 }
 
 @media (max-width: 767px) {
+  .ed-key-facts-container {
+    float: none;
+    margin: 0 0 20px 0;
+  }
+  
   /* page class only to override bootstrap */
   .fas-marketing-page {
     .case-study-info {

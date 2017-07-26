@@ -1,3 +1,21 @@
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  line-height: 31px;
+  margin-bottom: 24px;
+}
+
+li {
+  line-height: inherit;
+  list-style-type: disc;
+  margin-bottom: 24px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
 .case-study-info {
   background-color: $aqua;
   padding: 20px;
@@ -30,14 +48,23 @@
   }
 }
 
+.ed-key-facts-container {
+  background-color: #007ea3;
+  color: $white;
+  float: right;
+  margin: 0 0 20px 20px;
+  padding: 20px;
+  width: 50%;
+  
+  h2 {     
+    margin-top: 0;
+  }
+}
+
 .ed-landing-page-sector-companies-list {
   border: 1px solid #dedede;
   padding: 20px;
   padding-top: 0;
-  h2 {
-    font-weight: 300;
-    font-size: 24px;
-  }
   
   .span4 {
     display: table-cell;
@@ -114,6 +141,12 @@
 }
 
 @media (max-width: 767px) {  
+  .ed-key-facts-container {
+    float: none;
+    margin: 0 0 20px 0;
+    width: auto;
+  }
+  
   /* page class only to override bootstrap */
   .fas-marketing-page {    
     .case-study-info,
