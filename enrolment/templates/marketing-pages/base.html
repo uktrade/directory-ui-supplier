@@ -35,18 +35,14 @@
 		<div class="row-fluid">
 			{% for company in companies %}
 				<div class="span4">
-					<div class="row-fluid">
-						<img class="ed-landing-page-sector-company-image" src="{{ company.image_url }}" alt="{% trans company.image_alt %}" />
-					</div>
-					<div class="row-fluid">
-						<h3 style="font-size: 21px;">{{ company.name }}</h3>
+					<article class="company">
+						<h3 class="title">{{ company.name }}</h3>
+						<img src="{{ company.image_url }}" alt="{% trans company.image_alt %}" />
 						<p>
 							{% trans company.description %}
 						</p>
-						<p>
-							<a href="{{ company.url }}">{% trans "Read more about the company" %}</a>
-						</p>
-					</div>
+						<a href="{{ company.url }}">{% trans "Read more about the company" %}</a>
+					</article>
 				</div>
 			{% endfor %}
 			{% if sector_value %}

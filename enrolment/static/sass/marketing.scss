@@ -44,6 +44,25 @@ li {
   }
 }
 
+.company {
+  padding-top: 58%;
+  position: relative;
+  
+  img {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; 
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    line-height: 31px;
+  }
+}
+
 .ed-key-facts-container {
   background-color: #007ea3;
   color: $white;
