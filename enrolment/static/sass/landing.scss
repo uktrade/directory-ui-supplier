@@ -7,21 +7,12 @@
   width: 100%; 
 }
 
-.ed-landing-page-sector-case-study-container {
-  border: 1px solid #dedede;
-  padding: 0 20px 20px 20px;
-
-  img {
-    padding: 0
-  }
-}
-
 .ed-landing-page-read-more {
   margin-top: 15px;
 }
 
 
-.ed-landing-page-sector-companies-list .browse-companies-container,
+#companies .browse-companies-container,
 #intro .search-companies-container {
   margin-bottom: 0;  
   p {
@@ -95,8 +86,27 @@
 }
   
 #industries {
+  border: none;
   margin-bottom: 45px;
+  padding: 0;
   overflow: hidden;
+}
+
+
+/* DESKTOP ONLY
+ ******************/
+@media (min-width: 800px) {
+  #intro {
+    [class*="span"] {
+      display: table-cell;
+      float: none;
+      vertical-align: top;
+    
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
 }
 
 
@@ -125,7 +135,7 @@
     }
   }
   
-  .ed-landing-page-sector-companies-list .browse-companies-container,
+  #companies .browse-companies-container,
   #intro .search-companies-container {
     .title {
       padding-top: 10px;
@@ -162,6 +172,13 @@
     margin-bottom: 30px;
   }
 
+  #intro {
+    [class*="span"] {
+      display: block;
+      margin-left: 0;
+      width: auto;
+    }
+  }
 }
 
 

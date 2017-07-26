@@ -28,7 +28,7 @@
   }
 }
 
-.ed-landing-page-sector-companies-list {
+#companies {
   .span4 {
     &:first-child {
       padding-left: 10px;
@@ -82,7 +82,7 @@
 /* Tablet 
  *******************/
 @media (max-width: 799px) {
-  .ed-landing-page-sector-companies-list {
+  #companies {
     .span4 {
       
       &:last-child {
@@ -120,7 +120,7 @@
 /* Mobile 
  *******************/
 @media (max-width: 540px) {
-  .ed-landing-page-sector-companies-list {
+  #companies {
     .span4 {
       &:first-child,
       &:last-child,

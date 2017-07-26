@@ -50,6 +50,16 @@
     padding: 0 15px;  
   }
   
+  section {
+    padding: 30px 15px;
+  }
+  
+  .ed-landing-page-form-container {
+    .ed-landing-page-form-inner {
+      padding: 30px 15px;
+    }
+  }
+  
   #menu-control {
     margin-top: 11px;
   }
@@ -63,9 +73,6 @@
 
 
 @media (max-width: 340px) {
-  body .container {
-  	padding: 0 10px;
-  }
   
   .header-gov-link {
     &:hover, 
