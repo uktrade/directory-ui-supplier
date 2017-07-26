@@ -346,7 +346,7 @@ msgstr "Seu nome"
 
 #: enrolment/forms.py:25 enrolment/forms.py:47
 msgid "Email address"
-msgstr ""
+msgstr "Endereço de e-mail"
 
 #: enrolment/forms.py:27
 msgid "Industry"
@@ -362,11 +362,11 @@ msgstr "País"
 
 #: enrolment/forms.py:48
 msgid "Organisation name"
-msgstr ""
+msgstr "Nome da organização"
 
 #: enrolment/forms.py:51
 msgid "Describe what you need"
-msgstr ""
+msgstr "Descreva o que você precisa"
 
 #: enrolment/forms.py:52
 msgid "Maximum 1000 characters."
@@ -416,7 +416,7 @@ msgstr "Indústrias"
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
 "business"
-msgstr ""
+msgstr "Bem-vindos à Grã-Bretanha e à Irlanda do Norte"
 
 #: enrolment/templates/bidi/landing-page.html:22
 #: enrolment/templates/landing-page.html:26
@@ -612,13 +612,20 @@ msgid ""
 "place to make the right trade connections with major corporations and "
 "smaller enterprises across every sector of industry."
 msgstr ""
+"Como pessoa responsável pela tomada de decisões em uma empresa "
+"internacional, basta procurar no Reino Unido e você encontrará "
+"produtos e serviços inovadores e de alta qualidade. Este é o lugar "
+"para se fazer as relações comerciais certas com grandes empresas e "
+"empresas de porte menor em todos os setores da indústria."
 
 #: enrolment/templates/bidi/sector-list.html:34
 #: enrolment/templates/sector-list.html:37
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
-msgstr ""
+msgstr "Nós podemos ajudar você a fazer conexões comerciais vitais com as empresas "
+"certas. Escolha as empresas desses setores do Reino Unido para trabalharem "
+"com você."
 
 #: enrolment/templates/bidi/sector-list.html:62
 #: enrolment/templates/sector-list.html:65
@@ -697,12 +704,12 @@ msgstr "Encontre o seu parceiro comercial no Reino Unido"
 #: enrolment/templates/marketing-pages/base.html:58
 #: enrolment/templates/marketing-pages/bidi/base.html:58
 msgid "Read more about the company"
-msgstr ""
+msgstr "Leia mais sobre a empresa"
 
 #: enrolment/templates/marketing-pages/base.html:73
 #: enrolment/templates/marketing-pages/bidi/base.html:73
 msgid "Company showcase"
-msgstr "Leia mais sobre a empresa"
+msgstr "Exposição da empresa"
 
 #: enrolment/templates/marketing-pages/base.html:88
 #: enrolment/templates/marketing-pages/bidi/base.html:88
@@ -922,7 +929,11 @@ msgid ""
 "the likes of Boeing and Mercedes-Benz. And our rights management companies "
 "have an ongoing reputation for protecting Intellectual Property for "
 "performers and producers alike."
-msgstr ""
+msgstr "Além de música para o mercado de consumo, as prósperas agências comerciais "
+"de áudio e música do Reino Unido estão fornecendo letras e trilhas a filmes "
+"feitos para empresas como a Boeing e a Mercedes-Benz. Além disso, nossas "
+"empresas de gestão de direitos são famosas por proteger a Propriedade "
+"Intelectual, tanto de artistas como de produtores."
 
 #: enrolment/templates/marketing-pages/creative.html:77
 msgid ""
@@ -930,11 +941,9 @@ msgid ""
 "lasting partnerships and collection-sharing with their peers from countries "
 "as diverse as Russia and Malawi."
 msgstr ""
-"Além de música para o mercado de consumo, as prósperas agências comerciais "
-"de áudio e música do Reino Unido estão fornecendo letras e trilhas a filmes "
-"feitos para empresas como a Boeing e a Mercedes-Benz. Além disso, nossas "
-"empresas de gestão de direitos são famosas por proteger a Propriedade "
-"Intelectual, tanto de artistas como de produtores."
+"Os museus nacionais do Reino Unido atraem visitantes de todo o mundo, têm "
+"parcerias duradouras e compartilham coleções com parceiros dos mais "
+"variados países, como a Rússia e o Malawi."
 
 #: enrolment/templates/marketing-pages/creative.html:80
 msgid "The UK is alive with exceptional talent and ingenuity."
@@ -1168,7 +1177,7 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/health.html:9
 msgid "Delivering the exceptional in healthcare and life sciences"
-msgstr ""
+msgstr "Excelência em cuidados de saúde e ciências da vida"
 
 #: enrolment/templates/marketing-pages/health.html:13
 msgid ""
@@ -1182,7 +1191,7 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/health.html:16
 msgid "Read more about healthcare and life sciences"
-msgstr ""
+msgstr "Leia mais sobre a saúde e ciências da vida"
 
 #: enrolment/templates/marketing-pages/health.html:22
 msgid "Healthcare and life sciences from the UK"
@@ -1798,7 +1807,8 @@ msgstr "Encontre o seu parceiro comercial de tecnologia do Reino Unido"
 
 #: enrolment/templates/marketing-pages/tech.html:70
 msgid "See the UK's technology providers on the Find a supplier service"
-msgstr ""
+msgstr "Encontre empresas do Reino Unido para satisfazer as necessidades "
+"da sua empresa"
 
 #: enrolment/templates/marketing-pages/tech.html:73
 msgid ""
@@ -1834,7 +1844,7 @@ msgstr ""
 
 #: exportopportunity/templates/export-opportunity.html:23
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
 #~ msgid "Advanced technology"
 #~ msgstr "Tecnologia avançada"
