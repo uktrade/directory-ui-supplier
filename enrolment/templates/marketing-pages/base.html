@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container ed-landing-page-sector-specific-container">
+<div class="container">
 	<section id="intro">
 		<h2 class="section-header">
 			{% block content_header %}
@@ -27,10 +27,10 @@
 		{% endif %}
 	</section>
 
-	<section class="ed-landing-page-sector-companies-list">
-		<div class="row-fluid">
-			{% block company_list_title %}{% endblock %}
-		</div>
+	<section id="companies">
+		<h2 class="section-header">
+			{% block companies_section_title %}{% endblock %}
+		</h2>
 
 		<div class="row-fluid">
 			{% for company in companies %}
@@ -58,9 +58,10 @@
 	</section>
 
 	<section class="ed-landing-page-sector-case-study-container">
-		<div class="row-fluid">
-			<h2>{% trans "Company showcase" %}</h2>
-		</div>
+		<h2 class="section-header">
+			{% trans "Company showcase" %}
+		</h2>
+		
 		<div class="row-fluid ed-image-caption">
 			<img class="span12" src="{{ case_study.image_url }}" alt="{% trans case_study.image_alt %}" />
 			{% if case_study.image_caption %}

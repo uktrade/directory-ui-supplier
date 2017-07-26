@@ -12,36 +12,25 @@
 {% endblock %}
 
 {% block content %}
-<div class="container ed-landing-page-sector-specific-container">
-	<section>
-		<div class="row-fluid">
-			<div class="span12 great-blue-bar">
-				<h2 class="element-within company-name-title">
-					<span class="dont-break-out">
-						{% block content_header %}
-							{% trans "Find your UK trade partner" %}
-						{% endblock %}
-					</span>
-				</h2>
-			</div>
-		</div>
-		<div class="ed-landing-page-synopsis">
-			<div class="row-fluid">
-				{% if show_proposition %}
-					<div class="ed-proposition-container">
-						{% block proposition %}{% endblock %}
-					</div>
-				{% else %}
-					{% block synopsis %}{% endblock %}
-				{% endif %}
-			</div>
-		</div>
+<div class="container">
+	<section id="intro">
+		<h2 class="section-header">
+			{% block content_header %}
+				{% trans "Find your UK trade partner" %}
+			{% endblock %}
+		</h2>
+
+		{% if show_proposition %}
+			{% block proposition %}{% endblock %}
+		{% else %}
+			{% block synopsis %}{% endblock %}
+		{% endif %}
 	</section>
 
-	<section class="ed-landing-page-sector-companies-list">
-		<div class="row-fluid">
-			{% block company_list_title %}{% endblock %}
-		</div>
+	<section id="companies">
+		<h2 class="section-header">
+			{% block companies_section_title %}{% endblock %}
+		</h2>
 
 		<div class="row-fluid">
 			{% for company in companies %}
@@ -69,9 +58,10 @@
 	</section>
 
 	<section class="ed-landing-page-sector-case-study-container">
-		<div class="row-fluid">
-			<h2>{% trans "Company showcase" %}</h2>
-		</div>
+		<h2 class="section-header">
+			{% trans "Company showcase" %}
+		</h2>
+
 		<div class="row-fluid ed-image-caption">
 			<img class="span12" src="{{ case_study.image_url }}" alt="{% trans case_study.image_alt %}" />
 			{% if case_study.image_caption %}
