@@ -688,7 +688,7 @@ msgid ""
 "Discover them on the Find a Supplier service."
 msgstr ""
 "Außerordentlich innovative und kreative britische Handelspartners sind "
-"bereit, um mit ihnen zusammenzuarbeiten. Finden sie sie mit unserem 
+"bereit, um mit ihnen zusammenzuarbeiten. Finden sie sie mit unserem "
 "„Anbieter finden“ Dienst."
 
 #: enrolment/templates/browse-companies.html:11
