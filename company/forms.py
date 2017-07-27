@@ -32,7 +32,7 @@ class CompanySearchForm(forms.Form):
     sector = forms.ChoiceField(
         required=False,
         choices=choices.COMPANY_CLASSIFICATIONS,
-        widget=forms.RadioSelect()
+        widget=widgets.CheckboxSelectInlineLabelMultiple()
     )
 
     def clean(self):
