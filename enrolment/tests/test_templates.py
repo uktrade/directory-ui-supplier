@@ -237,33 +237,11 @@ def test_lead_generation_form():
     'marketing-pages/base.html',
     'browse-companies.html',
 ])
-def test_filter_search_feature_flag_on(template_name):
+def test_filter_search(template_name):
     context = {
-        'features': {
-            'FEATURE_SEARCH_FILTER_SECTOR_ENABLED': True
-        },
         'sector_value': 'AEROSPACE',
         'slug': 'thing',   # marketing-pages/base.html
     }
     html = render_to_string(template_name, context)
 
     assert reverse('company-search') + '?sector=AEROSPACE' in html
-
-
-@pytest.mark.parametrize('template_name', [
-    'marketing-pages/bidi/base.html',
-    'marketing-pages/base.html',
-    'browse-companies.html',
-])
-def test_filter_search_feature_flag_off(template_name):
-    context = {
-        'features': {
-            'FEATURE_SEARCH_FILTER_SECTOR_ENABLED': False
-        },
-        'sector_value': 'AEROSPACE',
-        'slug': 'thing',  # marketing-pages/base.html
-    }
-    html = render_to_string(template_name, context)
-    url = reverse('public-company-profiles-list') + '?sectors=AEROSPACE'
-
-    assert url in html

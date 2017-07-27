@@ -9,7 +9,7 @@
   }
 
   function handleFilterButtonClick(event) {
-    toggleClass(filterList, 'mobile-hide');
+    toggleClass(filterButton, 'ed-js-filter-list-mobile-closed');
   }
 
   function toggleClass(element, className){
