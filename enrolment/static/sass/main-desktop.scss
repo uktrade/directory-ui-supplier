@@ -536,7 +536,11 @@ h1 {
 }
 
 .ed-hero-sub-header {
-  background-color: $great-blue;
+  background: $great-blue url(/static/images/covers/agnostic.jpg) top left no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   color: $white;
   min-height: 500px;
   margin-bottom: 30px;
