@@ -44,6 +44,26 @@ input[type="file"] {
   line-height: 1em;
 }
 
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  /* overwrite Bootstrap */
+  border: $grey-3 solid 1px;
+}
+
 ul, li {
   list-style: none;
 }
@@ -381,7 +401,7 @@ label, input, button, select, textarea {
 
 .button {
   background-color: #00549F;
-  border-radius: 3px;
+  border-radius: 0;
   position: relative;
   display: -moz-inline-stack;
   display: inline-block;
@@ -848,6 +868,14 @@ a.ed-filled-button-primary {
   textarea {
     min-height: 100px;
   }
+  
+  .title {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    line-height: 31px;
+    margin: 0 0 0.9em 0;
+  }
 }
 
 .ed-contact-form-container {
@@ -989,6 +1017,57 @@ section {
   border: $grey-3 solid 1px;
   margin-bottom: 30px;
   padding: 30px;
+}
+
+.checkbox {
+  padding-left: 40px;
+  position: relative;
+  z-index: 0;
+
+  input[type="checkbox"] {
+    height: 22px;
+    left: -1px;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    top: -1px;
+    width: 24px;
+    -webkit-appearance: none;
+  }
+
+  input:checked + label:after {
+    content: "";
+    border-color: $grey-4;
+    border-style: solid;
+    border-width: 0 0 3px 3px;
+    height: 6px;
+    left: 5px;
+    position: absolute;
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 7px;
+    width: 16px;
+    z-index: -1;
+  }
+
+  input:focus + label:before  {
+    outline: 3px solid $focus;
+  }
+
+  label:before {
+    content: "";
+    border: 1px solid $grey-3;
+    display: block;
+    height: 22px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 24px;
+    z-index: -1;
+  }
 }
 
 .section-header {

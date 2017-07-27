@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-14 14:58+0000\n"
+"POT-Creation-Date: 2017-07-27 11:24+0000\n"
 "PO-Revision-Date: 2017-06-13 15:19+0100\n"
 "Language: ar\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -401,13 +401,13 @@ msgid "Find a Supplier"
 msgstr ""
 
 #: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:40
-#: enrolment/templates/marketing-pages/base.html:107
-#: enrolment/templates/marketing-pages/bidi/base.html:107
+#: enrolment/templates/marketing-pages/base.html:87
+#: enrolment/templates/marketing-pages/bidi/base.html:87
 msgid "Industries"
 msgstr "الصناعات"
 
 #: enrolment/templates/bidi/landing-page.html:14
-#: enrolment/templates/landing-page.html:18
+#: enrolment/templates/landing-page.html:17
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
 "business"
@@ -415,13 +415,13 @@ msgstr ""
 "أهلاً بك في بريطانيا العظمى وإيرلندا الشمالية، المكان المناسب لممارسة الأعمال "
 "التجارية"
 
-#: enrolment/templates/bidi/landing-page.html:22
-#: enrolment/templates/landing-page.html:26
+#: enrolment/templates/bidi/landing-page.html:21
+#: enrolment/templates/landing-page.html:24
 msgid "Find UK companies to do business with"
 msgstr "العثور على شركات في المملكة المتحدة للتعامل معها"
 
-#: enrolment/templates/bidi/landing-page.html:30
-#: enrolment/templates/landing-page.html:34
+#: enrolment/templates/bidi/landing-page.html:23
+#: enrolment/templates/landing-page.html:26
 msgid ""
 "The UK is a great place to find innovative, high-quality products and "
 "services."
@@ -429,8 +429,8 @@ msgstr ""
 "تُعتبر المملكة المتحدة مكانًا رائعًا للعثور على منتجات وخدمات مبتكرة عالية "
 "الجودة."
 
-#: enrolment/templates/bidi/landing-page.html:33
-#: enrolment/templates/landing-page.html:37
+#: enrolment/templates/bidi/landing-page.html:24
+#: enrolment/templates/landing-page.html:27
 msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
@@ -438,8 +438,8 @@ msgstr ""
 "يمكنك تأسيس العلاقات التجارية المناسبة في المملكة المتحدة مع الشركات "
 "العالمية والشركات الأصغر المنتشرة في كل القطاعات."
 
-#: enrolment/templates/bidi/landing-page.html:36
-#: enrolment/templates/landing-page.html:40
+#: enrolment/templates/bidi/landing-page.html:27
+#: enrolment/templates/landing-page.html:30
 msgid ""
 "UK companies work with businesses and governments around the world to run "
 "high quality services and deliver the best experiences."
@@ -447,8 +447,8 @@ msgstr ""
 "تعمل الشركات في المملكة المتحدة مع شركات وحكومات حول العالم لإنشاء بيئات "
 "جديدة للمعيشة والعمل، وتوفير خدمات عالية الجودة وتقديم أفضل التجارب."
 
-#: enrolment/templates/bidi/landing-page.html:39
-#: enrolment/templates/landing-page.html:43
+#: enrolment/templates/bidi/landing-page.html:28
+#: enrolment/templates/landing-page.html:31
 msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
 "is hard to beat."
@@ -456,127 +456,28 @@ msgstr ""
 "عندما تحتاج إلى شريك تجاري، لا شيء يضاهي الموثوقية والخبرة اللتين ستعثر "
 "عليهما في الشركات الموجودة في المملكة المتحدة."
 
-#: enrolment/templates/bidi/landing-page.html:42
-#: enrolment/templates/landing-page.html:46
+#: enrolment/templates/bidi/landing-page.html:31
+#: enrolment/templates/landing-page.html:34
 msgid ""
 "Choose from the hundreds of businesses in the UK to work with you today."
 msgstr ""
 "اختر من بين مئات الشركات في المملكة المتحدة لممارسة الأعمال معها اليوم."
 
-#: enrolment/templates/bidi/landing-page.html:51
-#: enrolment/templates/bidi/sector-list.html:24
-#: enrolment/templates/landing-page.html:55
-#: enrolment/templates/sector-list.html:27
-msgid "UK industries"
-msgstr "صناعات المملكة المتحدة"
-
-#: enrolment/templates/bidi/landing-page.html:59
-#: enrolment/templates/bidi/sector-list.html:46
-#: enrolment/templates/landing-page.html:63
-#: enrolment/templates/sector-list.html:49
-msgid "Healthcare and life sciences in the UK"
-msgstr "الرعاية الصحية وعلوم الحياة في المملكة المتحدة"
-
-#: enrolment/templates/bidi/landing-page.html:61
-#: enrolment/templates/bidi/sector-list.html:48
-#: enrolment/templates/landing-page.html:65
-#: enrolment/templates/sector-list.html:51
-msgid ""
-"Get access to the UK health and life sciences supply-chain, delivering high "
-"quality, innovative services to the world."
-msgstr ""
-"بإمكانك الوصول إلى سلسلة التوريد في مجال الصحة وعلوم الحياة في المملكة "
-"المتحدة، التي تقدّم خدمات مبتكرة عالية الجودة للعالم."
-
-#: enrolment/templates/bidi/landing-page.html:65
-#: enrolment/templates/bidi/sector-list.html:51
-#: enrolment/templates/landing-page.html:69
-#: enrolment/templates/sector-list.html:54
-msgid "Find out more about the UK’s healthcare and life sciences"
-msgstr "اكتشف المزيد حول مجال الرعاية الصحية وعلوم الحياة في المملكة المتحدة"
-
-#: enrolment/templates/bidi/landing-page.html:75
-#: enrolment/templates/bidi/sector-list.html:60
-#: enrolment/templates/landing-page.html:79
-#: enrolment/templates/sector-list.html:63
-msgid "The UK's advanced technology"
-msgstr "التكنولوجيا المتقدمة في المملكة المتحدة"
-
-#: enrolment/templates/bidi/landing-page.html:77
-#: enrolment/templates/landing-page.html:81
-msgid ""
-"Check out the cutting-edge technologies that the UK is bringing to the world."
-msgstr ""
-"ألقِ نظرة على أحدث الابتكارات التكنولوجية المتطورة التي تقدمها المملكة "
-"المتحدة إلى العالم."
-
-#: enrolment/templates/bidi/landing-page.html:83
-#: enrolment/templates/bidi/sector-list.html:67
-#: enrolment/templates/landing-page.html:87
-#: enrolment/templates/sector-list.html:70
-msgid "Find out more about UK technology"
-msgstr "اكتشف المزيد حول قطاع التكنولوجيا في المملكة المتحدة"
-
-#: enrolment/templates/bidi/landing-page.html:95
-#: enrolment/templates/bidi/sector-list.html:78
-#: enrolment/templates/landing-page.html:99
-#: enrolment/templates/sector-list.html:81
-msgid "The UK's creative services"
-msgstr "الخدمات الإبداعية في المملكة المتحدة"
-
-#: enrolment/templates/bidi/landing-page.html:97
-#: enrolment/templates/landing-page.html:101
-#: enrolment/templates/marketing-pages/creative.html:12
-msgid ""
-"Whether you need buildings designed, films made or a fresh approach to "
-"marketing, the UK is the first place to look."
-msgstr ""
-"سواء كنت بحاجة إلى تصميم مبانٍ أو تصوير أفلام أو العثور على مقاربة جديدة "
-"للتسويق، فإن المملكة المتحدة هي أول مكان يجب أن تتجه أنظارك إليه."
-
-#: enrolment/templates/bidi/landing-page.html:101
-#: enrolment/templates/bidi/sector-list.html:83
-#: enrolment/templates/landing-page.html:105
-#: enrolment/templates/sector-list.html:86
-msgid "Find out more about the UK’s creative services"
-msgstr "اكتشف المزيد حول الخدمات الإبداعية في المملكة المتحدة"
-
-#: enrolment/templates/bidi/landing-page.html:111
-#: enrolment/templates/landing-page.html:115
-msgid "The UK's food and drink"
-msgstr "الأغذية والمشروبات في المملكة المتحدة"
-
-#: enrolment/templates/bidi/landing-page.html:113
-#: enrolment/templates/landing-page.html:117
-msgid ""
-"Whether you want the best food brands or exceptional quality drinks, the UK "
-"is the first place to look."
-msgstr ""
-"سواء كنت بحاجة إلى أطيب المنتجات الغذائية أو مشروبات من نوعية إستثناءية، "
-"فالمملكة المتحدة أول وجهة تستحق عنايتك"
-
-#: enrolment/templates/bidi/landing-page.html:118
-#: enrolment/templates/bidi/sector-list.html:98
-#: enrolment/templates/landing-page.html:122
-#: enrolment/templates/sector-list.html:101
-msgid "Find out more about UK food and drink"
-msgstr "اكتشف المزيد حول قطاع الأغذية والمشروبات في المملكة المتحدة"
-
-#: enrolment/templates/bidi/landing-page.html:127
-#: enrolment/templates/landing-page.html:131
+#: enrolment/templates/bidi/landing-page.html:43
+#: enrolment/templates/landing-page.html:46
 #, fuzzy
 #| msgid "UK industries"
 msgid "See more industries"
 msgstr "صناعات المملكة المتحدة"
 
-#: enrolment/templates/bidi/lead-generation-form.html:6
-#: enrolment/templates/lead-generation-form.html:6
+#: enrolment/templates/bidi/lead-generation-form.html:5
+#: enrolment/templates/lead-generation-form.html:5
 #: exportopportunity/templates/export-opportunity.html:11
 msgid "Get UK companies to fulfil your business needs"
 msgstr "دع الشركات في المملكة المتحدة تفي بما لديك من احتياجات عمل"
 
-#: enrolment/templates/bidi/lead-generation-form.html:12
-#: enrolment/templates/lead-generation-form.html:12
+#: enrolment/templates/bidi/lead-generation-form.html:8
+#: enrolment/templates/lead-generation-form.html:8
 msgid ""
 "Tell us what kind of goods or services you need. We'll put you in touch with "
 "relevant UK suppliers."
@@ -584,23 +485,38 @@ msgstr ""
 "أخبرنا ما هي نوع السلع أو الخدمات التي أنت بحاجة إليها. سنساعدك في التواصل "
 "مع المورّدين المناسبين في المملكة المتحدة."
 
-#: enrolment/templates/bidi/lead-generation-form.html:77
-#: enrolment/templates/lead-generation-form.html:90
+#: enrolment/templates/bidi/lead-generation-form.html:76
+#: enrolment/templates/lead-generation-form.html:76
+#, fuzzy
+#| msgid "I agree to the great.gov.uk terms and conditions"
+msgid "I agree to the great.gov.uk"
+msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
+
+#: enrolment/templates/bidi/lead-generation-form.html:76
+#: enrolment/templates/lead-generation-form.html:76
+#, fuzzy
+#| msgid "Terms &amp; conditions"
+msgid "terms and conditions"
+msgstr "البنود والشروط"
+
+#: enrolment/templates/bidi/lead-generation-form.html:82
+#: enrolment/templates/lead-generation-form.html:82
 msgid "Send"
 msgstr "إرسال"
-
-#: enrolment/templates/bidi/lead-generation-form.html:84
-#: enrolment/templates/lead-generation-form.html:85
-msgid "I agree to the great.gov.uk terms and conditions"
-msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
 
 #: enrolment/templates/bidi/sector-list.html:15
 #: enrolment/templates/sector-list.html:18
 msgid "Discover the UK's capability in these key industries"
 msgstr "اكتشف إمكانيات المملكة المتحدة في هذه الصناعات الرئيسية"
 
-#: enrolment/templates/bidi/sector-list.html:31
-#: enrolment/templates/sector-list.html:34
+#: enrolment/templates/bidi/sector-list.html:21
+#: enrolment/templates/industry-teasers.html:5
+#: enrolment/templates/sector-list.html:24
+msgid "UK industries"
+msgstr "صناعات المملكة المتحدة"
+
+#: enrolment/templates/bidi/sector-list.html:23
+#: enrolment/templates/sector-list.html:26
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -612,47 +528,14 @@ msgstr ""
 "لتأسيس العلاقات التجارية المناسبة مع شركات رئيسية وشركات أصغر منتشرة في كل "
 "القطاعات."
 
-#: enrolment/templates/bidi/sector-list.html:34
-#: enrolment/templates/sector-list.html:37
+#: enrolment/templates/bidi/sector-list.html:26
+#: enrolment/templates/sector-list.html:29
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
 msgstr ""
 "ونحن بإمكاننا مساعدتك في إنشاء علاقات تجارية أساسية مع أفضل الشركات. اختر من "
 "ضمن الشركات في هذه الصناعات المنتشرة في المملكة المتحدة للعمل معك."
-
-#: enrolment/templates/bidi/sector-list.html:62
-#: enrolment/templates/sector-list.html:65
-msgid ""
-"Check out the cutting-edge technological innovations that the UK is bringing "
-"to the world."
-msgstr ""
-"ألقِ نظرة على أحدث الابتكارات التكنولوجية المتطورة التي تقدمها المملكة "
-"المتحدة إلى العالم."
-
-#: enrolment/templates/bidi/sector-list.html:80
-#: enrolment/templates/sector-list.html:83
-msgid ""
-"Whether you need buildings designed, films made, or a fresh approach to "
-"marketing, the UK is the first place to look."
-msgstr ""
-"سواء كنت بحاجة إلى تصميم مبانٍ أو تصوير أفلام أو العثور على مقاربة جديدة "
-"للتسويق، فإن المملكة المتحدة هي أول مكان يجب أن تتجه أنظارك إليه."
-
-#: enrolment/templates/bidi/sector-list.html:92
-#: enrolment/templates/sector-list.html:95
-msgid "The UK’s food and drink"
-msgstr "قطاع الأغذية والمشروبات في المملكة المتحدة"
-
-#: enrolment/templates/bidi/sector-list.html:94
-#: enrolment/templates/sector-list.html:97
-msgid ""
-"Whether you want the best food brands or exceptional quality drinks, the UK "
-"should be first on your list."
-msgstr ""
-"سواء كنت تريد التعامل مع العلامات التجارية الغذائية الأكثر ابتكارًا في السوق "
-"أو شركات المشروبات ذات الجودة الاستثنائية، فيجب أن تضع المملكة المتحدة على "
-"رأس القائمة."
 
 #: enrolment/templates/browse-companies.html:4
 msgid "Find other great UK companies"
@@ -676,11 +559,71 @@ msgstr "تصفح الشركات في المملكة المتحدة"
 msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
 msgstr ""
 
-#: enrolment/templates/landing-page.html:12
+#: enrolment/templates/industry-teasers.html:7
+msgid "Healthcare and life sciences in the UK"
+msgstr "الرعاية الصحية وعلوم الحياة في المملكة المتحدة"
+
+#: enrolment/templates/industry-teasers.html:10
 msgid ""
-"Find the right UK company to do business with from thousands of "
-"international trade profiles"
+"Get access to the UK health and life sciences supply-chain, delivering high "
+"quality, innovative services to the world."
 msgstr ""
+"بإمكانك الوصول إلى سلسلة التوريد في مجال الصحة وعلوم الحياة في المملكة "
+"المتحدة، التي تقدّم خدمات مبتكرة عالية الجودة للعالم."
+
+#: enrolment/templates/industry-teasers.html:13
+msgid "Find out more about the UK’s healthcare and life sciences"
+msgstr "اكتشف المزيد حول مجال الرعاية الصحية وعلوم الحياة في المملكة المتحدة"
+
+#: enrolment/templates/industry-teasers.html:18
+msgid "The UK's advanced technology"
+msgstr "التكنولوجيا المتقدمة في المملكة المتحدة"
+
+#: enrolment/templates/industry-teasers.html:21
+msgid ""
+"Check out the cutting-edge technological innovations that the UK is bringing "
+"to the world."
+msgstr ""
+"ألقِ نظرة على أحدث الابتكارات التكنولوجية المتطورة التي تقدمها المملكة "
+"المتحدة إلى العالم."
+
+#: enrolment/templates/industry-teasers.html:24
+msgid "Find out more about UK technology"
+msgstr "اكتشف المزيد حول قطاع التكنولوجيا في المملكة المتحدة"
+
+#: enrolment/templates/industry-teasers.html:31
+msgid "The UK's creative services"
+msgstr "الخدمات الإبداعية في المملكة المتحدة"
+
+#: enrolment/templates/industry-teasers.html:34
+#: enrolment/templates/marketing-pages/creative.html:12
+msgid ""
+"Whether you need buildings designed, films made or a fresh approach to "
+"marketing, the UK is the first place to look."
+msgstr ""
+"سواء كنت بحاجة إلى تصميم مبانٍ أو تصوير أفلام أو العثور على مقاربة جديدة "
+"للتسويق، فإن المملكة المتحدة هي أول مكان يجب أن تتجه أنظارك إليه."
+
+#: enrolment/templates/industry-teasers.html:37
+msgid "Find out more about the UK’s creative services"
+msgstr "اكتشف المزيد حول الخدمات الإبداعية في المملكة المتحدة"
+
+#: enrolment/templates/industry-teasers.html:42
+msgid "The UK's food and drink"
+msgstr "الأغذية والمشروبات في المملكة المتحدة"
+
+#: enrolment/templates/industry-teasers.html:45
+msgid ""
+"Whether you want the best food brands or exceptional quality drinks, the UK "
+"should be first on your list."
+msgstr ""
+"سواء كنت تريد التعامل مع العلامات التجارية الغذائية الأكثر ابتكارًا في السوق "
+"أو شركات المشروبات ذات الجودة الاستثنائية، فيجب أن تضع المملكة المتحدة على "
+"رأس القائمة."
+
+#: enrolment/templates/industry-teasers.html:48
+msgid "Find out more about UK food and drink"
+msgstr "اكتشف المزيد حول قطاع الأغذية والمشروبات في المملكة المتحدة"
 
 #: enrolment/templates/language_switcher.html:8
 msgid "Select"
@@ -690,28 +633,28 @@ msgstr ""
 msgid "Page in English only"
 msgstr "هذه الصفحة باللغة الإنجليزية فقط"
 
-#: enrolment/templates/marketing-pages/base.html:22
-#: enrolment/templates/marketing-pages/bidi/base.html:22
+#: enrolment/templates/marketing-pages/base.html:19
+#: enrolment/templates/marketing-pages/bidi/base.html:19
 msgid "Find your UK trade partner"
 msgstr "العثور على شريكك التجاري في المملكة المتحدة"
 
-#: enrolment/templates/marketing-pages/base.html:58
-#: enrolment/templates/marketing-pages/bidi/base.html:58
+#: enrolment/templates/marketing-pages/base.html:44
+#: enrolment/templates/marketing-pages/bidi/base.html:44
 msgid "Read more about the company"
 msgstr "اقرأ المزيد حول الشركة"
 
-#: enrolment/templates/marketing-pages/base.html:73
-#: enrolment/templates/marketing-pages/bidi/base.html:73
+#: enrolment/templates/marketing-pages/base.html:58
+#: enrolment/templates/marketing-pages/bidi/base.html:58
 msgid "Company showcase"
 msgstr "عرض حالة للشركة"
 
-#: enrolment/templates/marketing-pages/base.html:88
-#: enrolment/templates/marketing-pages/bidi/base.html:88
+#: enrolment/templates/marketing-pages/base.html:71
+#: enrolment/templates/marketing-pages/bidi/base.html:71
 msgid "Read case study"
 msgstr "اقرأ عن دراسة حالة"
 
-#: enrolment/templates/marketing-pages/base.html:115
-#: enrolment/templates/marketing-pages/bidi/base.html:115
+#: enrolment/templates/marketing-pages/base.html:95
+#: enrolment/templates/marketing-pages/bidi/base.html:95
 msgid "keywords"
 msgstr "الكلمات الرئيسية"
 
@@ -1418,11 +1361,11 @@ msgstr ""
 "اطّلع على مقدمي الرعاية الصحية وعلوم الحياة في المملكة المتحدة في خدمة العثور "
 "على مورّد"
 
-#: enrolment/templates/marketing-pages/health.html:103
+#: enrolment/templates/marketing-pages/health.html:104
 msgid "Find UK healthcare and life sciences companies to meet your needs"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/health.html:105
+#: enrolment/templates/marketing-pages/health.html:106
 msgid ""
 "Get access to the exceptional UK healthcare and life sciences supply chain. "
 "Register to be notified as soon as companies that match your needs have "
@@ -1808,6 +1751,33 @@ msgstr ""
 #: exportopportunity/templates/export-opportunity.html:23
 msgid "Submit"
 msgstr ""
+
+#~ msgid "I agree to the great.gov.uk terms and conditions"
+#~ msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
+
+#~ msgid ""
+#~ "Check out the cutting-edge technologies that the UK is bringing to the "
+#~ "world."
+#~ msgstr ""
+#~ "ألقِ نظرة على أحدث الابتكارات التكنولوجية المتطورة التي تقدمها المملكة "
+#~ "المتحدة إلى العالم."
+
+#~ msgid ""
+#~ "Whether you want the best food brands or exceptional quality drinks, the "
+#~ "UK is the first place to look."
+#~ msgstr ""
+#~ "سواء كنت بحاجة إلى أطيب المنتجات الغذائية أو مشروبات من نوعية إستثناءية، "
+#~ "فالمملكة المتحدة أول وجهة تستحق عنايتك"
+
+#~ msgid ""
+#~ "Whether you need buildings designed, films made, or a fresh approach to "
+#~ "marketing, the UK is the first place to look."
+#~ msgstr ""
+#~ "سواء كنت بحاجة إلى تصميم مبانٍ أو تصوير أفلام أو العثور على مقاربة جديدة "
+#~ "للتسويق، فإن المملكة المتحدة هي أول مكان يجب أن تتجه أنظارك إليه."
+
+#~ msgid "The UK’s food and drink"
+#~ msgstr "قطاع الأغذية والمشروبات في المملكة المتحدة"
 
 #~ msgid "case study"
 #~ msgstr "اقرأ عن دراسة حالة"

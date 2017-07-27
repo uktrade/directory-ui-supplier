@@ -1,7 +1,7 @@
 {% load trans from i18n %}
 <div class="ed-landing-page-form-container">
 	<div class="ed-landing-page-form-inner">
-		<h2 class="element-within company-name-title">
+		<h2 class="element-within title">
 			<span class="dont-break-out">{% trans "Get UK companies to fulfil your business needs" %}</span>
 		</h2>
 		<div>
@@ -68,17 +68,19 @@
 				</div>
 
 				<div class="row-fluid">
-					<div class="span2 btn-container ed-landing-page-register-button-container">
-						<button class="button" style="border-radius: 4px;">
-							{% trans "Send" %}
-						</button>
-					</div>
 					<div class="span10 ed-checkbox-container {{ form.terms.css_classes|default:'input-field-container' }}">
 						{{ form.terms.errors }}
-						<label for="{{ form.terms.id_for_label }}" style="margin-top: 15px; font-weight: 300;">
-							<input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox" style="vertical-align: top; margin-top: 7px;">
-							<a target="_self" href="{% url 'terms-and-conditions' %}">{% trans "I agree to the great.gov.uk terms and conditions" %}</a>.
-						</label>
+						<div class="field checkbox">
+							<input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox">
+							<label for="{{ form.terms.id_for_label }}">
+								{% trans "I agree to the great.gov.uk" %} <a target="_self" href="{% url 'terms-and-conditions' %}">{% trans "terms and conditions" %}</a>
+							</label>
+						</div>
+					</div>
+					<div class="span2 btn-container ed-landing-page-register-button-container">
+						<button class="button">
+							{% trans "Send" %}
+						</button>
 					</div>
 				</div>
 			</form>

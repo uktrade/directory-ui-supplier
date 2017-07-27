@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-14 14:58+0000\n"
+"POT-Creation-Date: 2017-07-27 11:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -406,25 +406,25 @@ msgid "Find a Supplier"
 msgstr "Encontrar um fornecedor"
 
 #: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:40
-#: enrolment/templates/marketing-pages/base.html:107
-#: enrolment/templates/marketing-pages/bidi/base.html:107
+#: enrolment/templates/marketing-pages/base.html:87
+#: enrolment/templates/marketing-pages/bidi/base.html:87
 msgid "Industries"
 msgstr "Indústrias"
 
 #: enrolment/templates/bidi/landing-page.html:14
-#: enrolment/templates/landing-page.html:18
+#: enrolment/templates/landing-page.html:17
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
 "business"
 msgstr "Bem-vindos à Grã-Bretanha e à Irlanda do Norte"
 
-#: enrolment/templates/bidi/landing-page.html:22
-#: enrolment/templates/landing-page.html:26
+#: enrolment/templates/bidi/landing-page.html:21
+#: enrolment/templates/landing-page.html:24
 msgid "Find UK companies to do business with"
 msgstr "Saiba mais sobre a comida e a bebida do Reino Unido"
 
-#: enrolment/templates/bidi/landing-page.html:30
-#: enrolment/templates/landing-page.html:34
+#: enrolment/templates/bidi/landing-page.html:23
+#: enrolment/templates/landing-page.html:26
 msgid ""
 "The UK is a great place to find innovative, high-quality products and "
 "services."
@@ -432,8 +432,8 @@ msgstr ""
 "O Reino Unido é um ótimo lugar para encontrar produtos e serviços inovadores "
 "e de alta qualidade."
 
-#: enrolment/templates/bidi/landing-page.html:33
-#: enrolment/templates/landing-page.html:37
+#: enrolment/templates/bidi/landing-page.html:24
+#: enrolment/templates/landing-page.html:27
 msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
@@ -441,8 +441,8 @@ msgstr ""
 "Você pode fazer as relações comerciais certas no Reino Unido com corporações "
 "globais e empresas de porte menor em todos os setores."
 
-#: enrolment/templates/bidi/landing-page.html:36
-#: enrolment/templates/landing-page.html:40
+#: enrolment/templates/bidi/landing-page.html:27
+#: enrolment/templates/landing-page.html:30
 msgid ""
 "UK companies work with businesses and governments around the world to run "
 "high quality services and deliver the best experiences."
@@ -451,8 +451,8 @@ msgstr ""
 "para criar novos ambientes de trabalho e de convívio, entregando serviços de "
 "alta qualidade e proporcionando as melhores experiências."
 
-#: enrolment/templates/bidi/landing-page.html:39
-#: enrolment/templates/landing-page.html:43
+#: enrolment/templates/bidi/landing-page.html:28
+#: enrolment/templates/landing-page.html:31
 msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
 "is hard to beat."
@@ -461,127 +461,28 @@ msgstr ""
 "criativos, prontos para trabalhar consigo. Descubra-os em \"Encontrarum "
 "fornecedor\"."
 
-#: enrolment/templates/bidi/landing-page.html:42
-#: enrolment/templates/landing-page.html:46
+#: enrolment/templates/bidi/landing-page.html:31
+#: enrolment/templates/landing-page.html:34
 msgid ""
 "Choose from the hundreds of businesses in the UK to work with you today."
 msgstr ""
 "Escolha hoje mesmo entre as centenas de empresas do Reino Unido com as quais "
 "você pode trabalhar."
 
-#: enrolment/templates/bidi/landing-page.html:51
-#: enrolment/templates/bidi/sector-list.html:24
-#: enrolment/templates/landing-page.html:55
-#: enrolment/templates/sector-list.html:27
-msgid "UK industries"
-msgstr "Setores do Reino Unido"
-
-#: enrolment/templates/bidi/landing-page.html:59
-#: enrolment/templates/bidi/sector-list.html:46
-#: enrolment/templates/landing-page.html:63
-#: enrolment/templates/sector-list.html:49
-msgid "Healthcare and life sciences in the UK"
-msgstr "Ciências da vida e da saúde no Reino Unido"
-
-#: enrolment/templates/bidi/landing-page.html:61
-#: enrolment/templates/bidi/sector-list.html:48
-#: enrolment/templates/landing-page.html:65
-#: enrolment/templates/sector-list.html:51
-msgid ""
-"Get access to the UK health and life sciences supply-chain, delivering high "
-"quality, innovative services to the world."
-msgstr ""
-"Acesse à cadeia de suprimentos de ciências da vida e da saúde no Reino "
-"Unido, que oferece para o mundo serviços inovadores e de alta qualidade."
-
-#: enrolment/templates/bidi/landing-page.html:65
-#: enrolment/templates/bidi/sector-list.html:51
-#: enrolment/templates/landing-page.html:69
-#: enrolment/templates/sector-list.html:54
-msgid "Find out more about the UK’s healthcare and life sciences"
-msgstr "Saiba mais sobre as ciências da vida e da saúde no Reino Unido"
-
-#: enrolment/templates/bidi/landing-page.html:75
-#: enrolment/templates/bidi/sector-list.html:60
-#: enrolment/templates/landing-page.html:79
-#: enrolment/templates/sector-list.html:63
-msgid "The UK's advanced technology"
-msgstr "A tecnologia avançada do Reino Unido"
-
-#: enrolment/templates/bidi/landing-page.html:77
-#: enrolment/templates/landing-page.html:81
-msgid ""
-"Check out the cutting-edge technologies that the UK is bringing to the world."
-msgstr ""
-"Confira as mais recentes inovações tecnológicas que o Reino Unido está "
-"trazendo para o mundo."
-
-#: enrolment/templates/bidi/landing-page.html:83
-#: enrolment/templates/bidi/sector-list.html:67
-#: enrolment/templates/landing-page.html:87
-#: enrolment/templates/sector-list.html:70
-msgid "Find out more about UK technology"
-msgstr "Descubra mais sobre a tecnologia do Reino Unido"
-
-#: enrolment/templates/bidi/landing-page.html:95
-#: enrolment/templates/bidi/sector-list.html:78
-#: enrolment/templates/landing-page.html:99
-#: enrolment/templates/sector-list.html:81
-msgid "The UK's creative services"
-msgstr "Os serviços criativos do Reino Unido"
-
-#: enrolment/templates/bidi/landing-page.html:97
-#: enrolment/templates/landing-page.html:101
-#: enrolment/templates/marketing-pages/creative.html:12
-msgid ""
-"Whether you need buildings designed, films made or a fresh approach to "
-"marketing, the UK is the first place to look."
-msgstr ""
-"Se você precisa projetar edifícios, fazer filmes ou obter uma nova "
-"estratégia de marketing, o Reino Unido é a primeira opção."
-
-#: enrolment/templates/bidi/landing-page.html:101
-#: enrolment/templates/bidi/sector-list.html:83
-#: enrolment/templates/landing-page.html:105
-#: enrolment/templates/sector-list.html:86
-msgid "Find out more about the UK’s creative services"
-msgstr "Saiba mais sobre os serviços criativos do Reino Unido"
-
-#: enrolment/templates/bidi/landing-page.html:111
-#: enrolment/templates/landing-page.html:115
-msgid "The UK's food and drink"
-msgstr "A comida e a bebida do Reino Unido"
-
-#: enrolment/templates/bidi/landing-page.html:113
-#: enrolment/templates/landing-page.html:117
-msgid ""
-"Whether you want the best food brands or exceptional quality drinks, the UK "
-"is the first place to look."
-msgstr ""
-"Se o que você procura são as marcas de alimentos mais inovadoras ou bebidas "
-"de qualidade excepcional, o Reino Unido precisa estar no topo da sua lista."
-
-#: enrolment/templates/bidi/landing-page.html:118
-#: enrolment/templates/bidi/sector-list.html:98
-#: enrolment/templates/landing-page.html:122
-#: enrolment/templates/sector-list.html:101
-msgid "Find out more about UK food and drink"
-msgstr "Saiba mais sobre as ciências da vida e da saúde no Reino Unido"
-
-#: enrolment/templates/bidi/landing-page.html:127
-#: enrolment/templates/landing-page.html:131
+#: enrolment/templates/bidi/landing-page.html:43
+#: enrolment/templates/landing-page.html:46
 msgid "See more industries"
 msgstr "Setores do Reino Unido"
 
-#: enrolment/templates/bidi/lead-generation-form.html:6
-#: enrolment/templates/lead-generation-form.html:6
+#: enrolment/templates/bidi/lead-generation-form.html:5
+#: enrolment/templates/lead-generation-form.html:5
 #: exportopportunity/templates/export-opportunity.html:11
 msgid "Get UK companies to fulfil your business needs"
 msgstr ""
 "Encontre empresas do Reino Unido que atendem às suas necessidades de negócio"
 
-#: enrolment/templates/bidi/lead-generation-form.html:12
-#: enrolment/templates/lead-generation-form.html:12
+#: enrolment/templates/bidi/lead-generation-form.html:8
+#: enrolment/templates/lead-generation-form.html:8
 msgid ""
 "Tell us what kind of goods or services you need. We'll put you in touch with "
 "relevant UK suppliers."
@@ -589,23 +490,38 @@ msgstr ""
 "Informe o tipo de produto ou serviço de que você necessita. Vamos colocar "
 "você em contato com fornecedores relevantes do Reino Unido."
 
-#: enrolment/templates/bidi/lead-generation-form.html:77
-#: enrolment/templates/lead-generation-form.html:90
+#: enrolment/templates/bidi/lead-generation-form.html:76
+#: enrolment/templates/lead-generation-form.html:76
+#, fuzzy
+#| msgid "I agree to the great.gov.uk terms and conditions"
+msgid "I agree to the great.gov.uk"
+msgstr "Concordo com os termos e condições do site great.gov.uk."
+
+#: enrolment/templates/bidi/lead-generation-form.html:76
+#: enrolment/templates/lead-generation-form.html:76
+#, fuzzy
+#| msgid "Terms &amp; conditions"
+msgid "terms and conditions"
+msgstr "Termos e condições"
+
+#: enrolment/templates/bidi/lead-generation-form.html:82
+#: enrolment/templates/lead-generation-form.html:82
 msgid "Send"
 msgstr "Enviar"
-
-#: enrolment/templates/bidi/lead-generation-form.html:84
-#: enrolment/templates/lead-generation-form.html:85
-msgid "I agree to the great.gov.uk terms and conditions"
-msgstr "Concordo com os termos e condições do site great.gov.uk."
 
 #: enrolment/templates/bidi/sector-list.html:15
 #: enrolment/templates/sector-list.html:18
 msgid "Discover the UK's capability in these key industries"
 msgstr "Descubra a capacidade do Reino Unido nesses setores importantes"
 
-#: enrolment/templates/bidi/sector-list.html:31
-#: enrolment/templates/sector-list.html:34
+#: enrolment/templates/bidi/sector-list.html:21
+#: enrolment/templates/industry-teasers.html:5
+#: enrolment/templates/sector-list.html:24
+msgid "UK industries"
+msgstr "Setores do Reino Unido"
+
+#: enrolment/templates/bidi/sector-list.html:23
+#: enrolment/templates/sector-list.html:26
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -613,51 +529,20 @@ msgid ""
 "smaller enterprises across every sector of industry."
 msgstr ""
 "Como pessoa responsável pela tomada de decisões em uma empresa "
-"internacional, basta procurar no Reino Unido e você encontrará "
-"produtos e serviços inovadores e de alta qualidade. Este é o lugar "
-"para se fazer as relações comerciais certas com grandes empresas e "
-"empresas de porte menor em todos os setores da indústria."
+"internacional, basta procurar no Reino Unido e você encontrará produtos e "
+"serviços inovadores e de alta qualidade. Este é o lugar para se fazer as "
+"relações comerciais certas com grandes empresas e empresas de porte menor em "
+"todos os setores da indústria."
 
-#: enrolment/templates/bidi/sector-list.html:34
-#: enrolment/templates/sector-list.html:37
+#: enrolment/templates/bidi/sector-list.html:26
+#: enrolment/templates/sector-list.html:29
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
-msgstr "Nós podemos ajudar você a fazer conexões comerciais vitais com as empresas "
+msgstr ""
+"Nós podemos ajudar você a fazer conexões comerciais vitais com as empresas "
 "certas. Escolha as empresas desses setores do Reino Unido para trabalharem "
 "com você."
-
-#: enrolment/templates/bidi/sector-list.html:62
-#: enrolment/templates/sector-list.html:65
-msgid ""
-"Check out the cutting-edge technological innovations that the UK is bringing "
-"to the world."
-msgstr ""
-"Confira as mais recentes inovações tecnológicas que o Reino Unido está "
-"trazendo para o mundo."
-
-#: enrolment/templates/bidi/sector-list.html:80
-#: enrolment/templates/sector-list.html:83
-msgid ""
-"Whether you need buildings designed, films made, or a fresh approach to "
-"marketing, the UK is the first place to look."
-msgstr ""
-"Se você precisa projetar edifícios, fazer filmes ou obter uma nova "
-"estratégia de marketing, o Reino Unido é a primeira opção."
-
-#: enrolment/templates/bidi/sector-list.html:92
-#: enrolment/templates/sector-list.html:95
-msgid "The UK’s food and drink"
-msgstr "A comida e a bebida do Reino Unido"
-
-#: enrolment/templates/bidi/sector-list.html:94
-#: enrolment/templates/sector-list.html:97
-msgid ""
-"Whether you want the best food brands or exceptional quality drinks, the UK "
-"should be first on your list."
-msgstr ""
-"Se o que você procura são as marcas de alimentos mais inovadoras ou bebidas "
-"de qualidade excepcional, o Reino Unido precisa estar no topo da sua lista."
 
 #: enrolment/templates/browse-companies.html:4
 msgid "Find other great UK companies"
@@ -682,11 +567,70 @@ msgstr "Procurar perfis de empresas do Reino Unido"
 msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
 msgstr ""
 
-#: enrolment/templates/landing-page.html:12
+#: enrolment/templates/industry-teasers.html:7
+msgid "Healthcare and life sciences in the UK"
+msgstr "Ciências da vida e da saúde no Reino Unido"
+
+#: enrolment/templates/industry-teasers.html:10
 msgid ""
-"Find the right UK company to do business with from thousands of "
-"international trade profiles"
+"Get access to the UK health and life sciences supply-chain, delivering high "
+"quality, innovative services to the world."
 msgstr ""
+"Acesse à cadeia de suprimentos de ciências da vida e da saúde no Reino "
+"Unido, que oferece para o mundo serviços inovadores e de alta qualidade."
+
+#: enrolment/templates/industry-teasers.html:13
+msgid "Find out more about the UK’s healthcare and life sciences"
+msgstr "Saiba mais sobre as ciências da vida e da saúde no Reino Unido"
+
+#: enrolment/templates/industry-teasers.html:18
+msgid "The UK's advanced technology"
+msgstr "A tecnologia avançada do Reino Unido"
+
+#: enrolment/templates/industry-teasers.html:21
+msgid ""
+"Check out the cutting-edge technological innovations that the UK is bringing "
+"to the world."
+msgstr ""
+"Confira as mais recentes inovações tecnológicas que o Reino Unido está "
+"trazendo para o mundo."
+
+#: enrolment/templates/industry-teasers.html:24
+msgid "Find out more about UK technology"
+msgstr "Descubra mais sobre a tecnologia do Reino Unido"
+
+#: enrolment/templates/industry-teasers.html:31
+msgid "The UK's creative services"
+msgstr "Os serviços criativos do Reino Unido"
+
+#: enrolment/templates/industry-teasers.html:34
+#: enrolment/templates/marketing-pages/creative.html:12
+msgid ""
+"Whether you need buildings designed, films made or a fresh approach to "
+"marketing, the UK is the first place to look."
+msgstr ""
+"Se você precisa projetar edifícios, fazer filmes ou obter uma nova "
+"estratégia de marketing, o Reino Unido é a primeira opção."
+
+#: enrolment/templates/industry-teasers.html:37
+msgid "Find out more about the UK’s creative services"
+msgstr "Saiba mais sobre os serviços criativos do Reino Unido"
+
+#: enrolment/templates/industry-teasers.html:42
+msgid "The UK's food and drink"
+msgstr "A comida e a bebida do Reino Unido"
+
+#: enrolment/templates/industry-teasers.html:45
+msgid ""
+"Whether you want the best food brands or exceptional quality drinks, the UK "
+"should be first on your list."
+msgstr ""
+"Se o que você procura são as marcas de alimentos mais inovadoras ou bebidas "
+"de qualidade excepcional, o Reino Unido precisa estar no topo da sua lista."
+
+#: enrolment/templates/industry-teasers.html:48
+msgid "Find out more about UK food and drink"
+msgstr "Saiba mais sobre as ciências da vida e da saúde no Reino Unido"
 
 #: enrolment/templates/language_switcher.html:8
 msgid "Select"
@@ -696,28 +640,28 @@ msgstr "Selecionar"
 msgid "Page in English only"
 msgstr "Esta página está disponível somente em inglês"
 
-#: enrolment/templates/marketing-pages/base.html:22
-#: enrolment/templates/marketing-pages/bidi/base.html:22
+#: enrolment/templates/marketing-pages/base.html:19
+#: enrolment/templates/marketing-pages/bidi/base.html:19
 msgid "Find your UK trade partner"
 msgstr "Encontre o seu parceiro comercial no Reino Unido"
 
-#: enrolment/templates/marketing-pages/base.html:58
-#: enrolment/templates/marketing-pages/bidi/base.html:58
+#: enrolment/templates/marketing-pages/base.html:44
+#: enrolment/templates/marketing-pages/bidi/base.html:44
 msgid "Read more about the company"
 msgstr "Leia mais sobre a empresa"
 
-#: enrolment/templates/marketing-pages/base.html:73
-#: enrolment/templates/marketing-pages/bidi/base.html:73
+#: enrolment/templates/marketing-pages/base.html:58
+#: enrolment/templates/marketing-pages/bidi/base.html:58
 msgid "Company showcase"
 msgstr "Exposição da empresa"
 
-#: enrolment/templates/marketing-pages/base.html:88
-#: enrolment/templates/marketing-pages/bidi/base.html:88
+#: enrolment/templates/marketing-pages/base.html:71
+#: enrolment/templates/marketing-pages/bidi/base.html:71
 msgid "Read case study"
 msgstr "Leia o estudo de caso"
 
-#: enrolment/templates/marketing-pages/base.html:115
-#: enrolment/templates/marketing-pages/bidi/base.html:115
+#: enrolment/templates/marketing-pages/base.html:95
+#: enrolment/templates/marketing-pages/bidi/base.html:95
 msgid "keywords"
 msgstr "Palavras-chave"
 
@@ -929,7 +873,8 @@ msgid ""
 "the likes of Boeing and Mercedes-Benz. And our rights management companies "
 "have an ongoing reputation for protecting Intellectual Property for "
 "performers and producers alike."
-msgstr "Além de música para o mercado de consumo, as prósperas agências comerciais "
+msgstr ""
+"Além de música para o mercado de consumo, as prósperas agências comerciais "
 "de áudio e música do Reino Unido estão fornecendo letras e trilhas a filmes "
 "feitos para empresas como a Boeing e a Mercedes-Benz. Além disso, nossas "
 "empresas de gestão de direitos são famosas por proteger a Propriedade "
@@ -942,8 +887,8 @@ msgid ""
 "as diverse as Russia and Malawi."
 msgstr ""
 "Os museus nacionais do Reino Unido atraem visitantes de todo o mundo, têm "
-"parcerias duradouras e compartilham coleções com parceiros dos mais "
-"variados países, como a Rússia e o Malawi."
+"parcerias duradouras e compartilham coleções com parceiros dos mais variados "
+"países, como a Rússia e o Malawi."
 
 #: enrolment/templates/marketing-pages/creative.html:80
 msgid "The UK is alive with exceptional talent and ingenuity."
@@ -1441,11 +1386,11 @@ msgstr ""
 "Consulte o serviço Encontrar um fornecedor e veja os fornecedores de "
 "ciências da saúde e da vida no Reino Unido"
 
-#: enrolment/templates/marketing-pages/health.html:103
+#: enrolment/templates/marketing-pages/health.html:104
 msgid "Find UK healthcare and life sciences companies to meet your needs"
 msgstr "Encontrar empresas excelentes no Reino Unido"
 
-#: enrolment/templates/marketing-pages/health.html:105
+#: enrolment/templates/marketing-pages/health.html:106
 msgid ""
 "Get access to the exceptional UK healthcare and life sciences supply chain. "
 "Register to be notified as soon as companies that match your needs have "
@@ -1807,8 +1752,9 @@ msgstr "Encontre o seu parceiro comercial de tecnologia do Reino Unido"
 
 #: enrolment/templates/marketing-pages/tech.html:70
 msgid "See the UK's technology providers on the Find a supplier service"
-msgstr "Encontre empresas do Reino Unido para satisfazer as necessidades "
-"da sua empresa"
+msgstr ""
+"Encontre empresas do Reino Unido para satisfazer as necessidades da sua "
+"empresa"
 
 #: enrolment/templates/marketing-pages/tech.html:73
 msgid ""
@@ -1845,6 +1791,34 @@ msgstr ""
 #: exportopportunity/templates/export-opportunity.html:23
 msgid "Submit"
 msgstr "Enviar"
+
+#~ msgid "I agree to the great.gov.uk terms and conditions"
+#~ msgstr "Concordo com os termos e condições do site great.gov.uk."
+
+#~ msgid ""
+#~ "Check out the cutting-edge technologies that the UK is bringing to the "
+#~ "world."
+#~ msgstr ""
+#~ "Confira as mais recentes inovações tecnológicas que o Reino Unido está "
+#~ "trazendo para o mundo."
+
+#~ msgid ""
+#~ "Whether you want the best food brands or exceptional quality drinks, the "
+#~ "UK is the first place to look."
+#~ msgstr ""
+#~ "Se o que você procura são as marcas de alimentos mais inovadoras ou "
+#~ "bebidas de qualidade excepcional, o Reino Unido precisa estar no topo da "
+#~ "sua lista."
+
+#~ msgid ""
+#~ "Whether you need buildings designed, films made, or a fresh approach to "
+#~ "marketing, the UK is the first place to look."
+#~ msgstr ""
+#~ "Se você precisa projetar edifícios, fazer filmes ou obter uma nova "
+#~ "estratégia de marketing, o Reino Unido é a primeira opção."
+
+#~ msgid "The UK’s food and drink"
+#~ msgstr "A comida e a bebida do Reino Unido"
 
 #~ msgid "Advanced technology"
 #~ msgstr "Tecnologia avançada"
