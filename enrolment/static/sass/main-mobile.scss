@@ -9,22 +9,23 @@
       padding-left: 0;
       padding-right: 51px;
     }
-    
-    p {
-      margin-bottom: 25px;
-      width: auto;
-    }
-    
-    .button {
-      position: static;
-      width: 100%;
-    }
   }
   
   .LanguageSelectTracker {
     .code:after,
     .lang {
       display: none;
+    }
+  }
+  
+  #companies .browse-companies-container,
+  #intro .search-companies-container {
+    p {
+      margin-bottom: 1em;
+      width: 100%;
+    }
+    .button {
+      position: static;
     }
   }
 }
@@ -52,6 +53,18 @@
   
   section {
     padding: 30px 15px;
+  }
+  
+  .browse-companies-container,
+  .search-companies-container {
+    p {
+      margin-bottom: 25px;
+      width: auto;
+    }
+    
+    .button {
+      position: static;
+    }
   }
   
   .ed-landing-page-form-container {

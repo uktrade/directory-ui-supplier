@@ -7,24 +7,6 @@
 }
 
 
-#companies .browse-companies-container,
-#intro .search-companies-container {
-  margin-bottom: 0;  
-  p {
-    margin-bottom: 1em;
-    width: 100%;
-  }
-  .button {
-    padding: 21px 10px;
-    position: static;
-    width: 100%;
-  }
-  .title {
-    padding-top: 0;
-  }
-}
-
-
 /* Industries
  ******************/
 .industry {
@@ -91,6 +73,21 @@
 /* DESKTOP ONLY
  ******************/
 @media (min-width: 800px) {
+  #companies .browse-companies-container,
+  #intro .search-companies-container {
+    margin-bottom: 0;  
+    p {
+      margin-bottom: 1em;
+      width: 100%;
+    }
+    .button {
+      position: static;
+    }
+    .title {
+      padding-top: 0;
+    }
+  }
+  
   #intro {
     [class*="span"] {
       display: table-cell;
@@ -98,7 +95,7 @@
       vertical-align: top;
     
       &:first-child {
-        padding-left: 0;
+        padding-right: 20px;
       }
     }
   }
@@ -112,21 +109,9 @@
   .browse-companies-container,
   .search-companies-container {
     padding: 10px 25px 25px 25px;
-  
-    p {
-      margin-bottom: 25px;
-      width: auto;
-    }
-  
-    .button {
-      position: static;
-      width: 100%;
-    }
     
     .title {
-      background-position: right center;
       margin-top: 5px;
-      padding: 10px 51px 0 0;
     }
   }
   

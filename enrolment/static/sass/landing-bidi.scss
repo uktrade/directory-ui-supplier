@@ -1,4 +1,9 @@
 
+#intro [class*="span"]:first-child {
+	padding-left: 20px;
+  padding-right: 0;
+}
+
 /* Industries
  ******************/
 #industry-1 { border-width: 0 0 0 22px; }
@@ -6,16 +11,3 @@
 #industry-3 { border-width: 0 15px 0 7px; }
 #industry-4 { border-width: 0 22px 0 0; }
 
-
-/* Tablet
- ******************/
-@media (max-width: 768px) {
-  .browse-companies-container,
-  .search-companies-container {  
-    .title {
-      background-position: left center;
-      padding-left: 51px;
-      padding-right: 0;
-    }
-  }
-}
