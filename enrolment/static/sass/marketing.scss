@@ -72,6 +72,20 @@ li {
   }
 }
 
+.ed-image-caption {
+  margin-bottom: 30px;
+  position: relative;
+  
+  div {
+    background-color: rgba(74,74,74,0.5);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    color: $white;
+    padding: 10px;
+  }
+}
+
 .ed-key-facts-container {
   background-color: #007ea3;
   color: $white;
@@ -82,23 +96,6 @@ li {
   
   h2 {     
     margin-top: 0;
-  }
-}
-
-#companies {
-  .span4 {
-    display: table-cell;
-    float: none;
-    padding: 0 10px;
-    vertical-align: top;
-    
-    &:first-child {
-      padding-left: 0;
-    }
-    
-    &:last-child {
-      padding-right: 0;
-    }
   }
 }
 
@@ -138,12 +135,24 @@ li {
   }
 }
 
+#companies {
+  .span4 {
+    display: table-cell;
+    float: none;
+    padding: 0 10px;
+    vertical-align: top;
+    
+    &:first-child {
+      padding-left: 0;
+    }
+    
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
 
 #company-showcase {
-  img {
-    margin-bottom: 27px;
-  }
-  
   .section-header,
   .title {
     font-size: 24px;
@@ -158,6 +167,10 @@ li {
 /* Tablet 
  *******************/
 @media (max-width: 799px) {
+  .company {
+    margin-bottom: 30px;
+  }
+  
   #companies {
     .span4 {
       width: 48.61%;
@@ -172,6 +185,13 @@ li {
       &:nth-child(2) {
         padding-right: 0;
       }
+    }
+  }
+  
+  #company-showcase {
+    a {
+  	  display: inline-block;
+      margin-bottom: 30px;
     }
   }
 }
