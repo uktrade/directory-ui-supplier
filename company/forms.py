@@ -29,7 +29,7 @@ class CompanySearchForm(forms.Form):
         widget=forms.HiddenInput,
         initial=1,
     )
-    sector = forms.ChoiceField(
+    sectors = forms.MultipleChoiceField(
         required=False,
         choices=choices.COMPANY_CLASSIFICATIONS,
         widget=widgets.CheckboxSelectInlineLabelMultiple()
@@ -37,7 +37,7 @@ class CompanySearchForm(forms.Form):
 
     def clean(self):
         cleaned_data = super().clean()
-        if not cleaned_data.get('term') and not cleaned_data.get('sector'):
+        if not cleaned_data.get('term') and not cleaned_data.get('sectors'):
             raise forms.ValidationError(self.MESSAGE_MISSING_SECTOR_TERM)
         return cleaned_data
 

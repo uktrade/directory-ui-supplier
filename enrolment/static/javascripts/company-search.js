@@ -1,5 +1,5 @@
 (function() {
-  var sectorFilterContainer = document.getElementById('id_sector');
+  var sectorFilterContainer = document.getElementById('id_sectors');
   var sectorFilterInputs = sectorFilterContainer.getElementsByTagName('input');
   var filterList = document.getElementById('ed-search-filters-list');
   var filterButton = document.getElementById('ed-search-filters-container');
