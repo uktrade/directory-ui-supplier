@@ -18,14 +18,18 @@ li {
   color: $white;
   a, a:focus {
     color: inherit;
-    font-weight: 500;
-    text-decoration: underline;
   }
   
   dd, dt {
     display: inline;
     font-weight: 300;
     margin: 0;
+  }
+  
+  dd + .keywords:before {
+    content: "";
+    display: block;
+    margin-top: 1em;
   }
   
   dl {
@@ -36,16 +40,20 @@ li {
     &:after {
       content: ":";
     }
-    &:before {
-      content: "";
-      display: block;
-      margin-top: 1em;
-    }
+  }
+  
+  p {
+    margin-bottom: 0;
+  }
+  
+  .keywords {
+    font-size: 15px;
+    line-height: 25px;
   }
 }
 
 .company {
-  padding-top: 58%;
+  padding-top: 62%;
   position: relative;
   
   img {
@@ -60,6 +68,7 @@ li {
     font-weight: 400;
     letter-spacing: -0.4px;
     line-height: 31px;
+    margin: 0 0 0.5em 0;
   }
 }
 
@@ -126,6 +135,22 @@ li {
 .fas-technology {
   .ed-hero-sub-header {
     background-image: url(/static/images/covers/technology.jpg);
+  }
+}
+
+
+#company-showcase {
+  img {
+    margin-bottom: 27px;
+  }
+  
+  .section-header,
+  .title {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    line-height: 31px;
+    margin: 0 0 0.9em 0;
   }
 }
 

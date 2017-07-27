@@ -64,32 +64,26 @@
 				<div style="bottom: 1px; left: 1px;">{% trans case_study.image_caption %}</div>
 			{% endif %}
 		</div>
-		<div class="row-fluid">
-			<h3>{% trans case_study.title %}</h3>
-		</div>
 		<div class="row-fluid ed-landing-page-sector-case-study-inner">
 			<div class="{{ case_study.testimonial|yesno:'span4,span8' }}">
+				<h3 class="title">{% trans case_study.title %}</h3>
 				{% trans case_study.synopsis|linebreaks %}
-				<p>
-					<a href="{{ case_study.url }}">{% trans "Read case study" %}</a>
-				</p>
+				<a href="{{ case_study.url }}">{% trans "Read case study" %}</a>
 			</div>
 			{% if case_study.testimonial %}
 			<div class="span4 case-study-testomonial">
 				<blockquote class="ed-arrow_box">
 					<span class="text">{% trans case_study.testimonial %}</span>
 					<cite>
-						<span class="name">{% trans case_study.testimonial_name %}</span>
-						<span class="company">{% trans case_study.testimonial_company %}</span>
+						<span class="person-name">{% trans case_study.testimonial_name %}</span>
+						<span class="company-name">{% trans case_study.testimonial_company %}</span>
 					</cite>
 				</blockquote>
 			</div>
 			{% endif %}
 			<div class="span4 case-study-info">
-				<p>
-					<b>{{ case_study.company_name }}</b>
-				</p>
-				<dl>
+				<p id="case-study-company-name">{{ case_study.company_name }}</p>
+				<dl aria-labelledby="case-study-company-name">
 					<dt>{% trans "Industries" %}</dt>
 					<dd>
 					{% comment %}Do NOT move the forloop if to new line as this causes extra space before comma{% endcomment %}
@@ -101,8 +95,8 @@
 						{% endif %}
 					{% endfor %}
 					</dd>
-					<dt>{% trans "keywords" %}</dt>
-					<dd><i>{% trans case_study.keywords %}</i></dd>
+					<dt class="keywords">{% trans "keywords" %}</dt>
+					<dd class="keywords">{% trans case_study.keywords %}</dd>
 				</dl>
 			</div>
 		</div>

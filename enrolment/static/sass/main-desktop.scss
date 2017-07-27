@@ -2,27 +2,6 @@ $asset-path: '../';
 
 @import 'variables.scss';
 
-blockquote {
-  border: none;
-  padding: 20px;
-  
-  span {
-    display: block;
-  }
-  
-  .text {
-    color: $grey-4;
-    font-weight: 500;
-    margin-bottom: 1em;
-    &:after {
-      content: "\201D";
-    }
-    &:before {
-      content: "\201C";
-    }
-  }
-}
-
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1146,6 +1125,30 @@ section {
 
 /* Components
  *****************/
+blockquote {
+  border: none;
+  padding: 20px;
+  
+  cite {
+    font-size: 15px;
+  }
+  
+  span {
+    display: block;
+  }
+  
+  .text {
+    color: $grey-4;
+    margin-bottom: 1em;
+    &:after {
+      content: "\201D";
+    }
+    &:before {
+      content: "\201C";
+    }
+  }
+}
+
 .browse-companies-container,
 .search-companies-container {
   background-color: $aqua;
