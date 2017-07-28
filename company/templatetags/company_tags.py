@@ -40,7 +40,5 @@ def date_recency(value):
 @register.simple_tag
 def search_url(sector_value):
     sectors = SECTOR_FILTER_GROUPS.get(sector_value, {sector_value})
-
     queyrstring = urllib.parse.urlencode({'sectors': sectors}, doseq=True)
-
     return reverse('company-search') + '?' + queyrstring
