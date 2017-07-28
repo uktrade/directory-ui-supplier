@@ -4,7 +4,10 @@ from enrolment import constants
 
 from directory_validators.constants.choices import COMPANY_CLASSIFICATIONS
 
-valid_sectors = dict(COMPANY_CLASSIFICATIONS)
+valid_sectors = (
+    [value for value, label in COMPANY_CLASSIFICATIONS] +
+    list(constants.SECTOR_FILTER_GROUPS.keys())
+)
 
 
 def test_sector_values_exist():

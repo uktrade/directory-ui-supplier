@@ -7,8 +7,66 @@ links = settings.SECTOR_LINKS
 
 COMPANIES_HOUSE_SEARCH_URL = 'https://beta.companieshouse.gov.uk'
 
+# marketing pages refer to these conflated groups of sectors
+SECTOR_FILTER_GROUPS = {
+    'ADVANCED_MANUFACTURING': (
+        'MECHANICAL_ELECTRICAL_AND_PROCESS_ENGINEERING',
+        'METALLURGICAL_PROCESS_PLANT',
+        'METALS_MINERALS_AND_MATERIALS',
+        'MINING',
+    ),
+    'CONSUMER_AND_RETAIL': (
+        'CLOTHING_FOOTWEAR_AND_FASHION',
+        'GIFTWARE_JEWELLERY_AND_TABLEWARE',
+        'HOUSEHOLD_GOODS_FURNITURE_AND_FURNISHINGS',
+        'TEXTILES_INTERIOR_TEXTILES_AND_CARPETS',
+    ),
+    'ENERGY': (
+        'OIL_AND_GAS',
+        'RENEWABLE_ENERGY',
+        'POWER',
+        'WATER',
+    ),
+    'LIFE_SCIENCES_AND_HEALTHCARE': (
+        'BIOTECHNOLOGY_AND_PHARMACEUTICALS',
+        'HEALTHCARE_AND_MEDICAL',
+    ),
+    'TECHNOLOGY': (
+        'COMMUNICATIONS',
+        'ELECTRONICS_AND_IT_HARDWARE',
+        'SOFTWARE_AND_COMPUTER_SERVICES',
+    ),
+    'INFRASTRUCTURE': (
+        'AIRPORTS',
+        'CONSTRUCTION',
+        'LEISURE_AND_TOURISM',
+        'MARINE',
+        'PORTS_AND_LOGISTICS',
+        'RAILWAYS',
+    ),
+    'PROFESSIONAL_SERVIVES': (
+        'BUSINESS_AND_CONSUMER_SERVICES',
+        'EDUCATION_AND_TRAINING',
+        'FINANCIAL_AND_PROFESSIONAL_SERVICES',
+    ),
+    'CYBER_SECURITY': (
+        'COMMUNICATIONS',
+        'ELECTRONICS_AND_IT_HARDWARE',
+        'SECURITY',
+        'SOFTWARE_AND_COMPUTER_SERVICES',
+    ),
+    'BIO_ECONOMY': (
+        'AGRICULTURE_HORTICULTURE_AND_FISHERIES',
+        'CHEMICALS',
+    ),
+    'SMART_CITIES': (
+        'ELECTRONICS_AND_IT_HARDWARE',
+        'SOFTWARE_AND_COMPUTER_SERVICES',
+    ),
+}
+
 HEALTH_SECTOR_CONTEXT = {
-    'sector_value': 'HEALTHCARE_AND_MEDICAL',
+    'sector_value': 'LIFE_SCIENCES_AND_HEALTHCARE',
     'case_study': {
         'image_alt': _('Rebekah Marine using an i-limb'),
         'image_url': '/static/images/touch-bionics-right-hand.png',
@@ -33,7 +91,7 @@ HEALTH_SECTOR_CONTEXT = {
         'sectors': [
             {
                 'label': _('Healthcare and life sciences'),
-                'value': 'HEALTHCARE_AND_MEDICAL'
+                'value': 'LIFE_SCIENCES_AND_HEALTHCARE'
             },
             {
                 'label': _('Technology'),
@@ -276,7 +334,7 @@ FOOD_SECTOR_CONTEXT = {
 
 
 ADVANCED_MANUFACTURING_CONTEXT = {
-    'sector_value': 'MECHANICAL_ELECTRICAL_AND_PROCESS_ENGINEERING',
+    'sector_value': 'ADVANCED_MANUFACTURING',
     'case_study': {
         'image_url': '',
         'image_caption': '',
