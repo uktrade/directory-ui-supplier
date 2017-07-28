@@ -1,5 +1,6 @@
 {% load trans from i18n %}
 {% load static from staticfiles %}
+{% load search_url from company_tags %}
 <div class="browse-companies-container">
 	<h3 class="title">{% trans "Find other great UK companies" %}</h3>
 	<p>
@@ -7,7 +8,7 @@
 			{% trans "Exceptional and creative UK trade partners are ready to work with you. Discover them on the Find a Supplier service." %}
 		{% endblock %}
 	</p>
-	<a class="button"  href="{% url 'company-search' %}?sector={{sector_value }}">
+	<a class="button"  href="{% search_url sector_value=sector_value %}">
 		{% trans "Browse UK companies" %}
 	</a>
 </div>

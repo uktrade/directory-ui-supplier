@@ -244,4 +244,4 @@ def test_filter_search(template_name):
     }
     html = render_to_string(template_name, context)
 
-    assert reverse('company-search') + '?sector=AEROSPACE' in html
+    assert reverse('company-search') + '?sectors=AEROSPACE' in html
