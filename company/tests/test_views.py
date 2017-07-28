@@ -530,13 +530,13 @@ def test_company_search_pagination_param(
 
     url = reverse('company-search')
     response = client.get(
-        url, {'term': '123', 'page': 1, 'sector': 'AEROSPACE'}
+        url, {'term': '123', 'page': 1, 'sectors': ['AEROSPACE']}
     )
 
     assert response.status_code == 200
     assert mock_search.call_count == 1
     assert mock_search.call_args == call(
-        page=1, size=10, term='123', sector='AEROSPACE',
+        page=1, size=10, term='123', sectors=['AEROSPACE'],
     )
 
 

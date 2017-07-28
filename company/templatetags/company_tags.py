@@ -1,7 +1,12 @@
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+import urllib.parse
 
 from django import template
+from django.core.urlresolvers import reverse
+
+from enrolment.constants import SECTOR_FILTER_GROUPS
+
 
 register = template.Library()
 
@@ -30,3 +35,10 @@ def date_recency(value):
         months_suffix='s' if delta.months > 1 else '',
         years_suffix='s' if delta.years > 1 else '',
     )
+
+
+@register.simple_tag
+def search_url(sector_value):
+    sectors = SECTOR_FILTER_GROUPS.get(sector_value, {sector_value})
+    queyrstring = urllib.parse.urlencode({'sectors': sectors}, doseq=True)
+    return reverse('company-search') + '?' + queyrstring
