@@ -30,7 +30,7 @@ NO_RESULTS_FOUND_LABEL = 'No companies found'
 CONTACT_COMPANY_LABEL = 'Contact company'
 EMAIL_COMPANY_LABEL = 'Email company'
 RECENT_PROJECTS_LABEL = 'Recent projects'
-SEARCH_FILTERS_LABEL = 'Search filters'
+SEARCH_FILTERS_LABEL = 'Filter results'
 
 
 def test_case_study_detail_report_button():
