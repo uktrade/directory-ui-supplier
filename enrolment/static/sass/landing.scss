@@ -9,6 +9,15 @@
 
 /* Industries
  ******************/
+.fas-industries-content {
+  #industries {
+    .section-header {
+      /* A bit rubbish but fixing problem with content by removing duplicated header */
+      display: none;
+    }
+  }
+}
+
 .industry {
   border-color: $white;
   border-style: solid;
