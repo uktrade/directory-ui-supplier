@@ -1,0 +1,57 @@
+@mixin form-container {
+  border: 1px solid $grey-3;
+  border-bottom: 4px solid $red-1;
+  padding: $spacing-2;
+  margin-bottom: $spacing-2;
+}
+
+@mixin showcase-image {
+  margin-bottom: $spacing-2;
+  position: relative;
+  
+  .caption {
+    background-color: rgba(74,74,74,0.5);
+    bottom: 0;
+    color: $white;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    padding: 10px;
+  }
+}
+
+/* STANDARD FONTS
+ *********************/
+@mixin font-title-1 {
+  font-family: $font-heading;
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 55px;
+}
+
+@mixin font-title-2 {
+  font-family: $font-heading;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  margin: 0 0 0.7em 0;
+}
+
+@mixin font-title-3 {
+  font-family: $font-heading;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  line-height: 31px;
+  margin: 0 0 0.9em 0;
+}
+
+@mixin font-title-4 {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  line-height: 25px;
+  margin: 0 0 0.7em 0;
+}
