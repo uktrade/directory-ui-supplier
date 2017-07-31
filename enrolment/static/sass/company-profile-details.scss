@@ -159,6 +159,13 @@ h3 {
   letter-spacing: -0.2px;
 }
 
+#company-contact-form {
+  @include form-container;
+  .errorlist.nonfield {
+    display: none;
+  }
+}
+
 #company-details,
 #company-profiles {
   display: table;
