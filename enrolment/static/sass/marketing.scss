@@ -64,26 +64,12 @@ li {
   }
   
   .title {
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: -0.4px;
-    line-height: 31px;
-    margin: 0 0 0.5em 0;
+    @include font-title-2;
   }
 }
 
-.ed-image-caption {
-  margin-bottom: 30px;
-  position: relative;
-  
-  div {
-    background-color: rgba(74,74,74,0.5);
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    color: $white;
-    padding: 10px;
-  }
+.showcase-image {
+  @include showcase-image;
 }
 
 .ed-key-facts-container {

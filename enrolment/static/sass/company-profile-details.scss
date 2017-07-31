@@ -54,7 +54,7 @@ h3 {
 
 .company-profile-module-social-links,
 .company-profile-module-facts {
-  border-left: 1px solid #dedede;
+  border-left: 1px solid $grey-3;
   
   p {
     margin: 0;
@@ -152,25 +152,6 @@ h3 {
   margin-top: 20px;
 }
 
-.ed-company-profile-case-study-company-details {
-  h2 {
-    font-size: 18px;
-    line-height: 1.2em;
-    text-transform: uppercase;
-  }
-  
-  dd, dt {
-    display: inline;
-    font-weight: 100;
-  }
-
-  dd:after {
-  	content: "";
-  	display: block;
-  	margin-bottom: 10px;
-  }
-}
-
 .public-company-profiles-result-item-updated {
   font-size: 18px;
   font-weight: 300;
@@ -196,7 +177,6 @@ h3 {
   }
     
   .span4 {
-    border-left: $grey-3 solid 1px;
     padding: 0 30px;
     width: 30%;
   }
