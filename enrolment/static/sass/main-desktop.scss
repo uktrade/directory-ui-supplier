@@ -561,13 +561,9 @@ h1 {
   position: relative;
 
   .ed-hero-sub-header-title {
+    @include font-title-1;
     color: $white2;
     display: inline-block;
-    font-family: $font-heading;
-    font-size: 48px;
-    font-weight: 500;
-    letter-spacing: -1px;
-    line-height: 55px;
     margin: 0;
     width: 800px;
   }
@@ -866,7 +862,7 @@ a.ed-filled-button-primary {
   }
   
   .title {
-    @include font-title-2;
+    @include font-title-3;
   }
 }
 
@@ -1045,12 +1041,7 @@ section {
 }
 
 .section-header {
-  font-family: $font-family;
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 40px;
-  letter-spacing: -0.6px;
-  margin: 0 0 0.7em 0;
+  @include font-title-2;
 }
 
 
@@ -1228,15 +1219,12 @@ blockquote {
   }
   
   .title {
+    @include font-title-3;
     background-image: url(/static/images/globe-icon.png);
     background-position: left center;
     background-repeat: no-repeat;
     background-size: 40px;
-    font-size: 21px;
-    font-weight: 300;
-    line-height: 1.1em;
-    margin: 0 0 20px 0;
     min-height: 40px;
-    padding: 10px 0 0 51px;
+    padding: 5px 0 0 51px;
   }
 }

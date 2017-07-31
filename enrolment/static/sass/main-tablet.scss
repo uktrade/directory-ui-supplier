@@ -21,10 +21,7 @@
     padding-top: 265px;
     
     .ed-hero-sub-header-title {
-      font-size: 32px;
-      font-weight: 500;
-      line-height: 40px;
-      letter-spacing: -0.7px;
+      @include font-title-2;
       width: 540px;
     }
   }

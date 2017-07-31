@@ -31,10 +31,7 @@
   }
   
   .title {
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: -0.4px;
-    line-height: 31px;
+    @include font-title-3;
     min-height: 2.5em;
   }
   
@@ -115,20 +112,12 @@
     }
   }
   
-  #companies .browse-companies-container,
-  #intro .search-companies-container {
-    .title {
-      padding-top: 10px;
-    }
-  }
-  
   .industry {
-    padding-top: 36%;
+    padding-top: 37%;
     width: 50%;
     
     .title {
-      font-size: 18px;
-      line-height: 25px;
+      @include font-title-4;
       min-height: 0;
     }
   }

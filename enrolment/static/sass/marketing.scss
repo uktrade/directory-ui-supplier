@@ -64,7 +64,7 @@ li {
   }
   
   .title {
-    @include font-title-2;
+    @include font-title-3;
   }
 }
 
@@ -141,11 +141,7 @@ li {
 #company-showcase {
   .section-header,
   .title {
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: -0.4px;
-    line-height: 31px;
-    margin: 0 0 0.9em 0;
+    @include font-title-3;
   }
 }
 
