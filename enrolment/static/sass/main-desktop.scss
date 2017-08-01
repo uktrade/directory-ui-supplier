@@ -957,7 +957,7 @@ input[type="color"],
     margin: 0;
     opacity: 0;
     position: absolute;
-    top: -1px;
+    top: 1px;
     width: 24px;
     -webkit-appearance: none;
   }
@@ -975,7 +975,7 @@ input[type="color"],
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    top: 7px;
+    top: 8px;
     width: 16px;
     z-index: -1;
   }
@@ -991,7 +991,7 @@ input[type="color"],
     height: 22px;
     left: 0;
     position: absolute;
-    top: 0;
+    top: 1px;
     width: 24px;
     z-index: -1;
   }

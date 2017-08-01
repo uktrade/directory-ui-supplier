@@ -29,19 +29,19 @@ def test_mutiple_choice_checkbox_with_inline_label():
       <td>
         <ul id="id_field">
           <li>
-            <div class="form-field ed-pretty-checkbox">
+            <div class="form-field checkbox">
               <input id="id_field_0" name="field" type="checkbox" value="1" />
               <label for="id_field_0">one</label>
             </div>
           </li>
           <li>
-            <div class="form-field ed-pretty-checkbox">
+            <div class="form-field checkbox">
               <input id="id_field_1" name="field" type="checkbox" value="2" />
               <label for="id_field_1">two</label>
             </div>
           </li>
           <li>
-            <div class="form-field ed-pretty-checkbox">
+            <div class="form-field checkbox">
               <input id="id_field_2" name="field" type="checkbox" value="3" />
               <label for="id_field_2">three</label>
             </div>
