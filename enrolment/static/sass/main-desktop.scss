@@ -313,24 +313,6 @@ a.teal:focus {
 }
 
 body {
-  @include font-standard-1;
-  background-color: $white;
-  
-  @media (max-width: 979px) {
-    padding: 0;
-    .container {
-      max-width: 960px;
-      padding: 0 15px;
-      width: 100%;
-    }
-  }
-  
-  @media (min-width: 979px) {
-    .container {
-      max-width: 1200px;
-      width: 100%;
-    }
-  }
 
   #content {
     margin-bottom: 15px;
@@ -838,6 +820,12 @@ a {
   }
 }
 
+body {
+  @include font-standard-1;
+  background-color: $white;
+  padding: 0;
+}
+
 h1 {
   @include font-title-2;
 }
@@ -850,6 +838,12 @@ section {
   border: $grey-3 solid 1px;
   margin-bottom: 30px;
   padding: 30px;
+}
+
+.container {
+  padding: 0 30px;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .section-header {
@@ -871,7 +865,7 @@ input[type="button"],
   cursor: pointer;
   display: -moz-inline-stack;
   display: inline-block;
-  padding: 21px 24px;
+  padding: 20px 30px;
   position: relative;
   text-decoration: none;
   vertical-align: top;
