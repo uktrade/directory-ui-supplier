@@ -398,7 +398,7 @@ body {
     color: $white2;
     display: inline-block;
     margin: 0;
-    width: 800px;
+    max-width: 800px;
   }
   
   &:after {
