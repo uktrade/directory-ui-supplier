@@ -8,73 +8,11 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
   box-sizing: inherit;
-}
-
-html input:focus:invalid:focus,
-html textarea:focus:invalid:focus,
-html select:focus:invalid:focus {
-    border-color: #007EA3;
-}
-
-html input:focus:invalid,
-html textarea:focus:invalid,
-html select:focus:invalid {
-  color: #4a4a4a;
-}
-
-select:focus,
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
-  outline: 3px solid $focus;
-}
-
-html {
-  a:focus {
-    outline: 3px solid $focus;
-    color: #007EA3;
-    background-color: transparent;
-  }
-}
-
-input[type="file"] {
-  line-height: 1em;
-}
-
-label, 
-select, 
-button, 
-input[type="button"], 
-input[type="reset"], 
-input[type="submit"], 
-input[type="radio"], 
-input[type="checkbox"] {
-  /* overwrite confusing Bootstrap style */
-	cursor: initial;
-}
-
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-  /* overwrite Bootstrap */
-  border: $grey-3 solid 1px;
 }
 
 ul, li {
@@ -283,19 +221,6 @@ p {
   margin-left: .5em;
 }
 
-.bold {
-  font-weight: 600;
-}
-
-a.teal {
-  color: #007ea3;
-  border-bottom: 1px solid #007ea3;
-}
-a.teal:hover {
-  border-bottom: 1px dashed #007ea3;
-  text-decoration: none;
-}
-
 a.white-link {
   color: $white;
   border-bottom: 1px solid $white;
@@ -318,54 +243,16 @@ a.teal:focus {
 .custom-hr {
   border-top: 0;
 }
-.font-white {
-    color: #fff;
-}
-.font-weight-medium {
-  font-weight: 500;
-}
-.font-size-15 {
-  font-size: 15px;
-}
-
-label, input, button, select, textarea {
-  color: $dark-grey;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.4;
-  &:focus {
-    outline: 3px solid $focus;
-  }
-}
 
 .input-field-container {
   margin-bottom: 15px;
   label {
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: -0.2px;
-    color: #4a4a4a;
     span {
       margin-bottom: 5px;
       display: inline-block;
     }
   }
-
-  input, select, textarea {
-    background-color: $white;
-    border-radius: 0;
-    color: $grey-4;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    height: 50px;
-    margin-bottom: 10px;
-    width: 100%;
-
-    &:focus {
-      border-color: rgba(82,168,236,0.8);
-    }
-  }
+  
   input[type='checkbox'] {
     height: 14px;
     width: 14px;
@@ -412,29 +299,6 @@ label, input, button, select, textarea {
   margin-top: 30px;
 }
 
-.button {
-  background-color: #00549F;
-  border-radius: 0;
-  position: relative;
-  display: -moz-inline-stack;
-  display: inline-block;
-  padding: 21px 24px;
-  border: none;
-  -webkit-appearance: none;
-  font-weight: 500;
-  text-decoration: none;
-  -webkit-font-smoothing: antialiased;
-  cursor: pointer;
-  color: #fff;
-  box-sizing: border-box;
-  vertical-align: top;
-  line-height: 1;
-  font-family: 'Roboto', sans-serif;
-  &:focus {
-    outline: 3px solid $focus;
-  }
-}
-
 .checkbox-txt {
   margin-left: 20px;
 }
@@ -449,11 +313,8 @@ label, input, button, select, textarea {
 }
 
 body {
+  @include font-standard-1;
   background-color: $white;
-  font-family: $font-family;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 25px;
   
   @media (max-width: 979px) {
     padding: 0;
@@ -536,16 +397,6 @@ body {
       }
     }
   }
-}
-
-h1 {
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 50px;
-}
-
-#secondaryNav {
-  font-size: 15px;
 }
 
 .ed-hero-sub-header {
@@ -866,13 +717,6 @@ a.ed-filled-button-primary {
   }
 }
 
-.helptext {
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.4;
-  color: #4a4a4a;
-}
-
 .header-gov-link {
   &:hover,
   &:link,
@@ -977,16 +821,135 @@ a.ed-filled-button-primary {
 
 /* General
  ******************/
+a {
+  &:link {
+    /* 
+    Match selector to overwrite gov-template styles, 
+    but makes button styles more difficult. Would
+    be better without psuedo class raising priority.
+    */
+    @include font-standard-1;
+  }
+  
+  &:focus {
+    background-color: transparent;
+    outline: 3px solid $focus;
+    text-decoration: underline;
+  }
+}
+
+h1 {
+  @include font-title-2;
+}
+
 h2 {
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 50px;
+  @include font-title-3;
 }
 
 section {
   border: $grey-3 solid 1px;
   margin-bottom: 30px;
   padding: 30px;
+}
+
+.section-header {
+  @include font-title-2;
+}
+
+
+/* Buttons
+ *****************/
+button,
+input[type="button"],
+.button,
+.button:link {
+  @include font-button-1;
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: $blue-1;
+  cursor: pointer;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: 21px 24px;
+  position: relative;
+  text-decoration: none;
+  vertical-align: top;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  
+  &:focus {
+    outline: 3px solid $focus;
+  }  
+}
+
+.button-primary,
+.button-primary:focus,
+.button-primary:link {
+  background-color: $blue-1;
+  color: $white;
+}
+
+
+/* Forms
+ *****************/
+label {
+  @include font-standard-1;
+}
+
+label, 
+select, 
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"], 
+input[type="radio"], 
+input[type="checkbox"] {
+  /* overwrite confusing Bootstrap style */
+	cursor: initial;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  /* silly selector to match and overwrite Bootstrap */
+  @include font-standard-1;
+  background-color: $white;
+  border: $grey-3 solid 1px;
+  border-radius: 0;
+  height: 50px;
+  margin-bottom: 10px;
+  width: 100%;
+  
+  &:focus,
+  &:focus:invalid {
+    border-color: $grey-3;
+    color: inherit;
+    outline: 3px solid $focus;
+    
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+      
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
 }
 
 .checkbox {
@@ -1040,8 +1003,8 @@ section {
   }
 }
 
-.section-header {
-  @include font-title-2;
+.helptext {
+  @include font-standard-2;
 }
 
 
@@ -1175,7 +1138,7 @@ blockquote {
   padding: 20px;
   
   cite {
-    font-size: 15px;
+    @include font-standard-2;
   }
   
   span {
@@ -1183,7 +1146,6 @@ blockquote {
   }
   
   .text {
-    color: $grey-4;
     margin-bottom: 1em;
     &:after {
       content: "\201D";
@@ -1204,7 +1166,6 @@ blockquote {
   position: relative;
 
   p {
-    line-height: 1.3em;
     margin-bottom: 0;
     width: 55%;
   }
@@ -1212,6 +1173,7 @@ blockquote {
   .button {
     background-color: $white;
     border: 2px solid $blue-2;
+    color: $blue-2;
     bottom: 25px;
     position: absolute;
     text-align: center;

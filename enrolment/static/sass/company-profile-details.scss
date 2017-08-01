@@ -77,7 +77,6 @@ h3 {
     border-radius: 6px;
     color: $dark-grey;
     display: inline-block;
-    font-weight: 300;
     margin: 0 5px 8px 0;
     padding: 9px 12px;
   }
@@ -202,7 +201,7 @@ h3 {
   }
   
   p {
-    font-size: 15px;
+    @include font-standard-2;
   }
   
   article {
