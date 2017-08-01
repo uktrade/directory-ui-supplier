@@ -1072,11 +1072,13 @@ input[type="color"],
   background-color: $grey-6;
   border: none;
   color: $white;
-  font-size: 17px;
   padding: 40px 0;
   
-  a, a:hover {
+  a:link, a:hover {
     color: $white;
+    font-size: 17px;
+    letter-spacing: -0.9px;
+    line-height: 21px;
    
     img {
       border-left: 1px solid white;
@@ -1097,6 +1099,7 @@ input[type="color"],
   width: 25%;
   
   a {
+    display: inline-block;
     margin-right: 58px;
   }
   
@@ -1105,6 +1108,7 @@ input[type="color"],
     font-size: 14px;
     margin-bottom: 15px;
     margin-right: 70px;
+    min-width: 160px;
   }
 }
 
