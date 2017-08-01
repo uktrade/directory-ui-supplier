@@ -327,7 +327,7 @@ body {
   
   @media (min-width: 979px) {
     .container {
-      max-width: 960px;
+      max-width: 1200px;
       width: 100%;
     }
   }
@@ -1099,12 +1099,18 @@ input[type="color"],
 
 #footer-credits {
   display: table-cell;
-  width: 220px;
+  text-align: right;
+  width: 25%;
+  
+  a {
+    margin-right: 58px;
+  }
   
   .copyright-text {
-    display: block;
+    display: inline-block;
     font-size: 14px;
     margin-bottom: 15px;
+    margin-right: 70px;
   }
 }
 
@@ -1112,7 +1118,7 @@ input[type="color"],
   display: table-cell;
   margin: 0;
   padding-right: 40px;
-  width: 740px;
+  width: 75%;
   
   li {
     display: inline-block;
