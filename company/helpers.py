@@ -5,6 +5,7 @@ from directory_validators.constants import choices
 from directory_validators.helpers import tokenize_keywords
 
 from django.http import Http404
+from django.utils.html import escape, mark_safe
 
 from api_client import api_client
 
@@ -77,9 +78,25 @@ def get_company_list_from_response(response):
 
 def get_results_from_search_response(response):
     parsed = response.json()
-    results = [hit['_source'] for hit in parsed['hits']['hits']]
-    results = map(format_company_details, results)
-    parsed['results'] = list(results)
+    formatted_results = []
+
+    for result in parsed['hits']['hits']:
+        formatted = format_company_details(result['_source'])
+        if 'highlight' in result:
+            highlighted = '...'.join(
+                result['highlight'].get('description', '') or
+                result['highlight'].get('summary', '')
+            )
+            # escape all html tags other than <em> and </em>
+            highlighted_escaped = (
+                escape(highlighted)
+                .replace('&lt;em&gt;', '<em>')
+                .replace('&lt;/em&gt;', '</em>')
+            )
+            formatted['highlight'] = mark_safe(highlighted_escaped)
+        formatted_results.append(formatted)
+
+    parsed['results'] = formatted_results
     return parsed
 
 

@@ -84,14 +84,17 @@
 								<h3 class="ed-truncate-single-line">{{ company.name }}</h3>
 							</a>
 							{% if company.description or company.summary %}
-								<div class="ed-company-search-summary">
-									<span>{{company.summary|default:company.description|truncatechars:135}}</span>
-		                        </div>
+								{% if company.highlight %}
+									<div class="ed-company-search-summary">
+										<span>{{company.highlight}}</span>
+									</div>
+								{% else %}
+									<div class="ed-company-search-summary">
+										<span>{{company.summary|default:company.description|truncatechars:135}}</span>
+									</div>
+								{% endif %}
 		                    {% endif %}
 								<div class="row-fluid">
-									<a class="pull-left" href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}" class="ed-public-company-profiles-result-item-profile-link">
-		                           view profile
-		                       		</a>
 									<i class="pull-right" class="public-company-profiles-result-item-updated">Updated: {{ company.modified|date_recency }}</i>
 		                       	</div>
 						</div>

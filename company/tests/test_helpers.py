@@ -84,7 +84,7 @@ def test_get_company_profile_from_response(retrieve_profile_data):
         'has_social_links': True,
         'number': '01234567',
         'description': 'Ecommerce website',
-        'summary': 'good',
+        'summary': 'this is a short summary',
         'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
         'slug': 'great-company',
     }
@@ -123,7 +123,7 @@ def test_get_public_company_profile_from_response(retrieve_profile_data):
         'logo': 'nice.jpg',
         'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
         'description': 'Ecommerce website',
-        'summary': 'good',
+        'summary': 'this is a short summary',
         'linkedin_url': 'http://www.linkedin.com',
         'employees': '501-1,000',
         'keywords': ['word1', 'word2'],
@@ -161,7 +161,7 @@ def test_get_company_list_from_response(public_companies):
                 ],
                 'has_social_links': True,
                 'description': 'Ecommerce website',
-                'summary': 'good',
+                'summary': 'this is a short summary',
                 'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
                 'date_of_creation': datetime(2015, 3, 2, 0, 0),
                 'slug': 'great-company',
@@ -204,7 +204,7 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
         'image_two': 'https://image_two.jpg',
         'company': {
             'description': 'Ecommerce website',
-            'summary': 'good',
+            'summary': 'this is a short summary',
             'linkedin_url': 'http://www.linkedin.com',
             'logo': 'nice.jpg',
             'name': 'Great company',
@@ -246,3 +246,31 @@ def test_format_company_details_handles_keywords_empty(retrieve_profile_data):
         formatted = helpers.format_company_details(retrieve_profile_data)
 
         assert formatted['keywords'] == []
+
+
+def test_get_results_from_search_response_xss(retrieve_profile_data):
+    response = requests.Response()
+    response.json = lambda: {
+        'hits': {
+            'total': 1,
+            'hits': [
+                {
+                    '_source': retrieve_profile_data,
+                    'highlight': {
+                        'description': [
+                            '<a onmouseover=javascript:func()>stuff</a>',
+                            'to the max <em>wolf</em>.'
+                        ]
+                    }
+
+                }
+            ]
+        }
+    }
+
+    formatted = helpers.get_results_from_search_response(response)
+
+    assert formatted['results'][0]['highlight'] == (
+        '&lt;a onmouseover=javascript:func()&gt;stuff&lt;/a&gt;...to the max '
+        '<em>wolf</em>.'
+    )

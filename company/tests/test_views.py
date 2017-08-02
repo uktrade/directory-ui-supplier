@@ -73,6 +73,31 @@ def api_response_search_200(api_response_200, search_results):
     return api_response_200
 
 
+@pytest.fixture
+def api_response_search_description_highlight_200(
+    api_response_200, search_results
+):
+    search_results['hits']['hits'][0]['highlight'] = {
+        'description': [
+            '<em>wolf</em> in sheep clothing description',
+            'to the max <em>wolf</em>.'
+        ]
+    }
+    api_response_200.json = lambda: search_results
+    return api_response_200
+
+
+@pytest.fixture
+def api_response_search_summary_highlight_200(
+    api_response_200, search_results
+):
+    search_results['hits']['hits'][0]['highlight'] = {
+        'summary': ['<em>wolf</em> in sheep clothing summary.']
+    }
+    api_response_200.json = lambda: search_results
+    return api_response_200
+
+
 def test_public_profile_different_slug_redirected(
     client, retrieve_profile_data
 ):
@@ -602,3 +627,40 @@ def test_company_search_api_success(
     assert mock_get_results_from_search_response.call_args == call(
         api_response_search_200
     )
+
+
+@patch('api_client.api_client.company.search')
+def test_company_search_response_no_highlight(
+    mock_search, api_response_search_200, client
+):
+    mock_search.return_value = api_response_search_200
+
+    response = client.get(reverse('company-search'), {'term': 'wolf'})
+
+    assert b'this is a short summary' in response.content
+
+
+@patch('api_client.api_client.company.search')
+def test_company_highlight_description(
+    mock_search, api_response_search_description_highlight_200, client
+):
+    mock_search.return_value = api_response_search_description_highlight_200
+
+    response = client.get(reverse('company-search'), {'term': 'wolf'})
+    expected = (
+        b'<em>wolf</em> in sheep clothing description...'
+        b'to the max <em>wolf</em>.'
+    )
+
+    assert expected in response.content
+
+
+@patch('api_client.api_client.company.search')
+def test_company_search_highlight_summary(
+    mock_search, api_response_search_summary_highlight_200, client
+):
+    mock_search.return_value = api_response_search_summary_highlight_200
+
+    response = client.get(reverse('company-search'), {'term': 'wolf'})
+
+    assert b'<em>wolf</em> in sheep clothing summary.' in response.content
