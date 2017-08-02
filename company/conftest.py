@@ -12,7 +12,7 @@ def retrieve_profile_data():
     return {
         'website': 'http://example.com',
         'description': 'Ecommerce website',
-        'summary': 'good',
+        'summary': 'this is a short summary',
         'number': '01234567',
         'sectors': ['SECURITY'],
         'logo': 'nice.jpg',
