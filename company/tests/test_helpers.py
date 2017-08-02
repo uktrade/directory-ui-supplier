@@ -246,3 +246,31 @@ def test_format_company_details_handles_keywords_empty(retrieve_profile_data):
         formatted = helpers.format_company_details(retrieve_profile_data)
 
         assert formatted['keywords'] == []
+
+
+def test_get_results_from_search_response_xss(retrieve_profile_data):
+    response = requests.Response()
+    response.json = lambda: {
+        'hits': {
+            'total': 1,
+            'hits': [
+                {
+                    '_source': retrieve_profile_data,
+                    'highlight': {
+                        'description': [
+                            '<a onmouseover=javascript:func()>stuff</a>',
+                            'to the max <em>wolf</em>.'
+                        ]
+                    }
+
+                }
+            ]
+        }
+    }
+
+    formatted = helpers.get_results_from_search_response(response)
+
+    assert formatted['results'][0]['highlight'] == (
+        '&lt;a onmouseover=javascript:func()&gt;stuff&lt;/a&gt;...to the max '
+        '<em>wolf</em>.'
+    )

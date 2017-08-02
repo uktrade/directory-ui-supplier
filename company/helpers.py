@@ -5,7 +5,7 @@ from directory_validators.constants import choices
 from directory_validators.helpers import tokenize_keywords
 
 from django.http import Http404
-from django.utils.html import mark_safe
+from django.utils.html import escape, mark_safe
 
 from api_client import api_client
 
@@ -87,7 +87,13 @@ def get_results_from_search_response(response):
                 result['highlight'].get('description', '') or
                 result['highlight'].get('summary', '')
             )
-            formatted['highlight'] = mark_safe(highlighted)
+            # escape all html tags other than <em> and </em>
+            highlighted_escaped = (
+                escape(highlighted)
+                .replace('&lt;em&gt;', '<em>')
+                .replace('&lt;/em&gt;', '</em>')
+            )
+            formatted['highlight'] = mark_safe(highlighted_escaped)
         formatted_results.append(formatted)
 
     parsed['results'] = formatted_results
