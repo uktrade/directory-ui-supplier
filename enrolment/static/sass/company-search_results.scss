@@ -490,12 +490,14 @@ legend {
   padding: $spacing-2 0 $spacing-2 $spacing-2;
 
   ul {
+    left: -5px;
     margin-top: 10px;
     margin: 0;
     height: 300px;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding: $spacing-3 $spacing-2 0 0;
+    padding: 15px 0px 0 5px;
+    position: relative;
   }
 }
 
