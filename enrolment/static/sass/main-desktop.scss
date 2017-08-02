@@ -579,20 +579,20 @@ a.ed-filled-button-primary {
   z-index: 0;
   
   .ed-not-translated {
+    background: #FFC347;
+    color: $dark-grey;
+    height: 31px;
+    margin-top: -2px;
     img {
       height: 22px;
       margin-left: 7px;
-      margin-top: 0;
+      margin-top: 5px;
+      vertical-align: top;
     }
     span {
-      padding: 5px;
-      padding-left: 0;
       display: inline-block;
+      padding: 4px 5px;
     }
-    height: 34px;
-    background: #FFC347;
-    margin-top: 3px;
-    color: #333333;
   }
   
   form {
