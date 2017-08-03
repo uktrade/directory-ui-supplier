@@ -687,8 +687,8 @@ msgid ""
 "Discover them on the Find a Supplier service."
 msgstr ""
 "O Reino Unido tem parceiros comerciais excepcionalmente inovadores e "
-"criativos, prontos para trabalhar consigo. Descubra-os em \"Encontrarum "
-"fornecedor\"."
+"criativos, prontos para trabalhar consigo. Descubra-os em Encontrarum "
+"fornecedor."
 
 #: enrolment/templates/browse-companies.html:11
 #: enrolment/templates/search-companies.html:17
@@ -980,8 +980,8 @@ msgstr "Encontre hoje o seu parceiro criativo no Reino Unido"
 #: enrolment/templates/marketing-pages/creative.html:89
 msgid "See the UK's creative services providers on the Find a supplier service"
 msgstr ""
-"Consulte os fornecedores de serviços criativos no Reino Unido, em 'Encontrar "
-"um fornecedor'"
+"Consulte os fornecedores de serviços criativos no Reino Unido, em Encontrar "
+"um fornecedor"
 
 #: enrolment/templates/marketing-pages/food.html:6
 msgid ""
@@ -1169,8 +1169,8 @@ msgstr ""
 #: enrolment/templates/marketing-pages/food.html:78
 msgid "See the UK's food and drink companies on the Find a supplier service"
 msgstr ""
-"Consulte as empresas de alimentos e bebidas no Reino Unido, em 'Encontrar um "
-"fornecedor'"
+"Consulte as empresas de alimentos e bebidas no Reino Unido, em Encontrar um "
+"fornecedor"
 
 #: enrolment/templates/marketing-pages/food.html:81
 msgid ""
@@ -1463,7 +1463,7 @@ msgid ""
 "service"
 msgstr ""
 "Consulte os fornecedores de serviços de saúde e ciências da vida no Reino "
-"Unido, em \"Encontrar um fornecedor\""
+"Unido, em Encontrar um fornecedor"
 
 #: enrolment/templates/marketing-pages/health.html:103
 msgid "Find UK healthcare and life sciences companies to meet your needs"
@@ -1829,7 +1829,7 @@ msgstr "Encontre o seu parceiro comercial de tecnologia no Reino Unido"
 msgid "See the UK's technology providers on the Find a supplier service"
 msgstr ""
 "Consulte os fornecedores de serviços de tecnologia no Reino Unido, em "
-"\"Encontrar um fornecedor\""
+"Encontrar um fornecedor"
 
 #: enrolment/templates/marketing-pages/tech.html:73
 msgid ""
@@ -2171,8 +2171,8 @@ msgstr ""
 #~ "with you. Discover them on the Find a supplier service."
 #~ msgstr ""
 #~ "O Reino Unido tem parceiros comerciais excepcionalmente inovadores e "
-#~ "criativos, prontos para trabalhar consigo. Descubra-os em \"Encontrar um "
-#~ "fornecedor\"."
+#~ "criativos, prontos para trabalhar consigo. Descubra-os em Encontrar um "
+#~ "fornecedor."
 
 #~ msgid "I agree to the great.gov.uk terms and conditions."
 #~ msgstr "Concordo com os termos e condições de great.gov.uk."
