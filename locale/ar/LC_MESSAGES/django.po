@@ -2,24 +2,24 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-27 11:24+0000\n"
+"POT-Creation-Date: 2017-08-07 11:09+0000\n"
 "PO-Revision-Date: 2017-06-13 15:19+0100\n"
 "Language: ar\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: xls-to-po 1.0\n"
 
-#: enrolment/constants.py:13
+#: enrolment/constants.py:71
 #, fuzzy
 #| msgid "Rebekah Marine: i-limb&trade; user"
 msgid "Rebekah Marine using an i-limb"
 msgstr "ريبيكا مارين: مستخدمة i-limbTM"
 
-#: enrolment/constants.py:15
+#: enrolment/constants.py:73
 msgid "Rebekah Marine: i-limb&trade; user"
 msgstr "ريبيكا مارين: مستخدمة i-limbTM"
 
-#: enrolment/constants.py:18
+#: enrolment/constants.py:76
 msgid ""
 "Touch Bionics has transformed thousands of lives in dozens of countries "
 "through world-leading prosthetic technologies. We have a range of "
@@ -31,7 +31,7 @@ msgstr ""
 "الأيدي الاصطناعية والأصابع الاصطناعية المتصلة بكهربية العضل التي تساعد "
 "الأفراد في تعزيز استقلاليتهم وثقتهم بأنفسهم."
 
-#: enrolment/constants.py:26
+#: enrolment/constants.py:84
 msgid ""
 "The i-limb&trade; quantum is the next best thing to real hands and as a "
 "bilateral amputee having the ability to do what I want to do independently "
@@ -40,32 +40,32 @@ msgstr ""
 "يعتبر i-limb™ quantum أفضل خيار بعد اليد الحقيقية، وكشخص مبتور الأطراف من "
 "الجهتين فإن التمكن من القيام بكل ما أريد بشكل مستقل أمر رائع حقًا."
 
-#: enrolment/constants.py:30
+#: enrolment/constants.py:88
 msgid "Jason"
 msgstr "جايسون"
 
-#: enrolment/constants.py:31
+#: enrolment/constants.py:89
 msgid "i-limb quantum&trade; user"
 msgstr "مستخدم i-limb quantum™‎"
 
-#: enrolment/constants.py:35
+#: enrolment/constants.py:93
 msgid "Healthcare and life sciences"
 msgstr "الرعاية الصحية وعلوم الحياة"
 
-#: enrolment/constants.py:39 enrolment/constants.py:106
+#: enrolment/constants.py:97 enrolment/constants.py:164
 msgid "Technology"
 msgstr "التكنولوجيا"
 
-#: enrolment/constants.py:44
+#: enrolment/constants.py:102
 msgid "prosthetics, bionics, robotics, healthcare, technology, limb loss"
 msgstr ""
 "أطراف اصطناعية، اصطناعي، روبوتات، الرعاية الصحية، التكنولوجيا، فقدان الأطراف"
 
-#: enrolment/constants.py:50
+#: enrolment/constants.py:108
 msgid "Graphical representation of reflux in the stomach"
 msgstr ""
 
-#: enrolment/constants.py:55
+#: enrolment/constants.py:113
 msgid ""
 "RD Biomed designs and makes Peptest&trade;- the world’s first non-invasive "
 "reflux diagnostic test. RD Biomed specialises in diagnostics for "
@@ -75,11 +75,11 @@ msgstr ""
 "للارتجاع في العالم. تتخصص شركة RD Biomed في تشخيص إصابات الجهاز الهضمي "
 "والجهاز التنفسي."
 
-#: enrolment/constants.py:63
+#: enrolment/constants.py:121
 msgid "Claudia Breidbach using an i-limb"
 msgstr ""
 
-#: enrolment/constants.py:67
+#: enrolment/constants.py:125
 msgid ""
 "Touch Bionics is responsible for developing and improving the world’s first "
 "bionic hand with 5 independently moving fingers, transforming lives across "
@@ -89,11 +89,11 @@ msgstr ""
 "أصابع تتحرك بشكل مستقل، وإجراء تحسينات عليها، وهي بذلك تساهم في تغيير حياة "
 "الناس في كافة أنحاء العالم."
 
-#: enrolment/constants.py:80
+#: enrolment/constants.py:138
 msgid "Mobile phone displaying evrythng's commercial traceability product"
 msgstr ""
 
-#: enrolment/constants.py:87
+#: enrolment/constants.py:145
 msgid ""
 "EVRYTHNG’s commercial Internet of Things traceability solution allows brands "
 "to track and report the status, location and history of everything they "
@@ -107,7 +107,7 @@ msgstr ""
 "المعقّد والمترابط للأجزاء المكونة؛ يمكن تحديد المنتج النهائي والدُفعات "
 "والحالات والمنصات كما وتعيينها."
 
-#: enrolment/constants.py:97
+#: enrolment/constants.py:155
 msgid ""
 "Companies can transform the value of their physical assets in the EVRYTHNG "
 "cloud by adding an intelligent, personalised layer of digital content, "
@@ -116,17 +116,17 @@ msgstr ""
 "تستطيع الشركات تحويل قيمة أصولها الفعلية في سحابة EVRYTHNG من خلال إضافة "
 "طبقة ذكية ومخصصة من المحتوى الرقمي والخدمات وتحليلات البيانات."
 
-#: enrolment/constants.py:111
+#: enrolment/constants.py:169
 msgid "Internet of Things, data analytics, traceability, connectivity"
 msgstr "إنترنت الأشياء، تحليلات بيانات، تتبّع، اتصال"
 
-#: enrolment/constants.py:117
+#: enrolment/constants.py:175
 msgid ""
 "Mobile phone being used to interact with a bottle of Johnnie Walker using "
 "evrythng technology"
 msgstr ""
 
-#: enrolment/constants.py:123
+#: enrolment/constants.py:181
 msgid ""
 "EVRYTHNG is an Internet of Things software company that helps manufacturers "
 "<i>digitalise</i> their physical products by connecting them to the web. "
@@ -140,11 +140,11 @@ msgstr ""
 "ووصولاً إلى الأجهزة المنزلية الذكية المتصلة بالكامل، يملك كل عنصر فردي تتم "
 "إدارته في سحابة EVRYTHNG هوية رقمية نشطة مميزة"
 
-#: enrolment/constants.py:134
+#: enrolment/constants.py:192
 msgid "Connectivity diagram of Arkessa's IoT services"
 msgstr ""
 
-#: enrolment/constants.py:138
+#: enrolment/constants.py:196
 msgid ""
 "Arkessa enables devices and applications developers to connect to the "
 "Internet of Things (IoT), regardless of location, network operator or "
@@ -156,13 +156,13 @@ msgstr ""
 "منصة تنقّل آمنة قادرة على التكيف مع التطورات المستقبلية يسهل اعتمادها ودمجها "
 "وتوسيع حجمها."
 
-#: enrolment/constants.py:154
+#: enrolment/constants.py:212
 msgid ""
 "Immersive projection on to Parque Large in the Royal Botanical Gardens of "
 "Rio de Janeiro"
 msgstr ""
 
-#: enrolment/constants.py:161
+#: enrolment/constants.py:219
 msgid ""
 "For Adidas’ 2014 World Cup campaign, Immersive developed concepts, "
 "storyboards and produced final audio and video designs. It also produced the "
@@ -175,27 +175,27 @@ msgstr ""
 "2 م وإسقاط المرئيات عليهما، كما قدمت استشارة حول أنسب المواقع لالتقاط صور "
 "بواسطة الكاميرات ذات البث الحيّ من قبل وسائل الإعلام"
 
-#: enrolment/constants.py:169
+#: enrolment/constants.py:227
 msgid "Creating the grandest projection mapping the world has ever seen."
 msgstr "إنشاء أروع إسقاط للمرئيات على الخرائط في العالم على الإطلاق."
 
-#: enrolment/constants.py:172
+#: enrolment/constants.py:230
 msgid "Fast Company magazine"
 msgstr "مجلة Fast Company"
 
-#: enrolment/constants.py:176
+#: enrolment/constants.py:234
 msgid "Creative"
 msgstr "الخدمات الإبداعية"
 
-#: enrolment/constants.py:181
+#: enrolment/constants.py:239
 msgid "Interactive installations, video content, projection mapping"
 msgstr "تركيبات تفاعلية، محتوى الفيديو، إسقاط المرئيات على الخرائط"
 
-#: enrolment/constants.py:186
+#: enrolment/constants.py:244
 msgid "An Immersive event lighting system"
 msgstr ""
 
-#: enrolment/constants.py:190
+#: enrolment/constants.py:248
 msgid ""
 "Immersive is a complete solution provider for audio-visual projects of any "
 "scale. Immersive uses new media technology (such as LED, holograms, "
@@ -207,12 +207,12 @@ msgstr ""
 "والواقع الافتراضي والواقع المعزّز) لتصميم الإضاءة والفيديوهات والتركيبات "
 "التفاعلية المتطورة وإنشائها."
 
-#: enrolment/constants.py:200
+#: enrolment/constants.py:258
 msgid ""
 "Interaction between the Blippar app on a smartphone and a ketchup bottle"
 msgstr ""
 
-#: enrolment/constants.py:206
+#: enrolment/constants.py:264
 msgid ""
 "Blippar is the leading visual discovery app, harnessing augmented reality, "
 "image-recognition technology and artificial intelligence to bring the "
@@ -222,17 +222,17 @@ msgstr ""
 "وتكنولوجيا التعرّف على الصور والذكاء الاصطناعي لبعث الحياة في العالم المادي "
 "من خلال الهواتف الذكية."
 
-#: enrolment/constants.py:220
+#: enrolment/constants.py:278
 msgid ""
 "Fever-Tree Clementine and cinnamon tonic water being poured from a bottle "
 "into a glass"
 msgstr ""
 
-#: enrolment/constants.py:224 enrolment/constants.py:225
+#: enrolment/constants.py:282 enrolment/constants.py:283
 msgid "Clementine and cinnamon tonic water"
 msgstr "مياه غازية معدنية بنكهة الكليمنتين والقرفة"
 
-#: enrolment/constants.py:227
+#: enrolment/constants.py:285
 msgid ""
 "Fever-Tree has established itself as the mixer drink specialist, crafting a "
 "range of fourteen products sourced from the highest quality natural "
@@ -242,7 +242,7 @@ msgstr ""
 "مجموعة من أربعة عشر منتجًا مصدرها المكونات الطبيعية ذات أعلى جودة بهدف تقديم "
 "أفضل المشروبات المخلوطة اللذيذة."
 
-#: enrolment/constants.py:234
+#: enrolment/constants.py:292
 msgid ""
 "If three-quarters of your gin and tonic is the tonic, make sure you use the "
 "best."
@@ -250,23 +250,23 @@ msgstr ""
 "إذا كان ثلاثة أرباع مشروب الجين والمياه الغازية المعدنية قائمًا على المياه "
 "الغازية، فاحرص على استخدام الأفضل."
 
-#: enrolment/constants.py:237
+#: enrolment/constants.py:295
 msgid "Tim Warrillow"
 msgstr "تيم واريلو"
 
-#: enrolment/constants.py:242
+#: enrolment/constants.py:300
 msgid "Food and drink"
 msgstr "الأغذية والمشروبات"
 
-#: enrolment/constants.py:246
+#: enrolment/constants.py:304
 msgid "Mixers, Quality, Taste"
 msgstr "مشروبات مخلوطة، جودة، نكهة"
 
-#: enrolment/constants.py:251
+#: enrolment/constants.py:309
 msgid "Packet of Joe and Seph's double chocolate popcorn"
 msgstr ""
 
-#: enrolment/constants.py:256
+#: enrolment/constants.py:314
 msgid ""
 "All Joe & Seph’s popcorn is handmade in small batches to ensure superior "
 "texture and an intense flavour. The ingredients used are 100&#37; natural "
@@ -277,11 +277,11 @@ msgstr ""
 "ممتاز ونكهة قوية لا تقاوم. إن المكونات المستخدمة هي طبيعية 100%، ويتم طهي كل "
 "حبة ذرة بواسطة الهواء، وهي طريقة طهي صحية أكثر مقارنةً مع القلي."
 
-#: enrolment/constants.py:265
+#: enrolment/constants.py:323
 msgid "Bottle and glass of Fever-Tree Madagascan Cola"
 msgstr ""
 
-#: enrolment/constants.py:269
+#: enrolment/constants.py:327
 msgid ""
 "Fever-Tree has pioneered premium mixers and is now the world’s leading "
 "premium mixer company."
@@ -289,36 +289,36 @@ msgstr ""
 "أتت شركة Fever-Tree في المقدمة في مجال المشروبات المخلوطة، وهي الآن شركة "
 "المشروبات المخلوطة الفاخرة الرائدة عالميًا."
 
-#: enrolment/constants.py:317
+#: enrolment/constants.py:375
 msgid "Queen Elizabeth Olympic Park, London"
 msgstr ""
 
-#: enrolment/constants.py:318
+#: enrolment/constants.py:376
 msgid "London 2012 Olympic and Paralympic Games"
 msgstr ""
 
-#: enrolment/constants.py:320
+#: enrolment/constants.py:378
 msgid ""
 "Movement Strategies leads design standards for major events such as the "
 "Olympic Games, helping plan crowd movement and safety, and driving increased "
 "ticket sales."
 msgstr ""
 
-#: enrolment/constants.py:332
+#: enrolment/constants.py:390
 msgid "Global sports infrastructure"
 msgstr ""
 
-#: enrolment/constants.py:336
+#: enrolment/constants.py:394
 msgid "Crowd safety, Pedestrian flow, Movement analytics"
 msgstr ""
 
-#: enrolment/constants.py:343
+#: enrolment/constants.py:401
 msgid ""
 "Movement Strategies is the largest and most experienced independent, "
 "specialist people movement consultancy in the world."
 msgstr ""
 
-#: enrolment/constants.py:353
+#: enrolment/constants.py:411
 msgid ""
 "Fortress GB proved its reputation as the market-leading e-ticketing provider "
 "by being selected to install and manage the very latest in turnstile "
@@ -401,7 +401,7 @@ msgid "Find a Supplier"
 msgstr ""
 
 #: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:40
-#: enrolment/templates/marketing-pages/base.html:87
+#: enrolment/templates/marketing-pages/base.html:88
 #: enrolment/templates/marketing-pages/bidi/base.html:87
 msgid "Industries"
 msgstr "الصناعات"
@@ -486,18 +486,8 @@ msgstr ""
 "مع المورّدين المناسبين في المملكة المتحدة."
 
 #: enrolment/templates/bidi/lead-generation-form.html:76
-#: enrolment/templates/lead-generation-form.html:76
-#, fuzzy
-#| msgid "I agree to the great.gov.uk terms and conditions"
-msgid "I agree to the great.gov.uk"
+msgid "I agree to the great.gov.uk terms and conditions"
 msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
-
-#: enrolment/templates/bidi/lead-generation-form.html:76
-#: enrolment/templates/lead-generation-form.html:76
-#, fuzzy
-#| msgid "Terms &amp; conditions"
-msgid "terms and conditions"
-msgstr "البنود والشروط"
 
 #: enrolment/templates/bidi/lead-generation-form.html:82
 #: enrolment/templates/lead-generation-form.html:82
@@ -537,11 +527,11 @@ msgstr ""
 "ونحن بإمكاننا مساعدتك في إنشاء علاقات تجارية أساسية مع أفضل الشركات. اختر من "
 "ضمن الشركات في هذه الصناعات المنتشرة في المملكة المتحدة للعمل معك."
 
-#: enrolment/templates/browse-companies.html:4
+#: enrolment/templates/browse-companies.html:5
 msgid "Find other great UK companies"
 msgstr "تصفح الشركات في المملكة المتحدة"
 
-#: enrolment/templates/browse-companies.html:7
+#: enrolment/templates/browse-companies.html:8
 #: enrolment/templates/search-companies.html:11
 msgid ""
 "Exceptional and creative UK trade partners are ready to work with you. "
@@ -550,7 +540,7 @@ msgstr ""
 "شركاء تجاريون مبدعون بشكل استثنائي على استعداد للعمل معك في المملكة المتحدة. "
 "اكتشفهم بواسطة خدمة العثور على مورّد."
 
-#: enrolment/templates/browse-companies.html:11
+#: enrolment/templates/browse-companies.html:12
 #: enrolment/templates/search-companies.html:17
 msgid "Browse UK companies"
 msgstr "تصفح الشركات في المملكة المتحدة"
@@ -596,7 +586,7 @@ msgid "The UK's creative services"
 msgstr "الخدمات الإبداعية في المملكة المتحدة"
 
 #: enrolment/templates/industry-teasers.html:34
-#: enrolment/templates/marketing-pages/creative.html:12
+#: enrolment/templates/marketing-pages/creative.html:11
 msgid ""
 "Whether you need buildings designed, films made or a fresh approach to "
 "marketing, the UK is the first place to look."
@@ -633,52 +623,64 @@ msgstr ""
 msgid "Page in English only"
 msgstr "هذه الصفحة باللغة الإنجليزية فقط"
 
-#: enrolment/templates/marketing-pages/base.html:19
+#: enrolment/templates/lead-generation-form.html:76
+#, fuzzy
+#| msgid "I agree to the great.gov.uk terms and conditions"
+msgid "I agree to the great.gov.uk"
+msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
+
+#: enrolment/templates/lead-generation-form.html:76
+#, fuzzy
+#| msgid "Terms &amp; conditions"
+msgid "terms and conditions"
+msgstr "البنود والشروط"
+
+#: enrolment/templates/marketing-pages/base.html:20
 #: enrolment/templates/marketing-pages/bidi/base.html:19
 msgid "Find your UK trade partner"
 msgstr "العثور على شريكك التجاري في المملكة المتحدة"
 
-#: enrolment/templates/marketing-pages/base.html:44
+#: enrolment/templates/marketing-pages/base.html:45
 #: enrolment/templates/marketing-pages/bidi/base.html:44
 msgid "Read more about the company"
 msgstr "اقرأ المزيد حول الشركة"
 
-#: enrolment/templates/marketing-pages/base.html:58
+#: enrolment/templates/marketing-pages/base.html:59
 #: enrolment/templates/marketing-pages/bidi/base.html:58
 msgid "Company showcase"
 msgstr "عرض حالة للشركة"
 
-#: enrolment/templates/marketing-pages/base.html:71
+#: enrolment/templates/marketing-pages/base.html:72
 #: enrolment/templates/marketing-pages/bidi/base.html:71
 msgid "Read case study"
 msgstr "اقرأ عن دراسة حالة"
 
-#: enrolment/templates/marketing-pages/base.html:95
+#: enrolment/templates/marketing-pages/base.html:96
 #: enrolment/templates/marketing-pages/bidi/base.html:95
 msgid "keywords"
 msgstr "الكلمات الرئيسية"
 
-#: enrolment/templates/marketing-pages/creative.html:6
+#: enrolment/templates/marketing-pages/creative.html:5
 msgid ""
 "From Shakespeare to Star Wars, the UK leads the world in arts, theatre, "
 "film, animation, games, architecture, graphic design and publishing"
 msgstr ""
 
-#: enrolment/templates/marketing-pages/creative.html:7
+#: enrolment/templates/marketing-pages/creative.html:6
 #, fuzzy
 #| msgid "Healthcare and life sciences from the UK"
 msgid "Buy creative services from the UK"
 msgstr "الرعاية الصحية وعلوم الحياة من المملكة المتحدة"
 
-#: enrolment/templates/marketing-pages/creative.html:10
+#: enrolment/templates/marketing-pages/creative.html:9
 msgid "Delivering exceptional creative services"
 msgstr "تقديم خدمات إبداعية استثنائية"
 
-#: enrolment/templates/marketing-pages/creative.html:14
+#: enrolment/templates/marketing-pages/creative.html:13
 msgid "Read more about creative services"
 msgstr "اقرأ المزيد"
 
-#: enrolment/templates/marketing-pages/creative.html:19
+#: enrolment/templates/marketing-pages/creative.html:18
 msgid ""
 "If you need intelligent, creative ideas and rich, high-quality designs and "
 "media, look no further than the UK"
@@ -686,7 +688,7 @@ msgstr ""
 "إذا كنت بحاجة إلى أفكار ذكية وخلاقة وتصميمات ووسائط غنية وعالية الجودة، فلا "
 "تبحث خارج المملكة المتحدة."
 
-#: enrolment/templates/marketing-pages/creative.html:21
+#: enrolment/templates/marketing-pages/creative.html:20
 msgid ""
 "Creative companies in the UK are responsible for producing big budget "
 "movies, designing fashionable furniture fabrics and developing world-class "
@@ -695,7 +697,7 @@ msgstr ""
 "الشركات الإبداعية في المملكة المتحدة مسؤولة عن إنتاج أفلام ذات ميزانية ضخمة، "
 "وتصميم أقمشة مفروشات عصرية وتطوير ألعاب كمبيوتر ذات مستوى عالمي."
 
-#: enrolment/templates/marketing-pages/creative.html:25
+#: enrolment/templates/marketing-pages/creative.html:24
 #: enrolment/templates/marketing-pages/food.html:30
 #: enrolment/templates/marketing-pages/health.html:35
 #: enrolment/templates/marketing-pages/sports-infrastructure.html:24
@@ -703,32 +705,32 @@ msgstr ""
 msgid "Key facts"
 msgstr "حقائق رئيسية"
 
-#: enrolment/templates/marketing-pages/creative.html:27
+#: enrolment/templates/marketing-pages/creative.html:26
 msgid "UK companies gave the world £19.1 billion of creative services in 2014"
 msgstr ""
 "قدّمت شركات المملكة المتحدة إلى العالم خدمات إبداعية بقيمة 19,1 مليار جنيه "
 "إسترليني في العام 2014"
 
-#: enrolment/templates/marketing-pages/creative.html:28
+#: enrolment/templates/marketing-pages/creative.html:27
 #, python-format
 msgid "9%% of all UK service exports are in the creative services in 2014"
 msgstr ""
 "9%% من صادرات الخدمات في المملكة المتحدة للعام 2014 أتت من الخدمات الإبداعية"
 
-#: enrolment/templates/marketing-pages/creative.html:29
+#: enrolment/templates/marketing-pages/creative.html:28
 #, python-format
 msgid "Growth of creative services exports was 10.9%% in 2014"
 msgstr "سجّلت صادرات الخدمات الإبداعية نموًا قدره 10,9%% في العام 2014"
 
-#: enrolment/templates/marketing-pages/creative.html:33
+#: enrolment/templates/marketing-pages/creative.html:32
 msgid "Work with the best in film, TV and visual effects"
 msgstr "تعامل مع الأفضل في مجال التلفزيون والسينما والتأثيرات البصرية"
 
-#: enrolment/templates/marketing-pages/creative.html:34
+#: enrolment/templates/marketing-pages/creative.html:33
 msgid "The UK is one of the world's largest makers of original content."
 msgstr "تُعدّ المملكة المتحدة واحدة من أكبر صناع المحتوى الأصلي في العالم."
 
-#: enrolment/templates/marketing-pages/creative.html:35
+#: enrolment/templates/marketing-pages/creative.html:34
 msgid ""
 "We are the home of films such as Star Wars and offer state-of-the-art studio "
 "facilities suitable for big movie productions and an amazing diversity of "
@@ -738,7 +740,7 @@ msgstr ""
 "الاستديوهات مناسبة لإنتاج الأفلام الضخمة، فضلاً عن مواقع متنوعة ومذهلة لتصوير "
 "الأفلام."
 
-#: enrolment/templates/marketing-pages/creative.html:36
+#: enrolment/templates/marketing-pages/creative.html:35
 msgid ""
 "At the heart of the UK’s creative industry is its award-winning film and "
 "television production comprising more than 1,500 independent TV companies in "
@@ -748,7 +750,7 @@ msgstr ""
 "التلفزيونية الحائزة على جوائز والتي تضم أكثر من 1500 شركة إنتاج تلفزيوني "
 "مستقلة في المملكة المتحدة."
 
-#: enrolment/templates/marketing-pages/creative.html:37
+#: enrolment/templates/marketing-pages/creative.html:36
 msgid ""
 "We're also the world leaders in exporting TV formats and localising those "
 "first commissioned in the UK."
@@ -756,11 +758,11 @@ msgstr ""
 "ونحن أيضًا رائدون عالميًا في تصدير التنسيقات التلفزيونية وتوطين تلك التي تم "
 "أولاً تكليف القيام بها في المملكة المتحدة."
 
-#: enrolment/templates/marketing-pages/creative.html:39
+#: enrolment/templates/marketing-pages/creative.html:38
 msgid "Our creative digital experience"
 msgstr "تجربتنا الرقمية الإبداعية"
 
-#: enrolment/templates/marketing-pages/creative.html:41
+#: enrolment/templates/marketing-pages/creative.html:40
 msgid ""
 "The UK has one of the most world's most advanced games industries, with more "
 "than 30 years experience of innovation and commercial success."
@@ -768,7 +770,7 @@ msgstr ""
 "تضم المملكة المتحدة في كنفها إحدى أكثر صناعات الألعاب تقدمًا في العالم، مع "
 "أكثر من 30 عامًا من الخبرة في الابتكار والنجاح التجاري."
 
-#: enrolment/templates/marketing-pages/creative.html:44
+#: enrolment/templates/marketing-pages/creative.html:43
 msgid ""
 "UK games companies have adopted social and mobile platforms, with more than "
 "a third of UK studios focusing on the mobile market."
@@ -777,7 +779,7 @@ msgstr ""
 "المتنقلة، مع تركيز أكثر من ثلث الاستوديوهات في المملكة المتحدة على سوق "
 "الأجهزة المتنقلة."
 
-#: enrolment/templates/marketing-pages/creative.html:47
+#: enrolment/templates/marketing-pages/creative.html:46
 msgid ""
 "The UK's augmented reality specialists create immersive experiences that "
 "help further the creative reach of the likes of National Geographic and "
@@ -786,11 +788,11 @@ msgstr ""
 "يعمل متخصصو الواقع المعزّز في المملكة المتحدة على خلق تجارب غامرة تساعد في "
 "زيادة الوصول الإبداعي لشركات مثل National Geographic وUniversal Studios."
 
-#: enrolment/templates/marketing-pages/creative.html:50
+#: enrolment/templates/marketing-pages/creative.html:49
 msgid "A publishing powerhouse"
 msgstr "وجهة قوية للنشر"
 
-#: enrolment/templates/marketing-pages/creative.html:52
+#: enrolment/templates/marketing-pages/creative.html:51
 msgid ""
 "The publishing sector in the UK has pioneered new print formats and "
 "commercial models alongside moving content online. British news journalism "
@@ -801,7 +803,7 @@ msgstr ""
 "الإخبارية البريطانية قوة لا يستهان بها، وذلك من خلال كشفها عن قصص مهمة من "
 "كافة أنحاء العالم."
 
-#: enrolment/templates/marketing-pages/creative.html:55
+#: enrolment/templates/marketing-pages/creative.html:54
 msgid ""
 "The London Book Fair is one of the world’s leading events for intellectual "
 "property rights negotiation and the sale and distribution of content. Half "
@@ -813,11 +815,11 @@ msgstr ""
 "20 في شباك التذاكر خلال السنوات الـ 11 الماضية على روايات لكتّاب من المملكة "
 "المتحدة."
 
-#: enrolment/templates/marketing-pages/creative.html:58
+#: enrolment/templates/marketing-pages/creative.html:57
 msgid "UK design talent is bringing beauty and strength to the world"
 msgstr "موهبة التصميم في المملكة المتحدة تضفي على العالم جمالاً وقوة"
 
-#: enrolment/templates/marketing-pages/creative.html:60
+#: enrolment/templates/marketing-pages/creative.html:59
 msgid ""
 "UK architects are responsible for some of the world’s most stunning "
 "buildings, such as the Galaxy Soho urban village in Beijing and reshaping "
@@ -827,7 +829,7 @@ msgstr ""
 "المملكة المتحدة، مثل قرية \"سوهو غلاكسي\" المدنية في بكين، والبيئات المعاد "
 "تشكيلها، مثل حدائق الخليج في سنغافورة."
 
-#: enrolment/templates/marketing-pages/creative.html:63
+#: enrolment/templates/marketing-pages/creative.html:62
 msgid ""
 "We're also responsible for designing usable industrial and commercial spaces "
 "such as the new Spaceport America."
@@ -835,7 +837,7 @@ msgstr ""
 "ونحن أيضًا مسؤولون عن تصميم أماكن صناعية وتجارية قابلة للاستخدام مثل قاعدة "
 "سبيس بورت أمريكا الجديدة."
 
-#: enrolment/templates/marketing-pages/creative.html:66
+#: enrolment/templates/marketing-pages/creative.html:65
 msgid ""
 "As well as designing the built environment, UK firms are designing vehicles "
 "and interiors around the world: including helping to design the world’s "
@@ -845,11 +847,11 @@ msgstr ""
 "والديكور الداخلي في أنحاء العالم: بما في ذلك المساعدة في تصميم أسرع قطار "
 "ركاب في العالم في الصين."
 
-#: enrolment/templates/marketing-pages/creative.html:69
+#: enrolment/templates/marketing-pages/creative.html:68
 msgid "Arts: heritage and innovation"
 msgstr "الفن: تراث وإبداع"
 
-#: enrolment/templates/marketing-pages/creative.html:71
+#: enrolment/templates/marketing-pages/creative.html:70
 msgid ""
 "From Shakespeare to Adele, the UK continues to produce the best-known "
 "artists, writers, singers and performers the world has ever seen."
@@ -857,7 +859,7 @@ msgstr ""
 "من شكسبير إلى أديل، لا تزال المملكة المتحدة تقدّم أشهر الفنانين والكتاب "
 "والمغنين والمؤدين الذين عرفهم العالم على الإطلاق."
 
-#: enrolment/templates/marketing-pages/creative.html:74
+#: enrolment/templates/marketing-pages/creative.html:73
 msgid ""
 "As well as music for the consumer market, the UK’s thriving commercial music "
 "and audio agencies are providing the scores and tracks for films made for "
@@ -870,7 +872,7 @@ msgstr ""
 "لأفلام تم انتاجها من أجل بوينغ ومرسيدس بنز. وتتمتّع شركات إدارة الحقوق لدينا "
 "بسمعة متواصلة لحماية الملكية الفكرية للمؤدّين والمنتجين على حد سواء."
 
-#: enrolment/templates/marketing-pages/creative.html:77
+#: enrolment/templates/marketing-pages/creative.html:76
 msgid ""
 "The UK’s national museums attract visitors from around the world and have "
 "lasting partnerships and collection-sharing with their peers from countries "
@@ -880,15 +882,15 @@ msgstr ""
 "ولديها شراكات دائمة وتقوم بمشاركة المجموعات الفنية مع نظرائها من بلدان "
 "مختلفة مثل روسيا وملاوي."
 
-#: enrolment/templates/marketing-pages/creative.html:80
+#: enrolment/templates/marketing-pages/creative.html:79
 msgid "The UK is alive with exceptional talent and ingenuity."
 msgstr "تنبض المملكة المتحدة حياةً بالمواهب الاستثنائية والبراعة."
 
-#: enrolment/templates/marketing-pages/creative.html:84
+#: enrolment/templates/marketing-pages/creative.html:83
 msgid "Find your UK creative partner today"
 msgstr "العثور على شريكك التجاري الإبداعي في المملكة المتحدة"
 
-#: enrolment/templates/marketing-pages/creative.html:89
+#: enrolment/templates/marketing-pages/creative.html:88
 msgid "See the UK's creative services providers on the Find a supplier service"
 msgstr ""
 "اطّلع على مقدمي الخدمات الإبداعية في المملكة المتحدة في خدمة العثور على مورّد"
@@ -1751,9 +1753,6 @@ msgstr ""
 #: exportopportunity/templates/export-opportunity.html:23
 msgid "Submit"
 msgstr ""
-
-#~ msgid "I agree to the great.gov.uk terms and conditions"
-#~ msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
 
 #~ msgid ""
 #~ "Check out the cutting-edge technologies that the UK is bringing to the "
