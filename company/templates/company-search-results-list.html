@@ -79,7 +79,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="span9">
+						<div class="span10">
 							<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}">
 								<h3 class="ed-truncate-single-line">{{ company.name }}</h3>
 							</a>
@@ -94,8 +94,8 @@
 									</div>
 								{% endif %}
 		                    {% endif %}
-								<div class="row-fluid">
-									<i class="pull-right" class="public-company-profiles-result-item-updated">Updated: {{ company.modified|date_recency }}</i>
+								<div class="row-fluid ">
+									<i class="pull-right public-company-profiles-result-item-updated">Updated: {{ company.modified|date_recency }}</i>
 		                       	</div>
 						</div>
 					</div>

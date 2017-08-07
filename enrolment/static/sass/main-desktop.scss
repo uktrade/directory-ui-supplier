@@ -973,7 +973,7 @@ input[type="color"],
 
   input:checked + label:after {
     content: "";
-    border-color: $grey-4;
+    border-color: $mid-blue;
     border-style: solid;
     border-width: 0 0 3px 3px;
     height: 6px;
