@@ -9,22 +9,6 @@
       padding-left: 0;
       padding-right: 51px;
     }
-    
-    p {
-      margin-bottom: 25px;
-      width: auto;
-    }
-    
-    .button {
-      position: static;
-      width: 100%;
-    }
-  }
-  
-  .ed-hero-sub-header {
-    .ed-hero-sub-header-title {
-      width: 75%;
-    }
   }
   
   .LanguageSelectTracker {
@@ -33,20 +17,56 @@
       display: none;
     }
   }
-}
-
-@media (max-width: 540px) {
-  .ed-hero-sub-header {
-    .ed-hero-sub-header-title {
-      text-align: center;
+  
+  #companies .browse-companies-container,
+  #intro .search-companies-container {
+    p {
+      margin-bottom: 1em;
       width: 100%;
+    }
+    .button {
+      position: static;
     }
   }
 }
 
+
+@media (max-width: 580px) {
+  .ed-hero-sub-header {
+    min-height: 350px;
+    padding-top: 132px;
+  
+    .ed-hero-sub-header-title {
+      @include font-title-3;
+      width: 317px;
+    }
+  }
+}
+
+
 @media (max-width: 480px) {
   body .container {
     padding: 0 15px;  
+  }
+  
+  section {
+    padding: 30px 15px;
+  }
+  
+  .browse-companies-container,
+  .search-companies-container {
+    p {
+      margin-bottom: 25px;
+      width: auto;
+    }
+    
+    .button {
+      position: static;
+    }
+  }
+  
+  .ed-landing-page-form-container {
+    padding: 30px 15px;
   }
   
   #menu-control {
@@ -62,9 +82,6 @@
 
 
 @media (max-width: 340px) {
-  body .container {
-  	padding: 0 10px;
-  }
   
   .header-gov-link {
     &:hover, 

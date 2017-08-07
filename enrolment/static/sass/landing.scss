@@ -1,379 +1,5 @@
-.ed-landing-page {
-  background: $great-blue;
-  color: $white;
-  padding: 24px;
-  position: relative;
-  top: -100px;
-  margin-bottom: -100px;
-  margin-top: 40px;
-
-  &.international {
-    margin-top: 0;
-  }
-
-  .ed-landing-page-login-synopsis {
-    margin-bottom: 20px;
-    text-align: center;
-	}
-
-  a {
-    color: white;
-    border-bottom: 1px solid #777;
-    font-weight: bold;
-  }
-
-  a:hover {
-    border-bottom: 1px dashed #fff;
-    text-decoration: none;
-  }
-
-  .register-interest-btn {
-    background: #00549f;
-    border: 0;
-    border-radius: 0;
-    color: #fff;
-    padding: 18px;
-    text-align: center;
-    &.aqua {
-      background: $aqua;
-      color: $white;
-      margin: 0 auto;
-      max-width: 230px;
-    }
-  }
-}
-
-.page-title {
-	color: #fff;
-	font-size: 36px;
-	font-weight: 500;
-}
-
-a .register-interest-btn {
-    background: $mid-blue;
-    border: 0;
-    border-radius: 0;
-    color: $white;
-    padding: 17px 0 18px;
-    text-align: center;
-    width: 100%;
-}
-
-.mid-blue-bar {
-  background: $mid-blue;
-  color: $white;
-  display: table!important;
-  height: 60px;
-  padding: 0 24px;
-  width: 100%;
-  .company-sub-title {
-    color: $white;
-    font-size: 24px;
-    font-weight: 500;
-    a {
-      border-bottom: 1px solid #fff;
-      text-decoration: none;
-      &:hover {
-        border-bottom: 1px dashed #fff;
-      }
-    }
-  }
-  .element-within {
-    display: table-cell;
-    float: none;
-    vertical-align: middle;
-    a {
-      color: $white;
-      &:focus {
-        background: #007EA3;
-      }
-    }
-  }
-  @media (max-width: 767px) {
-    .element-within {
-      display: block;
-    }
-  }
-}
-
-.ipad-image {
-  margin-bottom: 40px;
-  &.international {
-    margin-top: 60px;
-  }
-  @media (max-width: 960px) {
-    margin-top: 40px;
-  }
-}
-.ipad-intro-txt {
-  clear: both;
-  font-size: 24px;
-  line-height: 1.2;
-  max-width: 80%;
-  margin: 0 auto 40px;
-  @media (max-width: 960px) {
-    max-width: 100%;
-  }
-}
-
-.ipad-img-container {
-  .desktop-mode {
-    display: block;
-    position: relative;
-    @media (max-width: 980px) {
-      display: none;
-    }
-    .ipad-img-with-arrows {
-      text-align: center;
-      
-      .top-left-text, .bottom-left-text, .top-right-text, .bottom-right-text {
-        position: absolute;
-        text-align: left;
-        width: 220px;
-      }
-      .top-left-text{
-        top: 80px;
-        left: 0;
-      }
-      .top-right-text {
-        top: 60px;
-        right: 0;
-      }
-      .bottom-left-text {
-        bottom: 130px;
-        left: 0;
-      }
-      .bottom-right-text {
-        bottom: 100px;
-        right: 0;
-        &.international {
-          bottom: 120px;
-        }
-      }
-
-      img {
-        max-width: 80%;
-      }
-    }
-  }
-  .mobile-mode {
-    display: none;
-    @media (max-width: 980px) {
-      display: block;
-    }
-  }
-}
-
-.explanation-text-list {
-  margin-top: 40px;
-  ol {
-    li {
-      list-style-type: decimal;
-      margin-bottom: 40px;
-      @media (max-width: 768px) {
-        margin-bottom: 20px;
-      }
-    }
-  }
-}
-
-.hero-profiles {
-  background: #f2eee8;
-  margin-bottom: 40px;
-  padding: 20px;
-  .profile {
-    @media (max-width: 768px) {
-      margin-bottom: 40px;
-    }
-    .hero-profile-img-container {
-      img {
-        width: 100%;
-      }
-    }
-    .coming-soon {
-      margin-bottom: 20px;
-      margin-top: 20px;
-    }
-    .hero-profile-title {
-      font-weight: 500;
-      margin-top: 10px;
-    }
-    .hero-profile-txt { 
-      margin-top: 10px;
-      min-height: 150px;
-      @media (max-width: 768px) {
-        min-height: 60px;
-      }
-
-    }
-    .hero-profile-link {
-      margin-top: 10px;
-      a {
-        border-bottom: 1px solid $mid-blue;
-        color: $mid-blue;
-        font-weight: 500;
-        text-decoration: none;
-        &:hover {
-          border-bottom: 1px dashed $mid-blue;
-        }
-      }
-    }
-  }
-}
-
-.ed-landing-page-synopsis {
-  background-color: #FAFAFA;
-  line-height: 1.55em;
-  border: 1px solid #dedede;
-  border-top: none;
-  padding:20px;
-}
-
-.ed-landing-page-read-more-subtitle {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-weight: 300;
-}
-
-.ed-landing-page-sector-container {
-  border: 1px solid #dedede;
-  min-height: 250px;
-  padding: 10px;
-
-  img {
-    margin: 0;
-    padding: 0px;
-  }
-  p {
-    padding: 0;
-  }
-  .image {
-    display: inline-block;
-    padding: 10px;
-    vertical-align: top;
-    width: 30%;
-  }
-  .text {
-    display: inline-block;
-    padding: 4px;
-    width: 68%;
-  }
-  .title {
-    font-size: 25px;
-    font-weight: 300;
-    line-height: 1.25em;
-    margin-top: 0;
-  }
-}
-
-.ed-landing-page-sector-image {
-  padding: 10px;
-  padding-right: 20px;
-  margin: 10px;
-}
-
-.ed-landing-page-sector-synopsis {
-  padding-right: 10px;
-  b {
-    font-weight: 500;
-    color: #4a4a4a;
-  }
-}
-
-.ed-landing-page-sector-link-container {
-  padding-right: 10px;
-}
-
-.ed-landing-page-see-more-button-container {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-a.ed-landing-page-see-more-button {
-  border: 2px solid #004f95;
-  color: #004f95;
-  padding: 20px;
-  text-align: center;
-  font-weight: bold;
-  display: block;
-  border-radius: 4px;
-}
-
 .ed-landing-page-gap {
-  margin-bottom: 20px;
-}
-
-.ed-landing-page-sector-company-image {
-  padding: 0;
-  width: 100%; 
-}
-
-.ed-landing-page-sector-case-study-container {
-  border: 1px solid #dedede;
-  padding: 0 20px 20px 20px;
-
-  img {
-    padding: 0
-  }
-}
-
-.ed-landing-page-key-facts {
-  background-color: #007EA3;
-  color: white;
-  padding: 20px;
-  h3 {
-    margin-top: 0;
-    font-weight: 300;
-  }
-  li {
-    list-style: initial;
-    margin-bottom: 1.39em;
-  }
-}
-
-.ed-landing-page-sector-specific-container {
-  h1, h2, h3 {
-    font-weight: 300;
-  }
-  section {
-    margin-bottom: 20px;
-  }
-}
-
-.ed-proposition-container {
-  h2 {
-    font-size: 24px;
-    font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.04;
-    color: #4a4a4a;
-    margin-bottom: 24px;
-  }
-  p {
-    margin-top: 0;
-    margin-bottom: 24px;
-  }
-  ul {
-    li {
-      list-style-type: disc;
-      margin-bottom: 24px;
-    }
-  }
-
-  .ed-key-facts-container {
-    background-color: #007ea3;
-    color: $white;
-    float: right;
-    margin: 0 0 20px 20px;
-    padding: 20px;
-    width: 50%;
-    
-    h2 {
-      color: $white;      
-      margin-top: 0;
-    }
-  }
+  margin-bottom: 30px;
 }
 
 .ed-landing-page-read-more {
@@ -381,96 +7,160 @@ a.ed-landing-page-see-more-button {
 }
 
 
-.ed-landing-page-sector-companies-list .browse-companies-container,
-.ed-landing-page-synopsis .search-companies-container {
-  margin-bottom: 0;  
-  p {
-    margin-bottom: 1em;
-    width: 100%;
-  }
-  .button {
-    padding: 21px 10px;
-    position: static;
-    width: 100%;
-  }
-  .title {
-    padding-top: 0;
+/* Industries
+ ******************/
+.fas-industries-content {
+  #industries {
+    .section-header {
+      /* A bit rubbish but fixing problem with content by removing duplicated header */
+      display: none;
+    }
   }
 }
 
+.industry {
+  border-color: $white;
+  border-style: solid;
+  display: table-cell;
+  padding-bottom: 30px;
+  padding-top: 19%;
+  position: relative;
+  width: 25%;
+  
+  img {
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+  
+  p {
+    font-size: 15px;
+    line-height: 23px;
+    min-height: 4.5em;
+  }
+  
+  .title {
+    @include font-title-3;
+    min-height: 2.5em;
+  }
+  
+  &:after {
+    background-color: $red-1;
+    bottom: 4px;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
 
-/* Desktop only */
+#industry-1 { border-width: 0 22px 0 0; }
+#industry-2 { border-width: 0 15px 0 7px; }
+#industry-3 { border-width: 0 7px 0 15px; }
+#industry-4 { border-width: 0 0 0 22px; }
+
+
+#industry-design-break-only {
+  /* Matches horrible design-only element.
+     See tablet media query for details. */
+  display: none;
+}
+  
+#industries {
+  border: none;
+  margin-bottom: 45px;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+/* DESKTOP ONLY
+ ******************/
 @media (min-width: 800px) {
-  .ed-landing-page-synopsis {
+  #companies .browse-companies-container,
+  #intro .search-companies-container {
+    margin-bottom: 0;  
+    p {
+      margin-bottom: 1em;
+      width: 100%;
+    }
+    .button {
+      position: static;
+    }
+    .title {
+      padding-top: 0;
+    }
+  }
+  
+  #intro {
     [class*="span"] {
       display: table-cell;
       float: none;
-      padding-left: 2.12%; /* based on Bootstrap margin */
       vertical-align: top;
     
       &:first-child {
-        padding-left: 0;
+        padding-right: 20px;
       }
     }
   }
 }
 
 
-/* Tablet
+/* TABLET
  ******************/
 @media (max-width: 799px) {
+  
+  .browse-companies-container,
+  .search-companies-container {
+    padding: 10px 25px 25px 25px;
+    
+    .title {
+      margin-top: 5px;
+    }
+  }
+  
+  .industry {
+    padding-top: 37%;
+    width: 50%;
+    
+    .title {
+      @include font-title-4;
+      min-height: 0;
+    }
+  }
+  
   #content .ed-landing-page-sector-container {
     margin: 0 0 20px 0;
     width: 100%;
   }
   
-  .browse-companies-container,
-  .search-companies-container {
-    padding: 10px 25px 25px 25px;
+  #industry-1 { border-width: 0 15px 0 0; }
+  #industry-2 { border-width: 0 0 0 15px; }
+  #industry-3 { border-width: 0 15px 0 0; }
+  #industry-4 { border-width: 0 0 0 15px; }
   
-    p {
-      margin-bottom: 25px;
-      width: auto;
-    }
-  
-    .button {
-      position: static;
-      width: 100%;
-    }
-    
-    .title {
-      background-position: right center;
-      margin-top: 5px;
-      padding: 10px 51px 0 0;
-    }
-  }
-  
-  .ed-landing-page-sector-companies-list .browse-companies-container,
-  .ed-landing-page-synopsis .search-companies-container {
-    .title {
-      padding-top: 10px;
-    }
-  }
-  
-  .ed-landing-page-synopsis [class*="span"] {
+  #industry-design-break-only {
+    /* Matches horrible design-only element required to 
+       force break on the display:table-cell elements
+       trying accommodate table layout design without 
+       resorting to using actual HTML table elements */
     display: block;
-    margin-left: 0;
-    width: auto;
+    margin-bottom: 30px;
   }
-}
 
-@media (max-width: 768px) {
-  .ed-proposition-container {
-    .ed-key-facts-container {
-      float: none;
-      margin: 0 0 20px 0;
+  #intro {
+    [class*="span"] {
+      display: block;
+      margin-left: 0;
       width: auto;
     }
   }
 }
 
 
-/* Mobile
+/* MOBILE
  *****************/
 @media (max-width: 640px) {
   .ed-landing-page-sector-container {
@@ -479,5 +169,32 @@ a.ed-landing-page-see-more-button {
       margin: 0;
       width: 100%;
     }
+  }
+}
+
+@media (max-width: 375px) {
+  
+  .industry {
+    display: block;
+    margin-bottom: 30px;
+    padding-top: 76%;
+    width: auto;
+    
+    p,
+    .title {
+      min-height: initial;
+    }
+  }
+  
+  #industry-1,
+  #industry-2,
+  #industry-3,
+  #industry-4 { 
+    border: none; 
+  }
+  
+  #industry-design-break-only {
+    /* Not required for mobile */
+    display: none;
   }
 }

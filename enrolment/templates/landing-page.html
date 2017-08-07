@@ -19,111 +19,27 @@ fas-home-content
 
 {% block content %}
 <div class="container">
-	<div class="row-fluid">
-		<div class="span12 great-blue-bar">
-			<h2 class="element-within company-name-title">
-				<span class="dont-break-out">{% trans "Find UK companies to do business with" %}</span>
-			</h2>
+	<section id="intro" class="row-fluid">
+		<div class="span8">
+			<h2 class="section-header">{% trans "Find UK companies to do business with" %}</h2>
+			<p>
+				{% trans "The UK is a great place to find innovative, high-quality products and services." %}
+				{% trans "You can make the right trade connections in the UK with global corporations and smaller enterprises across every industry." %}
+			</p>
+			<p>
+				{% trans "UK companies work with businesses and governments around the world to run high quality services and deliver the best experiences." %} 
+				{% trans "When you need a trade partner, the reliability and expertise of UK companies is hard to beat." %}
+			</p>
+			<p>
+				{% trans "Choose from the hundreds of businesses in the UK to work with you today." %}
+			</p>
 		</div>
-	</div>
-	<div class="ed-landing-page-synopsis">
-		<div class="row-fluid">
-			<div class="span8">
-				<p>
-					{% trans "The UK is a great place to find innovative, high-quality products and services." %}
-				</p>
-				<p>
-					{% trans "You can make the right trade connections in the UK with global corporations and smaller enterprises across every industry." %}
-				</p>
-				<p>
-					{% trans "UK companies work with businesses and governments around the world to run high quality services and deliver the best experiences." %}
-				</p>
-				<p>
-					{% trans "When you need a trade partner, the reliability and expertise of UK companies is hard to beat." %}
-				</p>
-				<p>
-					{% trans "Choose from the hundreds of businesses in the UK to work with you today." %}
-				</p>
-			</div>
-			<div class="span4">
-				{% include 'search-companies.html' %}
-			</div>
+		<div class="span4">
+			{% include 'search-companies.html' %}
 		</div>
-	</div>
-
-	<h2 class="ed-landing-page-read-more-subtitle" style="font-size: 48px;">{% trans "UK industries" %}</h2>
-
-	<div class="row-fluid ed-landing-page-gap">
-		<div class="span6 ed-landing-page-sector-container ed-landing-page-sector-container-min-height">
-			<div class="image">
-				<img class="ed-landing-page-sector-image" src="{% static 'images/square-health.jpg' %}" alt="" />
-			</div>
-			<div class="text">
-				<h3 class="title">{% trans "Healthcare and life sciences in the UK" %}</h3>
-				<p class="ed-landing-page-sector-synopsis">
-					{% trans "Get access to the UK health and life sciences supply-chain, delivering high quality, innovative services to the world." %}
-				</p>
-				<p class="ed-landing-page-sector-link-container">
-					<a href="{% url 'sector-detail-summary' slug='health' %}">
-						{% trans "Find out more about the UK’s healthcare and life sciences" %}
-					</a>
-				</p>
-			</div>
-		</div>
-		<div class="span6 ed-landing-page-sector-container ed-landing-page-sector-container-min-height">
-			<div class="image">
-				<img class="ed-landing-page-sector-image"  src="{% static 'images/square-technology.jpg' %}" alt="" />
-			</div>
-			<div class="text">
-				<h3 class="title">{% trans "The UK's advanced technology" %}</h3>
-				<p class="ed-landing-page-sector-synopsis">
-					{% trans "Check out the cutting-edge technologies that the UK is bringing to the world." %}
-				</p>
-				<br>
-				<br>
-				<p class="ed-landing-page-sector-link-container">
-					<a href="{% url 'sector-detail-summary' slug='tech' %}">
-						{% trans "Find out more about UK technology" %}
-					</a>
-				</p>
-			</div>
-		</div>
-	</div>
-	<div class="row-fluid ed-landing-page-gap">
-		<div class="span6 ed-landing-page-sector-container ed-landing-page-sector-container-min-height">
-			<div class="image">
-				<img class="ed-landing-page-sector-image" src="{% static 'images/square-creative.jpg' %}" alt="" />
-			</div>
-			<div class="text">
-				<h3 class="title">{% trans "The UK's creative services" %}</h3>
-				<p class="ed-landing-page-sector-synopsis">
-					{% trans "Whether you need buildings designed, films made or a fresh approach to marketing, the UK is the first place to look." %}
-				</p>
-				<p class="ed-landing-page-sector-link-container">
-					<a href="{% url 'sector-detail-summary' slug='creative' %}">
-						{% trans "Find out more about the UK’s creative services" %}
-					</a>
-				</p>
-			</div>
-		</div>
-		<div class="span6 ed-landing-page-sector-container ed-landing-page-sector-container-min-height">
-			<div class="image">
-				<img class="ed-landing-page-sector-image"  src="{% static 'images/square-food.jpg' %}" alt="" />
-			</div>
-			<div class="text">
-				<h3 class="title">{% trans "The UK's food and drink" %}</h3>
-				<p class="ed-landing-page-sector-synopsis">
-					{% trans "Whether you want the best food brands or exceptional quality drinks, the UK is the first place to look." %}
-				</p>
-				<br>
-				<p class="ed-landing-page-sector-link-container">
-					<a href="{% url 'sector-detail-summary' slug='food-and-drink' %}">
-						{% trans "Find out more about UK food and drink" %}
-					</a>
-				</p>
-			</div>
-		</div>
-	</div>
+	</section>
+	
+	{% include 'industry-teasers.html' %}	
 	
 	{% if features.FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED %}
 		<div class="ed-landing-page-gap">

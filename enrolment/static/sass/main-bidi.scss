@@ -22,6 +22,22 @@ blockquote {
   }
 }
 
+.checkbox {
+  padding-left: 0;
+  padding-right: 40px;
+  
+  input[type="checkbox"],
+  label::before {
+    left: initial;
+    right: -1px;
+  }
+  
+  label::after {
+    left: initial;
+    right: 3px;
+  }
+}
+
 .ed-arrow_box::after {
 	border-width: 20px 0 0 20px;
   left: auto;
@@ -31,6 +47,21 @@ blockquote {
 .ed-hero-sub-header {
   background-image: url(/static/images/covers/Generic-Hero-arabic.jpg);
   background-position: top right;
+}
+
+.ed-landing-page-form-container {
+  .ed-landing-page-register-button-container {
+    text-align: left;
+  }
+  
+  [class*="span"] {
+    float: right;
+    margin-left: 0;
+    
+    &:first-child {
+      margin-left: 2.127%;
+    }
+  }
 }
 
 .ed-language-switcher {
@@ -56,6 +87,12 @@ blockquote {
 #footer-links {
 	padding-left: 40px;
 	padding-right: 0;
+}
+
+#intro {
+  [class*="span"] {
+    padding-left: 0;
+  }
 }
 
 #menu {

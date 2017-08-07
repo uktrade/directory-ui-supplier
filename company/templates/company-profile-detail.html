@@ -8,171 +8,144 @@
 {% block hero_title %}Find a Buyer{% endblock %}
 {% block sub_header %}{% endblock %}
 {% block content %}
-<div class="container">
-	<div class="company-profile-details-body">
-		<div class="row-fluid">
-			<div class="span12 great-blue-bar">
-				<h1 class="company-name-title">{{company.name}}</h1>
-			</div>
+<div class="container company-profile-details-body">
+	<div class="row-fluid">
+		<div class="span12">
+			<h1 class="company-name-title">{{company.name}}</h1>
 		</div>
+	</div>
 
-		<div class="row-fluid company-profile-module-container">
-			<div class="span2 company-logo">
-				<div class="logo-container">
-					<div class="logo">	
-						{% if company.logo %}
-							<img src="{{company.logo}}" alt=""/>
-						{% else %}
-							<img class="placeholder" src="/static/images/placeholder.png" alt="" />
-							{% endif %}
-					</div>
-				</div>
-			</div>
-
-			<div class="span6 company-profile-module-details">
-				<h2>Contact</h2>
-				{% if company.email_address %}
-					<p>
-						<a class="ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=company.number %}">Email company</a>
-					</p>
-				{% endif %}
-				{% if company.website %}
-					<p>
-						<a href="{{ company.website}}" target="_blank">{{ company.website }}</a>
-					</p>
-				{% endif %}
-			</div>
-
-			<div class="span4 company-profile-module-inner company-profile-module-facts">
-				<h2>Facts &amp; details</h2>
-				{% if company.date_of_creation %}
-					<p>Incorporated in: <b>{{company.date_of_creation|date:'Y'}}</b></p>
-				{% endif %}
-				<p>Company number: <b>{{company.number}}</b></p>
-				<p>Number of employees: <b>{{ company.employees|default:'N/A' }}</b></p>
-			</div>
-		</div>
-
-		<div class="row-fluid company-profile-module-container">
-			<div class="{{company.has_social_links|yesno:'span8,span12'}} company-profile-module-inner company-profile-module-description">
-				<h2>Company description</h2>
-
-				{% if show_description %}
-					<p>
-						{{ company.description|linebreaks }}
-					</p>
-				{% else %}
-					{% if company.summary %}
-						{{ company.summary|linebreaks }}
-					{% elif company.description %}
-						{{ company.description|truncatechars:200|linebreaks }}
-					{% endif %}
-					{# reload current page with querystring #}
-					<p><a href="?verbose=true">Read full company profile</a></p>
-				{% endif %}
-			</div>
-
-			{% if company.has_social_links %}
-				<div class="span4 company-profile-module-inner company-profile-module-social-links">
-					<h2>Online profiles</h2>
-					{% if company.linkedin_url %}
-					<p>
-						<img class="ed-social-icon" src="/static/images/icon-linkedin-white.png" alt="" />
-						<span>
-							<a href="{{ company.linkedin_url }}" target="_blank">Visit LinkedIn</a>
-						</span>
-					</p>
-					{% endif %}
-					{% if company.twitter_url %}
-					<p>
-						<img class="ed-social-icon" src="/static/images/icon-twitter.png" alt="" />
-						<span>
-							<a href="{{ company.twitter_url }}" target="_blank">Visit Twitter</a>
-						</span>
-					</p>
-					{% endif %}
-					{% if company.facebook_url %}
-					<p>
-						<img class="ed-social-icon" src="/static/images/icon-facebook-white.png" alt="">
-						<span>
-							<a href="{{ company.facebook_url }}" target="_blank">Visit Facebook</a>
-						</span>
-					</p>
-					{% endif %}
-				</div>
+	<section id="company-details" class="row-fluid">
+		<div class="span2">
+			{% if company.logo %}
+				<img id="company-logo" src="{{company.logo}}" alt=""/>
+			{% else %}
+				<img id="company-logo" class="placeholder" src="/static/images/placeholder.png" alt="" />
 			{% endif %}
-
 		</div>
 
-		{% if company.supplier_case_studies %}
-		<div class="row-fluid">
-			<div class="span12 great-blue-bar">
-				<h2 class="element-within company-name-title">
-					<span class="dont-break-out">Recent projects</span>
-				</h2>
-			</div>
+		<div class="span6 company-profile-module-details">
+			<h2>Contact</h2>
+			{% if company.email_address %}
+				<p><a class="ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=company.number %}">Email company</a></p>
+			{% endif %}
+			{% if company.website %}
+				<p>
+					<span class="screen-reader-only">Company website</span>
+					<a href="{{ company.website}}" target="_blank">{{ company.website }}</a>
+				</p>
+			{% endif %}
 		</div>
-		<div class="row-fluid ed-company-profile-sector-case-study-container">
-			{% for case_study in company.supplier_case_studies %}
-				<div class="span4 company-profile-module-container" style="margin-bottom: 0; border-top: 0;">
-					<div class="company-profile-module-inner">
-						<div class="supplier-case-study-images">
-							{% if case_study.image_one %}
-							<img src="{{ case_study.image_one }}" alt="case study image 1"/>
-							{% elif case_study.image_two %}
-							<img src="{{ case_study.image_two }}" alt="case study image 2" />
-							{% elif case_study.image_three %}
-							<img src="{{ case_study.image_three }}" alt="case study image 3" />
-							{% endif %}
-						</div>
-						<h3>{{ case_study.title }}</h3>
-						<div class="content">
-							{{ case_study.short_summary|linebreaks }}
-							<p class="supplier-case-study-read-more-cta">
-								<a href="{% url 'case-study-details' id=case_study.pk slug=case_study.slug %}">Read case study</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
+
+		<div class="span4 company-profile-module-inner company-profile-module-facts">
+			<h2>Facts &amp; details</h2>
+			<p>Company number: {{company.number}}</p>
+			<p>Number of employees: {{ company.employees|default:'N/A' }}</p>
+			{% if company.date_of_creation %}
+				<p>Incorporated in: {{company.date_of_creation|date:'Y'}}</p>
+			{% endif %}
+		</div>
+	</section>
+
+	<section id="company-profiles" class="row-fluid">
+		<div class="{{company.has_social_links|yesno:'span8,span12'}} company-profile-module-inner company-profile-module-description">
+			<h2>Company description</h2>
+
+			{% if show_description %}
+				<p>
+					{{ company.description|linebreaks }}
+				</p>
+			{% else %}
+				{% if company.summary %}
+					{{ company.summary|linebreaks }}
+				{% elif company.description %}
+					{{ company.description|truncatechars:200|linebreaks }}
+				{% endif %}
+				{# reload current page with querystring #}
+				<p><a href="?verbose=true">Read full company profile</a></p>
+			{% endif %}
+		</div>
+
+		{% if company.has_social_links %}
+			<div class="span4 company-profile-module-inner company-profile-module-social-links">
+				<h2>Online profiles</h2>
+				{% if company.linkedin_url %}
+					<p class="social-link">
+						<img class="social-icon" src="/static/images/icon-linkedin-white.png" alt="" />
+						<a href="{{ company.linkedin_url }}" target="_blank">Visit LinkedIn</a>
+					</p>
+				{% endif %}
+				{% if company.twitter_url %}
+					<p class="social-link">
+						<img class="social-icon" src="/static/images/icon-twitter.png" alt="" />
+						<a href="{{ company.twitter_url }}" target="_blank">Visit Twitter</a>
+					</p>
+				{% endif %}
+				{% if company.facebook_url %}
+					<p class="social-link">
+						<img class="social-icon" src="/static/images/icon-facebook-white.png" alt="">
+						<a href="{{ company.facebook_url }}" target="_blank">Visit Facebook</a>
+					</p>
+				{% endif %}
 			</div>
 		{% endif %}
 
-		<div class="ed-special-bottom-border">
-			<div class="row-fluid company-profile-module-container" style="margin-bottom: 0; border-bottom: 0;">
-				<div class="span6">
-					<div class="company-profile-module-inner company-profile-industries">
-						<h2>Industries of interest</h2>
-						<p>
-						{% for sector in company.sectors %}
-							<a class="stone-label" href="{% url 'company-search' %}?sector={{ sector.value }}">{{ sector.label }}</a>
-						{% endfor %}
-						</p>
-						{% if company.sectors %}
-						<div class="description-content"></div>
-						{% endif %}
-					</div>
-				</div>
-				<div class="span6">
-					<div class=" company-profile-module-inner company-profile-keywords">
-						<h2>Keywords</h2>
-						{% for keyword in company.keywords %}
-							<a href="{% url 'company-search' %}?term={{ keyword }}" target="_self" class="ed-keyword dont-break-out">{{ keyword }}</a>{% if not forloop.last %}, {% endif %}
-						{% endfor %}
+	</section>
 
-					</div>
-				</div>
+	{% if company.supplier_case_studies %}
+		<section id="company-projects" class="row-fluid ed-company-profile-sector-case-study-container">
+			<h2 class="element-within">
+				<span class="dont-break-out">Recent projects</span>
+			</h2>
+			
+			{% for case_study in company.supplier_case_studies %}
+			<article class="span4 case-study-{{ forloop.counter }}">
+				{% if case_study.image_one %}
+				<img src="{{ case_study.image_one }}" alt="" aria-labelledby="case-study-title-{{ forloop.counter }}" />
+				{% elif case_study.image_two %}
+				<img src="{{ case_study.image_two }}" alt="" aria-labelledby="case-study-title-{{ forloop.counter }}" />
+				{% elif case_study.image_three %}
+				<img src="{{ case_study.image_three }}" alt="" aria-labelledby="case-study-title-{{ forloop.counter }}" />
+				{% endif %}
+				<h3 id="case-study-title-{{ forloop.counter }}" class="title">{{ case_study.title }}</h3>
+				{{ case_study.short_summary|linebreaks }}
+				<a class="more" href="{% url 'case-study-details' id=case_study.pk slug=case_study.slug %}">Read case study</a>
+			</article>
+			{% endfor %}
+		</section>
+	{% endif %}
+
+	<section class="row-fluid ed-special-bottom-border">
+		<div class="span6">
+			<div class="company-profile-module-inner company-profile-industries">
+				<h2>Industries of interest</h2>
+				<p>
+				{% for sector in company.sectors %}
+					<a class="stone-label" href="{% url 'company-search' %}?sector={{ sector.value }}">{{ sector.label }}</a>
+				{% endfor %}
+				</p>
+				{% if company.sectors %}
+				<div class="description-content"></div>
+				{% endif %}
 			</div>
 		</div>
-
-	</div>
+		<div class="span6">
+			<div class=" company-profile-module-inner company-profile-keywords">
+				<h2>Keywords</h2>
+				{% for keyword in company.keywords %}
+					<a href="{% url 'company-search' %}?term={{ keyword }}" target="_self" class="ed-keyword dont-break-out">{{ keyword }}</a>{% if not forloop.last %}, {% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	
 	<div class="row-fluid ed-report-profile-container">
-		<div class="span6" style="padding-top: 25px;">
+		<div class="span6">
 			<a href="mailto:help@digital.trade.gov.uk?subject=Report%20profile%20{{company.number}}">Report profile</a>
 		</div>
-		<div class="span6 ed-contact-company-contianer">
+		<div class="span6 ed-contact-company-container">
 			{% if company.email_address %}
-				<a class="ed-filled-button-primary ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=company.number %}">Contact company</a>
+				<a class="button button-primary ga-tracking-contact-supplier" href="{% url 'contact-company' company_number=company.number %}">Contact company</a>
 			{% endif %}
 		</div>
 	</div>

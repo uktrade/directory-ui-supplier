@@ -1,17 +1,35 @@
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  line-height: 31px;
+  margin: 0 0 24px 0;
+}
+
+li {
+  line-height: inherit;
+  list-style-type: disc;
+  margin-bottom: 24px;
+}
+
 .case-study-info {
   background-color: $aqua;
   padding: 20px;
   color: $white;
   a, a:focus {
     color: inherit;
-    font-weight: 500;
-    text-decoration: underline;
   }
   
   dd, dt {
     display: inline;
     font-weight: 300;
     margin: 0;
+  }
+  
+  dd + .keywords:before {
+    content: "";
+    display: block;
+    margin-top: 1em;
   }
   
   dl {
@@ -22,36 +40,48 @@
     &:after {
       content: ":";
     }
-    &:before {
-      content: "";
-      display: block;
-      margin-top: 1em;
-    }
+  }
+  
+  p {
+    margin-bottom: 0;
+  }
+  
+  .keywords {
+    font-size: 15px;
+    line-height: 25px;
   }
 }
 
-.ed-landing-page-sector-companies-list {
-  border: 1px solid #dedede;
-  padding: 20px;
-  padding-top: 0;
-  h2 {
-    font-weight: 300;
-    font-size: 24px;
+.company {
+  padding-top: 62%;
+  position: relative;
+  
+  img {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; 
   }
   
-  .span4 {
-    display: table-cell;
-    float: none;
-    padding: 0 10px;
-    vertical-align: top;
-    
-    &:first-child {
-      padding-left: 0;
-    }
-    
-    &:last-child {
-      padding-right: 0;
-    }
+  .title {
+    @include font-title-3;
+  }
+}
+
+.showcase-image {
+  @include showcase-image;
+}
+
+.ed-key-facts-container {
+  background-color: #007ea3;
+  color: $white;
+  float: right;
+  margin: 0 0 20px 20px;
+  padding: 20px;
+  width: 50%;
+  
+  h2 {     
+    margin-top: 0;
   }
 }
 
@@ -91,11 +121,39 @@
   }
 }
 
+#companies {
+  .span4 {
+    display: table-cell;
+    float: none;
+    padding: 0 10px;
+    vertical-align: top;
+    
+    &:first-child {
+      padding-left: 0;
+    }
+    
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+#company-showcase {
+  .section-header,
+  .title {
+    @include font-title-3;
+  }
+}
+
 
 /* Tablet 
  *******************/
 @media (max-width: 799px) {
-  .ed-landing-page-sector-companies-list {
+  .company {
+    margin-bottom: 30px;
+  }
+  
+  #companies {
     .span4 {
       width: 48.61%;
       
@@ -111,9 +169,22 @@
       }
     }
   }
+  
+  #company-showcase {
+    a {
+  	  display: inline-block;
+      margin-bottom: 30px;
+    }
+  }
 }
 
 @media (max-width: 767px) {  
+  .ed-key-facts-container {
+    float: none;
+    margin: 0 0 20px 0;
+    width: auto;
+  }
+  
   /* page class only to override bootstrap */
   .fas-marketing-page {    
     .case-study-info,
@@ -139,7 +210,7 @@
 /* Mobile 
  *******************/
 @media (max-width: 540px) {
-  .ed-landing-page-sector-companies-list {
+  #companies {
     .span4 {
       display: block;
       margin: 0;

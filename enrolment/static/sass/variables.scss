@@ -18,18 +18,26 @@ $lighter-grey-opacity: rgba(220, 224, 223, .5);
 $logo-width: 300px;
 
 // From designs
+$white2: #fafafa;
 $grey-1: #dddce2;
 $grey-2: #999999;
 $grey-3: #d8d8d8;
 $grey-4: #4a4a4a;
 $grey-5: #e7e7e7;
 $grey-6: #444444;
-$blue-1: #00509e;
+$blue-1: #00549f;
 $blue-2: #004f95;
+$red-1: #E22014;
 $focus: #ffbf47;
 
 // FONTS
+$font-family: "Roboto", arial, helvetica, sans-serif;
 $font-heading: "Roboto", arial, helvetica, sans-serif;
+
+// SPACING
+$spacing-1: 45px;
+$spacing-2: 30px;
+$spacing-3: 15px;
 
 //DEVICES
 $tablet: 960px;

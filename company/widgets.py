@@ -14,7 +14,7 @@ class PreventRenderWidget(widgets.Input):
 
 class CheckboxChoiceInputInlineLabel(widgets.CheckboxChoiceInput):
     template = """
-        <div class="form-field ed-pretty-checkbox">
+        <div class="form-field checkbox">
             {input_html}
             <label for="{id}">{label}</label>
         </div>

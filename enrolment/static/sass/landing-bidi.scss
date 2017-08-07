@@ -1,48 +1,13 @@
-body.bidi {
-  .ed-landing-page-sector-container {
-    .span4 {
-      margin-left: 20px;
-    }
-    .span7 {
-      margin-left: 0;
-    }
-  }  
+
+#intro [class*="span"]:first-child {
+	padding-left: 20px;
+  padding-right: 0;
 }
 
-.ed-proposition-container {
-  .ed-key-facts-container {
-    float: left;
-    margin: 0 20px 20px 0;
-  }
-}
-
-.ed-landing-page-synopsis {
-  [class*="span"] {
-    padding-left: 0;
-    
-    &:first-child {
-      padding-left: 2.12%; /* based on Bootstrap margin */
-    }
-  }
-}
-
-
-/* Tablet
+/* Industries
  ******************/
-@media (max-width: 768px) {
-  .browse-companies-container,
-  .search-companies-container {  
-    .title {
-      background-position: left center;
-      padding-left: 51px;
-      padding-right: 0;
-    }
-  }
-  
-  .ed-proposition-container {
-    .ed-key-facts-container {
-      float: none;
-      margin: 0 0 20px 0;
-    }
-  }
-}
+#industry-1 { border-width: 0 0 0 22px; }
+#industry-2 { border-width: 0 7px 0 15px; }
+#industry-3 { border-width: 0 15px 0 7px; }
+#industry-4 { border-width: 0 22px 0 0; }
+

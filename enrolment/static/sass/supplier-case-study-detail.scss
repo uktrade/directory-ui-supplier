@@ -1,0 +1,49 @@
+@import 'main.scss';
+
+h1 {
+  @include font-title-2;
+}
+
+h2 {
+  @include font-title-3;
+}
+
+.showcase-image {
+  @include showcase-image;
+}
+
+.supplier-case-study-detail {
+  margin-top: $spacing-2;
+  position: relative;
+}
+
+#case-study-testomonial {
+  margin-bottom: $spacing-1;
+}
+
+#company-details {  
+  margin-bottom: $spacing-2;
+  
+  dd, dt {
+    display: inline;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  dd:after {
+  	content: "";
+  	display: block;
+  }
+  
+  dl {
+    margin: 0;
+  }
+}
+
+#report-case-study {
+  padding-bottom: $spacing-3;
+}
+
+#view-company-profile {
+  margin: $spacing-1 0;
+}

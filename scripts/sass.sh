@@ -19,6 +19,7 @@ input_output_map="\
 	enrolment/static/sass/company-profile-details-bidi.scss:enrolment/static/company-profile-details-bidi.css \
 	enrolment/static/sass/company-profile-form.scss:enrolment/static/company-profile-form.css \
 	enrolment/static/sass/supplier-profile-details.scss:enrolment/static/supplier-profile-details.css \
+	enrolment/static/sass/supplier-case-study-detail.scss:enrolment/static/supplier-case-study-detail.css \
 	enrolment/static/sass/landing-page.scss:enrolment/static/landing-page.css \
 	enrolment/static/sass/landing-page-bidi.scss:enrolment/static/landing-page-bidi.css \
 	enrolment/static/sass/marketing-page.scss:enrolment/static/marketing-page.css \
