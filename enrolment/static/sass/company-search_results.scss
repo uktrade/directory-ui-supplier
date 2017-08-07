@@ -113,6 +113,16 @@
   }
 }
 
+/* countering bootstrap selector */
+.company-profile-details-body {
+  .company-logo:first-child {
+    margin-left: 20px;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+
 .company-logo {
   .logo-container {
     display: table;
@@ -249,6 +259,12 @@
 
 .company-profile-details-body-toolbar {
   border: solid 1px $grey-3;
+  padding: 28px 25px 27px 25px;
+  border-bottom: solid 1px #d8d8d8;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.39;
+  letter-spacing: -0.2px;
   color: #4a4a4a;
   padding: 28px 25px 27px 25px;
 }

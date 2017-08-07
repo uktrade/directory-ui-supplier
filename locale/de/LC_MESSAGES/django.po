@@ -558,7 +558,7 @@ msgid ""
 msgstr ""
 "Außerordentlich innovative und kreative britische Handelspartners sind "
 "bereit, um mit ihnen zusammenzuarbeiten. Finden sie sie mit unserem "
-"„Anbieter finden“ Dienst."
+"Anbieter finden Dienst."
 
 #: enrolment/templates/browse-companies.html:12
 #: enrolment/templates/search-companies.html:17
@@ -916,7 +916,7 @@ msgstr "Finden Sie heute Ihren Kreativpartner in Großbritannien"
 msgid "See the UK's creative services providers on the Find a supplier service"
 msgstr ""
 "Britische Anbieter für kreative Dienstleistungen finden Sie auf der Seite "
-"„Anbieter finden“"
+"Anbieter finden"
 
 #: enrolment/templates/marketing-pages/food.html:6
 msgid ""
@@ -1105,7 +1105,7 @@ msgstr ""
 msgid "See the UK's food and drink companies on the Find a supplier service"
 msgstr ""
 "Britische Anbieter für Lebensmittel und Getränke finden Sie auf der Seite "
-"„Anbieter finden“"
+"Anbieter finden"
 
 #: enrolment/templates/marketing-pages/food.html:81
 msgid ""
@@ -1141,7 +1141,7 @@ msgstr ""
 msgid "Buy UK healthcare and life sciences products and services"
 msgstr ""
 "Britische Anbieter für die Bereiche Gesundheitswesen und Life Sciences "
-"finden Sie auf der Seite „Anbieter finden“"
+"finden Sie auf der Seite Anbieter finden"
 
 #: enrolment/templates/marketing-pages/health.html:9
 msgid "Delivering the exceptional in healthcare and life sciences"
@@ -1413,7 +1413,7 @@ msgid ""
 "service"
 msgstr ""
 "Britische Anbieter für die Bereiche Gesundheitswesen und Life Sciences "
-"finden Sie auf der Seite „Anbieter finden“"
+"finden Sie auf der Seite Anbieter finden"
 
 #: enrolment/templates/marketing-pages/health.html:104
 msgid "Find UK healthcare and life sciences companies to meet your needs"
@@ -1786,7 +1786,7 @@ msgstr "Finden Sie Ihren Technologiepartner in Großbritannien"
 #: enrolment/templates/marketing-pages/tech.html:70
 msgid "See the UK's technology providers on the Find a supplier service"
 msgstr ""
-"Britische Anbieter für Technologie finden Sie auf der Seite „Anbieter finden“"
+"Britische Anbieter für Technologie finden Sie auf der Seite Anbieter finden"
 
 #: enrolment/templates/marketing-pages/tech.html:73
 msgid ""
