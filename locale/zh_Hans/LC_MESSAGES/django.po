@@ -145,23 +145,25 @@ msgid ""
 "storyboards and produced final audio and video designs. It also produced the "
 "entire technical event, which included projection mapping on the mansion and "
 "a 2m ball and consulting on live-camera press shot positions"
-msgstr ""
+msgstr "针对阿迪达斯的 2014 世界杯营销活动，Immersive 制作了概念、"
+"故事板以及最终音视频设计。它还制作了整个技术活动，其中包括大厦上的投影映射和一个 2 "
+"米的足球，以及针对现场直播媒体拍摄位置提供咨询"
 
 #: enrolment/constants.py:227
 msgid "Creating the grandest projection mapping the world has ever seen."
-msgstr ""
+msgstr "创造有史以来最宏大的投影映射。"
 
 #: enrolment/constants.py:230
 msgid "Fast Company magazine"
-msgstr ""
+msgstr "Fast Company 杂志"
 
 #: enrolment/constants.py:234
 msgid "Creative"
-msgstr ""
+msgstr "创意行业"
 
 #: enrolment/constants.py:239
 msgid "Interactive installations, video content, projection mapping"
-msgstr ""
+msgstr "互动设施、视频内容、投影映射"
 
 #: enrolment/constants.py:244
 msgid "An Immersive event lighting system"
@@ -173,7 +175,9 @@ msgid ""
 "scale. Immersive uses new media technology (such as LED, holograms, "
 "projection, virtual reality and augmented reality) to design and create "
 "cutting-edge lighting, video and interactive installations."
-msgstr ""
+msgstr "Immersive 是一家面向任意规模影音项目的完整解决方案提供商。Immersive "
+"使用新的媒体技术（比如 LED、全息图、投影、虚拟现实和增强现实）"
+"来设计和创造顶尖的照明、视频和互动设施。"
 
 #: enrolment/constants.py:258
 msgid ""
@@ -185,7 +189,8 @@ msgid ""
 "Blippar is the leading visual discovery app, harnessing augmented reality, "
 "image-recognition technology and artificial intelligence to bring the "
 "physical world to life through smartphones."
-msgstr ""
+msgstr "Blippar 是领先的视觉探索应用程序，它在智能手机上通过增强现实、"
+"图像识别技术和人工智能让现实世界得到全新展示。"
 
 #: enrolment/constants.py:278
 msgid ""
@@ -576,12 +581,12 @@ msgstr "详细了解英国的技术"
 #: enrolment/templates/marketing-pages/base.html:59
 #: enrolment/templates/marketing-pages/bidi/base.html:58
 msgid "Company showcase"
-msgstr ""
+msgstr "公司展示"
 
 #: enrolment/templates/marketing-pages/base.html:72
 #: enrolment/templates/marketing-pages/bidi/base.html:71
 msgid "Read case study"
-msgstr ""
+msgstr "阅读案例研究"
 
 #: enrolment/templates/marketing-pages/base.html:96
 #: enrolment/templates/marketing-pages/bidi/base.html:95
@@ -600,7 +605,7 @@ msgstr "英国的医疗保健和生命科学"
 
 #: enrolment/templates/marketing-pages/creative.html:9
 msgid "Delivering exceptional creative services"
-msgstr "来自英国的创新服务"
+msgstr "提供一流的创意服务"
 
 #: enrolment/templates/marketing-pages/creative.html:13
 msgid "Read more about creative services"
@@ -610,14 +615,15 @@ msgstr "详细了解来自英国的创意服务"
 msgid ""
 "If you need intelligent, creative ideas and rich, high-quality designs and "
 "media, look no further than the UK"
-msgstr ""
+msgstr "如果您需要明智的创意以及丰富的高质量设计和媒体内容，英国将是您的不二之选。"
 
 #: enrolment/templates/marketing-pages/creative.html:20
 msgid ""
 "Creative companies in the UK are responsible for producing big budget "
 "movies, designing fashionable furniture fabrics and developing world-class "
 "computer games."
-msgstr ""
+msgstr "英国的创意公司擅长制作预算庞大的电影，"
+"设计时尚的家居纺织品和开发世界级电脑游戏。"
 
 #: enrolment/templates/marketing-pages/creative.html:24
 #: enrolment/templates/marketing-pages/food.html:30
@@ -625,83 +631,91 @@ msgstr ""
 #: enrolment/templates/marketing-pages/sports-infrastructure.html:24
 #: enrolment/templates/marketing-pages/tech.html:28
 msgid "Key facts"
-msgstr ""
+msgstr "重要事实"
 
 #: enrolment/templates/marketing-pages/creative.html:26
-msgid "UK companies gave the world £19.1 billion of creative services in 2014"
-msgstr ""
+msgid "英国公司在 2014 年为全球提供了价值 191 亿英镑的创意服务""
 
 #: enrolment/templates/marketing-pages/creative.html:27
 #, python-format
-msgid "9%% of all UK service exports are in the creative services in 2014"
-msgstr ""
+msgid "2014 年，在出口的全部英国服务中，有 9% 是创意服务""
 
 #: enrolment/templates/marketing-pages/creative.html:28
 #, python-format
 msgid "Growth of creative services exports was 10.9%% in 2014"
-msgstr ""
+msgstr "2014 年，创意服务出口增长幅度为 10.9%"
 
 #: enrolment/templates/marketing-pages/creative.html:32
 msgid "Work with the best in film, TV and visual effects"
-msgstr ""
+msgstr "与电影、电视和视觉效果领域的顶尖公司合作"
 
 #: enrolment/templates/marketing-pages/creative.html:33
 msgid "The UK is one of the world's largest makers of original content."
-msgstr ""
+msgstr "英国是全球最大的原始内容制作地区之一。"
 
 #: enrolment/templates/marketing-pages/creative.html:34
 msgid ""
 "We are the home of films such as Star Wars and offer state-of-the-art studio "
 "facilities suitable for big movie productions and an amazing diversity of "
 "film locations."
-msgstr ""
+msgstr "我们制作了《星球大战》等电影，拥有一流的制片厂设施，适合制作大型电影，"
+"并且提供各种拍摄场地。"
 
 #: enrolment/templates/marketing-pages/creative.html:35
 msgid ""
 "At the heart of the UK’s creative industry is its award-winning film and "
 "television production comprising more than 1,500 independent TV companies in "
 "the UK."
-msgstr ""
+msgstr "屡获殊荣的电影和电视制作是英国创意行业的核心，其中包含位于英国的 "
+"1,500 多家独立电视公司。"
 
 #: enrolment/templates/marketing-pages/creative.html:36
 msgid ""
 "We're also the world leaders in exporting TV formats and localising those "
 "first commissioned in the UK."
-msgstr ""
+msgstr "在出口电视格式和本地化英国本土率先应用的格式方面，我们也处于全球领先地位。"
 
 #: enrolment/templates/marketing-pages/creative.html:38
 msgid "Our creative digital experience"
-msgstr ""
+msgstr "我们的数字创意经验"
 
 #: enrolment/templates/marketing-pages/creative.html:40
 msgid ""
 "The UK has one of the most world's most advanced games industries, with more "
 "than 30 years experience of innovation and commercial success."
-msgstr ""
+msgstr "英国具有全球最先进的游戏行业之一，拥有超过 30 年的创新和商业成功经验。"
+"英国具有全球最先进的游戏行业之一，拥有超过 30 年的创新和商业成功经验。"
 
 #: enrolment/templates/marketing-pages/creative.html:43
 msgid ""
 "UK games companies have adopted social and mobile platforms, with more than "
 "a third of UK studios focusing on the mobile market."
-msgstr ""
+msgstr "英国游戏公司采用了社交和移动平台，超过三分之一的英国游戏工作室专注于移动市场。"
+"英国游戏公司采用了社交和移动平台，超过三分之一的英国游戏工作室专注于移动市场。"
 
 #: enrolment/templates/marketing-pages/creative.html:46
 msgid ""
 "The UK's augmented reality specialists create immersive experiences that "
 "help further the creative reach of the likes of National Geographic and "
 "Universal Studios."
-msgstr ""
+msgstr "英国的增强现实专家打造了沉浸式体验，帮助《国家地理》"
+"和环球影城等公司扩大了创意范围。英国的增强现实专家打造了沉浸式体验，"
+"帮助《国家地理》和环球影城等公司扩大了创意范围。"
 
 #: enrolment/templates/marketing-pages/creative.html:49
 msgid "A publishing powerhouse"
-msgstr ""
+msgstr "出版大国出版大国"
 
 #: enrolment/templates/marketing-pages/creative.html:51
 msgid ""
 "The publishing sector in the UK has pioneered new print formats and "
 "commercial models alongside moving content online. British news journalism "
 "remains a powerful force, uncovering important stories around the world."
-msgstr ""
+msgstr "英国的出版领域率先尝试了新的印刷格式和商业模型，以及将内容迁移到网上。"
+"英国新闻业仍然是报道全球重要新闻的中坚力量。"
+"英国的出版领域率先尝试了新的印刷格式和商业模型，以及将内容迁移到网上。"
+"英国新闻业仍然是报道全球重要新闻的中坚力量。"
+
 
 #: enrolment/templates/marketing-pages/creative.html:54
 msgid ""
@@ -709,41 +723,49 @@ msgid ""
 "property rights negotiation and the sale and distribution of content. Half "
 "of the top 20 global box office successes of the last 11 years were based on "
 "novels by UK writers."
-msgstr ""
+msgstr "伦敦书展是全球领先的知识产权协商以及内容销售和分发活动之一。过去 11 年间，"
+"全球前 20 大图书销售收入中有一半都来自英国作家撰写的小说。"
+"伦敦书展是全球领先的知识产权协商以及内容销售和分发活动之一。过去 11 年间，全球前 20 "
+"大图书销售收入中有一半都来自英国作家撰写的小说。"
 
 #: enrolment/templates/marketing-pages/creative.html:57
 msgid "UK design talent is bringing beauty and strength to the world"
-msgstr ""
+msgstr "英国的设计人才将力与美带给了全世界英国的设计人才将力与美带给了全世界"
 
 #: enrolment/templates/marketing-pages/creative.html:59
 msgid ""
 "UK architects are responsible for some of the world’s most stunning "
 "buildings, such as the Galaxy Soho urban village in Beijing and reshaping "
 "environments, such as Singapore’s Gardens by the Bay."
-msgstr ""
+msgstr "英国建筑师设计了一些全球为之震撼的建筑（比如北京的银河 SOHO 城中村）"
+"以及设计美化环境的项目（比如新加坡的滨海湾花园）。"
 
 #: enrolment/templates/marketing-pages/creative.html:62
 msgid ""
 "We're also responsible for designing usable industrial and commercial spaces "
 "such as the new Spaceport America."
-msgstr ""
+msgstr "我们还从事设计实用的工业和商业场所，比如新的美国太空港。"
+"我们还从事设计实用的工业和商业场所，比如新的美国太空港。"
 
 #: enrolment/templates/marketing-pages/creative.html:65
 msgid ""
 "As well as designing the built environment, UK firms are designing vehicles "
 "and interiors around the world: including helping to design the world’s "
 "fastest passenger train in China."
-msgstr ""
+msgstr "除了设计建造环境外，英国公司还为全球公司设计车辆和内饰："
+"包括在中国帮助设计全球最快的乘用列车。除了设计建造环境外，"
+"英国公司还为全球公司设计车辆和内饰：包括在中国帮助设计全球最快的乘用列车。"
 
 #: enrolment/templates/marketing-pages/creative.html:68
 msgid "Arts: heritage and innovation"
-msgstr ""
+msgstr "艺术：传统和创新艺术：传统和创新"
 
 #: enrolment/templates/marketing-pages/creative.html:70
 msgid ""
 "From Shakespeare to Adele, the UK continues to produce the best-known "
 "artists, writers, singers and performers the world has ever seen."
-msgstr ""
+msgstr "从莎士比亚到阿黛拉，英国不断出产世界知名的艺术家、作家、歌手和表演家。"
+"从莎士比亚到阿黛拉，英国不断出产世界知名的艺术家、作家、歌手和表演家。"
 
 #: enrolment/templates/marketing-pages/creative.html:73
 msgid ""
@@ -752,26 +774,32 @@ msgid ""
 "the likes of Boeing and Mercedes-Benz. And our rights management companies "
 "have an ongoing reputation for protecting Intellectual Property for "
 "performers and producers alike."
-msgstr ""
+msgstr "除了面向消费者市场的音乐外，英国蓬勃发展的商业音乐和音频机构还为波音公司和奔驰等企业的影片提供配乐和曲目。"
+"我们的版权管理公司在保护表演家和制作者等对象的知识产权方面一直享有盛誉。"
+"除了面向消费者市场的音乐外，英国蓬勃发展的商业音乐和音频机构还为波音公司和奔驰等企业的影片提供配乐和曲目。"
+"我们的版权管理公司在保护表演家和制作者等对象的知识产权方面一直享有盛誉。"
 
 #: enrolment/templates/marketing-pages/creative.html:76
 msgid ""
 "The UK’s national museums attract visitors from around the world and have "
 "lasting partnerships and collection-sharing with their peers from countries "
 "as diverse as Russia and Malawi."
-msgstr ""
+msgstr "英国的国家博物馆吸引来自全球各地的游客，并且与各个国家/地区"
+"（比如俄罗斯和马拉维）的其他博物馆建立了持久合作关系和藏品共享协议。"
+"英国的国家博物馆吸引来自全球各地的游客，并且与各个国家/地区（比如俄罗斯和马拉维）"
+"的其他博物馆建立了持久合作关系和藏品共享协议。"
 
 #: enrolment/templates/marketing-pages/creative.html:79
 msgid "The UK is alive with exceptional talent and ingenuity."
-msgstr ""
+msgstr "英国是个充满才华和独创性的国家。英国是个充满才华和独创性的国家。"
 
 #: enrolment/templates/marketing-pages/creative.html:83
 msgid "Find your UK creative partner today"
-msgstr ""
+msgstr "现在就开始寻找您的英国创意合作伙伴现在就开始寻找您的英国创意合作伙伴"
 
 #: enrolment/templates/marketing-pages/creative.html:88
 msgid "See the UK's creative services providers on the Find a supplier service"
-msgstr ""
+msgstr "在“查找供应商服务”上查看英国的创意服务供应商"
 
 #: enrolment/templates/marketing-pages/food.html:6
 msgid ""
