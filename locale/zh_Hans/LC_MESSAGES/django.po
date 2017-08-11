@@ -282,43 +282,43 @@ msgstr ""
 
 #: enrolment/forms.py:19 enrolment/forms.py:41
 msgid "Please select an industry"
-msgstr ""
+msgstr "行业"
 
 #: enrolment/forms.py:21 enrolment/forms.py:43
 msgid "Tick the box to confirm you agree to the terms and conditions."
-msgstr ""
+msgstr "请勾选复选框以确认您同意以上条款和条件。"
 
 #: enrolment/forms.py:24 enrolment/forms.py:46
 msgid "Your name"
-msgstr ""
+msgstr "您的姓名"
 
 #: enrolment/forms.py:25 enrolment/forms.py:47
 msgid "Email address"
-msgstr ""
+msgstr "电子邮件地址"
 
 #: enrolment/forms.py:27
 msgid "Industry"
-msgstr "产业"
+msgstr "行业"
 
 #: enrolment/forms.py:32
 msgid "Company name"
-msgstr ""
+msgstr "公司名称"
 
 #: enrolment/forms.py:33 enrolment/forms.py:49
 msgid "Country"
-msgstr ""
+msgstr "国家/地区"
 
 #: enrolment/forms.py:48
 msgid "Organisation name"
-msgstr ""
+msgstr "组织名称"
 
 #: enrolment/forms.py:51
 msgid "Describe what you need"
-msgstr ""
+msgstr "描述您的需求"
 
 #: enrolment/forms.py:52
 msgid "Maximum 1000 characters."
-msgstr ""
+msgstr "最多 1000 个字符。"
 
 #: enrolment/templates/bidi/footer.html:10 enrolment/templates/footer.html:10
 msgid "Department for International Trade"
@@ -330,7 +330,7 @@ msgstr "联系我们"
 
 #: enrolment/templates/bidi/footer.html:20 enrolment/templates/footer.html:20
 msgid "Privacy and cookies"
-msgstr "隐私和 Cookie"
+msgstr "隐私和 cookie"
 
 #: enrolment/templates/bidi/footer.html:25 enrolment/templates/footer.html:25
 msgid "Terms &amp; conditions"
@@ -338,7 +338,7 @@ msgstr "条款和条件"
 
 #: enrolment/templates/bidi/footer.html:33 enrolment/templates/footer.html:33
 msgid "Crown Copyright"
-msgstr ""
+msgstr "官方版权"
 
 #: enrolment/templates/bidi/header.html:30 enrolment/templates/header.html:30
 msgid "Home"
@@ -347,11 +347,11 @@ msgstr "主页"
 #: enrolment/templates/bidi/header.html:34 enrolment/templates/header.html:34
 #: enrolment/templates/search-companies.html:15
 msgid "Find a supplier"
-msgstr "寻找供应商"
+msgstr "查找供应商"
 
 #: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:36
 msgid "Find a Supplier"
-msgstr "寻找供应商"
+msgstr "查找供应商"
 
 #: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:40
 #: enrolment/templates/marketing-pages/base.html:88
@@ -364,26 +364,26 @@ msgstr "产业"
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
 "business"
-msgstr "欢迎来到大不列颠和北爱尔兰<br>理想的经商之地"
+msgstr "欢迎来到大不列颠和北爱尔兰<br>开展业务的理想之地"
 
 #: enrolment/templates/bidi/landing-page.html:21
 #: enrolment/templates/landing-page.html:24
 msgid "Find UK companies to do business with"
-msgstr "寻找可以合作的英国公司"
+msgstr "寻找可以开展业务的英国公司"
 
 #: enrolment/templates/bidi/landing-page.html:23
 #: enrolment/templates/landing-page.html:26
 msgid ""
 "The UK is a great place to find innovative, high-quality products and "
 "services."
-msgstr "英国是盛产创新、优质产品和服务的国度。"
+msgstr "要寻找创新和高质量的产品和服务，就来英国吧。"
 
 #: enrolment/templates/bidi/landing-page.html:24
 #: enrolment/templates/landing-page.html:27
 msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
-msgstr "&nbsp;"
+msgstr "您可以在英国与各个行业的全球化组织及小型企业建立贸易关系。"
 
 #: enrolment/templates/bidi/landing-page.html:27
 #: enrolment/templates/landing-page.html:30
@@ -391,8 +391,8 @@ msgid ""
 "UK companies work with businesses and governments around the world to run "
 "high quality services and deliver the best experiences."
 msgstr ""
-"英国公司与全球企业和政府合作，共同打造出一个全新的商业环境能够提供优质服务和"
-"卓越体验。"
+"英国公司与全球企业和政府合作，共同打造新的生活和工作环境，"
+"提供高质量服务和最佳体验。"
 
 #: enrolment/templates/bidi/landing-page.html:28
 #: enrolment/templates/landing-page.html:31
@@ -400,14 +400,13 @@ msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
 "is hard to beat."
 msgstr ""
-"如果您需要寻求一位贸易合作伙伴，那么英国公司的可靠性和专业知识无人能及，是您"
-"的不二之选。"
+"如果您需要贸易合作伙伴，英国公司的可靠度和专业知识值得您信赖。"
 
 #: enrolment/templates/bidi/landing-page.html:31
 #: enrolment/templates/landing-page.html:34
 msgid ""
 "Choose from the hundreds of businesses in the UK to work with you today."
-msgstr "如今，英国有数百家企业可以和您一起携手共进。"
+msgstr "现在就从英国的数百家企业中挑选出您的贸易合作伙伴吧。"
 
 #: enrolment/templates/bidi/landing-page.html:43
 #: enrolment/templates/landing-page.html:46
@@ -418,34 +417,34 @@ msgstr "英国贸易部门"
 #: enrolment/templates/lead-generation-form.html:5
 #: exportopportunity/templates/export-opportunity.html:11
 msgid "Get UK companies to fulfil your business needs"
-msgstr "寻找可以合作的英国公司"
+msgstr "让英国公司来满足您的业务需求"
 
 #: enrolment/templates/bidi/lead-generation-form.html:8
 #: enrolment/templates/lead-generation-form.html:8
 msgid ""
 "Tell us what kind of goods or services you need. We'll put you in touch with "
 "relevant UK suppliers."
-msgstr ""
+msgstr "告诉我们您需要哪种商品或服务。我们将安排您联系相关的英国供应商。"
 
 #: enrolment/templates/bidi/lead-generation-form.html:76
 msgid "I agree to the great.gov.uk terms and conditions"
-msgstr ""
+msgstr "我同意 great.gov.uk 的条款和条件。"
 
 #: enrolment/templates/bidi/lead-generation-form.html:82
 #: enrolment/templates/lead-generation-form.html:82
 msgid "Send"
-msgstr ""
+msgstr "发送"
 
 #: enrolment/templates/bidi/sector-list.html:15
 #: enrolment/templates/sector-list.html:18
 msgid "Discover the UK's capability in these key industries"
-msgstr ""
+msgstr "了解英国在这些重要行业内的雄厚实力"
 
 #: enrolment/templates/bidi/sector-list.html:21
 #: enrolment/templates/industry-teasers.html:5
 #: enrolment/templates/sector-list.html:24
 msgid "UK industries"
-msgstr "英国贸易部门"
+msgstr "英国行业"
 
 #: enrolment/templates/bidi/sector-list.html:23
 #: enrolment/templates/sector-list.html:26
@@ -454,7 +453,10 @@ msgid ""
 "than the UK for innovative, high-quality products and services. It is the "
 "place to make the right trade connections with major corporations and "
 "smaller enterprises across every sector of industry."
-msgstr ""
+msgstr "作为跨国企业的决策者，英国将是您寻找创新和高质量产品和服务的不二之选。"
+"您可以在英国与各个行业的大小型公司及企业建立良好的贸易关系。"
+"我们可以帮助您与合适的公司建立重要的业务关系。"
+"请从这些英国行业内的企业中选择合作伙伴。"
 
 #: enrolment/templates/bidi/sector-list.html:26
 #: enrolment/templates/sector-list.html:29
@@ -479,7 +481,7 @@ msgstr ""
 #: enrolment/templates/browse-companies.html:12
 #: enrolment/templates/search-companies.html:17
 msgid "Browse UK companies"
-msgstr "浏览英国公司"
+msgstr "浏览英国公司介绍浏览英国公司介绍浏览英国公司介绍"
 
 #: enrolment/templates/govuk_layout.html:14
 msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
@@ -497,25 +499,25 @@ msgstr "进入英国医疗保健和生命科学供应链，向全世界交付高
 
 #: enrolment/templates/industry-teasers.html:13
 msgid "Find out more about the UK’s healthcare and life sciences"
-msgstr "详细了解英国医疗保健和生命科学"
+msgstr "了解与英国医疗和生命科学行业有关的更多信息"
 
 #: enrolment/templates/industry-teasers.html:18
 msgid "The UK's advanced technology"
-msgstr "英国的先进技术"
+msgstr "英国的先进科技行业"
 
 #: enrolment/templates/industry-teasers.html:21
 msgid ""
 "Check out the cutting-edge technological innovations that the UK is bringing "
 "to the world."
-msgstr "察看英国带给世界的尖端创新技术。"
+msgstr "了解英国为世界提供的最新前沿科技创新。"
 
 #: enrolment/templates/industry-teasers.html:24
 msgid "Find out more about UK technology"
-msgstr "详细了解英国的技术"
+msgstr "了解与英国科技行业有关的更多信息"
 
 #: enrolment/templates/industry-teasers.html:31
 msgid "The UK's creative services"
-msgstr "来自英国的创新服务"
+msgstr "英国的创意服务行业"
 
 #: enrolment/templates/industry-teasers.html:34
 #: enrolment/templates/marketing-pages/creative.html:11
@@ -523,27 +525,27 @@ msgid ""
 "Whether you need buildings designed, films made or a fresh approach to "
 "marketing, the UK is the first place to look."
 msgstr ""
-"无论您需要设计建筑、制作电影还是构思新颖的营销方法，英国都将是您的不二之选。"
+"无论您是需要设计大楼，制作电影，亦或是需要创新的营销方案，英国公司都是您的理想之选。"
 
 #: enrolment/templates/industry-teasers.html:37
 msgid "Find out more about the UK’s creative services"
-msgstr "详细了解来自英国的创意服务"
+msgstr "了解与英国创意服务行业有关的更多信息"
 
 #: enrolment/templates/industry-teasers.html:42
 msgid "The UK's food and drink"
-msgstr "来自英国的食品和饮料"
+msgstr "英国的饮食行业"
 
 #: enrolment/templates/industry-teasers.html:45
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "should be first on your list."
 msgstr ""
-"无论您是需要具有创新精神的食品品牌，还是需要具有卓越品质的优质饮料，英国都将"
-"是您的不二之选。"
+"无论您是希望与最具创新精神的食品品牌合作还是与一流品质的饮料品牌合作，"
+"英国公司都是您的首选。"
 
 #: enrolment/templates/industry-teasers.html:48
 msgid "Find out more about UK food and drink"
-msgstr "详细了解来自英国的食品和饮料"
+msgstr "了解与英国饮食行业有关的更多信息"
 
 #: enrolment/templates/language_switcher.html:8
 msgid "Select"
@@ -555,18 +557,18 @@ msgstr "该页仅以英文显示"
 
 #: enrolment/templates/lead-generation-form.html:76
 msgid "I agree to the great.gov.uk"
-msgstr ""
+msgstr "我同意 great.gov.uk"
 
 #: enrolment/templates/lead-generation-form.html:76
 #, fuzzy
 #| msgid "Terms &amp; conditions"
 msgid "terms and conditions"
-msgstr "条款和条件"
+msgstr "的条款和条件。"
 
 #: enrolment/templates/marketing-pages/base.html:20
 #: enrolment/templates/marketing-pages/bidi/base.html:19
 msgid "Find your UK trade partner"
-msgstr ""
+msgstr "寻找您的英国贸易伙伴"
 
 #: enrolment/templates/marketing-pages/base.html:45
 #: enrolment/templates/marketing-pages/bidi/base.html:44
@@ -1531,13 +1533,9 @@ msgstr ""
 #~ "无论您是需要具有创新精神的食品品牌，还是需要具有卓越品质的优质饮料，英国都"
 #~ "将是您的不二之选。"
 
-#, fuzzy
-#~| msgid ""
-#~| "Exceptionally innovative and creative UK trade partners are ready to "
-#~| "work with you. Discover them on the Find a Supplier service."
 #~ msgid ""
 #~ "Innovative and creative UK trade partners are ready to work with you. "
 #~ "Discover them on the Find a Supplier service."
 #~ msgstr ""
-#~ "极具创意和创新精神的英国贸易合作伙伴正期待着与您合作。在“寻找供应商”服务中"
-#~ "发现他们吧。"
+#~ "极具创新和创意的英国贸易伙伴已准备好与您开展合作。在“查找供应商服务”"
+#~ "上查找这些公司。"
