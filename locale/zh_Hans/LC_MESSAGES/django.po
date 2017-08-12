@@ -93,18 +93,21 @@ msgid ""
 "produce from manufacture through to the home. EVRYTHNG’s flexible data model "
 "enables the complex, interlinked hierarchy of component parts, finished "
 "product, batches, cases and pallets can be identified and mapped."
-msgstr ""
+msgstr ""EVRYTHNG 的商业物联网可追踪解决方案允许品牌在从制造到送"
+"入用户家中的过程中追踪和报告他们生产的每件产品的状态、位置和历史记录。"
+"EVRYTHNG 灵活的数据模型允许识别并绘制零部件、成品、批次、货箱和集装架的复杂互联层次结构。"
 
 #: enrolment/constants.py:155
 msgid ""
 "Companies can transform the value of their physical assets in the EVRYTHNG "
 "cloud by adding an intelligent, personalised layer of digital content, "
 "services and data analytics."
-msgstr ""
+msgstr "通过添加智能、个性化的数字内容、服务和数据分析层，公司可以在 "
+"EVRYTHNG 云中转化物理资产的价值。"
 
 #: enrolment/constants.py:169
 msgid "Internet of Things, data analytics, traceability, connectivity"
-msgstr ""
+msgstr "物联网、数据分析、可追踪性、连接"
 
 #: enrolment/constants.py:175
 msgid ""
@@ -119,7 +122,9 @@ msgid ""
 "From everyday consumer packaged products connected via smart packaging and "
 "smartphones, to fully-connected smart home appliances, each individual item "
 "managed in the EVRYTHNG cloud has a unique Active Digital Identity"
-msgstr ""
+msgstr "EVRYTHNG 是一家物联网软件公司，它通过将产品连入网络，"
+帮助制造商实现物理产品数字化。从通过智能包装和智能手机连接的日常包装消费品，"
+"到全面连接的智能家居设备，EVRYTHNG 云中管理的每个产品都具有唯一的“活动数字身份”"
 
 #: enrolment/constants.py:192
 msgid "Connectivity diagram of Arkessa's IoT services"
@@ -131,7 +136,9 @@ msgid ""
 "Internet of Things (IoT), regardless of location, network operator or "
 "wireless technology. It provides enterprises with a secure and future-proof "
 "mobility platform that is easy to adopt, integrate and scale."
-msgstr ""
+msgstr "Arkessa 允许设备和应用程序开发人员连接到物联网 (IoT)，而无需考虑地点、"
+"网络运营商或无线技术。它为企业提供了一个安全且面向未来的移动平台，该平台易于采用、"
+"集成和扩展。"
 
 #: enrolment/constants.py:212
 msgid ""
@@ -1381,33 +1388,37 @@ msgstr "详细了解英国的技术"
 
 #: enrolment/templates/marketing-pages/tech.html:19
 msgid "If you need the best technology, look no further than the UK."
-msgstr ""
+msgstr "如果您需要最好的技术，英国公司将是您的不二之选。"
 
 #: enrolment/templates/marketing-pages/tech.html:21
 msgid ""
 "The UK is a world leader: in 2016, we ranked first for science and "
 "technology according to the Good Country Index and third in the Global "
 "Innovation Index."
-msgstr ""
+msgstr "英国领先世界：2016 年，在科学和科技行业，"
+"优秀国家/地区指数将英国排名第一，全球创新指数将英国排名第三。"
 
 #: enrolment/templates/marketing-pages/tech.html:24
 msgid ""
 "The UK technology industry underpins many of our successful business sectors "
 "– from financial services and high-value manufacturing, to retail and "
 "agriculture – and continues to expand at an extraordinary pace."
-msgstr ""
+msgstr "英国科技行业是我们的许多商业领域取得成功的基础，从金融服务业、"
+"高价值制造业，到零售业和农业，并且还在继续以非凡的速度扩张。"
 
 #: enrolment/templates/marketing-pages/tech.html:30
 msgid "The UK has the largest technology market in Europe"
-msgstr ""
+msgstr "英国具有欧洲最大的科技市场"
 
 #: enrolment/templates/marketing-pages/tech.html:31
 msgid "The second largest telecoms service exporter globally is from the UK"
 msgstr ""
+"全球第二大电信服务出口商来自英国"
 
 #: enrolment/templates/marketing-pages/tech.html:32
 msgid "The UK has the largest data centre market in Europe"
 msgstr ""
+"英国具有欧洲最大的数据中心市场"
 
 #: enrolment/templates/marketing-pages/tech.html:37
 msgid ""
@@ -1415,6 +1426,7 @@ msgid ""
 "innovation, and we are proud that we provide a technological springboard for "
 "companies worldwide."
 msgstr ""
+"许多世界知名成功企业从英国的创新获益，我们深感自豪的是，我们为全球公司提供了科技助力。"
 
 #: enrolment/templates/marketing-pages/tech.html:40
 msgid ""
@@ -1423,88 +1435,92 @@ msgid ""
 "radio-frequency electronics, such as the first single-chip implementation of "
 "Bluetooth and the international NarrowBand-Internet of Things standard"
 msgstr ""
+"我们的科技行业是全球最大的科技行业之一，它展示了英国的创造力和设计技能。"
+"英国特别聚焦于以下领域：低功率射频电子产品"
+"（比如首次实施的单芯片蓝牙和国际窄带物联网标准）"
+"我们的科技行业是全球最大的科技行业之一，它展示了英国的创造力和设计技能。"
 
 #: enrolment/templates/marketing-pages/tech.html:41
 msgid ""
 "development of 5G communications, which will underpin the development of "
 "connected devices"
-msgstr ""
+msgstr "开发 5G 通信（为互联设备的发展奠定基础）"
 
 #: enrolment/templates/marketing-pages/tech.html:42
 msgid ""
 "data analytics to create real-time consumer trends, behaviour and insights"
-msgstr ""
+msgstr "数据分析（创建实时消费者趋势、行为和见解）"
 
 #: enrolment/templates/marketing-pages/tech.html:43
 msgid "data centres - we have the largest market capacity in Europe"
-msgstr ""
+msgstr "数据中心 - 我们具有欧洲最大的市场体量数"
 
 #: enrolment/templates/marketing-pages/tech.html:44
 msgid ""
 "artificial intelligence - we are home to  many successful artificial "
 "intelligence (AI) start-up companies, especially those specialising in "
 "machine learning, deep learning and natural language processing"
-msgstr ""
+msgstr "人工智能 - 我们是许多成功的人工智能 (AI) 初创公司的总部，"
+"尤其是专精于机器学习、深度学习和自然语言处理的公司"
 
 #: enrolment/templates/marketing-pages/tech.html:45
 msgid ""
 "producing compound semiconductor materials producing frontier-based sensor "
 "technologies."
-msgstr ""
+msgstr "生产化合物半导体材料，开发前沿传感器技术。"
 
 #: enrolment/templates/marketing-pages/tech.html:48
 msgid "UK technology firms are global success stories"
-msgstr ""
+msgstr "英国科技公司在全球取得了成功"
 
 #: enrolment/templates/marketing-pages/tech.html:50
 msgid ""
 "There are thousands of technology start-ups in the UK, thanks to our strong "
 "entrepreneurial culture."
-msgstr ""
+msgstr "得益于强大的创业文化，英国拥有数千家科技初创公司。"
 
 #: enrolment/templates/marketing-pages/tech.html:53
 msgid ""
 "Successful technology companies can be found all over the country and if "
 "you're looking to grow your business through technology, the UK is an ideal "
 "place to find a trade partner."
-msgstr ""
+msgstr "成功的科技公司遍布整个国家，如果您希望通过科技来增长业务，"
+"请来英国寻找贸易伙伴。"
 
 #: enrolment/templates/marketing-pages/tech.html:56
 msgid ""
 "Our flourishing start-ups complement a host of established global technology "
 "companies based here. UK technology success stories include:"
-msgstr ""
+msgstr "我们繁荣发展的初创公司对总部位于英国的大量成熟的全球化科技公司形成了补充。"
 
 #: enrolment/templates/marketing-pages/tech.html:59
 msgid ""
 "a telecommunications services company that operates in 180 markets with "
 "revenue of more than £19 billion"
-msgstr ""
+msgstr "一家在 180 个市场开展业务、收入超过 190 亿英镑的电信服务公司"
 
 #: enrolment/templates/marketing-pages/tech.html:60
 msgid ""
 "the world's third-largest supplier of enterprise resource planning software"
-msgstr ""
+msgstr "世界第三大企业资源计划软件供应商"
 
 #: enrolment/templates/marketing-pages/tech.html:61
 msgid "a mobile virtual network operator in 21 countries worldwide"
-msgstr ""
+msgstr "一家在全球 21 个国家/地区开展业务的移动虚拟网络运营商"
 
 #: enrolment/templates/marketing-pages/tech.html:62
 msgid ""
 "the world's second biggest mobile telecomms network (by number of "
 "connections)"
-msgstr ""
+msgstr "世界第二大移动电信网络（按连接数量统计）"
 
 #: enrolment/templates/marketing-pages/tech.html:66
-#, fuzzy
-#| msgid "Find out more about UK technology"
 msgid "Find your UK technology trade partner"
 msgstr "详细了解英国的技术"
 
 #: enrolment/templates/marketing-pages/tech.html:70
 msgid "See the UK's technology providers on the Find a supplier service"
-msgstr ""
+msgstr "在“查找供应商服务”上查看英国的科技供应商"
 
 #: enrolment/templates/marketing-pages/tech.html:73
 msgid ""
