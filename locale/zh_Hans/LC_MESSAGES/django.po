@@ -200,14 +200,15 @@ msgstr ""
 
 #: enrolment/constants.py:282 enrolment/constants.py:283
 msgid "Clementine and cinnamon tonic water"
-msgstr ""
+msgstr "小柑橘和肉桂奎宁水"
 
 #: enrolment/constants.py:285
 msgid ""
 "Fever-Tree has established itself as the mixer drink specialist, crafting a "
 "range of fourteen products sourced from the highest quality natural "
 "ingredients for the best tasting mixers."
-msgstr ""
+msgstr "Fever-Tree 是一家专精于混合饮品的公司，旗下有十四款产品，"
+"均选用了最高品质的天然原料，以打造口味最佳的混合饮品。"
 
 #: enrolment/constants.py:292
 msgid ""
@@ -225,7 +226,7 @@ msgstr "来自英国的食品和饮料"
 
 #: enrolment/constants.py:304
 msgid "Mixers, Quality, Taste"
-msgstr ""
+msgstr "混合饮品、质量、口味"
 
 #: enrolment/constants.py:309
 msgid "Packet of Joe and Seph's double chocolate popcorn"
@@ -238,6 +239,8 @@ msgid ""
 "and the kernels are all air-popped – a healthier cooking method compared to "
 "frying."
 msgstr ""
+"Joe & Seph’s 的所有爆米花均为小批量手工制作，以便确保提供超凡的质感和强烈的风味。"
+使用的成分 100% 纯天然，所有玉米粒均采用空气爆米法 - 此制作方法比油炸更为健康。"
 
 #: enrolment/constants.py:323
 msgid "Bottle and glass of Fever-Tree Madagascan Cola"
@@ -247,7 +250,7 @@ msgstr ""
 msgid ""
 "Fever-Tree has pioneered premium mixers and is now the world’s leading "
 "premium mixer company."
-msgstr ""
+msgstr "Fever-Tree 是高级混合饮品领域的先锋，现在是全球领先的高级混合饮品公司。"
 
 #: enrolment/constants.py:375
 msgid "Queen Elizabeth Olympic Park, London"
@@ -593,7 +596,7 @@ msgstr "阅读案例研究"
 #: enrolment/templates/marketing-pages/base.html:96
 #: enrolment/templates/marketing-pages/bidi/base.html:95
 msgid "keywords"
-msgstr ""
+msgstr "关键词"
 
 #: enrolment/templates/marketing-pages/creative.html:5
 msgid ""
@@ -815,7 +818,7 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:10
 msgid "UK food and drink"
-msgstr "来自英国的食品和饮料"
+msgstr "英国的饮食"
 
 #: enrolment/templates/marketing-pages/food.html:12
 msgid ""
@@ -834,7 +837,8 @@ msgid ""
 "The UK is a nation where culinary influences have come together to create "
 "food trends that we share with the world. Every day millions of "
 "international consumers enjoy British products."
-msgstr ""
+msgstr "英国的烹饪形成了各种饮食趋势，我们乐意与全世界进行分享。"
+"每天都有数百万国际消费者在享用英国产品。"
 
 #: enrolment/templates/marketing-pages/food.html:23
 msgid ""
@@ -842,86 +846,97 @@ msgid ""
 "rich heritage of well-known, traditional food and drink, we offer first-"
 "class produce with excellent provenance and thousands of new products are "
 "brought to the market every year."
-msgstr ""
+msgstr "英国“品牌”在全球范围内享有知名度，受到重视和渴求："
+"我们在知名传统饮食方面拥有丰富的文化遗产，我们提供产地优良的一流产品，"
+"每年都有数千款新产品上市。"
 
 #: enrolment/templates/marketing-pages/food.html:26
 msgid ""
 "We rank among the world’s best nations for in food quality, traceability and "
 "safety."
-msgstr ""
+msgstr "我们在食品质量、可追踪性和安全性方面排名世界前列。"
 
 #: enrolment/templates/marketing-pages/food.html:32
 msgid "The UK exported £12.3 billion of food and non-alcoholic drinks in 2015"
-msgstr ""
+msgstr "英国在 2015 年出口了 123 亿英镑的食品和非酒精饮品"
 
 #: enrolment/templates/marketing-pages/food.html:33
 msgid "Our main exports include chocolate, cheese and whisky"
-msgstr ""
+msgstr "我们的主要出口商品包括巧克力、芝士和威士忌"
 
 #: enrolment/templates/marketing-pages/food.html:34
 msgid ""
 "We have thousands of suppliers manufacturing to standards accepted in 123 "
 "countries worldwide"
-msgstr ""
+msgstr "我们具有数千家根据全球 123 个国家/地区的现行标准制造产品的供应商"
 
 #: enrolment/templates/marketing-pages/food.html:38
 msgid "British heritage shared globally"
-msgstr ""
+msgstr "与全球分享的英国文化遗产"
 
 #: enrolment/templates/marketing-pages/food.html:40
 msgid ""
 "From famous Scottish and Northern Irish whiskies to our traditional tea and "
 "cakes, the UK has centuries of experience to share."
-msgstr ""
+msgstr "从著名的苏格兰和北爱尔兰威士忌到我们的传统茶点，"
+"英国数百年来的饮食文化值得与全世界分享。"
 
 #: enrolment/templates/marketing-pages/food.html:43
 msgid ""
 "We bring new twists to our classic British products, which are exported all "
 "over the world including craft beers, ciders, gin and award-winning "
 "sparkling wine."
-msgstr ""
+msgstr "我们为经典英国产品添加了新的风味，并出口到全球各个国家/地区，"
+"包括精酿啤酒、苹果酒、杜松子酒和屡获殊荣的起泡酒。
+"
 
 #: enrolment/templates/marketing-pages/food.html:46
 msgid ""
 "Our unique trading and cultural history has brought us new ingredients, "
 "influences, tastes and ideas and we have a wealth of ethnic and specialist "
 "foods made in the UK to offer back to the world."
-msgstr ""
+msgstr "我们独特的贸易和文化历史为我们带来了新的原料、影响、口味和创意，"
+"我们在英国制作大量传统特色饮食并出口到全世界其他地区。"
 
 #: enrolment/templates/marketing-pages/food.html:49
 msgid "Innovation in food and drink"
-msgstr "来自英国的食品和饮料"
+msgstr "饮食创新"
 
 #: enrolment/templates/marketing-pages/food.html:51
 msgid ""
 "The UK’s food and drink brands develop and sell thousands of new products "
 "each year. UK companies were the first to pioneer frozen food and instant "
 "coffee."
-msgstr ""
+msgstr "英国的饮食品牌每年开发和销售数千款新产品。"
+"英国公司是冷冻食品和速溶咖啡领域的先锋。"
 
 #: enrolment/templates/marketing-pages/food.html:54
 msgid ""
 "We’re leading the way in food research and technology, new product "
 "development and trends such as organic, gluten-free, dairy-free and health "
 "foods."
-msgstr ""
+msgstr "我们引领了食品研究和技术、新产品开发以及趋势，比如有机、无麸质、"
+"无乳酪和健康食品。"
+
 
 #: enrolment/templates/marketing-pages/food.html:57
 msgid "Food quality and safety"
-msgstr ""
+msgstr "食品质量和安全"
 
 #: enrolment/templates/marketing-pages/food.html:59
 msgid ""
 "Our island location and clean waters give us access to rich stocks of fish "
 "and shellfish and our soil and climate provides bountiful agricultural "
 "resources for crops, dairy and meat."
-msgstr ""
+msgstr "岛屿环境和干净水源使我们能够接触到丰富的鱼类和贝壳生物，"
+"我们的土壤和气候为农作物、奶业和肉类提供了丰厚的农业资源。"
 
 #: enrolment/templates/marketing-pages/food.html:62
 msgid ""
 "Our manufacturing sector complies with rigorous international safety "
 "standards and our brands are trusted around the world."
-msgstr ""
+msgstr "我们的制造行业遵守严格的国际安全标准，我们的品牌深受全世界消费者信赖。"
+"我们的制造行业遵守严格的国际安全标准，我们的品牌深受全世界消费者信赖。"
 
 #: enrolment/templates/marketing-pages/food.html:65
 msgid ""
@@ -929,13 +944,15 @@ msgid ""
 "standards scheme that assure animal and worker welfare and our British "
 "Retail Consortium manufacturing standards have been adopted by 23,000 "
 "certificated suppliers, not only in the UK but in 123 other countries."
-msgstr ""
+msgstr "我们重视自己生产的食品：89,000 位农夫按照志愿农场标准方案开展作业，"
+"该方案可保障动物和工人福利，我们的英国零售协会制造标准被 23,000 "
+"家认证供应商采用 - 不仅仅是英国，还包括其他 123 个国家/地区。"
 
 #: enrolment/templates/marketing-pages/food.html:68
 msgid ""
 "Our customers recognise us for our excellent service and know that we can "
 "deliver."
-msgstr ""
+msgstr "我们的客户认可我们的一流服务，并且信任我们可以兑现承诺。"
 
 #: enrolment/templates/marketing-pages/food.html:72
 msgid "Find your UK trade partner in food and drink today"
@@ -944,6 +961,7 @@ msgstr "详细了解来自英国的食品和饮料"
 #: enrolment/templates/marketing-pages/food.html:78
 msgid "See the UK's food and drink companies on the Find a supplier service"
 msgstr ""
+"在“查找供应商服务”上查看英国的饮食公司"
 
 #: enrolment/templates/marketing-pages/food.html:81
 msgid ""
@@ -955,7 +973,7 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:84
 msgid "Find UK food and drink companies to meet your needs"
-msgstr ""
+msgstr "现在就开始寻找您在饮食行业的英国贸易伙伴"
 
 #: enrolment/templates/marketing-pages/food.html:87
 msgid ""
