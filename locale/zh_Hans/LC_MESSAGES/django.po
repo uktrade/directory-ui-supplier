@@ -74,7 +74,7 @@ msgstr "RD Biomed 设计和制造 Peptest™ - 全球首个非侵入性逆流诊
 
 #: enrolment/constants.py:121
 msgid "Claudia Breidbach using an i-limb"
-msgstr ""
+msgstr "Claudia Breidbach"
 
 #: enrolment/constants.py:125
 msgid ""
@@ -227,7 +227,7 @@ msgstr ""
 
 #: enrolment/constants.py:295
 msgid "Tim Warrillow"
-msgstr ""
+msgstr "im Warrillow"
 
 #: enrolment/constants.py:300
 msgid "Food and drink"
@@ -896,8 +896,7 @@ msgid ""
 "over the world including craft beers, ciders, gin and award-winning "
 "sparkling wine."
 msgstr "我们为经典英国产品添加了新的风味，并出口到全球各个国家/地区，"
-"包括精酿啤酒、苹果酒、杜松子酒和屡获殊荣的起泡酒。
-"
+"包括精酿啤酒、苹果酒、杜松子酒和屡获殊荣的起泡酒。"
 
 #: enrolment/templates/marketing-pages/food.html:46
 msgid ""
