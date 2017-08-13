@@ -1023,7 +1023,7 @@ msgstr "英国的医疗保健和生命科学"
 msgid ""
 "If you need innovative, high-quality healthcare products and services, the "
 "UK is the best place to find new suppliers."
-msgstr ""
+msgstr "如果您需要创新和高质量的医疗产品及服务，请来英国寻找新的供应商。"
 
 #: enrolment/templates/marketing-pages/health.html:31
 msgid ""
@@ -1031,62 +1031,68 @@ msgid ""
 "Nobel prizewinners for medicine. This world-class science base and track-"
 "record of excellence means you can rely on the UK for cutting-edge market-"
 "ready ideas."
-msgstr ""
+msgstr "全球排名前 10 的大学有 4 所位于英国，这里培养出了 23 "
+"位医疗领域的诺贝尔奖得主。"
+这意味着您可以信赖具有世界级科学基础和优质历史的英国医疗公司可以提供成熟的、"
+可投放市场的前沿创新概念。"
 
 #: enrolment/templates/marketing-pages/health.html:37
 msgid ""
 "There are more than 5,600 health and life sciences companies across the full "
 "UK supply chain"
-msgstr ""
+msgstr "完整的英国供应链包含超过 5,600 家健康和生命科学公司"
 
 #: enrolment/templates/marketing-pages/health.html:38
 msgid ""
 "The UK has the world’s largest integrated health system as a test bed for "
 "world-class products and services"
-msgstr ""
+msgstr "英国具有世界上最大的综合医疗系统，是世界级产品和服务的试验场"
 
 #: enrolment/templates/marketing-pages/health.html:39
 msgid "More than 80 Nobel Prizes underpin the UK’s top biomedical innovations"
-msgstr ""
+msgstr "超过 80 个诺贝尔奖为英国的顶尖生物医疗创新奠定了基础"
 
 #: enrolment/templates/marketing-pages/health.html:44
 msgid ""
 "The UK is internationally renowned for its National Health Service, with its "
 "70 years of research and public delivery."
-msgstr ""
+msgstr "基于 70 年的研究和公众医疗历史，英国以其完善的全国医疗服务而享誉世界。"
 
 #: enrolment/templates/marketing-pages/health.html:47
 msgid ""
 "The UK’s unique approach to healthcare and product development helps "
 "translate the best medical technology into high-quality, cost-effective and "
 "market-ready solutions."
-msgstr ""
+msgstr "英国独特的医疗和产品开发策略帮助他们将最佳的医疗技术转化成了高质量、"
+"成本有效且可在市场中即刻见效的解决方案。"
 
 #: enrolment/templates/marketing-pages/health.html:50
 msgid ""
 "Two of the top 10 global pharmaceutical companies are based in the UK. There "
 "are more than 5,000 life sciences companies in the UK and we have a growing "
 "market in digital health products and apps."
-msgstr ""
+msgstr "全球排名前 10 的医药公司中有两家总部位于英国。英国拥有超过 5,000 "
+"家生命科学公司，我们的数字医疗产品和应用程序市场正在蓬勃发展。"
 
 #: enrolment/templates/marketing-pages/health.html:53
 msgid ""
 "The UK’s medical technology sector produces a vast range of medical and "
 "diagnostic device, particularly single-use technology and orthopaedic "
 "devices. The UK also has companies specialising in:"
-msgstr ""
+msgstr "英国的医疗技术行业缔造了范围宽广的医疗和诊断设备，"
+"尤其是一次性技术和整形外科设备。英国还拥有专精于以下领域的公司："
 
 #: enrolment/templates/marketing-pages/health.html:56
 msgid "novel drug delivery systems"
-msgstr ""
+msgstr "新药交付系统"
 
 #: enrolment/templates/marketing-pages/health.html:57
 msgid "single-use biotechnology facilities"
-msgstr ""
+msgstr "一次性生物科技设施"
 
 #: enrolment/templates/marketing-pages/health.html:58
 msgid "medical imaging"
-msgstr ""
+msgstr "医疗成像"
 
 #: enrolment/templates/marketing-pages/health.html:61
 msgid ""
@@ -1094,7 +1100,8 @@ msgid ""
 "therapy and tissue-engineered products and services. And the UK’s "
 "pharmaceutical industry remains highly competitive in complex formulations "
 "and continuous manufacturing processes."
-msgstr ""
+msgstr "英国处于再生医学的前沿，因基因疗法和组织工程产品及服务而声名卓著。"
+"英国医药行业在复杂配方和连续制造流程方面始终具备极高的竞争力。"
 
 #: enrolment/templates/marketing-pages/health.html:64
 msgid ""
