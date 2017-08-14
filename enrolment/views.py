@@ -21,6 +21,13 @@ ZENPY_CREDENTIALS = {
 zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
+class ActiveViewNameMixin:
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['active_view_name'] = self.active_view_name
+        return context
+
+
 class ConditionalEnableTranslationsMixin:
     translations_enabled = True
     template_name_bidi = None
@@ -106,20 +113,21 @@ class AnonymousSubscribeFormView(FormView):
         return TemplateResponse(self.request, self.success_template)
 
 
-class LandingView(ConditionalEnableTranslationsMixin, TemplateView):
+class LandingView(
+    ActiveViewNameMixin, ConditionalEnableTranslationsMixin, TemplateView
+):
     template_name = 'landing-page.html'
     template_name_bidi = 'bidi/landing-page.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['active_view_name'] = 'index'
-        return context
+    active_view_name = 'index'
 
 
-class SectorListView(ConditionalEnableTranslationsMixin, TemplateView):
+class SectorListView(
+    ActiveViewNameMixin, ConditionalEnableTranslationsMixin, TemplateView
+):
     template_name = 'sector-list.html'
     template_name_bidi = 'bidi/sector-list.html'
     language_form_class = forms.LanguageIndustriesForm
+    active_view_name = 'sector-list'
 
     @property
     def translations_enabled(self):
@@ -127,11 +135,6 @@ class SectorListView(ConditionalEnableTranslationsMixin, TemplateView):
             self.request.LANGUAGE_CODE not in
             settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE
         )
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['active_view_name'] = 'sector-list'
-        return context
 
 
 class PrivacyCookiesView(TemplateView):
