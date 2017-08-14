@@ -1,5 +1,8 @@
 from datetime import datetime, timedelta
 
+import pytest
+
+from django.core.paginator import Paginator
 from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
 
@@ -236,7 +239,6 @@ def test_company_search_unsubmitted_hides_filters():
     template_name = 'company-search-results-list.html'
     context = {
         'form': forms.CompanySearchForm(),
-        **default_context,
     }
 
     html = render_to_string(template_name, context)
@@ -248,9 +250,31 @@ def test_company_search_submitted_shows_filters():
     template_name = 'company-search-results-list.html'
     context = {
         'form': forms.CompanySearchForm(data={'term': 'things'}),
-        **default_context,
     }
 
     html = render_to_string(template_name, context)
 
     assert SEARCH_FILTERS_LABEL in html
+
+
+@pytest.mark.parametrize('count,expected', [
+    [0, 'did not match any UK trade profiles'],
+    [1, 'Your search found 1 company'],
+    [5, 'Your search found 5 companies'],
+    [50, 'Your search found 50 companies'],
+])
+def test_company_search_shows_result_count(count, expected):
+
+    paginator = Paginator(range(count), 10)
+    pagination = paginator.page(1)
+
+    template_name = 'company-search-results-list.html'
+    context = {
+        'form': forms.CompanySearchForm(data={'term': 'things'}),
+        'pagination': pagination,
+        'results': [default_context['company']] * count,
+    }
+
+    html = render_to_string(template_name, context)
+
+    assert expected in html

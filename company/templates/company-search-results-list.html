@@ -49,7 +49,7 @@
 						<div class="row-fluid company-profile-details-body-toolbar">
 							<div class="span8">
 								<h2 class="screen-reader-only">Search results</h2>
-								<span>Your search found {{ results|length }} {{results|length|pluralize:'company,companies'}}</span>
+								<span>Your search found {{ pagination.paginator.count }} {{pagination.paginator.count|pluralize:'company,companies'}}</span>
 							</div>
 							<div class="span4" style="text-align: right;">
 								{% include 'company-search-results-paginator.html' %}
