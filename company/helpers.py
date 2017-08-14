@@ -141,8 +141,7 @@ def get_company_profile(number):
     response = api_client.company.retrieve_public_profile(number=number)
     if response.status_code == http.client.NOT_FOUND:
         raise Http404("API returned 404 for company number %s", number)
-    elif not response.ok:
-        response.raise_for_status()
+    response.raise_for_status()
     return get_public_company_profile_from_response(response)
 
 
@@ -154,6 +153,5 @@ def get_case_study(case_study_id):
         raise Http404(
             "API returned 404 for case study with id %s", case_study_id,
         )
-    elif not response.ok:
-        response.raise_for_status()
+    response.raise_for_status()
     return get_case_study_details_from_response(response)
