@@ -1,5 +1,6 @@
 {% extends 'govuk_layout.html' %}
 {% load static from staticfiles %}
+{% load thumbnail %}
 {% block css %}
 	<link href="{% static 'company-profile-details.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
@@ -17,11 +18,11 @@
 
 	<section id="company-details" class="row-fluid">
 		<div class="span2">
-			{% if company.logo %}
-				<img id="company-logo" src="{{company.logo}}" alt=""/>
-			{% else %}
-				<img id="company-logo" class="placeholder" src="/static/images/placeholder.png" alt="" />
-			{% endif %}
+			{% thumbnail company.logo "230" as logo %}
+				<img id="company-logo" src="{{ logo.url }}" alt=""/>
+			{% empty %}
+				<img id="company-logo" class="placeholder" src=" %{ static 'images/placeholder.png' %}" alt="" />
+			{% endthumbnail %}
 		</div>
 
 		<div class="span6 company-profile-module-details">
@@ -101,11 +102,17 @@
 			{% for case_study in company.supplier_case_studies %}
 			<article class="span4 case-study-{{ forloop.counter }}">
 				{% if case_study.image_one %}
-				<img src="{{ case_study.image_one }}" alt="" aria-labelledby="case-study-title-{{ forloop.counter }}" />
+					{% thumbnail case_study.image_one "338" as image %}
+						<img src="{{ image.url }}" alt="" aria-labelledby="case-study-title-{{ forloop.counter }}" />
+					{% endthumbnail %}
 				{% elif case_study.image_two %}
-				<img src="{{ case_study.image_two }}" alt="" aria-labelledby="case-study-title-{{ forloop.counter }}" />
+					{% thumbnail case_study.image_two "338" as image %}
+						<img src="{{ image.url }}" alt="" aria-labelledby="case-study-title-{{ forloop.counter }}" />
+					{% endthumbnail %}
 				{% elif case_study.image_three %}
-				<img src="{{ case_study.image_three }}" alt="" aria-labelledby="case-study-title-{{ forloop.counter }}" />
+					{% thumbnail case_study.image_three "338" as image %}
+						<img src="{{ image.url }}" alt="" aria-labelledby="case-study-title-{{ forloop.counter }}" />
+					{% endthumbnail %}
 				{% endif %}
 				<h3 id="case-study-title-{{ forloop.counter }}" class="title">{{ case_study.title }}</h3>
 				{{ case_study.short_summary|linebreaks }}

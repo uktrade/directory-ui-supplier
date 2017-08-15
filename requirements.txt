@@ -12,6 +12,7 @@ cachetools==2.0.0         # via zenpy
 contextlib2==0.5.5        # via raven
 django==1.9.13            # via django-recaptcha
 django_recaptcha==1.2.0
+django-storages==1.5.1
 djangorestframework==3.4.7
 gunicorn==19.5.0
 jsonschema==2.6.0
@@ -21,6 +22,8 @@ phonenumberslite==7.7.4
 pillow==4.0.0
 python-dateutil==2.6.0    # via zenpy
 raven==5.19.0
+redis==2.10.5
+sorl-thumbnail==12.3
 requests==2.11.1
 six==1.10.0               # via python-dateutil
 whitenoise==3.1

@@ -14,6 +14,7 @@ contextlib2==0.5.5        # via raven
 coverage==4.4.1           # via codecov, pytest-cov
 django==1.9.13            # via django-recaptcha
 django_recaptcha==1.2.0
+django-storages==1.5.1
 djangorestframework==3.4.7
 flake8==3.0.4
 freezegun==0.3.8
@@ -34,9 +35,11 @@ pytest-sugar==0.8.0
 pytest==3.0.2
 python-dateutil==2.6.0    # via freezegun, zenpy
 raven==5.19.0
+redis==2.10.5
 requests==2.11.1
 requests_mock==1.1.0
 six==1.10.0               # via freezegun, python-dateutil, requests-mock
+sorl-thumbnail==12.3
 termcolor==1.1.0          # via pytest-sugar
 whitenoise==3.1
 zenpy==1.1.10
