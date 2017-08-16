@@ -1,7 +1,7 @@
 import datetime
 import http
 
-from directory_validators.constants import choices
+from directory_constants.constants import choices
 from directory_validators.helpers import tokenize_keywords
 
 from django.http import Http404
@@ -11,7 +11,7 @@ from api_client import api_client
 
 
 EMPLOYEE_CHOICES = dict(choices.EMPLOYEES)
-SECTOR_CHOICES = dict(choices.COMPANY_CLASSIFICATIONS)
+INDUSTRY_CHOICES = dict(choices.INDUSTRIES)
 
 
 def format_date_of_creation(raw_date_of_creation):
@@ -37,7 +37,7 @@ def pair_sector_values_with_label(sectors_values):
         return []
     return [
         pair_sector_value_with_label(value) for value in sectors_values
-        if value in SECTOR_CHOICES
+        if value in INDUSTRY_CHOICES
     ]
 
 
@@ -48,7 +48,7 @@ def pair_sector_value_with_label(sectors_value):
 def get_sectors_label(sectors_value):
     if not sectors_value:
         return sectors_value
-    return SECTOR_CHOICES.get(sectors_value)
+    return INDUSTRY_CHOICES.get(sectors_value)
 
 
 def get_case_study_details_from_response(response):
