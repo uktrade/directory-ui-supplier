@@ -3,6 +3,7 @@ from dateutil.relativedelta import relativedelta
 import urllib.parse
 
 from django import template
+from django.core.paginator import EmptyPage
 from django.core.urlresolvers import reverse
 
 from enrolment.constants import SECTOR_FILTER_GROUPS
@@ -42,3 +43,20 @@ def search_url(sector_value):
     sectors = SECTOR_FILTER_GROUPS.get(sector_value, {sector_value})
     queyrstring = urllib.parse.urlencode({'sectors': sectors}, doseq=True)
     return reverse('company-search') + '?' + queyrstring
+
+
+@register.simple_tag(takes_context=True)
+def pagination_querystring_previous(context):
+    data = {**context['form'].cleaned_data}
+    try:
+        data['page'] = context['pagination'].previous_page_number()
+    except EmptyPage:
+        pass
+    return urllib.parse.urlencode(data, doseq=True)
+
+
+@register.simple_tag(takes_context=True)
+def pagination_querystring_next(context):
+    params = context['form'].cleaned_data
+    page = context['pagination'].next_page_number()
+    return urllib.parse.urlencode({**params, 'page': page}, doseq=True)

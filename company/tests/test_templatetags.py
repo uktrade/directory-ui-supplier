@@ -1,10 +1,13 @@
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
+from urllib.parse import parse_qs
 
 import pytest
 
+from django.core.paginator import Paginator
 from django.core.urlresolvers import reverse
 
+from company.forms import CompanySearchForm
 from company.templatetags import company_tags
 
 
@@ -207,3 +210,111 @@ def test_search_url_handles_company_classification(filter_value, expected):
     value = company_tags.search_url(filter_value)
 
     assert value == reverse('company-search') + expected
+
+
+@pytest.mark.parametrize('pagination,form,expected', [
+    [
+        Paginator(range(30), 3).page(1),
+        CompanySearchForm(data={'sectors': ['AEROSPACE']}),
+        {'page': ['1'], 'sectors': ['AEROSPACE']}
+    ],
+    [
+        Paginator(range(30), 3).page(1),
+        CompanySearchForm(data={'term': 'ace'}),
+        {'term': ['ace'], 'page': ['1']}
+    ],
+    [
+        Paginator(range(30), 3).page(1),
+        CompanySearchForm(data={'term': 'ace', 'sectors': ['AEROSPACE']}),
+        {'term': ['ace'], 'sectors': ['AEROSPACE'], 'page': ['1']}
+    ],
+    [
+        Paginator(range(30), 3).page(1),
+        CompanySearchForm(data={
+            'term': 'ace', 'sectors': ['AEROSPACE', 'CHEMICALS']
+        }),
+        {'sectors': ['AEROSPACE', 'CHEMICALS'], 'term': ['ace'], 'page': ['1']}
+    ],
+    [
+        Paginator(range(30), 3).page(2),
+        CompanySearchForm(data={
+            'term': 'ace', 'sectors': ['AEROSPACE', 'CHEMICALS']
+        }),
+        {'sectors': ['AEROSPACE', 'CHEMICALS'], 'term': ['ace'], 'page': ['1']}
+    ],
+    [
+        Paginator(range(30), 3).page(3),
+        CompanySearchForm(data={
+            'term': 'ace', 'sectors': ['AEROSPACE', 'CHEMICALS']
+        }),
+        {'sectors': ['AEROSPACE', 'CHEMICALS'], 'page': ['2'], 'term': ['ace']}
+    ],
+    [
+        Paginator(range(30), 3).page(3),
+        CompanySearchForm(data={'term': 'ace'}),
+        {'term': ['ace'], 'page': ['2']}
+    ],
+])
+def test_pagination_querystring_previous(pagination, form, expected):
+    assert form.is_valid() is True
+
+    actual = company_tags.pagination_querystring_previous(context={
+        'pagination': pagination,
+        'form': form
+    })
+
+    assert parse_qs(actual) == expected
+
+
+@pytest.mark.parametrize('pagination,form,expected', [
+    [
+        Paginator(range(30), 3).page(1),
+        CompanySearchForm(data={'sectors': ['AEROSPACE']}),
+        {'page': ['2'], 'sectors': ['AEROSPACE']}
+    ],
+    [
+        Paginator(range(30), 3).page(1),
+        CompanySearchForm(data={'term': 'ace'}),
+        {'term': ['ace'], 'page': ['2']}
+    ],
+    [
+        Paginator(range(30), 3).page(1),
+        CompanySearchForm(data={'term': 'ace', 'sectors': ['AEROSPACE']}),
+        {'term': ['ace'], 'sectors': ['AEROSPACE'], 'page': ['2']}
+    ],
+    [
+        Paginator(range(30), 3).page(1),
+        CompanySearchForm(data={
+            'term': 'ace', 'sectors': ['AEROSPACE', 'CHEMICALS']
+        }),
+        {'sectors': ['AEROSPACE', 'CHEMICALS'], 'term': ['ace'], 'page': ['2']}
+    ],
+    [
+        Paginator(range(30), 3).page(2),
+        CompanySearchForm(data={
+            'term': 'ace', 'sectors': ['AEROSPACE', 'CHEMICALS']
+        }),
+        {'sectors': ['AEROSPACE', 'CHEMICALS'], 'term': ['ace'], 'page': ['3']}
+    ],
+    [
+        Paginator(range(30), 3).page(3),
+        CompanySearchForm(data={
+            'term': 'ace', 'sectors': ['AEROSPACE', 'CHEMICALS']
+        }),
+        {'sectors': ['AEROSPACE', 'CHEMICALS'], 'page': ['4'], 'term': ['ace']}
+    ],
+    [
+        Paginator(range(30), 3).page(3),
+        CompanySearchForm(data={'term': 'ace'}),
+        {'term': ['ace'], 'page': ['4']}
+    ],
+])
+def test_pagination_querystring_next(pagination, form, expected):
+    assert form.is_valid() is True
+
+    actual = company_tags.pagination_querystring_next(context={
+        'pagination': pagination,
+        'form': form
+    })
+
+    assert parse_qs(actual) == expected
