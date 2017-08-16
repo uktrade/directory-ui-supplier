@@ -3,7 +3,7 @@ from django.conf import settings
 from django.utils import translation
 from django.utils.translation import ugettext as _
 
-from directory_validators.constants import choices
+from directory_constants.constants import choices
 
 
 class LanguageForm(forms.Form):
@@ -26,7 +26,7 @@ class AnonymousSubscribeForm(forms.Form):
     sector = forms.ChoiceField(
         label=_('Industry'),
         choices=(
-            [['', PLEASE_SELECT_LABEL]] + list(choices.COMPANY_CLASSIFICATIONS)
+            [['', PLEASE_SELECT_LABEL]] + list(choices.INDUSTRIES)
         )
     )
     company_name = forms.CharField(label=_('Company name'))
