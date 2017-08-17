@@ -290,12 +290,19 @@ ZENDESK_TICKET_SUBJECT = os.getenv(
 THUMBNAIL_STORAGE_CLASS_NAME = os.getenv(
     'THUMBNAIL_STORAGE_CLASS_NAME', 'default'
 )
+THUMBNAIL_KVSTORE_CLASS_NAME = os.getenv(
+    'THUMBNAIL_KVSTORE_CLASSE_NAME', 'default'
+)
 THUMBNAIL_STORAGE_CLASSES = {
     'default': 'storages.backends.s3boto3.S3Boto3Storage',
     'local-storage': 'django.core.files.storage.FileSystemStorage',
 }
+THUMBNAIL_KVSTORE_CLASSES = {
+    'default': 'sorl.thumbnail.kvstores.cached_db_kvstore.KVStore',
+    'redis': 'sorl.thumbnail.kvstores.redis_kvstore.KVStore',
+}
 THUMBNAIL_DEBUG = DEBUG
-THUMBNAIL_KVSTORE = 'sorl.thumbnail.kvstores.redis_kvstore.KVStore'
+THUMBNAIL_KVSTORE = THUMBNAIL_KVSTORE_CLASSES[THUMBNAIL_KVSTORE_CLASS_NAME]
 THUMBNAIL_STORAGE = THUMBNAIL_STORAGE_CLASSES[THUMBNAIL_STORAGE_CLASS_NAME]
 
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
