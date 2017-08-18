@@ -37,8 +37,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.staticfiles',
-    'django.contrib.humanize',
+    "django.contrib.staticfiles",
+    "django.contrib.humanize",
     "raven.contrib.django.raven_compat",
     "django.contrib.sessions",
     "django.contrib.sitemaps",
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "exportopportunity",
     "directory_constants",
     "captcha",
+    "sorl.thumbnail",
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -152,7 +153,9 @@ FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = (
     os.getenv('FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED') == 'true'
 )
 
+# needed only for dev local storage
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+MEDIA_URL = '/media/'
 
 # Static files served with Whitenoise and AWS Cloudfront
 # http://whitenoise.evans.io/en/stable/django.html#instructions-for-amazon-cloudfront
@@ -282,3 +285,31 @@ ZENDESK_TOKEN = os.environ['ZENDESK_TOKEN']
 ZENDESK_EMAIL = os.environ['ZENDESK_EMAIL']
 ZENDESK_TICKET_SUBJECT = os.getenv(
     'ZENDESK_TICKET_SUBJECT', 'Trade Profiles feedback')
+
+# Sorl-thumbnail
+THUMBNAIL_STORAGE_CLASS_NAME = os.getenv(
+    'THUMBNAIL_STORAGE_CLASS_NAME', 'default'
+)
+THUMBNAIL_KVSTORE_CLASS_NAME = os.getenv(
+    'THUMBNAIL_KVSTORE_CLASSE_NAME', 'default'
+)
+THUMBNAIL_STORAGE_CLASSES = {
+    'default': 'storages.backends.s3boto3.S3Boto3Storage',
+    'local-storage': 'django.core.files.storage.FileSystemStorage',
+}
+THUMBNAIL_KVSTORE_CLASSES = {
+    'default': 'sorl.thumbnail.kvstores.cached_db_kvstore.KVStore',
+    'redis': 'sorl.thumbnail.kvstores.redis_kvstore.KVStore',
+}
+THUMBNAIL_DEBUG = DEBUG
+THUMBNAIL_KVSTORE = THUMBNAIL_KVSTORE_CLASSES[THUMBNAIL_KVSTORE_CLASS_NAME]
+THUMBNAIL_STORAGE = THUMBNAIL_STORAGE_CLASSES[THUMBNAIL_STORAGE_CLASS_NAME]
+
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_DEFAULT_ACL = 'public-read'
+AWS_AUTO_CREATE_BUCKET = True
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_ENCRYPTION = False
+AWS_S3_FILE_OVERWRITE = False
+AWS_S3_CUSTOM_DOMAIN = os.getenv('AWS_S3_CUSTOM_DOMAIN')
+AWS_S3_URL_PROTOCOL = os.getenv('AWS_S3_URL_PROTOCOL', 'https:')
