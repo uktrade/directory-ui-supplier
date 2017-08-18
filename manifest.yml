@@ -4,4 +4,3 @@ applications:
   memory: 256M
   disk_quota: 2G
   buildpack: python-buildpack
-  command: python manage.py distributed_migrate --noinput &&python manage.py collectstatic --noinput && waitress-serve --port=$PORT api.wsgi:application
