@@ -1,14 +1,15 @@
+{% load pagination_querystring_previous pagination_querystring_next from company_tags %}
 {% if results %}
 	<div>
 		<span class="step-links">
 			{% if pagination.has_previous %}
-				<a href="?term={{ form.cleaned_data.term }}&page={{ pagination.previous_page_number }}">Back</a>
+				<a href="?{% pagination_querystring_previous %}">Back</a>
 			{% endif %}
 			<span class="current">
 				page {{ pagination.number }} of {{ pagination.paginator.num_pages }}
 			</span>
 			{% if pagination.has_next %}
-				<a href="?term={{ form.cleaned_data.term }}&page={{ pagination.next_page_number }}">Next</a>
+				<a href="?{% pagination_querystring_next %}">Next</a>
 			{% endif %}
 		</span>
 	</div>

@@ -2,10 +2,11 @@ from django.conf import settings
 
 from enrolment import constants
 
-from directory_validators.constants.choices import COMPANY_CLASSIFICATIONS
+from directory_constants.constants.choices import INDUSTRIES
+
 
 valid_sectors = (
-    [value for value, label in COMPANY_CLASSIFICATIONS] +
+    [value for value, label in INDUSTRIES] +
     list(constants.SECTOR_FILTER_GROUPS.keys())
 )
 
