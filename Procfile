@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --noinput && gunicorn ui.wsgi --bind [::1]:8081 --bind 0.0.0.0:8081
+web: python manage.py collectstatic --noinput && gunicorn ui.wsgi --bind [::1]:$PORT --bind 0.0.0.0:$PORT
