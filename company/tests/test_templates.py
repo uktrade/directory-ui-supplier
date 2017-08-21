@@ -64,6 +64,18 @@ def test_profile_case_studies_empty():
     assert RECENT_PROJECTS_LABEL not in html
 
 
+def test_profile_placeholder_image():
+    context = {
+        'company': {
+            'number': '012344',
+            'slug': 'hello',
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert 'src="/static/images/placeholder.' in html
+
+
 def test_profile_case_studies_present():
     context = {
         'company': {
