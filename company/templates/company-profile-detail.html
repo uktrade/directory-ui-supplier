@@ -21,7 +21,7 @@
 			{% thumbnail company.logo "230" as logo %}
 				<img id="company-logo" src="{{ logo.url }}" alt=""/>
 			{% empty %}
-				<img id="company-logo" class="placeholder" src=" %{ static 'images/placeholder.png' %}" alt="" />
+				<img id="company-logo" class="placeholder" src="{% static 'images/placeholder.png' %}" alt="" />
 			{% endthumbnail %}
 		</div>
 
