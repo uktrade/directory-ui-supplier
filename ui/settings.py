@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from urllib.parse import urlparse
 
 from ui import helpers
 
@@ -287,23 +288,25 @@ ZENDESK_TICKET_SUBJECT = os.getenv(
     'ZENDESK_TICKET_SUBJECT', 'Trade Profiles feedback')
 
 # Sorl-thumbnail
-THUMBNAIL_STORAGE_CLASS_NAME = os.getenv(
-    'THUMBNAIL_STORAGE_CLASS_NAME', 'default'
-)
+THUMBNAIL_STORAGE_CLASS_NAME = os.getenv('THUMBNAIL_STORAGE_CLASS_NAME', 's3')
 THUMBNAIL_KVSTORE_CLASS_NAME = os.getenv(
-    'THUMBNAIL_KVSTORE_CLASSE_NAME', 'default'
+    'THUMBNAIL_KVSTORE_CLASS_NAME', 'redis'
 )
 THUMBNAIL_STORAGE_CLASSES = {
-    'default': 'storages.backends.s3boto3.S3Boto3Storage',
+    's3': 'storages.backends.s3boto3.S3Boto3Storage',
     'local-storage': 'django.core.files.storage.FileSystemStorage',
 }
 THUMBNAIL_KVSTORE_CLASSES = {
-    'default': 'sorl.thumbnail.kvstores.cached_db_kvstore.KVStore',
     'redis': 'sorl.thumbnail.kvstores.redis_kvstore.KVStore',
+    'dummy': 'sorl.thumbnail.kvstores.dbm_kvstore.KVStore',
 }
 THUMBNAIL_DEBUG = DEBUG
 THUMBNAIL_KVSTORE = THUMBNAIL_KVSTORE_CLASSES[THUMBNAIL_KVSTORE_CLASS_NAME]
 THUMBNAIL_STORAGE = THUMBNAIL_STORAGE_CLASSES[THUMBNAIL_STORAGE_CLASS_NAME]
+if os.getenv('REDIS_URL'):
+    redis_url = urlparse(os.environ['REDIS_URL'])
+    THUMBNAIL_REDIS_PORT = redis_url.port
+    THUMBNAIL_REDIS_HOST = redis_url.hostname
 
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_DEFAULT_ACL = 'public-read'

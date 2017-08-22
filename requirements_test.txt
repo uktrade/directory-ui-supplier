@@ -8,6 +8,7 @@
 -e git+https://github.com/uktrade/directory-constants.git@v3.1.0#egg=directory_constants
 -e git+https://github.com/uktrade/directory-validators.git@v3.0.0#egg=directory_validators
 -e git+https://github.com/uktrade/directory-signature-auth.git@v0.2.0#egg=sigauth
+boto3==1.4.1
 cachetools==2.0.0         # via zenpy
 codecov==2.0.9
 contextlib2==0.5.5        # via raven
