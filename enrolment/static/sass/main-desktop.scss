@@ -1084,7 +1084,7 @@ input[type="color"],
   color: $white;
   padding: 40px 0;
   
-  a:link, a:hover {
+  a:link, a:hover, a:visited {
     color: $white;
     font-size: 17px;
     letter-spacing: -0.9px;
