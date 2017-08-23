@@ -4,7 +4,7 @@ from unittest.mock import call, patch, Mock
 import pytest
 import requests
 
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse, NoReverseMatch
 
 from company import helpers, views
 
@@ -235,15 +235,24 @@ def test_company_profile_list_redirects_to_search(client):
     assert response.get('Location') == '/search'
 
 
-@patch.object(helpers, 'get_public_company_profile_from_response')
-def test_public_profile_details_calls_api(mock_retrieve_profile, client):
+@patch.object(helpers, 'get_company_profile')
+def test_public_profile_details_calls_api(
+    mock_retrieve_profile, client, retrieve_profile_data
+):
+    mock_retrieve_profile.return_value = retrieve_profile_data
     url = reverse(
         'public-company-profiles-detail',
-        kwargs={'company_number': '01234567', 'slug': 'thing'}
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+            'slug': retrieve_profile_data['slug'],
+        }
     )
     client.get(url)
 
-    assert mock_retrieve_profile.called_once_with(1)
+    assert mock_retrieve_profile.call_count == 1
+    assert mock_retrieve_profile.call_args == call(
+        retrieve_profile_data['number']
+    )
 
 
 @patch.object(views.api_client.company, 'retrieve_public_profile')
@@ -327,7 +336,10 @@ def test_supplier_case_study_calls_api(
 
     client.get(url)
 
-    assert mock_retrieve_public_case_study.called_once_with(pk='2')
+    assert mock_retrieve_public_case_study.call_count == 1
+    assert mock_retrieve_public_case_study.call_args == call(
+        case_study_id='2'
+    )
 
 
 @pytest.mark.django_db
@@ -683,3 +695,33 @@ def test_company_search_highlight_summary(
     response = client.get(reverse('company-search'), {'term': 'wolf'})
 
     assert b'<em>wolf</em> in sheep clothing summary.' in response.content
+
+
+@pytest.mark.parametrize('name,number,slug', [
+    ['public-company-profiles-detail',          '01234567',   'a'],
+    ['public-company-profiles-detail',          'SC01234567', 'a'],
+    ['public-company-profiles-detail-slugless', '01234567',   None],
+    ['public-company-profiles-detail-slugless', 'SC01234567', None],
+    ['contact-company',                         '01234567',   None],
+    ['contact-company',                         'SC01234567', None],
+])
+def test_company_profile_url_routing_200(name, number, slug):
+    kwargs = {'company_number': number}
+    if slug:
+        kwargs['slug'] = slug
+
+    assert reverse(name, kwargs=kwargs)
+
+
+@pytest.mark.parametrize('name,number,slug', [
+    ['public-company-profiles-detail',          '.', 'a'],
+    ['public-company-profiles-detail-slugless', '.', None],
+    ['contact-company',                         '.', 'a'],
+])
+def test_company_profile_url_routing_404(name, number, slug):
+    kwargs = {'company_number': number}
+    if slug:
+        kwargs['slug'] = slug
+
+    with pytest.raises(NoReverseMatch):
+        assert reverse(name, kwargs=kwargs)
