@@ -213,6 +213,17 @@ h3 {
   }
 }
 
+.recaptcha_input_area {
+  a {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+  input {
+    font-size: 18px;
+    line-height: inherit;
+    height: 22px;  }
+}
 
 /* TABLET
  ****************/
