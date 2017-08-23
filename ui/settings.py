@@ -307,7 +307,7 @@ if os.getenv('REDIS_URL'):
     redis_url = urlparse(os.environ['REDIS_URL'])
     THUMBNAIL_REDIS_PORT = redis_url.port
     THUMBNAIL_REDIS_HOST = redis_url.hostname
-
+    THUMBNAIL_REDIS_PASSWORD = redis_url.password or ''
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_DEFAULT_ACL = 'public-read'
 AWS_AUTO_CREATE_BUCKET = True
