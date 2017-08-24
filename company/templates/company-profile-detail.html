@@ -125,7 +125,7 @@
 	<section class="row-fluid ed-special-bottom-border">
 		<div class="span6">
 			<div class="company-profile-module-inner company-profile-industries">
-				<h2>Industries of interest</h2>
+				<h2>Core industry</h2>
 				<p>
 				{% for sector in company.sectors %}
 					<a class="stone-label" href="{% url 'company-search' %}?sector={{ sector.value }}">{{ sector.label }}</a>
