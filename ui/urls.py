@@ -64,18 +64,18 @@ urlpatterns = [
         name='company-search',
     ),
     url(
-        r'^suppliers/(?P<company_number>.+)/contact$',
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/contact$',
         ContactCompanyView.as_view(),
         name='contact-company',
     ),
     url(
-        r'^suppliers/(?P<company_number>.+)/(?P<slug>.+)$',
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)$',
         PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail',
     ),
     # obsolete. use `public-company-profiles-detail`
     url(
-        r'^suppliers/(?P<company_number>.+)$',
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)$',
         PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail-slugless',
     ),
