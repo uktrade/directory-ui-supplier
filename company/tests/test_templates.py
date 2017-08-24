@@ -114,7 +114,7 @@ def test_public_profile_contact_button_no_email():
 def test_public_profile_sectors_link():
     html = render_to_string('company-profile-detail.html', default_context)
 
-    assert reverse('company-search') + '?sector=SECTOR1' in html
+    assert reverse('company-search') + '?sectors=SECTOR1' in html
 
 
 def test_public_profile_report_button():
