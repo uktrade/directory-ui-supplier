@@ -128,7 +128,7 @@
 				<h2>Core industry</h2>
 				<p>
 				{% for sector in company.sectors %}
-					<a class="stone-label" href="{% url 'company-search' %}?sector={{ sector.value }}">{{ sector.label }}</a>
+					<a class="stone-label" href="{% url 'company-search' %}?sectors={{ sector.value }}">{{ sector.label }}</a>
 				{% endfor %}
 				</p>
 				{% if company.sectors %}
