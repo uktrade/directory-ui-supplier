@@ -303,11 +303,18 @@ THUMBNAIL_KVSTORE_CLASSES = {
 THUMBNAIL_DEBUG = DEBUG
 THUMBNAIL_KVSTORE = THUMBNAIL_KVSTORE_CLASSES[THUMBNAIL_KVSTORE_CLASS_NAME]
 THUMBNAIL_STORAGE = THUMBNAIL_STORAGE_CLASSES[THUMBNAIL_STORAGE_CLASS_NAME]
+# Workaround for slow S3
+# https://github.com/jazzband/sorl-thumbnail#is-so-slow-in-amazon-s3-
+THUMBNAIL_FORCE_OVERWRITE = True
+
+# Redis for thumbnails cache
 if os.getenv('REDIS_URL'):
     redis_url = urlparse(os.environ['REDIS_URL'])
     THUMBNAIL_REDIS_PORT = redis_url.port
     THUMBNAIL_REDIS_HOST = redis_url.hostname
     THUMBNAIL_REDIS_PASSWORD = redis_url.password or ''
+
+# django-storages for thumbnails
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_DEFAULT_ACL = 'public-read'
 AWS_AUTO_CREATE_BUCKET = True
