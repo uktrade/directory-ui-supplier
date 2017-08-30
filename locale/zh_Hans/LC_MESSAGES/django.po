@@ -95,7 +95,7 @@ msgid ""
 "produce from manufacture through to the home. EVRYTHNG’s flexible data model "
 "enables the complex, interlinked hierarchy of component parts, finished "
 "product, batches, cases and pallets can be identified and mapped."
-msgstr ""EVRYTHNG 的商业物联网可追踪解决方案允许品牌在从制造到送"
+msgstr "EVRYTHNG 的商业物联网可追踪解决方案允许品牌在从制造到送"
 "入用户家中的过程中追踪和报告他们生产的每件产品的状态、位置和历史记录。"
 "EVRYTHNG 灵活的数据模型允许识别并绘制零部件、成品、批次、货箱和集装架的复杂互联层次结构。"
 
@@ -125,7 +125,7 @@ msgid ""
 "smartphones, to fully-connected smart home appliances, each individual item "
 "managed in the EVRYTHNG cloud has a unique Active Digital Identity"
 msgstr "EVRYTHNG 是一家物联网软件公司，它通过将产品连入网络，"
-帮助制造商实现物理产品数字化。从通过智能包装和智能手机连接的日常包装消费品，"
+"帮助制造商实现物理产品数字化。从通过智能包装和智能手机连接的日常包装消费品，"
 "到全面连接的智能家居设备，EVRYTHNG 云中管理的每个产品都具有唯一的“活动数字身份”"
 
 #: enrolment/constants.py:192
@@ -247,9 +247,8 @@ msgid ""
 "texture and an intense flavour. The ingredients used are 100&#37; natural "
 "and the kernels are all air-popped – a healthier cooking method compared to "
 "frying."
-msgstr ""
-"Joe & Seph’s 的所有爆米花均为小批量手工制作，以便确保提供超凡的质感和强烈的风味。"
-使用的成分 100% 纯天然，所有玉米粒均采用空气爆米法 - 此制作方法比油炸更为健康。"
+msgstr "Joe & Seph’s 的所有爆米花均为小批量手工制作，以便确保提供超凡的质感和强烈的风味。"
+"使用的成分 100% 纯天然，所有玉米粒均采用空气爆米法 - 此制作方法比油炸更为健康。"
 
 #: enrolment/constants.py:323
 msgid "Bottle and glass of Fever-Tree Madagascan Cola"
@@ -648,14 +647,14 @@ msgid "Key facts"
 msgstr "重要事实"
 
 #: enrolment/templates/marketing-pages/creative.html:26
-msgid "英国公司在 2014 年为全球提供了价值 191 亿英镑的创意服务""
+msgid "UK companies gave the world £19.1 billion of creative services in 2014"
+msgstr "英国公司在 2014 年为全球提供了价值 191 亿英镑的创意服务"
 
 #: enrolment/templates/marketing-pages/creative.html:27
-#, python-format
-msgid "2014 年，在出口的全部英国服务中，有 9% 是创意服务""
+msgid "9%% of all UK service exports are in the creative services in 2014"
+msgstr "2014 年，在出口的全部英国服务中，有 9% 是创意服务"
 
 #: enrolment/templates/marketing-pages/creative.html:28
-#, python-format
 msgid "Growth of creative services exports was 10.9%% in 2014"
 msgstr "2014 年，创意服务出口增长幅度为 10.9%"
 
@@ -1034,12 +1033,11 @@ msgid ""
 "ready ideas."
 msgstr "全球排名前 10 的大学有 4 所位于英国，这里培养出了 23 "
 "位医疗领域的诺贝尔奖得主。"
-这意味着您可以信赖具有世界级科学基础和优质历史的英国医疗公司可以提供成熟的、"
-可投放市场的前沿创新概念。"
+"这意味着您可以信赖具有世界级科学基础和优质历史的英国医疗公司可以提供成熟的、"
+"可投放市场的前沿创新概念。"
 
 #: enrolment/templates/marketing-pages/health.html:37
-msgid ""
-"There are more than 5,600 health and life sciences companies across the full "
+msgid "There are more than 5,600 health and life sciences companies across the full "
 "UK supply chain"
 msgstr "完整的英国供应链包含超过 5,600 家健康和生命科学公司"
 
