@@ -1,5 +1,5 @@
 from captcha.fields import ReCaptchaField
-from directory_validators.constants import choices
+from directory_constants.constants import choices
 
 from django import forms
 
@@ -31,7 +31,7 @@ class CompanySearchForm(forms.Form):
     )
     sectors = forms.MultipleChoiceField(
         required=False,
-        choices=choices.COMPANY_CLASSIFICATIONS,
+        choices=choices.INDUSTRIES,
         widget=widgets.CheckboxSelectInlineLabelMultiple()
     )
 
@@ -71,7 +71,7 @@ class ContactCompanyForm(forms.Form):
     sector = forms.ChoiceField(
         label='Industry:',
         choices=(
-            [['', SELECT_LABEL]] + list(choices.COMPANY_CLASSIFICATIONS)
+            [['', SELECT_LABEL]] + list(choices.INDUSTRIES)
         ),
     )
     subject = forms.CharField(

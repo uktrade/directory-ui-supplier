@@ -1,5 +1,8 @@
 from datetime import datetime, timedelta
 
+import pytest
+
+from django.core.paginator import Paginator
 from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
 
@@ -61,6 +64,18 @@ def test_profile_case_studies_empty():
     assert RECENT_PROJECTS_LABEL not in html
 
 
+def test_profile_placeholder_image():
+    context = {
+        'company': {
+            'number': '012344',
+            'slug': 'hello',
+        }
+    }
+    html = render_to_string('company-profile-detail.html', context)
+
+    assert 'src="/static/images/placeholder.' in html
+
+
 def test_profile_case_studies_present():
     context = {
         'company': {
@@ -74,6 +89,7 @@ def test_profile_case_studies_present():
     assert RECENT_PROJECTS_LABEL in html
 
 
+@pytest.mark.django_db
 def test_public_profile_contact_button():
     context = {
         'company': default_context['company'],
@@ -94,10 +110,11 @@ def test_public_profile_contact_button_no_email():
     assert CONTACT_COMPANY_LABEL not in html
 
 
+@pytest.mark.django_db
 def test_public_profile_sectors_link():
     html = render_to_string('company-profile-detail.html', default_context)
 
-    assert reverse('company-search') + '?sector=SECTOR1' in html
+    assert reverse('company-search') + '?sectors=SECTOR1' in html
 
 
 def test_public_profile_report_button():
@@ -223,6 +240,7 @@ def test_case_study_handles_not_present_image_one():
     assert 'None' not in html
 
 
+@pytest.mark.django_db
 def test_company_profile_details_renders_keywords():
     template_name = 'company-profile-detail.html'
     html = render_to_string(template_name, default_context)
@@ -236,7 +254,6 @@ def test_company_search_unsubmitted_hides_filters():
     template_name = 'company-search-results-list.html'
     context = {
         'form': forms.CompanySearchForm(),
-        **default_context,
     }
 
     html = render_to_string(template_name, context)
@@ -248,9 +265,32 @@ def test_company_search_submitted_shows_filters():
     template_name = 'company-search-results-list.html'
     context = {
         'form': forms.CompanySearchForm(data={'term': 'things'}),
-        **default_context,
     }
 
     html = render_to_string(template_name, context)
 
     assert SEARCH_FILTERS_LABEL in html
+
+
+@pytest.mark.django_db
+@pytest.mark.parametrize('count,expected', [
+    [0, 'did not match any UK trade profiles'],
+    [1, 'Your search found 1 company'],
+    [5, 'Your search found 5 companies'],
+    [50, 'Your search found 50 companies'],
+])
+def test_company_search_shows_result_count(count, expected):
+
+    paginator = Paginator(range(count), 10)
+    pagination = paginator.page(1)
+
+    template_name = 'company-search-results-list.html'
+    context = {
+        'form': forms.CompanySearchForm(data={'term': 'things'}),
+        'pagination': pagination,
+        'results': [default_context['company']] * count,
+    }
+
+    html = render_to_string(template_name, context)
+
+    assert expected in html

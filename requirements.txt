@@ -5,23 +5,31 @@
 #    pip-compile --output-file requirements.txt requirements.ini
 #
 -e git+https://github.com/uktrade/directory-api-client.git@v7.0.0#egg=directory_api_client
--e git+https://github.com/uktrade/directory-constants.git@v2.2.0#egg=directory_constants
--e git+https://github.com/uktrade/directory-validators.git@v2.2.0#egg=directory_validators
+-e git+https://github.com/uktrade/directory-constants.git@v3.1.0#egg=directory_constants
+-e git+https://github.com/uktrade/directory-validators.git@v3.1.2#egg=directory_validators
 -e git+https://github.com/uktrade/directory-signature-auth.git@v0.2.0#egg=sigauth
+boto3==1.4.1
+botocore==1.4.93          # via boto3, s3transfer
 cachetools==2.0.0         # via zenpy
 contextlib2==0.5.5        # via raven
+django-storages==1.5.1
 django==1.9.13            # via django-recaptcha
 django_recaptcha==1.2.0
 djangorestframework==3.4.7
+docutils==0.14            # via botocore
 gunicorn==19.5.0
+jmespath==0.9.3           # via boto3, botocore
 jsonschema==2.6.0
 monotonic==1.2
 olefile==0.44             # via pillow
 phonenumberslite==7.7.4
-pillow==4.0.0
-python-dateutil==2.6.0    # via zenpy
+pillow==4.2.1
+python-dateutil==2.6.0    # via botocore, zenpy
 raven==5.19.0
+redis==2.10.5
 requests==2.11.1
+s3transfer==0.1.10        # via boto3
 six==1.10.0               # via python-dateutil
+sorl-thumbnail==12.3
 whitenoise==3.1
 zenpy==1.1.10

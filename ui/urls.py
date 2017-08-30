@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls import url
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
@@ -63,18 +64,18 @@ urlpatterns = [
         name='company-search',
     ),
     url(
-        r'^suppliers/(?P<company_number>.+)/contact$',
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/contact$',
         ContactCompanyView.as_view(),
         name='contact-company',
     ),
     url(
-        r'^suppliers/(?P<company_number>.+)/(?P<slug>.+)$',
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)$',
         PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail',
     ),
     # obsolete. use `public-company-profiles-detail`
     url(
-        r'^suppliers/(?P<company_number>.+)$',
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)$',
         PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail-slugless',
     ),
@@ -138,3 +139,13 @@ urlpatterns = [
     ),
 
 ]
+
+
+if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
+    urlpatterns += [
+        url(
+            r'^media/(?P<path>.*)$',
+            'django.views.static.serve',
+            {'document_root': settings.MEDIA_ROOT}
+        ),
+    ]

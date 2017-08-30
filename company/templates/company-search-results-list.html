@@ -1,6 +1,7 @@
 {% extends 'govuk_layout.html' %}
 {% load date_recency from company_tags %}
 {% load staticfiles %}
+{% load thumbnail %}
 {% block css %}
 	<link href="{% static 'company-search_results.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
@@ -49,7 +50,7 @@
 						<div class="row-fluid company-profile-details-body-toolbar">
 							<div class="span8">
 								<h2 class="screen-reader-only">Search results</h2>
-								<span>Your search found {{ results|length }} {{results|length|pluralize:'company,companies'}}</span>
+								<span>Your search found {{ pagination.paginator.count }} {{pagination.paginator.count|pluralize:'company,companies'}}</span>
 							</div>
 							<div class="span4" style="text-align: right;">
 								{% include 'company-search-results-paginator.html' %}
@@ -68,18 +69,18 @@
 						<div class="span2 company-logo">
 							<div class="logo-container">
 								<div class="logo">
-									{% if company.logo %}
-									<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}">
-										<img src="{{company.logo}}" alt="{{ company.name }}" />
-									</a>
-									{% else %}
-										<img class="placeholder" src="/static/images/placeholder.png" alt="" />
-									{% endif %}
+									{% thumbnail company.logo "x135" as logo %}
+										<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}">
+											<img src="{{ logo.url }}" alt="{{ company.name }}" />
+										</a>
+									{% empty %}
+										<img class="placeholder" src="{% static 'images/placeholder.png' %}" alt="" />
+									{% endthumbnail %}
 									</a>
 								</div>
 							</div>
 						</div>
-						<div class="span10">
+						<div class="span9">
 							<a class="no-focus-highlight" href="{% url 'public-company-profiles-detail' company_number=company.number slug=company.slug %}">
 								<h3 class="ed-truncate-single-line">{{ company.name }}</h3>
 							</a>

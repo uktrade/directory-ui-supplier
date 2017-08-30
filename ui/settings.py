@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from urllib.parse import urlparse
 
 from ui import helpers
 
@@ -37,8 +38,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.staticfiles',
-    'django.contrib.humanize',
+    "django.contrib.staticfiles",
+    "django.contrib.humanize",
     "raven.contrib.django.raven_compat",
     "django.contrib.sessions",
     "django.contrib.sitemaps",
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     "exportopportunity",
     "directory_constants",
     "captcha",
+    "sorl.thumbnail",
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -152,7 +154,9 @@ FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = (
     os.getenv('FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED') == 'true'
 )
 
+# needed only for dev local storage
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+MEDIA_URL = '/media/'
 
 # Static files served with Whitenoise and AWS Cloudfront
 # http://whitenoise.evans.io/en/stable/django.html#instructions-for-amazon-cloudfront
@@ -270,6 +274,8 @@ SECTOR_LINKS = helpers.parse_sector_links(os.environ['SECTOR_LINKS_JSON'])
 # Google Recaptcha
 RECAPTCHA_PUBLIC_KEY = os.environ['RECAPTCHA_PUBLIC_KEY']
 RECAPTCHA_PRIVATE_KEY = os.environ['RECAPTCHA_PRIVATE_KEY']
+# NOCAPTCHA = True turns on version 2 of recaptcha
+NOCAPTCHA = os.getenv('NOCAPTCHA') != 'false'
 
 # Google tag manager
 GOOGLE_TAG_MANAGER_ID = os.getenv('GOOGLE_TAG_MANAGER_ID', '')
@@ -282,3 +288,40 @@ ZENDESK_TOKEN = os.environ['ZENDESK_TOKEN']
 ZENDESK_EMAIL = os.environ['ZENDESK_EMAIL']
 ZENDESK_TICKET_SUBJECT = os.getenv(
     'ZENDESK_TICKET_SUBJECT', 'Trade Profiles feedback')
+
+# Sorl-thumbnail
+THUMBNAIL_STORAGE_CLASS_NAME = os.getenv('THUMBNAIL_STORAGE_CLASS_NAME', 's3')
+THUMBNAIL_KVSTORE_CLASS_NAME = os.getenv(
+    'THUMBNAIL_KVSTORE_CLASS_NAME', 'redis'
+)
+THUMBNAIL_STORAGE_CLASSES = {
+    's3': 'storages.backends.s3boto3.S3Boto3Storage',
+    'local-storage': 'django.core.files.storage.FileSystemStorage',
+}
+THUMBNAIL_KVSTORE_CLASSES = {
+    'redis': 'sorl.thumbnail.kvstores.redis_kvstore.KVStore',
+    'dummy': 'sorl.thumbnail.kvstores.dbm_kvstore.KVStore',
+}
+THUMBNAIL_DEBUG = DEBUG
+THUMBNAIL_KVSTORE = THUMBNAIL_KVSTORE_CLASSES[THUMBNAIL_KVSTORE_CLASS_NAME]
+THUMBNAIL_STORAGE = THUMBNAIL_STORAGE_CLASSES[THUMBNAIL_STORAGE_CLASS_NAME]
+# Workaround for slow S3
+# https://github.com/jazzband/sorl-thumbnail#is-so-slow-in-amazon-s3-
+THUMBNAIL_FORCE_OVERWRITE = True
+
+# Redis for thumbnails cache
+if os.getenv('REDIS_URL'):
+    redis_url = urlparse(os.environ['REDIS_URL'])
+    THUMBNAIL_REDIS_PORT = redis_url.port
+    THUMBNAIL_REDIS_HOST = redis_url.hostname
+    THUMBNAIL_REDIS_PASSWORD = redis_url.password or ''
+
+# django-storages for thumbnails
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_DEFAULT_ACL = 'public-read'
+AWS_AUTO_CREATE_BUCKET = True
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_ENCRYPTION = False
+AWS_S3_FILE_OVERWRITE = False
+AWS_S3_CUSTOM_DOMAIN = os.getenv('AWS_S3_CUSTOM_DOMAIN')
+AWS_S3_URL_PROTOCOL = os.getenv('AWS_S3_URL_PROTOCOL', 'https:')

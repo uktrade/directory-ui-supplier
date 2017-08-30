@@ -1,7 +1,7 @@
 import datetime
 import http
 
-from directory_validators.constants import choices
+from directory_constants.constants import choices
 from directory_validators.helpers import tokenize_keywords
 
 from django.http import Http404
@@ -11,7 +11,7 @@ from api_client import api_client
 
 
 EMPLOYEE_CHOICES = dict(choices.EMPLOYEES)
-SECTOR_CHOICES = dict(choices.COMPANY_CLASSIFICATIONS)
+INDUSTRY_CHOICES = dict(choices.INDUSTRIES)
 
 
 def format_date_of_creation(raw_date_of_creation):
@@ -37,7 +37,7 @@ def pair_sector_values_with_label(sectors_values):
         return []
     return [
         pair_sector_value_with_label(value) for value in sectors_values
-        if value in SECTOR_CHOICES
+        if value in INDUSTRY_CHOICES
     ]
 
 
@@ -48,7 +48,7 @@ def pair_sector_value_with_label(sectors_value):
 def get_sectors_label(sectors_value):
     if not sectors_value:
         return sectors_value
-    return SECTOR_CHOICES.get(sectors_value)
+    return INDUSTRY_CHOICES.get(sectors_value)
 
 
 def get_case_study_details_from_response(response):
@@ -141,8 +141,7 @@ def get_company_profile(number):
     response = api_client.company.retrieve_public_profile(number=number)
     if response.status_code == http.client.NOT_FOUND:
         raise Http404("API returned 404 for company number %s", number)
-    elif not response.ok:
-        response.raise_for_status()
+    response.raise_for_status()
     return get_public_company_profile_from_response(response)
 
 
@@ -154,6 +153,5 @@ def get_case_study(case_study_id):
         raise Http404(
             "API returned 404 for case study with id %s", case_study_id,
         )
-    elif not response.ok:
-        response.raise_for_status()
+    response.raise_for_status()
     return get_case_study_details_from_response(response)
