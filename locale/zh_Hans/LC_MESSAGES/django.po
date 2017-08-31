@@ -23,7 +23,7 @@ msgstr ""
 
 #: enrolment/constants.py:73
 msgid "Rebekah Marine: i-limb&trade; user"
-msgstr ""
+msgstr "Rebekah Marine：i-limb&trade; 用户"
 
 #: enrolment/constants.py:76
 msgid ""
@@ -42,11 +42,11 @@ msgstr ""
 
 #: enrolment/constants.py:88
 msgid "Jason"
-msgstr ""
+msgstr "Jason"
 
 #: enrolment/constants.py:89
 msgid "i-limb quantum&trade; user"
-msgstr ""
+msgstr "i-limb quantum™ 用户"
 
 #: enrolment/constants.py:93
 msgid "Healthcare and life sciences"
@@ -54,11 +54,11 @@ msgstr "英国的医疗保健和生命科学"
 
 #: enrolment/constants.py:97 enrolment/constants.py:164
 msgid "Technology"
-msgstr ""
+msgstr "科技"
 
 #: enrolment/constants.py:102
 msgid "prosthetics, bionics, robotics, healthcare, technology, limb loss"
-msgstr ""
+msgstr "假体术、仿生学、机器人学、医疗、技术、截肢"
 
 #: enrolment/constants.py:108
 msgid "Graphical representation of reflux in the stomach"
@@ -69,18 +69,20 @@ msgid ""
 "RD Biomed designs and makes Peptest&trade;- the world’s first non-invasive "
 "reflux diagnostic test. RD Biomed specialises in diagnostics for "
 "gastroenterology and respiratory conditions."
-msgstr ""
+msgstr "RD Biomed 设计和制造 Peptest™ - 全球首个非侵入性逆流诊断测试。"
+"RD Biomed 专精于肠胃病和呼吸道疾病的诊断。"
 
 #: enrolment/constants.py:121
 msgid "Claudia Breidbach using an i-limb"
-msgstr ""
+msgstr "Claudia Breidbach"
 
 #: enrolment/constants.py:125
 msgid ""
 "Touch Bionics is responsible for developing and improving the world’s first "
 "bionic hand with 5 independently moving fingers, transforming lives across "
 "the globe."
-msgstr ""
+msgstr "Touch Bionics 从事开发和改进全球首款具有 5 根独立活动手指的仿生手，"
+"让全球民众的生活实现变革。"
 
 #: enrolment/constants.py:138
 msgid "Mobile phone displaying evrythng's commercial traceability product"
@@ -93,18 +95,21 @@ msgid ""
 "produce from manufacture through to the home. EVRYTHNG’s flexible data model "
 "enables the complex, interlinked hierarchy of component parts, finished "
 "product, batches, cases and pallets can be identified and mapped."
-msgstr ""
+msgstr "EVRYTHNG 的商业物联网可追踪解决方案允许品牌在从制造到送"
+"入用户家中的过程中追踪和报告他们生产的每件产品的状态、位置和历史记录。"
+"EVRYTHNG 灵活的数据模型允许识别并绘制零部件、成品、批次、货箱和集装架的复杂互联层次结构。"
 
 #: enrolment/constants.py:155
 msgid ""
 "Companies can transform the value of their physical assets in the EVRYTHNG "
 "cloud by adding an intelligent, personalised layer of digital content, "
 "services and data analytics."
-msgstr ""
+msgstr "通过添加智能、个性化的数字内容、服务和数据分析层，公司可以在 "
+"EVRYTHNG 云中转化物理资产的价值。"
 
 #: enrolment/constants.py:169
 msgid "Internet of Things, data analytics, traceability, connectivity"
-msgstr ""
+msgstr "物联网、数据分析、可追踪性、连接"
 
 #: enrolment/constants.py:175
 msgid ""
@@ -119,7 +124,9 @@ msgid ""
 "From everyday consumer packaged products connected via smart packaging and "
 "smartphones, to fully-connected smart home appliances, each individual item "
 "managed in the EVRYTHNG cloud has a unique Active Digital Identity"
-msgstr ""
+msgstr "EVRYTHNG 是一家物联网软件公司，它通过将产品连入网络，"
+"帮助制造商实现物理产品数字化。从通过智能包装和智能手机连接的日常包装消费品，"
+"到全面连接的智能家居设备，EVRYTHNG 云中管理的每个产品都具有唯一的“活动数字身份”"
 
 #: enrolment/constants.py:192
 msgid "Connectivity diagram of Arkessa's IoT services"
@@ -131,7 +138,9 @@ msgid ""
 "Internet of Things (IoT), regardless of location, network operator or "
 "wireless technology. It provides enterprises with a secure and future-proof "
 "mobility platform that is easy to adopt, integrate and scale."
-msgstr ""
+msgstr "Arkessa 允许设备和应用程序开发人员连接到物联网 (IoT)，而无需考虑地点、"
+"网络运营商或无线技术。它为企业提供了一个安全且面向未来的移动平台，该平台易于采用、"
+"集成和扩展。"
 
 #: enrolment/constants.py:212
 msgid ""
@@ -145,23 +154,25 @@ msgid ""
 "storyboards and produced final audio and video designs. It also produced the "
 "entire technical event, which included projection mapping on the mansion and "
 "a 2m ball and consulting on live-camera press shot positions"
-msgstr ""
+msgstr "针对阿迪达斯的 2014 世界杯营销活动，Immersive 制作了概念、"
+"故事板以及最终音视频设计。它还制作了整个技术活动，其中包括大厦上的投影映射和一个 2 "
+"米的足球，以及针对现场直播媒体拍摄位置提供咨询"
 
 #: enrolment/constants.py:227
 msgid "Creating the grandest projection mapping the world has ever seen."
-msgstr ""
+msgstr "创造有史以来最宏大的投影映射。"
 
 #: enrolment/constants.py:230
 msgid "Fast Company magazine"
-msgstr ""
+msgstr "Fast Company 杂志"
 
 #: enrolment/constants.py:234
 msgid "Creative"
-msgstr ""
+msgstr "创意行业"
 
 #: enrolment/constants.py:239
 msgid "Interactive installations, video content, projection mapping"
-msgstr ""
+msgstr "互动设施、视频内容、投影映射"
 
 #: enrolment/constants.py:244
 msgid "An Immersive event lighting system"
@@ -173,7 +184,9 @@ msgid ""
 "scale. Immersive uses new media technology (such as LED, holograms, "
 "projection, virtual reality and augmented reality) to design and create "
 "cutting-edge lighting, video and interactive installations."
-msgstr ""
+msgstr "Immersive 是一家面向任意规模影音项目的完整解决方案提供商。Immersive "
+"使用新的媒体技术（比如 LED、全息图、投影、虚拟现实和增强现实）"
+"来设计和创造顶尖的照明、视频和互动设施。"
 
 #: enrolment/constants.py:258
 msgid ""
@@ -185,7 +198,8 @@ msgid ""
 "Blippar is the leading visual discovery app, harnessing augmented reality, "
 "image-recognition technology and artificial intelligence to bring the "
 "physical world to life through smartphones."
-msgstr ""
+msgstr "Blippar 是领先的视觉探索应用程序，它在智能手机上通过增强现实、"
+"图像识别技术和人工智能让现实世界得到全新展示。"
 
 #: enrolment/constants.py:278
 msgid ""
@@ -195,14 +209,15 @@ msgstr ""
 
 #: enrolment/constants.py:282 enrolment/constants.py:283
 msgid "Clementine and cinnamon tonic water"
-msgstr ""
+msgstr "小柑橘和肉桂奎宁水"
 
 #: enrolment/constants.py:285
 msgid ""
 "Fever-Tree has established itself as the mixer drink specialist, crafting a "
 "range of fourteen products sourced from the highest quality natural "
 "ingredients for the best tasting mixers."
-msgstr ""
+msgstr "Fever-Tree 是一家专精于混合饮品的公司，旗下有十四款产品，"
+"均选用了最高品质的天然原料，以打造口味最佳的混合饮品。"
 
 #: enrolment/constants.py:292
 msgid ""
@@ -212,7 +227,7 @@ msgstr ""
 
 #: enrolment/constants.py:295
 msgid "Tim Warrillow"
-msgstr ""
+msgstr "im Warrillow"
 
 #: enrolment/constants.py:300
 msgid "Food and drink"
@@ -220,7 +235,7 @@ msgstr "来自英国的食品和饮料"
 
 #: enrolment/constants.py:304
 msgid "Mixers, Quality, Taste"
-msgstr ""
+msgstr "混合饮品、质量、口味"
 
 #: enrolment/constants.py:309
 msgid "Packet of Joe and Seph's double chocolate popcorn"
@@ -232,7 +247,8 @@ msgid ""
 "texture and an intense flavour. The ingredients used are 100&#37; natural "
 "and the kernels are all air-popped – a healthier cooking method compared to "
 "frying."
-msgstr ""
+msgstr "Joe & Seph’s 的所有爆米花均为小批量手工制作，以便确保提供超凡的质感和强烈的风味。"
+"使用的成分 100% 纯天然，所有玉米粒均采用空气爆米法 - 此制作方法比油炸更为健康。"
 
 #: enrolment/constants.py:323
 msgid "Bottle and glass of Fever-Tree Madagascan Cola"
@@ -242,7 +258,7 @@ msgstr ""
 msgid ""
 "Fever-Tree has pioneered premium mixers and is now the world’s leading "
 "premium mixer company."
-msgstr ""
+msgstr "Fever-Tree 是高级混合饮品领域的先锋，现在是全球领先的高级混合饮品公司。"
 
 #: enrolment/constants.py:375
 msgid "Queen Elizabeth Olympic Park, London"
@@ -282,43 +298,43 @@ msgstr ""
 
 #: enrolment/forms.py:19 enrolment/forms.py:41
 msgid "Please select an industry"
-msgstr ""
+msgstr "行业"
 
 #: enrolment/forms.py:21 enrolment/forms.py:43
 msgid "Tick the box to confirm you agree to the terms and conditions."
-msgstr ""
+msgstr "请勾选复选框以确认您同意以上条款和条件。"
 
 #: enrolment/forms.py:24 enrolment/forms.py:46
 msgid "Your name"
-msgstr ""
+msgstr "您的姓名"
 
 #: enrolment/forms.py:25 enrolment/forms.py:47
 msgid "Email address"
-msgstr ""
+msgstr "电子邮件地址"
 
 #: enrolment/forms.py:27
 msgid "Industry"
-msgstr "产业"
+msgstr "行业"
 
 #: enrolment/forms.py:32
 msgid "Company name"
-msgstr ""
+msgstr "公司名称"
 
 #: enrolment/forms.py:33 enrolment/forms.py:49
 msgid "Country"
-msgstr ""
+msgstr "国家/地区"
 
 #: enrolment/forms.py:48
 msgid "Organisation name"
-msgstr ""
+msgstr "组织名称"
 
 #: enrolment/forms.py:51
 msgid "Describe what you need"
-msgstr ""
+msgstr "描述您的需求"
 
 #: enrolment/forms.py:52
 msgid "Maximum 1000 characters."
-msgstr ""
+msgstr "最多 1000 个字符。"
 
 #: enrolment/templates/bidi/footer.html:10 enrolment/templates/footer.html:10
 msgid "Department for International Trade"
@@ -330,7 +346,7 @@ msgstr "联系我们"
 
 #: enrolment/templates/bidi/footer.html:20 enrolment/templates/footer.html:20
 msgid "Privacy and cookies"
-msgstr "隐私和 Cookie"
+msgstr "隐私和 cookie"
 
 #: enrolment/templates/bidi/footer.html:25 enrolment/templates/footer.html:25
 msgid "Terms &amp; conditions"
@@ -338,7 +354,7 @@ msgstr "条款和条件"
 
 #: enrolment/templates/bidi/footer.html:33 enrolment/templates/footer.html:33
 msgid "Crown Copyright"
-msgstr ""
+msgstr "官方版权"
 
 #: enrolment/templates/bidi/header.html:30 enrolment/templates/header.html:30
 msgid "Home"
@@ -347,11 +363,11 @@ msgstr "主页"
 #: enrolment/templates/bidi/header.html:34 enrolment/templates/header.html:34
 #: enrolment/templates/search-companies.html:15
 msgid "Find a supplier"
-msgstr "寻找供应商"
+msgstr "查找供应商"
 
 #: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:36
 msgid "Find a Supplier"
-msgstr "寻找供应商"
+msgstr "查找供应商"
 
 #: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:40
 #: enrolment/templates/marketing-pages/base.html:88
@@ -364,26 +380,26 @@ msgstr "产业"
 msgid ""
 "Welcome to Great Britain and Northern Ireland - the right place to do "
 "business"
-msgstr "欢迎来到大不列颠和北爱尔兰<br>理想的经商之地"
+msgstr "欢迎来到大不列颠和北爱尔兰<br>开展业务的理想之地"
 
 #: enrolment/templates/bidi/landing-page.html:21
 #: enrolment/templates/landing-page.html:24
 msgid "Find UK companies to do business with"
-msgstr "寻找可以合作的英国公司"
+msgstr "寻找可以开展业务的英国公司"
 
 #: enrolment/templates/bidi/landing-page.html:23
 #: enrolment/templates/landing-page.html:26
 msgid ""
 "The UK is a great place to find innovative, high-quality products and "
 "services."
-msgstr "英国是盛产创新、优质产品和服务的国度。"
+msgstr "要寻找创新和高质量的产品和服务，就来英国吧。"
 
 #: enrolment/templates/bidi/landing-page.html:24
 #: enrolment/templates/landing-page.html:27
 msgid ""
 "You can make the right trade connections in the UK with global corporations "
 "and smaller enterprises across every industry."
-msgstr "&nbsp;"
+msgstr "您可以在英国与各个行业的全球化组织及小型企业建立贸易关系。"
 
 #: enrolment/templates/bidi/landing-page.html:27
 #: enrolment/templates/landing-page.html:30
@@ -391,8 +407,8 @@ msgid ""
 "UK companies work with businesses and governments around the world to run "
 "high quality services and deliver the best experiences."
 msgstr ""
-"英国公司与全球企业和政府合作，共同打造出一个全新的商业环境能够提供优质服务和"
-"卓越体验。"
+"英国公司与全球企业和政府合作，共同打造新的生活和工作环境，"
+"提供高质量服务和最佳体验。"
 
 #: enrolment/templates/bidi/landing-page.html:28
 #: enrolment/templates/landing-page.html:31
@@ -400,14 +416,13 @@ msgid ""
 "When you need a trade partner, the reliability and expertise of UK companies "
 "is hard to beat."
 msgstr ""
-"如果您需要寻求一位贸易合作伙伴，那么英国公司的可靠性和专业知识无人能及，是您"
-"的不二之选。"
+"如果您需要贸易合作伙伴，英国公司的可靠度和专业知识值得您信赖。"
 
 #: enrolment/templates/bidi/landing-page.html:31
 #: enrolment/templates/landing-page.html:34
 msgid ""
 "Choose from the hundreds of businesses in the UK to work with you today."
-msgstr "如今，英国有数百家企业可以和您一起携手共进。"
+msgstr "现在就从英国的数百家企业中挑选出您的贸易合作伙伴吧。"
 
 #: enrolment/templates/bidi/landing-page.html:43
 #: enrolment/templates/landing-page.html:46
@@ -418,34 +433,34 @@ msgstr "英国贸易部门"
 #: enrolment/templates/lead-generation-form.html:5
 #: exportopportunity/templates/export-opportunity.html:11
 msgid "Get UK companies to fulfil your business needs"
-msgstr "寻找可以合作的英国公司"
+msgstr "让英国公司来满足您的业务需求"
 
 #: enrolment/templates/bidi/lead-generation-form.html:8
 #: enrolment/templates/lead-generation-form.html:8
 msgid ""
 "Tell us what kind of goods or services you need. We'll put you in touch with "
 "relevant UK suppliers."
-msgstr ""
+msgstr "告诉我们您需要哪种商品或服务。我们将安排您联系相关的英国供应商。"
 
 #: enrolment/templates/bidi/lead-generation-form.html:76
 msgid "I agree to the great.gov.uk terms and conditions"
-msgstr ""
+msgstr "我同意 great.gov.uk 的条款和条件。"
 
 #: enrolment/templates/bidi/lead-generation-form.html:82
 #: enrolment/templates/lead-generation-form.html:82
 msgid "Send"
-msgstr ""
+msgstr "发送"
 
 #: enrolment/templates/bidi/sector-list.html:15
 #: enrolment/templates/sector-list.html:18
 msgid "Discover the UK's capability in these key industries"
-msgstr ""
+msgstr "了解英国在这些重要行业内的雄厚实力"
 
 #: enrolment/templates/bidi/sector-list.html:21
 #: enrolment/templates/industry-teasers.html:5
 #: enrolment/templates/sector-list.html:24
 msgid "UK industries"
-msgstr "英国贸易部门"
+msgstr "英国行业"
 
 #: enrolment/templates/bidi/sector-list.html:23
 #: enrolment/templates/sector-list.html:26
@@ -454,7 +469,10 @@ msgid ""
 "than the UK for innovative, high-quality products and services. It is the "
 "place to make the right trade connections with major corporations and "
 "smaller enterprises across every sector of industry."
-msgstr ""
+msgstr "作为跨国企业的决策者，英国将是您寻找创新和高质量产品和服务的不二之选。"
+"您可以在英国与各个行业的大小型公司及企业建立良好的贸易关系。"
+"我们可以帮助您与合适的公司建立重要的业务关系。"
+"请从这些英国行业内的企业中选择合作伙伴。"
 
 #: enrolment/templates/bidi/sector-list.html:26
 #: enrolment/templates/sector-list.html:29
@@ -479,7 +497,7 @@ msgstr ""
 #: enrolment/templates/browse-companies.html:12
 #: enrolment/templates/search-companies.html:17
 msgid "Browse UK companies"
-msgstr "浏览英国公司"
+msgstr "浏览英国公司介绍浏览英国公司介绍浏览英国公司介绍"
 
 #: enrolment/templates/govuk_layout.html:14
 msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
@@ -497,25 +515,25 @@ msgstr "进入英国医疗保健和生命科学供应链，向全世界交付高
 
 #: enrolment/templates/industry-teasers.html:13
 msgid "Find out more about the UK’s healthcare and life sciences"
-msgstr "详细了解英国医疗保健和生命科学"
+msgstr "了解与英国医疗和生命科学行业有关的更多信息"
 
 #: enrolment/templates/industry-teasers.html:18
 msgid "The UK's advanced technology"
-msgstr "英国的先进技术"
+msgstr "英国的先进科技行业"
 
 #: enrolment/templates/industry-teasers.html:21
 msgid ""
 "Check out the cutting-edge technological innovations that the UK is bringing "
 "to the world."
-msgstr "察看英国带给世界的尖端创新技术。"
+msgstr "了解英国为世界提供的最新前沿科技创新。"
 
 #: enrolment/templates/industry-teasers.html:24
 msgid "Find out more about UK technology"
-msgstr "详细了解英国的技术"
+msgstr "了解与英国科技行业有关的更多信息"
 
 #: enrolment/templates/industry-teasers.html:31
 msgid "The UK's creative services"
-msgstr "来自英国的创新服务"
+msgstr "英国的创意服务行业"
 
 #: enrolment/templates/industry-teasers.html:34
 #: enrolment/templates/marketing-pages/creative.html:11
@@ -523,27 +541,27 @@ msgid ""
 "Whether you need buildings designed, films made or a fresh approach to "
 "marketing, the UK is the first place to look."
 msgstr ""
-"无论您需要设计建筑、制作电影还是构思新颖的营销方法，英国都将是您的不二之选。"
+"无论您是需要设计大楼，制作电影，亦或是需要创新的营销方案，英国公司都是您的理想之选。"
 
 #: enrolment/templates/industry-teasers.html:37
 msgid "Find out more about the UK’s creative services"
-msgstr "详细了解来自英国的创意服务"
+msgstr "了解与英国创意服务行业有关的更多信息"
 
 #: enrolment/templates/industry-teasers.html:42
 msgid "The UK's food and drink"
-msgstr "来自英国的食品和饮料"
+msgstr "英国的饮食行业"
 
 #: enrolment/templates/industry-teasers.html:45
 msgid ""
 "Whether you want the best food brands or exceptional quality drinks, the UK "
 "should be first on your list."
 msgstr ""
-"无论您是需要具有创新精神的食品品牌，还是需要具有卓越品质的优质饮料，英国都将"
-"是您的不二之选。"
+"无论您是希望与最具创新精神的食品品牌合作还是与一流品质的饮料品牌合作，"
+"英国公司都是您的首选。"
 
 #: enrolment/templates/industry-teasers.html:48
 msgid "Find out more about UK food and drink"
-msgstr "详细了解来自英国的食品和饮料"
+msgstr "了解与英国饮食行业有关的更多信息"
 
 #: enrolment/templates/language_switcher.html:8
 msgid "Select"
@@ -555,18 +573,18 @@ msgstr "该页仅以英文显示"
 
 #: enrolment/templates/lead-generation-form.html:76
 msgid "I agree to the great.gov.uk"
-msgstr ""
+msgstr "我同意 great.gov.uk"
 
 #: enrolment/templates/lead-generation-form.html:76
 #, fuzzy
 #| msgid "Terms &amp; conditions"
 msgid "terms and conditions"
-msgstr "条款和条件"
+msgstr "的条款和条件。"
 
 #: enrolment/templates/marketing-pages/base.html:20
 #: enrolment/templates/marketing-pages/bidi/base.html:19
 msgid "Find your UK trade partner"
-msgstr ""
+msgstr "寻找您的英国贸易伙伴"
 
 #: enrolment/templates/marketing-pages/base.html:45
 #: enrolment/templates/marketing-pages/bidi/base.html:44
@@ -576,17 +594,17 @@ msgstr "详细了解英国的技术"
 #: enrolment/templates/marketing-pages/base.html:59
 #: enrolment/templates/marketing-pages/bidi/base.html:58
 msgid "Company showcase"
-msgstr ""
+msgstr "公司展示"
 
 #: enrolment/templates/marketing-pages/base.html:72
 #: enrolment/templates/marketing-pages/bidi/base.html:71
 msgid "Read case study"
-msgstr ""
+msgstr "阅读案例研究"
 
 #: enrolment/templates/marketing-pages/base.html:96
 #: enrolment/templates/marketing-pages/bidi/base.html:95
 msgid "keywords"
-msgstr ""
+msgstr "关键词"
 
 #: enrolment/templates/marketing-pages/creative.html:5
 msgid ""
@@ -600,7 +618,7 @@ msgstr "英国的医疗保健和生命科学"
 
 #: enrolment/templates/marketing-pages/creative.html:9
 msgid "Delivering exceptional creative services"
-msgstr "来自英国的创新服务"
+msgstr "提供一流的创意服务"
 
 #: enrolment/templates/marketing-pages/creative.html:13
 msgid "Read more about creative services"
@@ -610,14 +628,15 @@ msgstr "详细了解来自英国的创意服务"
 msgid ""
 "If you need intelligent, creative ideas and rich, high-quality designs and "
 "media, look no further than the UK"
-msgstr ""
+msgstr "如果您需要明智的创意以及丰富的高质量设计和媒体内容，英国将是您的不二之选。"
 
 #: enrolment/templates/marketing-pages/creative.html:20
 msgid ""
 "Creative companies in the UK are responsible for producing big budget "
 "movies, designing fashionable furniture fabrics and developing world-class "
 "computer games."
-msgstr ""
+msgstr "英国的创意公司擅长制作预算庞大的电影，"
+"设计时尚的家居纺织品和开发世界级电脑游戏。"
 
 #: enrolment/templates/marketing-pages/creative.html:24
 #: enrolment/templates/marketing-pages/food.html:30
@@ -625,83 +644,91 @@ msgstr ""
 #: enrolment/templates/marketing-pages/sports-infrastructure.html:24
 #: enrolment/templates/marketing-pages/tech.html:28
 msgid "Key facts"
-msgstr ""
+msgstr "重要事实"
 
 #: enrolment/templates/marketing-pages/creative.html:26
 msgid "UK companies gave the world £19.1 billion of creative services in 2014"
-msgstr ""
+msgstr "英国公司在 2014 年为全球提供了价值 191 亿英镑的创意服务"
 
 #: enrolment/templates/marketing-pages/creative.html:27
-#, python-format
 msgid "9%% of all UK service exports are in the creative services in 2014"
-msgstr ""
+msgstr "2014 年，在出口的全部英国服务中，有 9% 是创意服务"
 
 #: enrolment/templates/marketing-pages/creative.html:28
-#, python-format
 msgid "Growth of creative services exports was 10.9%% in 2014"
-msgstr ""
+msgstr "2014 年，创意服务出口增长幅度为 10.9%"
 
 #: enrolment/templates/marketing-pages/creative.html:32
 msgid "Work with the best in film, TV and visual effects"
-msgstr ""
+msgstr "与电影、电视和视觉效果领域的顶尖公司合作"
 
 #: enrolment/templates/marketing-pages/creative.html:33
 msgid "The UK is one of the world's largest makers of original content."
-msgstr ""
+msgstr "英国是全球最大的原始内容制作地区之一。"
 
 #: enrolment/templates/marketing-pages/creative.html:34
 msgid ""
 "We are the home of films such as Star Wars and offer state-of-the-art studio "
 "facilities suitable for big movie productions and an amazing diversity of "
 "film locations."
-msgstr ""
+msgstr "我们制作了《星球大战》等电影，拥有一流的制片厂设施，适合制作大型电影，"
+"并且提供各种拍摄场地。"
 
 #: enrolment/templates/marketing-pages/creative.html:35
 msgid ""
 "At the heart of the UK’s creative industry is its award-winning film and "
 "television production comprising more than 1,500 independent TV companies in "
 "the UK."
-msgstr ""
+msgstr "屡获殊荣的电影和电视制作是英国创意行业的核心，其中包含位于英国的 "
+"1,500 多家独立电视公司。"
 
 #: enrolment/templates/marketing-pages/creative.html:36
 msgid ""
 "We're also the world leaders in exporting TV formats and localising those "
 "first commissioned in the UK."
-msgstr ""
+msgstr "在出口电视格式和本地化英国本土率先应用的格式方面，我们也处于全球领先地位。"
 
 #: enrolment/templates/marketing-pages/creative.html:38
 msgid "Our creative digital experience"
-msgstr ""
+msgstr "我们的数字创意经验"
 
 #: enrolment/templates/marketing-pages/creative.html:40
 msgid ""
 "The UK has one of the most world's most advanced games industries, with more "
 "than 30 years experience of innovation and commercial success."
-msgstr ""
+msgstr "英国具有全球最先进的游戏行业之一，拥有超过 30 年的创新和商业成功经验。"
+"英国具有全球最先进的游戏行业之一，拥有超过 30 年的创新和商业成功经验。"
 
 #: enrolment/templates/marketing-pages/creative.html:43
 msgid ""
 "UK games companies have adopted social and mobile platforms, with more than "
 "a third of UK studios focusing on the mobile market."
-msgstr ""
+msgstr "英国游戏公司采用了社交和移动平台，超过三分之一的英国游戏工作室专注于移动市场。"
+"英国游戏公司采用了社交和移动平台，超过三分之一的英国游戏工作室专注于移动市场。"
 
 #: enrolment/templates/marketing-pages/creative.html:46
 msgid ""
 "The UK's augmented reality specialists create immersive experiences that "
 "help further the creative reach of the likes of National Geographic and "
 "Universal Studios."
-msgstr ""
+msgstr "英国的增强现实专家打造了沉浸式体验，帮助《国家地理》"
+"和环球影城等公司扩大了创意范围。英国的增强现实专家打造了沉浸式体验，"
+"帮助《国家地理》和环球影城等公司扩大了创意范围。"
 
 #: enrolment/templates/marketing-pages/creative.html:49
 msgid "A publishing powerhouse"
-msgstr ""
+msgstr "出版大国出版大国"
 
 #: enrolment/templates/marketing-pages/creative.html:51
 msgid ""
 "The publishing sector in the UK has pioneered new print formats and "
 "commercial models alongside moving content online. British news journalism "
 "remains a powerful force, uncovering important stories around the world."
-msgstr ""
+msgstr "英国的出版领域率先尝试了新的印刷格式和商业模型，以及将内容迁移到网上。"
+"英国新闻业仍然是报道全球重要新闻的中坚力量。"
+"英国的出版领域率先尝试了新的印刷格式和商业模型，以及将内容迁移到网上。"
+"英国新闻业仍然是报道全球重要新闻的中坚力量。"
+
 
 #: enrolment/templates/marketing-pages/creative.html:54
 msgid ""
@@ -709,41 +736,49 @@ msgid ""
 "property rights negotiation and the sale and distribution of content. Half "
 "of the top 20 global box office successes of the last 11 years were based on "
 "novels by UK writers."
-msgstr ""
+msgstr "伦敦书展是全球领先的知识产权协商以及内容销售和分发活动之一。过去 11 年间，"
+"全球前 20 大图书销售收入中有一半都来自英国作家撰写的小说。"
+"伦敦书展是全球领先的知识产权协商以及内容销售和分发活动之一。过去 11 年间，全球前 20 "
+"大图书销售收入中有一半都来自英国作家撰写的小说。"
 
 #: enrolment/templates/marketing-pages/creative.html:57
 msgid "UK design talent is bringing beauty and strength to the world"
-msgstr ""
+msgstr "英国的设计人才将力与美带给了全世界英国的设计人才将力与美带给了全世界"
 
 #: enrolment/templates/marketing-pages/creative.html:59
 msgid ""
 "UK architects are responsible for some of the world’s most stunning "
 "buildings, such as the Galaxy Soho urban village in Beijing and reshaping "
 "environments, such as Singapore’s Gardens by the Bay."
-msgstr ""
+msgstr "英国建筑师设计了一些全球为之震撼的建筑（比如北京的银河 SOHO 城中村）"
+"以及设计美化环境的项目（比如新加坡的滨海湾花园）。"
 
 #: enrolment/templates/marketing-pages/creative.html:62
 msgid ""
 "We're also responsible for designing usable industrial and commercial spaces "
 "such as the new Spaceport America."
-msgstr ""
+msgstr "我们还从事设计实用的工业和商业场所，比如新的美国太空港。"
+"我们还从事设计实用的工业和商业场所，比如新的美国太空港。"
 
 #: enrolment/templates/marketing-pages/creative.html:65
 msgid ""
 "As well as designing the built environment, UK firms are designing vehicles "
 "and interiors around the world: including helping to design the world’s "
 "fastest passenger train in China."
-msgstr ""
+msgstr "除了设计建造环境外，英国公司还为全球公司设计车辆和内饰："
+"包括在中国帮助设计全球最快的乘用列车。除了设计建造环境外，"
+"英国公司还为全球公司设计车辆和内饰：包括在中国帮助设计全球最快的乘用列车。"
 
 #: enrolment/templates/marketing-pages/creative.html:68
 msgid "Arts: heritage and innovation"
-msgstr ""
+msgstr "艺术：传统和创新艺术：传统和创新"
 
 #: enrolment/templates/marketing-pages/creative.html:70
 msgid ""
 "From Shakespeare to Adele, the UK continues to produce the best-known "
 "artists, writers, singers and performers the world has ever seen."
-msgstr ""
+msgstr "从莎士比亚到阿黛拉，英国不断出产世界知名的艺术家、作家、歌手和表演家。"
+"从莎士比亚到阿黛拉，英国不断出产世界知名的艺术家、作家、歌手和表演家。"
 
 #: enrolment/templates/marketing-pages/creative.html:73
 msgid ""
@@ -752,26 +787,32 @@ msgid ""
 "the likes of Boeing and Mercedes-Benz. And our rights management companies "
 "have an ongoing reputation for protecting Intellectual Property for "
 "performers and producers alike."
-msgstr ""
+msgstr "除了面向消费者市场的音乐外，英国蓬勃发展的商业音乐和音频机构还为波音公司和奔驰等企业的影片提供配乐和曲目。"
+"我们的版权管理公司在保护表演家和制作者等对象的知识产权方面一直享有盛誉。"
+"除了面向消费者市场的音乐外，英国蓬勃发展的商业音乐和音频机构还为波音公司和奔驰等企业的影片提供配乐和曲目。"
+"我们的版权管理公司在保护表演家和制作者等对象的知识产权方面一直享有盛誉。"
 
 #: enrolment/templates/marketing-pages/creative.html:76
 msgid ""
 "The UK’s national museums attract visitors from around the world and have "
 "lasting partnerships and collection-sharing with their peers from countries "
 "as diverse as Russia and Malawi."
-msgstr ""
+msgstr "英国的国家博物馆吸引来自全球各地的游客，并且与各个国家/地区"
+"（比如俄罗斯和马拉维）的其他博物馆建立了持久合作关系和藏品共享协议。"
+"英国的国家博物馆吸引来自全球各地的游客，并且与各个国家/地区（比如俄罗斯和马拉维）"
+"的其他博物馆建立了持久合作关系和藏品共享协议。"
 
 #: enrolment/templates/marketing-pages/creative.html:79
 msgid "The UK is alive with exceptional talent and ingenuity."
-msgstr ""
+msgstr "英国是个充满才华和独创性的国家。英国是个充满才华和独创性的国家。"
 
 #: enrolment/templates/marketing-pages/creative.html:83
 msgid "Find your UK creative partner today"
-msgstr ""
+msgstr "现在就开始寻找您的英国创意合作伙伴现在就开始寻找您的英国创意合作伙伴"
 
 #: enrolment/templates/marketing-pages/creative.html:88
 msgid "See the UK's creative services providers on the Find a supplier service"
-msgstr ""
+msgstr "在“查找供应商服务”上查看英国的创意服务供应商"
 
 #: enrolment/templates/marketing-pages/food.html:6
 msgid ""
@@ -785,7 +826,7 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:10
 msgid "UK food and drink"
-msgstr "来自英国的食品和饮料"
+msgstr "英国的饮食"
 
 #: enrolment/templates/marketing-pages/food.html:12
 msgid ""
@@ -804,7 +845,8 @@ msgid ""
 "The UK is a nation where culinary influences have come together to create "
 "food trends that we share with the world. Every day millions of "
 "international consumers enjoy British products."
-msgstr ""
+msgstr "英国的烹饪形成了各种饮食趋势，我们乐意与全世界进行分享。"
+"每天都有数百万国际消费者在享用英国产品。"
 
 #: enrolment/templates/marketing-pages/food.html:23
 msgid ""
@@ -812,86 +854,96 @@ msgid ""
 "rich heritage of well-known, traditional food and drink, we offer first-"
 "class produce with excellent provenance and thousands of new products are "
 "brought to the market every year."
-msgstr ""
+msgstr "英国“品牌”在全球范围内享有知名度，受到重视和渴求："
+"我们在知名传统饮食方面拥有丰富的文化遗产，我们提供产地优良的一流产品，"
+"每年都有数千款新产品上市。"
 
 #: enrolment/templates/marketing-pages/food.html:26
 msgid ""
 "We rank among the world’s best nations for in food quality, traceability and "
 "safety."
-msgstr ""
+msgstr "我们在食品质量、可追踪性和安全性方面排名世界前列。"
 
 #: enrolment/templates/marketing-pages/food.html:32
 msgid "The UK exported £12.3 billion of food and non-alcoholic drinks in 2015"
-msgstr ""
+msgstr "英国在 2015 年出口了 123 亿英镑的食品和非酒精饮品"
 
 #: enrolment/templates/marketing-pages/food.html:33
 msgid "Our main exports include chocolate, cheese and whisky"
-msgstr ""
+msgstr "我们的主要出口商品包括巧克力、芝士和威士忌"
 
 #: enrolment/templates/marketing-pages/food.html:34
 msgid ""
 "We have thousands of suppliers manufacturing to standards accepted in 123 "
 "countries worldwide"
-msgstr ""
+msgstr "我们具有数千家根据全球 123 个国家/地区的现行标准制造产品的供应商"
 
 #: enrolment/templates/marketing-pages/food.html:38
 msgid "British heritage shared globally"
-msgstr ""
+msgstr "与全球分享的英国文化遗产"
 
 #: enrolment/templates/marketing-pages/food.html:40
 msgid ""
 "From famous Scottish and Northern Irish whiskies to our traditional tea and "
 "cakes, the UK has centuries of experience to share."
-msgstr ""
+msgstr "从著名的苏格兰和北爱尔兰威士忌到我们的传统茶点，"
+"英国数百年来的饮食文化值得与全世界分享。"
 
 #: enrolment/templates/marketing-pages/food.html:43
 msgid ""
 "We bring new twists to our classic British products, which are exported all "
 "over the world including craft beers, ciders, gin and award-winning "
 "sparkling wine."
-msgstr ""
+msgstr "我们为经典英国产品添加了新的风味，并出口到全球各个国家/地区，"
+"包括精酿啤酒、苹果酒、杜松子酒和屡获殊荣的起泡酒。"
 
 #: enrolment/templates/marketing-pages/food.html:46
 msgid ""
 "Our unique trading and cultural history has brought us new ingredients, "
 "influences, tastes and ideas and we have a wealth of ethnic and specialist "
 "foods made in the UK to offer back to the world."
-msgstr ""
+msgstr "我们独特的贸易和文化历史为我们带来了新的原料、影响、口味和创意，"
+"我们在英国制作大量传统特色饮食并出口到全世界其他地区。"
 
 #: enrolment/templates/marketing-pages/food.html:49
 msgid "Innovation in food and drink"
-msgstr "来自英国的食品和饮料"
+msgstr "饮食创新"
 
 #: enrolment/templates/marketing-pages/food.html:51
 msgid ""
 "The UK’s food and drink brands develop and sell thousands of new products "
 "each year. UK companies were the first to pioneer frozen food and instant "
 "coffee."
-msgstr ""
+msgstr "英国的饮食品牌每年开发和销售数千款新产品。"
+"英国公司是冷冻食品和速溶咖啡领域的先锋。"
 
 #: enrolment/templates/marketing-pages/food.html:54
 msgid ""
 "We’re leading the way in food research and technology, new product "
 "development and trends such as organic, gluten-free, dairy-free and health "
 "foods."
-msgstr ""
+msgstr "我们引领了食品研究和技术、新产品开发以及趋势，比如有机、无麸质、"
+"无乳酪和健康食品。"
+
 
 #: enrolment/templates/marketing-pages/food.html:57
 msgid "Food quality and safety"
-msgstr ""
+msgstr "食品质量和安全"
 
 #: enrolment/templates/marketing-pages/food.html:59
 msgid ""
 "Our island location and clean waters give us access to rich stocks of fish "
 "and shellfish and our soil and climate provides bountiful agricultural "
 "resources for crops, dairy and meat."
-msgstr ""
+msgstr "岛屿环境和干净水源使我们能够接触到丰富的鱼类和贝壳生物，"
+"我们的土壤和气候为农作物、奶业和肉类提供了丰厚的农业资源。"
 
 #: enrolment/templates/marketing-pages/food.html:62
 msgid ""
 "Our manufacturing sector complies with rigorous international safety "
 "standards and our brands are trusted around the world."
-msgstr ""
+msgstr "我们的制造行业遵守严格的国际安全标准，我们的品牌深受全世界消费者信赖。"
+"我们的制造行业遵守严格的国际安全标准，我们的品牌深受全世界消费者信赖。"
 
 #: enrolment/templates/marketing-pages/food.html:65
 msgid ""
@@ -899,13 +951,15 @@ msgid ""
 "standards scheme that assure animal and worker welfare and our British "
 "Retail Consortium manufacturing standards have been adopted by 23,000 "
 "certificated suppliers, not only in the UK but in 123 other countries."
-msgstr ""
+msgstr "我们重视自己生产的食品：89,000 位农夫按照志愿农场标准方案开展作业，"
+"该方案可保障动物和工人福利，我们的英国零售协会制造标准被 23,000 "
+"家认证供应商采用 - 不仅仅是英国，还包括其他 123 个国家/地区。"
 
 #: enrolment/templates/marketing-pages/food.html:68
 msgid ""
 "Our customers recognise us for our excellent service and know that we can "
 "deliver."
-msgstr ""
+msgstr "我们的客户认可我们的一流服务，并且信任我们可以兑现承诺。"
 
 #: enrolment/templates/marketing-pages/food.html:72
 msgid "Find your UK trade partner in food and drink today"
@@ -914,6 +968,7 @@ msgstr "详细了解来自英国的食品和饮料"
 #: enrolment/templates/marketing-pages/food.html:78
 msgid "See the UK's food and drink companies on the Find a supplier service"
 msgstr ""
+"在“查找供应商服务”上查看英国的饮食公司"
 
 #: enrolment/templates/marketing-pages/food.html:81
 msgid ""
@@ -925,7 +980,7 @@ msgstr ""
 
 #: enrolment/templates/marketing-pages/food.html:84
 msgid "Find UK food and drink companies to meet your needs"
-msgstr ""
+msgstr "现在就开始寻找您在饮食行业的英国贸易伙伴"
 
 #: enrolment/templates/marketing-pages/food.html:87
 msgid ""
@@ -968,7 +1023,7 @@ msgstr "英国的医疗保健和生命科学"
 msgid ""
 "If you need innovative, high-quality healthcare products and services, the "
 "UK is the best place to find new suppliers."
-msgstr ""
+msgstr "如果您需要创新和高质量的医疗产品及服务，请来英国寻找新的供应商。"
 
 #: enrolment/templates/marketing-pages/health.html:31
 msgid ""
@@ -976,62 +1031,67 @@ msgid ""
 "Nobel prizewinners for medicine. This world-class science base and track-"
 "record of excellence means you can rely on the UK for cutting-edge market-"
 "ready ideas."
-msgstr ""
+msgstr "全球排名前 10 的大学有 4 所位于英国，这里培养出了 23 "
+"位医疗领域的诺贝尔奖得主。"
+"这意味着您可以信赖具有世界级科学基础和优质历史的英国医疗公司可以提供成熟的、"
+"可投放市场的前沿创新概念。"
 
 #: enrolment/templates/marketing-pages/health.html:37
-msgid ""
-"There are more than 5,600 health and life sciences companies across the full "
+msgid "There are more than 5,600 health and life sciences companies across the full "
 "UK supply chain"
-msgstr ""
+msgstr "完整的英国供应链包含超过 5,600 家健康和生命科学公司"
 
 #: enrolment/templates/marketing-pages/health.html:38
 msgid ""
 "The UK has the world’s largest integrated health system as a test bed for "
 "world-class products and services"
-msgstr ""
+msgstr "英国具有世界上最大的综合医疗系统，是世界级产品和服务的试验场"
 
 #: enrolment/templates/marketing-pages/health.html:39
 msgid "More than 80 Nobel Prizes underpin the UK’s top biomedical innovations"
-msgstr ""
+msgstr "超过 80 个诺贝尔奖为英国的顶尖生物医疗创新奠定了基础"
 
 #: enrolment/templates/marketing-pages/health.html:44
 msgid ""
 "The UK is internationally renowned for its National Health Service, with its "
 "70 years of research and public delivery."
-msgstr ""
+msgstr "基于 70 年的研究和公众医疗历史，英国以其完善的全国医疗服务而享誉世界。"
 
 #: enrolment/templates/marketing-pages/health.html:47
 msgid ""
 "The UK’s unique approach to healthcare and product development helps "
 "translate the best medical technology into high-quality, cost-effective and "
 "market-ready solutions."
-msgstr ""
+msgstr "英国独特的医疗和产品开发策略帮助他们将最佳的医疗技术转化成了高质量、"
+"成本有效且可在市场中即刻见效的解决方案。"
 
 #: enrolment/templates/marketing-pages/health.html:50
 msgid ""
 "Two of the top 10 global pharmaceutical companies are based in the UK. There "
 "are more than 5,000 life sciences companies in the UK and we have a growing "
 "market in digital health products and apps."
-msgstr ""
+msgstr "全球排名前 10 的医药公司中有两家总部位于英国。英国拥有超过 5,000 "
+"家生命科学公司，我们的数字医疗产品和应用程序市场正在蓬勃发展。"
 
 #: enrolment/templates/marketing-pages/health.html:53
 msgid ""
 "The UK’s medical technology sector produces a vast range of medical and "
 "diagnostic device, particularly single-use technology and orthopaedic "
 "devices. The UK also has companies specialising in:"
-msgstr ""
+msgstr "英国的医疗技术行业缔造了范围宽广的医疗和诊断设备，"
+"尤其是一次性技术和整形外科设备。英国还拥有专精于以下领域的公司："
 
 #: enrolment/templates/marketing-pages/health.html:56
 msgid "novel drug delivery systems"
-msgstr ""
+msgstr "新药交付系统"
 
 #: enrolment/templates/marketing-pages/health.html:57
 msgid "single-use biotechnology facilities"
-msgstr ""
+msgstr "一次性生物科技设施"
 
 #: enrolment/templates/marketing-pages/health.html:58
 msgid "medical imaging"
-msgstr ""
+msgstr "医疗成像"
 
 #: enrolment/templates/marketing-pages/health.html:61
 msgid ""
@@ -1039,24 +1099,27 @@ msgid ""
 "therapy and tissue-engineered products and services. And the UK’s "
 "pharmaceutical industry remains highly competitive in complex formulations "
 "and continuous manufacturing processes."
-msgstr ""
+msgstr "英国处于再生医学的前沿，因基因疗法和组织工程产品及服务而声名卓著。"
+"英国医药行业在复杂配方和连续制造流程方面始终具备极高的竞争力。"
 
 #: enrolment/templates/marketing-pages/health.html:64
 msgid ""
 "With a comprehensive regulatory framework, robust compliance and quality "
 "assurance culture in the UK, product safety and effectiveness are assured."
-msgstr ""
+msgstr "凭借英国全面的监管体系、强大的合规管理和质量保证文化，"
+"产品安全和有效性可以得到保障。"
 
 #: enrolment/templates/marketing-pages/health.html:67
 msgid "Work with the UK to create first-rate healthcare"
-msgstr ""
+msgstr "与英国公司合作打造一流的医疗服务"
 
 #: enrolment/templates/marketing-pages/health.html:69
 msgid ""
 "If you need to develop clinical services, implement digital health systems "
 "or extend the skills of your workforce, the UK has unrivalled experience of "
 "successful healthcare innovation and delivery."
-msgstr ""
+msgstr "如果您需要开发临床服务，实施数字医疗系统或扩展员工技能，"
+"英国公司在实现成功的医疗创新和交付方面具有无与伦比的经验。"
 
 #: enrolment/templates/marketing-pages/health.html:72
 msgid ""
@@ -1065,20 +1128,24 @@ msgid ""
 "are sustained by our health professional regulators, health systems "
 "regulators and health technology assessment bodies, ensuring the best "
 "possible safety, outcomes and cost-effectiveness."
-msgstr ""
+msgstr "英国的 NHS 孕育出了一流的医疗标准，2013 年，该系统在 11 "
+"个大国中被评为最佳医疗系统。这些标准由我们的医疗专业监管机构、"
+"医疗系统监管机构和医疗技术评估机构负责维持，从而确保实现最佳的安全性、"
+"效果和成本有效性。"
 
 #: enrolment/templates/marketing-pages/health.html:75
 msgid ""
 "Building on the strong foundations of the NHS, the UK’s thriving and diverse "
 "commercial healthcare sector caters for all needs."
-msgstr ""
+msgstr "在 NHS 的强大基础上，英国蓬勃发展且包罗万象的商业医疗行业可以满足您的所有需求。"
 
 #: enrolment/templates/marketing-pages/health.html:78
 msgid ""
 "Decades of collaboration between the NHS, academic and private-sector "
 "organisations has created a rich pool of innovative providers, ready to "
 "adapt their solutions to the needs of customers overseas."
-msgstr ""
+msgstr "NHS、学术组织以及私营组织之间数十年的合作缔造了大量创新的提供商，"
+"他们随时准备调整自己的解决方案以满足海外客户的需求。"
 
 #: enrolment/templates/marketing-pages/health.html:81
 msgid ""
@@ -1086,21 +1153,25 @@ msgid ""
 "acute and tertiary care brings deep insight. Our services can help you make "
 "the most of current delivery models in your country and identify ways to "
 "improve efficiency, patient experiences and clinical outcomes."
-msgstr ""
+msgstr "对于医院管理服务，"
+"英国针对紧急医疗和三级医疗采用的试验和测试策略具有深刻的内涵。"
+"我们的服务可以帮助您充分利用您所在国家/地区当前实施的交付模式，"
+"并找到方法来改进效率、患者体验和临床效果。"
 
 #: enrolment/templates/marketing-pages/health.html:84
 msgid ""
 "In Kuwait, the NHS is leading the development of new paediatric cancer care "
 "services - replicating world-class services offered in the UK through "
 "training, support and visiting consultant programmes."
-msgstr ""
+msgstr "在科威特，NHS 正在引领开发新的儿科癌症医疗服务 - 通过培训、"
+"支持和访问顾问计划来复制英国提供的世界级服务。"
 
 #: enrolment/templates/marketing-pages/health.html:87
 msgid ""
 "And in China, acute care and rehabilitation services are being supported by "
 "commercially-driven UK healthcare services which are being delivered by "
 "expatriate and local staff."
-msgstr ""
+msgstr "在中国，外籍员工和本地员工提供的英国商业医疗服务为紧急医疗和康复服务提供了支持。"
 
 #: enrolment/templates/marketing-pages/health.html:90
 msgid ""
@@ -1109,13 +1180,16 @@ msgid ""
 "quality public services. UK companies can provide the full range of planning "
 "and modelling services needed for successful, resource-efficient "
 "infrastructure projects."
-msgstr ""
+msgstr "英国在项目财政方面是世界领先的创新者，"
+"尤其是可确保成本高效和高质量公共服务的公私合作关系 (PPP)。"
+"英国公司可以提供包罗万象的计划和建模服务，来帮助实施成功且资源有效的基础设施项目。"
 
 #: enrolment/templates/marketing-pages/health.html:93
 msgid ""
 "UK companies are delivering one of the world's biggest healthcare PPP "
 "programmes, to meet Turkey's growing demand for healthcare facilities."
-msgstr ""
+msgstr "英国公司提供了全球最佳的医疗 PPP 计划之一，"
+"以满足土耳其对于医疗设施不断增长的需求。"
 
 #: enrolment/templates/marketing-pages/health.html:96
 msgid ""
@@ -1129,7 +1203,7 @@ msgstr ""
 msgid ""
 "See the UK's healthcare and life sciences providers on the Find a supplier "
 "service"
-msgstr ""
+msgstr "在“查找供应商服务”上查看英国的医疗和生命科学供应商"
 
 #: enrolment/templates/marketing-pages/health.html:104
 msgid "Find UK healthcare and life sciences companies to meet your needs"
@@ -1333,33 +1407,37 @@ msgstr "详细了解英国的技术"
 
 #: enrolment/templates/marketing-pages/tech.html:19
 msgid "If you need the best technology, look no further than the UK."
-msgstr ""
+msgstr "如果您需要最好的技术，英国公司将是您的不二之选。"
 
 #: enrolment/templates/marketing-pages/tech.html:21
 msgid ""
 "The UK is a world leader: in 2016, we ranked first for science and "
 "technology according to the Good Country Index and third in the Global "
 "Innovation Index."
-msgstr ""
+msgstr "英国领先世界：2016 年，在科学和科技行业，"
+"优秀国家/地区指数将英国排名第一，全球创新指数将英国排名第三。"
 
 #: enrolment/templates/marketing-pages/tech.html:24
 msgid ""
 "The UK technology industry underpins many of our successful business sectors "
 "– from financial services and high-value manufacturing, to retail and "
 "agriculture – and continues to expand at an extraordinary pace."
-msgstr ""
+msgstr "英国科技行业是我们的许多商业领域取得成功的基础，从金融服务业、"
+"高价值制造业，到零售业和农业，并且还在继续以非凡的速度扩张。"
 
 #: enrolment/templates/marketing-pages/tech.html:30
 msgid "The UK has the largest technology market in Europe"
-msgstr ""
+msgstr "英国具有欧洲最大的科技市场"
 
 #: enrolment/templates/marketing-pages/tech.html:31
 msgid "The second largest telecoms service exporter globally is from the UK"
 msgstr ""
+"全球第二大电信服务出口商来自英国"
 
 #: enrolment/templates/marketing-pages/tech.html:32
 msgid "The UK has the largest data centre market in Europe"
 msgstr ""
+"英国具有欧洲最大的数据中心市场"
 
 #: enrolment/templates/marketing-pages/tech.html:37
 msgid ""
@@ -1367,6 +1445,7 @@ msgid ""
 "innovation, and we are proud that we provide a technological springboard for "
 "companies worldwide."
 msgstr ""
+"许多世界知名成功企业从英国的创新获益，我们深感自豪的是，我们为全球公司提供了科技助力。"
 
 #: enrolment/templates/marketing-pages/tech.html:40
 msgid ""
@@ -1375,88 +1454,92 @@ msgid ""
 "radio-frequency electronics, such as the first single-chip implementation of "
 "Bluetooth and the international NarrowBand-Internet of Things standard"
 msgstr ""
+"我们的科技行业是全球最大的科技行业之一，它展示了英国的创造力和设计技能。"
+"英国特别聚焦于以下领域：低功率射频电子产品"
+"（比如首次实施的单芯片蓝牙和国际窄带物联网标准）"
+"我们的科技行业是全球最大的科技行业之一，它展示了英国的创造力和设计技能。"
 
 #: enrolment/templates/marketing-pages/tech.html:41
 msgid ""
 "development of 5G communications, which will underpin the development of "
 "connected devices"
-msgstr ""
+msgstr "开发 5G 通信（为互联设备的发展奠定基础）"
 
 #: enrolment/templates/marketing-pages/tech.html:42
 msgid ""
 "data analytics to create real-time consumer trends, behaviour and insights"
-msgstr ""
+msgstr "数据分析（创建实时消费者趋势、行为和见解）"
 
 #: enrolment/templates/marketing-pages/tech.html:43
 msgid "data centres - we have the largest market capacity in Europe"
-msgstr ""
+msgstr "数据中心 - 我们具有欧洲最大的市场体量数"
 
 #: enrolment/templates/marketing-pages/tech.html:44
 msgid ""
 "artificial intelligence - we are home to  many successful artificial "
 "intelligence (AI) start-up companies, especially those specialising in "
 "machine learning, deep learning and natural language processing"
-msgstr ""
+msgstr "人工智能 - 我们是许多成功的人工智能 (AI) 初创公司的总部，"
+"尤其是专精于机器学习、深度学习和自然语言处理的公司"
 
 #: enrolment/templates/marketing-pages/tech.html:45
 msgid ""
 "producing compound semiconductor materials producing frontier-based sensor "
 "technologies."
-msgstr ""
+msgstr "生产化合物半导体材料，开发前沿传感器技术。"
 
 #: enrolment/templates/marketing-pages/tech.html:48
 msgid "UK technology firms are global success stories"
-msgstr ""
+msgstr "英国科技公司在全球取得了成功"
 
 #: enrolment/templates/marketing-pages/tech.html:50
 msgid ""
 "There are thousands of technology start-ups in the UK, thanks to our strong "
 "entrepreneurial culture."
-msgstr ""
+msgstr "得益于强大的创业文化，英国拥有数千家科技初创公司。"
 
 #: enrolment/templates/marketing-pages/tech.html:53
 msgid ""
 "Successful technology companies can be found all over the country and if "
 "you're looking to grow your business through technology, the UK is an ideal "
 "place to find a trade partner."
-msgstr ""
+msgstr "成功的科技公司遍布整个国家，如果您希望通过科技来增长业务，"
+"请来英国寻找贸易伙伴。"
 
 #: enrolment/templates/marketing-pages/tech.html:56
 msgid ""
 "Our flourishing start-ups complement a host of established global technology "
 "companies based here. UK technology success stories include:"
-msgstr ""
+msgstr "我们繁荣发展的初创公司对总部位于英国的大量成熟的全球化科技公司形成了补充。"
 
 #: enrolment/templates/marketing-pages/tech.html:59
 msgid ""
 "a telecommunications services company that operates in 180 markets with "
 "revenue of more than £19 billion"
-msgstr ""
+msgstr "一家在 180 个市场开展业务、收入超过 190 亿英镑的电信服务公司"
 
 #: enrolment/templates/marketing-pages/tech.html:60
 msgid ""
 "the world's third-largest supplier of enterprise resource planning software"
-msgstr ""
+msgstr "世界第三大企业资源计划软件供应商"
 
 #: enrolment/templates/marketing-pages/tech.html:61
 msgid "a mobile virtual network operator in 21 countries worldwide"
-msgstr ""
+msgstr "一家在全球 21 个国家/地区开展业务的移动虚拟网络运营商"
 
 #: enrolment/templates/marketing-pages/tech.html:62
 msgid ""
 "the world's second biggest mobile telecomms network (by number of "
 "connections)"
-msgstr ""
+msgstr "世界第二大移动电信网络（按连接数量统计）"
 
 #: enrolment/templates/marketing-pages/tech.html:66
-#, fuzzy
-#| msgid "Find out more about UK technology"
 msgid "Find your UK technology trade partner"
 msgstr "详细了解英国的技术"
 
 #: enrolment/templates/marketing-pages/tech.html:70
 msgid "See the UK's technology providers on the Find a supplier service"
-msgstr ""
+msgstr "在“查找供应商服务”上查看英国的科技供应商"
 
 #: enrolment/templates/marketing-pages/tech.html:73
 msgid ""
@@ -1531,13 +1614,9 @@ msgstr ""
 #~ "无论您是需要具有创新精神的食品品牌，还是需要具有卓越品质的优质饮料，英国都"
 #~ "将是您的不二之选。"
 
-#, fuzzy
-#~| msgid ""
-#~| "Exceptionally innovative and creative UK trade partners are ready to "
-#~| "work with you. Discover them on the Find a Supplier service."
 #~ msgid ""
 #~ "Innovative and creative UK trade partners are ready to work with you. "
 #~ "Discover them on the Find a Supplier service."
 #~ msgstr ""
-#~ "极具创意和创新精神的英国贸易合作伙伴正期待着与您合作。在“寻找供应商”服务中"
-#~ "发现他们吧。"
+#~ "极具创新和创意的英国贸易伙伴已准备好与您开展合作。在“查找供应商服务”"
+#~ "上查找这些公司。"
