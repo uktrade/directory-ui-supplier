@@ -887,6 +887,7 @@ input[type="button"],
 }
 
 .button-primary,
+.button-primary:visited,
 .button-primary:focus,
 .button-primary:link {
   background-color: $blue-1;
@@ -1083,7 +1084,7 @@ input[type="color"],
   color: $white;
   padding: 40px 0;
   
-  a:link, a:hover {
+  a:link, a:hover, a:visited {
     color: $white;
     font-size: 17px;
     letter-spacing: -0.9px;

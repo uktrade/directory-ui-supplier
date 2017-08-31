@@ -15,6 +15,7 @@ ratings:
     - "**.py"
 exclude_paths:
 - "**/tests/"
+- "**/settings.py"
 - "Dockerfile"
 - "docker/"
 - "README.md"
