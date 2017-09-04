@@ -225,6 +225,30 @@ h3 {
     height: 22px;  }
 }
 
+#g-recaptcha-response {
+  min-height: 80px;
+}
+
+noscript {
+  & > div,
+  & > div + div,
+  iframe {
+    height: 550px!important;
+  }
+  textarea {
+    margin-top: 180px!important;
+  }
+}
+
+
+body.js-enabled noscript {
+  & > div,
+  & > div + div,
+  iframe {
+      height: 350px!important;
+  }
+}
+
 /* TABLET
  ****************/
 @media (max-width: 799px) {
