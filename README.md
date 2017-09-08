@@ -1,13 +1,12 @@
 # directory-ui-supplier
 [Export Directory UI](https://www.directory.exportingisgreat.gov.uk/)
 
-## Build status
+[![code-climate-image]][code-climate]
+[![circle-ci-image]][circle-ci]
+[![codecov-image]][codecov]
+[![gemnasium-image]][gemnasium]
 
-[![CircleCI](https://circleci.com/gh/uktrade/directory-ui-supplier/tree/master.svg?style=svg)](https://circleci.com/gh/uktrade/directory-ui-supplier/tree/master)
-
-## Coverage
-
-[![codecov](https://codecov.io/gh/uktrade/directory-ui-supplier/branch/master/graph/badge.svg)](https://codecov.io/gh/uktrade/directory-ui-supplier)
+---
 
 ## Requirements
 
@@ -126,3 +125,16 @@ To compile `.mo` files (no need to add these to source code, as this is done aut
 ```bash
 make debug_manage cmd="compilemessages"
 ```
+
+
+[code-climate-image]: https://codeclimate.com/github/uktrade/directory-ui-supplier/badges/issue_count.svg
+[code-climate]: https://codeclimate.com/github/uktrade/directory-ui-supplier
+
+[circle-ci-image]: https://circleci.com/gh/uktrade/directory-ui-supplier/tree/master.svg?style=svg
+[circle-ci]: https://circleci.com/gh/uktrade/directory-ui-supplier/tree/master
+
+[codecov-image]: https://codecov.io/gh/uktrade/directory-ui-supplier/branch/master/graph/badge.svg
+[codecov]: https://codecov.io/gh/uktrade/directory-ui-supplier
+
+[gemnasium-image]: https://gemnasium.com/badges/github.com/uktrade/directory-ui-supplier.svg
+[gemnasium]: https://gemnasium.com/github.com/uktrade/directory-ui-supplier
