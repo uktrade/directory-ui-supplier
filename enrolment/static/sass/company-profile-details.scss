@@ -230,6 +230,9 @@ h3 {
 }
 
 noscript {
+  & > div > div > div:nth-child(2) {
+    bottom: 10px!important;
+  }
   & > div,
   & > div + div,
   iframe {
