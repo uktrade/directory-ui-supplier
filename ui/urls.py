@@ -138,6 +138,12 @@ urlpatterns = [
         name='export-opportunity'
     ),
 
+    url(
+        r'^export-opportunity/food-and-drink/$',
+        TemplateView.as_view(template_name='lead_generation/food.html'),
+        name='lead-generation-food'
+    ),
+
 ]
 
 

@@ -1,0 +1,58 @@
+{% extends LANGUAGE_BIDI|yesno:'marketing-pages/bidi/base.html,lead_generation/base.html' %}
+
+{% load trans from i18n %}
+{% load static from staticfiles %}
+
+{% block hero_image %}{% static 'images/covers/food.jpg' %}{% endblock %}
+
+{% block hero_title %}
+	{% lorem 3 w %}
+{% endblock %}
+
+{% block hero_subtitle %}
+	{% lorem 10 w %}
+{% endblock %}
+
+{% block proposition_title %}
+	{% lorem 10 w %}
+{% endblock %}
+
+{% block proposition_paragraph %}
+	{% lorem 10 w %}
+{% endblock %}
+
+{% block proposition_col1_title %}
+	{% lorem 3 w %}
+{% endblock %}
+
+{% block proposition_col1_paragraph %}
+	{% lorem 30 w %}
+{% endblock %}
+
+{% block proposition_col2_title %}
+	{% lorem 3 w %}
+{% endblock %}
+
+{% block proposition_col2_paragraph %}
+	{% lorem 30 w %}
+{% endblock %}
+
+{% block proposition_col3_title %}
+	{% lorem 3 w %}
+{% endblock %}
+
+{% block proposition_col3_paragraph %}
+	{% lorem 30 w %}
+{% endblock %}
+
+{% block call_to_action_title %}
+	{% lorem 5 w %}
+{% endblock %}
+
+{% block call_to_action_paragraph %}
+	{% lorem 30 w %}
+{% endblock %}
+
+{% block call_to_action_button_text %}
+	{% lorem 3 w %}
+{% endblock %}

@@ -1,0 +1,16 @@
+@import 'main.scss';
+
+
+#ed-lead-generaiton-call-to_action-container {
+    background-color: #F5F4F0;
+    position: relative;
+    @media (min-width: 640px) {
+        padding: 50px;
+    }
+
+    a {
+        position: absolute;
+        top: 40%;
+        right: 16%;
+    }
+}
