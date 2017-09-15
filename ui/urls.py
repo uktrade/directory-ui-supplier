@@ -23,7 +23,8 @@ from notifications.views import (
     AnonymousUnsubscribeView
 )
 from exportopportunity.views import (
-    SubmitExportOpportunityView
+    SubmitExportOpportunityView,
+    LeadGenerationFoodView,
 )
 from ui.sitemaps import (
     SectorLandingPageSitemap,
@@ -140,7 +141,7 @@ urlpatterns = [
 
     url(
         r'^export-opportunity/food-and-drink/$',
-        TemplateView.as_view(template_name='lead_generation/food.html'),
+        LeadGenerationFoodView.as_view(),
         name='lead-generation-food'
     ),
 
