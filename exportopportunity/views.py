@@ -34,6 +34,7 @@ class LeadGenerationFoodView(LeadGenerationFeatureFlagMixin, TemplateView):
     def get_context_data(self, **kwargs):
         return super().get_context_data(
             case_studies=self.get_case_studies(),
+            companies=self.get_companies(),
             **kwargs
         )
 
@@ -53,5 +54,30 @@ class LeadGenerationFoodView(LeadGenerationFeatureFlagMixin, TemplateView):
                 'image_url': 'https://unsplash.it/700?random',
                 'case_study_url': 'http://www.google.com',
                 'name': 'Company 3',
+            },
+        ]
+
+    def get_companies(self):
+        return [
+            {
+                'name': 'Good Company',
+                'incorporation_year': '1998',
+                'number_of_employees': '100 to 200',
+                'profile_url': 'http://www.google.com',
+                'logo': 'https://unsplash.it/901?random',
+            },
+            {
+                'name': 'Bad Company',
+                'incorporation_year': '2001',
+                'number_of_employees': '100 to 200',
+                'profile_url': 'http://www.google.com',
+                'logo': 'https://unsplash.it/902?random',
+            },
+            {
+                'name': 'Abhorrent Company',
+                'incorporation_year': '1995',
+                'number_of_employees': '100 to 200',
+                'profile_url': 'http://www.google.com',
+                'logo': 'https://unsplash.it/903?random',
             },
         ]
