@@ -4,65 +4,143 @@
 {% load search_url from company_tags %}
 
 {% block css %}
-	<link href="{% static 'lead-generation-page.css' %}" media="all" rel="stylesheet" />
+    <link href="{% static 'lead-generation-page.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
 {% block hero_text %}
-	<br>ff
-	{% block hero_subtitle %}{% endblock hero_subtitle %}
+    <br>ff
+    {% block hero_subtitle %}{% endblock hero_subtitle %}
 {% endblock hero_text %}
 
 {% block content %}
 <div class="container">
-	<div>
-		<h2 class="section-header">
-			{% block proposition_title %}{% endblock %}
-		</h2>
-		<p>
-			{% block proposition_paragraph %}{% endblock %}
-		</p>
-		<br>
-		<div class="row-fluid">
-			<div class="span4">
-				<div>
-					<h3>{% block proposition_col1_title %}{% endblock %}</h3>
-					<p>
-						{% block proposition_col1_paragraph %}{% endblock %}
-					</p>
-				</div>
-			</div>
-			<div class="span4">
-				<div>
-					<h3>{% block proposition_col2_title %}{% endblock %}</h3>
-					<p>
-						{% block proposition_col2_paragraph %}{% endblock %}
-					</p>
-				</div>
-			</div>
-			<div class="span4">
-				<div>
-					<h3>{% block proposition_col3_title %}{% endblock %}</h3>
-					<p>
-						{% block proposition_col3_paragraph %}{% endblock %}
-					</p>
-				</div>
-			</div>
-		</div>
-		<br>
-		<div id="ed-lead-generaiton-call-to_action-container">
-			<div class="row-fluid">
-				<div class="span6">
-					<h2>{% block call_to_action_title %}{% endblock %}</h2>
-					<p>{% block call_to_action_paragraph %}{% endblock %}</p>
-				</div>
-				<div class="span6">
-					<a href="#" class="button button-primary">
-						{% block call_to_action_button_text %}{% endblock %}
-					</a>
-				</div>
-			</div>
-		</div>
-		<br>
-	</div>
+    <div>
+        <h2 class="section-header">
+            {% block proposition_title %}{% endblock %}
+        </h2>
+        <p>
+            {% block proposition_paragraph %}{% endblock %}
+        </p>
+        <br>
+        <div class="row-fluid">
+            <div class="span4">
+                <div>
+                    <h3>{% block proposition_col1_title %}{% endblock %}</h3>
+                    <p>
+                        {% block proposition_col1_paragraph %}{% endblock %}
+                    </p>
+                </div>
+            </div>
+            <div class="span4">
+                <div>
+                    <h3>{% block proposition_col2_title %}{% endblock %}</h3>
+                    <p>
+                        {% block proposition_col2_paragraph %}{% endblock %}
+                    </p>
+                </div>
+            </div>
+            <div class="span4">
+                <div>
+                    <h3>{% block proposition_col3_title %}{% endblock %}</h3>
+                    <p>
+                        {% block proposition_col3_paragraph %}{% endblock %}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="ed-lead-generaiton-call-to_action-container">
+            <div class="row-fluid">
+                <div class="span6">
+                    <h2>{% block call_to_action_title %}{% endblock %}</h2>
+                    <p>{% block call_to_action_paragraph %}{% endblock %}</p>
+                </div>
+                <div class="span6">
+                    <a href="#" class="button button-primary">
+                        {% block call_to_action_button_text %}{% endblock %}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="ed-carousel-container row-fluid">
+          <div class="ed-carousel my-ed-carousel ed-carousel--translate span12">
+            <input class="ed-carousel__activator" type="radio" name="ed-carousel" id="1" checked="checked"/>
+            <input class="ed-carousel__activator" type="radio" name="ed-carousel" id="2"/>
+            <input class="ed-carousel__activator" type="radio" name="ed-carousel" id="3"/>
+            <div class="ed-carousel__controls">
+              <label class="ed-carousel__control ed-carousel__control--backward" for="3"></label>
+              <label class="ed-carousel__control ed-carousel__control--forward" for="2"></label>
+            </div>
+            <div class="ed-carousel__controls">
+              <label class="ed-carousel__control ed-carousel__control--backward" for="1"></label>
+              <label class="ed-carousel__control ed-carousel__control--forward" for="3"></label>
+            </div>
+            <div class="ed-carousel__controls">
+              <label class="ed-carousel__control ed-carousel__control--backward" for="2"></label>
+              <label class="ed-carousel__control ed-carousel__control--forward" for="1"></label>
+            </div>
+            <div class="ed-carousel__track">
+              <div class="ed-carousel__slide">
+                <div class="ed-carousel__text span6">
+                    <h2>{% block carousel_slide_one_title %}{% endblock %}</h2>
+                    <br>
+                    <h3>{% block carousel_slide_one_subtitle %}{% endblock %}</h3>
+                    <p>{% block carousel_slide_one_paragraph %}{% endblock %}</p>
+                    <br>
+                    <a href="#" class="button button-primary">
+                        {% block carousel_slide_one_button_text %}{% endblock %}
+                    </a>
+                </div>
+                <div class="ed-carousel__slide__image span6" style="background-image: url('{{ case_studies.0.image_url }}');">
+                    <div class="ed-carousel__slide__image_caption">
+                        {% block carousel_slide_one_image_caption %}{% endblock %} | <a href="{{ case_studies.0.case_study_url }}">view case study</a>
+                    </div>
+                </div>
+              </div>
+              <div class="ed-carousel__slide">
+                <div class="ed-carousel__text span6">
+                    <h2>{% block carousel_slide_two_title %}{% endblock %}</h2>
+                    <br>
+                    <h3>{% block carousel_slide_two_subtitle %}{% endblock %}</h3>
+                    <p>{% block carousel_slide_two_paragraph %}{% endblock %}</p>
+                    <br>
+                    <a href="#" class="button button-primary">
+                        {% block carousel_slide_two_button_text %}{% endblock %}
+                    </a>
+                </div>
+                <div class="ed-carousel__slide__image span6" style="background-image: url('{{ case_studies.1.image_url }}');">
+                    <div class="ed-carousel__slide__image_caption">
+                        {% block carousel_slide_two_image_caption %}{% endblock %} | <a href="{{ case_studies.1.case_study_url }}">view case study</a>
+                    </div>
+                </div>
+              </div>
+              <div class="ed-carousel__slide">
+                <div class="ed-carousel__text span6">
+                    <h2>{% block carousel_slide_three_title %}{% endblock %}</h2>
+                    <br>
+                    <h3>{% block carousel_slide_three_subtitle %}{% endblock %}</h3>
+                    <p>{% block carousel_slide_three_paragraph %}{% endblock %}</p>
+                    <br>
+                    <a href="#" class="button button-primary">
+                        {% block carousel_slide_three_button_text %}{% endblock %}
+                    </a>
+                </div>
+                <div class="ed-carousel__slide__image span6" style="background-image: url('{{ case_studies.2.image_url }}');">
+                    <div class="ed-carousel__slide__image_caption">
+                        {% block carousel_slide_three_image_caption %}{% endblock %} | <a href="{{ case_studies.2.case_study_url }}">view case study</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="ed-carousel__indicators">
+              <label class="ed-carousel__indicator" for="1"></label>
+              <label class="ed-carousel__indicator" for="2"></label>
+              <label class="ed-carousel__indicator" for="3"></label>
+            </div>
+          </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}

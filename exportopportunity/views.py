@@ -30,3 +30,28 @@ class SubmitExportOpportunityView(LeadGenerationFeatureFlagMixin, FormView):
 
 class LeadGenerationFoodView(LeadGenerationFeatureFlagMixin, TemplateView):
     template_name = 'lead_generation/food.html'
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(
+            case_studies=self.get_case_studies(),
+            **kwargs
+        )
+
+    def get_case_studies(self):
+        return [
+            {
+                'image_url': 'https://unsplash.it/900?random',
+                'case_study_url': 'http://www.google.com',
+                'name': 'Company 1',
+            },
+            {
+                'image_url': 'https://unsplash.it/800?random',
+                'case_study_url': 'http://www.google.com',
+                'name': 'Company 2',
+            },
+            {
+                'image_url': 'https://unsplash.it/700?random',
+                'case_study_url': 'http://www.google.com',
+                'name': 'Company 3',
+            },
+        ]
