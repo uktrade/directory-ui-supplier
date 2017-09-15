@@ -8,12 +8,16 @@
 {% endblock %}
 
 {% block hero_image_extra_attrs %}
-	style="min-height: 450px; background-image:url('{% block hero_image %}{% endblock %}')"
+	style="padding-top: 165px; min-height: 450px; background-image:url('{% block hero_image %}{% endblock %}')"
+{% endblock %}
+
+{% block hero_title_container %}
+    <h1 class="ed-hero-sub-header-title span7">{% block hero_title %}{% endblock %}</h1>
 {% endblock %}
 
 {% block hero_text %}
 	<br>
-	{% block hero_subtitle %}{% endblock hero_subtitle %}
+	<div class="span4" style="margin-left: 0;">{% block hero_subtitle %}{% endblock hero_subtitle %}</div>
 {% endblock hero_text %}
 
 {% block content %}
@@ -114,7 +118,7 @@
                 </div>
                 <div class="ed-carousel__slide__image span6" style="background-image: url('{{ case_studies.0.image_url }}');">
                     <div class="ed-carousel__slide__image_caption">
-                        {% block carousel_slide_one_image_caption %}{% endblock %} | <a href="{{ case_studies.0.case_study_url }}">view case study</a>
+                        {{ case_studies.0.name }} | <a href="{{ case_studies.0.case_study_url }}">view case study</a>
                     </div>
                 </div>
               </div>
@@ -131,7 +135,7 @@
                 </div>
                 <div class="ed-carousel__slide__image span6" style="background-image: url('{{ case_studies.1.image_url }}');">
                     <div class="ed-carousel__slide__image_caption">
-                        {% block carousel_slide_two_image_caption %}{% endblock %} | <a href="{{ case_studies.1.case_study_url }}">view case study</a>
+                        {{ case_studies.1.name }} | <a href="{{ case_studies.1.case_study_url }}">view case study</a>
                     </div>
                 </div>
               </div>
@@ -148,7 +152,7 @@
                 </div>
                 <div class="ed-carousel__slide__image span6" style="background-image: url('{{ case_studies.2.image_url }}');">
                     <div class="ed-carousel__slide__image_caption">
-                        {% block carousel_slide_three_image_caption %}{% endblock %} | <a href="{{ case_studies.2.case_study_url }}">view case study</a>
+                        {{ case_studies.2.name }} | <a href="{{ case_studies.2.case_study_url }}">view case study</a>
                     </div>
                 </div>
               </div>
