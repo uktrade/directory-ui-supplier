@@ -1,0 +1,68 @@
+{% extends 'govuk_layout.html' %}
+{% load static from staticfiles %}
+{% load trans from i18n %}
+{% load search_url from company_tags %}
+
+{% block css %}
+	<link href="{% static 'lead-generation-page.css' %}" media="all" rel="stylesheet" />
+{% endblock %}
+
+{% block hero_text %}
+	<br>ff
+	{% block hero_subtitle %}{% endblock hero_subtitle %}
+{% endblock hero_text %}
+
+{% block content %}
+<div class="container">
+	<div>
+		<h2 class="section-header">
+			{% block proposition_title %}{% endblock %}
+		</h2>
+		<p>
+			{% block proposition_paragraph %}{% endblock %}
+		</p>
+		<br>
+		<div class="row-fluid">
+			<div class="span4">
+				<div>
+					<h3>{% block proposition_col1_title %}{% endblock %}</h3>
+					<p>
+						{% block proposition_col1_paragraph %}{% endblock %}
+					</p>
+				</div>
+			</div>
+			<div class="span4">
+				<div>
+					<h3>{% block proposition_col2_title %}{% endblock %}</h3>
+					<p>
+						{% block proposition_col2_paragraph %}{% endblock %}
+					</p>
+				</div>
+			</div>
+			<div class="span4">
+				<div>
+					<h3>{% block proposition_col3_title %}{% endblock %}</h3>
+					<p>
+						{% block proposition_col3_paragraph %}{% endblock %}
+					</p>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div id="ed-lead-generaiton-call-to_action-container">
+			<div class="row-fluid">
+				<div class="span6">
+					<h2>{% block call_to_action_title %}{% endblock %}</h2>
+					<p>{% block call_to_action_paragraph %}{% endblock %}</p>
+				</div>
+				<div class="span6">
+					<a href="#" class="button button-primary">
+						{% block call_to_action_button_text %}{% endblock %}
+					</a>
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+</div>
+{% endblock content %}
