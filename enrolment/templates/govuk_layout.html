@@ -52,7 +52,7 @@
 
         <main id="content" class="enrolment-content">
             {% block sub_header %}
-            <div class="ed-hero-sub-header">
+            <div class="ed-hero-sub-header" {% block hero_image_extra_attrs %}{% endblock %}>
                 <div class="container">
                     {% block hero_title_container %}
                         <h1 class="ed-hero-sub-header-title">{% block hero_title %}{% endblock %}</h1>

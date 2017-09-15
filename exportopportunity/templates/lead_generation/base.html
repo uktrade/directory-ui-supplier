@@ -7,61 +7,80 @@
     <link href="{% static 'lead-generation-page.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
+{% block hero_image_extra_attrs %}
+	style="min-height: 450px; background-image:url('{% block hero_image %}{% endblock %}')"
+{% endblock %}
+
 {% block hero_text %}
-    <br>ff
-    {% block hero_subtitle %}{% endblock hero_subtitle %}
+	<br>
+	{% block hero_subtitle %}{% endblock hero_subtitle %}
 {% endblock hero_text %}
 
 {% block content %}
 <div class="container">
-    <div>
-        <h2 class="section-header">
-            {% block proposition_title %}{% endblock %}
-        </h2>
-        <p>
-            {% block proposition_paragraph %}{% endblock %}
-        </p>
-        <br>
-        <div class="row-fluid">
-            <div class="span4">
-                <div>
-                    <h3>{% block proposition_col1_title %}{% endblock %}</h3>
-                    <p>
-                        {% block proposition_col1_paragraph %}{% endblock %}
-                    </p>
-                </div>
-            </div>
-            <div class="span4">
-                <div>
-                    <h3>{% block proposition_col2_title %}{% endblock %}</h3>
-                    <p>
-                        {% block proposition_col2_paragraph %}{% endblock %}
-                    </p>
-                </div>
-            </div>
-            <div class="span4">
-                <div>
-                    <h3>{% block proposition_col3_title %}{% endblock %}</h3>
-                    <p>
-                        {% block proposition_col3_paragraph %}{% endblock %}
-                    </p>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div id="ed-lead-generaiton-call-to_action-container">
-            <div class="row-fluid">
-                <div class="span6">
-                    <h2>{% block call_to_action_title %}{% endblock %}</h2>
-                    <p>{% block call_to_action_paragraph %}{% endblock %}</p>
-                </div>
-                <div class="span6">
-                    <a href="#" class="button button-primary">
-                        {% block call_to_action_button_text %}{% endblock %}
-                    </a>
-                </div>
-            </div>
-        </div>
+	<div>
+		<h2 class="section-header">
+			{% block proposition_title %}{% endblock %}
+		</h2>
+		<p>
+			{% block proposition_paragraph %}{% endblock %}
+		</p>
+		<br>
+		<div id="ed-proposition-columns" class="row-fluid">
+			<div class="span4">
+				<div class="row-fluid">
+					<div class="span2">
+						<img src="{% static 'images/tradition.svg' %}" />
+					</div>
+					<div class="span10">
+						<h3>{% block proposition_col1_title %}{% endblock %}</h3>
+						<p>
+							{% block proposition_col1_paragraph %}{% endblock %}
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="span4">
+				<div class="row-fluid">
+					<div class="span2">
+						<img src="{% static 'images/innovation.svg' %}" />
+					</div>
+					<div class="span10">
+						<h3>{% block proposition_col2_title %}{% endblock %}</h3>
+						<p>
+							{% block proposition_col2_paragraph %}{% endblock %}
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="span4">
+				<div class="row-fluid">
+					<div class="span2">
+						<img src="{% static 'images/quality.svg' %}" />
+					</div>
+					<div class="span10">
+						<h3>{% block proposition_col3_title %}{% endblock %}</h3>
+						<p>
+							{% block proposition_col3_paragraph %}{% endblock %}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div id="ed-lead-generaiton-call-to_action-container">
+			<div class="row-fluid">
+				<div class="span6">
+					<h2>{% block call_to_action_title %}{% endblock %}</h2>
+					<p>{% block call_to_action_paragraph %}{% endblock %}</p>
+				</div>
+				<div class="span6">
+					<a href="#" class="button button-primary">
+						{% block call_to_action_button_text %}{% endblock %}
+					</a>
+				</div>
+			</div>
+		</div>
         <br>
         <br>
         <div class="ed-carousel-container row-fluid">
@@ -141,6 +160,6 @@
             </div>
           </div>
         </div>
-    </div>
+	</div>
 </div>
 {% endblock content %}
