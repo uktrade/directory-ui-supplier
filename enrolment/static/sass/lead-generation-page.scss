@@ -20,6 +20,18 @@
   }
 }
 
+#ed-showcase-container {
+  img {
+    border: 1px solid #dedede;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+
 .ed-carousel {
   height: 500px;
   overflow: hidden;

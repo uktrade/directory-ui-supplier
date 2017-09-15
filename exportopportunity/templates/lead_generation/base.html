@@ -164,6 +164,27 @@
             </div>
           </div>
         </div>
+        <br>
+		<h2 class="section-header">
+			{% trans "More UK suppliers" %}
+		</h2>
+		<br>
+		<div id="ed-showcase-container" class="row-fluid">
+			{% for company in companies %}
+				<div class="span4">
+					<img src="{{ company.logo }}" />
+					<div>
+						<br>
+						<h2>{{ company.name }}</h2>
+						<p>{% trans 'Incorporated in: ' %}<strong>{{ company.incorporation_date }}</strong></p>
+						<p>{% trans 'Number of employees: ' %}<strong>{{ company.number_of_employees }}</strong></p>
+						<p><a href="{{ company.profile_url }}">{% trans 'view profile' %}</a></p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<br>
+		<br>
 	</div>
 </div>
 {% endblock content %}
