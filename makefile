@@ -118,7 +118,8 @@ DEBUG_SET_ENV_VARS := \
 	export THUMBNAIL_STORAGE_CLASS_NAME=local-storage; \
 	export THUMBNAIL_KVSTORE_CLASS_NAME=redis; \
 	export REDIS_URL=redis://localhost:6379; \
-	export NOCAPTCHA=false
+	export NOCAPTCHA=false; \
+	export SESSION_COOKIE_SECURE=false
 
 
 debug_webserver:

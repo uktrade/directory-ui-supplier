@@ -14,6 +14,7 @@ codecov==2.0.9
 contextlib2==0.5.5        # via raven
 coverage==4.4.1           # via codecov, pytest-cov
 django==1.9.13            # via django-recaptcha
+django-formtools==1.0
 django_recaptcha==1.2.0
 django-storages==1.5.1
 djangorestframework==3.4.7

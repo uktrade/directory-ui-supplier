@@ -1,8 +1,9 @@
 from django.conf import settings
 from django.http import Http404
 from django.template.response import TemplateResponse
-from django.views.generic.edit import FormView
 from django.views.generic import TemplateView
+
+from formtools.wizard.views import SessionWizardView
 
 from api_client import api_client
 from exportopportunity import forms
@@ -15,17 +16,42 @@ class LeadGenerationFeatureFlagMixin:
         return super().dispatch(request, *args, **kwargs)
 
 
-class SubmitExportOpportunityView(LeadGenerationFeatureFlagMixin, FormView):
-    form_class = forms.OpportunityForm
-    template_name = 'export-opportunity.html'
-    success_template = 'export-opportunity-success.html'
+class GetTemplateForCurrentStepMixin:
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        assert self.templates
 
-    def form_valid(self, form):
+    def get_template_names(self):
+        return [self.templates[self.steps.current]]
+
+
+class SubmitExportOpportunityView(
+    LeadGenerationFeatureFlagMixin, GetTemplateForCurrentStepMixin,
+    SessionWizardView
+):
+    SECTOR = 'sector'
+    NEEDS = 'needs'
+    CONTACT = 'contact'
+    SUCCESS = 'success'
+
+    form_list = (
+        (SECTOR, forms.OpportunityBusinessSectorForm),
+        (NEEDS, forms.OpportunityNeedForm),
+        (CONTACT, forms.OpportunityContactDetailsForm),
+    )
+    templates = {
+        SECTOR: 'export-opportunity-sector.html',
+        NEEDS: 'export-opportunity-needs.html',
+        CONTACT: 'export-opportunity-contact.html',
+        SUCCESS: 'export-opportunity-success.html',
+    }
+
+    def done(self, form):
         response = api_client.exportopportunity.create_opportunity(
-            form_data=form.cleaned_data
+            form_data=self.get_all_cleaned_data(),
         )
         response.raise_for_status()
-        return TemplateResponse(self.request, self.success_template)
+        return TemplateResponse(self.request, self.templates[self.SUCCESS])
 
 
 class LeadGenerationFoodView(LeadGenerationFeatureFlagMixin, TemplateView):
