@@ -12,6 +12,24 @@
         top: 40%;
         right: 16%;
     }
+
+}
+#ed-proposition-columns {
+  h3 {
+    margin-top: 0;
+  }
+}
+
+#ed-showcase-container {
+  img {
+    border: 1px solid #dedede;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  a {
+    text-decoration: underline;
+  }
 }
 
 .ed-carousel {
