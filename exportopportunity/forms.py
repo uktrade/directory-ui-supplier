@@ -54,11 +54,7 @@ class OpportunityNeedForm(forms.Form):
     products = forms.MultipleChoiceField(
         label='What type of products are you looking for?',
         help_text=MESSAGE_SELECT_ALL_APPLICABLE,
-        choices=(
-            ('DISCOUNT', 'Discount'),
-            ('PREMIUM', 'Premium'),
-            ('', 'Other'),
-        ),
+        choices=choices.PRODUCT_TYPE_OPTIONS + (('', 'Other'),),
         widget=CheckboxSelectInlineLabelMultiple(),
     )
     products_other = forms.CharField(
@@ -68,13 +64,7 @@ class OpportunityNeedForm(forms.Form):
     order_size = forms.ChoiceField(
         label='What is the size of your order?',
         help_text='Tell us the quantity of the product you need (optional)',
-        choices=(
-            ('', 'Please choose an option'),
-            ('1-1000', '1-1,000 items'),
-            ('1000-10000', '1,000-10,000 items'),
-            ('10000-100000', '10,001-100,000 items'),
-            ('100000+', '100,001+ items'),
-        )
+        choices=(('', 'Please choose an option'),) + choices.ORDER_SIZE_OPTIONS
     )
     order_deadline = forms.ChoiceField(
         label='When do you need the product?',
@@ -83,11 +73,7 @@ class OpportunityNeedForm(forms.Form):
             'your deadline.'
         ),
         choices=(
-            ('', 'Please choose an option'),
-            ('1-3 MONTHS', '1 to 3 months'),
-            ('3-6 MONTHS', '3 to 6 months'),
-            ('6-12 MONTHS', '6 months to a year'),
-            ('NA', 'N/A'),
+            (('', 'Please choose an option'),) + choices.ORDER_DEADLINE_OPTIONS
         ),
         error_messages={
             'required': MESSAGE_SELECT_TIMESCALE
@@ -132,10 +118,7 @@ class OpportunityContactDetailsForm(forms.Form):
     )
     contact_preference = forms.MultipleChoiceField(
         label='How would you prefer to be contacted?',
-        choices=(
-            ('EMAIL', 'Email'),
-            ('PHONE', 'Phone'),
-        ),
+        choices=choices.CONTACT_OPTIONS,
         widget=CheckboxSelectInlineLabelMultiple(),
     )
     terms_agreed = forms.BooleanField(
