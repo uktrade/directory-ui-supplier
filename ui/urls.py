@@ -23,7 +23,7 @@ from notifications.views import (
     AnonymousUnsubscribeView
 )
 from exportopportunity.views import (
-    SubmitExportOpportunityView,
+    SubmitExportOpportunityWizardView,
     LeadGenerationFoodView,
 )
 from ui.sitemaps import (
@@ -135,7 +135,7 @@ urlpatterns = [
     ),
     url(
         r'^export-opportunity$',
-        SubmitExportOpportunityView.as_view(),
+        SubmitExportOpportunityWizardView.as_view(),
         name='export-opportunity'
     ),
 

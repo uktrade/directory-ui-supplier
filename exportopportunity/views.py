@@ -25,7 +25,7 @@ class GetTemplateForCurrentStepMixin:
         return [self.templates[self.steps.current]]
 
 
-class SubmitExportOpportunityView(
+class SubmitExportOpportunityWizardView(
     LeadGenerationFeatureFlagMixin, GetTemplateForCurrentStepMixin,
     SessionWizardView
 ):
@@ -46,7 +46,7 @@ class SubmitExportOpportunityView(
         SUCCESS: 'export-opportunity-success.html',
     }
 
-    def done(self, form):
+    def done(self, *args, **kwargs):
         response = api_client.exportopportunity.create_opportunity(
             form_data=self.get_all_cleaned_data(),
         )

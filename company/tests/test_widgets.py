@@ -52,3 +52,22 @@ def test_mutiple_choice_checkbox_with_inline_label():
     """
 
     assert minify_html(expected_html) in minify_html(str(form))
+
+
+def test_checkbox_with_inline_label():
+
+    class MyTestForm(forms.Form):
+        field = forms.BooleanField(
+            widget=widgets.CheckboxWithInlineLabel(label='the label')
+        )
+
+    form = MyTestForm()
+
+    expected_html = """
+        <div class="form-field checkbox">
+            <input id="id_field" name="field" type="checkbox" />
+            <label for="id_field">the label</label>
+        </div>
+    """
+
+    assert minify_html(expected_html) in minify_html(str(form))
