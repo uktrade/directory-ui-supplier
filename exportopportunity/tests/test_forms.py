@@ -19,6 +19,24 @@ def test_opportunity_business_sector_validation_messages():
     assert form.errors['target_sectors'] == [form.MESSAGE_SELECT_SECTOR]
 
 
+def test_opportunity_business_invalid_locality():
+    form = forms.OpportunityBusinessSectorForm(data={
+        'locality': forms.OpportunityBusinessSectorForm.OTHER
+    })
+
+    assert form.is_valid() is False
+    assert form.errors['locality'] == [form.MESSAGE_UNSUPPORTED_LOCALITY]
+
+
+def test_opportunity_business_valid_locality():
+    form = forms.OpportunityBusinessSectorForm(data={
+        'locality': 'France'
+    })
+
+    form.is_valid()
+    assert 'locality' not in form.errors
+
+
 def test_opportunity_need_required_field():
     form = forms.OpportunityNeedForm()
 

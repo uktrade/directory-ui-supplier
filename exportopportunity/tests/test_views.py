@@ -71,6 +71,7 @@ def test_submit_export_opportunity_multi_step(
             view.SECTOR + '-business_model_other': 'things',
             view.SECTOR + '-target_sectors': 'retail',
             view.SECTOR + '-target_sectors_other': 'things',
+            view.SECTOR + '-locality': 'France',
         }
     )
     client.post(
@@ -117,6 +118,7 @@ def test_submit_export_opportunity_multi_step(
             'email_address_confirm': 'jim@exmaple.com',
             'full_name': 'jim example',
             'job_title': 'Exampler',
+            'locality': 'France',
             'order_deadline': '1-3 MONTHS',
             'order_size': '1-1000',
             'phone_number': '07507605844',

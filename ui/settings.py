@@ -155,6 +155,10 @@ FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = (
     os.getenv('FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED') == 'true'
 )
 
+EXPORT_OPPORTUNITY_LOCALITIES = os.getenv(
+    'EXPORT_OPPORTUNITY_LOCALITIES', ''
+).split(',')
+
 # needed only for dev local storage
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 MEDIA_URL = '/media/'

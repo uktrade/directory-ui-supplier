@@ -4,6 +4,7 @@ from captcha.fields import ReCaptchaField
 
 from directory_constants.constants import choices
 
+from django.conf import settings
 from django.utils.html import mark_safe
 
 from company.widgets import (
@@ -13,13 +14,22 @@ from company.widgets import (
 
 
 MESSAGE_SELECT_ALL_APPLICABLE = 'Select all that apply'
+MESSAGE_CHOOSE = 'Please choose an option'
+
+locality_options = [[i, i] for i in settings.EXPORT_OPPORTUNITY_LOCALITIES]
 
 
 class OpportunityBusinessSectorForm(forms.Form):
     error_css_class = 'input-field-container has-error'
     MESSAGE_SELECT_BUSINESS_MODEL = 'Select a type of business'
     MESSAGE_SELECT_SECTOR = 'Select a type of business'
+    MESSAGE_UNSUPPORTED_LOCALITY = 'Sorry. We do not support that region yet.'
+    OTHER = 'OTHER'
 
+    locality = forms.ChoiceField(
+        label="Where country will you be importing to?",
+        choices=[['', MESSAGE_CHOOSE]] + locality_options + [[OTHER, 'Other']]
+    )
     business_model = forms.MultipleChoiceField(
         choices=choices.BUSINESS_MODELS + (('', 'Other'),),
         label='What type of business do you have?',
@@ -47,6 +57,11 @@ class OpportunityBusinessSectorForm(forms.Form):
         label="Other sectors you sell to (optional)"
     )
 
+    def clean_locality(self):
+        if self.cleaned_data['locality'] == self.OTHER:
+            raise forms.ValidationError(self.MESSAGE_UNSUPPORTED_LOCALITY)
+        return self.cleaned_data['locality']
+
 
 class OpportunityNeedForm(forms.Form):
     error_css_class = 'input-field-container has-error'
@@ -64,7 +79,7 @@ class OpportunityNeedForm(forms.Form):
     order_size = forms.ChoiceField(
         label='What is the size of your order?',
         help_text='Tell us the quantity of the product you need (optional)',
-        choices=(('', 'Please choose an option'),) + choices.ORDER_SIZE_OPTIONS
+        choices=(('', MESSAGE_CHOOSE),) + choices.ORDER_SIZE_OPTIONS
     )
     order_deadline = forms.ChoiceField(
         label='When do you need the product?',
@@ -73,7 +88,7 @@ class OpportunityNeedForm(forms.Form):
             'your deadline.'
         ),
         choices=(
-            (('', 'Please choose an option'),) + choices.ORDER_DEADLINE_OPTIONS
+            (('', MESSAGE_CHOOSE),) + choices.ORDER_DEADLINE_OPTIONS
         ),
         error_messages={
             'required': MESSAGE_SELECT_TIMESCALE
