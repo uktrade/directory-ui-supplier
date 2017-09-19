@@ -7,8 +7,13 @@ from exportopportunity import views
 
 
 exportopportunity_urls = (
-    reverse('export-opportunity'),
-    reverse('lead-generation-food'),
+    reverse(
+        'lead-generation-submit',
+        kwargs={'campaign': 'food-is-great', 'country': 'france'}
+    ),
+    reverse(
+        'campaign', kwargs={'campaign': 'food-is-great', 'country': 'france'}
+    ),
 )
 
 
@@ -30,6 +35,20 @@ def test_exportopportunity_view_feature_flag_on(url, client, settings):
     assert response.status_code == 200
 
 
+def test_campaign_invalid_campaign(
+    client, api_response_200, settings, captcha_stub
+):
+    settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
+
+    url = reverse(
+        'campaign',
+        kwargs={'campaign': 'food-is-not-great', 'country': 'france'}
+    )
+    response = client.get(url)
+
+    assert response.status_code == 404
+
+
 @patch.object(views.api_client.exportopportunity, 'create_opportunity')
 def test_submit_export_opportunity_multi_step(
     mock_create_opportunity, client, api_response_200, settings, captcha_stub
@@ -38,7 +57,10 @@ def test_submit_export_opportunity_multi_step(
     mock_create_opportunity.return_value = api_response_200
 
     view = views.SubmitExportOpportunityWizardView
-    url = reverse('export-opportunity')
+    url = reverse(
+        'lead-generation-submit',
+        kwargs={'campaign': 'food-is-great', 'country': 'france'}
+    )
     view_name = 'submit_export_opportunity_wizard_view'
 
     client.post(
@@ -103,5 +125,7 @@ def test_submit_export_opportunity_multi_step(
             'target_sectors': ['retail'],
             'target_sectors_other': 'things',
             'terms_agreed': True,
+            'campaign': 'food-is-great',
+            'country': 'france',
         }
     )

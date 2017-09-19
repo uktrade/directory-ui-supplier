@@ -86,6 +86,8 @@ class OpportunityNeedForm(forms.Form):
             'supply chain requirements'
         ),
         required=False,
+        max_length=1000,
+        widget=forms.Textarea,
     )
 
 

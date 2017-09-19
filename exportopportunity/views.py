@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.template.response import TemplateResponse
 from django.views.generic import TemplateView
@@ -47,21 +48,55 @@ class SubmitExportOpportunityWizardView(
     }
 
     def done(self, *args, **kwargs):
+        form_data = {
+            'campaign': self.kwargs['campaign'],
+            'country': self.kwargs['country'],
+            **self.get_all_cleaned_data(),
+        }
         response = api_client.exportopportunity.create_opportunity(
-            form_data=self.get_all_cleaned_data(),
+            form_data=form_data
         )
         response.raise_for_status()
         return TemplateResponse(self.request, self.templates[self.SUCCESS])
 
 
-class LeadGenerationFoodView(LeadGenerationFeatureFlagMixin, TemplateView):
-    template_name = 'lead_generation/food.html'
+class CampaignView(LeadGenerationFeatureFlagMixin, TemplateView):
+
+    campaign_map = {
+        'food-is-great': {
+            'template': 'lead_generation/food.html',
+            'industry': 'FOOD_AND_DRINK',
+        }
+    }
+
+    @property
+    def campaign(self):
+        return self.campaign_map[self.kwargs['campaign']]
+
+    def dispatch(self, *args, **kwargs):
+        if kwargs['campaign'] not in self.campaign_map:
+            raise Http404()
+        return super().dispatch(*args, **kwargs)
+
+    def get_template_names(self):
+        return [self.campaign['template']]
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(
             case_studies=self.get_case_studies(),
             companies=self.get_companies(),
+            lead_generation_url=self.get_lead_geneartion_url(),
+            industry=self.campaign['industry'],
             **kwargs
+        )
+
+    def get_lead_geneartion_url(self):
+        return reverse(
+            'lead-generation-submit',
+            kwargs={
+                'campaign': self.kwargs['campaign'],
+                'country': self.kwargs['country'],
+            }
         )
 
     def get_case_studies(self):
