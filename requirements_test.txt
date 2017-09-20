@@ -5,7 +5,7 @@
 #    pip-compile --output-file requirements_test.txt requirements_test.ini
 #
 -e git+https://github.com/uktrade/directory-api-client.git@v7.4.0#egg=directory_api_client
--e git+https://github.com/uktrade/directory-constants.git@v3.1.0#egg=directory_constants
+-e git+https://github.com/uktrade/directory-constants.git@v3.2.0#egg=directory_constants
 -e git+https://github.com/uktrade/directory-validators.git@v3.0.0#egg=directory_validators
 -e git+https://github.com/uktrade/directory-signature-auth.git@v1.0.0#egg=sigauth
 boto3==1.4.1
@@ -14,6 +14,7 @@ codecov==2.0.9
 contextlib2==0.5.5        # via raven
 coverage==4.4.1           # via codecov, pytest-cov
 django==1.9.13            # via django-recaptcha
+django-formtools==1.0
 django_recaptcha==1.2.0
 django-storages==1.5.1
 djangorestframework==3.4.7

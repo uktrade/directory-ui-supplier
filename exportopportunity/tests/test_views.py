@@ -1,7 +1,5 @@
-from unittest import mock
-
-from directory_constants.constants import choices
 import pytest
+from unittest.mock import call, patch
 
 from django.core.urlresolvers import reverse
 
@@ -9,8 +7,13 @@ from exportopportunity import views
 
 
 exportopportunity_urls = (
-    reverse('export-opportunity'),
-    reverse('lead-generation-food'),
+    reverse(
+        'lead-generation-submit',
+        kwargs={'campaign': 'food-is-great', 'country': 'france'}
+    ),
+    reverse(
+        'campaign', kwargs={'campaign': 'food-is-great', 'country': 'france'}
+    ),
 )
 
 
@@ -32,44 +35,99 @@ def test_exportopportunity_view_feature_flag_on(url, client, settings):
     assert response.status_code == 200
 
 
-@mock.patch('exportopportunity.views.api_client')
-def test_exportopportunity_view_feature_flag_on_submit(
-        mock_api_client,
-        client,
-        settings,
-        captcha_stub):
+def test_campaign_invalid_campaign(
+    client, api_response_200, settings, captcha_stub
+):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
-    expected_template_name = views.SubmitExportOpportunityView.success_template
 
-    data = {
-        'recaptcha_response_field': captcha_stub,
-        'type_of_enquiry': choices.OPEN_ENDED,
-        'open_ended_description': 'foobar',
-        'business_model': choices.DISTRIBUTION,
-        'subsector': choices.CATERING,
-        'bid_value': 'badzillions',
-        'bid_timing': '2017-09-09',
-        'full_name': 'Testo Useri',
-        'email_address': 'test@foo.com',
-        'company_name': 'Acme'
-    }
+    url = reverse(
+        'campaign',
+        kwargs={'campaign': 'food-is-not-great', 'country': 'france'}
+    )
+    response = client.get(url)
 
-    response = client.post(reverse('export-opportunity'), data=data)
+    assert response.status_code == 404
+
+
+@patch.object(views.api_client.exportopportunity, 'create_opportunity')
+def test_submit_export_opportunity_multi_step(
+    mock_create_opportunity, client, api_response_200, settings, captcha_stub
+):
+    settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
+    mock_create_opportunity.return_value = api_response_200
+
+    view = views.SubmitExportOpportunityWizardView
+    url = reverse(
+        'lead-generation-submit',
+        kwargs={'campaign': 'food-is-great', 'country': 'france'}
+    )
+    view_name = 'submit_export_opportunity_wizard_view'
+
+    client.post(
+        url,
+        {
+            view_name + '-current_step': view.SECTOR,
+            view.SECTOR + '-business_model': 'distribution',
+            view.SECTOR + '-business_model_other': 'things',
+            view.SECTOR + '-target_sectors': 'retail',
+            view.SECTOR + '-target_sectors_other': 'things',
+            view.SECTOR + '-locality': 'France',
+        }
+    )
+    client.post(
+        url,
+        {
+            view_name + '-current_step': view.NEEDS,
+            view.NEEDS + '-products': ['DISCOUNT'],
+            view.NEEDS + '-products_other': 'things',
+            view.NEEDS + '-order_size': '1-1000',
+            view.NEEDS + '-order_deadline': '1-3 MONTHS',
+            view.NEEDS + '-additional_requirements': 'give me things',
+        }
+    )
+    response = client.post(
+        url,
+        {
+            view_name + '-current_step': view.CONTACT,
+            view.CONTACT + '-full_name': 'jim example',
+            view.CONTACT + '-job_title': 'Exampler',
+            view.CONTACT + '-email_address': 'jim@exmaple.com',
+            view.CONTACT + '-email_address_confirm': 'jim@exmaple.com',
+            view.CONTACT + '-company_name': 'Jim corp',
+            view.CONTACT + '-company_website': 'http://www.example.com',
+            view.CONTACT + '-phone_number': '07507605844',
+            view.CONTACT + '-contact_preference': ['EMAIL', 'PHONE'],
+            view.CONTACT + '-terms_agreed': True,
+            'recaptcha_response_field': captcha_stub,
+        }
+    )
 
     assert response.status_code == 200
-    assert response.template_name == expected_template_name
-    expected_data = {
-        'captcha': None,
-        'type_of_enquiry': choices.OPEN_ENDED,
-        'open_ended_description': 'foobar',
-        'business_model': choices.DISTRIBUTION,
-        'subsector': choices.CATERING,
-        'bid_value': 'badzillions',
-        'bid_timing': '2017-09-09',
-        'full_name': 'Testo Useri',
-        'email_address': 'test@foo.com',
-        'company_name': 'Acme'
-    }
-    mock_api_client.exportopportunity.create_opportunity.assert_called_with(
-        form_data=expected_data
+    assert response.template_name == view.templates[view.SUCCESS]
+    assert mock_create_opportunity.call_count == 1
+    assert mock_create_opportunity.call_args == call(
+        form_data={
+            'additional_requirements': 'give me things',
+            'business_model': ['distribution'],
+            'business_model_other': 'things',
+            'captcha': None,
+            'company_name': 'Jim corp',
+            'company_website': 'http://www.example.com',
+            'contact_preference': ['EMAIL', 'PHONE'],
+            'email_address': 'jim@exmaple.com',
+            'email_address_confirm': 'jim@exmaple.com',
+            'full_name': 'jim example',
+            'job_title': 'Exampler',
+            'locality': 'France',
+            'order_deadline': '1-3 MONTHS',
+            'order_size': '1-1000',
+            'phone_number': '07507605844',
+            'products': ['DISCOUNT'],
+            'products_other': 'things',
+            'target_sectors': ['retail'],
+            'target_sectors_other': 'things',
+            'terms_agreed': True,
+            'campaign': 'food-is-great',
+            'country': 'france',
+        }
     )

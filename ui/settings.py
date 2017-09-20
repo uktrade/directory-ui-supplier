@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "ui",
     "enrolment",
     "company",
+    "formtools",
     "notifications",
     "exportopportunity",
     "directory_constants",
@@ -154,6 +155,10 @@ FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = (
     os.getenv('FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED') == 'true'
 )
 
+EXPORT_OPPORTUNITY_LOCALITIES = os.getenv(
+    'EXPORT_OPPORTUNITY_LOCALITIES', ''
+).split(',')
+
 # needed only for dev local storage
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 MEDIA_URL = '/media/'
@@ -259,6 +264,7 @@ RAVEN_CONFIG = {
 
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE', 'true') == 'true'
+
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SECURE = True
 

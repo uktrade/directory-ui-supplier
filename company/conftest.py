@@ -1,4 +1,3 @@
-import os
 from copy import deepcopy
 import http
 from unittest.mock import patch
@@ -79,14 +78,6 @@ def api_response_company_profile_200(retrieve_profile_data):
 
 
 @pytest.fixture
-def api_response_200():
-    response = requests.Response()
-    response.status_code = http.client.OK
-    response.json = lambda: deepcopy({})
-    return response
-
-
-@pytest.fixture
 def api_response_list_public_profile_200(
     api_response_200, list_public_profiles_data
 ):
@@ -96,8 +87,10 @@ def api_response_list_public_profile_200(
 
 
 @pytest.fixture
-def api_response_retrieve_public_case_study_200(supplier_case_study_data):
-    response = api_response_200()
+def api_response_retrieve_public_case_study_200(
+    supplier_case_study_data, api_response_200
+):
+    response = api_response_200
     response.json = lambda: deepcopy(supplier_case_study_data)
     return response
 
@@ -146,11 +139,3 @@ def retrieve_public_profile(api_response_company_profile_200):
     stub.start()
     yield
     stub.stop()
-
-
-@pytest.fixture()
-def captcha_stub():
-    # https://github.com/praekelt/django-recaptcha#id5
-    os.environ['RECAPTCHA_TESTING'] = 'True'
-    yield 'PASSED'
-    os.environ['RECAPTCHA_TESTING'] = 'False'

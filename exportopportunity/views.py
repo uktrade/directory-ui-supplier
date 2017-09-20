@@ -1,8 +1,10 @@
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.template.response import TemplateResponse
-from django.views.generic.edit import FormView
 from django.views.generic import TemplateView
+
+from formtools.wizard.views import SessionWizardView
 
 from api_client import api_client
 from exportopportunity import forms
@@ -15,27 +17,86 @@ class LeadGenerationFeatureFlagMixin:
         return super().dispatch(request, *args, **kwargs)
 
 
-class SubmitExportOpportunityView(LeadGenerationFeatureFlagMixin, FormView):
-    form_class = forms.OpportunityForm
-    template_name = 'export-opportunity.html'
-    success_template = 'export-opportunity-success.html'
+class GetTemplateForCurrentStepMixin:
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        assert self.templates
 
-    def form_valid(self, form):
+    def get_template_names(self):
+        return [self.templates[self.steps.current]]
+
+
+class SubmitExportOpportunityWizardView(
+    LeadGenerationFeatureFlagMixin, GetTemplateForCurrentStepMixin,
+    SessionWizardView
+):
+    SECTOR = 'sector'
+    NEEDS = 'needs'
+    CONTACT = 'contact'
+    SUCCESS = 'success'
+
+    form_list = (
+        (SECTOR, forms.OpportunityBusinessSectorForm),
+        (NEEDS, forms.OpportunityNeedForm),
+        (CONTACT, forms.OpportunityContactDetailsForm),
+    )
+    templates = {
+        SECTOR: 'export-opportunity-sector.html',
+        NEEDS: 'export-opportunity-needs.html',
+        CONTACT: 'export-opportunity-contact.html',
+        SUCCESS: 'export-opportunity-success.html',
+    }
+
+    def done(self, *args, **kwargs):
+        form_data = {
+            'campaign': self.kwargs['campaign'],
+            'country': self.kwargs['country'],
+            **self.get_all_cleaned_data(),
+        }
         response = api_client.exportopportunity.create_opportunity(
-            form_data=form.cleaned_data
+            form_data=form_data
         )
         response.raise_for_status()
-        return TemplateResponse(self.request, self.success_template)
+        return TemplateResponse(self.request, self.templates[self.SUCCESS])
 
 
-class LeadGenerationFoodView(LeadGenerationFeatureFlagMixin, TemplateView):
-    template_name = 'lead_generation/food.html'
+class CampaignView(LeadGenerationFeatureFlagMixin, TemplateView):
+
+    campaign_map = {
+        'food-is-great': {
+            'template': 'lead_generation/food.html',
+            'industry': 'FOOD_AND_DRINK',
+        }
+    }
+
+    @property
+    def campaign(self):
+        return self.campaign_map[self.kwargs['campaign']]
+
+    def dispatch(self, *args, **kwargs):
+        if kwargs['campaign'] not in self.campaign_map:
+            raise Http404()
+        return super().dispatch(*args, **kwargs)
+
+    def get_template_names(self):
+        return [self.campaign['template']]
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(
             case_studies=self.get_case_studies(),
             companies=self.get_companies(),
+            lead_generation_url=self.get_lead_geneartion_url(),
+            industry=self.campaign['industry'],
             **kwargs
+        )
+
+    def get_lead_geneartion_url(self):
+        return reverse(
+            'lead-generation-submit',
+            kwargs={
+                'campaign': self.kwargs['campaign'],
+                'country': self.kwargs['country'],
+            }
         )
 
     def get_case_studies(self):
