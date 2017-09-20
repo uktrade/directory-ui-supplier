@@ -9,12 +9,24 @@ from formtools.wizard.views import SessionWizardView
 from api_client import api_client
 from exportopportunity import forms
 
+FOOD_IS_GREAT = 'food-is-great'
+industry_map = {
+    FOOD_IS_GREAT: 'FOOD_AND_DRINK',
+}
+
 
 class LeadGenerationFeatureFlagMixin:
     def dispatch(self, request, *args, **kwargs):
         if not settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED:
             raise Http404()
         return super().dispatch(request, *args, **kwargs)
+
+
+class WhitelistCampaignMixin:
+    def dispatch(self, *args, **kwargs):
+        if kwargs['campaign'] not in industry_map:
+            raise Http404()
+        return super().dispatch(*args, **kwargs)
 
 
 class GetTemplateForCurrentStepMixin:
@@ -27,8 +39,8 @@ class GetTemplateForCurrentStepMixin:
 
 
 class SubmitExportOpportunityWizardView(
-    LeadGenerationFeatureFlagMixin, GetTemplateForCurrentStepMixin,
-    SessionWizardView
+    LeadGenerationFeatureFlagMixin, WhitelistCampaignMixin,
+    GetTemplateForCurrentStepMixin, SessionWizardView
 ):
     SECTOR = 'sector'
     NEEDS = 'needs'
@@ -44,7 +56,10 @@ class SubmitExportOpportunityWizardView(
         SECTOR: 'export-opportunity-sector.html',
         NEEDS: 'export-opportunity-needs.html',
         CONTACT: 'export-opportunity-contact.html',
-        SUCCESS: 'export-opportunity-success.html',
+    }
+
+    success_template_map = {
+        FOOD_IS_GREAT:  'lead_generation/success-food.html',
     }
 
     def done(self, *args, **kwargs):
@@ -57,36 +72,58 @@ class SubmitExportOpportunityWizardView(
             form_data=form_data
         )
         response.raise_for_status()
-        return TemplateResponse(self.request, self.templates[self.SUCCESS])
+        return TemplateResponse(
+            self.request,
+            self.success_template_map[self.kwargs['campaign']],
+            {
+                'industry': industry_map[self.kwargs['campaign']],
+                'companies': self.get_companies(),
+            }
+        )
+
+    def get_companies(self):
+        return [
+            {
+                'name': 'Good Company',
+                'incorporation_year': '1998',
+                'number_of_employees': '100 to 200',
+                'profile_url': 'http://www.google.com',
+                'logo': 'https://unsplash.it/901?random',
+            },
+            {
+                'name': 'Bad Company',
+                'incorporation_year': '2001',
+                'number_of_employees': '100 to 200',
+                'profile_url': 'http://www.google.com',
+                'logo': 'https://unsplash.it/902?random',
+            },
+            {
+                'name': 'Abhorrent Company',
+                'incorporation_year': '1995',
+                'number_of_employees': '100 to 200',
+                'profile_url': 'http://www.google.com',
+                'logo': 'https://unsplash.it/903?random',
+            },
+        ]
 
 
-class CampaignView(LeadGenerationFeatureFlagMixin, TemplateView):
+class CampaignView(
+    LeadGenerationFeatureFlagMixin, WhitelistCampaignMixin, TemplateView
+):
 
-    campaign_map = {
-        'food-is-great': {
-            'template': 'lead_generation/food.html',
-            'industry': 'FOOD_AND_DRINK',
-        }
+    template_map = {
+        FOOD_IS_GREAT:  'lead_generation/food.html',
     }
 
-    @property
-    def campaign(self):
-        return self.campaign_map[self.kwargs['campaign']]
-
-    def dispatch(self, *args, **kwargs):
-        if kwargs['campaign'] not in self.campaign_map:
-            raise Http404()
-        return super().dispatch(*args, **kwargs)
-
     def get_template_names(self):
-        return [self.campaign['template']]
+        return [self.template_map[self.kwargs['campaign']]]
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(
             case_studies=self.get_case_studies(),
             companies=self.get_companies(),
             lead_generation_url=self.get_lead_geneartion_url(),
-            industry=self.campaign['industry'],
+            industry=industry_map[self.kwargs['campaign']],
             **kwargs
         )
 

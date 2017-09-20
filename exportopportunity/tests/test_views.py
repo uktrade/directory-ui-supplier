@@ -35,13 +35,23 @@ def test_exportopportunity_view_feature_flag_on(url, client, settings):
     assert response.status_code == 200
 
 
-def test_campaign_invalid_campaign(
-    client, api_response_200, settings, captcha_stub
-):
+def test_campaign_invalid_campaign(client, settings):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
 
     url = reverse(
         'campaign',
+        kwargs={'campaign': 'food-is-not-great', 'country': 'france'}
+    )
+    response = client.get(url)
+
+    assert response.status_code == 404
+
+
+def test_lead_generation_submit_invalid_campaign(client, settings):
+    settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
+
+    url = reverse(
+        'lead-generation-submit',
         kwargs={'campaign': 'food-is-not-great', 'country': 'france'}
     )
     response = client.get(url)
@@ -103,7 +113,8 @@ def test_submit_export_opportunity_multi_step(
     )
 
     assert response.status_code == 200
-    assert response.template_name == view.templates[view.SUCCESS]
+    assert response.template_name == 'lead_generation/success-food.html'
+    assert response.context['industry'] == 'FOOD_AND_DRINK'
     assert mock_create_opportunity.call_count == 1
     assert mock_create_opportunity.call_args == call(
         form_data={
