@@ -7,7 +7,7 @@ from django.views.generic import TemplateView
 from formtools.wizard.views import SessionWizardView
 
 from api_client import api_client
-from exportopportunity import forms
+from exportopportunity import forms, helpers
 
 FOOD_IS_GREAT = 'food-is-great'
 industry_map = {
@@ -53,13 +53,13 @@ class SubmitExportOpportunityWizardView(
         (CONTACT, forms.OpportunityContactDetailsForm),
     )
     templates = {
-        SECTOR: 'export-opportunity-sector.html',
-        NEEDS: 'export-opportunity-needs.html',
-        CONTACT: 'export-opportunity-contact.html',
+        SECTOR: 'exportopportunity/lead-generation-form-sector.html',
+        NEEDS: 'exportopportunity/lead-generation-form-needs.html',
+        CONTACT: 'exportopportunity/lead-generation-form-contact.html',
     }
 
     success_template_map = {
-        FOOD_IS_GREAT:  'lead_generation/success-food.html',
+        FOOD_IS_GREAT:  'exportopportunity/lead-generation-success-food.html',
     }
 
     def done(self, *args, **kwargs):
@@ -77,34 +77,14 @@ class SubmitExportOpportunityWizardView(
             self.success_template_map[self.kwargs['campaign']],
             {
                 'industry': industry_map[self.kwargs['campaign']],
-                'companies': self.get_companies(),
+                'companies': self.get_showcase_companies(),
             }
         )
 
-    def get_companies(self):
-        return [
-            {
-                'name': 'Good Company',
-                'incorporation_year': '1998',
-                'number_of_employees': '100 to 200',
-                'profile_url': 'http://www.google.com',
-                'logo': 'https://unsplash.it/901?random',
-            },
-            {
-                'name': 'Bad Company',
-                'incorporation_year': '2001',
-                'number_of_employees': '100 to 200',
-                'profile_url': 'http://www.google.com',
-                'logo': 'https://unsplash.it/902?random',
-            },
-            {
-                'name': 'Abhorrent Company',
-                'incorporation_year': '1995',
-                'number_of_employees': '100 to 200',
-                'profile_url': 'http://www.google.com',
-                'logo': 'https://unsplash.it/903?random',
-            },
-        ]
+    def get_showcase_companies(self):
+        return helpers.get_showcase_companies(
+            sector=industry_map[self.kwargs['campaign']],
+        )
 
 
 class CampaignView(
@@ -112,7 +92,7 @@ class CampaignView(
 ):
 
     template_map = {
-        FOOD_IS_GREAT:  'lead_generation/food.html',
+        FOOD_IS_GREAT:  'exportopportunity/campaign-food.html',
     }
 
     def get_template_names(self):
@@ -121,7 +101,7 @@ class CampaignView(
     def get_context_data(self, **kwargs):
         return super().get_context_data(
             case_studies=self.get_case_studies(),
-            companies=self.get_companies(),
+            companies=self.get_showcase_companies(),
             lead_generation_url=self.get_lead_geneartion_url(),
             industry=industry_map[self.kwargs['campaign']],
             **kwargs
@@ -155,27 +135,7 @@ class CampaignView(
             },
         ]
 
-    def get_companies(self):
-        return [
-            {
-                'name': 'Good Company',
-                'incorporation_year': '1998',
-                'number_of_employees': '100 to 200',
-                'profile_url': 'http://www.google.com',
-                'logo': 'https://unsplash.it/901?random',
-            },
-            {
-                'name': 'Bad Company',
-                'incorporation_year': '2001',
-                'number_of_employees': '100 to 200',
-                'profile_url': 'http://www.google.com',
-                'logo': 'https://unsplash.it/902?random',
-            },
-            {
-                'name': 'Abhorrent Company',
-                'incorporation_year': '1995',
-                'number_of_employees': '100 to 200',
-                'profile_url': 'http://www.google.com',
-                'logo': 'https://unsplash.it/903?random',
-            },
-        ]
+    def get_showcase_companies(self):
+        return helpers.get_showcase_companies(
+            sector=industry_map[self.kwargs['campaign']],
+        )

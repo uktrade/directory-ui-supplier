@@ -1,10 +1,10 @@
-{% extends "export-opportunity-base.html" %}
+{% extends "exportopportunity/lead-generation-form-base.html" %}
 
 {% load static from staticfiles %}
 {% load trans from i18n %}
 
 {% block form_title %}
-<h1>{% trans "Tell us about your business and sector" %}</h1>
+<h1>{% trans "Contact details" %}</h1>
 {% endblock %}
 
 {% block form_subtitle %}
@@ -15,12 +15,8 @@
     <script type="text/javascript" src="{% static 'javascripts/lead-generation.js' %}"></script>
     <script type="text/javascript">
       GOVUK.utils.toggleOtherOnClick(
-        document.getElementById('id_sector-business_model_other'),
-        document.getElementById('id_sector-business_model'),
-      );
-      GOVUK.utils.toggleOtherOnClick(
-        document.getElementById('id_sector-target_sectors_other'),
-        document.getElementById('id_sector-target_sectors'),
+        document.getElementById('id_needs-products_other'),
+        document.getElementById('id_needs-products'),
       );
     </script>
 {% endblock bodyScripts %}

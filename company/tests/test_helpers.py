@@ -87,6 +87,7 @@ def test_get_company_profile_from_response(retrieve_profile_data):
         'summary': 'this is a short summary',
         'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
         'slug': 'great-company',
+        'public_profile_url': '/suppliers/01234567/great-company',
     }
 
     actual = helpers.get_company_profile_from_response(response)
@@ -129,6 +130,7 @@ def test_get_public_company_profile_from_response(retrieve_profile_data):
         'keywords': ['word1', 'word2'],
         'name': 'Great company',
         'slug': 'great-company',
+        'public_profile_url': '/suppliers/01234567/great-company',
     }
 
     actual = helpers.get_public_company_profile_from_response(response)
@@ -165,6 +167,7 @@ def test_get_company_list_from_response(public_companies):
                 'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
                 'date_of_creation': datetime(2015, 3, 2, 0, 0),
                 'slug': 'great-company',
+                'public_profile_url': '/suppliers/01234567/great-company',
             },
         ]
     }
@@ -221,6 +224,7 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
             'email_address': 'test@example.com',
             'employees': '501-1,000',
             'slug': 'great-company',
+            'public_profile_url': '/suppliers/01234567/great-company',
         },
         'slug': 'two',
         'image_one': 'https://image_one.jpg',
