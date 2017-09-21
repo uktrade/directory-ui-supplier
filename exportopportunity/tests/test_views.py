@@ -28,8 +28,11 @@ def test_exportopportunity_view_feature_flag_off(url, client, settings):
 
 @patch.object(views.helpers, 'get_showcase_companies',
               return_value=[{'name': 'Showcase company 1'}])
+@patch.object(views.helpers, 'get_showcase_case_studies',
+              return_value=[{'name': 'Case study 1'}])
 def test_exportopportunity_view_context(
-    mock_get_showcase_companies, client, settings
+    mock_get_showcase_case_studies, mock_get_showcase_companies, client,
+    settings
 ):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
     url = reverse(
@@ -42,8 +45,13 @@ def test_exportopportunity_view_context(
 
     assert response.context['industry'] == 'FOOD_AND_DRINK'
     assert response.context['companies'] == [{'name': 'Showcase company 1'}]
+    assert response.context['case_studies'] == [{'name': 'Case study 1'}]
     assert mock_get_showcase_companies.call_count == 1
     assert mock_get_showcase_companies.call_args == call(
+        sector='FOOD_AND_DRINK'
+    )
+    assert mock_get_showcase_case_studies.call_count == 1
+    assert mock_get_showcase_case_studies.call_args == call(
         sector='FOOD_AND_DRINK'
     )
 

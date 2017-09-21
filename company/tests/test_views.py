@@ -17,13 +17,6 @@ def api_response_200():
 
 
 @pytest.fixture
-def api_response_400():
-    response = requests.Response()
-    response.status_code = http.client.BAD_REQUEST
-    return response
-
-
-@pytest.fixture
 def api_response_404(*args, **kwargs):
     response = requests.Response()
     response.status_code = http.client.NOT_FOUND
@@ -50,27 +43,6 @@ def valid_contact_company_data(captcha_stub):
         'recaptcha_response_field': captcha_stub,
         'terms': True,
     }
-
-
-@pytest.fixture
-def search_results(retrieve_profile_data):
-    return {
-        'hits': {
-            'total': 1,
-            'hits': [
-                {
-                    '_source': retrieve_profile_data
-
-                }
-            ]
-        }
-    }
-
-
-@pytest.fixture
-def api_response_search_200(api_response_200, search_results):
-    api_response_200.json = lambda: search_results
-    return api_response_200
 
 
 @pytest.fixture
