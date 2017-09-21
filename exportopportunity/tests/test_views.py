@@ -26,18 +26,29 @@ def test_exportopportunity_view_feature_flag_off(url, client, settings):
     assert response.status_code == 404
 
 
-@pytest.mark.parametrize('url', exportopportunity_urls)
-def test_exportopportunity_view_feature_flag_on(url, client, settings):
+@patch.object(views.helpers, 'get_showcase_companies',
+              return_value=[{'name': 'Showcase company 1'}])
+def test_exportopportunity_view_context(
+    mock_get_showcase_companies, client, settings
+):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
+    url = reverse(
+        'campaign', kwargs={'campaign': 'food-is-great', 'country': 'france'}
+    )
 
     response = client.get(url)
 
     assert response.status_code == 200
 
+    assert response.context['industry'] == 'FOOD_AND_DRINK'
+    assert response.context['companies'] == [{'name': 'Showcase company 1'}]
+    assert mock_get_showcase_companies.call_count == 1
+    assert mock_get_showcase_companies.call_args == call(
+        sector='FOOD_AND_DRINK'
+    )
 
-def test_campaign_invalid_campaign(
-    client, api_response_200, settings, captcha_stub
-):
+
+def test_campaign_invalid_campaign(client, settings):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
 
     url = reverse(
@@ -49,13 +60,27 @@ def test_campaign_invalid_campaign(
     assert response.status_code == 404
 
 
+def test_lead_generation_submit_invalid_campaign(client, settings):
+    settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
+
+    url = reverse(
+        'lead-generation-submit',
+        kwargs={'campaign': 'food-is-not-great', 'country': 'france'}
+    )
+    response = client.get(url)
+
+    assert response.status_code == 404
+
+
+@patch.object(views.helpers, 'get_showcase_companies',
+              return_value=[{'name': 'Showcase company 1'}])
 @patch.object(views.api_client.exportopportunity, 'create_opportunity')
-def test_submit_export_opportunity_multi_step(
-    mock_create_opportunity, client, api_response_200, settings, captcha_stub
+def test_submit_export_opportunity_food(
+    mock_create_opportunity, mock_get_showcase_companies, client,
+    api_response_200, settings, captcha_stub
 ):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
     mock_create_opportunity.return_value = api_response_200
-
     view = views.SubmitExportOpportunityWizardView
     url = reverse(
         'lead-generation-submit',
@@ -103,7 +128,11 @@ def test_submit_export_opportunity_multi_step(
     )
 
     assert response.status_code == 200
-    assert response.template_name == view.templates[view.SUCCESS]
+    assert response.template_name == (
+        'exportopportunity/lead-generation-success-food.html'
+    )
+    assert response.context['industry'] == 'FOOD_AND_DRINK'
+    assert response.context['companies'] == [{'name': 'Showcase company 1'}]
     assert mock_create_opportunity.call_count == 1
     assert mock_create_opportunity.call_args == call(
         form_data={
@@ -130,4 +159,8 @@ def test_submit_export_opportunity_multi_step(
             'campaign': 'food-is-great',
             'country': 'france',
         }
+    )
+    assert mock_get_showcase_companies.call_count == 1
+    assert mock_get_showcase_companies.call_args == call(
+        sector='FOOD_AND_DRINK'
     )

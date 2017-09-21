@@ -27,7 +27,7 @@ class OpportunityBusinessSectorForm(forms.Form):
     OTHER = 'OTHER'
 
     locality = forms.ChoiceField(
-        label="Where country will you be importing to?",
+        label="Which country are you based in?",
         choices=[['', MESSAGE_CHOOSE]] + locality_options + [[OTHER, 'Other']]
     )
     business_model = forms.MultipleChoiceField(
@@ -130,7 +130,7 @@ class OpportunityContactDetailsForm(forms.Form):
     company_website = forms.URLField(label='', help_text='Company website')
     phone_number = forms.CharField(
         label='',
-        help_text='Pone number, including international code',
+        help_text='Phone number, including international code',
         max_length=30
     )
     contact_preference = forms.MultipleChoiceField(

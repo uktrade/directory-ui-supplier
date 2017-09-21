@@ -5,6 +5,7 @@ from directory_constants.constants import choices
 from directory_validators.helpers import tokenize_keywords
 
 from django.http import Http404
+from django.core.urlresolvers import reverse
 from django.utils.html import escape, mark_safe
 
 from api_client import api_client
@@ -124,6 +125,13 @@ def format_company_details(details):
         'linkedin_url': details['linkedin_url'],
         'email_address': details.get('email_address'),
         'slug': details['slug'],
+        'public_profile_url': reverse(
+            'public-company-profiles-detail',
+            kwargs={
+                'company_number': details['number'],
+                'slug': details['slug']
+            }
+        ),
         'has_social_links': bool(
             details['twitter_url'] or
             details['facebook_url'] or

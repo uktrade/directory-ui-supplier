@@ -239,3 +239,45 @@
     opacity: 1;
   }
 }
+
+
+#ed-success-search-button {
+  margin-bottom: 82px;
+  display: inline-block;
+  width: 300px;
+  border-radius: 3px;
+  border: solid 2px #ffffff;
+  color: white;
+  text-align: center;
+  line-height: 60px;
+}
+
+#ed-lead-generation-success-title {
+  font-size: 32px;
+  line-height: 1.25em;
+}
+
+#ed-success-banner {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  h2 {
+    font-size: 32px;
+    font-weight: 500;
+  }
+  hr {
+    border-top: solid 1px #979797;
+  }
+  span {
+    background-color: #28a197;
+    padding: 34px;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    display: inline-block;
+    width: 100%;
+  }
+}
