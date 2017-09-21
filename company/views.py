@@ -1,7 +1,5 @@
-from django.conf import settings
 from django.core.paginator import EmptyPage, Paginator
 from django.core.urlresolvers import reverse
-from django.http import Http404
 from django.shortcuts import redirect
 from django.template.response import TemplateResponse
 from django.utils.functional import cached_property
@@ -30,11 +28,6 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
     form_class = forms.CompanySearchForm
     page_size = 10
 
-    def dispatch(self, *args, **kwargs):
-        if not settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED:
-            raise Http404()
-        return super().dispatch(*args, **kwargs)
-
     def get_context_data(self, **kwargs):
         return super().get_context_data(
             active_view_name='public-company-profiles-list',
@@ -57,7 +50,7 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
             return TemplateResponse(self.request, self.template_name, context)
 
     def get_results_and_count(self, form):
-        response = api_client.company.search(
+        response = api_client.company.search_company(
             term=form.cleaned_data['term'],
             page=form.cleaned_data['page'],
             sectors=form.cleaned_data['sectors'],
