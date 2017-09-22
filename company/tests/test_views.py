@@ -24,13 +24,6 @@ def api_response_404(*args, **kwargs):
 
 
 @pytest.fixture
-def retrieve_public_case_study_200(api_response_200):
-    response = api_response_200
-    response.json = lambda: {'field': 'value'}
-    return response
-
-
-@pytest.fixture
 def valid_contact_company_data(captcha_stub):
     return {
         'full_name': 'Jim Example',
