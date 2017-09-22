@@ -141,8 +141,15 @@ def format_company_details(details):
 
 
 def format_case_study(case_study):
-    case_study['sector'] = pair_sector_value_with_label(case_study['sector'])
-    return case_study
+    case_study_url = reverse(
+        'case-study-details',
+        kwargs={'id': case_study['pk'], 'slug': case_study['slug']},
+    )
+    return {
+        **case_study,
+        'sector': pair_sector_value_with_label(case_study['sector']),
+        'case_study_url': case_study_url,
+    }
 
 
 def get_company_profile(number):

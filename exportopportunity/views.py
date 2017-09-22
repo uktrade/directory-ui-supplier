@@ -117,23 +117,9 @@ class CampaignView(
         )
 
     def get_case_studies(self):
-        return [
-            {
-                'image_url': 'https://unsplash.it/900?random',
-                'case_study_url': 'http://www.google.com',
-                'name': 'Company 1',
-            },
-            {
-                'image_url': 'https://unsplash.it/800?random',
-                'case_study_url': 'http://www.google.com',
-                'name': 'Company 2',
-            },
-            {
-                'image_url': 'https://unsplash.it/700?random',
-                'case_study_url': 'http://www.google.com',
-                'name': 'Company 3',
-            },
-        ]
+        return helpers.get_showcase_case_studies(
+            sector=industry_map[self.kwargs['campaign']],
+        )
 
     def get_showcase_companies(self):
         return helpers.get_showcase_companies(

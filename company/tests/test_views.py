@@ -17,23 +17,9 @@ def api_response_200():
 
 
 @pytest.fixture
-def api_response_400():
-    response = requests.Response()
-    response.status_code = http.client.BAD_REQUEST
-    return response
-
-
-@pytest.fixture
 def api_response_404(*args, **kwargs):
     response = requests.Response()
     response.status_code = http.client.NOT_FOUND
-    return response
-
-
-@pytest.fixture
-def retrieve_public_case_study_200(api_response_200):
-    response = api_response_200
-    response.json = lambda: {'field': 'value'}
     return response
 
 
@@ -50,27 +36,6 @@ def valid_contact_company_data(captcha_stub):
         'recaptcha_response_field': captcha_stub,
         'terms': True,
     }
-
-
-@pytest.fixture
-def search_results(retrieve_profile_data):
-    return {
-        'hits': {
-            'total': 1,
-            'hits': [
-                {
-                    '_source': retrieve_profile_data
-
-                }
-            ]
-        }
-    }
-
-
-@pytest.fixture
-def api_response_search_200(api_response_200, search_results):
-    api_response_200.json = lambda: search_results
-    return api_response_200
 
 
 @pytest.fixture
@@ -523,29 +488,11 @@ def test_contact_company_exposes_context(
     assert response.context_data['company'] == expected
 
 
-def test_company_search_404_feature_flag_disabled(client, settings):
-    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = False
-
-    response = client.get(reverse('company-search'))
-
-    assert response.status_code == 404
-
-
-@pytest.mark.django_db
-def test_company_search_200_feature_flag_enabled(client, settings):
-    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
-
-    response = client.get(reverse('company-search'))
-
-    assert response.status_code == 200
-
-
 @pytest.mark.django_db
 @patch('company.views.CompanySearchView.get_results_and_count')
 def test_company_search_submit_form_on_get(
-    mock_get_results_and_count, settings, client, search_results
+    mock_get_results_and_count, client, search_results
 ):
-    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
     results = [{'number': '1234567', 'slug': 'thing'}]
     mock_get_results_and_count.return_value = (results, 20)
 
@@ -558,9 +505,8 @@ def test_company_search_submit_form_on_get(
 @pytest.mark.django_db
 @patch('company.views.CompanySearchView.get_results_and_count')
 def test_company_search_pagination_count(
-    mock_get_results_and_count, settings, client, search_results
+    mock_get_results_and_count, client, search_results
 ):
-    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
     results = [{'number': '1234567', 'slug': 'thing'}]
     mock_get_results_and_count.return_value = (results, 20)
 
@@ -571,11 +517,10 @@ def test_company_search_pagination_count(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search')
+@patch('api_client.api_client.company.search_company')
 def test_company_search_pagination_param(
-    mock_search, settings, client, search_results, api_response_search_200
+    mock_search, client, search_results, api_response_search_200
 ):
-    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
     mock_search.return_value = api_response_search_200
 
     url = reverse('company-search')
@@ -590,11 +535,10 @@ def test_company_search_pagination_param(
     )
 
 
-@patch('api_client.api_client.company.search')
+@patch('api_client.api_client.company.search_company')
 def test_company_search_pagination_empty_page(
-    mock_search, settings, client, search_results, api_response_search_200
+    mock_search, client, search_results, api_response_search_200
 ):
-    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
     mock_search.return_value = api_response_search_200
 
     url = reverse('company-search')
@@ -607,10 +551,8 @@ def test_company_search_pagination_empty_page(
 @pytest.mark.django_db
 @patch('company.views.CompanySearchView.get_results_and_count')
 def test_company_search_not_submit_without_params(
-    mock_get_results_and_count, settings, client
+    mock_get_results_and_count, client
 ):
-    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
-
     response = client.get(reverse('company-search'))
 
     assert response.status_code == 200
@@ -618,8 +560,7 @@ def test_company_search_not_submit_without_params(
 
 
 @pytest.mark.django_db
-def test_company_search_sets_active_view_name(settings, client):
-    settings.FEATURE_COMPANY_SEARCH_VIEW_ENABLED = True
+def test_company_search_sets_active_view_name(client):
     expected_value = 'public-company-profiles-list'
 
     response = client.get(reverse('company-search'))
@@ -628,7 +569,7 @@ def test_company_search_sets_active_view_name(settings, client):
     assert response.context_data['active_view_name'] == expected_value
 
 
-@patch('api_client.api_client.company.search')
+@patch('api_client.api_client.company.search_company')
 def test_company_search_api_call_error(mock_search, api_response_400, client):
     mock_search.return_value = api_response_400
 
@@ -637,7 +578,7 @@ def test_company_search_api_call_error(mock_search, api_response_400, client):
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search')
+@patch('api_client.api_client.company.search_company')
 @patch('company.helpers.get_results_from_search_response')
 def test_company_search_api_success(
     mock_get_results_from_search_response, mock_search,
@@ -658,7 +599,7 @@ def test_company_search_api_success(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search')
+@patch('api_client.api_client.company.search_company')
 def test_company_search_response_no_highlight(
     mock_search, api_response_search_200, client
 ):
@@ -670,7 +611,7 @@ def test_company_search_response_no_highlight(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search')
+@patch('api_client.api_client.company.search_company')
 def test_company_highlight_description(
     mock_search, api_response_search_description_highlight_200, client
 ):
@@ -686,7 +627,7 @@ def test_company_highlight_description(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search')
+@patch('api_client.api_client.company.search_company')
 def test_company_search_highlight_summary(
     mock_search, api_response_search_summary_highlight_200, client
 ):

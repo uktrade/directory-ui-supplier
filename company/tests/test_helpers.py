@@ -97,12 +97,17 @@ def test_get_company_profile_from_response(retrieve_profile_data):
 def test_format_case_study():
     case_study = {
         'sector': 'AEROSPACE',
+        'pk': '1',
+        'slug': 'good-stuff',
     }
     expected = {
         'sector': {
             'label': 'Aerospace',
             'value': 'AEROSPACE',
-        }
+        },
+        'pk': '1',
+        'slug': 'good-stuff',
+        'case_study_url': '/case-study/1/good-stuff'
     }
     actual = helpers.format_case_study(case_study)
     assert actual == expected

@@ -174,8 +174,8 @@
   height: 100%;
   position: absolute;
   overflow-y: auto;
-  padding-left: 70px;
-  padding-right: 70px;
+  padding-left: 60px;
+  padding-right: 50px;
   padding-bottom: 40px;
 }
 .ed-carousel-container {
@@ -194,8 +194,9 @@
 }
 .ed-carousel__text h2 {
   font-size: 40px;
-  line-height: 1em;
-  padding-top: 30px;
+  line-height: 1.25em;
+  font-weight: 500;
+  padding-top: 32px;
 }
 .ed-carousel__slide__image {
   height: 100%;

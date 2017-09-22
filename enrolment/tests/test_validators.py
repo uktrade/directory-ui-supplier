@@ -24,3 +24,12 @@ def test_validate_company_unique_valid(mock_validate_company_number):
         status_code=http.client.OK
     )
     assert validators.company_unique('01245678') is None
+
+
+def test_company_active_valid():
+    assert validators.company_active('active') is None
+
+
+def test_company_active_invalid():
+    with pytest.raises(ValidationError):
+        validators.company_active('inactive')

@@ -30,11 +30,7 @@
 						<a href="{% url 'index' %}">{% trans "Home" %}</a>
 					</li>
 					<li {% if active_view_name == 'public-company-profiles-list'%}class="active"{% endif %}>
-						{% if features.FEATURE_COMPANY_SEARCH_VIEW_ENABLED %}
 						<a href="{% url 'company-search' %}">{% trans "Find a supplier" %}</a>
-						{% else %}
-						<a href="{% url 'public-company-profiles-list' %}">{% trans "Find a Supplier" %}</a>
-						{% endif %}
 					</li>
 					<li {% if active_view_name == 'sector-list'%}class="active"{% endif %}>
 						<a href="{% url 'sector-list' %}">{% trans "Industries" %}</a>
