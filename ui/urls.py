@@ -24,7 +24,7 @@ from notifications.views import (
 )
 from exportopportunity.views import (
     SubmitExportOpportunityWizardView,
-    CampaignView,
+    FoodIsGreatCampaignView,
 )
 from ui.sitemaps import (
     SectorLandingPageSitemap,
@@ -134,17 +134,22 @@ urlpatterns = [
         name='anonymous-unsubscribe'
     ),
     url(
-        r'^export-opportunity(?P<campaign>.*)/(?P<country>.*)/$',
+        r'^export-opportunity/(?P<campaign>.*)/(?P<country>.*)/$',
         SubmitExportOpportunityWizardView.as_view(),
         name='lead-generation-submit',
     ),
-
     url(
-        r'^campaign/(?P<campaign>.*)/(?P<country>.*)/$',
-        CampaignView.as_view(),
-        name='campaign',
+        r'^campaign/food-is-great/france/$',
+        FoodIsGreatCampaignView.as_view(),
+        {'campaign': 'food-is-great', 'country': 'france'},
+        name='food-is-great-campaign-france',
     ),
-
+    url(
+        r'^campaign/food-is-great/singapore$',
+        FoodIsGreatCampaignView.as_view(),
+        {'campaign': 'food-is-great', 'country': 'singapore'},
+        name='food-is-great-campaign-singapore',
+    ),
 ]
 
 

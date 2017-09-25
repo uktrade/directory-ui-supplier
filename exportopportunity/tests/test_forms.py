@@ -1,3 +1,6 @@
+from directory_constants.constants import choices
+import pytest
+
 from exportopportunity import forms
 
 
@@ -28,9 +31,10 @@ def test_opportunity_business_invalid_locality():
     assert form.errors['locality'] == [form.MESSAGE_UNSUPPORTED_LOCALITY]
 
 
-def test_opportunity_business_valid_locality():
+@pytest.mark.parametrize('locality', choices.LEAD_GENERATION_COUNTRIES)
+def test_opportunity_business_valid_locality(locality):
     form = forms.OpportunityBusinessSectorForm(data={
-        'locality': 'France'
+        'locality': locality,
     })
 
     form.is_valid()
