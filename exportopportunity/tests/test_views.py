@@ -11,9 +11,8 @@ exportopportunity_urls = (
         'lead-generation-submit',
         kwargs={'campaign': 'food-is-great', 'country': 'france'}
     ),
-    reverse(
-        'campaign', kwargs={'campaign': 'food-is-great', 'country': 'france'}
-    ),
+    reverse('food-is-great-campaign-france'),
+    reverse('food-is-great-campaign-singapore'),
 )
 
 
@@ -35,9 +34,7 @@ def test_exportopportunity_view_context(
     settings
 ):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
-    url = reverse(
-        'campaign', kwargs={'campaign': 'food-is-great', 'country': 'france'}
-    )
+    url = reverse('food-is-great-campaign-france')
 
     response = client.get(url)
 
@@ -56,28 +53,54 @@ def test_exportopportunity_view_context(
     )
 
 
-def test_campaign_invalid_campaign(client, settings):
-    settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
-
-    url = reverse(
-        'campaign',
-        kwargs={'campaign': 'food-is-not-great', 'country': 'france'}
-    )
-    response = client.get(url)
-
-    assert response.status_code == 404
-
-
-def test_lead_generation_submit_invalid_campaign(client, settings):
+@pytest.mark.parametrize('campaign,country,expected', (
+    ('food-is-great', 'singapore', 200),
+    ('food-is-great', 'france', 200),
+    ('food-is-ungreat', 'singapore', 404),
+    ('food-is-ungreat', 'france', 404),
+))
+@patch.object(views.helpers, 'get_showcase_companies',
+              return_value=[{'name': 'Showcase company 1'}])
+@patch.object(views.helpers, 'get_showcase_case_studies',
+              return_value=[{'name': 'Case study 1'}])
+def test_lead_generation_submit_campaign_country(
+    mock_get_showcase_case_studies, mock_get_showcase_companies, campaign,
+    country, expected, client, settings
+):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
 
     url = reverse(
         'lead-generation-submit',
-        kwargs={'campaign': 'food-is-not-great', 'country': 'france'}
+        kwargs={'campaign': campaign, 'country': country}
     )
     response = client.get(url)
 
-    assert response.status_code == 404
+    assert response.status_code == expected
+
+
+@pytest.mark.parametrize('url', (
+    reverse('food-is-great-campaign-france'),
+    reverse('food-is-great-campaign-singapore'),
+))
+@patch.object(views.helpers, 'get_showcase_companies',
+              return_value=[{'name': 'Showcase company 1'}])
+@patch.object(views.helpers, 'get_showcase_case_studies',
+              return_value=[{'name': 'Case study 1'}])
+def test_campaign_language_switcher(
+    mock_get_showcase_case_studies, mock_get_showcase_companies, url, client,
+    settings
+):
+    settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
+    settings.FOOD_IS_GREAT_ENABLED_LANGUAGES = ['en-gb', 'fr']
+
+    response = client.get(url)
+    form = response.context['language_switcher']['form']
+
+    assert response.context['language_switcher']['show'] is True
+    assert form.fields['lang'].choices == [
+        ('en-gb', 'English'),
+        ('fr', 'Français'),
+    ]
 
 
 @patch.object(views.helpers, 'get_showcase_companies',
@@ -104,7 +127,7 @@ def test_submit_export_opportunity_food(
             view.SECTOR + '-business_model_other': 'things',
             view.SECTOR + '-target_sectors': 'retail',
             view.SECTOR + '-target_sectors_other': 'things',
-            view.SECTOR + '-locality': 'France',
+            view.SECTOR + '-locality': 'france',
         }
     )
     client.post(
@@ -155,7 +178,7 @@ def test_submit_export_opportunity_food(
             'email_address_confirm': 'jim@exmaple.com',
             'full_name': 'jim example',
             'job_title': 'Exampler',
-            'locality': 'France',
+            'locality': 'france',
             'order_deadline': '1-3 MONTHS',
             'order_size': '1-1000',
             'phone_number': '07507605844',

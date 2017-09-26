@@ -111,10 +111,19 @@ USE_L10N = True
 USE_TZ = True
 # languages that are disabled across all pages
 DISABLED_LANGUAGES = os.getenv('DISABLED_LANGUAGES', '').split(',')
-# of the languages that are not disabled, disable these on industries page
+
+# of the languages that are not disabled, disable these on specific page
 DISABLED_LANGUAGES_INDUSTRIES_PAGE = (
     os.getenv('DISABLED_LANGUAGES_INDUSTRIES_PAGE', '').split(',')
 )
+DISABLED_LANGUAGES_SUBMIT_OPPORTUNITY_PAGES = (
+    os.getenv('DISABLED_LANGUAGES_SUBMIT_OPPORTUNITY_PAGES', '').split(',')
+)
+
+FOOD_IS_GREAT_ENABLED_LANGUAGES = (
+    os.getenv('FOOD_IS_GREAT_ENABLED_LANGUAGES', '').split(',')
+)
+
 # https://github.com/django/django/blob/master/django/conf/locale/__init__.py
 LANGUAGES = helpers.remove_disabled_languages(
     disabled_languages=DISABLED_LANGUAGES,
@@ -135,6 +144,10 @@ LANGUAGES_INDUSTRIY_PAGES = helpers.remove_disabled_languages(
     disabled_languages=DISABLED_LANGUAGES_INDUSTRIES_PAGE,
     languages=LANGUAGES,
 )
+LANGUAGES_LEAD_GENERATION_PAGES = helpers.remove_disabled_languages(
+    disabled_languages=DISABLED_LANGUAGES_SUBMIT_OPPORTUNITY_PAGES,
+    languages=LANGUAGES,
+)
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
@@ -151,10 +164,6 @@ FEATURE_SPORTS_INFRASTRUCTURE_ENABLED = (
 FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = (
     os.getenv('FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED') == 'true'
 )
-
-EXPORT_OPPORTUNITY_LOCALITIES = os.getenv(
-    'EXPORT_OPPORTUNITY_LOCALITIES', ''
-).split(',')
 
 # needed only for dev local storage
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')

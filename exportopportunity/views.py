@@ -4,10 +4,12 @@ from django.http import Http404
 from django.template.response import TemplateResponse
 from django.views.generic import TemplateView
 
+from directory_constants.constants import choices
 from formtools.wizard.views import SessionWizardView
 
 from api_client import api_client
 from exportopportunity import forms, helpers
+from ui.views import ConditionalEnableTranslationsMixin
 
 FOOD_IS_GREAT = 'food-is-great'
 industry_map = {
@@ -22,13 +24,6 @@ class LeadGenerationFeatureFlagMixin:
         return super().dispatch(request, *args, **kwargs)
 
 
-class WhitelistCampaignMixin:
-    def dispatch(self, *args, **kwargs):
-        if kwargs['campaign'] not in industry_map:
-            raise Http404()
-        return super().dispatch(*args, **kwargs)
-
-
 class GetTemplateForCurrentStepMixin:
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -39,7 +34,7 @@ class GetTemplateForCurrentStepMixin:
 
 
 class SubmitExportOpportunityWizardView(
-    LeadGenerationFeatureFlagMixin, WhitelistCampaignMixin,
+    LeadGenerationFeatureFlagMixin, ConditionalEnableTranslationsMixin,
     GetTemplateForCurrentStepMixin, SessionWizardView
 ):
     SECTOR = 'sector'
@@ -61,6 +56,23 @@ class SubmitExportOpportunityWizardView(
     success_template_map = {
         FOOD_IS_GREAT:  'exportopportunity/lead-generation-success-food.html',
     }
+
+    language_form_class = forms.LanguageLeadGeneartionForm
+
+    def dispatch(self, *args, **kwargs):
+        if (
+            kwargs['campaign'] not in choices.LEAD_GENERATION_CAMPAIGNS or
+            kwargs['country'] not in choices.LEAD_GENERATION_COUNTRIES
+        ):
+            raise Http404()
+        return super().dispatch(*args, **kwargs)
+
+    @property
+    def translations_enabled(self):
+        return (
+            self.request.LANGUAGE_CODE not in
+            settings.DISABLED_LANGUAGES_SUBMIT_OPPORTUNITY_PAGES
+        )
 
     def done(self, *args, **kwargs):
         form_data = {
@@ -87,23 +99,32 @@ class SubmitExportOpportunityWizardView(
         )
 
 
-class CampaignView(
-    LeadGenerationFeatureFlagMixin, WhitelistCampaignMixin, TemplateView
+class BaseCampaignView(
+    LeadGenerationFeatureFlagMixin, ConditionalEnableTranslationsMixin,
+    TemplateView
 ):
+    template_name = None
+    language_form_class = forms.LanguageCampaignForm
 
-    template_map = {
-        FOOD_IS_GREAT:  'exportopportunity/campaign-food.html',
-    }
+    @property
+    def industry(self):
+        return industry_map[self.kwargs['campaign']]
 
-    def get_template_names(self):
-        return [self.template_map[self.kwargs['campaign']]]
+    @property
+    def translations_enabled(self):
+        return self.request.LANGUAGE_CODE in self.supported_languages
+
+    def get_language_form_kwargs(self):
+        return super().get_language_form_kwargs(
+            language_codes=self.supported_languages
+        )
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(
             case_studies=self.get_case_studies(),
             companies=self.get_showcase_companies(),
             lead_generation_url=self.get_lead_geneartion_url(),
-            industry=industry_map[self.kwargs['campaign']],
+            industry=self.industry,
             **kwargs
         )
 
@@ -117,11 +138,15 @@ class CampaignView(
         )
 
     def get_case_studies(self):
-        return helpers.get_showcase_case_studies(
-            sector=industry_map[self.kwargs['campaign']],
-        )
+        return helpers.get_showcase_case_studies(sector=self.industry)
 
     def get_showcase_companies(self):
-        return helpers.get_showcase_companies(
-            sector=industry_map[self.kwargs['campaign']],
-        )
+        return helpers.get_showcase_companies(sector=self.industry,)
+
+
+class FoodIsGreatCampaignView(BaseCampaignView):
+    template_name = 'exportopportunity/campaign-food.html'
+
+    @property
+    def supported_languages(self):
+        return settings.FOOD_IS_GREAT_ENABLED_LANGUAGES

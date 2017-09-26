@@ -16,8 +16,8 @@ from enrolment.views import (
     AnonymousSubscribeFormView,
     LeadGenerationFormView,
     SectorDetailView,
-    ConditionalEnableTranslationsMixin,
 )
+from ui.views import ConditionalEnableTranslationsMixin
 
 
 @pytest.fixture

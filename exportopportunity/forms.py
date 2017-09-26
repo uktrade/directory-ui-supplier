@@ -16,7 +16,7 @@ from company.widgets import (
 MESSAGE_SELECT_ALL_APPLICABLE = 'Select all that apply'
 MESSAGE_CHOOSE = 'Please choose an option'
 
-locality_options = [[i, i] for i in settings.EXPORT_OPPORTUNITY_LOCALITIES]
+locality_options = [[i, i.title()] for i in choices.LEAD_GENERATION_COUNTRIES]
 
 
 class OpportunityBusinessSectorForm(forms.Form):
@@ -159,3 +159,18 @@ class OpportunityContactDetailsForm(forms.Form):
                     'email_address': self.MESSAGE_EMAIL_MISMATCH
                 })
         return cleaned
+
+
+class LanguageCampaignForm(forms.Form):
+    def __init__(self, language_codes, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['lang'].choices = [
+            (key, name) for key, name in settings.LANGUAGES
+            if key in language_codes
+        ]
+
+    lang = forms.ChoiceField(choices=[])  # choices set on __init__
+
+
+class LanguageLeadGeneartionForm(forms.Form):
+    lang = forms.ChoiceField(choices=settings.LANGUAGES_LEAD_GENERATION_PAGES)

@@ -4,12 +4,12 @@ from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 from django.conf import settings
 from django.shortcuts import redirect, Http404
 from django.template.response import TemplateResponse
-from django.utils import translation
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
 from api_client import api_client
 from enrolment import constants, forms
+from ui.views import ConditionalEnableTranslationsMixin
 
 
 ZENPY_CREDENTIALS = {
@@ -26,38 +26,6 @@ class ActiveViewNameMixin:
         context = super().get_context_data(**kwargs)
         context['active_view_name'] = self.active_view_name
         return context
-
-
-class ConditionalEnableTranslationsMixin:
-    translations_enabled = True
-    template_name_bidi = None
-    language_form_class = forms.LanguageForm
-
-    def __init__(self, *args, **kwargs):
-        dependency = 'ui.middleware.ForceDefaultLocale'
-        assert dependency in settings.MIDDLEWARE_CLASSES
-
-    def dispatch(self, request, *args, **kwargs):
-        if self.translations_enabled:
-            translation.activate(request.LANGUAGE_CODE)
-        return super().dispatch(request, *args, **kwargs)
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context['LANGUAGE_BIDI'] = translation.get_language_bidi()
-        if self.translations_enabled:
-            context['language_switcher'] = {
-                'show': True,
-                'form': self.language_form_class(
-                    initial=forms.get_language_form_initial_data(),
-                )
-            }
-        return context
-
-    def get_template_names(self):
-        if translation.get_language_bidi():
-            return [self.template_name_bidi]
-        return super().get_template_names()
 
 
 class LeadGenerationFormView(ConditionalEnableTranslationsMixin, FormView):
