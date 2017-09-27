@@ -11,17 +11,11 @@ from api_client import api_client
 from exportopportunity import forms, helpers
 from ui.views import ConditionalEnableTranslationsMixin
 
-FOOD_IS_GREAT = 'food-is-great'
+
 industry_map = {
-    FOOD_IS_GREAT: 'FOOD_AND_DRINK',
+    choices.FOOD_IS_GREAT: 'FOOD_AND_DRINK',
+    choices.LEGAL_IS_GREAT: 'LEGAL_SERVICES',
 }
-
-
-class LeadGenerationFeatureFlagMixin:
-    def dispatch(self, request, *args, **kwargs):
-        if not settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED:
-            raise Http404()
-        return super().dispatch(request, *args, **kwargs)
 
 
 class GetTemplateForCurrentStepMixin:
@@ -34,7 +28,7 @@ class GetTemplateForCurrentStepMixin:
 
 
 class SubmitExportOpportunityWizardView(
-    LeadGenerationFeatureFlagMixin, ConditionalEnableTranslationsMixin,
+    ConditionalEnableTranslationsMixin,
     GetTemplateForCurrentStepMixin, SessionWizardView
 ):
     SECTOR = 'sector'
@@ -54,12 +48,19 @@ class SubmitExportOpportunityWizardView(
     }
 
     success_template_map = {
-        FOOD_IS_GREAT:  'exportopportunity/lead-generation-success-food.html',
+        choices.FOOD_IS_GREAT: (
+            'exportopportunity/lead-generation-success-food.html'
+        ),
+        choices.LEGAL_IS_GREAT: (
+            'exportopportunity/lead-generation-success-legal.html'
+        ),
     }
 
     language_form_class = forms.LanguageLeadGeneartionForm
 
     def dispatch(self, *args, **kwargs):
+        if not settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED:
+            raise Http404()
         if (
             kwargs['campaign'] not in choices.LEAD_GENERATION_CAMPAIGNS or
             kwargs['country'] not in choices.LEAD_GENERATION_COUNTRIES
@@ -99,12 +100,10 @@ class SubmitExportOpportunityWizardView(
         )
 
 
-class BaseCampaignView(
-    LeadGenerationFeatureFlagMixin, ConditionalEnableTranslationsMixin,
-    TemplateView
-):
+class BaseCampaignView(ConditionalEnableTranslationsMixin, TemplateView):
     template_name = None
     language_form_class = forms.LanguageCampaignForm
+    feature_flag = None
 
     @property
     def industry(self):
@@ -113,6 +112,11 @@ class BaseCampaignView(
     @property
     def translations_enabled(self):
         return self.request.LANGUAGE_CODE in self.supported_languages
+
+    def dispatch(self, *args, **kwargs):
+        if not self.feature_flag:
+            raise Http404()
+        return super().dispatch(*args, **kwargs)
 
     def get_language_form_kwargs(self):
         return super().get_language_form_kwargs(
@@ -148,5 +152,21 @@ class FoodIsGreatCampaignView(BaseCampaignView):
     template_name = 'exportopportunity/campaign-food.html'
 
     @property
+    def feature_flag(self):
+        return settings.FEATURE_FOOD_CAMPAIGN_ENABLED
+
+    @property
     def supported_languages(self):
         return settings.FOOD_IS_GREAT_ENABLED_LANGUAGES
+
+
+class LegalIsGreatCampaignView(BaseCampaignView):
+    template_name = 'exportopportunity/campaign-legal.html'
+
+    @property
+    def feature_flag(self):
+        return settings.FEATURE_LEGAL_CAMPAIGN_ENABLED
+
+    @property
+    def supported_languages(self):
+        return settings.LEGAL_IS_GREAT_ENABLED_LANGUAGES

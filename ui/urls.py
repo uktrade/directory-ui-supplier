@@ -3,6 +3,8 @@ from django.conf.urls import url
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
 
+from directory_constants.constants import choices
+
 from company.views import (
     CaseStudyDetailView,
     ContactCompanyView,
@@ -22,10 +24,7 @@ from enrolment.views import (
 from notifications.views import (
     AnonymousUnsubscribeView
 )
-from exportopportunity.views import (
-    SubmitExportOpportunityWizardView,
-    FoodIsGreatCampaignView,
-)
+from exportopportunity import views as exportopportunity_views
 from ui.sitemaps import (
     SectorLandingPageSitemap,
     StaticViewSitemap,
@@ -135,21 +134,35 @@ urlpatterns = [
     ),
     url(
         r'^export-opportunity/(?P<campaign>.*)/(?P<country>.*)/$',
-        SubmitExportOpportunityWizardView.as_view(),
+        exportopportunity_views.SubmitExportOpportunityWizardView.as_view(),
         name='lead-generation-submit',
     ),
     url(
         r'^campaign/food-is-great/france/$',
-        FoodIsGreatCampaignView.as_view(),
-        {'campaign': 'food-is-great', 'country': 'france'},
+        exportopportunity_views.FoodIsGreatCampaignView.as_view(),
+        {'campaign': choices.FOOD_IS_GREAT, 'country': choices.FRANCE},
         name='food-is-great-campaign-france',
     ),
     url(
         r'^campaign/food-is-great/singapore$',
-        FoodIsGreatCampaignView.as_view(),
-        {'campaign': 'food-is-great', 'country': 'singapore'},
+        exportopportunity_views.FoodIsGreatCampaignView.as_view(),
+        {'campaign': choices.FOOD_IS_GREAT, 'country': choices.SINGAPORE},
         name='food-is-great-campaign-singapore',
     ),
+
+    url(
+        r'^campaign/legal-is-great/france/$',
+        exportopportunity_views.LegalIsGreatCampaignView.as_view(),
+        {'campaign': choices.LEGAL_IS_GREAT, 'country': choices.FRANCE},
+        name='legal-is-great-campaign-france',
+    ),
+    url(
+        r'^campaign/legal-is-great/singapore$',
+        exportopportunity_views.LegalIsGreatCampaignView.as_view(),
+        {'campaign': choices.LEGAL_IS_GREAT, 'country': choices.SINGAPORE},
+        name='legal-is-great-campaign-singapore',
+    ),
+
 ]
 
 

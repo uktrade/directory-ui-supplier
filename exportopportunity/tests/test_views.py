@@ -1,71 +1,130 @@
-import pytest
 from unittest.mock import call, patch
+
+from directory_constants.constants import choices
+import pytest
 
 from django.core.urlresolvers import reverse
 
 from exportopportunity import views
 
 
-exportopportunity_urls = (
-    reverse(
+showcase_companies = [{'name': 'Showcase company 1'}]
+showcase_case_studies = [{'name': 'Case study 1'}]
+
+
+@pytest.fixture
+def showcase_objects():
+    patch_one = patch.object(
+        views.helpers, 'get_showcase_companies',
+        return_value=showcase_companies
+    )
+    patch_two = patch.object(
+        views.helpers, 'get_showcase_case_studies',
+        return_value=showcase_case_studies
+    )
+    patch_one.start()
+    patch_two.start()
+    yield
+    patch_one.stop()
+    patch_two.stop()
+
+
+@pytest.mark.parametrize('enabled,status', ((False, 404), (True, 200)))
+def test_lead_generation_feature_flag(enabled, status, client, settings):
+    settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = enabled
+    url = reverse(
         'lead-generation-submit',
-        kwargs={'campaign': 'food-is-great', 'country': 'france'}
-    ),
-    reverse('food-is-great-campaign-france'),
-    reverse('food-is-great-campaign-singapore'),
-)
+        kwargs={'campaign': choices.FOOD_IS_GREAT, 'country': choices.FRANCE}
+    )
+    response = client.get(url)
+
+    assert response.status_code == status
 
 
-@pytest.mark.parametrize('url', exportopportunity_urls)
-def test_exportopportunity_view_feature_flag_off(url, client, settings):
-    settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = False
+@pytest.mark.parametrize('url,enabled,status', (
+    (reverse('food-is-great-campaign-france'),    True,  200),
+    (reverse('food-is-great-campaign-singapore'), True,  200),
+    (reverse('food-is-great-campaign-france'),    False, 404),
+    (reverse('food-is-great-campaign-singapore'), False, 404),
+))
+def test_food_is_great_feature_flag(url, enabled, status, client, settings):
+    settings.FEATURE_FOOD_CAMPAIGN_ENABLED = enabled
 
     response = client.get(url)
 
-    assert response.status_code == 404
+    assert response.status_code == status
 
 
+@pytest.mark.parametrize('url,enabled,status', (
+    (reverse('legal-is-great-campaign-france'),    True,  200),
+    (reverse('legal-is-great-campaign-singapore'), True,  200),
+    (reverse('legal-is-great-campaign-france'),    False, 404),
+    (reverse('legal-is-great-campaign-singapore'), False, 404),
+))
+def test_legal_is_great_feature_flag(url, enabled, status, client, settings):
+    settings.FEATURE_LEGAL_CAMPAIGN_ENABLED = enabled
+
+    response = client.get(url)
+
+    assert response.status_code == status
+
+
+@pytest.mark.parametrize('url,sector,template_name', (
+    (
+        reverse('food-is-great-campaign-france'),
+        'FOOD_AND_DRINK',
+        'exportopportunity/campaign-food.html'
+    ),
+    (
+        reverse('food-is-great-campaign-singapore'),
+        'FOOD_AND_DRINK',
+        'exportopportunity/campaign-food.html'
+    ),
+    (
+        reverse('legal-is-great-campaign-france'),
+        'LEGAL_SERVICES',
+        'exportopportunity/campaign-legal.html'
+    ),
+    (
+        reverse('legal-is-great-campaign-singapore'),
+        'LEGAL_SERVICES',
+        'exportopportunity/campaign-legal.html'
+    ),
+))
 @patch.object(views.helpers, 'get_showcase_companies',
-              return_value=[{'name': 'Showcase company 1'}])
+              return_value=showcase_companies)
 @patch.object(views.helpers, 'get_showcase_case_studies',
-              return_value=[{'name': 'Case study 1'}])
+              return_value=showcase_case_studies)
 def test_exportopportunity_view_context(
-    mock_get_showcase_case_studies, mock_get_showcase_companies, client,
-    settings
+    mock_get_showcase_case_studies, mock_get_showcase_companies, url, sector,
+    template_name, client, settings
 ):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
-    url = reverse('food-is-great-campaign-france')
 
     response = client.get(url)
 
     assert response.status_code == 200
-
-    assert response.context['industry'] == 'FOOD_AND_DRINK'
-    assert response.context['companies'] == [{'name': 'Showcase company 1'}]
-    assert response.context['case_studies'] == [{'name': 'Case study 1'}]
+    assert response.template_name == [template_name]
+    assert response.context['industry'] == sector
+    assert response.context['companies'] == showcase_companies
+    assert response.context['case_studies'] == showcase_case_studies
     assert mock_get_showcase_companies.call_count == 1
-    assert mock_get_showcase_companies.call_args == call(
-        sector='FOOD_AND_DRINK'
-    )
+    assert mock_get_showcase_companies.call_args == call(sector=sector)
     assert mock_get_showcase_case_studies.call_count == 1
-    assert mock_get_showcase_case_studies.call_args == call(
-        sector='FOOD_AND_DRINK'
-    )
+    assert mock_get_showcase_case_studies.call_args == call(sector=sector)
 
 
 @pytest.mark.parametrize('campaign,country,expected', (
-    ('food-is-great', 'singapore', 200),
-    ('food-is-great', 'france', 200),
-    ('food-is-ungreat', 'singapore', 404),
-    ('food-is-ungreat', 'france', 404),
+    (choices.FOOD_IS_GREAT,  choices.SINGAPORE, 200),
+    (choices.FOOD_IS_GREAT,  choices.FRANCE,    200),
+    (choices.LEGAL_IS_GREAT, choices.SINGAPORE, 200),
+    (choices.LEGAL_IS_GREAT, choices.FRANCE,    200),
+    ('food-is-ungreat',      choices.SINGAPORE, 404),
+    (choices.FOOD_IS_GREAT,  'themoon',         404),
+
 ))
-@patch.object(views.helpers, 'get_showcase_companies',
-              return_value=[{'name': 'Showcase company 1'}])
-@patch.object(views.helpers, 'get_showcase_case_studies',
-              return_value=[{'name': 'Case study 1'}])
 def test_lead_generation_submit_campaign_country(
-    mock_get_showcase_case_studies, mock_get_showcase_companies, campaign,
-    country, expected, client, settings
+    showcase_objects, campaign, country, expected, client, settings
 ):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
 
@@ -78,17 +137,26 @@ def test_lead_generation_submit_campaign_country(
     assert response.status_code == expected
 
 
-@pytest.mark.parametrize('url', (
-    reverse('food-is-great-campaign-france'),
-    reverse('food-is-great-campaign-singapore'),
+@pytest.mark.parametrize('url,languages', (
+    (
+        reverse('food-is-great-campaign-france'),
+        [('en-gb', 'English'), ('fr', 'Français')]
+    ),
+    (
+        reverse('food-is-great-campaign-singapore'),
+        [('en-gb', 'English'), ('fr', 'Français')]
+    ),
+    (
+        reverse('legal-is-great-campaign-singapore'),
+        [('en-gb', 'English'), ('fr', 'Français')]
+    ),
+    (
+        reverse('legal-is-great-campaign-singapore'),
+        [('en-gb', 'English'), ('fr', 'Français')]
+    ),
 ))
-@patch.object(views.helpers, 'get_showcase_companies',
-              return_value=[{'name': 'Showcase company 1'}])
-@patch.object(views.helpers, 'get_showcase_case_studies',
-              return_value=[{'name': 'Case study 1'}])
 def test_campaign_language_switcher(
-    mock_get_showcase_case_studies, mock_get_showcase_companies, url, client,
-    settings
+    showcase_objects, client, url, languages, settings
 ):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
     settings.FOOD_IS_GREAT_ENABLED_LANGUAGES = ['en-gb', 'fr']
@@ -97,14 +165,11 @@ def test_campaign_language_switcher(
     form = response.context['language_switcher']['form']
 
     assert response.context['language_switcher']['show'] is True
-    assert form.fields['lang'].choices == [
-        ('en-gb', 'English'),
-        ('fr', 'Français'),
-    ]
+    assert form.fields['lang'].choices == languages
 
 
 @patch.object(views.helpers, 'get_showcase_companies',
-              return_value=[{'name': 'Showcase company 1'}])
+              return_value=showcase_companies)
 @patch.object(views.api_client.exportopportunity, 'create_opportunity')
 def test_submit_export_opportunity_food(
     mock_create_opportunity, mock_get_showcase_companies, client,
@@ -115,7 +180,7 @@ def test_submit_export_opportunity_food(
     view = views.SubmitExportOpportunityWizardView
     url = reverse(
         'lead-generation-submit',
-        kwargs={'campaign': 'food-is-great', 'country': 'france'}
+        kwargs={'campaign': choices.FOOD_IS_GREAT, 'country': choices.FRANCE}
     )
     view_name = 'submit_export_opportunity_wizard_view'
 
@@ -127,7 +192,7 @@ def test_submit_export_opportunity_food(
             view.SECTOR + '-business_model_other': 'things',
             view.SECTOR + '-target_sectors': 'retail',
             view.SECTOR + '-target_sectors_other': 'things',
-            view.SECTOR + '-locality': 'france',
+            view.SECTOR + '-locality': choices.FRANCE,
         }
     )
     client.post(
@@ -163,7 +228,7 @@ def test_submit_export_opportunity_food(
         'exportopportunity/lead-generation-success-food.html'
     )
     assert response.context['industry'] == 'FOOD_AND_DRINK'
-    assert response.context['companies'] == [{'name': 'Showcase company 1'}]
+    assert response.context['companies'] == showcase_companies
     assert mock_create_opportunity.call_count == 1
     assert mock_create_opportunity.call_args == call(
         form_data={
@@ -178,7 +243,7 @@ def test_submit_export_opportunity_food(
             'email_address_confirm': 'jim@exmaple.com',
             'full_name': 'jim example',
             'job_title': 'Exampler',
-            'locality': 'france',
+            'locality': choices.FRANCE,
             'order_deadline': '1-3 MONTHS',
             'order_size': '1-1000',
             'phone_number': '07507605844',
@@ -187,8 +252,8 @@ def test_submit_export_opportunity_food(
             'target_sectors': ['retail'],
             'target_sectors_other': 'things',
             'terms_agreed': True,
-            'campaign': 'food-is-great',
-            'country': 'france',
+            'campaign': choices.FOOD_IS_GREAT,
+            'country': choices.FRANCE,
         }
     )
     assert mock_get_showcase_companies.call_count == 1
