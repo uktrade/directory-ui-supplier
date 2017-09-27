@@ -1,4 +1,4 @@
-from unittest.mock import call, patch
+from unittest.mock import call, patch, Mock
 
 from directory_constants.constants import choices
 import pytest
@@ -47,6 +47,10 @@ def test_lead_generation_feature_flag(enabled, status, client, settings):
     (reverse('food-is-great-campaign-france'),    False, 404),
     (reverse('food-is-great-campaign-singapore'), False, 404),
 ))
+@patch.object(views.helpers, 'get_showcase_companies',
+              Mock(return_value=showcase_companies))
+@patch.object(views.helpers, 'get_showcase_case_studies',
+              Mock(return_value=showcase_case_studies))
 def test_food_is_great_feature_flag(url, enabled, status, client, settings):
     settings.FEATURE_FOOD_CAMPAIGN_ENABLED = enabled
 
@@ -61,6 +65,10 @@ def test_food_is_great_feature_flag(url, enabled, status, client, settings):
     (reverse('legal-is-great-campaign-france'),    False, 404),
     (reverse('legal-is-great-campaign-singapore'), False, 404),
 ))
+@patch.object(views.helpers, 'get_showcase_companies',
+              Mock(return_value=showcase_companies))
+@patch.object(views.helpers, 'get_showcase_case_studies',
+              Mock(return_value=showcase_case_studies))
 def test_legal_is_great_feature_flag(url, enabled, status, client, settings):
     settings.FEATURE_LEGAL_CAMPAIGN_ENABLED = enabled
 
