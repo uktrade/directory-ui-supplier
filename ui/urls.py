@@ -3,7 +3,12 @@ from django.conf.urls import url
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
 
-from directory_constants.constants import choices
+from directory_constants.constants.lead_generation import (
+    FOOD_IS_GREAT,
+    LEGAL_IS_GREAT,
+    FRANCE,
+    SINGAPORE,
+)
 
 from company.views import (
     CaseStudyDetailView,
@@ -140,26 +145,26 @@ urlpatterns = [
     url(
         r'^campaign/food-is-great/france/$',
         exportopportunity_views.FoodIsGreatCampaignView.as_view(),
-        {'campaign': choices.FOOD_IS_GREAT, 'country': choices.FRANCE},
+        {'campaign': FOOD_IS_GREAT, 'country': FRANCE},
         name='food-is-great-campaign-france',
     ),
     url(
         r'^campaign/food-is-great/singapore$',
         exportopportunity_views.FoodIsGreatCampaignView.as_view(),
-        {'campaign': choices.FOOD_IS_GREAT, 'country': choices.SINGAPORE},
+        {'campaign': FOOD_IS_GREAT, 'country': SINGAPORE},
         name='food-is-great-campaign-singapore',
     ),
 
     url(
         r'^campaign/legal-is-great/france/$',
         exportopportunity_views.LegalIsGreatCampaignView.as_view(),
-        {'campaign': choices.LEGAL_IS_GREAT, 'country': choices.FRANCE},
+        {'campaign': LEGAL_IS_GREAT, 'country': FRANCE},
         name='legal-is-great-campaign-france',
     ),
     url(
         r'^campaign/legal-is-great/singapore$',
         exportopportunity_views.LegalIsGreatCampaignView.as_view(),
-        {'campaign': choices.LEGAL_IS_GREAT, 'country': choices.SINGAPORE},
+        {'campaign': LEGAL_IS_GREAT, 'country': SINGAPORE},
         name='legal-is-great-campaign-singapore',
     ),
 

@@ -4,7 +4,7 @@ from django.http import Http404
 from django.template.response import TemplateResponse
 from django.views.generic import TemplateView
 
-from directory_constants.constants import choices
+from directory_constants.constants import choices, lead_generation
 from formtools.wizard.views import SessionWizardView
 
 from api_client import api_client
@@ -13,8 +13,8 @@ from ui.views import ConditionalEnableTranslationsMixin
 
 
 industry_map = {
-    choices.FOOD_IS_GREAT: 'FOOD_AND_DRINK',
-    choices.LEGAL_IS_GREAT: 'LEGAL_SERVICES',
+    lead_generation.FOOD_IS_GREAT: 'FOOD_AND_DRINK',
+    lead_generation.LEGAL_IS_GREAT: 'LEGAL_SERVICES',
 }
 
 
@@ -48,10 +48,10 @@ class SubmitExportOpportunityWizardView(
     }
 
     success_template_map = {
-        choices.FOOD_IS_GREAT: (
+        lead_generation.FOOD_IS_GREAT: (
             'exportopportunity/lead-generation-success-food.html'
         ),
-        choices.LEGAL_IS_GREAT: (
+        lead_generation.LEGAL_IS_GREAT: (
             'exportopportunity/lead-generation-success-legal.html'
         ),
     }

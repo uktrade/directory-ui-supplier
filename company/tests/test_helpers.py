@@ -53,6 +53,7 @@ def test_pair_sector_values_with_label_contains_invalid():
             'value': 'AEROSPACE',
         },
     ]
+
     assert helpers.pair_sector_values_with_label(values) == expected
 
 

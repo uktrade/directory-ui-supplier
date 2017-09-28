@@ -1,6 +1,6 @@
 from unittest.mock import call, patch, Mock
 
-from directory_constants.constants import choices
+from directory_constants.constants import lead_generation
 import pytest
 
 from django.core.urlresolvers import reverse
@@ -34,7 +34,10 @@ def test_lead_generation_feature_flag(enabled, status, client, settings):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = enabled
     url = reverse(
         'lead-generation-submit',
-        kwargs={'campaign': choices.FOOD_IS_GREAT, 'country': choices.FRANCE}
+        kwargs={
+            'campaign': lead_generation.FOOD_IS_GREAT,
+            'country': lead_generation.FRANCE
+        }
     )
     response = client.get(url)
 
@@ -123,12 +126,12 @@ def test_exportopportunity_view_context(
 
 
 @pytest.mark.parametrize('campaign,country,expected', (
-    (choices.FOOD_IS_GREAT,  choices.SINGAPORE, 200),
-    (choices.FOOD_IS_GREAT,  choices.FRANCE,    200),
-    (choices.LEGAL_IS_GREAT, choices.SINGAPORE, 200),
-    (choices.LEGAL_IS_GREAT, choices.FRANCE,    200),
-    ('food-is-ungreat',      choices.SINGAPORE, 404),
-    (choices.FOOD_IS_GREAT,  'themoon',         404),
+    (lead_generation.FOOD_IS_GREAT,  lead_generation.SINGAPORE, 200),
+    (lead_generation.FOOD_IS_GREAT,  lead_generation.FRANCE,    200),
+    (lead_generation.LEGAL_IS_GREAT, lead_generation.SINGAPORE, 200),
+    (lead_generation.LEGAL_IS_GREAT, lead_generation.FRANCE,    200),
+    ('food-is-ungreat',      lead_generation.SINGAPORE, 404),
+    (lead_generation.FOOD_IS_GREAT,  'themoon',         404),
 
 ))
 def test_lead_generation_submit_campaign_country(
@@ -188,7 +191,10 @@ def test_submit_export_opportunity_food(
     view = views.SubmitExportOpportunityWizardView
     url = reverse(
         'lead-generation-submit',
-        kwargs={'campaign': choices.FOOD_IS_GREAT, 'country': choices.FRANCE}
+        kwargs={
+            'campaign': lead_generation.FOOD_IS_GREAT,
+            'country': lead_generation.FRANCE
+        }
     )
     view_name = 'submit_export_opportunity_wizard_view'
 
@@ -200,7 +206,7 @@ def test_submit_export_opportunity_food(
             view.SECTOR + '-business_model_other': 'things',
             view.SECTOR + '-target_sectors': 'retail',
             view.SECTOR + '-target_sectors_other': 'things',
-            view.SECTOR + '-locality': choices.FRANCE,
+            view.SECTOR + '-locality': lead_generation.FRANCE,
         }
     )
     client.post(
@@ -251,7 +257,7 @@ def test_submit_export_opportunity_food(
             'email_address_confirm': 'jim@exmaple.com',
             'full_name': 'jim example',
             'job_title': 'Exampler',
-            'locality': choices.FRANCE,
+            'locality': lead_generation.FRANCE,
             'order_deadline': '1-3 MONTHS',
             'order_size': '1-1000',
             'phone_number': '07507605844',
@@ -260,8 +266,8 @@ def test_submit_export_opportunity_food(
             'target_sectors': ['retail'],
             'target_sectors_other': 'things',
             'terms_agreed': True,
-            'campaign': choices.FOOD_IS_GREAT,
-            'country': choices.FRANCE,
+            'campaign': lead_generation.FOOD_IS_GREAT,
+            'country': lead_generation.FRANCE,
         }
     )
     assert mock_get_showcase_companies.call_count == 1
