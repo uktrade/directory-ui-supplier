@@ -3,7 +3,7 @@
 {% load trans from i18n %}
 {% load static from staticfiles %}
 
-{% block hero_image %}{% static 'images/covers/unkempt-small-human.jpg' %}{% endblock %}
+{% block hero_image %}{% static 'images/covers/spooky-ghost-busses.jpg' %}{% endblock %}
 
 {% block hero_title %}
 	{% trans "1" %}
@@ -25,6 +25,10 @@
 	{% trans "5" %}
 {% endblock %}
 
+{% block proposition_col1_icon %}
+	{% static 'images/icons/judges.svg' %}
+{% endblock %}
+
 {% block proposition_col1_paragraph %}
 	{% trans "6" %}
 {% endblock %}
@@ -33,12 +37,20 @@
 	{% trans "7" %}
 {% endblock %}
 
+{% block proposition_col2_icon %}
+	{% static 'images/icons/professional-law.svg' %}
+{% endblock %}
+
 {% block proposition_col2_paragraph %}
 	{% trans "8" %}
 {% endblock %}
 
 {% block proposition_col3_title %}
 	{% trans "9" %}
+{% endblock %}
+
+{% block proposition_col3_icon %}
+	{% static 'images/icons/contract-law.svg' %}
 {% endblock %}
 
 {% block proposition_col3_paragraph %}
