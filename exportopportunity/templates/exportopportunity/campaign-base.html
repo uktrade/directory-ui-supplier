@@ -34,7 +34,7 @@
 			<div class="span4">
 				<div class="row-fluid">
 					<div class="span2">
-						<img src="{% static 'images/tradition.svg' %}" />
+						<img src="{% block proposition_col1_icon %}{% endblock %}" />
 					</div>
 					<div class="span10">
 						<h3>{% block proposition_col1_title %}{% endblock %}</h3>
@@ -47,7 +47,7 @@
 			<div class="span4">
 				<div class="row-fluid">
 					<div class="span2">
-						<img src="{% static 'images/innovation.svg' %}" />
+						<img src="{% block proposition_col2_icon %}{% endblock %}" />
 					</div>
 					<div class="span10">
 						<h3>{% block proposition_col2_title %}{% endblock %}</h3>
@@ -60,7 +60,7 @@
 			<div class="span4">
 				<div class="row-fluid">
 					<div class="span2">
-						<img src="{% static 'images/quality.svg' %}" />
+						<img src="{% block proposition_col3_icon %}{% endblock %}" />
 					</div>
 					<div class="span10">
 						<h3>{% block proposition_col3_title %}{% endblock %}</h3>

@@ -123,6 +123,9 @@ DISABLED_LANGUAGES_SUBMIT_OPPORTUNITY_PAGES = (
 FOOD_IS_GREAT_ENABLED_LANGUAGES = (
     os.getenv('FOOD_IS_GREAT_ENABLED_LANGUAGES', '').split(',')
 )
+LEGAL_IS_GREAT_ENABLED_LANGUAGES = (
+    os.getenv('LEGAL_IS_GREAT_ENABLED_LANGUAGES', '').split(',')
+)
 
 # https://github.com/django/django/blob/master/django/conf/locale/__init__.py
 LANGUAGES = helpers.remove_disabled_languages(
@@ -163,6 +166,12 @@ FEATURE_SPORTS_INFRASTRUCTURE_ENABLED = (
 )
 FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = (
     os.getenv('FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED') == 'true'
+)
+FEATURE_FOOD_CAMPAIGN_ENABLED = (
+    os.getenv('FEATURE_FOOD_CAMPAIGN_ENABLED') == 'true'
+)
+FEATURE_LEGAL_CAMPAIGN_ENABLED = (
+    os.getenv('FEATURE_LEGAL_CAMPAIGN_ENABLED') == 'true'
 )
 
 # needed only for dev local storage

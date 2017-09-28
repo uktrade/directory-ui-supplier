@@ -1,0 +1,15 @@
+{% extends 'exportopportunity/lead-generation-success-base.html' %}
+
+{% load trans from i18n %}
+{% load static from staticfiles %}
+
+{% block hero_image %}{% static 'images/covers/unkempt-small-human.jpg' %}{% endblock %}
+
+{% block hero_title %}
+	{% trans "If you want to see more UK legal services suppliers, you can search hundreds of trade profiles from export-ready businesses." %}
+{% endblock %}
+
+{% block hero_button_text %}
+	{% trans "Search legal services" %}
+{% endblock %}
+
