@@ -89,12 +89,10 @@ class ContactCompanyForm(forms.Form):
     )
     captcha = ReCaptchaField()
     terms = forms.BooleanField(
-        error_messages={'required': TERMS_CONDITIONS_MESSAGE}
+        label='',
+        error_messages={'required': TERMS_CONDITIONS_MESSAGE},
+        widget=widgets.PreventRenderWidget
     )
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['terms'].widget = widgets.PreventRenderWidget
 
 
 def serialize_contact_company_form(cleaned_data, company_number):

@@ -12,7 +12,7 @@ boto3==1.4.1
 botocore==1.4.93          # via boto3, s3transfer
 cachetools==2.0.0         # via zenpy
 contextlib2==0.5.5        # via raven
-django-formtools==1.0
+django-formtools==2.0
 django-storages==1.5.1
 django==1.11.5
 django_recaptcha==1.2.0

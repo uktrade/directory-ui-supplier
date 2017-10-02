@@ -4,29 +4,33 @@
 #
 #    pip-compile --output-file requirements_test.txt requirements_test.in
 #
--e git+https://github.com/uktrade/directory-api-client.git@v8.0.0#egg=directory_api_client
--e git+https://github.com/uktrade/directory-constants.git@v3.5.3#egg=directory_constants
--e git+https://github.com/uktrade/directory-validators.git@v3.0.0#egg=directory_validators
--e git+https://github.com/uktrade/directory-signature-auth.git@v1.0.0#egg=sigauth
+-e git+https://github.com/uktrade/directory-api-client.git@v9.0.0#egg=directory_api_client
+-e git+https://github.com/uktrade/directory-constants.git@v4.0.0#egg=directory_constants
+-e git+https://github.com/uktrade/directory-validators.git@v4.0.0#egg=directory_validators
+-e git+https://github.com/uktrade/directory-signature-auth.git@v2.0.0#egg=sigauth
 boto3==1.4.1
+botocore==1.4.93          # via boto3, s3transfer
 cachetools==2.0.0         # via zenpy
 codecov==2.0.9
 contextlib2==0.5.5        # via raven
 coverage==4.4.1           # via codecov, pytest-cov
-django==1.9.13            # via django-recaptcha
-django-formtools==1.0
-django_recaptcha==1.2.0
+django-formtools==2.0
 django-storages==1.5.1
+django==1.11.5
+django_recaptcha==1.2.0
 djangorestframework==3.4.7
+docutils==0.14            # via botocore
 flake8==3.0.4
 freezegun==0.3.8
 gunicorn==19.5.0
+jmespath==0.9.3           # via boto3, botocore
 jsonschema==2.6.0
 mccabe==0.5.3             # via flake8
+mohawk==0.3.4
 monotonic==1.2
 olefile==0.44             # via pillow
 phonenumberslite==7.7.4
-pillow==4.0.0
+pillow==4.2.1
 py==1.4.34                # via pytest, pytest-catchlog
 pycodestyle==2.0.0        # via flake8
 pyflakes==1.2.3           # via flake8
@@ -35,12 +39,14 @@ pytest-cov==2.3.1
 pytest-django==3.0.0
 pytest-sugar==0.8.0
 pytest==3.0.2
-python-dateutil==2.6.0    # via freezegun, zenpy
+python-dateutil==2.6.0    # via botocore, freezegun, zenpy
+pytz==2017.2              # via django
 raven==5.19.0
 redis==2.10.5
 requests==2.11.1
 requests_mock==1.1.0
-six==1.10.0               # via freezegun, python-dateutil, requests-mock
+s3transfer==0.1.11        # via boto3
+six==1.11.0               # via freezegun, mohawk, python-dateutil, requests-mock
 sorl-thumbnail==12.3
 termcolor==1.1.0          # via pytest-sugar
 whitenoise==3.1

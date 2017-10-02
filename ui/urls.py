@@ -2,6 +2,7 @@ from django.conf import settings
 from django.conf.urls import url
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
+from django.views.static import serve
 
 from directory_constants.constants.lead_generation import (
     FOOD_IS_GREAT,
@@ -175,7 +176,7 @@ if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
     urlpatterns += [
         url(
             r'^media/(?P<path>.*)$',
-            'django.views.static.serve',
+            serve,
             {'document_root': settings.MEDIA_ROOT}
         ),
     ]
