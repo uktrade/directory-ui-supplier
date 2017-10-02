@@ -1,0 +1,17 @@
+boto3==1.4.1
+Django==1.11.5
+django-formtools==1.0
+django-storages==1.5.1
+gunicorn==19.5.0
+raven==5.19.0
+requests==2.11.1
+whitenoise==3.1
+jsonschema==2.6.0
+django_recaptcha==1.2.0
+redis==2.10.5
+sorl-thumbnail==12.3
+zenpy==1.1.10
+-e git+https://github.com/uktrade/directory-validators.git@v4.0.0#egg=directory_validators
+-e git+https://github.com/uktrade/directory-signature-auth.git@v2.0.0#egg=sigauth
+-e git+https://github.com/uktrade/directory-api-client.git@v9.0.0#egg=directory_api_client
+-e git+https://github.com/uktrade/directory-constants.git@v4.0.0#egg=directory_constants
