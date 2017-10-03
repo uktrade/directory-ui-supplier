@@ -1,6 +1,6 @@
 from unittest.mock import call, patch, Mock
 
-from directory_constants.constants import lead_generation
+from directory_constants.constants import lead_generation, sectors
 import pytest
 
 from django.core.urlresolvers import reverse
@@ -80,25 +80,29 @@ def test_legal_is_great_feature_flag(url, enabled, status, client, settings):
     assert response.status_code == status
 
 
-@pytest.mark.parametrize('url,sector,template_name', (
+@pytest.mark.parametrize('url,sector,query,template_name', (
     (
         reverse('food-is-great-campaign-france'),
-        'FOOD_AND_DRINK',
+        sectors.FOOD_AND_DRINK,
+        {'sector': sectors.FOOD_AND_DRINK},
         'exportopportunity/campaign-food.html'
     ),
     (
         reverse('food-is-great-campaign-singapore'),
-        'FOOD_AND_DRINK',
+        sectors.FOOD_AND_DRINK,
+        {'sector': sectors.FOOD_AND_DRINK},
         'exportopportunity/campaign-food.html'
     ),
     (
         reverse('legal-is-great-campaign-france'),
-        'LEGAL_SERVICES',
+        sectors.FINANCIAL_AND_PROFESSIONAL_SERVICES,
+        {'campaign_tag': lead_generation.LEGAL_IS_GREAT},
         'exportopportunity/campaign-legal.html'
     ),
     (
         reverse('legal-is-great-campaign-singapore'),
-        'LEGAL_SERVICES',
+        sectors.FINANCIAL_AND_PROFESSIONAL_SERVICES,
+        {'campaign_tag': lead_generation.LEGAL_IS_GREAT},
         'exportopportunity/campaign-legal.html'
     ),
 ))
@@ -108,7 +112,7 @@ def test_legal_is_great_feature_flag(url, enabled, status, client, settings):
               return_value=showcase_case_studies)
 def test_exportopportunity_view_context(
     mock_get_showcase_case_studies, mock_get_showcase_companies, url, sector,
-    template_name, client, settings
+    query, template_name, client, settings
 ):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
 
@@ -120,9 +124,9 @@ def test_exportopportunity_view_context(
     assert response.context['companies'] == showcase_companies
     assert response.context['case_studies'] == showcase_case_studies
     assert mock_get_showcase_companies.call_count == 1
-    assert mock_get_showcase_companies.call_args == call(sector=sector)
+    assert mock_get_showcase_companies.call_args == call(**query)
     assert mock_get_showcase_case_studies.call_count == 1
-    assert mock_get_showcase_case_studies.call_args == call(sector=sector)
+    assert mock_get_showcase_case_studies.call_args == call(**query)
 
 
 @pytest.mark.parametrize('campaign,country,expected', (
@@ -241,7 +245,7 @@ def test_submit_export_opportunity_food(
     assert response.template_name == (
         'exportopportunity/lead-generation-success-food.html'
     )
-    assert response.context['industry'] == 'FOOD_AND_DRINK'
+    assert response.context['industry'] == sectors.FOOD_AND_DRINK
     assert response.context['companies'] == showcase_companies
     assert mock_create_opportunity.call_count == 1
     assert mock_create_opportunity.call_args == call(
@@ -272,5 +276,5 @@ def test_submit_export_opportunity_food(
     )
     assert mock_get_showcase_companies.call_count == 1
     assert mock_get_showcase_companies.call_args == call(
-        sector='FOOD_AND_DRINK'
+        sector=sectors.FOOD_AND_DRINK
     )

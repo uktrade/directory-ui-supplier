@@ -4,7 +4,7 @@ from django.http import Http404
 from django.template.response import TemplateResponse
 from django.views.generic import TemplateView
 
-from directory_constants.constants import choices, lead_generation
+from directory_constants.constants import choices, lead_generation, sectors
 from formtools.wizard.views import SessionWizardView
 
 from api_client import api_client
@@ -13,8 +13,10 @@ from ui.views import ConditionalEnableTranslationsMixin
 
 
 industry_map = {
-    lead_generation.FOOD_IS_GREAT: 'FOOD_AND_DRINK',
-    lead_generation.LEGAL_IS_GREAT: 'LEGAL_SERVICES',
+    lead_generation.FOOD_IS_GREAT: sectors.FOOD_AND_DRINK,
+    lead_generation.LEGAL_IS_GREAT: (
+        sectors.FINANCIAL_AND_PROFESSIONAL_SERVICES
+    ),
 }
 
 
@@ -104,6 +106,8 @@ class BaseCampaignView(ConditionalEnableTranslationsMixin, TemplateView):
     template_name = None
     language_form_class = forms.LanguageCampaignForm
     feature_flag = None
+    query_showcase_resources_by_campaign_tag = False
+    campaign_tag = None
 
     @property
     def industry(self):
@@ -142,10 +146,16 @@ class BaseCampaignView(ConditionalEnableTranslationsMixin, TemplateView):
         )
 
     def get_case_studies(self):
-        return helpers.get_showcase_case_studies(sector=self.industry)
+        return helpers.get_showcase_case_studies(**self.get_showcase_query())
 
     def get_showcase_companies(self):
-        return helpers.get_showcase_companies(sector=self.industry,)
+        return helpers.get_showcase_companies(**self.get_showcase_query())
+
+    def get_showcase_query(self):
+        if self.query_showcase_resources_by_campaign_tag:
+            return {'campaign_tag': self.campaign_tag}
+        else:
+            return {'sector': self.industry}
 
 
 class FoodIsGreatCampaignView(BaseCampaignView):
@@ -162,6 +172,8 @@ class FoodIsGreatCampaignView(BaseCampaignView):
 
 class LegalIsGreatCampaignView(BaseCampaignView):
     template_name = 'exportopportunity/campaign-legal.html'
+    query_showcase_resources_by_campaign_tag = True
+    campaign_tag = lead_generation.LEGAL_IS_GREAT
 
     @property
     def feature_flag(self):

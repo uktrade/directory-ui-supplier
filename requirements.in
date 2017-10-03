@@ -13,5 +13,5 @@ sorl-thumbnail==12.3
 zenpy==1.1.10
 -e git+https://github.com/uktrade/directory-validators.git@v4.0.0#egg=directory_validators
 -e git+https://github.com/uktrade/directory-signature-auth.git@v2.0.0#egg=sigauth
--e git+https://github.com/uktrade/directory-api-client.git@v9.0.0#egg=directory_api_client
+-e git+https://github.com/uktrade/directory-api-client.git@v9.1.0#egg=directory_api_client
 -e git+https://github.com/uktrade/directory-constants.git@v4.0.0#egg=directory_constants
