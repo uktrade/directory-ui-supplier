@@ -38,6 +38,7 @@ class OpportunityBusinessSectorForm(forms.Form):
             'required': MESSAGE_SELECT_BUSINESS_MODEL
         },
         widget=CheckboxSelectInlineLabelMultiple(),
+        initial=' ',  # prevent "other" being selected by default
     )
     business_model_other = forms.CharField(
         label="Your other business types (optional)",
@@ -51,6 +52,7 @@ class OpportunityBusinessSectorForm(forms.Form):
             'required': MESSAGE_SELECT_SECTOR
         },
         widget=CheckboxSelectInlineLabelMultiple(),
+        initial=' ',  # prevent "other" being selected by default
     )
     target_sectors_other = forms.CharField(
         required=False,
@@ -71,6 +73,7 @@ class OpportunityNeedForm(forms.Form):
         help_text=MESSAGE_SELECT_ALL_APPLICABLE,
         choices=choices.PRODUCT_TYPE_OPTIONS + (('', 'Other'),),
         widget=CheckboxSelectInlineLabelMultiple(),
+        initial=' ',  # prevent "other" being selected by default
     )
     products_other = forms.CharField(
         label='Other products you are looking for (optional)',
