@@ -83,11 +83,11 @@ def search_case_study_400(api_response_400):
 
 def test_get_showcase_companies_400(search_company_400):
     with pytest.raises(HTTPError):
-        helpers.get_showcase_companies('AEROSPACE')
+        helpers.get_showcase_companies(sector='AEROSPACE')
 
 
 def test_get_showcase_companies_200(search_company):
-    companies = helpers.get_showcase_companies('AEROSPACE')
+    companies = helpers.get_showcase_companies(sector='AEROSPACE')
 
     assert companies == [
         {
@@ -116,11 +116,13 @@ def test_get_showcase_companies_200(search_company):
 
 def test_get_showcase_case_studies_400(search_case_study_400):
     with pytest.raises(HTTPError):
-        helpers.get_showcase_case_studies('AEROSPACE')
+        helpers.get_showcase_case_studies(sector='AEROSPACE')
 
 
 def test_get_showcase_case_studies_200(search_case_study):
-    case_studies = helpers.get_showcase_case_studies('AEROSPACE')
+    case_studies = helpers.get_showcase_case_studies(
+        sector='AEROSPACE'
+    )
 
     assert case_studies == [
         {
