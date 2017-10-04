@@ -133,7 +133,8 @@ class BaseCampaignView(ConditionalEnableTranslationsMixin, TemplateView):
             companies=self.get_showcase_companies(),
             lead_generation_url=self.get_lead_geneartion_url(),
             industry=self.industry,
-            **kwargs
+            is_lead_generation_enabled=self.is_lead_generation_enabled,
+            **kwargs,
         )
 
     def get_lead_geneartion_url(self):
@@ -157,6 +158,10 @@ class BaseCampaignView(ConditionalEnableTranslationsMixin, TemplateView):
         else:
             return {'sector': self.industry}
 
+    @property
+    def is_lead_generation_enabled(self):
+        return self.kwargs['country'] not in self.disabled_countries
+
 
 class FoodIsGreatCampaignView(BaseCampaignView):
     template_name = 'exportopportunity/campaign-food.html'
@@ -168,6 +173,10 @@ class FoodIsGreatCampaignView(BaseCampaignView):
     @property
     def supported_languages(self):
         return settings.FOOD_IS_GREAT_ENABLED_LANGUAGES
+
+    @property
+    def disabled_countries(self):
+        return settings.FOOD_CAMPAIGN_DISABLED_COUNTRIES
 
 
 class LegalIsGreatCampaignView(BaseCampaignView):
@@ -182,3 +191,7 @@ class LegalIsGreatCampaignView(BaseCampaignView):
     @property
     def supported_languages(self):
         return settings.LEGAL_IS_GREAT_ENABLED_LANGUAGES
+
+    @property
+    def disabled_countries(self):
+        return settings.LEGAL_CAMPAIGN_DISABLED_COUNTRIES

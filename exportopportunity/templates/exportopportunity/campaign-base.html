@@ -71,21 +71,23 @@
 				</div>
 			</div>
 		</div>
-		<br>
-		<div id="ed-lead-generaiton-call-to_action-container">
-			<div class="row-fluid">
-				<div class="span6">
-					<h2>{% block call_to_action_title %}{% endblock %}</h2>
-					<p>{% block call_to_action_paragraph %}{% endblock %}</p>
-				</div>
-				<div class="span6">
-					<a href="{{ lead_generation_url }}" class="button button-primary">
-						{% block call_to_action_button_text %}{% endblock %}
-					</a>
+		{% if is_lead_generation_enabled %}
+			<br>
+			<div id="ed-lead-generaiton-call-to_action-container">
+				<div class="row-fluid">
+					<div class="span6">
+						<h2>{% block call_to_action_title %}{% endblock %}</h2>
+						<p>{% block call_to_action_paragraph %}{% endblock %}</p>
+					</div>
+					<div class="span6">
+						<a href="{{ lead_generation_url }}" class="button button-primary">
+							{% block call_to_action_button_text %}{% endblock %}
+						</a>
+					</div>
 				</div>
 			</div>
-		</div>
-        <br>
+	        <br>
+	    {% endif %}
         <br>
         <div class="ed-carousel-container row-fluid">
           <div class="ed-carousel my-ed-carousel ed-carousel--translate span12">
@@ -164,6 +166,8 @@
             </div>
           </div>
         </div>
+        <br>
+        <br>
         <br>
 		<h2 class="section-header">
 			{% trans "More UK suppliers" %}
