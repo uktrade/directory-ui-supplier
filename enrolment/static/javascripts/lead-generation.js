@@ -39,6 +39,9 @@ GOVUK.utils.toggleOtherOnClick = (function() {
       hideInputBox();
     }
     hideInputBoxLabel();
-    tickboxes.lastChild.addEventListener('change', handleCheckboxChange);
+
+    var options = tickboxes.getElementsByTagName('input');
+    var otherInput = options[options.length -1];
+    otherInput.addEventListener('change', handleCheckboxChange);
   };
 })();
