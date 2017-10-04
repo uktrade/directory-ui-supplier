@@ -174,6 +174,13 @@ FEATURE_LEGAL_CAMPAIGN_ENABLED = (
     os.getenv('FEATURE_LEGAL_CAMPAIGN_ENABLED') == 'true'
 )
 
+FOOD_CAMPAIGN_DISABLED_COUNTRIES = os.getenv(
+    'FOOD_CAMPAIGN_DISABLED_COUNTRIES', ''
+).split(',')
+LEGAL_CAMPAIGN_DISABLED_COUNTRIES = os.getenv(
+    'LEGAL_CAMPAIGN_DISABLED_COUNTRIES', ''
+).split(',')
+
 # needed only for dev local storage
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 MEDIA_URL = '/media/'

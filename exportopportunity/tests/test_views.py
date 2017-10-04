@@ -129,13 +129,78 @@ def test_exportopportunity_view_context(
     assert mock_get_showcase_case_studies.call_args == call(**query)
 
 
+@pytest.mark.parametrize('url,disabled_countries,expected', (
+    (
+        reverse('legal-is-great-campaign-singapore'),
+        ['france', 'singapore'],
+        False
+    ),
+    (
+        reverse('legal-is-great-campaign-france'),
+        ['france', 'singapore'],
+        False
+    ),
+    (reverse('legal-is-great-campaign-singapore'), ['france'], True),
+    (reverse('legal-is-great-campaign-france'),    ['france'], False),
+    (reverse('legal-is-great-campaign-singapore'), ['singapore'], False),
+    (reverse('legal-is-great-campaign-france'),    ['singapore'], True),
+))
+@patch.object(views.helpers, 'get_showcase_companies',
+              return_value=showcase_companies)
+@patch.object(views.helpers, 'get_showcase_case_studies',
+              return_value=showcase_case_studies)
+def test_exportopportunity_disabled_countries_lead_generation_legal(
+    mock_get_showcase_case_studies, mock_get_showcase_companies,
+    disabled_countries, expected, url, client, settings
+):
+    settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
+    settings.LEGAL_CAMPAIGN_DISABLED_COUNTRIES = disabled_countries
+    response = client.get(url)
+
+    assert response.status_code == 200
+    assert response.context['is_lead_generation_enabled'] == expected
+
+
+@pytest.mark.parametrize('url,disabled_countries,expected', (
+    (
+        reverse('food-is-great-campaign-singapore'),
+        ['france', 'singapore'],
+        False
+    ),
+    (
+        reverse('food-is-great-campaign-france'),
+        ['france', 'singapore'],
+        False
+    ),
+    (reverse('food-is-great-campaign-singapore'), ['france'], True),
+    (reverse('food-is-great-campaign-france'),    ['france'], False),
+    (reverse('food-is-great-campaign-singapore'), ['singapore'], False),
+    (reverse('food-is-great-campaign-france'),    ['singapore'], True),
+))
+@patch.object(views.helpers, 'get_showcase_companies',
+              return_value=showcase_companies)
+@patch.object(views.helpers, 'get_showcase_case_studies',
+              return_value=showcase_case_studies)
+def test_exportopportunity_disabled_countries_lead_generation_food(
+    mock_get_showcase_case_studies, mock_get_showcase_companies,
+    disabled_countries, expected, url, client, settings
+):
+    settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
+    settings.FOOD_CAMPAIGN_DISABLED_COUNTRIES = disabled_countries
+
+    response = client.get(url)
+
+    assert response.status_code == 200
+    assert response.context['is_lead_generation_enabled'] == expected
+
+
 @pytest.mark.parametrize('campaign,country,expected', (
     (lead_generation.FOOD_IS_GREAT,  lead_generation.SINGAPORE, 200),
     (lead_generation.FOOD_IS_GREAT,  lead_generation.FRANCE,    200),
     (lead_generation.LEGAL_IS_GREAT, lead_generation.SINGAPORE, 200),
     (lead_generation.LEGAL_IS_GREAT, lead_generation.FRANCE,    200),
-    ('food-is-ungreat',      lead_generation.SINGAPORE, 404),
-    (lead_generation.FOOD_IS_GREAT,  'themoon',         404),
+    ('food-is-ungreat',              lead_generation.SINGAPORE, 404),
+    (lead_generation.FOOD_IS_GREAT,  'themoon',                 404),
 
 ))
 def test_lead_generation_submit_campaign_country(
