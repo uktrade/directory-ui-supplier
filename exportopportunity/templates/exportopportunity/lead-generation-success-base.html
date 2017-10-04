@@ -60,7 +60,7 @@
 							<p>{% trans 'Incorporated in: ' %}<strong>{{ company.date_of_creation|date:"Y" }}</strong></p>
 						{% endif %}
 						<p>{% trans 'Number of employees: ' %}<strong>{{ company.number_of_employees }}</strong></p>
-						<p><a href="{{ company.profile_url }}">{% trans 'view profile' %}</a></p>
+						<p><a href="{{ company.public_profile_url }}">{% trans 'view profile' %}</a></p>
 					</div>
 				</div>
 			{% endfor %}
