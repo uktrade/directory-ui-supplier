@@ -150,7 +150,7 @@ urlpatterns = [
         name='food-is-great-campaign-france',
     ),
     url(
-        r'^campaign/food-is-great/singapore$',
+        r'^campaign/food-is-great/singapore/$',
         exportopportunity_views.FoodIsGreatCampaignView.as_view(),
         {'campaign': FOOD_IS_GREAT, 'country': SINGAPORE},
         name='food-is-great-campaign-singapore',
@@ -163,7 +163,7 @@ urlpatterns = [
         name='legal-is-great-campaign-france',
     ),
     url(
-        r'^campaign/legal-is-great/singapore$',
+        r'^campaign/legal-is-great/singapore/$',
         exportopportunity_views.LegalIsGreatCampaignView.as_view(),
         {'campaign': LEGAL_IS_GREAT, 'country': SINGAPORE},
         name='legal-is-great-campaign-singapore',
