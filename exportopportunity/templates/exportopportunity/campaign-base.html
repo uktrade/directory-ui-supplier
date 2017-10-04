@@ -17,7 +17,7 @@
 
 {% block hero_text %}
 	<br>
-	<div class="span4" style="margin-left: 0;">{% block hero_subtitle %}{% endblock hero_subtitle %}</div>
+	<div class="{% block hero_subtitle_classname %}span4{% endblock %}" style="margin-left: 0;">{% block hero_subtitle %}{% endblock hero_subtitle %}</div>
 {% endblock hero_text %}
 
 {% block content %}
