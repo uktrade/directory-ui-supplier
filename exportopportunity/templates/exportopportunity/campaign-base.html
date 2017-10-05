@@ -114,7 +114,7 @@
                     <h3>{% block carousel_slide_one_subtitle %}{% endblock %}</h3>
                     <p>{% block carousel_slide_one_paragraph %}{% endblock %}</p>
                     <br>
-                    <a href="{% search_url industry %}" class="button button-primary">
+                    <a href="{% search_url sector_value=industry term=search_keyword  %}" class="button button-primary">
                         {% block carousel_slide_one_button_text %}{% endblock %}
                     </a>
                 </div>

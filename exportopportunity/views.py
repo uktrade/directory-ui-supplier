@@ -14,9 +14,7 @@ from ui.views import ConditionalEnableTranslationsMixin
 
 industry_map = {
     lead_generation.FOOD_IS_GREAT: sectors.FOOD_AND_DRINK,
-    lead_generation.LEGAL_IS_GREAT: (
-        sectors.FINANCIAL_AND_PROFESSIONAL_SERVICES
-    ),
+    lead_generation.LEGAL_IS_GREAT: 'LEGAL',
 }
 
 
@@ -108,6 +106,7 @@ class BaseCampaignView(ConditionalEnableTranslationsMixin, TemplateView):
     feature_flag = None
     query_showcase_resources_by_campaign_tag = False
     campaign_tag = None
+    search_keyword = None
 
     @property
     def industry(self):
@@ -134,6 +133,7 @@ class BaseCampaignView(ConditionalEnableTranslationsMixin, TemplateView):
             lead_generation_url=self.get_lead_geneartion_url(),
             industry=self.industry,
             is_lead_generation_enabled=self.is_lead_generation_enabled,
+            search_keyword=self.search_keyword,
             **kwargs,
         )
 
@@ -178,6 +178,10 @@ class FoodIsGreatCampaignView(BaseCampaignView):
     def disabled_countries(self):
         return settings.FOOD_CAMPAIGN_DISABLED_COUNTRIES
 
+    @property
+    def search_keyword(self):
+        return settings.FOOD_IS_GREAT_SEARCH_KEYWORD
+
 
 class LegalIsGreatCampaignView(BaseCampaignView):
     template_name = 'exportopportunity/campaign-legal.html'
@@ -195,3 +199,7 @@ class LegalIsGreatCampaignView(BaseCampaignView):
     @property
     def disabled_countries(self):
         return settings.LEGAL_CAMPAIGN_DISABLED_COUNTRIES
+
+    @property
+    def search_keyword(self):
+        return settings.LEGAL_IS_GREAT_SEARCH_KEYWORD

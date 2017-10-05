@@ -80,30 +80,34 @@ def test_legal_is_great_feature_flag(url, enabled, status, client, settings):
     assert response.status_code == status
 
 
-@pytest.mark.parametrize('url,sector,query,template_name', (
+@pytest.mark.parametrize('url,sector,query,template_name,search_keyword', (
     (
         reverse('food-is-great-campaign-france'),
         sectors.FOOD_AND_DRINK,
         {'sector': sectors.FOOD_AND_DRINK},
-        'exportopportunity/campaign-food.html'
+        'exportopportunity/campaign-food.html',
+        '',
     ),
     (
         reverse('food-is-great-campaign-singapore'),
         sectors.FOOD_AND_DRINK,
         {'sector': sectors.FOOD_AND_DRINK},
-        'exportopportunity/campaign-food.html'
+        'exportopportunity/campaign-food.html',
+        '',
     ),
     (
         reverse('legal-is-great-campaign-france'),
-        sectors.FINANCIAL_AND_PROFESSIONAL_SERVICES,
+        'LEGAL',
         {'campaign_tag': lead_generation.LEGAL_IS_GREAT},
-        'exportopportunity/campaign-legal.html'
+        'exportopportunity/campaign-legal.html',
+        'legal',
     ),
     (
         reverse('legal-is-great-campaign-singapore'),
-        sectors.FINANCIAL_AND_PROFESSIONAL_SERVICES,
+        'LEGAL',
         {'campaign_tag': lead_generation.LEGAL_IS_GREAT},
-        'exportopportunity/campaign-legal.html'
+        'exportopportunity/campaign-legal.html',
+        'legal',
     ),
 ))
 @patch.object(views.helpers, 'get_showcase_companies',
@@ -112,7 +116,7 @@ def test_legal_is_great_feature_flag(url, enabled, status, client, settings):
               return_value=showcase_case_studies)
 def test_exportopportunity_view_context(
     mock_get_showcase_case_studies, mock_get_showcase_companies, url, sector,
-    query, template_name, client, settings
+    query, template_name, client, settings, search_keyword
 ):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
 
@@ -123,6 +127,7 @@ def test_exportopportunity_view_context(
     assert response.context['industry'] == sector
     assert response.context['companies'] == showcase_companies
     assert response.context['case_studies'] == showcase_case_studies
+    assert response.context['search_keyword'] == search_keyword
     assert mock_get_showcase_companies.call_count == 1
     assert mock_get_showcase_companies.call_args == call(**query)
     assert mock_get_showcase_case_studies.call_count == 1
