@@ -15,6 +15,11 @@ h2 {
 .supplier-case-study-detail {
   margin-top: $spacing-2;
   position: relative;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 #case-study-testomonial {
@@ -31,8 +36,8 @@ h2 {
   }
 
   dd:after {
-  	content: "";
-  	display: block;
+    content: "";
+    display: block;
   }
   
   dl {
