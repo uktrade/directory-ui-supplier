@@ -3,15 +3,16 @@
 #ed-lead-generaiton-call-to_action-container {
     background-color: #F5F4F0;
     position: relative;
+    padding: 30px;
     @media (min-width: 640px) {
-        padding: 50px;
+      padding: 50px;
+      a {
+          position: absolute;
+          top: 40%;
+          right: 16%;
+      }
     }
 
-    a {
-        position: absolute;
-        top: 40%;
-        right: 16%;
-    }
 
 }
 #ed-proposition-columns {
@@ -33,12 +34,24 @@
 }
 
 .ed-carousel {
+  position: relative;
   height: 500px;
   overflow: hidden;
   position: relative;
   padding: 0;
   list-style: none;
   margin: 0;
+  @media (max-width: 640px) { 
+    height: 650px;
+  }
+}
+
+.ed-carousel__controls {
+  @media (max-width: 640px) { 
+    bottom: 150px;
+    position: absolute;
+    width: 100%;
+  }
 }
 .ed-carousel__controls,
 .ed-carousel__activator {
@@ -125,6 +138,9 @@
   bottom: 0;
   width: 100%;
   text-align: center;
+  @media (max-width: 640px) { 
+    bottom: 135px;
+  }
 }
 .ed-carousel__indicator {
   height: 15px;
@@ -177,6 +193,13 @@
   padding-left: 60px;
   padding-right: 50px;
   padding-bottom: 40px;
+  @media (max-width: 640px) { 
+    padding-left: 10px;
+    padding-right: 10px;
+    .button {
+      bottom: -110px;
+    }
+  }
 }
 .ed-carousel-container {
   display: inline-block;
@@ -197,6 +220,10 @@
   line-height: 1.25em;
   font-weight: 500;
   padding-top: 32px;
+
+  @media (max-width: 640px) {
+    font-size: 24px;
+  }
 }
 .ed-carousel__slide__image {
   height: 100%;
@@ -219,7 +246,7 @@
   height: 30px;
   width: 30px;
 }
-@media (max-width: 400px) {
+@media (max-width: 640px) {
   .ed-carousel {
     max-width: 300px;
   }
