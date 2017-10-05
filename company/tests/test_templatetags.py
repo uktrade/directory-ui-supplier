@@ -212,13 +212,25 @@ def test_search_url_handles_company_classification(filter_value, expected):
     assert value == reverse('company-search') + expected
 
 
-def test_search_url_handles_company_ternm():
+def test_search_url_handles_company_term():
     value = company_tags.search_url(sector_value='SMART_CITIES', term='thing')
 
     expected = (
         '?sectors=ELECTRONICS_AND_IT_HARDWARE'
         '&sectors=SOFTWARE_AND_COMPUTER_SERVICES'
         '&term=thing'
+    )
+
+    assert value == reverse('company-search') + expected
+
+
+def test_search_url_handles_company_term_legal():
+    value = company_tags.search_url(sector_value='LEGAL', term='legal')
+
+    expected = (
+        '?sectors=FINANCIAL_AND_PROFESSIONAL_SERVICES'
+        '&sectors=LEGAL_SERVICES'
+        '&term=legal'
     )
 
     assert value == reverse('company-search') + expected

@@ -97,14 +97,14 @@ def test_legal_is_great_feature_flag(url, enabled, status, client, settings):
     ),
     (
         reverse('legal-is-great-campaign-france'),
-        sectors.FINANCIAL_AND_PROFESSIONAL_SERVICES,
+        'LEGAL',
         {'campaign_tag': lead_generation.LEGAL_IS_GREAT},
         'exportopportunity/campaign-legal.html',
         'legal',
     ),
     (
         reverse('legal-is-great-campaign-singapore'),
-        sectors.FINANCIAL_AND_PROFESSIONAL_SERVICES,
+        'LEGAL',
         {'campaign_tag': lead_generation.LEGAL_IS_GREAT},
         'exportopportunity/campaign-legal.html',
         'legal',

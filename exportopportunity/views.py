@@ -14,9 +14,7 @@ from ui.views import ConditionalEnableTranslationsMixin
 
 industry_map = {
     lead_generation.FOOD_IS_GREAT: sectors.FOOD_AND_DRINK,
-    lead_generation.LEGAL_IS_GREAT: (
-        sectors.FINANCIAL_AND_PROFESSIONAL_SERVICES
-    ),
+    lead_generation.LEGAL_IS_GREAT: 'LEGAL',
 }
 
 

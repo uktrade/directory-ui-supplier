@@ -47,8 +47,8 @@ def search_url(sector_value=None, term=None):
         params['sectors'] = sectors
     if term:
         params['term'] = term
-    queyrstring = urllib.parse.urlencode(params, doseq=True)
-    return reverse('company-search') + '?' + queyrstring
+    querystring = urllib.parse.urlencode(params, doseq=True)
+    return reverse('company-search') + '?' + querystring
 
 
 @register.simple_tag(takes_context=True)
