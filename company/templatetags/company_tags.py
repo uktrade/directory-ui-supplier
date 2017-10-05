@@ -1,3 +1,4 @@
+from collections import OrderedDict
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import urllib.parse
@@ -39,10 +40,15 @@ def date_recency(value):
 
 
 @register.simple_tag
-def search_url(sector_value):
-    sectors = SECTOR_FILTER_GROUPS.get(sector_value, {sector_value})
-    queyrstring = urllib.parse.urlencode({'sectors': sectors}, doseq=True)
-    return reverse('company-search') + '?' + queyrstring
+def search_url(sector_value=None, term=None):
+    params = OrderedDict()
+    if sector_value:
+        sectors = SECTOR_FILTER_GROUPS.get(sector_value, {sector_value})
+        params['sectors'] = sectors
+    if term:
+        params['term'] = term
+    querystring = urllib.parse.urlencode(params, doseq=True)
+    return reverse('company-search') + '?' + querystring
 
 
 @register.simple_tag(takes_context=True)
