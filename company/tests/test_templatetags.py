@@ -212,6 +212,18 @@ def test_search_url_handles_company_classification(filter_value, expected):
     assert value == reverse('company-search') + expected
 
 
+def test_search_url_handles_company_ternm():
+    value = company_tags.search_url(sector_value='SMART_CITIES', term='thing')
+
+    expected = (
+        '?sectors=ELECTRONICS_AND_IT_HARDWARE'
+        '&sectors=SOFTWARE_AND_COMPUTER_SERVICES'
+        '&term=thing'
+    )
+
+    assert value == reverse('company-search') + expected
+
+
 @pytest.mark.parametrize('pagination,form,expected', [
     [
         Paginator(range(30), 3).page(1),

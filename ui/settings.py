@@ -123,8 +123,13 @@ DISABLED_LANGUAGES_SUBMIT_OPPORTUNITY_PAGES = (
 FOOD_IS_GREAT_ENABLED_LANGUAGES = (
     os.getenv('FOOD_IS_GREAT_ENABLED_LANGUAGES', '').split(',')
 )
+FOOD_IS_GREAT_SEARCH_KEYWORD = os.getenv('FOOD_IS_GREAT_SEARCH_KEYWORD', '')
+
 LEGAL_IS_GREAT_ENABLED_LANGUAGES = (
     os.getenv('LEGAL_IS_GREAT_ENABLED_LANGUAGES', '').split(',')
+)
+LEGAL_IS_GREAT_SEARCH_KEYWORD = os.getenv(
+    'LEGAL_IS_GREAT_SEARCH_KEYWORD', 'legal'
 )
 
 # https://github.com/django/django/blob/master/django/conf/locale/__init__.py
