@@ -32,13 +32,7 @@ def showcase_objects():
 @pytest.mark.parametrize('enabled,status', ((False, 404), (True, 200)))
 def test_lead_generation_feature_flag(enabled, status, client, settings):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = enabled
-    url = reverse(
-        'lead-generation-submit',
-        kwargs={
-            'campaign': lead_generation.FOOD_IS_GREAT,
-            'country': lead_generation.FRANCE
-        }
-    )
+    url = reverse('food-is-great-lead-generation-submit-france')
     response = client.get(url)
 
     assert response.status_code == status
@@ -199,29 +193,6 @@ def test_exportopportunity_disabled_countries_lead_generation_food(
     assert response.context['is_lead_generation_enabled'] == expected
 
 
-@pytest.mark.parametrize('campaign,country,expected', (
-    (lead_generation.FOOD_IS_GREAT,  lead_generation.SINGAPORE, 200),
-    (lead_generation.FOOD_IS_GREAT,  lead_generation.FRANCE,    200),
-    (lead_generation.LEGAL_IS_GREAT, lead_generation.SINGAPORE, 200),
-    (lead_generation.LEGAL_IS_GREAT, lead_generation.FRANCE,    200),
-    ('food-is-ungreat',              lead_generation.SINGAPORE, 404),
-    (lead_generation.FOOD_IS_GREAT,  'themoon',                 404),
-
-))
-def test_lead_generation_submit_campaign_country(
-    showcase_objects, campaign, country, expected, client, settings
-):
-    settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
-
-    url = reverse(
-        'lead-generation-submit',
-        kwargs={'campaign': campaign, 'country': country}
-    )
-    response = client.get(url)
-
-    assert response.status_code == expected
-
-
 @pytest.mark.parametrize('url,languages', (
     (
         reverse('food-is-great-campaign-france'),
@@ -253,60 +224,62 @@ def test_campaign_language_switcher(
     assert form.fields['lang'].choices == languages
 
 
+@pytest.mark.parametrize('url,country', (
+    (
+        reverse('food-is-great-lead-generation-submit-france'),
+        lead_generation.FRANCE,
+    ),
+    (
+        reverse('food-is-great-lead-generation-submit-singapore'),
+        lead_generation.SINGAPORE,
+    ),
+))
 @patch.object(views.helpers, 'get_showcase_companies',
               return_value=showcase_companies)
-@patch.object(views.api_client.exportopportunity, 'create_opportunity')
+@patch.object(views.api_client.exportopportunity, 'create_opportunity_food')
 def test_submit_export_opportunity_food(
     mock_create_opportunity, mock_get_showcase_companies, client,
-    api_response_200, settings, captcha_stub
+    api_response_200, settings, captcha_stub, url, country
 ):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
     mock_create_opportunity.return_value = api_response_200
-    view = views.SubmitExportOpportunityWizardView
-    url = reverse(
-        'lead-generation-submit',
-        kwargs={
-            'campaign': lead_generation.FOOD_IS_GREAT,
-            'country': lead_generation.FRANCE
-        }
-    )
-    view_name = 'submit_export_opportunity_wizard_view'
-
+    view_class = views.FoodIsGreatOpportunityWizardView
+    view_name = 'food_is_great_opportunity_wizard_view'
     client.post(
         url,
         {
-            view_name + '-current_step': view.SECTOR,
-            view.SECTOR + '-business_model': 'distribution',
-            view.SECTOR + '-business_model_other': 'things',
-            view.SECTOR + '-target_sectors': 'retail',
-            view.SECTOR + '-target_sectors_other': 'things',
-            view.SECTOR + '-locality': lead_generation.FRANCE,
+            view_name + '-current_step': view_class.SECTOR,
+            view_class.SECTOR + '-business_model': 'distribution',
+            view_class.SECTOR + '-business_model_other': 'things',
+            view_class.SECTOR + '-target_sectors': 'retail',
+            view_class.SECTOR + '-target_sectors_other': 'things',
+            view_class.SECTOR + '-locality': country,
         }
     )
     client.post(
         url,
         {
-            view_name + '-current_step': view.NEEDS,
-            view.NEEDS + '-products': ['DISCOUNT'],
-            view.NEEDS + '-products_other': 'things',
-            view.NEEDS + '-order_size': '1-1000',
-            view.NEEDS + '-order_deadline': '1-3 MONTHS',
-            view.NEEDS + '-additional_requirements': 'give me things',
+            view_name + '-current_step': view_class.NEEDS,
+            view_class.NEEDS + '-products': ['DISCOUNT'],
+            view_class.NEEDS + '-products_other': 'things',
+            view_class.NEEDS + '-order_size': '1-1000',
+            view_class.NEEDS + '-order_deadline': '1-3 MONTHS',
+            view_class.NEEDS + '-additional_requirements': 'give me things',
         }
     )
     response = client.post(
         url,
         {
-            view_name + '-current_step': view.CONTACT,
-            view.CONTACT + '-full_name': 'jim example',
-            view.CONTACT + '-job_title': 'Exampler',
-            view.CONTACT + '-email_address': 'jim@exmaple.com',
-            view.CONTACT + '-email_address_confirm': 'jim@exmaple.com',
-            view.CONTACT + '-company_name': 'Jim corp',
-            view.CONTACT + '-company_website': 'http://www.example.com',
-            view.CONTACT + '-phone_number': '07507605844',
-            view.CONTACT + '-contact_preference': ['EMAIL', 'PHONE'],
-            view.CONTACT + '-terms_agreed': True,
+            view_name + '-current_step': view_class.CONTACT,
+            view_class.CONTACT + '-full_name': 'jim example',
+            view_class.CONTACT + '-job_title': 'Exampler',
+            view_class.CONTACT + '-email_address': 'jim@exmaple.com',
+            view_class.CONTACT + '-email_address_confirm': 'jim@exmaple.com',
+            view_class.CONTACT + '-company_name': 'Jim corp',
+            view_class.CONTACT + '-company_website': 'http://www.example.com',
+            view_class.CONTACT + '-phone_number': '07507605844',
+            view_class.CONTACT + '-contact_preference': ['EMAIL', 'PHONE'],
+            view_class.CONTACT + '-terms_agreed': True,
             'recaptcha_response_field': captcha_stub,
         }
     )
@@ -331,7 +304,7 @@ def test_submit_export_opportunity_food(
             'email_address_confirm': 'jim@exmaple.com',
             'full_name': 'jim example',
             'job_title': 'Exampler',
-            'locality': lead_generation.FRANCE,
+            'locality': country,
             'order_deadline': '1-3 MONTHS',
             'order_size': '1-1000',
             'phone_number': '07507605844',
@@ -341,10 +314,103 @@ def test_submit_export_opportunity_food(
             'target_sectors_other': 'things',
             'terms_agreed': True,
             'campaign': lead_generation.FOOD_IS_GREAT,
-            'country': lead_generation.FRANCE,
+            'country': country,
         }
     )
     assert mock_get_showcase_companies.call_count == 1
     assert mock_get_showcase_companies.call_args == call(
         sector=sectors.FOOD_AND_DRINK
+    )
+
+
+@pytest.mark.parametrize('url,country', (
+    (
+        reverse('legal-is-great-lead-generation-submit-france'),
+        lead_generation.FRANCE,
+    ),
+    (
+        reverse('legal-is-great-lead-generation-submit-singapore'),
+        lead_generation.SINGAPORE,
+    ),
+))
+@patch.object(views.helpers, 'get_showcase_companies',
+              return_value=showcase_companies)
+@patch.object(views.api_client.exportopportunity, 'create_opportunity_legal')
+def test_submit_export_opportunity_legal(
+    mock_create_opportunity, mock_get_showcase_companies, client,
+    api_response_200, settings, captcha_stub, url, country
+):
+    settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
+    mock_create_opportunity.return_value = api_response_200
+    view_class = views.LegalIsGreatOpportunityWizardView
+    view_name = 'legal_is_great_opportunity_wizard_view'
+    client.post(
+        url,
+        {
+            view_name + '-current_step': view_class.SECTOR,
+            view_class.SECTOR + '-advice_type': ['Business-start-up-advice'],
+            view_class.SECTOR + '-advice_type_other': 'things',
+            view_class.SECTOR + '-target_sectors': sectors.TECHNOLOGY,
+            view_class.SECTOR + '-target_sectors_other': 'things',
+            view_class.SECTOR + '-locality': country,
+        }
+    )
+    client.post(
+        url,
+        {
+            view_name + '-current_step': view_class.NEEDS,
+            view_class.NEEDS + '-order_deadline': '1-3 MONTHS',
+            view_class.NEEDS + '-additional_requirements': 'give me things',
+        }
+    )
+    response = client.post(
+        url,
+        {
+            view_name + '-current_step': view_class.CONTACT,
+            view_class.CONTACT + '-full_name': 'jim example',
+            view_class.CONTACT + '-job_title': 'Exampler',
+            view_class.CONTACT + '-email_address': 'jim@exmaple.com',
+            view_class.CONTACT + '-email_address_confirm': 'jim@exmaple.com',
+            view_class.CONTACT + '-company_name': 'Jim corp',
+            view_class.CONTACT + '-company_website': 'http://www.example.com',
+            view_class.CONTACT + '-phone_number': '07507605844',
+            view_class.CONTACT + '-contact_preference': ['EMAIL', 'PHONE'],
+            view_class.CONTACT + '-terms_agreed': True,
+            'recaptcha_response_field': captcha_stub,
+        }
+    )
+
+    assert response.status_code == 200
+    assert response.template_name == (
+        'exportopportunity/lead-generation-success-legal.html'
+    )
+    assert response.context['industry'] == sectors.LEGAL
+    assert response.context['companies'] == showcase_companies
+    assert mock_create_opportunity.call_count == 1
+    assert mock_create_opportunity.call_args == call(
+        form_data={
+           'company_name': 'Jim corp',
+           'captcha': None,
+           'full_name': 'jim example',
+           'phone_number': '07507605844',
+           'advice_type_other': 'things',
+           'campaign': 'legal-is-great',
+           'job_title': 'Exampler',
+           'contact_preference': ['EMAIL', 'PHONE'],
+           'target_sectors_other': 'things',
+           'order_deadline': '1-3 MONTHS',
+           'country': country,
+           'email_address': 'jim@exmaple.com',
+           'email_address_confirm': 'jim@exmaple.com',
+           'target_sectors': ['TECHNOLOGY'],
+           'advice_type': ['Business-start-up-advice'],
+           'locality': country,
+           'terms_agreed': True,
+           'company_website': 'http://www.example.com',
+           'additional_requirements': 'give me things'
+        }
+    )
+    assert mock_get_showcase_companies.call_count == 1
+    assert mock_get_showcase_companies.call_args == call(
+        campaign_tag=lead_generation.LEGAL_IS_GREAT,
     )

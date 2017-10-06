@@ -2,12 +2,13 @@ from django.conf import settings
 
 from enrolment import constants
 
-from directory_constants.constants.choices import INDUSTRIES
+from directory_constants.constants import choices
+from directory_constants.constants import sectors
 
 
 valid_sectors = (
-    [value for value, label in INDUSTRIES] +
-    list(constants.SECTOR_FILTER_GROUPS.keys())
+    [value for value, label in choices.INDUSTRIES] +
+    list(sectors.CONFLATED.keys())
 )
 
 

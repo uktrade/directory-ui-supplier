@@ -139,9 +139,29 @@ urlpatterns = [
         name='anonymous-unsubscribe'
     ),
     url(
-        r'^export-opportunity/(?P<campaign>.*)/(?P<country>.*)/$',
-        exportopportunity_views.SubmitExportOpportunityWizardView.as_view(),
-        name='lead-generation-submit',
+        r'^export-opportunity/food-is-great/france/$',
+        exportopportunity_views.FoodIsGreatOpportunityWizardView.as_view(),
+        {'campaign': FOOD_IS_GREAT, 'country': FRANCE},
+        name='food-is-great-lead-generation-submit-france',
+    ),
+    url(
+        r'^export-opportunity/food-is-great/singapore/$',
+        exportopportunity_views.FoodIsGreatOpportunityWizardView.as_view(),
+        {'campaign': FOOD_IS_GREAT, 'country': SINGAPORE},
+        name='food-is-great-lead-generation-submit-singapore',
+    ),
+
+    url(
+        r'^export-opportunity/legal-is-great/france/$',
+        exportopportunity_views.LegalIsGreatOpportunityWizardView.as_view(),
+        {'campaign': LEGAL_IS_GREAT, 'country': FRANCE},
+        name='legal-is-great-lead-generation-submit-france',
+    ),
+    url(
+        r'^export-opportunity/legal-is-great/singapore/$',
+        exportopportunity_views.LegalIsGreatOpportunityWizardView.as_view(),
+        {'campaign': LEGAL_IS_GREAT, 'country': SINGAPORE},
+        name='legal-is-great-lead-generation-submit-singapore',
     ),
     url(
         r'^campaign/food-is-great/france/$',

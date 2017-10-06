@@ -5,7 +5,7 @@ from exportopportunity import forms
 
 
 def test_opportunity_business_sector_required_fields():
-    form = forms.OpportunityBusinessSectorForm()
+    form = forms.OpportunityBusinessSectorFoodForm()
 
     assert form.fields['business_model'].required is True
     assert form.fields['target_sectors'].required is True
@@ -14,7 +14,7 @@ def test_opportunity_business_sector_required_fields():
 
 
 def test_opportunity_business_sector_validation_messages():
-    form = forms.OpportunityBusinessSectorForm(data={})
+    form = forms.OpportunityBusinessSectorFoodForm(data={})
 
     assert form.errors['business_model'] == (
         [form.MESSAGE_SELECT_BUSINESS_MODEL]
@@ -23,8 +23,8 @@ def test_opportunity_business_sector_validation_messages():
 
 
 def test_opportunity_business_invalid_locality():
-    form = forms.OpportunityBusinessSectorForm(data={
-        'locality': forms.OpportunityBusinessSectorForm.OTHER
+    form = forms.OpportunityBusinessSectorFoodForm(data={
+        'locality': forms.OpportunityBusinessSectorFoodForm.OTHER
     })
 
     assert form.is_valid() is False
@@ -33,8 +33,8 @@ def test_opportunity_business_invalid_locality():
 
 @pytest.mark.parametrize('locality', choices.LEAD_GENERATION_COUNTRIES)
 def test_opportunity_business_valid_locality(locality):
-    form = forms.OpportunityBusinessSectorForm(data={
-        'locality': locality,
+    form = forms.OpportunityBusinessSectorFoodForm(data={
+        'locality': locality[0],
     })
 
     form.is_valid()
@@ -42,7 +42,7 @@ def test_opportunity_business_valid_locality(locality):
 
 
 def test_opportunity_need_required_field():
-    form = forms.OpportunityNeedForm()
+    form = forms.OpportunityNeedFoodForm()
 
     assert form.fields['products'].required is True
     assert form.fields['order_size'].required is True
@@ -52,7 +52,7 @@ def test_opportunity_need_required_field():
 
 
 def test_opportunity_need_validation_messages():
-    form = forms.OpportunityNeedForm(data={})
+    form = forms.OpportunityNeedFoodForm(data={})
 
     assert form.errors['order_deadline'] == [form.MESSAGE_SELECT_TIMESCALE]
 
