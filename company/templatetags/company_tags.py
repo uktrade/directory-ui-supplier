@@ -7,7 +7,7 @@ from django import template
 from django.core.paginator import EmptyPage
 from django.core.urlresolvers import reverse
 
-from enrolment.constants import SECTOR_FILTER_GROUPS
+from directory_constants.constants.sectors import CONFLATED
 
 
 register = template.Library()
@@ -43,7 +43,7 @@ def date_recency(value):
 def search_url(sector_value=None, term=None):
     params = OrderedDict()
     if sector_value:
-        sectors = SECTOR_FILTER_GROUPS.get(sector_value, {sector_value})
+        sectors = CONFLATED.get(sector_value, {sector_value})
         params['sectors'] = sectors
     if term:
         params['term'] = term

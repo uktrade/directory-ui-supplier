@@ -16,22 +16,66 @@ from company.widgets import (
 MESSAGE_SELECT_ALL_APPLICABLE = 'Select all that apply'
 MESSAGE_CHOOSE = 'Please choose an option'
 
-locality_options = [[i, i.title()] for i in choices.LEAD_GENERATION_COUNTRIES]
 
-
-class OpportunityBusinessSectorForm(forms.Form):
+class OpportunityBusinessSectorBaseForm(forms.Form):
     error_css_class = 'input-field-container has-error'
-    MESSAGE_SELECT_BUSINESS_MODEL = 'Select a type of business'
     MESSAGE_SELECT_SECTOR = 'Select a type of business'
     MESSAGE_UNSUPPORTED_LOCALITY = 'Sorry. We do not support that region yet.'
     OTHER = 'OTHER'
 
     locality = forms.ChoiceField(
         label="Which country are you based in?",
-        choices=[['', MESSAGE_CHOOSE]] + locality_options + [[OTHER, 'Other']]
+        choices=(
+            [['', MESSAGE_CHOOSE]] +
+            choices.LEAD_GENERATION_COUNTRIES +
+            [[OTHER, 'Other']]
+        )
     )
+
+    target_sectors = forms.MultipleChoiceField(
+        label='What sector do you sell to?',
+        help_text=MESSAGE_SELECT_ALL_APPLICABLE,
+        choices=[],  # set on __init__,
+        error_messages={
+            'required': MESSAGE_SELECT_SECTOR
+        },
+        widget=CheckboxSelectInlineLabelMultiple(),
+        initial=' ',  # prevent "other" being selected by default
+    )
+    target_sectors_other = forms.CharField(
+        required=False,
+        label="Other sectors you sell to (optional)"
+    )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['target_sectors'].choices = self.sector_choices
+
+    def clean_locality(self):
+        if self.cleaned_data['locality'] == self.OTHER:
+            raise forms.ValidationError(self.MESSAGE_UNSUPPORTED_LOCALITY)
+        return self.cleaned_data['locality']
+
+
+class OpportunityBusinessSectorFoodForm(OpportunityBusinessSectorBaseForm):
+    field_order = [
+        'locality',
+        'target_sectors',
+        'target_sectors_other',
+        'business_model',
+        'business_model_other',
+    ]
+
+    MESSAGE_SELECT_BUSINESS_MODEL = 'Select a type of business'
+
+    sector_choices = (
+        choices.FOOD_LEAD_GENERATION_SECTORS + (('', 'Other'),)
+    )
+
     business_model = forms.MultipleChoiceField(
-        choices=choices.BUSINESS_MODELS + (('', 'Other'),),
+        choices=(
+            choices.FOOD_LEAD_GENERATION_BUSINESS_MODELS + (('', 'Other'),)
+        ),
         label='What type of business do you have?',
         help_text=MESSAGE_SELECT_ALL_APPLICABLE,
         error_messages={
@@ -44,46 +88,43 @@ class OpportunityBusinessSectorForm(forms.Form):
         label="Your other business types (optional)",
         required=False
     )
-    target_sectors = forms.MultipleChoiceField(
-        label='What sector do you sell to?',
+
+
+class OpportunityBusinessSectorLegalForm(OpportunityBusinessSectorBaseForm):
+    field_order = [
+        'locality',
+        'target_sectors',
+        'target_sectors_other',
+        'advice_type',
+        'advice_type_other',
+    ]
+
+    MESSAGE_SELECT_NEED = 'Select a type of need'
+
+    sector_choices = (
+        choices.LEGAL_LEAD_GENERATION_SECTORS + (('', 'Other'),)
+    )
+
+    advice_type = forms.MultipleChoiceField(
+        choices=choices.LEGAL_LEAD_GENERATION_NEED + (('', 'Other'),),
+        label='What type of legal advice do you need?',
         help_text=MESSAGE_SELECT_ALL_APPLICABLE,
-        choices=choices.SUBSECTOR_SELECTION + (('', 'Other'),),
         error_messages={
-            'required': MESSAGE_SELECT_SECTOR
+            'required': MESSAGE_SELECT_NEED
         },
         widget=CheckboxSelectInlineLabelMultiple(),
         initial=' ',  # prevent "other" being selected by default
     )
-    target_sectors_other = forms.CharField(
-        required=False,
-        label="Other sectors you sell to (optional)"
+    advice_type_other = forms.CharField(
+        label="Please specify (optional)",
+        required=False
     )
 
-    def clean_locality(self):
-        if self.cleaned_data['locality'] == self.OTHER:
-            raise forms.ValidationError(self.MESSAGE_UNSUPPORTED_LOCALITY)
-        return self.cleaned_data['locality']
 
-
-class OpportunityNeedForm(forms.Form):
+class OpportunityNeedBaseForm(forms.Form):
     error_css_class = 'input-field-container has-error'
     MESSAGE_SELECT_TIMESCALE = 'Select a timescale'
-    products = forms.MultipleChoiceField(
-        label='What type of products are you looking for?',
-        help_text=MESSAGE_SELECT_ALL_APPLICABLE,
-        choices=choices.PRODUCT_TYPE_OPTIONS + (('', 'Other'),),
-        widget=CheckboxSelectInlineLabelMultiple(),
-        initial=' ',  # prevent "other" being selected by default
-    )
-    products_other = forms.CharField(
-        label='Other products you are looking for (optional)',
-        required=False,
-    )
-    order_size = forms.ChoiceField(
-        label='What is the size of your order?',
-        help_text='Tell us the quantity of the product you need (optional)',
-        choices=(('', MESSAGE_CHOOSE),) + choices.ORDER_SIZE_OPTIONS
-    )
+
     order_deadline = forms.ChoiceField(
         label='When do you need the product?',
         help_text=(
@@ -107,6 +148,41 @@ class OpportunityNeedForm(forms.Form):
         max_length=1000,
         widget=forms.Textarea,
     )
+
+
+class OpportunityNeedFoodForm(OpportunityNeedBaseForm):
+    field_order = [
+        'products',
+        'products_other',
+        'order_size',
+        'order_deadline',
+        'additional_requirements',
+    ]
+    error_css_class = 'input-field-container has-error'
+    MESSAGE_SELECT_TIMESCALE = 'Select a timescale'
+    products = forms.MultipleChoiceField(
+        label='What type of products are you looking for?',
+        help_text=MESSAGE_SELECT_ALL_APPLICABLE,
+        choices=choices.FOOD_LEAD_GENERATION_PRODUCT_TYPES + (('', 'Other'),),
+        widget=CheckboxSelectInlineLabelMultiple(),
+        initial=' ',  # prevent "other" being selected by default
+    )
+    products_other = forms.CharField(
+        label='Other products you are looking for (optional)',
+        required=False,
+    )
+    order_size = forms.ChoiceField(
+        label='What is the size of your order?',
+        help_text='Tell us the quantity of the product you need (optional)',
+        choices=(('', MESSAGE_CHOOSE),) + choices.ORDER_SIZE_OPTIONS
+    )
+
+
+class OpportunityNeedLegalForm(OpportunityNeedBaseForm):
+    field_order = [
+        'order_deadline',
+        'additional_requirements',
+    ]
 
 
 class OpportunityContactDetailsForm(forms.Form):

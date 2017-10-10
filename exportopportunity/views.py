@@ -4,7 +4,7 @@ from django.http import Http404
 from django.template.response import TemplateResponse
 from django.views.generic import TemplateView
 
-from directory_constants.constants import choices, lead_generation, sectors
+from directory_constants.constants import lead_generation, sectors
 from formtools.wizard.views import SessionWizardView
 
 from api_client import api_client
@@ -27,8 +27,26 @@ class GetTemplateForCurrentStepMixin:
         return [self.templates[self.steps.current]]
 
 
-class SubmitExportOpportunityWizardView(
-    ConditionalEnableTranslationsMixin,
+class GetShowcaseResourcesMixin:
+    query_showcase_resources_by_campaign_tag = False
+    industry = None
+    campaign_tag = None
+
+    def get_case_studies(self):
+        return helpers.get_showcase_case_studies(**self.get_showcase_query())
+
+    def get_showcase_companies(self):
+        return helpers.get_showcase_companies(**self.get_showcase_query())
+
+    def get_showcase_query(self):
+        if self.query_showcase_resources_by_campaign_tag:
+            return {'campaign_tag': self.campaign_tag}
+        else:
+            return {'sector': industry_map[self.kwargs['campaign']]}
+
+
+class BaseOpportunityWizardView(
+    ConditionalEnableTranslationsMixin, GetShowcaseResourcesMixin,
     GetTemplateForCurrentStepMixin, SessionWizardView
 ):
     SECTOR = 'sector'
@@ -36,11 +54,6 @@ class SubmitExportOpportunityWizardView(
     CONTACT = 'contact'
     SUCCESS = 'success'
 
-    form_list = (
-        (SECTOR, forms.OpportunityBusinessSectorForm),
-        (NEEDS, forms.OpportunityNeedForm),
-        (CONTACT, forms.OpportunityContactDetailsForm),
-    )
     templates = {
         SECTOR: 'exportopportunity/lead-generation-form-sector.html',
         NEEDS: 'exportopportunity/lead-generation-form-needs.html',
@@ -61,11 +74,6 @@ class SubmitExportOpportunityWizardView(
     def dispatch(self, *args, **kwargs):
         if not settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED:
             raise Http404()
-        if (
-            kwargs['campaign'] not in choices.LEAD_GENERATION_CAMPAIGNS or
-            kwargs['country'] not in choices.LEAD_GENERATION_COUNTRIES
-        ):
-            raise Http404()
         return super().dispatch(*args, **kwargs)
 
     @property
@@ -75,15 +83,20 @@ class SubmitExportOpportunityWizardView(
             settings.DISABLED_LANGUAGES_SUBMIT_OPPORTUNITY_PAGES
         )
 
+    @property
+    def opportunity_create_handler(self):
+        if self.kwargs['campaign'] == lead_generation.FOOD_IS_GREAT:
+            return api_client.exportopportunity.create_opportunity_food
+        elif self.kwargs['campaign'] == lead_generation.LEGAL_IS_GREAT:
+            return api_client.exportopportunity.create_opportunity_legal
+
     def done(self, *args, **kwargs):
         form_data = {
             'campaign': self.kwargs['campaign'],
             'country': self.kwargs['country'],
             **self.get_all_cleaned_data(),
         }
-        response = api_client.exportopportunity.create_opportunity(
-            form_data=form_data
-        )
+        response = self.opportunity_create_handler(form_data=form_data)
         response.raise_for_status()
         return TemplateResponse(
             self.request,
@@ -94,23 +107,50 @@ class SubmitExportOpportunityWizardView(
             }
         )
 
-    def get_showcase_companies(self):
-        return helpers.get_showcase_companies(
-            sector=industry_map[self.kwargs['campaign']],
-        )
+
+class FoodIsGreatOpportunityWizardView(BaseOpportunityWizardView):
+    form_list = (
+        (
+            BaseOpportunityWizardView.SECTOR,
+            forms.OpportunityBusinessSectorFoodForm
+        ),
+        (
+            BaseOpportunityWizardView.NEEDS,
+            forms.OpportunityNeedFoodForm
+        ),
+        (
+            BaseOpportunityWizardView.CONTACT,
+            forms.OpportunityContactDetailsForm
+        ),
+    )
 
 
-class BaseCampaignView(ConditionalEnableTranslationsMixin, TemplateView):
+class LegalIsGreatOpportunityWizardView(BaseOpportunityWizardView):
+    campaign_tag = lead_generation.LEGAL_IS_GREAT
+    query_showcase_resources_by_campaign_tag = True
+    form_list = (
+        (
+            BaseOpportunityWizardView.SECTOR,
+            forms.OpportunityBusinessSectorLegalForm
+        ),
+        (
+            BaseOpportunityWizardView.NEEDS,
+            forms.OpportunityNeedLegalForm
+        ),
+        (
+            BaseOpportunityWizardView.CONTACT,
+            forms.OpportunityContactDetailsForm
+        ),
+    )
+
+
+class BaseCampaignView(
+    ConditionalEnableTranslationsMixin, GetShowcaseResourcesMixin, TemplateView
+):
     template_name = None
     language_form_class = forms.LanguageCampaignForm
     feature_flag = None
-    query_showcase_resources_by_campaign_tag = False
-    campaign_tag = None
     search_keyword = None
-
-    @property
-    def industry(self):
-        return industry_map[self.kwargs['campaign']]
 
     @property
     def translations_enabled(self):
@@ -131,32 +171,25 @@ class BaseCampaignView(ConditionalEnableTranslationsMixin, TemplateView):
             case_studies=self.get_case_studies(),
             companies=self.get_showcase_companies(),
             lead_generation_url=self.get_lead_geneartion_url(),
-            industry=self.industry,
+            industry=industry_map[self.kwargs['campaign']],
             is_lead_generation_enabled=self.is_lead_generation_enabled,
             search_keyword=self.search_keyword,
             **kwargs,
         )
 
     def get_lead_geneartion_url(self):
-        return reverse(
-            'lead-generation-submit',
-            kwargs={
-                'campaign': self.kwargs['campaign'],
-                'country': self.kwargs['country'],
-            }
-        )
-
-    def get_case_studies(self):
-        return helpers.get_showcase_case_studies(**self.get_showcase_query())
-
-    def get_showcase_companies(self):
-        return helpers.get_showcase_companies(**self.get_showcase_query())
-
-    def get_showcase_query(self):
-        if self.query_showcase_resources_by_campaign_tag:
-            return {'campaign_tag': self.campaign_tag}
-        else:
-            return {'sector': self.industry}
+        campaign_map = {
+            (lead_generation.FOOD_IS_GREAT, lead_generation.FRANCE):
+                'food-is-great-lead-generation-submit-france',
+            (lead_generation.LEGAL_IS_GREAT, lead_generation.FRANCE):
+                'legal-is-great-lead-generation-submit-france',
+            (lead_generation.FOOD_IS_GREAT, lead_generation.SINGAPORE):
+                'food-is-great-lead-generation-submit-singapore',
+            (lead_generation.LEGAL_IS_GREAT, lead_generation.SINGAPORE):
+                'legal-is-great-lead-generation-submit-singapore',
+        }
+        name = campaign_map[(self.kwargs['campaign'], self.kwargs['country'])]
+        return reverse(name)
 
     @property
     def is_lead_generation_enabled(self):
