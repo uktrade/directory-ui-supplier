@@ -14,13 +14,10 @@
 {% block bodyScripts %}
     <script type="text/javascript" src="{% static 'javascripts/lead-generation.js' %}"></script>
     <script type="text/javascript">
-      GOVUK.utils.toggleOtherOnClick(
-        document.getElementById('id_sector-business_model_other'),
-        document.getElementById('id_sector-business_model'),
-      );
-      GOVUK.utils.toggleOtherOnClick(
-        document.getElementById('id_sector-target_sectors_other'),
-        document.getElementById('id_sector-target_sectors'),
-      );
+      var others = document.getElementsByClassName('js-field-other');
+      var selectors = document.getElementsByClassName('js-field-other-selector');
+      for(var i=0; i<others.length; i++) {
+          GOVUK.utils.toggleOtherOnClick(others[i], selectors[i]);
+      }
     </script>
 {% endblock bodyScripts %}
