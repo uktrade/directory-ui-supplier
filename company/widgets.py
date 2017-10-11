@@ -31,6 +31,7 @@ class CheckboxWithInlineLabel(widgets.CheckboxInput):
 
 
 class CheckboxSelectInlineLabelMultiple(widgets.CheckboxSelectMultiple):
+    template_name = 'widgets/checkbox_multiple_input.html'
     option_template_name = 'widgets/checkbox_input_option.html'
     css_class_name = 'form-field checkbox multi'
 
