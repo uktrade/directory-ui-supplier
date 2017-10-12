@@ -44,7 +44,8 @@ class OpportunityBusinessSectorBaseForm(forms.Form):
     )
     target_sectors_other = forms.CharField(
         required=False,
-        label="Other sectors you sell to (optional)"
+        label="Other sectors you sell to (optional)",
+        widget=forms.TextInput(attrs={'class': 'js-field-other'}),
     )
 
     def __init__(self, *args, **kwargs):
@@ -86,7 +87,8 @@ class OpportunityBusinessSectorFoodForm(OpportunityBusinessSectorBaseForm):
     )
     business_model_other = forms.CharField(
         label="Your other business types (optional)",
-        required=False
+        required=False,
+        widget=forms.TextInput(attrs={'class': 'js-field-other'}),
     )
 
 
@@ -117,7 +119,8 @@ class OpportunityBusinessSectorLegalForm(OpportunityBusinessSectorBaseForm):
     )
     advice_type_other = forms.CharField(
         label="Please specify (optional)",
-        required=False
+        required=False,
+        widget=forms.TextInput(attrs={'class': 'js-field-other'}),
     )
 
 
@@ -170,6 +173,7 @@ class OpportunityNeedFoodForm(OpportunityNeedBaseForm):
     products_other = forms.CharField(
         label='Other products you are looking for (optional)',
         required=False,
+        widget=forms.TextInput(attrs={'class': 'js-field-other'}),
     )
     order_size = forms.ChoiceField(
         label='What is the size of your order?',
