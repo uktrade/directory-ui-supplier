@@ -46,6 +46,7 @@ class CompanySearchForm(forms.Form):
 
 
 class ContactCompanyForm(forms.Form):
+
     error_css_class = 'input-field-container has-error'
     TERMS_CONDITIONS_MESSAGE = (
         'Tick the box to confirm you agree to the terms and conditions.'

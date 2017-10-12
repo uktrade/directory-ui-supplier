@@ -190,6 +190,12 @@ class OpportunityNeedLegalForm(OpportunityNeedBaseForm):
 
 
 class OpportunityContactDetailsForm(forms.Form):
+
+    def __init__(self, skip_captcha_errors=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if skip_captcha_errors:
+            del self.fields['captcha']
+
     error_css_class = 'input-field-container has-error'
     MESSAGE_TERMS_CONDITIONS = (
         'Tick the box to confirm you agree to the terms and conditions.'
