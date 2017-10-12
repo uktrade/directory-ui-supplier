@@ -237,9 +237,10 @@ def test_campaign_language_switcher(
 @patch.object(views.helpers, 'get_showcase_companies',
               return_value=showcase_companies)
 @patch.object(views.api_client.exportopportunity, 'create_opportunity_food')
+@patch('captcha.fields.ReCaptchaField.clean')
 def test_submit_export_opportunity_food(
-    mock_create_opportunity, mock_get_showcase_companies, client,
-    api_response_200, settings, captcha_stub, url, country
+    mock_clean_captcha, mock_create_opportunity, mock_get_showcase_companies,
+    client, api_response_200, settings, captcha_stub, url, country
 ):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
     mock_create_opportunity.return_value = api_response_200
@@ -296,7 +297,6 @@ def test_submit_export_opportunity_food(
             'additional_requirements': 'give me things',
             'business_model': ['distribution'],
             'business_model_other': 'things',
-            'captcha': None,
             'company_name': 'Jim corp',
             'company_website': 'http://www.example.com',
             'contact_preference': ['EMAIL', 'PHONE'],
@@ -321,6 +321,7 @@ def test_submit_export_opportunity_food(
     assert mock_get_showcase_companies.call_args == call(
         sector=sectors.FOOD_AND_DRINK
     )
+    assert mock_clean_captcha.call_count == 1
 
 
 @pytest.mark.parametrize('url,country', (
@@ -336,9 +337,10 @@ def test_submit_export_opportunity_food(
 @patch.object(views.helpers, 'get_showcase_companies',
               return_value=showcase_companies)
 @patch.object(views.api_client.exportopportunity, 'create_opportunity_legal')
+@patch('captcha.fields.ReCaptchaField.clean')
 def test_submit_export_opportunity_legal(
-    mock_create_opportunity, mock_get_showcase_companies, client,
-    api_response_200, settings, captcha_stub, url, country
+    mock_clean_captcha, mock_create_opportunity, mock_get_showcase_companies,
+    client, api_response_200, settings, captcha_stub, url, country
 ):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
     mock_create_opportunity.return_value = api_response_200
@@ -390,7 +392,6 @@ def test_submit_export_opportunity_legal(
     assert mock_create_opportunity.call_args == call(
         form_data={
            'company_name': 'Jim corp',
-           'captcha': None,
            'full_name': 'jim example',
            'phone_number': '07507605844',
            'advice_type_other': 'things',
@@ -414,3 +415,5 @@ def test_submit_export_opportunity_legal(
     assert mock_get_showcase_companies.call_args == call(
         campaign_tag=lead_generation.LEGAL_IS_GREAT,
     )
+
+    assert mock_clean_captcha.call_count == 1

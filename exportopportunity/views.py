@@ -71,6 +71,8 @@ class BaseOpportunityWizardView(
 
     language_form_class = forms.LanguageLeadGeneartionForm
 
+    should_skip_captcha = False
+
     def dispatch(self, *args, **kwargs):
         if not settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED:
             raise Http404()
@@ -106,6 +108,21 @@ class BaseOpportunityWizardView(
                 'companies': self.get_showcase_companies(),
             }
         )
+
+    def render_done(self, *args, **kwargs):
+        # django-forms runs form.is_valid() for all steps after the final step
+        # meaning the same captcha code is sent to google multiple times.
+        # Google rejects the code the second time as it's already seen it and
+        # thinks the second is a "replay attack" - so prevent formtools from
+        # validating the captcha twice.
+        self.should_skip_captcha = True
+        return super().render_done(*args, **kwargs)
+
+    def get_form_kwargs(self, step):
+        kwargs = super().get_form_kwargs(step=step)
+        if step == self.CONTACT and self.should_skip_captcha:
+            kwargs['skip_captcha_errors'] = True
+        return kwargs
 
 
 class FoodIsGreatOpportunityWizardView(BaseOpportunityWizardView):
