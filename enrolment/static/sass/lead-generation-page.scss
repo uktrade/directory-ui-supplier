@@ -42,13 +42,13 @@
   list-style: none;
   margin: 0;
   @media (max-width: 640px) { 
-    height: 650px;
+    height: 780px;
   }
 }
 
 .ed-carousel__controls {
   @media (max-width: 640px) { 
-    bottom: 150px;
+    bottom: 20px;
     position: absolute;
     width: 100%;
   }
@@ -139,7 +139,7 @@
   width: 100%;
   text-align: center;
   @media (max-width: 640px) { 
-    bottom: 135px;
+    bottom: 20px;
   }
 }
 .ed-carousel__indicator {
@@ -228,6 +228,11 @@
 .ed-carousel__slide__image {
   height: 100%;
   position: relative;
+  @media (max-width: 640px) {
+    max-height: 300px;
+    margin-bottom: 30px;
+  }
+
 }
 .ed-carousel__slide__image_caption {
     position: absolute;
@@ -247,8 +252,10 @@
   width: 30px;
 }
 @media (max-width: 640px) {
-  .ed-carousel {
+  #content .ed-carousel-container .ed-carousel {
     max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @-webkit-keyframes ed-carousel-show-slide {

@@ -108,6 +108,11 @@
             </div>
             <div class="ed-carousel__track">
               <div class="ed-carousel__slide">
+                <div class="ed-carousel__slide__image span6" style="float: right; background-image: url('{{ case_studies.0.image }}');">
+                    <div class="ed-carousel__slide__image_caption">
+                        {{ case_studies.0.title }} | <a href="{{ case_studies.0.case_study_url }}">view case study</a>
+                    </div>
+                </div>
                 <div class="ed-carousel__text span6">
                     <h2>{% block carousel_slide_one_title %}{% endblock %}</h2>
                     <br>
@@ -118,13 +123,13 @@
                         {% block carousel_slide_one_button_text %}{% endblock %}
                     </a>
                 </div>
-                <div class="ed-carousel__slide__image span6" style="background-image: url('{{ case_studies.0.image }}');">
-                    <div class="ed-carousel__slide__image_caption">
-                        {{ case_studies.0.title }} | <a href="{{ case_studies.0.case_study_url }}">view case study</a>
-                    </div>
-                </div>
               </div>
               <div class="ed-carousel__slide">
+                <div class="ed-carousel__slide__image span6" style="background-image: url('{{ case_studies.1.image }}');">
+                    <div class="ed-carousel__slide__image_caption">
+                        {{ case_studies.1.title }} | <a href="{{ case_studies.1.case_study_url }}">view case study</a>
+                    </div>
+                </div>
                 <div class="ed-carousel__text span6">
                     <h2>{% block carousel_slide_two_title %}{% endblock %}</h2>
                     <br>
@@ -135,13 +140,13 @@
                         {% block carousel_slide_two_button_text %}{% endblock %}
                     </a>
                 </div>
-                <div class="ed-carousel__slide__image span6" style="background-image: url('{{ case_studies.1.image }}');">
-                    <div class="ed-carousel__slide__image_caption">
-                        {{ case_studies.1.title }} | <a href="{{ case_studies.1.case_study_url }}">view case study</a>
-                    </div>
-                </div>
               </div>
               <div class="ed-carousel__slide">
+                <div class="ed-carousel__slide__image span6" style="background-image: url('{{ case_studies.2.image }}');">
+                    <div class="ed-carousel__slide__image_caption">
+                        {{ case_studies.2.title }} | <a href="{{ case_studies.2.case_study_url }}">view case study</a>
+                    </div>
+                </div>
                 <div class="ed-carousel__text span6">
                     <h2>{% block carousel_slide_three_title %}{% endblock %}</h2>
                     <br>
@@ -151,11 +156,6 @@
                     <a href="{% search_url industry %}" class="button button-primary">
                         {% block carousel_slide_three_button_text %}{% endblock %}
                     </a>
-                </div>
-                <div class="ed-carousel__slide__image span6" style="background-image: url('{{ case_studies.2.image }}');">
-                    <div class="ed-carousel__slide__image_caption">
-                        {{ case_studies.2.title }} | <a href="{{ case_studies.2.case_study_url }}">view case study</a>
-                    </div>
                 </div>
               </div>
             </div>
