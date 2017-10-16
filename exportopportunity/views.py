@@ -42,7 +42,7 @@ class GetShowcaseResourcesMixin:
         if self.query_showcase_resources_by_campaign_tag:
             return {'campaign_tag': self.campaign_tag}
         else:
-            return {'sector': industry_map[self.kwargs['campaign']]}
+            return {'sectors': industry_map[self.kwargs['campaign']]}
 
 
 class BaseOpportunityWizardView(
