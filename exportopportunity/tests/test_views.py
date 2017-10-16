@@ -78,14 +78,14 @@ def test_legal_is_great_feature_flag(url, enabled, status, client, settings):
     (
         reverse('food-is-great-campaign-france'),
         sectors.FOOD_AND_DRINK,
-        {'sector': sectors.FOOD_AND_DRINK},
+        {'sectors': sectors.FOOD_AND_DRINK},
         'exportopportunity/campaign-food.html',
         '',
     ),
     (
         reverse('food-is-great-campaign-singapore'),
         sectors.FOOD_AND_DRINK,
-        {'sector': sectors.FOOD_AND_DRINK},
+        {'sectors': sectors.FOOD_AND_DRINK},
         'exportopportunity/campaign-food.html',
         '',
     ),
@@ -319,7 +319,7 @@ def test_submit_export_opportunity_food(
     )
     assert mock_get_showcase_companies.call_count == 1
     assert mock_get_showcase_companies.call_args == call(
-        sector=sectors.FOOD_AND_DRINK
+        sectors=sectors.FOOD_AND_DRINK
     )
     assert mock_clean_captcha.call_count == 1
 
