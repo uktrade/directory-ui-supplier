@@ -1,9 +1,11 @@
+from captcha.fields import ReCaptchaField
 from django import forms
 from django.conf import settings
 from django.utils import translation
 from django.utils.translation import ugettext as _
 
 from directory_constants.constants import choices
+from directory_validators.company import no_html
 
 
 class LanguageForm(forms.Form):
@@ -37,6 +39,12 @@ class AnonymousSubscribeForm(forms.Form):
 
 
 class LeadGenerationForm(forms.Form):
+
+    def __init__(self, skip_captcha_errors=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if skip_captcha_errors:
+            del self.fields['captcha']
+
     error_css_class = 'input-field-container has-error'
     PLEASE_SELECT_LABEL = _('Please select an industry')
     TERMS_CONDITIONS_MESSAGE = _(
@@ -52,9 +60,14 @@ class LeadGenerationForm(forms.Form):
         help_text=_('Maximum 1000 characters.'),
         max_length=1000,
         widget=forms.Textarea,
+        validators=[no_html]
     )
     terms = forms.BooleanField(
         error_messages={'required': TERMS_CONDITIONS_MESSAGE}
+    )
+    captcha = ReCaptchaField(
+        label='',
+        label_suffix='',
     )
 
 

@@ -69,7 +69,7 @@ class BaseOpportunityWizardView(
         ),
     }
 
-    language_form_class = forms.LanguageLeadGeneartionForm
+    language_form_class = forms.LanguageLeadGenerationForm
 
     should_skip_captcha = False
 
