@@ -1,9 +1,10 @@
 from captcha.fields import ReCaptchaField
 from directory_constants.constants import choices
+from directory_validators.common import not_contains_url_or_email
 
 from django import forms
 
-from company import validators, widgets
+from company import widgets
 
 
 SELECT_LABEL = 'Please select your industry'
@@ -55,16 +56,16 @@ class ContactCompanyForm(forms.Form):
     full_name = forms.CharField(
         label='Your full name:',
         max_length=255,
-        validators=[validators.not_contains_url],
+        validators=[not_contains_url_or_email],
     )
     company_name = forms.CharField(
         label='Your company name:',
         max_length=255,
-        validators=[validators.not_contains_url],
+        validators=[not_contains_url_or_email],
     )
     country = forms.CharField(
         max_length=255,
-        validators=[validators.not_contains_url],
+        validators=[not_contains_url_or_email],
     )
     email_address = forms.EmailField(
         label='Your email address:',
@@ -79,14 +80,14 @@ class ContactCompanyForm(forms.Form):
         label='Enter a subject line for your message:',
         help_text='Maximum 200 characters.',
         max_length=200,
-        validators=[validators.not_contains_url],
+        validators=[not_contains_url_or_email],
     )
     body = forms.CharField(
         label='Enter your message to the UK company:',
         help_text='Maximum 1000 characters.',
         max_length=1000,
         widget=forms.Textarea,
-        validators=[validators.not_contains_url],
+        validators=[not_contains_url_or_email],
     )
     captcha = ReCaptchaField()
     terms = forms.BooleanField(

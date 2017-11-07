@@ -5,6 +5,7 @@ from django.utils import translation
 from django.utils.translation import ugettext as _
 
 from directory_constants.constants import choices
+from directory_validators.common import not_contains_url_or_email
 from directory_validators.company import no_html
 
 
@@ -55,7 +56,7 @@ class LeadGenerationForm(forms.Form):
         help_text=_('Maximum 1000 characters.'),
         max_length=1000,
         widget=forms.Textarea,
-        validators=[no_html]
+        validators=[no_html, not_contains_url_or_email]
     )
     terms = forms.BooleanField(
         error_messages={'required': TERMS_CONDITIONS_MESSAGE}
