@@ -114,8 +114,8 @@
 	</div>
 </form>
 <div class="container">
-	{% if results %}
 		{% include 'anonymous-subscribe-form.html' with form=subscribe.form %}
+	{% if results %}
 	{% else %}
 		{% if not form.is_bound %}
 		<div id="fassearch-initial-content">
