@@ -40,17 +40,20 @@ def test_lead_generation_form_required():
     assert form.fields['company_name'].required is True
     assert form.fields['country'].required is True
     assert form.fields['terms'].required is True
+    assert form.fields['captcha'].required is True
 
 
-def test_lead_generation_form_accepts_valid_data():
-    form = forms.LeadGenerationForm(data={
-        'full_name': 'Jim Example',
-        'email_address': 'jim@example.com',
-        'comment': 'Hello',
-        'company_name': 'Deutsche Bank',
-        'country': 'Germany',
-        'terms': True
-    })
+def test_lead_generation_form_accepts_valid_data(captcha_stub):
+    form = forms.LeadGenerationForm(
+        data={
+            'full_name': 'Jim Example',
+            'email_address': 'jim@example.com',
+            'comment': 'Hello',
+            'company_name': 'Deutsche Bank',
+            'country': 'Germany',
+            'terms': True,
+            'recaptcha_response_field': captcha_stub
+        })
     assert form.is_valid()
 
 

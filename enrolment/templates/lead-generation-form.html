@@ -68,6 +68,14 @@
 				</div>
 
 				<div class="row-fluid">
+					<div class="span12">
+						<div class="{{ form.captcha.css_classes|default:'input-field-container' }}">
+							{{ form.captcha }}
+						</div>
+					</div>
+				</div>
+
+				<div class="row-fluid">
 					<div class="span10 ed-checkbox-container {{ form.terms.css_classes|default:'input-field-container' }}">
 						{{ form.terms.errors }}
 						<div class="field checkbox">

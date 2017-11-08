@@ -261,5 +261,5 @@ class LanguageCampaignForm(forms.Form):
     lang = forms.ChoiceField(choices=[])  # choices set on __init__
 
 
-class LanguageLeadGeneartionForm(forms.Form):
+class LanguageLeadGenerationForm(forms.Form):
     lang = forms.ChoiceField(choices=settings.LANGUAGES_LEAD_GENERATION_PAGES)

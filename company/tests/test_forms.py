@@ -1,6 +1,7 @@
 from django.forms.fields import Field
+from directory_validators.common import not_contains_url_or_email
 
-from company import forms, validators
+from company import forms
 
 
 REQUIRED_MESSAGE = Field.default_error_messages['required']
@@ -46,7 +47,7 @@ def test_contact_company_form_captcha_valid():
 
 def test_contact_company_validators():
     form = forms.ContactCompanyForm({})
-    validator = validators.not_contains_url
+    validator = not_contains_url_or_email
 
     assert validator in form.fields['full_name'].validators
     assert validator in form.fields['company_name'].validators

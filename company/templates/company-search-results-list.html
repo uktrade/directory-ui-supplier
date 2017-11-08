@@ -114,7 +114,7 @@
 	</div>
 </form>
 <div class="container">
-	{% if results %}
+    {% if results %}
 		{% include 'anonymous-subscribe-form.html' with form=subscribe.form %}
 	{% else %}
 		{% if not form.is_bound %}
