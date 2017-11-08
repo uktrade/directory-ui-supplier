@@ -40,12 +40,6 @@ class AnonymousSubscribeForm(forms.Form):
 
 
 class LeadGenerationForm(forms.Form):
-
-    def __init__(self, skip_captcha_errors=False, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        if skip_captcha_errors:
-            del self.fields['captcha']
-
     error_css_class = 'input-field-container has-error'
     PLEASE_SELECT_LABEL = _('Please select an industry')
     TERMS_CONDITIONS_MESSAGE = _(
