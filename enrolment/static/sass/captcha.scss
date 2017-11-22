@@ -1,0 +1,37 @@
+.recaptcha_input_area {
+  a {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+  input {
+    font-size: 18px;
+    line-height: inherit;
+    height: 22px;  }
+}
+
+#g-recaptcha-response {
+  min-height: 80px;
+}
+
+noscript {
+  & > div > div > div:nth-child(2) {
+    bottom: 10px!important;
+  }
+  & > div,
+  & > div + div,
+  iframe {
+    height: 550px!important;
+  }
+  textarea {
+    margin-top: 180px!important;
+  }
+}
+
+body.js-enabled noscript {
+  & > div,
+  & > div + div,
+  iframe {
+      height: 350px!important;
+  }
+}
