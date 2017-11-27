@@ -60,81 +60,81 @@ urlpatterns = [
         name="index"
     ),
     url(
-        r'^suppliers$',
+        r'^suppliers/$',
         PublishedProfileListView.as_view(),
         name='public-company-profiles-list',
     ),
     url(
-        r'^search$',
+        r'^search/$',
         CompanySearchView.as_view(),
         name='company-search',
     ),
     url(
-        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/contact$',
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/contact/$',
         ContactCompanyView.as_view(),
         name='contact-company',
     ),
     url(
-        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)$',
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$',
         PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail',
     ),
     # obsolete. use `public-company-profiles-detail`
     url(
-        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)$',
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/$',
         PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail-slugless',
     ),
     url(
-        r'^industries$',
+        r'^industries/$',
         SectorListView.as_view(),
         name='sector-list',
     ),
     url(
-        r'^industries/(?P<slug>.+)/summary$',
+        r'^industries/(?P<slug>.+)/summary/$',
         SectorDetailView.as_view(),
         {'show_proposition': False},
         name='sector-detail-summary',
     ),
     url(
-        r'^industries/(?P<slug>.+)$',
+        r'^industries/(?P<slug>.+)/$',
         SectorDetailView.as_view(),
         {'show_proposition': True},
         name='sector-detail-verbose',
     ),
     url(
-        r'^case-study/(?P<id>.+)/(?P<slug>.+)$',
+        r'^case-study/(?P<id>.+)/(?P<slug>.+)/$',
         CaseStudyDetailView.as_view(),
         name='case-study-details'
     ),
     # obsolete. use `case-study-details`
     url(
-        r'^case-study/(?P<id>.+)$',
+        r'^case-study/(?P<id>.+)/$',
         CaseStudyDetailView.as_view(),
         name='case-study-details-slugless',
     ),
     url(
-        r'^privacy-policy$',
+        r'^privacy-policy/$',
         PrivacyCookiesView.as_view(),
         name='privacy-and-cookies'
     ),
     url(
-        r'^terms-and-conditions$',
+        r'^terms-and-conditions/$',
         TermsView.as_view(),
         name='terms-and-conditions'
     ),
     url(
-        r'^subscribe$',
+        r'^subscribe/$',
         AnonymousSubscribeFormView.as_view(),
         name='subscribe'
     ),
     url(
-        r'^feedback$',
+        r'^feedback/$',
         LeadGenerationFormView.as_view(),
         name='lead-generation'
     ),
     url(
-        r'^unsubscribe$',
+        r'^unsubscribe/$',
         AnonymousUnsubscribeView.as_view(),
         name='anonymous-unsubscribe'
     ),
