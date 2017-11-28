@@ -53,7 +53,8 @@ def test_lead_generation_form_accepts_valid_data(captcha_stub):
             'country': 'Germany',
             'terms': True,
             'recaptcha_response_field': captcha_stub
-        })
+        }
+    )
     assert form.is_valid()
 
 

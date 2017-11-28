@@ -189,7 +189,7 @@ def test_company_profile_list_with_params_redirects_to_search(client):
     response = client.get(url, {'sectors': 'AEROSPACE'})
 
     assert response.status_code == 302
-    assert response.get('Location') == '/search?sector=AEROSPACE'
+    assert response.get('Location') == '/search/?sector=AEROSPACE'
 
 
 def test_company_profile_list_redirects_to_search(client):
@@ -197,7 +197,7 @@ def test_company_profile_list_redirects_to_search(client):
     response = client.get(url)
 
     assert response.status_code == 302
-    assert response.get('Location') == '/search'
+    assert response.get('Location') == '/search/'
 
 
 @patch.object(helpers, 'get_company_profile')
@@ -545,7 +545,7 @@ def test_company_search_pagination_empty_page(
     response = client.get(url, {'term': '123', 'page': 100})
 
     assert response.status_code == 302
-    assert response.get('Location') == '/search?term=123'
+    assert response.get('Location') == '/search/?term=123'
 
 
 @pytest.mark.django_db
