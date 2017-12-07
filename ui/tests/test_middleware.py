@@ -74,6 +74,15 @@ def test_force_default_locale_installed():
     assert 'ui.middleware.ForceDefaultLocale' in settings.MIDDLEWARE_CLASSES
 
 
+def test_force_default_locale_no_language_in_request(rf, settings):
+    request = rf.get('/')
+    instance = middleware.ForceDefaultLocale()
+
+    assert not hasattr(request, 'LANGUAGE_CODE')
+
+    instance.process_request(request)
+
+
 def test_force_default_locale_sets_to_english(rf, settings):
     request = rf.get('/')
     instance = middleware.ForceDefaultLocale()
