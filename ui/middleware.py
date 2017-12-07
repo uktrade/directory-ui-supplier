@@ -40,8 +40,10 @@ class ForceDefaultLocale:
         translation.activate(settings.LANGUAGE_CODE)
 
     def process_response(self, request, response):
-        translation.activate(request.LANGUAGE_CODE)
+        if hasattr(request, 'LANGUAGE_CODE') and request.LANGUAGE_CODE:
+            translation.activate(request.LANGUAGE_CODE)
         return response
 
     def process_exception(self, request, exception):
-        translation.activate(request.LANGUAGE_CODE)
+        if hasattr(request, 'LANGUAGE_CODE') and request.LANGUAGE_CODE:
+            translation.activate(request.LANGUAGE_CODE)
