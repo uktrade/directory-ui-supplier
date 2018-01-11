@@ -565,7 +565,7 @@ msgstr ""
 msgid "Browse UK companies"
 msgstr "Entdecken sie diese britischen Unternehmen"
 
-#: enrolment/templates/govuk_layout.html:14
+#: enrolment/templates/base.html:14
 msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
 msgstr ""
 
