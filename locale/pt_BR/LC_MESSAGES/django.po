@@ -553,7 +553,7 @@ msgstr ""
 msgid "Browse UK companies"
 msgstr "Procurar perfis de empresas do Reino Unido"
 
-#: enrolment/templates/govuk_layout.html:14
+#: enrolment/templates/base.html:14
 msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
 msgstr ""
 
