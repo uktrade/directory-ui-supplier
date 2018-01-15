@@ -40,7 +40,7 @@ def test_google_tag_manager():
     expected_head = render_to_string('google_tag_manager_head.html', context)
     expected_body = render_to_string('google_tag_manager_body.html', context)
 
-    html = render_to_string('govuk_layout.html', context)
+    html = render_to_string('base.html', context)
 
     assert expected_head in html
     assert expected_body in html
@@ -196,7 +196,7 @@ def test_utm_cookie_domain():
             'UTM_COOKIE_DOMAIN': '.thing.com',
         }
     }
-    html = render_to_string('govuk_layout.html', context)
+    html = render_to_string('base.html', context)
 
     assert '<meta id="utmCookieDomain" value=".thing.com" />' in html
 

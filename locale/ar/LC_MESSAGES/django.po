@@ -545,7 +545,7 @@ msgstr ""
 msgid "Browse UK companies"
 msgstr "تصفح الشركات في المملكة المتحدة"
 
-#: enrolment/templates/govuk_layout.html:14
+#: enrolment/templates/base.html:14
 msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
 msgstr ""
 
