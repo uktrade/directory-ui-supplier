@@ -21,11 +21,12 @@ from company.views import (
 from enrolment.views import (
     AnonymousSubscribeFormView,
     LeadGenerationFormView,
-    SectorDetailView,
     SectorListView,
     LandingView,
     PrivacyCookiesView,
     TermsView,
+    SectorDetailView,
+    SectorDetailCMSView,
 )
 from notifications.views import (
     AnonymousUnsubscribeView
@@ -91,6 +92,18 @@ urlpatterns = [
         name='sector-list',
     ),
     url(
+        r'^industries/(?P<cms_page_id>[0-9]+)/(?P<slug>[\w-]+)/$',
+        SectorDetailCMSView.as_view(),
+        {'show_proposition': True},
+        name='sector-detail-cms-verbose',
+    ),
+    url(
+        r'^industries/(?P<cms_page_id>[0-9]+)/(?P<slug>[\w-]+)/summary/$',
+        SectorDetailCMSView.as_view(),
+        {'show_proposition': False},
+        name='sector-detail-cms-summary',
+    ),
+    url(
         r'^industries/(?P<slug>.+)/summary/$',
         SectorDetailView.as_view(),
         {'show_proposition': False},
@@ -102,6 +115,7 @@ urlpatterns = [
         {'show_proposition': True},
         name='sector-detail-verbose',
     ),
+
     url(
         r'^case-study/(?P<id>.+)/(?P<slug>.+)/$',
         CaseStudyDetailView.as_view(),

@@ -8,6 +8,7 @@ from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
 from api_client import api_client
+from core.helpers import cms_client
 from enrolment import constants, forms
 from ui.views import ConditionalEnableTranslationsMixin
 
@@ -180,3 +181,34 @@ class SectorDetailView(ConditionalEnableTranslationsMixin, TemplateView):
         context['show_proposition'] = self.kwargs['show_proposition']
         context['slug'] = self.kwargs['slug']
         return context
+
+
+class SectorDetailCMSView(ConditionalEnableTranslationsMixin, TemplateView):
+    language_form_class = forms.LanguageIndustriesForm
+    template_name = 'sector-detail.html'
+
+    def dispatch(self, *args, **kwargs):
+        if not settings.FEATURE_CMS_ENABLED:
+            raise Http404()
+        return super().dispatch(*args, **kwargs)
+
+    @property
+    def translations_enabled(self):
+        return (
+            self.request.LANGUAGE_CODE not in
+            settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE
+        )
+
+    def get_context_data(self, *args, **kwargs):
+        page = self.get_cms_page(self.kwargs['cms_page_id'])
+        return super().get_context_data(page=page, *args, **kwargs)
+
+    def get_cms_page(self, cms_page_id):
+        response = cms_client.get_page(
+            page_id=cms_page_id,
+            draft_token=self.request.GET.get('draft_token')
+        )
+        if response.status_code == 404:
+            raise Http404()
+        response.raise_for_status()
+        return response.json()

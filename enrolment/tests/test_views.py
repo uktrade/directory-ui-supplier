@@ -1,6 +1,6 @@
 import http
 import requests
-from unittest.mock import patch, Mock
+from unittest.mock import call, patch, Mock
 
 import pytest
 
@@ -20,16 +20,11 @@ from enrolment.views import (
 from ui.views import ConditionalEnableTranslationsMixin
 
 
-@pytest.fixture
-def buyer_form_data_no_comment():
-    return {
-        'full_name': 'Jim Example',
-        'email_address': 'jim@example.com',
-        'sector': 'AEROSPACE',
-        'company_name': 'Deutsche Bank',
-        'country': 'Germany',
-        'terms': True,
-    }
+def create_response(status_code, json_payload={}):
+    response = requests.Response()
+    response.status_code = status_code
+    response.json = lambda: json_payload
+    return response
 
 
 @pytest.fixture
@@ -53,74 +48,10 @@ def buyer_request(rf, client, buyer_form_data):
 
 
 @pytest.fixture
-def buyer_request_no_comment(rf, client, buyer_form_data_no_comment):
-    request = rf.post('/', buyer_form_data_no_comment)
-    request.session = client.session
-    return request
-
-
-@pytest.fixture
 def buyer_request_invalid(rf, client):
     request = rf.post('/', {})
     request.session = client.session
     return request
-
-
-@pytest.fixture
-def anon_request(rf, client):
-    request = rf.get('/')
-    request.session = client.session
-    return request
-
-
-@pytest.fixture
-def api_response_200(*args, **kwargs):
-    response = requests.Response()
-    response.status_code = http.client.OK
-    return response
-
-
-@pytest.fixture
-def api_response_400(*args, **kwargs):
-    response = requests.Response()
-    response.status_code = http.client.BAD_REQUEST
-    return response
-
-
-@pytest.fixture
-def api_response_company_profile_no_sectors_200(api_response_200):
-    response = api_response_200
-    payload = {
-        'website': 'http://example.com',
-        'description': 'Ecommerce website',
-        'number': 123456,
-        'sectors': None,
-        'logo': 'nice.jpg',
-        'name': 'Great company',
-        'keywords': 'word1 word2',
-        'employees': '501-1000',
-        'date_of_creation': '2015-03-02',
-    }
-    response.json = lambda: payload
-    return response
-
-
-@pytest.fixture
-def api_response_company_profile_no_date_of_creation_200(api_response_200):
-    response = api_response_200
-    payload = {
-        'website': 'http://example.com',
-        'description': 'Ecommerce website',
-        'number': 123456,
-        'sectors': None,
-        'logo': 'nice.jpg',
-        'name': 'Great company',
-        'keywords': 'word1 word2',
-        'employees': '501-1000',
-        'date_of_creation': None,
-    }
-    response.json = lambda: payload
-    return response
 
 
 def test_international_landing_view_context(client):
@@ -133,7 +64,11 @@ def test_international_landing_view_context(client):
     assert response.context['active_view_name'] == 'index'
 
 
-def test_international_landing_page_sectorhandles_legacy_verbose(client):
+def test_international_landing_page_sectorhandles_legacy_verbose(
+    client, settings
+):
+    settings.FEATURE_CMS_ENABLED = False
+
     url = reverse('sector-detail-summary', kwargs={'slug': 'health'})
     expected_url = reverse('sector-detail-verbose', kwargs={'slug': 'health'})
 
@@ -152,7 +87,9 @@ def test_international_landing_page_sector_context_non_verbose(client):
     assert response.context_data['show_proposition'] is False
 
 
-def test_international_landing_page_sector_context_verbose(client):
+def test_international_landing_page_sector_context_verbose(client, settings):
+    settings.FEATURE_CMS_ENABLED = False
+
     url = reverse('sector-detail-verbose', kwargs={'slug': 'health'})
 
     response = client.get(url)
@@ -161,7 +98,9 @@ def test_international_landing_page_sector_context_verbose(client):
     assert response.context_data['show_proposition'] is True
 
 
-def test_international_landing_page_sector_specific_unknown(client):
+def test_international_landing_page_sector_specific_unknown(client, settings):
+    settings.FEATURE_CMS_ENABLED = False
+
     url = reverse('sector-detail-summary', kwargs={'slug': 'jam'})
 
     response = client.get(url)
@@ -169,7 +108,9 @@ def test_international_landing_page_sector_specific_unknown(client):
     assert response.status_code == http.client.NOT_FOUND
 
 
-def test_international_landing_page_sector_specific_known(client):
+def test_international_landing_page_sector_specific_known(client, settings):
+    settings.FEATURE_CMS_ENABLED = False
+
     pages = SectorDetailView.get_active_pages()
     for slug, values in pages.items():
         context = values['context']
@@ -381,3 +322,77 @@ def test_conditional_translate_non_bidi_template(rf):
 
     assert response.status_code == 200
     assert response.template_name == ['non-bidi.html']
+
+
+@pytest.mark.parametrize('url_name', (
+    'sector-detail-cms-verbose',
+    'sector-detail-cms-summary',
+))
+@patch('enrolment.views.SectorDetailCMSView.get_cms_page')
+def test_industries_pages_feature_flag_on(
+    mock_get_cms_page, settings, client, url_name
+):
+    settings.FEATURE_CMS_ENABLED = True
+
+    url = reverse(url_name, kwargs={'slug': 'tech', 'cms_page_id': 1})
+    response = client.get(url)
+
+    assert response.template_name == ['sector-detail.html']
+    assert response.status_code == 200
+
+
+@pytest.mark.parametrize('url_name', (
+    'sector-detail-cms-verbose',
+    'sector-detail-cms-summary',
+))
+def test_industries_pages_feature_flag_off(settings, client, url_name):
+    settings.FEATURE_CMS_ENABLED = False
+
+    url = reverse(url_name, kwargs={'slug': 'tech', 'cms_page_id': 1})
+    response = client.get(url)
+
+    assert response.status_code == 404
+
+
+@pytest.mark.parametrize('url_name', (
+    'sector-detail-cms-verbose',
+    'sector-detail-cms-summary',
+))
+@patch('core.helpers.cms_client.get_page')
+def test_industries_pages_cms_page_ids(
+    mock_get_page, settings, client, url_name
+):
+    settings.FEATURE_CMS_ENABLED = True
+    mock_get_page.return_value = create_response(
+        status_code=200,
+        json_payload={'key': 'value'}
+    )
+
+    url = reverse(url_name, kwargs={'cms_page_id': '1', 'slug': 'thing'})
+    response = client.get(url)
+
+    assert response.status_code == 200
+    assert response.context_data['page'] == {'key': 'value'}
+    assert mock_get_page.call_count == 1
+    assert mock_get_page.call_args == call(
+        page_id='1',
+        draft_token=None
+    )
+
+
+@pytest.mark.parametrize('url_name', (
+    'sector-detail-cms-verbose',
+    'sector-detail-cms-summary',
+))
+@patch('core.helpers.cms_client.get_page')
+def test_industries_pages_cms_page_404(
+    mock_get_page, settings, client, url_name
+):
+    mock_get_page.return_value = create_response(status_code=404)
+
+    settings.FEATURE_CMS_ENABLED = True
+
+    url = reverse(url_name, kwargs={'cms_page_id': '1', 'slug': 'thing'})
+    response = client.get(url)
+
+    assert response.status_code == 404
