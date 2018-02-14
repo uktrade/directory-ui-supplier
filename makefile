@@ -8,8 +8,8 @@ clean:
 test_requirements:
 	pip install -r requirements_test.txt
 
-FLAKE8 := flake8 . --exclude=migrations,.venv
-PYTEST := pytest . --cov=. --cov-config=.coveragerc --capture=no $(pytest_args)
+FLAKE8 := flake8 . --exclude=migrations,.venv,node_modules
+PYTEST := pytest . --ignore=node_modules --cov=. --cov-config=.coveragerc --capture=no $(pytest_args)
 COLLECT_STATIC := python manage.py collectstatic --noinput
 COMPILE_TRANSLATIONS := python manage.py compilemessages
 CODECOV := \
@@ -66,7 +66,11 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_DISABLED_LANGUAGES_SUBMIT_OPPORTUNITY_PAGES=de,ja,zh-hans,es,pt,pt-br,ar; \
 	export DIRECTORY_UI_SUPPLIER_FEATURE_LEGAL_CAMPAIGN_ENABLED=true; \
 	export DIRECTORY_UI_SUPPLIER_FEATURE_FOOD_CAMPAIGN_ENABLED=true; \
-	export DIRECTORY_UI_SUPPLIER_SECURE_SSL_REDIRECT=false
+	export DIRECTORY_UI_SUPPLIER_SECURE_SSL_REDIRECT=false; \
+	export DIRECTORY_UI_SUPPLIER_CMS_URL=http://cms.trade.great:8010; \
+	export DIRECTORY_UI_SUPPLIER_FEATURE_CMS_ENABLED=true; \
+	export DIRECTORY_UI_SUPPLIER_CMS_SIGNATURE_SECRET=debug
+
 
 docker_test_env_files:
 	$(DOCKER_SET_DEBUG_ENV_VARS) && \
@@ -133,7 +137,10 @@ DEBUG_SET_ENV_VARS := \
 	export DISABLED_LANGUAGES_SUBMIT_OPPORTUNITY_PAGES=de,ja,zh-hans,es,pt,pt-br,ar; \
 	export FEATURE_LEGAL_CAMPAIGN_ENABLED=true; \
 	export FEATURE_FOOD_CAMPAIGN_ENABLED=true; \
-	export SECURE_SSL_REDIRECT=false
+	export SECURE_SSL_REDIRECT=false; \
+	export CMS_URL=http://cms.trade.great:8010; \
+	export CMS_SIGNATURE_SECRET=debug
+
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)

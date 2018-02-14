@@ -88,6 +88,7 @@ def test_templates_render_successfully():
             },
         ],
         'slug': 'CREATIVE_AND_MEDIA',
+        'cms_page_id': '1',
     }
     assert template_list
     for template in template_list:
