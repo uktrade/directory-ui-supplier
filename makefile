@@ -139,7 +139,8 @@ DEBUG_SET_ENV_VARS := \
 	export FEATURE_FOOD_CAMPAIGN_ENABLED=true; \
 	export SECURE_SSL_REDIRECT=false; \
 	export CMS_URL=http://cms.trade.great:8010; \
-	export CMS_SIGNATURE_SECRET=debug
+	export CMS_SIGNATURE_SECRET=debug; \
+	export FEATURE_CMS_ENABLED=true
 
 
 debug_webserver:

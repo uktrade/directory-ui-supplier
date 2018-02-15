@@ -359,7 +359,7 @@ def test_industries_pages_feature_flag_off(settings, client, url_name):
     'sector-detail-cms-summary',
 ))
 @patch('core.helpers.cms_client.get_page')
-def test_industries_pages_cms_page_ids(
+def test_industries_pages_cms_params(
     mock_get_page, settings, client, url_name
 ):
     settings.FEATURE_CMS_ENABLED = True
@@ -369,14 +369,15 @@ def test_industries_pages_cms_page_ids(
     )
 
     url = reverse(url_name, kwargs={'cms_page_id': '1', 'slug': 'thing'})
-    response = client.get(url)
+    response = client.get(url, {'draft_token': '123', 'lang': 'de'})
 
     assert response.status_code == 200
     assert response.context_data['page'] == {'key': 'value'}
     assert mock_get_page.call_count == 1
     assert mock_get_page.call_args == call(
         page_id='1',
-        draft_token=None
+        draft_token='123',
+        language_code='de',
     )
 
 
