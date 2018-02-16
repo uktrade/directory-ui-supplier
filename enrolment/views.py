@@ -206,7 +206,8 @@ class SectorDetailCMSView(ConditionalEnableTranslationsMixin, TemplateView):
     def get_cms_page(self, cms_page_id):
         response = cms_client.get_page(
             page_id=cms_page_id,
-            draft_token=self.request.GET.get('draft_token')
+            draft_token=self.request.GET.get('draft_token'),
+            language_code=self.request.GET.get('lang'),
         )
         if response.status_code == 404:
             raise Http404()
