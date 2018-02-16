@@ -1,0 +1,34 @@
+{% extends 'directory_components/base.html' %}
+
+{% load static from staticfiles %}
+
+{% block head_title %}Find a Buyer - GREAT.gov.uk{% endblock %}
+
+{% block head_css %}
+	<link href="{% static 'export_elements/stylesheets/govuk-elements-styles.min.css' %}" media="all" rel="stylesheet" />
+{% endblock %}
+
+
+{% block head_js %}
+    <script src="{% static 'directory_components/js/third-party.js' %}"></script>
+{% endblock %}
+
+{% block body_header %}
+	{% include 'header.html' %}
+{% endblock %}
+
+{% block body_footer %}
+	{% include 'footer.html' %}
+{% endblock %}
+
+{% block body_js %}
+	{{ block.super }}
+    <script type="text/javascript" src="{% static 'javascripts/index.js' %}"></script>
+    <script type="text/javascript">GOVUK.page.init();</script>
+{% endblock %}
+
+{% block feedback_reporter %}
+	<div class="container">
+		{{ block.super }}
+	</div>
+{% endblock %}

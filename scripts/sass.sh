@@ -28,6 +28,8 @@ input_output_map="\
 	enrolment/static/sass/ie8fixes.scss:enrolment/static/ie8fixes.css \
 	enrolment/static/sass/company-search_results.scss:enrolment/static/company-search_results.css \
 	enrolment/static/sass/lead-generation-page.scss:enrolment/static/lead-generation-page.css \
+	enrolment/static/sass/industries.scss:enrolment/static/industries.css \
+
 "
 
 prod_command="sass --sourcemap=none --style compressed"

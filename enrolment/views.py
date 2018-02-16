@@ -1,9 +1,11 @@
+from directory_components.context_processors import get_url
 from zenpy import Zenpy
 from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
 from django.conf import settings
 from django.shortcuts import redirect, Http404
 from django.template.response import TemplateResponse
+from django.utils import translation
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
@@ -11,6 +13,7 @@ from api_client import api_client
 from core.helpers import cms_client
 from enrolment import constants, forms
 from ui.views import ConditionalEnableTranslationsMixin
+from exportopportunity.helpers import get_showcase_companies
 
 
 ZENPY_CREDENTIALS = {
@@ -192,24 +195,25 @@ class SectorDetailCMSView(ConditionalEnableTranslationsMixin, TemplateView):
             raise Http404()
         return super().dispatch(*args, **kwargs)
 
-    @property
-    def translations_enabled(self):
-        return (
-            self.request.LANGUAGE_CODE not in
-            settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE
-        )
-
     def get_context_data(self, *args, **kwargs):
         page = self.get_cms_page(self.kwargs['cms_page_id'])
-        return super().get_context_data(page=page, *args, **kwargs)
+        return super().get_context_data(
+            page=page,
+            contact_us_url=get_url('INFO_CONTACT_US'),
+            companies=self.get_companies(page['sector_value']),
+            *args, **kwargs
+        )
 
     def get_cms_page(self, cms_page_id):
         response = cms_client.get_page(
             page_id=cms_page_id,
             draft_token=self.request.GET.get('draft_token'),
-            language_code=self.request.GET.get('lang'),
+            language_code=translation.get_language(),
         )
         if response.status_code == 404:
             raise Http404()
         response.raise_for_status()
         return response.json()
+
+    def get_companies(self, sector_value):
+        return get_showcase_companies(sectors=sector_value, size=6)

@@ -1,11 +1,12 @@
 {% load static from staticfiles %}
+{# deprecated. use core/base.html instead #}
 {% load trans from i18n %}
 
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--><html lang="en" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}><!--<![endif]-->
     <head>
-        {% include 'google_tag_manager_head.html' %}
+         {% include 'directory_components/google_tag_manager_head.html' %}
         {% include 'social.html' %}
         <meta name="description" content="{% block meta_description %}Find suppliers of products and services and build your import supply chain from reliable, innovative British companies{% endblock %}">
         <meta id="utmCookieDomain" value="{{ analytics.UTM_COOKIE_DOMAIN }}" />
@@ -19,10 +20,6 @@
           <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
         <![endif]-->
 	
-        <!--[if gt IE 8]><!--><link href="{% static 'govuk-0.18.0/assets/stylesheets/govuk-template.css' %}" media="screen" rel="stylesheet" /><!--<![endif]-->
-        <!--[if IE 8]><link href="{% static 'govuk-0.18.0/assets/stylesheets/govuk-template-ie8.css' %}" media="screen" rel="stylesheet" /><![endif]-->
-        <link href="{% static 'govuk-0.18.0/assets/stylesheets/govuk-template-print.css' %}" media="print" rel="stylesheet" />
-
         <link href='{% static 'images/favicon-192x192.png' %}' rel='shortcut icon' type='image/png'>
         <!--[if IE]> <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" /> <![endif]-->
 
@@ -38,7 +35,7 @@
     </head>
 
     <body class="{% block css_layout_class %}{% endblock css_layout_class %} {% if LANGUAGE_BIDI %}bidi{% endif %}">
-        {% include 'google_tag_manager_body.html' %}
+         {% include 'directory_components/google_tag_manager_body.html' %}
         <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
         {% include LANGUAGE_BIDI|yesno:'bidi/header.html,header.html' %}

@@ -15,3 +15,5 @@ zenpy==1.1.10
 -e git+https://github.com/uktrade/directory-signature-auth.git@v2.0.0#egg=sigauth
 -e git+https://github.com/uktrade/directory-api-client.git@v9.2.0#egg=directory_api_client
 -e git+https://github.com/uktrade/directory-constants.git@v5.0.0#egg=directory_constants
+-e git+https://github.com/uktrade/directory-components.git@v0.8.0#egg=directory_components
+-e git+https://github.com/uktrade/export-elements.git@v0.7.1#egg=export_elements

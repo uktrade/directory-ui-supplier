@@ -22,33 +22,6 @@ MESSAGE_ENGLISH_ONLY = 'Page in English only'
 MORE_INDUSTRIES_LABEL = 'See more industries'
 
 
-def test_google_tag_manager_project_id():
-    context = {
-        'analytics': {
-            'GOOGLE_TAG_MANAGER_ID': '1234567',
-        }
-    }
-    head_html = render_to_string('google_tag_manager_head.html', context)
-    body_html = render_to_string('google_tag_manager_body.html', context)
-
-    assert '1234567' in head_html
-    assert 'https://www.googletagmanager.com/ns.html?id=1234567' in body_html
-
-
-def test_google_tag_manager():
-    context = {}
-    expected_head = render_to_string('google_tag_manager_head.html', context)
-    expected_body = render_to_string('google_tag_manager_body.html', context)
-
-    html = render_to_string('base.html', context)
-
-    assert expected_head in html
-    assert expected_body in html
-    # sanity check
-    assert 'www.googletagmanager.com' in expected_head
-    assert 'www.googletagmanager.com' in expected_body
-
-
 def test_templates_render_successfully():
     template_list = []
     template_dirs = [

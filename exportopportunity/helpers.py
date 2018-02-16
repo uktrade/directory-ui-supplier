@@ -3,9 +3,9 @@ from api_client import api_client
 from company.helpers import format_case_study, format_company_details
 
 
-def get_showcase_resource(api_client_method, formatter, **kwargs):
+def get_showcase_resource(api_client_method, formatter, size=3, **kwargs):
     response = api_client_method(
-        term="", page=1, size=3, **kwargs
+        term="", page=1, size=size, **kwargs
     )
     response.raise_for_status()
     formatted = []
