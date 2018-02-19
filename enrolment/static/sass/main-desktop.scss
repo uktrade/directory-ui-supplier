@@ -635,7 +635,7 @@ a.ed-filled-button-primary {
     background-size: 25px;
     border: none;
     padding-left: 30px;
-    .code {
+    .language-code {
       text-transform: uppercase;
       &:after {
         content: " - ";
@@ -701,6 +701,7 @@ a.ed-filled-button-primary {
 }
 
 .header-gov-link {
+  text-decoration: none;
   &:hover,
   &:link,
   &:visited {

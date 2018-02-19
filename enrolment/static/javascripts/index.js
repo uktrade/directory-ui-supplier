@@ -179,8 +179,8 @@ GOVUK.components = (new function() {
     var $code = $(document.createElement("span"));
     var $lang = $(document.createElement("span"));
     SelectTracker.prototype.update.call(this);
-    $lang.addClass("lang");
-    $code.addClass("code");
+    $lang.addClass("language-label");
+    $code.addClass("language-code");
     $lang.text(this.$node.text());
     $code.text(this.$select.val());
     this.$node.empty();

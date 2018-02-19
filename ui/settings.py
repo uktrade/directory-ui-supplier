@@ -46,12 +46,15 @@ INSTALLED_APPS = [
     "ui",
     "enrolment",
     "company",
+    "core",
     "formtools",
     "notifications",
     "exportopportunity",
     "directory_constants",
     "captcha",
     "sorl.thumbnail",
+    "directory_components",
+    "export_elements",
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -78,7 +81,9 @@ TEMPLATES = [
                 'ui.context_processors.feature_flags',
                 'ui.context_processors.subscribe_form',
                 'ui.context_processors.lead_generation_form',
-                'ui.context_processors.analytics',
+                'directory_components.context_processors.analytics',
+                'ui.context_processors.feature_flags',
+
             ],
         },
     },

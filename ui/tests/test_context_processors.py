@@ -56,7 +56,7 @@ def test_analytics(rf, settings):
 def test_analytics_installed(settings):
     processors = settings.TEMPLATES[0]['OPTIONS']['context_processors']
 
-    assert 'ui.context_processors.analytics' in processors
+    assert 'directory_components.context_processors.analytics' in processors
 
 
 def test_lead_generation_form_installed(settings):
