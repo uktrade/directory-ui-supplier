@@ -82,6 +82,7 @@ TEMPLATES = [
                 'ui.context_processors.subscribe_form',
                 'ui.context_processors.lead_generation_form',
                 'directory_components.context_processors.analytics',
+                'directory_components.context_processors.urls_processor',
                 'ui.context_processors.feature_flags',
 
             ],
