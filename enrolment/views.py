@@ -1,4 +1,3 @@
-from directory_components.context_processors import get_url
 from zenpy import Zenpy
 from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
@@ -199,7 +198,6 @@ class SectorDetailCMSView(ConditionalEnableTranslationsMixin, TemplateView):
         page = self.get_cms_page(self.kwargs['cms_page_id'])
         return super().get_context_data(
             page=page,
-            contact_us_url=get_url('INFO_CONTACT_US'),
             companies=self.get_companies(page['sector_value']),
             *args, **kwargs
         )

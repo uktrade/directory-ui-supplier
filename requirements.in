@@ -1,19 +1,19 @@
 boto3==1.4.1
-Django==1.11.5
+Django==1.11.10
 django-formtools==2.0
 django-storages==1.5.1
 gunicorn==19.5.0
 raven==5.19.0
-requests==2.11.1
+requests==2.18.4
 whitenoise==3.1
 jsonschema==2.6.0
 django_recaptcha==1.2.0
 redis==2.10.5
 sorl-thumbnail==12.3
 zenpy==1.1.10
--e git+https://github.com/uktrade/directory-validators.git@v4.2.0#egg=directory_validators
--e git+https://github.com/uktrade/directory-signature-auth.git@v2.0.0#egg=sigauth
--e git+https://github.com/uktrade/directory-api-client.git@v9.2.0#egg=directory_api_client
--e git+https://github.com/uktrade/directory-constants.git@v5.0.0#egg=directory_constants
--e git+https://github.com/uktrade/directory-components.git@v0.8.0#egg=directory_components
--e git+https://github.com/uktrade/export-elements.git@v0.7.1#egg=export_elements
+directory-cms-client==0.1.1
+directory-api-client==9.15.1
+directory_validators==4.5.0
+directory_constants==6.5.2
+directory_components==1.1.2
+export-elements==0.8.1

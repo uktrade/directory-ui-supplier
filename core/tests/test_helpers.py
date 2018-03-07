@@ -12,7 +12,7 @@ def test_cms_secrets(settings):
 
 
 def test_cms_client_draft():
-    client = helpers.CmsClient(
+    client = helpers.DirectoryCMSClient(
         base_url='http://cms.com',
         api_key='debug',
     )
@@ -25,7 +25,7 @@ def test_cms_client_draft():
 
 
 def test_cms_client_language():
-    client = helpers.CmsClient(
+    client = helpers.DirectoryCMSClient(
         base_url='http://cms.com',
         api_key='debug',
     )
@@ -38,7 +38,7 @@ def test_cms_client_language():
 
 
 def test_cms_client_published():
-    client = helpers.CmsClient(
+    client = helpers.DirectoryCMSClient(
         base_url='http://cms.com',
         api_key='debug',
     )
