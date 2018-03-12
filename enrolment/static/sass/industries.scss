@@ -108,6 +108,15 @@ body #content {
   padding: 60px;
   position: relative;
   font-size: 15px;
+  div {
+    position: relative;
+    padding-right: 40px;
+    img {
+      position: absolute;
+      height: 40px;
+      left: -40px;
+    }
+  }
   h2 {
     font-size: 24px;
     font-weight: bold;
