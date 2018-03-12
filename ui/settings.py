@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "enrolment",
     "company",
     "core",
+    "industry",
     "formtools",
     "notifications",
     "exportopportunity",

@@ -5,42 +5,20 @@ from django.views.generic import TemplateView
 from django.views.static import serve
 
 from directory_constants.constants.lead_generation import (
-    FOOD_IS_GREAT,
-    LEGAL_IS_GREAT,
-    FRANCE,
-    SINGAPORE,
+    FOOD_IS_GREAT, LEGAL_IS_GREAT, FRANCE, SINGAPORE,
 )
 
-from company.views import (
-    CaseStudyDetailView,
-    ContactCompanyView,
-    CompanySearchView,
-    PublishedProfileDetailView,
-    PublishedProfileListView,
-)
-from enrolment.views import (
-    AnonymousSubscribeFormView,
-    LeadGenerationFormView,
-    SectorListView,
-    LandingView,
-    PrivacyCookiesView,
-    TermsView,
-    SectorDetailView,
-    SectorDetailCMSView,
-)
-from notifications.views import (
-    AnonymousUnsubscribeView
-)
-from exportopportunity import views as exportopportunity_views
-from ui.sitemaps import (
-    SectorLandingPageSitemap,
-    StaticViewSitemap,
-)
+import company.views
+import enrolment.views
+import exportopportunity.views
+import industry.views
+import notifications.views
+import ui.sitemaps
 
 
 sitemaps = {
-    'static': StaticViewSitemap,
-    'industries': SectorLandingPageSitemap,
+    'static': ui.sitemaps.StaticViewSitemap,
+    'industries': ui.sitemaps.SectorLandingPageSitemap,
 }
 
 urlpatterns = [
@@ -57,142 +35,146 @@ urlpatterns = [
     ),
     url(
         r"^$",
-        LandingView.as_view(),
+        enrolment.views.LandingView.as_view(),
         name="index"
     ),
     url(
         r'^suppliers/$',
-        PublishedProfileListView.as_view(),
+        company.views.PublishedProfileListView.as_view(),
         name='public-company-profiles-list',
     ),
     url(
         r'^search/$',
-        CompanySearchView.as_view(),
+        company.views.CompanySearchView.as_view(),
         name='company-search',
     ),
     url(
         r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/contact/$',
-        ContactCompanyView.as_view(),
+        company.views.ContactCompanyView.as_view(),
         name='contact-company',
     ),
     url(
         r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$',
-        PublishedProfileDetailView.as_view(),
+        company.views.PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail',
     ),
     # obsolete. use `public-company-profiles-detail`
     url(
         r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/$',
-        PublishedProfileDetailView.as_view(),
+        company.views.PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail-slugless',
     ),
     url(
         r'^industries/$',
-        SectorListView.as_view(),
+        enrolment.views.SectorListView.as_view(),
         name='sector-list',
     ),
     url(
         r'^industries/(?P<cms_page_id>[0-9]+)/(?P<slug>[\w-]+)/$',
-        SectorDetailCMSView.as_view(),
+        industry.views.SectorDetailCMSView.as_view(),
         name='sector-detail-cms-verbose',
     ),
-
+    url(
+        r'^industry-articles/(?P<cms_page_id>[0-9]+)/(?P<slug>[\w-]+)/$',
+        industry.views.SectorArticleCMSView.as_view(),
+        name='sector-article',
+    ),
     url(
         r'^industries/(?P<slug>.+)/summary/$',
-        SectorDetailView.as_view(),
+        enrolment.views.SectorDetailView.as_view(),
         {'show_proposition': False},
         name='sector-detail-summary',
     ),
     url(
         r'^industries/(?P<slug>.+)/$',
-        SectorDetailView.as_view(),
+        enrolment.views.SectorDetailView.as_view(),
         {'show_proposition': True},
         name='sector-detail-verbose',
     ),
 
     url(
         r'^case-study/(?P<id>.+)/(?P<slug>.+)/$',
-        CaseStudyDetailView.as_view(),
+        company.views.CaseStudyDetailView.as_view(),
         name='case-study-details'
     ),
     # obsolete. use `case-study-details`
     url(
         r'^case-study/(?P<id>.+)/$',
-        CaseStudyDetailView.as_view(),
+        company.views.CaseStudyDetailView.as_view(),
         name='case-study-details-slugless',
     ),
     url(
         r'^privacy-policy/$',
-        PrivacyCookiesView.as_view(),
+        enrolment.views.PrivacyCookiesView.as_view(),
         name='privacy-and-cookies'
     ),
     url(
         r'^terms-and-conditions/$',
-        TermsView.as_view(),
+        enrolment.views.TermsView.as_view(),
         name='terms-and-conditions'
     ),
     url(
         r'^subscribe/$',
-        AnonymousSubscribeFormView.as_view(),
+        enrolment.views.AnonymousSubscribeFormView.as_view(),
         name='subscribe'
     ),
     url(
         r'^feedback/$',
-        LeadGenerationFormView.as_view(),
+        enrolment.views.LeadGenerationFormView.as_view(),
         name='lead-generation'
     ),
     url(
         r'^unsubscribe/$',
-        AnonymousUnsubscribeView.as_view(),
+        notifications.views.AnonymousUnsubscribeView.as_view(),
         name='anonymous-unsubscribe'
     ),
     url(
         r'^export-opportunity/food-is-great/france/$',
-        exportopportunity_views.FoodIsGreatOpportunityWizardView.as_view(),
+        exportopportunity.views.FoodIsGreatOpportunityWizardView.as_view(),
         {'campaign': FOOD_IS_GREAT, 'country': FRANCE},
         name='food-is-great-lead-generation-submit-france',
     ),
     url(
         r'^export-opportunity/food-is-great/singapore/$',
-        exportopportunity_views.FoodIsGreatOpportunityWizardView.as_view(),
+        exportopportunity.views.FoodIsGreatOpportunityWizardView.as_view(),
         {'campaign': FOOD_IS_GREAT, 'country': SINGAPORE},
         name='food-is-great-lead-generation-submit-singapore',
     ),
 
     url(
         r'^export-opportunity/legal-is-great/france/$',
-        exportopportunity_views.LegalIsGreatOpportunityWizardView.as_view(),
+        exportopportunity.views.LegalIsGreatOpportunityWizardView.as_view(),
         {'campaign': LEGAL_IS_GREAT, 'country': FRANCE},
         name='legal-is-great-lead-generation-submit-france',
     ),
     url(
         r'^export-opportunity/legal-is-great/singapore/$',
-        exportopportunity_views.LegalIsGreatOpportunityWizardView.as_view(),
+        exportopportunity.views.LegalIsGreatOpportunityWizardView.as_view(),
         {'campaign': LEGAL_IS_GREAT, 'country': SINGAPORE},
         name='legal-is-great-lead-generation-submit-singapore',
     ),
     url(
         r'^campaign/food-is-great/france/$',
-        exportopportunity_views.FoodIsGreatCampaignView.as_view(),
+        exportopportunity.views.FoodIsGreatCampaignView.as_view(),
         {'campaign': FOOD_IS_GREAT, 'country': FRANCE},
         name='food-is-great-campaign-france',
     ),
     url(
         r'^campaign/food-is-great/singapore/$',
-        exportopportunity_views.FoodIsGreatCampaignView.as_view(),
+        exportopportunity.views.FoodIsGreatCampaignView.as_view(),
         {'campaign': FOOD_IS_GREAT, 'country': SINGAPORE},
         name='food-is-great-campaign-singapore',
     ),
 
     url(
         r'^campaign/legal-is-great/france/$',
-        exportopportunity_views.LegalIsGreatCampaignView.as_view(),
+        exportopportunity.views.LegalIsGreatCampaignView.as_view(),
         {'campaign': LEGAL_IS_GREAT, 'country': FRANCE},
         name='legal-is-great-campaign-france',
     ),
     url(
         r'^campaign/legal-is-great/singapore/$',
-        exportopportunity_views.LegalIsGreatCampaignView.as_view(),
+        exportopportunity.views.LegalIsGreatCampaignView.as_view(),
         {'campaign': LEGAL_IS_GREAT, 'country': SINGAPORE},
         name='legal-is-great-campaign-singapore',
     ),
