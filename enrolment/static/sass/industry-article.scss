@@ -1,0 +1,132 @@
+@import 'main.scss';
+@import 'partials/reset';
+@import 'partials/breadcrumbs';
+
+#menu {
+  height: auto;
+}
+@media (max-width: 641px) {
+  .container {
+    margin-left: 0px;
+  }
+}
+
+body,
+a {
+  font-family: arial,helvetica,sans-serif!important;
+}
+
+$sand: #f5f2ed;
+$gray: #333333;
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.15;
+  color: $gray;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.25;
+  color: $gray;
+  margin-top: 45px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.39;
+}
+
+body #content {
+  padding-top: 0;
+}
+
+#header-gov-links {
+  .header-gov-link:hover,
+  .header-gov-link:link,
+  .header-gov-link:visited {
+    line-height: 10px;  
+  }
+  .header-gov-link:nth-child(2) {
+    line-height: 22px;
+    margin-left: 1px;
+  }
+}
+
+#menu a {
+  text-decoration: none;
+}
+
+.error-reporting {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#table-of-contents {
+  @media (min-width: 641px) {
+    position: sticky;
+    top: 100px;
+    float: left;
+    margin-right: 80px;
+    width: auto;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.25;
+    color: $gray;
+  }
+  li a {
+    font-size: 15px;
+    line-height: 1.67;
+  }
+}
+#industry-article-container {
+  position: relative;
+}
+
+#contact-area {
+  margin: 10px;
+  @media (min-width: 641px) {
+    position: sticky;
+    top: 100px;
+    float: left;
+    margin: 0;
+    margin-left: 122px;
+    width: 200px;
+    height: 315px;
+  }
+  right: 0;
+  padding: 20px;
+  background-color: $sand;
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 1.32;
+  color: $gray;
+  a {
+    margin-top: 30px;
+    height: 50px;
+    width: 160px;
+    color: white;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+
+.sharing-links {
+  .label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  li {
+    display: inline-block;
+    zoom:1;
+  }
+}

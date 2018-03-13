@@ -1,6 +1,5 @@
 import http
-import requests
-from unittest.mock import call, patch, Mock
+from unittest.mock import patch, Mock
 
 import pytest
 
@@ -18,13 +17,6 @@ from enrolment.views import (
     SectorDetailView,
 )
 from ui.views import ConditionalEnableTranslationsMixin
-
-
-def create_response(status_code, json_payload={}):
-    response = requests.Response()
-    response.status_code = status_code
-    response.json = lambda: json_payload
-    return response
 
 
 @pytest.fixture
@@ -322,82 +314,3 @@ def test_conditional_translate_non_bidi_template(rf):
 
     assert response.status_code == 200
     assert response.template_name == ['non-bidi.html']
-
-
-@patch('core.helpers.cms_client.get_page')
-@patch('enrolment.views.get_showcase_companies')
-def test_industries_pages_feature_flag_on(
-    mock_get_showcase_companies, mock_get_cms_page, settings, client
-):
-    settings.FEATURE_CMS_ENABLED = True
-    mock_get_cms_page.return_value = create_response(
-        status_code=200,
-        json_payload={'sector_value': 'value'}
-    )
-
-    url = reverse(
-        'sector-detail-cms-verbose',
-        kwargs={'slug': 'tech', 'cms_page_id': 1}
-    )
-    response = client.get(url)
-
-    assert response.template_name == ['sector-detail.html']
-    assert response.status_code == 200
-
-
-def test_industries_pages_feature_flag_off(settings, client):
-    settings.FEATURE_CMS_ENABLED = False
-
-    url = reverse(
-        'sector-detail-cms-verbose',
-        kwargs={'slug': 'tech', 'cms_page_id': 1}
-    )
-    response = client.get(url)
-
-    assert response.status_code == 404
-
-
-@patch('core.helpers.cms_client.get_page')
-@patch('enrolment.views.get_showcase_companies')
-def test_industries_pages_cms_params(
-    mock_get_showcase_companies, mock_get_page, settings, client
-):
-    settings.FEATURE_CMS_ENABLED = True
-    mock_get_page.return_value = create_response(
-        status_code=200,
-        json_payload={'sector_value': 'value'}
-    )
-
-    url = reverse(
-        'sector-detail-cms-verbose',
-        kwargs={'cms_page_id': '1', 'slug': 'thing'}
-    )
-    response = client.get(url, {'draft_token': '123', 'lang': 'de'})
-
-    assert response.status_code == 200
-    assert response.context_data['page'] == {'sector_value': 'value'}
-    assert mock_get_page.call_count == 1
-    assert mock_get_page.call_args == call(
-        page_id='1',
-        draft_token='123',
-        language_code='de',
-    )
-    assert mock_get_showcase_companies.call_count == 1
-    assert mock_get_showcase_companies.call_args == call(
-        sectors='value', size=6
-    )
-
-
-@patch('core.helpers.cms_client.get_page')
-def test_industries_pages_cms_page_404(mock_get_page, settings, client):
-    mock_get_page.return_value = create_response(status_code=404)
-
-    settings.FEATURE_CMS_ENABLED = True
-
-    url = reverse(
-        'sector-detail-cms-verbose',
-        kwargs={'cms_page_id': '1', 'slug': 'thing'}
-    )
-    response = client.get(url)
-
-    assert response.status_code == 404

@@ -5,7 +5,7 @@
 {% block head_title %}Find a Buyer - GREAT.gov.uk{% endblock %}
 
 {% block head_css %}
-	<link href="{% static 'export_elements/stylesheets/govuk-elements-styles.min.css' %}" media="all" rel="stylesheet" />
+    <link href="{% static 'export_elements/stylesheets/govuk-elements-styles.min.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
 
@@ -14,21 +14,28 @@
 {% endblock %}
 
 {% block body_header %}
-	{% include 'header.html' %}
+    {% include 'header.html' %}
 {% endblock %}
 
 {% block body_footer %}
-	{% include 'footer.html' %}
+    {% include 'footer.html' %}
 {% endblock %}
 
 {% block body_js %}
-	{{ block.super }}
+    {{ block.super }}
     <script type="text/javascript" src="{% static 'javascripts/index.js' %}"></script>
-    <script type="text/javascript">GOVUK.page.init();</script>
+    <script type="text/javascript">
+        GOVUK.page.init();
+        var menu = document.getElementById('menu');
+        document.getElementById('menu-control').addEventListener('click', function() {
+            menu.style.display = menu.style.display === '' ? 'none' : '';
+        });
+
+    </script>
 {% endblock %}
 
 {% block feedback_reporter %}
-	<div class="container">
-		{{ block.super }}
-	</div>
+    <div class="container">
+        {{ block.super }}
+    </div>
 {% endblock %}
