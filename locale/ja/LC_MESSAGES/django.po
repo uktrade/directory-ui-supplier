@@ -2,24 +2,24 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-07 11:09+0000\n"
+"POT-Creation-Date: 2018-03-14 15:28+0000\n"
 "PO-Revision-Date: 2017-06-16 17:01+0100\n"
 "Language: ja\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: xls-to-po 1.0\n"
 
-#: enrolment/constants.py:71
+#: enrolment/constants.py:13
 #, fuzzy
 #| msgid "Rebekah Marine: i-limb&trade; user"
 msgid "Rebekah Marine using an i-limb"
 msgstr "Rebekah Marine 様：i-limb&trade; ユーザー"
 
-#: enrolment/constants.py:73
+#: enrolment/constants.py:15
 msgid "Rebekah Marine: i-limb&trade; user"
 msgstr "Rebekah Marine 様：i-limb&trade; ユーザー"
 
-#: enrolment/constants.py:76
+#: enrolment/constants.py:18
 msgid ""
 "Touch Bionics has transformed thousands of lives in dozens of countries "
 "through world-leading prosthetic technologies. We have a range of "
@@ -30,7 +30,7 @@ msgstr ""
 "人々の生活を大きく変えてきました。当社は、人々の自立心と自信を高める、さまざ"
 "まな筋電義手や義指を提供しています。"
 
-#: enrolment/constants.py:84
+#: enrolment/constants.py:26
 msgid ""
 "The i-limb&trade; quantum is the next best thing to real hands and as a "
 "bilateral amputee having the ability to do what I want to do independently "
@@ -39,31 +39,31 @@ msgstr ""
 "i-limb™ quantum は本物の手の次にすばらしいものです。両手の切断手術を受けた者"
 "として、自分がやりたいことを自分でできるというのは、本当にすごいことです。"
 
-#: enrolment/constants.py:88
+#: enrolment/constants.py:30
 msgid "Jason"
 msgstr "Jason 様"
 
-#: enrolment/constants.py:89
+#: enrolment/constants.py:31
 msgid "i-limb quantum&trade; user"
 msgstr "i-limb quantum™ ユーザー"
 
-#: enrolment/constants.py:93
+#: enrolment/constants.py:35
 msgid "Healthcare and life sciences"
 msgstr "医療・ライフサイエンス"
 
-#: enrolment/constants.py:97 enrolment/constants.py:164
+#: enrolment/constants.py:39 enrolment/constants.py:106
 msgid "Technology"
 msgstr "技術"
 
-#: enrolment/constants.py:102
+#: enrolment/constants.py:44
 msgid "prosthetics, bionics, robotics, healthcare, technology, limb loss"
 msgstr "人工装具、生体工学、ロボット工学、医療、技術、四肢欠損"
 
-#: enrolment/constants.py:108
+#: enrolment/constants.py:50
 msgid "Graphical representation of reflux in the stomach"
 msgstr ""
 
-#: enrolment/constants.py:113
+#: enrolment/constants.py:55
 msgid ""
 "RD Biomed designs and makes Peptest&trade;- the world’s first non-invasive "
 "reflux diagnostic test. RD Biomed specialises in diagnostics for "
@@ -72,11 +72,11 @@ msgstr ""
 "RD Biomed は、世界初の非侵襲性逆流診断テストである Peptest™ を設計、開発して"
 "います。RD Biomed は、消化器病と呼吸状態の診断のを専門とする企業です。"
 
-#: enrolment/constants.py:121
+#: enrolment/constants.py:63
 msgid "Claudia Breidbach using an i-limb"
 msgstr ""
 
-#: enrolment/constants.py:125
+#: enrolment/constants.py:67
 msgid ""
 "Touch Bionics is responsible for developing and improving the world’s first "
 "bionic hand with 5 independently moving fingers, transforming lives across "
@@ -85,11 +85,11 @@ msgstr ""
 "Touch Bionics は、世界初のバイオニック義手を開発、改良しています。5 本の指が"
 "独立して動くこの義手は、世界中の人たちの生活を大きく変えています。"
 
-#: enrolment/constants.py:138
+#: enrolment/constants.py:80
 msgid "Mobile phone displaying evrythng's commercial traceability product"
 msgstr ""
 
-#: enrolment/constants.py:145
+#: enrolment/constants.py:87
 msgid ""
 "EVRYTHNG’s commercial Internet of Things traceability solution allows brands "
 "to track and report the status, location and history of everything they "
@@ -103,7 +103,7 @@ msgstr ""
 "め、構成部品や完成品、バッチ、ケース、パレットが複雑につながった階層構造の識"
 "別やマッピングが可能です。"
 
-#: enrolment/constants.py:155
+#: enrolment/constants.py:97
 msgid ""
 "Companies can transform the value of their physical assets in the EVRYTHNG "
 "cloud by adding an intelligent, personalised layer of digital content, "
@@ -113,17 +113,17 @@ msgstr ""
 "イズしたインテリジェントな形で追加することにより、企業は物的資産の価値を変え"
 "ることができます。"
 
-#: enrolment/constants.py:169
+#: enrolment/constants.py:111
 msgid "Internet of Things, data analytics, traceability, connectivity"
 msgstr "Internet of Things、データ分析、トレーサビリティ、接続性"
 
-#: enrolment/constants.py:175
+#: enrolment/constants.py:117
 msgid ""
 "Mobile phone being used to interact with a bottle of Johnnie Walker using "
 "evrythng technology"
 msgstr ""
 
-#: enrolment/constants.py:181
+#: enrolment/constants.py:123
 msgid ""
 "EVRYTHNG is an Internet of Things software company that helps manufacturers "
 "<i>digitalise</i> their physical products by connecting them to the web. "
@@ -137,11 +137,11 @@ msgstr ""
 "常時接続されたスマートホームアプライアンスまで、EVRYTHNG クラウドで個別に管理"
 "されるアイテムには、一意の Active Digital Identity が割り当てられます。"
 
-#: enrolment/constants.py:192
+#: enrolment/constants.py:134
 msgid "Connectivity diagram of Arkessa's IoT services"
 msgstr ""
 
-#: enrolment/constants.py:196
+#: enrolment/constants.py:138
 msgid ""
 "Arkessa enables devices and applications developers to connect to the "
 "Internet of Things (IoT), regardless of location, network operator or "
@@ -153,13 +153,13 @@ msgstr ""
 "す。導入、統合、拡張が容易で、将来も利用可能で安全性の高いモバイルプラット"
 "フォームを企業に提供しています。"
 
-#: enrolment/constants.py:212
+#: enrolment/constants.py:154
 msgid ""
 "Immersive projection on to Parque Large in the Royal Botanical Gardens of "
 "Rio de Janeiro"
 msgstr ""
 
-#: enrolment/constants.py:219
+#: enrolment/constants.py:161
 msgid ""
 "For Adidas’ 2014 World Cup campaign, Immersive developed concepts, "
 "storyboards and produced final audio and video designs. It also produced the "
@@ -172,27 +172,27 @@ msgstr ""
 "ルへのプロジェクションマッピング、プレスショットを撮るライブカメラの配置のコ"
 "ンサルティングなども行いました。"
 
-#: enrolment/constants.py:227
+#: enrolment/constants.py:169
 msgid "Creating the grandest projection mapping the world has ever seen."
 msgstr "世界で類を見ないほど豪華なプロジェクションマッピングを作成しています。"
 
-#: enrolment/constants.py:230
+#: enrolment/constants.py:172
 msgid "Fast Company magazine"
 msgstr "『Fast Company』誌"
 
-#: enrolment/constants.py:234
+#: enrolment/constants.py:176
 msgid "Creative"
 msgstr "クリエイティブ"
 
-#: enrolment/constants.py:239
+#: enrolment/constants.py:181
 msgid "Interactive installations, video content, projection mapping"
 msgstr "対話型インストール、ビデオコンテンツ、プロジェクションマッピング"
 
-#: enrolment/constants.py:244
+#: enrolment/constants.py:186
 msgid "An Immersive event lighting system"
 msgstr ""
 
-#: enrolment/constants.py:248
+#: enrolment/constants.py:190
 msgid ""
 "Immersive is a complete solution provider for audio-visual projects of any "
 "scale. Immersive uses new media technology (such as LED, holograms, "
@@ -204,12 +204,12 @@ msgstr ""
 "ム、投影、仮想現実、拡張現実など）を駆使して、最先端の照明、ビデオ、対話型イ"
 "ンストールを設計、開発しています。"
 
-#: enrolment/constants.py:258
+#: enrolment/constants.py:200
 msgid ""
 "Interaction between the Blippar app on a smartphone and a ketchup bottle"
 msgstr ""
 
-#: enrolment/constants.py:264
+#: enrolment/constants.py:206
 msgid ""
 "Blippar is the leading visual discovery app, harnessing augmented reality, "
 "image-recognition technology and artificial intelligence to bring the "
@@ -219,17 +219,17 @@ msgstr ""
 "認識技術、人工知能を連携させ、スマートフォンを通して物質世界に命を吹き込みま"
 "す。"
 
-#: enrolment/constants.py:278
+#: enrolment/constants.py:220
 msgid ""
 "Fever-Tree Clementine and cinnamon tonic water being poured from a bottle "
 "into a glass"
 msgstr ""
 
-#: enrolment/constants.py:282 enrolment/constants.py:283
+#: enrolment/constants.py:224 enrolment/constants.py:225
 msgid "Clementine and cinnamon tonic water"
 msgstr "クレメンタイン＆シナモントニックウォーター"
 
-#: enrolment/constants.py:285
+#: enrolment/constants.py:227
 msgid ""
 "Fever-Tree has established itself as the mixer drink specialist, crafting a "
 "range of fourteen products sourced from the highest quality natural "
@@ -239,30 +239,30 @@ msgstr ""
 "ら 14 種類もの製品を生産し、ミキサードリンクスペシャリストとしての地位を確立"
 "しています。"
 
-#: enrolment/constants.py:292
+#: enrolment/constants.py:234
 msgid ""
 "If three-quarters of your gin and tonic is the tonic, make sure you use the "
 "best."
 msgstr ""
 "ジントニックの 4 分の 3 をトニックにするなら、最高のものを使ってください。"
 
-#: enrolment/constants.py:295
+#: enrolment/constants.py:237
 msgid "Tim Warrillow"
 msgstr "Tim Warrillow 様"
 
-#: enrolment/constants.py:300
+#: enrolment/constants.py:242
 msgid "Food and drink"
 msgstr "飲食品"
 
-#: enrolment/constants.py:304
+#: enrolment/constants.py:246
 msgid "Mixers, Quality, Taste"
 msgstr "ミキサー、割り材、品質、味"
 
-#: enrolment/constants.py:309
+#: enrolment/constants.py:251
 msgid "Packet of Joe and Seph's double chocolate popcorn"
 msgstr ""
 
-#: enrolment/constants.py:314
+#: enrolment/constants.py:256
 msgid ""
 "All Joe & Seph’s popcorn is handmade in small batches to ensure superior "
 "texture and an intense flavour. The ingredients used are 100&#37; natural "
@@ -273,11 +273,11 @@ msgstr ""
 "量ずつ手作りしています。100 ％天然の材料を使用し、油を使うよりも健康的な調理"
 "方法のエアーポップ製法ですべて生産されています。"
 
-#: enrolment/constants.py:323
+#: enrolment/constants.py:265
 msgid "Bottle and glass of Fever-Tree Madagascan Cola"
 msgstr ""
 
-#: enrolment/constants.py:327
+#: enrolment/constants.py:269
 msgid ""
 "Fever-Tree has pioneered premium mixers and is now the world’s leading "
 "premium mixer company."
@@ -285,81 +285,85 @@ msgstr ""
 "Fever-Tree はプレミアムミキサードリンク（割り材）のパイオニアで、現在は世界を"
 "リードするプレミアムミキサードリンク企業となっています。"
 
-#: enrolment/constants.py:375
+#: enrolment/constants.py:317
 msgid "Queen Elizabeth Olympic Park, London"
 msgstr ""
 
-#: enrolment/constants.py:376
+#: enrolment/constants.py:318
 msgid "London 2012 Olympic and Paralympic Games"
 msgstr ""
 
-#: enrolment/constants.py:378
+#: enrolment/constants.py:320
 msgid ""
 "Movement Strategies leads design standards for major events such as the "
 "Olympic Games, helping plan crowd movement and safety, and driving increased "
 "ticket sales."
 msgstr ""
 
-#: enrolment/constants.py:390
+#: enrolment/constants.py:332
 msgid "Global sports infrastructure"
 msgstr "グローバルスポーツインフラ"
 
-#: enrolment/constants.py:394
+#: enrolment/constants.py:336
 msgid "Crowd safety, Pedestrian flow, Movement analytics"
 msgstr ""
 
-#: enrolment/constants.py:401
+#: enrolment/constants.py:343
 msgid ""
 "Movement Strategies is the largest and most experienced independent, "
 "specialist people movement consultancy in the world."
 msgstr ""
 
-#: enrolment/constants.py:411
+#: enrolment/constants.py:353
 msgid ""
 "Fortress GB proved its reputation as the market-leading e-ticketing provider "
 "by being selected to install and manage the very latest in turnstile "
 "technology at West Ham’s new home at the London Stadium."
 msgstr ""
 
-#: enrolment/forms.py:19 enrolment/forms.py:41
+#: enrolment/forms.py:22 enrolment/forms.py:44
 msgid "Please select an industry"
 msgstr ""
 
-#: enrolment/forms.py:21 enrolment/forms.py:43
+#: enrolment/forms.py:24 enrolment/forms.py:46
 msgid "Tick the box to confirm you agree to the terms and conditions."
 msgstr "ボックスをオンにして、利用規約に同意したことをご確認ください。"
 
-#: enrolment/forms.py:24 enrolment/forms.py:46
+#: enrolment/forms.py:27 enrolment/forms.py:49
 msgid "Your name"
 msgstr "お名前"
 
-#: enrolment/forms.py:25 enrolment/forms.py:47
+#: enrolment/forms.py:28 enrolment/forms.py:50
 msgid "Email address"
 msgstr "メールアドレス"
 
-#: enrolment/forms.py:27
+#: enrolment/forms.py:30
 msgid "Industry"
 msgstr "業種"
 
-#: enrolment/forms.py:32
+#: enrolment/forms.py:35
 msgid "Company name"
 msgstr "企業名"
 
-#: enrolment/forms.py:33 enrolment/forms.py:49
+#: enrolment/forms.py:36 enrolment/forms.py:52
 msgid "Country"
 msgstr "国名"
 
-#: enrolment/forms.py:48
+#: enrolment/forms.py:51
 msgid "Organisation name"
 msgstr "組織名"
 
-#: enrolment/forms.py:51
+#: enrolment/forms.py:54
 msgid "Describe what you need"
 msgstr "何をお求めかをご説明ください。"
 
-#: enrolment/forms.py:52
+#: enrolment/forms.py:55
 msgid "Maximum 1000 characters."
 msgstr "最大文字数は 1,000 文字です。"
+
+#: enrolment/templates/base.html:15
+msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
+msgstr ""
 
 #: enrolment/templates/bidi/footer.html:10 enrolment/templates/footer.html:10
 msgid "Department for International Trade"
@@ -387,16 +391,12 @@ msgstr "Crown Copyright 2016"
 msgid "Home"
 msgstr "ホーム"
 
-#: enrolment/templates/bidi/header.html:34 enrolment/templates/header.html:34
-#: enrolment/templates/search-companies.html:15
+#: enrolment/templates/bidi/header.html:33 enrolment/templates/header.html:33
+#: enrolment/templates/search-companies.html:14
 msgid "Find a supplier"
 msgstr "サプライヤ検索"
 
 #: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:36
-msgid "Find a Supplier"
-msgstr "サプライヤー検索"
-
-#: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:40
 #: enrolment/templates/marketing-pages/base.html:88
 #: enrolment/templates/marketing-pages/bidi/base.html:87
 msgid "Industries"
@@ -465,7 +465,6 @@ msgstr "英国の産業"
 
 #: enrolment/templates/bidi/lead-generation-form.html:5
 #: enrolment/templates/lead-generation-form.html:5
-#: exportopportunity/templates/export-opportunity.html:11
 msgid "Get UK companies to fulfil your business needs"
 msgstr "ビジネスニーズを満たす英国企業を見つけることができます"
 
@@ -479,27 +478,37 @@ msgstr ""
 "紹介します。"
 
 #: enrolment/templates/bidi/lead-generation-form.html:76
+#: enrolment/templates/lead-generation-form.html:84
 msgid "I agree to the great.gov.uk terms and conditions"
 msgstr "great.gov.uk の利用規約に同意します。"
 
 #: enrolment/templates/bidi/lead-generation-form.html:82
-#: enrolment/templates/lead-generation-form.html:82
+#: enrolment/templates/lead-generation-form.html:90
 msgid "Send"
 msgstr "送信"
 
 #: enrolment/templates/bidi/sector-list.html:15
-#: enrolment/templates/sector-list.html:18
 msgid "Discover the UK's capability in these key industries"
 msgstr "主要産業における英国のパワーをご覧ください"
 
-#: enrolment/templates/bidi/sector-list.html:21
+#: enrolment/templates/bidi/sector-list.html:20
+#: enrolment/templates/sector-list.html:20
+msgid "Celebrating UK Innovation"
+msgstr "主要産業における英国のパワーをご覧ください"
+
+#: enrolment/templates/bidi/sector-list.html:22
+#: enrolment/templates/sector-list.html:22
+msgid "Great Festival of Innovation: Hong Kong 21st March – 24th March 2018"
+msgstr "&nbsp;"
+
+#: enrolment/templates/bidi/sector-list.html:34
 #: enrolment/templates/industry-teasers.html:5
-#: enrolment/templates/sector-list.html:24
+#: enrolment/templates/sector-list.html:34
 msgid "UK industries"
 msgstr "英国の産業"
 
-#: enrolment/templates/bidi/sector-list.html:23
-#: enrolment/templates/sector-list.html:26
+#: enrolment/templates/bidi/sector-list.html:36
+#: enrolment/templates/sector-list.html:36
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -510,8 +519,8 @@ msgstr ""
 "以外を探す必要はありません。英国では、大手企業から小規模な企業まで、あらゆる"
 "産業において最適な取引相手が見つかります。"
 
-#: enrolment/templates/bidi/sector-list.html:26
-#: enrolment/templates/sector-list.html:29
+#: enrolment/templates/bidi/sector-list.html:39
+#: enrolment/templates/sector-list.html:39
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
@@ -533,13 +542,8 @@ msgstr ""
 "ライヤー検索」サービスでは、このような企業を検索できます。"
 
 #: enrolment/templates/browse-companies.html:12
-#: enrolment/templates/search-companies.html:17
 msgid "Browse UK companies"
 msgstr "英国企業を閲覧する"
-
-#: enrolment/templates/base.html:14
-msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
-msgstr ""
 
 #: enrolment/templates/industry-teasers.html:7
 msgid "Healthcare and life sciences in the UK"
@@ -611,18 +615,6 @@ msgstr "言語の変更"
 #: enrolment/templates/language_switcher.html:13
 msgid "Page in English only"
 msgstr "こちらのページは英語です"
-
-#: enrolment/templates/lead-generation-form.html:76
-#, fuzzy
-#| msgid "I agree to the great.gov.uk terms and conditions"
-msgid "I agree to the great.gov.uk"
-msgstr "great.gov.uk の利用規約に同意します。"
-
-#: enrolment/templates/lead-generation-form.html:76
-#, fuzzy
-#| msgid "Terms &amp; conditions"
-msgid "terms and conditions"
-msgstr "利用規約"
 
 #: enrolment/templates/marketing-pages/base.html:20
 #: enrolment/templates/marketing-pages/bidi/base.html:19
@@ -1005,6 +997,7 @@ msgstr ""
 "製品フリー、健康食品といったトレンドを牽引しています。"
 
 #: enrolment/templates/marketing-pages/food.html:57
+#: exportopportunity/templates/exportopportunity/campaign-food.html:50
 msgid "Food quality and safety"
 msgstr "食品の品質と安全性"
 
@@ -1733,9 +1726,348 @@ msgstr ""
 msgid "The UK's strongest industrial sectors - trade.great.gov.uk"
 msgstr ""
 
-#: exportopportunity/templates/export-opportunity.html:23
-msgid "Submit"
+#: exportopportunity/templates/exportopportunity/campaign-base.html:174
+#: exportopportunity/templates/exportopportunity/lead-generation-success-base.html:49
+#, fuzzy
+#| msgid "Find UK suppliers"
+msgid "More UK suppliers"
+msgstr "英国のサプライヤを探す"
+
+#: exportopportunity/templates/exportopportunity/campaign-base.html:185
+#: exportopportunity/templates/exportopportunity/lead-generation-success-base.html:60
+msgid "Incorporated in: "
 msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-base.html:187
+#: exportopportunity/templates/exportopportunity/lead-generation-success-base.html:62
+msgid "Number of employees: "
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-base.html:188
+#: exportopportunity/templates/exportopportunity/lead-generation-success-base.html:63
+msgid "view profile"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:9
+msgid "Get matched with quality UK food and drink suppliers"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:13
+msgid ""
+"UK companies create great food and drink products that sell in markets "
+"around the world."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:17
+#, fuzzy
+#| msgid "The UK's food and drink"
+msgid "What makes UK food and drink unique"
+msgstr "英国の飲食品"
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:21
+msgid ""
+"From traditional cheesemaking and craft beer to new organic and ethically "
+"sourced products, our unique food culture has captured the imagination of "
+"buyers around the globe."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:25
+#, fuzzy
+#| msgid "Creative and media"
+msgid "Tradition and heritage"
+msgstr "クリエイティブ、メディア"
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:33
+msgid ""
+"From Scotch whisky and shortbread to over 1,000 cheeses from across the UK, "
+"we have centuries of food heritage to share. Businesses are bringing new "
+"twists to classic British products - from craft beers to lamb and pork - "
+"which are exported all over the world."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:37
+#, fuzzy
+#| msgid "The UK's advanced technology"
+msgid "Innovation and technology"
+msgstr "英国の高度なテクノロジー"
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:46
+msgid ""
+"Thousands of new food and drink products are launched each year, catering to "
+"all kinds of consumer tastes. Innovations in science and technology are also "
+"helping to bring free-from products to market and extend the shelf life of "
+"food."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:59
+msgid ""
+"We’re the only country in Europe that carries out strategic research on food "
+"authenticity, offering products that buyers can trust. The UK is also a "
+"world leader in animal welfare standards, guaranteeing quality and safety."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:63
+msgid "Find the right food and drink supplier for you"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:67
+msgid ""
+"There are hundreds of UK food and drink suppliers with trade profiles "
+"offering a range of high quality products and services."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:68
+msgid ""
+"Answer just 5 questions and our trade advisers will be able to select "
+"businesses that can meet your needs. We can help match you with suppliers of "
+"the finest products - fast and for free."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:72
+#, fuzzy
+#| msgid "Find UK suppliers"
+msgid "Get matched with UK suppliers"
+msgstr "英国のサプライヤを探す"
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:76
+#: exportopportunity/templates/exportopportunity/campaign-food.html:92
+#: exportopportunity/templates/exportopportunity/campaign-food.html:108
+msgid "We match you with the best UK food and drink companies"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:80
+#, fuzzy
+#| msgid "UK food and drink"
+msgid "In-demand food and drink"
+msgstr "英国の飲食品"
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:84
+#, python-format
+msgid ""
+"UK products are driving global demand. British pork saw a 70%% increase in "
+"Chinese consumer spend in 2016. British lamb was voted product of the year "
+"by French shoppers."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:88
+#: exportopportunity/templates/exportopportunity/campaign-food.html:104
+#: exportopportunity/templates/exportopportunity/campaign-food.html:120
+#, fuzzy
+#| msgid "UK food and drink"
+msgid "Search UK food and drink"
+msgstr "英国の飲食品"
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:96
+msgid "Traditional tastes with a modern twist"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:100
+msgid ""
+"Walkers Shortbread, founded in 1898, sends tonnes of shortbread biscuits to "
+"over 90 countries. There are more than 1,000 cheeses from across the UK."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:112
+msgid "Award-winning products"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:116
+msgid ""
+"In 2016, Scotch whisky won over 200 quality awards - including the world’s "
+"best single malt whisky. Ableforth’s Bathtub Gin has been named one of the "
+"world’s best gins."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:11
+msgid "Find UK legal services that can help you get results"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:15
+msgid ""
+"The UK has an international reputation for its independent judicial systems, "
+"legal excellence and robust laws."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:19
+msgid "Discover what makes UK legal services great"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:23
+msgid ""
+"The UK's legal systems have inspired and influenced similar legal systems "
+"worldwide. Every year, we attract many international businesses who want to "
+"take advantage of the UK’s globally respected legal services."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:27
+msgid "Experienced judges"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:35
+msgid ""
+"Our judges are renowned for their independence, rigour and commercial "
+"expertise in all aspects of the law. As a result, UK court judgments carry a "
+"guarantee of excellence which is respected internationally."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:39
+msgid "Professional expertise"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:47
+msgid ""
+"The UK’s regulated barristers and solicitors represent clients worldwide. "
+"From helping you close cross-border business deals and manage financial "
+"transactions to resolving international disputes, our lawyers have the "
+"global expertise to help you build your business."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:51
+msgid "Robust contract law"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:59
+msgid ""
+"English law is the most popular choice of law for commercial contracts. "
+"Valued for its clarity, it’s the world’s most enduring common law system and "
+"can provide certainty and security for your business deals."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:63
+msgid "Find the legal services you need"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:67
+msgid ""
+"There are hundreds of UK legal companies who can help your business thrive. "
+"Our matching service can help you find legal professionals who can meet your "
+"needs - fast and for free."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:68
+msgid ""
+"Answer a few questions and our government trade advisers will be able to "
+"select the most relevant UK companies for you."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:72
+msgid "Get matched with UK legal services"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:76
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:92
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:108
+msgid "We match you with the best UK legal services companies"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:80
+msgid "Globally recognised quality"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:84
+msgid ""
+"The UK is ranked among the top countries in the world for the quality of its "
+"judicial processes."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:88
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:104
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:120
+#, fuzzy
+#| msgid "The UK's creative services"
+msgid "Search UK legal services"
+msgstr "英国のクリエイティブ事業サービス"
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:96
+msgid "Internationally popular laws"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:100
+#, python-format
+msgid ""
+"English law is the the most popular choice in the world for commercial "
+"contracts. At the London Court of International Arbitration, 80%% of cases "
+"are from overseas."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:112
+msgid "Unique legal tradition"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:116
+msgid ""
+"English law has been evolving since the Magna Carta was sealed over 800 "
+"years ago."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/lead-generation-form-contact.html:7
+#, fuzzy
+#| msgid "Contact us"
+msgid "Contact details"
+msgstr "連絡先"
+
+#: exportopportunity/templates/exportopportunity/lead-generation-form-contact.html:11
+#: exportopportunity/templates/exportopportunity/lead-generation-form-sector.html:11
+msgid ""
+"These details will be sent to UK business advisers. They won’t be shared "
+"with UK companies without your consent."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/lead-generation-form-needs.html:7
+#, fuzzy
+#| msgid "Describe what you need"
+msgid "Explain what you need"
+msgstr "何をお求めかをご説明ください。"
+
+#: exportopportunity/templates/exportopportunity/lead-generation-form-needs.html:11
+msgid ""
+"Tell us more about what products you’re looking for. These details will be "
+"sent to UK business advisers. They won’t be shared with UK companies without "
+"your consent."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/lead-generation-form-sector.html:7
+#, fuzzy
+#| msgid "Tell us about your investment"
+msgid "Tell us about your business and sector"
+msgstr "貴社の投資についてお聞かせください。"
+
+#: exportopportunity/templates/exportopportunity/lead-generation-success-food.html:9
+msgid ""
+"If you want to see more UK food and drink suppliers, you can search hundreds "
+"of trade profiles from export-ready businesses."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/lead-generation-success-food.html:13
+#, fuzzy
+#| msgid "UK food and drink"
+msgid "Search food and drink"
+msgstr "英国の飲食品"
+
+#: exportopportunity/templates/exportopportunity/lead-generation-success-legal.html:9
+msgid ""
+"If you want to see more UK legal services suppliers, you can search hundreds "
+"of trade profiles from export-ready businesses."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/lead-generation-success-legal.html:13
+#, fuzzy
+#| msgid "The UK's creative services"
+msgid "Search legal services"
+msgstr "英国のクリエイティブ･サービス"
+
+#~ msgid "Find a Supplier"
+#~ msgstr "サプライヤー検索"
+
+#, fuzzy
+#~| msgid "I agree to the great.gov.uk terms and conditions"
+#~ msgid "I agree to the great.gov.uk"
+#~ msgstr "great.gov.uk の利用規約に同意します。"
+
+#, fuzzy
+#~| msgid "Terms &amp; conditions"
+#~ msgid "terms and conditions"
+#~ msgstr "利用規約"
 
 #~ msgid ""
 #~ "Check out the cutting-edge technologies that the UK is bringing to the "
@@ -1760,16 +2092,6 @@ msgstr ""
 #~ msgid "The UK’s food and drink"
 #~ msgstr "英国の飲料品＆食品"
 
-#, fuzzy
-#~| msgid "The UK's advanced technology"
-#~ msgid "Advanced technology"
-#~ msgstr "英国の高度なテクノロジー"
-
-#, fuzzy
-#~| msgid "The UK's creative services"
-#~ msgid "Creative services"
-#~ msgstr "英国のクリエイティブ･サービス"
-
 #~ msgid ""
 #~ "UK companies work with businesses and governments around the world to "
 #~ "create new living and working environments, run high quality services and "
@@ -1793,9 +2115,6 @@ msgstr ""
 
 #~ msgid "This page is only in English"
 #~ msgstr "このページは英語でのみご利用いただけます。"
-
-#~ msgid "Find UK suppliers"
-#~ msgstr "英国のサプライヤを探す"
 
 #~ msgid "Search by product, service or company keyword"
 #~ msgstr "製品、サービス、企業名をキーワードにして検索できます。"
@@ -1862,9 +2181,6 @@ msgstr ""
 
 #~ msgid "Construction"
 #~ msgstr "建設"
-
-#~ msgid "Creative and media"
-#~ msgstr "クリエイティブ、メディア"
 
 #~ msgid "Education and training"
 #~ msgstr "教育、研修"
@@ -2087,9 +2403,6 @@ msgstr ""
 
 #~ msgid "Provide details about your plans to invest in the UK"
 #~ msgstr "英国への投資計画の詳細を入力してください。"
-
-#~ msgid "Tell us about your investment"
-#~ msgstr "貴社の投資についてお聞かせください。"
 
 #~ msgid ""
 #~ "Tell us about your company and your plans for the UK in terms of the size "
