@@ -1,24 +1,2 @@
 @import 'main.scss';
 @import 'landing.scss';
-
-$gray: #333333;
-
-#hero-event-details {
-  padding-left: 20px;
-  h1 {
-    font-size: 48px;
-    font-weight: bold;
-    line-height: 1.15;
-    letter-spacing: -1px;
-    color: $gray;
-  }
-  div {
-    margin-top: 15px;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 1.29;
-    letter-spacing: -0.4px;
-    color: $gray;
-    max-width: 450px;
-  }
-}
