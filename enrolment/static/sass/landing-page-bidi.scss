@@ -2,3 +2,9 @@
 @import 'main-bidi.scss';
 @import 'landing.scss';
 @import 'landing-bidi.scss';
+
+#hero-event-details {
+  h1, div {
+    color: #333333;
+  }
+}
