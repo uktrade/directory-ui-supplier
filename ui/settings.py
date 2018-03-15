@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-from urllib.parse import urlparse
 
 from ui import helpers
 
@@ -358,10 +357,7 @@ THUMBNAIL_FORCE_OVERWRITE = True
 
 # Redis for thumbnails cache
 if os.getenv('REDIS_URL'):
-    redis_url = urlparse(os.environ['REDIS_URL'])
-    THUMBNAIL_REDIS_PORT = redis_url.port
-    THUMBNAIL_REDIS_HOST = redis_url.hostname
-    THUMBNAIL_REDIS_PASSWORD = redis_url.password or ''
+    THUMBNAIL_REDIS_URL = os.environ['REDIS_URL']
 
 # django-storages for thumbnails
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
