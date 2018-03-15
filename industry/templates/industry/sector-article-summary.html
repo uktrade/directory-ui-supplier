@@ -1,0 +1,16 @@
+{% load first_image first_paragraph from cms_tags %}
+{% if article %}
+    <div class="grid-row">
+        <div class="column-one-half">
+            <div class="article-meta">
+                <span>{{ article.author_name }}</span>
+            </div>
+            <h2>{{ article.title }}</h2>
+            {{ article.body|first_paragraph|safe }}
+            <a href="{{ article.url }}" class="link">Find out more</a>
+        </div>
+        <div class="column-one-half">
+            {{ article.body|first_image|safe }}
+        </div>
+    </div>
+{% endif %}

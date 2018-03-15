@@ -97,17 +97,13 @@
         </div>
     </section>
 
-    <section id="case-study">
-        <div class="grid-row">
-            <div class="column-one-half">
-                {{ page.case_study|safe }}
-                <a href="{{ page.case_study_url }}" class="link">Find our more</a>
-            </div>
-            <div class="column-one-half">
-                <img src="{{ page.case_study_image.url }}"></img>
-            </div>
-        </div>
-        
+    <section id="articles">
+        {% include "industry/sector-article-summary.html" with article=page.article_one %}
+        {% include "industry/sector-article-summary.html" with article=page.article_two %}
+        {% include "industry/sector-article-summary.html" with article=page.article_three %}
+        {% include "industry/sector-article-summary.html" with article=page.article_four %}
+        {% include "industry/sector-article-summary.html" with article=page.article_five %}
+        {% include "industry/sector-article-summary.html" with article=page.article_six %}
     </section>
 </div>
 {% endblock content %}

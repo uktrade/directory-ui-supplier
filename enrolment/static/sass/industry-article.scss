@@ -130,3 +130,15 @@ body #content {
     zoom:1;
   }
 }
+
+#content {
+  #article-meta {
+    font-size: 15px;
+    line-height: 1.47;
+    color: $gray;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
