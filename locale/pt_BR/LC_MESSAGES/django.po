@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-07 11:09+0000\n"
+"POT-Creation-Date: 2018-03-14 15:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: enrolment/constants.py:71
+#: enrolment/constants.py:13
 msgid "Rebekah Marine using an i-limb"
 msgstr "Rebekah Marine: usuária do i-limbTM"
 
-#: enrolment/constants.py:73
+#: enrolment/constants.py:15
 msgid "Rebekah Marine: i-limb&trade; user"
 msgstr "Rebekah Marine: usuária do i-limbTM"
 
-#: enrolment/constants.py:76
+#: enrolment/constants.py:18
 msgid ""
 "Touch Bionics has transformed thousands of lives in dozens of countries "
 "through world-leading prosthetic technologies. We have a range of "
@@ -37,38 +37,38 @@ msgstr ""
 "mioelétricas de mãos e dedos que ajudam as pessoas a aumentar sua "
 "independência e confiança."
 
-#: enrolment/constants.py:84
+#: enrolment/constants.py:26
 msgid ""
 "The i-limb&trade; quantum is the next best thing to real hands and as a "
 "bilateral amputee having the ability to do what I want to do independently "
 "is truly remarkable."
 msgstr ""
 
-#: enrolment/constants.py:88
+#: enrolment/constants.py:30
 msgid "Jason"
 msgstr "Jason"
 
-#: enrolment/constants.py:89
+#: enrolment/constants.py:31
 msgid "i-limb quantum&trade; user"
 msgstr "Usuário do i-limb quantum™"
 
-#: enrolment/constants.py:93
+#: enrolment/constants.py:35
 msgid "Healthcare and life sciences"
 msgstr "Ciências da saúde e da vida"
 
-#: enrolment/constants.py:97 enrolment/constants.py:164
+#: enrolment/constants.py:39 enrolment/constants.py:106
 msgid "Technology"
 msgstr "Tecnologia"
 
-#: enrolment/constants.py:102
+#: enrolment/constants.py:44
 msgid "prosthetics, bionics, robotics, healthcare, technology, limb loss"
 msgstr "prótese, biônico, robótica, saúde, tecnologia, perda de membro"
 
-#: enrolment/constants.py:108
+#: enrolment/constants.py:50
 msgid "Graphical representation of reflux in the stomach"
 msgstr ""
 
-#: enrolment/constants.py:113
+#: enrolment/constants.py:55
 msgid ""
 "RD Biomed designs and makes Peptest&trade;- the world’s first non-invasive "
 "reflux diagnostic test. RD Biomed specialises in diagnostics for "
@@ -78,11 +78,11 @@ msgstr ""
 "mundo para diagnóstico de refluxo. A RD Biomed é especialista no diagnóstico "
 "de condições gastrenterológicas e respiratórias."
 
-#: enrolment/constants.py:121
+#: enrolment/constants.py:63
 msgid "Claudia Breidbach using an i-limb"
 msgstr ""
 
-#: enrolment/constants.py:125
+#: enrolment/constants.py:67
 msgid ""
 "Touch Bionics is responsible for developing and improving the world’s first "
 "bionic hand with 5 independently moving fingers, transforming lives across "
@@ -92,11 +92,11 @@ msgstr ""
 "biônica do mundo com cinco dedos que se movem de maneira independente, "
 "transformando vidas em todo o mundo."
 
-#: enrolment/constants.py:138
+#: enrolment/constants.py:80
 msgid "Mobile phone displaying evrythng's commercial traceability product"
 msgstr ""
 
-#: enrolment/constants.py:145
+#: enrolment/constants.py:87
 msgid ""
 "EVRYTHNG’s commercial Internet of Things traceability solution allows brands "
 "to track and report the status, location and history of everything they "
@@ -111,7 +111,7 @@ msgstr ""
 "complexa e interligada de componentes, produtos acabados, lotes, caixas e "
 "paletes possa ser identificada e mapeada."
 
-#: enrolment/constants.py:155
+#: enrolment/constants.py:97
 msgid ""
 "Companies can transform the value of their physical assets in the EVRYTHNG "
 "cloud by adding an intelligent, personalised layer of digital content, "
@@ -121,17 +121,17 @@ msgstr ""
 "EVRYTHNG, adicionando uma camada inteligente e personalizada de conteúdo "
 "digital, serviços e análise de dados."
 
-#: enrolment/constants.py:169
+#: enrolment/constants.py:111
 msgid "Internet of Things, data analytics, traceability, connectivity"
 msgstr "Internet das Coisas, análise de dados, rastreabilidade, conectividade"
 
-#: enrolment/constants.py:175
+#: enrolment/constants.py:117
 msgid ""
 "Mobile phone being used to interact with a bottle of Johnnie Walker using "
 "evrythng technology"
 msgstr ""
 
-#: enrolment/constants.py:181
+#: enrolment/constants.py:123
 msgid ""
 "EVRYTHNG is an Internet of Things software company that helps manufacturers "
 "<i>digitalise</i> their physical products by connecting them to the web. "
@@ -146,11 +146,11 @@ msgstr ""
 "inteligentes totalmente conectados, cada item individual gerenciado na nuvem "
 "da EVRYTHNG possui uma exclusiva identidade digital ativa"
 
-#: enrolment/constants.py:192
+#: enrolment/constants.py:134
 msgid "Connectivity diagram of Arkessa's IoT services"
 msgstr ""
 
-#: enrolment/constants.py:196
+#: enrolment/constants.py:138
 msgid ""
 "Arkessa enables devices and applications developers to connect to the "
 "Internet of Things (IoT), regardless of location, network operator or "
@@ -163,13 +163,13 @@ msgstr ""
 "plataforma de mobilidade segura e preparada para o futuro, que é fácil de "
 "adotar, integrar e dimensionar."
 
-#: enrolment/constants.py:212
+#: enrolment/constants.py:154
 msgid ""
 "Immersive projection on to Parque Large in the Royal Botanical Gardens of "
 "Rio de Janeiro"
 msgstr ""
 
-#: enrolment/constants.py:219
+#: enrolment/constants.py:161
 msgid ""
 "For Adidas’ 2014 World Cup campaign, Immersive developed concepts, "
 "storyboards and produced final audio and video designs. It also produced the "
@@ -181,27 +181,27 @@ msgstr ""
 "entire technical event, which included projection mapping on the mansion and "
 "a 2m ball and consulting on live-camera press shot positions"
 
-#: enrolment/constants.py:227
+#: enrolment/constants.py:169
 msgid "Creating the grandest projection mapping the world has ever seen."
 msgstr "Criando o maior mapeamento de projeção que o mundo já viu."
 
-#: enrolment/constants.py:230
+#: enrolment/constants.py:172
 msgid "Fast Company magazine"
 msgstr "Revista Fast Company"
 
-#: enrolment/constants.py:234
+#: enrolment/constants.py:176
 msgid "Creative"
 msgstr "Criatividade"
 
-#: enrolment/constants.py:239
+#: enrolment/constants.py:181
 msgid "Interactive installations, video content, projection mapping"
 msgstr "Instalações interativas, conteúdo de vídeo, mapeamento de projeção"
 
-#: enrolment/constants.py:244
+#: enrolment/constants.py:186
 msgid "An Immersive event lighting system"
 msgstr ""
 
-#: enrolment/constants.py:248
+#: enrolment/constants.py:190
 msgid ""
 "Immersive is a complete solution provider for audio-visual projects of any "
 "scale. Immersive uses new media technology (such as LED, holograms, "
@@ -213,12 +213,12 @@ msgstr ""
 "(como LED, hologramas, projeção, realidade virtual e realidade aumentada) "
 "para projetar e criar iluminação de ponta, vídeo e instalações interativas."
 
-#: enrolment/constants.py:258
+#: enrolment/constants.py:200
 msgid ""
 "Interaction between the Blippar app on a smartphone and a ketchup bottle"
 msgstr ""
 
-#: enrolment/constants.py:264
+#: enrolment/constants.py:206
 msgid ""
 "Blippar is the leading visual discovery app, harnessing augmented reality, "
 "image-recognition technology and artificial intelligence to bring the "
@@ -228,17 +228,17 @@ msgstr ""
 "realidade aumentada, a tecnologia de reconhecimento de imagem e a "
 "inteligência artificial para dar vida ao mundo físico usando smartphones."
 
-#: enrolment/constants.py:278
+#: enrolment/constants.py:220
 msgid ""
 "Fever-Tree Clementine and cinnamon tonic water being poured from a bottle "
 "into a glass"
 msgstr ""
 
-#: enrolment/constants.py:282 enrolment/constants.py:283
+#: enrolment/constants.py:224 enrolment/constants.py:225
 msgid "Clementine and cinnamon tonic water"
 msgstr "Água tônica de canela e tangerina"
 
-#: enrolment/constants.py:285
+#: enrolment/constants.py:227
 msgid ""
 "Fever-Tree has established itself as the mixer drink specialist, crafting a "
 "range of fourteen products sourced from the highest quality natural "
@@ -248,30 +248,30 @@ msgstr ""
 "variedade de catorze produtos provenientes dos ingredientes naturais da mais "
 "alta qualidade para as misturas mais saborosas."
 
-#: enrolment/constants.py:292
+#: enrolment/constants.py:234
 msgid ""
 "If three-quarters of your gin and tonic is the tonic, make sure you use the "
 "best."
 msgstr ""
 "Se 3/4 de sua gin e tônica é a tônica, não deixe de usar o que há de melhor."
 
-#: enrolment/constants.py:295
+#: enrolment/constants.py:237
 msgid "Tim Warrillow"
 msgstr "Tim Warrillow"
 
-#: enrolment/constants.py:300
+#: enrolment/constants.py:242
 msgid "Food and drink"
 msgstr "Comida e bebida"
 
-#: enrolment/constants.py:304
+#: enrolment/constants.py:246
 msgid "Mixers, Quality, Taste"
 msgstr "Mixers, qualidade, sabor"
 
-#: enrolment/constants.py:309
+#: enrolment/constants.py:251
 msgid "Packet of Joe and Seph's double chocolate popcorn"
 msgstr ""
 
-#: enrolment/constants.py:314
+#: enrolment/constants.py:256
 msgid ""
 "All Joe & Seph’s popcorn is handmade in small batches to ensure superior "
 "texture and an intense flavour. The ingredients used are 100&#37; natural "
@@ -283,11 +283,11 @@ msgstr ""
 "são 100% naturais e os grãos estouram no ar, um método de cozimento mais "
 "saudável em relação à fritura."
 
-#: enrolment/constants.py:323
+#: enrolment/constants.py:265
 msgid "Bottle and glass of Fever-Tree Madagascan Cola"
 msgstr ""
 
-#: enrolment/constants.py:327
+#: enrolment/constants.py:269
 msgid ""
 "Fever-Tree has pioneered premium mixers and is now the world’s leading "
 "premium mixer company."
@@ -295,82 +295,86 @@ msgstr ""
 "A Fever-Tree foi pioneira em bebidas mixer de alta qualidade e agora é a "
 "principal empresa do mundo nesse segmento."
 
-#: enrolment/constants.py:375
+#: enrolment/constants.py:317
 msgid "Queen Elizabeth Olympic Park, London"
 msgstr ""
 
-#: enrolment/constants.py:376
+#: enrolment/constants.py:318
 msgid "London 2012 Olympic and Paralympic Games"
 msgstr ""
 
-#: enrolment/constants.py:378
+#: enrolment/constants.py:320
 msgid ""
 "Movement Strategies leads design standards for major events such as the "
 "Olympic Games, helping plan crowd movement and safety, and driving increased "
 "ticket sales."
 msgstr ""
 
-#: enrolment/constants.py:390
+#: enrolment/constants.py:332
 msgid "Global sports infrastructure"
 msgstr ""
 
-#: enrolment/constants.py:394
+#: enrolment/constants.py:336
 msgid "Crowd safety, Pedestrian flow, Movement analytics"
 msgstr ""
 
-#: enrolment/constants.py:401
+#: enrolment/constants.py:343
 msgid ""
 "Movement Strategies is the largest and most experienced independent, "
 "specialist people movement consultancy in the world."
 msgstr ""
 
-#: enrolment/constants.py:411
+#: enrolment/constants.py:353
 msgid ""
 "Fortress GB proved its reputation as the market-leading e-ticketing provider "
 "by being selected to install and manage the very latest in turnstile "
 "technology at West Ham’s new home at the London Stadium."
 msgstr ""
 
-#: enrolment/forms.py:19 enrolment/forms.py:41
+#: enrolment/forms.py:22 enrolment/forms.py:44
 msgid "Please select an industry"
 msgstr "Selecione o setor"
 
-#: enrolment/forms.py:21 enrolment/forms.py:43
+#: enrolment/forms.py:24 enrolment/forms.py:46
 msgid "Tick the box to confirm you agree to the terms and conditions."
 msgstr ""
 "Marque esta caixa para confirmar que você concorda com os termos e condições."
 
-#: enrolment/forms.py:24 enrolment/forms.py:46
+#: enrolment/forms.py:27 enrolment/forms.py:49
 msgid "Your name"
 msgstr "Seu nome"
 
-#: enrolment/forms.py:25 enrolment/forms.py:47
+#: enrolment/forms.py:28 enrolment/forms.py:50
 msgid "Email address"
 msgstr "Endereço de e-mail"
 
-#: enrolment/forms.py:27
+#: enrolment/forms.py:30
 msgid "Industry"
 msgstr "Setor"
 
-#: enrolment/forms.py:32
+#: enrolment/forms.py:35
 msgid "Company name"
 msgstr "Nome da empresa"
 
-#: enrolment/forms.py:33 enrolment/forms.py:49
+#: enrolment/forms.py:36 enrolment/forms.py:52
 msgid "Country"
 msgstr "País"
 
-#: enrolment/forms.py:48
+#: enrolment/forms.py:51
 msgid "Organisation name"
 msgstr "Nome da organização"
 
-#: enrolment/forms.py:51
+#: enrolment/forms.py:54
 msgid "Describe what you need"
 msgstr "Descreva o que você precisa"
 
-#: enrolment/forms.py:52
+#: enrolment/forms.py:55
 msgid "Maximum 1000 characters."
 msgstr "No máximo 1.000 caracteres."
+
+#: enrolment/templates/base.html:15
+msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
+msgstr ""
 
 #: enrolment/templates/bidi/footer.html:10 enrolment/templates/footer.html:10
 msgid "Department for International Trade"
@@ -396,16 +400,12 @@ msgstr "Crown Copyright 2016"
 msgid "Home"
 msgstr "Início"
 
-#: enrolment/templates/bidi/header.html:34 enrolment/templates/header.html:34
-#: enrolment/templates/search-companies.html:15
+#: enrolment/templates/bidi/header.html:33 enrolment/templates/header.html:33
+#: enrolment/templates/search-companies.html:14
 msgid "Find a supplier"
 msgstr "Encontrar um fornecedor"
 
 #: enrolment/templates/bidi/header.html:36 enrolment/templates/header.html:36
-msgid "Find a Supplier"
-msgstr "Encontrar um fornecedor"
-
-#: enrolment/templates/bidi/header.html:40 enrolment/templates/header.html:40
 #: enrolment/templates/marketing-pages/base.html:88
 #: enrolment/templates/marketing-pages/bidi/base.html:87
 msgid "Industries"
@@ -476,7 +476,6 @@ msgstr "Setores do Reino Unido"
 
 #: enrolment/templates/bidi/lead-generation-form.html:5
 #: enrolment/templates/lead-generation-form.html:5
-#: exportopportunity/templates/export-opportunity.html:11
 msgid "Get UK companies to fulfil your business needs"
 msgstr ""
 "Encontre empresas do Reino Unido que atendem às suas necessidades de negócio"
@@ -491,27 +490,37 @@ msgstr ""
 "você em contato com fornecedores relevantes do Reino Unido."
 
 #: enrolment/templates/bidi/lead-generation-form.html:76
+#: enrolment/templates/lead-generation-form.html:84
 msgid "I agree to the great.gov.uk terms and conditions"
 msgstr "Concordo com os termos e condições do site great.gov.uk."
 
 #: enrolment/templates/bidi/lead-generation-form.html:82
-#: enrolment/templates/lead-generation-form.html:82
+#: enrolment/templates/lead-generation-form.html:90
 msgid "Send"
 msgstr "Enviar"
 
 #: enrolment/templates/bidi/sector-list.html:15
-#: enrolment/templates/sector-list.html:18
 msgid "Discover the UK's capability in these key industries"
 msgstr "Descubra a capacidade do Reino Unido nesses setores importantes"
 
-#: enrolment/templates/bidi/sector-list.html:21
+#: enrolment/templates/bidi/sector-list.html:20
+#: enrolment/templates/sector-list.html:20
+msgid "Celebrating UK Innovation"
+msgstr "Descubra a capacidade do Reino Unido nesses setores importantes"
+
+#: enrolment/templates/bidi/sector-list.html:22
+#: enrolment/templates/sector-list.html:22
+msgid "Great Festival of Innovation: Hong Kong 21st March – 24th March 2018"
+msgstr "&nbsp;"
+
+#: enrolment/templates/bidi/sector-list.html:34
 #: enrolment/templates/industry-teasers.html:5
-#: enrolment/templates/sector-list.html:24
+#: enrolment/templates/sector-list.html:34
 msgid "UK industries"
 msgstr "Setores do Reino Unido"
 
-#: enrolment/templates/bidi/sector-list.html:23
-#: enrolment/templates/sector-list.html:26
+#: enrolment/templates/bidi/sector-list.html:36
+#: enrolment/templates/sector-list.html:36
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -524,8 +533,8 @@ msgstr ""
 "relações comerciais certas com grandes empresas e empresas de porte menor em "
 "todos os setores da indústria."
 
-#: enrolment/templates/bidi/sector-list.html:26
-#: enrolment/templates/sector-list.html:29
+#: enrolment/templates/bidi/sector-list.html:39
+#: enrolment/templates/sector-list.html:39
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
@@ -549,13 +558,8 @@ msgstr ""
 "fornecedor."
 
 #: enrolment/templates/browse-companies.html:12
-#: enrolment/templates/search-companies.html:17
 msgid "Browse UK companies"
 msgstr "Procurar perfis de empresas do Reino Unido"
-
-#: enrolment/templates/base.html:14
-msgid "Find trade profiles of reliable UK suppliers - trade.great.gov.uk"
-msgstr ""
 
 #: enrolment/templates/industry-teasers.html:7
 msgid "Healthcare and life sciences in the UK"
@@ -629,18 +633,6 @@ msgstr "Selecionar"
 #: enrolment/templates/language_switcher.html:13
 msgid "Page in English only"
 msgstr "Esta página está disponível somente em inglês"
-
-#: enrolment/templates/lead-generation-form.html:76
-#, fuzzy
-#| msgid "I agree to the great.gov.uk terms and conditions"
-msgid "I agree to the great.gov.uk"
-msgstr "Concordo com os termos e condições do site great.gov.uk."
-
-#: enrolment/templates/lead-generation-form.html:76
-#, fuzzy
-#| msgid "Terms &amp; conditions"
-msgid "terms and conditions"
-msgstr "Termos e condições"
 
 #: enrolment/templates/marketing-pages/base.html:20
 #: enrolment/templates/marketing-pages/bidi/base.html:19
@@ -1037,6 +1029,7 @@ msgstr ""
 "lácteos e saudáveis."
 
 #: enrolment/templates/marketing-pages/food.html:57
+#: exportopportunity/templates/exportopportunity/campaign-food.html:50
 msgid "Food quality and safety"
 msgstr "Qualidade e segurança dos alimentos"
 
@@ -1790,9 +1783,347 @@ msgstr ""
 msgid "The UK's strongest industrial sectors - trade.great.gov.uk"
 msgstr ""
 
-#: exportopportunity/templates/export-opportunity.html:23
-msgid "Submit"
-msgstr "Enviar"
+#: exportopportunity/templates/exportopportunity/campaign-base.html:174
+#: exportopportunity/templates/exportopportunity/lead-generation-success-base.html:49
+#, fuzzy
+#| msgid "Find a supplier"
+msgid "More UK suppliers"
+msgstr "Encontrar um fornecedor"
+
+#: exportopportunity/templates/exportopportunity/campaign-base.html:185
+#: exportopportunity/templates/exportopportunity/lead-generation-success-base.html:60
+msgid "Incorporated in: "
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-base.html:187
+#: exportopportunity/templates/exportopportunity/lead-generation-success-base.html:62
+msgid "Number of employees: "
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-base.html:188
+#: exportopportunity/templates/exportopportunity/lead-generation-success-base.html:63
+msgid "view profile"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:9
+msgid "Get matched with quality UK food and drink suppliers"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:13
+msgid ""
+"UK companies create great food and drink products that sell in markets "
+"around the world."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:17
+#, fuzzy
+#| msgid "The UK's food and drink"
+msgid "What makes UK food and drink unique"
+msgstr "A comida e a bebida do Reino Unido"
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:21
+msgid ""
+"From traditional cheesemaking and craft beer to new organic and ethically "
+"sourced products, our unique food culture has captured the imagination of "
+"buyers around the globe."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:25
+msgid "Tradition and heritage"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:33
+msgid ""
+"From Scotch whisky and shortbread to over 1,000 cheeses from across the UK, "
+"we have centuries of food heritage to share. Businesses are bringing new "
+"twists to classic British products - from craft beers to lamb and pork - "
+"which are exported all over the world."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:37
+#, fuzzy
+#| msgid "Advanced technology"
+msgid "Innovation and technology"
+msgstr "Tecnologia avançada"
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:46
+msgid ""
+"Thousands of new food and drink products are launched each year, catering to "
+"all kinds of consumer tastes. Innovations in science and technology are also "
+"helping to bring free-from products to market and extend the shelf life of "
+"food."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:59
+msgid ""
+"We’re the only country in Europe that carries out strategic research on food "
+"authenticity, offering products that buyers can trust. The UK is also a "
+"world leader in animal welfare standards, guaranteeing quality and safety."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:63
+#, fuzzy
+#| msgid "Find UK food and drink companies to meet your needs"
+msgid "Find the right food and drink supplier for you"
+msgstr "Encontrar empresas excelentes no Reino Unido"
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:67
+msgid ""
+"There are hundreds of UK food and drink suppliers with trade profiles "
+"offering a range of high quality products and services."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:68
+msgid ""
+"Answer just 5 questions and our trade advisers will be able to select "
+"businesses that can meet your needs. We can help match you with suppliers of "
+"the finest products - fast and for free."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:72
+msgid "Get matched with UK suppliers"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:76
+#: exportopportunity/templates/exportopportunity/campaign-food.html:92
+#: exportopportunity/templates/exportopportunity/campaign-food.html:108
+msgid "We match you with the best UK food and drink companies"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:80
+#, fuzzy
+#| msgid "UK food and drink"
+msgid "In-demand food and drink"
+msgstr "Comida e bebida do Reino Unido"
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:84
+#, python-format
+msgid ""
+"UK products are driving global demand. British pork saw a 70%% increase in "
+"Chinese consumer spend in 2016. British lamb was voted product of the year "
+"by French shoppers."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:88
+#: exportopportunity/templates/exportopportunity/campaign-food.html:104
+#: exportopportunity/templates/exportopportunity/campaign-food.html:120
+#, fuzzy
+#| msgid "UK food and drink"
+msgid "Search UK food and drink"
+msgstr "Comida e bebida do Reino Unido"
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:96
+msgid "Traditional tastes with a modern twist"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:100
+msgid ""
+"Walkers Shortbread, founded in 1898, sends tonnes of shortbread biscuits to "
+"over 90 countries. There are more than 1,000 cheeses from across the UK."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:112
+msgid "Award-winning products"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-food.html:116
+msgid ""
+"In 2016, Scotch whisky won over 200 quality awards - including the world’s "
+"best single malt whisky. Ableforth’s Bathtub Gin has been named one of the "
+"world’s best gins."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:11
+msgid "Find UK legal services that can help you get results"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:15
+msgid ""
+"The UK has an international reputation for its independent judicial systems, "
+"legal excellence and robust laws."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:19
+msgid "Discover what makes UK legal services great"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:23
+msgid ""
+"The UK's legal systems have inspired and influenced similar legal systems "
+"worldwide. Every year, we attract many international businesses who want to "
+"take advantage of the UK’s globally respected legal services."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:27
+msgid "Experienced judges"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:35
+msgid ""
+"Our judges are renowned for their independence, rigour and commercial "
+"expertise in all aspects of the law. As a result, UK court judgments carry a "
+"guarantee of excellence which is respected internationally."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:39
+msgid "Professional expertise"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:47
+msgid ""
+"The UK’s regulated barristers and solicitors represent clients worldwide. "
+"From helping you close cross-border business deals and manage financial "
+"transactions to resolving international disputes, our lawyers have the "
+"global expertise to help you build your business."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:51
+msgid "Robust contract law"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:59
+msgid ""
+"English law is the most popular choice of law for commercial contracts. "
+"Valued for its clarity, it’s the world’s most enduring common law system and "
+"can provide certainty and security for your business deals."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:63
+msgid "Find the legal services you need"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:67
+msgid ""
+"There are hundreds of UK legal companies who can help your business thrive. "
+"Our matching service can help you find legal professionals who can meet your "
+"needs - fast and for free."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:68
+msgid ""
+"Answer a few questions and our government trade advisers will be able to "
+"select the most relevant UK companies for you."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:72
+msgid "Get matched with UK legal services"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:76
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:92
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:108
+msgid "We match you with the best UK legal services companies"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:80
+msgid "Globally recognised quality"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:84
+msgid ""
+"The UK is ranked among the top countries in the world for the quality of its "
+"judicial processes."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:88
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:104
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:120
+#, fuzzy
+#| msgid "The UK's creative services"
+msgid "Search UK legal services"
+msgstr "Os serviços criativos do Reino Unido"
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:96
+msgid "Internationally popular laws"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:100
+#, python-format
+msgid ""
+"English law is the the most popular choice in the world for commercial "
+"contracts. At the London Court of International Arbitration, 80%% of cases "
+"are from overseas."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:112
+msgid "Unique legal tradition"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/campaign-legal.html:116
+msgid ""
+"English law has been evolving since the Magna Carta was sealed over 800 "
+"years ago."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/lead-generation-form-contact.html:7
+#, fuzzy
+#| msgid "Contact us"
+msgid "Contact details"
+msgstr "Fale conosco"
+
+#: exportopportunity/templates/exportopportunity/lead-generation-form-contact.html:11
+#: exportopportunity/templates/exportopportunity/lead-generation-form-sector.html:11
+msgid ""
+"These details will be sent to UK business advisers. They won’t be shared "
+"with UK companies without your consent."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/lead-generation-form-needs.html:7
+#, fuzzy
+#| msgid "Describe what you need"
+msgid "Explain what you need"
+msgstr "Descreva o que você precisa"
+
+#: exportopportunity/templates/exportopportunity/lead-generation-form-needs.html:11
+msgid ""
+"Tell us more about what products you’re looking for. These details will be "
+"sent to UK business advisers. They won’t be shared with UK companies without "
+"your consent."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/lead-generation-form-sector.html:7
+msgid "Tell us about your business and sector"
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/lead-generation-success-food.html:9
+msgid ""
+"If you want to see more UK food and drink suppliers, you can search hundreds "
+"of trade profiles from export-ready businesses."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/lead-generation-success-food.html:13
+#, fuzzy
+#| msgid "UK food and drink"
+msgid "Search food and drink"
+msgstr "Comida e bebida do Reino Unido"
+
+#: exportopportunity/templates/exportopportunity/lead-generation-success-legal.html:9
+msgid ""
+"If you want to see more UK legal services suppliers, you can search hundreds "
+"of trade profiles from export-ready businesses."
+msgstr ""
+
+#: exportopportunity/templates/exportopportunity/lead-generation-success-legal.html:13
+#, fuzzy
+#| msgid "Creative services"
+msgid "Search legal services"
+msgstr "Serviços criativos"
+
+#~ msgid "Find a Supplier"
+#~ msgstr "Encontrar um fornecedor"
+
+#, fuzzy
+#~| msgid "I agree to the great.gov.uk terms and conditions"
+#~ msgid "I agree to the great.gov.uk"
+#~ msgstr "Concordo com os termos e condições do site great.gov.uk."
+
+#, fuzzy
+#~| msgid "Terms &amp; conditions"
+#~ msgid "terms and conditions"
+#~ msgstr "Termos e condições"
+
+#~ msgid "Submit"
+#~ msgstr "Enviar"
 
 #~ msgid ""
 #~ "Check out the cutting-edge technologies that the UK is bringing to the "
@@ -1818,12 +2149,6 @@ msgstr "Enviar"
 
 #~ msgid "The UK’s food and drink"
 #~ msgstr "A comida e a bebida do Reino Unido"
-
-#~ msgid "Advanced technology"
-#~ msgstr "Tecnologia avançada"
-
-#~ msgid "Creative services"
-#~ msgstr "Serviços criativos"
 
 #~ msgid "The company"
 #~ msgstr "A empresa"
