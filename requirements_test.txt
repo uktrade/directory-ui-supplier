@@ -58,5 +58,6 @@ six==1.11.0               # via freezegun, mohawk, python-dateutil, requests-moc
 sorl-thumbnail==12.3
 termcolor==1.1.0          # via pytest-sugar
 urllib3==1.22             # via requests
+waitress==0.8.9
 whitenoise==3.1
 zenpy==1.1.10

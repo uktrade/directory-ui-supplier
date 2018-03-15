@@ -18,3 +18,4 @@ directory_constants==6.5.2
 directory_components==1.2.0
 export-elements==0.8.1
 beautifulsoup4==4.6.0
+waitress==0.8.9

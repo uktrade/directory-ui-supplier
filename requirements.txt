@@ -43,5 +43,6 @@ sigauth==2.1.2            # via directory-client-core
 six==1.11.0               # via mohawk, python-dateutil
 sorl-thumbnail==12.3
 urllib3==1.22             # via requests
+waitress==0.8.9
 whitenoise==3.1
 zenpy==1.1.10
