@@ -1,3 +1,4 @@
+import datetime
 import re
 
 from bs4 import BeautifulSoup
@@ -32,3 +33,25 @@ def table_of_contents(value):
         (build_anchor_id(element), get_label(element))
         for element in soup.findAll('h2')
     ]
+
+
+@register.filter
+def first_paragraph(value):
+    soup = BeautifulSoup(value, 'html.parser')
+    element = soup.find('p')
+    return str(element)
+
+
+@register.filter
+def first_image(value):
+    soup = BeautifulSoup(value, 'html.parser')
+    element = soup.find('img')
+    if not element:
+        return ''
+    del element['height']
+    return element
+
+
+@register.filter
+def to_date(value):
+    return datetime.datetime.strptime(value, '%Y-%m-%d')
