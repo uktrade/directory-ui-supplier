@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-from urllib.parse import urlparse
 
 from ui import helpers
 
