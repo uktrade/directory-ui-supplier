@@ -11,8 +11,8 @@ cachetools==2.0.1         # via zenpy
 certifi==2018.1.18        # via requests
 chardet==3.0.4            # via requests
 contextlib2==0.5.5        # via raven
-directory-api-client==9.15.1
-directory-client-core==0.2.0  # via directory-api-client, directory-cms-client
+directory-api-client==9.15.3
+directory-client-core==0.2.1  # via directory-api-client, directory-cms-client
 directory-cms-client==0.1.1
 directory_components==1.2.0
 directory_constants==6.5.2

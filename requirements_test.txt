@@ -13,8 +13,8 @@ chardet==3.0.4            # via requests
 codecov==2.0.9
 contextlib2==0.5.5        # via raven
 coverage==4.5.1           # via codecov, pytest-cov
-directory-api-client==9.15.1
-directory-client-core==0.2.0  # via directory-api-client, directory-cms-client
+directory-api-client==9.15.3
+directory-client-core==0.2.1  # via directory-api-client, directory-cms-client
 directory-cms-client==0.1.1
 directory_components==1.2.0
 directory_constants==6.5.2
