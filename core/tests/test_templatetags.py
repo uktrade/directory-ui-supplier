@@ -37,3 +37,51 @@ def test_table_of_contents():
         '    <a href="#title-one-section">Title one</a>'
         '    <a href="#title-two-section">Title two</a>'
     )
+
+
+def test_first_paragraph():
+    template = Template(
+        '{% load first_paragraph from cms_tags %}'
+        '{{ html|first_paragraph|safe }}'
+
+    )
+    context = Context({
+        'html': '<p>The first paragraph</p><p></p>'
+    })
+    html = template.render(context)
+
+    assert html == '<p>The first paragraph</p>'
+
+
+def test_first_image():
+    template = Template(
+        '{% load first_image from cms_tags %}'
+        '{{ html|first_image|safe }}'
+
+    )
+    context = Context({
+        'html': (
+            '<p>The first paragraph</p>'
+            '<p><img src="path/to/image" height="100" width="50"/></p>'
+        )
+    })
+    html = template.render(context)
+
+    assert html == '<img src="path/to/image" width="50"/>'
+
+
+def test_first_image_empty():
+    template = Template(
+        '{% load first_image from cms_tags %}'
+        '{{ html|first_image|safe }}'
+
+    )
+    context = Context({
+        'html': (
+            '<p>The first paragraph</p>'
+            '<p></p>'
+        )
+    })
+    html = template.render(context)
+
+    assert html == ''

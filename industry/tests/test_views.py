@@ -32,6 +32,7 @@ def industry_article_response():
         json_payload={
             'title': 'Hello world',
             'body': '<h2>Hello world</h2>',
+            'date': '2018-01-01',
         }
     )
 
@@ -126,8 +127,7 @@ def test_article_page_context(settings, client, industry_article_response):
     settings.FEATURE_CMS_ENABLED = True
 
     url = reverse(
-        'sector-article',
-        kwargs={'cms_page_id': '2', 'slug': 'thing'}
+        'sector-article', kwargs={'cms_page_id': '2', 'slug': 'thing'}
     )
     response = client.get(url)
 
