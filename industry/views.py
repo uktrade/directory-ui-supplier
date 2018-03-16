@@ -6,12 +6,15 @@ from django.utils import translation
 from django.views.generic import TemplateView
 
 from core.helpers import cms_client
+from core.mixins import SetEtagMixin
 from enrolment.forms import LanguageIndustriesForm
 from exportopportunity.helpers import get_showcase_companies
 from ui.views import ConditionalEnableTranslationsMixin
 
 
-class BaseCMSView(ConditionalEnableTranslationsMixin, TemplateView):
+class BaseCMSView(
+    SetEtagMixin, ConditionalEnableTranslationsMixin, TemplateView
+):
 
     def dispatch(self, *args, **kwargs):
         if not settings.FEATURE_CMS_ENABLED:

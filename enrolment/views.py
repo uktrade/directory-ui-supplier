@@ -8,6 +8,7 @@ from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
 from api_client import api_client
+from core.mixins import SetEtagMixin
 from enrolment import constants, forms
 from ui.views import ConditionalEnableTranslationsMixin
 
@@ -82,7 +83,8 @@ class AnonymousSubscribeFormView(FormView):
 
 
 class LandingView(
-    ActiveViewNameMixin, ConditionalEnableTranslationsMixin, TemplateView
+    SetEtagMixin, ActiveViewNameMixin, ConditionalEnableTranslationsMixin,
+    TemplateView
 ):
     template_name = 'landing-page.html'
     template_name_bidi = 'bidi/landing-page.html'
@@ -90,7 +92,8 @@ class LandingView(
 
 
 class SectorListView(
-    ActiveViewNameMixin, ConditionalEnableTranslationsMixin, TemplateView
+    SetEtagMixin, ActiveViewNameMixin, ConditionalEnableTranslationsMixin,
+    TemplateView
 ):
     template_name = 'sector-list.html'
     template_name_bidi = 'bidi/sector-list.html'
@@ -105,15 +108,17 @@ class SectorListView(
         )
 
 
-class PrivacyCookiesView(TemplateView):
+class PrivacyCookiesView(SetEtagMixin, TemplateView):
     template_name = 'privacy-and-cookies.html'
 
 
-class TermsView(TemplateView):
+class TermsView(SetEtagMixin, TemplateView):
     template_name = 'terms-and-conditions.html'
 
 
-class SectorDetailView(ConditionalEnableTranslationsMixin, TemplateView):
+class SectorDetailView(
+    SetEtagMixin, ConditionalEnableTranslationsMixin, TemplateView
+):
     template_name_bidi = None
     language_form_class = forms.LanguageIndustriesForm
 
