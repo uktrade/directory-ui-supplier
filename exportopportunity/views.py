@@ -8,6 +8,7 @@ from directory_constants.constants import lead_generation, sectors
 from formtools.wizard.views import SessionWizardView
 
 from api_client import api_client
+from core.mixins import SetEtagMixin
 from exportopportunity import forms, helpers
 from core.views import ConditionalEnableTranslationsMixin
 
@@ -162,7 +163,8 @@ class LegalIsGreatOpportunityWizardView(BaseOpportunityWizardView):
 
 
 class BaseCampaignView(
-    ConditionalEnableTranslationsMixin, GetShowcaseResourcesMixin, TemplateView
+    SetEtagMixin, ConditionalEnableTranslationsMixin,
+    GetShowcaseResourcesMixin, TemplateView
 ):
     template_name = None
     language_form_class = forms.LanguageCampaignForm

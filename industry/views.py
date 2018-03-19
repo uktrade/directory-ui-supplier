@@ -7,6 +7,8 @@ from django.views.generic import TemplateView
 
 from core.helpers import cms_client, handle_cms_response
 from core.views import ActiveViewNameMixin, ConditionalEnableTranslationsMixin
+from core.helpers import cms_client
+from core.mixins import SetEtagMixin
 from enrolment.forms import LanguageIndustriesForm
 from exportopportunity.helpers import get_showcase_companies
 
@@ -21,7 +23,9 @@ class GetCMSPageMixin:
         return handle_cms_response(response)
 
 
-class BaseCMSView(ConditionalEnableTranslationsMixin, TemplateView):
+class BaseCMSView(
+    SetEtagMixin, ConditionalEnableTranslationsMixin, TemplateView
+):
 
     language_form_class = LanguageIndustriesForm
 
