@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 {% load trans from i18n %}
 {% load search_url from company_tags %}
-{% load chunk_list from cms_tags %}
+{% load grouper from cms_tags %}
 
 {% block head_css %}
     {{ block.super }}
@@ -49,7 +49,7 @@
 </div>
 
 <div class="container" id="industry-pages-container">
-    {% for row in pages|chunk_list:3 %}
+    {% for row in pages|grouper:3 %}
         <section class="grid-row">
             {% for item in row %}
                 <a href="{{ item.url }}" class="column-one-third">

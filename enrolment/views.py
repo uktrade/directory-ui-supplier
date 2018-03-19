@@ -23,7 +23,6 @@ ZENPY_CREDENTIALS = {
 zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
-
 class LeadGenerationFormView(ConditionalEnableTranslationsMixin, FormView):
     success_template = 'lead-generation-success.html'
     template_name = 'lead-generation.html'
@@ -86,17 +85,19 @@ class LandingView(
     active_view_name = 'index'
 
 
+class SectorListViewNegotiator(TemplateView):
+    def __new__(cls, *args, **kwargs):
+        if settings.FEATURE_CMS_ENABLED:
+            ViewClass = industry.views.SectorLandingPageCMSView
+        else:
+            ViewClass = SectorListView
+        return ViewClass(*args, **kwargs)
+
+
 class SectorListView(
     SetEtagMixin, ActiveViewNameMixin, ConditionalEnableTranslationsMixin,
     TemplateView
 ):
-    @classmethod
-    def as_view(cls, *args, **kwargs):
-        if settings.FEATURE_CMS_ENABLED:
-            return industry.views.SectorLandingPageCMSView.as_view(
-                *args, **kwargs
-            )
-        return super().as_view(*args, **kwargs)
 
     template_name = 'sector-list.html'
     template_name_bidi = 'bidi/sector-list.html'

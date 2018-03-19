@@ -7,8 +7,6 @@ from django.views.generic import TemplateView
 
 from core.helpers import cms_client, handle_cms_response
 from core.views import ActiveViewNameMixin, ConditionalEnableTranslationsMixin
-from core.helpers import cms_client
-from core.mixins import SetEtagMixin
 from enrolment.forms import LanguageIndustriesForm
 from exportopportunity.helpers import get_showcase_companies
 
@@ -23,9 +21,7 @@ class GetCMSPageMixin:
         return handle_cms_response(response)
 
 
-class BaseCMSView(
-    SetEtagMixin, ConditionalEnableTranslationsMixin, TemplateView
-):
+class BaseCMSView(ConditionalEnableTranslationsMixin, TemplateView):
 
     language_form_class = LanguageIndustriesForm
 
@@ -54,7 +50,7 @@ class SectorArticleCMSView(GetCMSPageMixin, BaseCMSView):
     template_name = 'industry/article.html'
 
     def get_context_data(self, *args, **kwargs):
-        page = self.get_cms_object()
+        page = self.get_cms_page()
         social_links_builder = SocialLinkBuilder(
             url=self.request.build_absolute_uri(),
             page_title=page['title'],
@@ -85,10 +81,9 @@ class SectorLandingPageCMSView(ActiveViewNameMixin, BaseCMSView):
         )
         return handle_cms_response(response)
 
-
     def get_context_data(self, *args, **kwargs):
         return super().get_context_data(
-            pages=self.list_pages()['items'] * 12,
+            pages=self.list_pages()['items'],
             page=self.get_cms_page(),
             *args,
             **kwargs
