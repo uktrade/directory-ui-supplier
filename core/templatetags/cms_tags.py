@@ -55,3 +55,9 @@ def first_image(value):
 @register.filter
 def to_date(value):
     return datetime.datetime.strptime(value, '%Y-%m-%d')
+
+
+@register.filter
+def chunk_list(value, length):
+    unchunked  = value or []
+    return [unchunked[x:x+length] for x in range(0, len(unchunked), length)]

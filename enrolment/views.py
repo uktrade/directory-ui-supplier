@@ -9,7 +9,8 @@ from django.views.generic.edit import FormView
 
 from api_client import api_client
 from enrolment import constants, forms
-from ui.views import ConditionalEnableTranslationsMixin
+from core.views import ActiveViewNameMixin, ConditionalEnableTranslationsMixin
+import industry.views
 
 
 ZENPY_CREDENTIALS = {
@@ -20,12 +21,6 @@ ZENPY_CREDENTIALS = {
 # Zenpy will let the connection timeout after 5s and will retry 3 times
 zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
-
-class ActiveViewNameMixin:
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['active_view_name'] = self.active_view_name
-        return context
 
 
 class LeadGenerationFormView(ConditionalEnableTranslationsMixin, FormView):
@@ -92,6 +87,14 @@ class LandingView(
 class SectorListView(
     ActiveViewNameMixin, ConditionalEnableTranslationsMixin, TemplateView
 ):
+    @classmethod
+    def as_view(cls, *args, **kwargs):
+        if settings.FEATURE_CMS_ENABLED:
+            return industry.views.SectorLandingPageCMSView.as_view(
+                *args, **kwargs
+            )
+        return super().as_view(*args, **kwargs)
+
     template_name = 'sector-list.html'
     template_name_bidi = 'bidi/sector-list.html'
     language_form_class = forms.LanguageIndustriesForm

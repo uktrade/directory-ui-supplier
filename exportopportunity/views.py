@@ -9,7 +9,7 @@ from formtools.wizard.views import SessionWizardView
 
 from api_client import api_client
 from exportopportunity import forms, helpers
-from ui.views import ConditionalEnableTranslationsMixin
+from core.views import ConditionalEnableTranslationsMixin
 
 
 industry_map = {

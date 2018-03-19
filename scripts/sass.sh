@@ -30,7 +30,7 @@ input_output_map="\
 	enrolment/static/sass/lead-generation-page.scss:enrolment/static/lead-generation-page.css \
 	enrolment/static/sass/industries.scss:enrolment/static/industries.css \
 	enrolment/static/sass/industry-article.scss:enrolment/static/industry-article.css \
-
+	enrolment/static/sass/industry-list.scss:enrolment/static/industry-list.css \
 "
 
 prod_command="sass --sourcemap=none --style compressed"
