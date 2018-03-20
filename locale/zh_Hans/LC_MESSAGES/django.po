@@ -470,12 +470,12 @@ msgstr "了解英国在这些重要行业内的雄厚实力"
 #: enrolment/templates/bidi/sector-list.html:20
 #: enrolment/templates/sector-list.html:20
 msgid "Celebrating UK Innovation"
-msgstr ""
+msgstr "庆祝英国科技创新"
 
 #: enrolment/templates/bidi/sector-list.html:22
 #: enrolment/templates/sector-list.html:22
 msgid "Great Festival of Innovation: Hong Kong 21st March – 24th March 2018"
-msgstr ""
+msgstr "(香港)科技创新节： 2018年3月21日至24日，香港"
 
 #: enrolment/templates/bidi/sector-list.html:34
 #: enrolment/templates/industry-teasers.html:5

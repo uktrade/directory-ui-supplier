@@ -494,12 +494,12 @@ msgstr "主要産業における英国のパワーをご覧ください"
 #: enrolment/templates/bidi/sector-list.html:20
 #: enrolment/templates/sector-list.html:20
 msgid "Celebrating UK Innovation"
-msgstr "主要産業における英国のパワーをご覧ください"
+msgstr "英国イノベーションを祝う"
 
 #: enrolment/templates/bidi/sector-list.html:22
 #: enrolment/templates/sector-list.html:22
 msgid "Great Festival of Innovation: Hong Kong 21st March – 24th March 2018"
-msgstr "&nbsp;"
+msgstr "GREAT イノベーションの祝祭：香港　2018年3月21日~24日"
 
 #: enrolment/templates/bidi/sector-list.html:34
 #: enrolment/templates/industry-teasers.html:5

@@ -40,3 +40,10 @@ class ConditionalEnableTranslationsMixin:
         if translation.get_language_bidi():
             return [self.template_name_bidi]
         return super().get_template_names()
+
+
+class ActiveViewNameMixin:
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['active_view_name'] = self.active_view_name
+        return context

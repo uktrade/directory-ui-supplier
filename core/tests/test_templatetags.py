@@ -85,3 +85,39 @@ def test_first_image_empty():
     html = template.render(context)
 
     assert html == ''
+
+
+def test_grouper():
+    template = Template(
+        '{% load grouper from cms_tags %}'
+        '{% for chunk in the_list|grouper:3 %}'
+        '<ul>'
+        '    {% for item in chunk %}'
+        '    <li>{{ item }}</li>'
+        '    {% endfor %}'
+        '</ul>'
+        '{% endfor %}'
+
+    )
+    context = Context({
+        'the_list': range(1, 10)
+    })
+    html = template.render(context)
+
+    assert html == (
+        '<ul>'
+        '        <li>1</li>'
+        '        <li>2</li>'
+        '        <li>3</li>'
+        '    </ul>'
+        '<ul>'
+        '        <li>4</li>'
+        '        <li>5</li>'
+        '        <li>6</li>'
+        '    </ul>'
+        '<ul>'
+        '        <li>7</li>'
+        '        <li>8</li>'
+        '        <li>9</li>'
+        '    </ul>'
+    )

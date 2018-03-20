@@ -1,0 +1,113 @@
+{% extends 'core/base.html' %}
+{% load static from staticfiles %}
+{% load trans from i18n %}
+{% load search_url from company_tags %}
+
+{% block head_css %}
+    {{ block.super }}
+    <link href="{% static 'industries.css' %}" media="all" rel="stylesheet" />
+{% endblock %}
+
+{% block meta_description %}
+    {{ page.meta_description }}
+{% endblock %}
+
+{% block head_title %}
+    {{ page.seo_title }}
+{% endblock %}
+
+{% block content %}
+<section id="hero" style="background-image: url({{ page.hero_image.url }});">
+    <div class="container">
+        <div class="hero-teaser">
+            {{ page.hero_text|safe }}
+        </div>
+    </div>
+</section>
+
+<div>
+    <div class="container">
+        <p class="breadcrumbs">
+            <span class="label verbose">You are here:</span>
+            <a href="/">Home</a>
+            <span class="separator">,</span>
+            <a href="/">Industries</a>
+            <span class="separator">,</span>
+            <span class="current">{{ page.sector_label }}</span>
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <section id="lede" class="grid-row">
+        <div class="column-two-thirds">
+            <h2>{{ page.lede|safe }}</h2>
+        </div>
+        <div class="column-one-third">
+            <a href="{{ directory_components_urls.contact_us }}" class="button button-primary">Contact us</a>
+        </div>
+    </section>
+
+    <section id="lede-columns" class="grid-row">
+        <div class="column-one-third">
+            <img src="{{ page.lede_column_two_icon.url}}" />
+            {{ page.lede_column_one|safe }}
+        </div>
+        <div class="column-one-third">
+            <img src="{{ page.lede_column_one_icon.url }}" />
+            {{ page.lede_column_two|safe }}
+        </div>
+        <div class="column-one-third">
+            <img src="{{ page.lede_column_three_icon.url }}" />
+            {{ page.lede_column_three|safe }}
+        </div>
+        <div class="clearfix"></div>
+    </section>
+
+    <section id="companies">
+        <h2 class="heading-large">Search for UK {{ page.sector_label }} suppliers</h2>
+        
+        <div class="grid-row">
+            <div class="column-one-half">
+                <form method="get" action="{% url 'company-search' %}">
+                    <input type="hidden" value="{{ page.sector_value }}" name="sectors" />
+                    <input type="text" name="term"/>
+                    <button type="submit">search</button>
+                </form>
+            </div>
+        </div>
+        
+        <ul class="grid-row">
+        {% for company in companies %}
+            <div class="column-one-half">
+                <li>
+                    <div>
+                        <img src="{{ company.logo }}"></img>
+                    </div>
+                    <dl>
+                        <dt><a href="{{ company.public_profile_url }}" class="link">{{ company.name }}</a></dt>
+                        <dd>{{ company.summary|default:company.description|truncatechars:150 }}</dd>
+                    </dl>
+                </li>
+            </div>
+        {% endfor %}
+        </ul>
+        <div>
+            <a href="{% search_url sector_value=page.sector_value %}" class="button">View all</a>
+        </div>
+    </section>
+
+    <section id="case-study">
+        <div class="grid-row">
+            <div class="column-one-half">
+                {{ page.case_study|safe }}
+                <a href="{{ page.case_study_url }}" class="link">Find our more</a>
+            </div>
+            <div class="column-one-half">
+                <img src="{{ page.case_study_image.url }}"></img>
+            </div>
+        </div>
+        
+    </section>
+</div>
+{% endblock content %}

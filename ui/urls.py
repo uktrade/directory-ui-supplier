@@ -66,7 +66,7 @@ urlpatterns = [
     ),
     url(
         r'^industries/$',
-        enrolment.views.SectorListView.as_view(),
+        enrolment.views.SectorListViewNegotiator.as_view(),
         name='sector-list',
     ),
     url(
