@@ -1,0 +1,68 @@
+{% extends 'core/base.html' %}
+{% load static from staticfiles %}
+{% load trans from i18n %}
+{% load search_url from company_tags %}
+{% load grouper from cms_tags %}
+
+{% block head_css %}
+    {{ block.super }}
+    <link href="{% static 'industry-list.css' %}" media="all" rel="stylesheet" />
+{% endblock %}
+
+{% block meta_description %}
+    {{ page.meta_description }}
+{% endblock %}
+
+{% block head_title %}
+    {{ page.seo_title }}
+{% endblock %}
+
+{% block content %}
+
+<div id="hero" style="background-image: url({{ page.hero_image.url }});">
+    <div class="container">
+        <h1>{{ page.title }}</h1>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <p class="breadcrumbs">
+            <span class="label verbose">You are here:</span>
+            <a href="/">Home</a>
+            <span class="separator">,</span>
+            <span class="current">{{ page.breadcrumbs_label }}</span>
+        </p>
+    </div>
+</div>
+
+<div class="container" id="introduction">
+    <div class="column-one-half">
+        <p>
+            {{ page.proposition_text }}
+        </p>
+    </div>
+    <div class="column-one-half">
+        <a href="{{ directory_components_urls.contact_us }}" class="button button-primary">{{ page.call_to_action_text }}</a>
+    </div>
+    <span class="clearfix"></span>
+</div>
+
+<div class="container" id="industry-pages-container">
+    {% for row in pages|grouper:3 %}
+        <section class="grid-row">
+            {% for item in row %}
+                <a href="{{ item.url }}" class="column-one-third">
+                    <span>{{ item.title }}</span>
+                    <img src="{{ item.hero_image.url }}" />
+                </a>
+            {% endfor %}
+        </section>
+    {% endfor %}
+</div>
+        
+    </section>
+</div>
+{% endblock content %}
+
+{% block feedback_reporter %}{% endblock %}

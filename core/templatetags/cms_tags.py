@@ -1,4 +1,5 @@
 import datetime
+import itertools
 import re
 
 from bs4 import BeautifulSoup
@@ -55,3 +56,9 @@ def first_image(value):
 @register.filter
 def to_date(value):
     return datetime.datetime.strptime(value, '%Y-%m-%d')
+
+
+@register.filter
+def grouper(iterable, n):
+    args = [iter(iterable or [])] * n
+    return itertools.zip_longest(*args, fillvalue=None)

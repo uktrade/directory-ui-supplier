@@ -1,0 +1,144 @@
+@import 'main.scss';
+@import 'partials/reset';
+@import 'partials/breadcrumbs';
+
+body,
+a {
+  font-family: arial,helvetica,sans-serif!important;
+}
+
+#menu {
+  height: auto;
+}
+@media (max-width: 641px) {
+  .container {
+    margin-left: 0px;
+  }
+}
+
+$sand: #f5f2ed;
+$red: #E22014;
+$blue: rgba(0, 82, 157, 0.8);
+
+body #content {
+  padding-top: 0;
+}
+
+#hero {
+  background-size: 1200px 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: $white;
+  margin-bottom: 30px;
+  padding-top: 220px;
+  position: relative;
+
+  h1 {
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+    width: 425px;
+    background-color: $blue;
+    border-bottom: 7px solid $red;
+    padding: 30px;
+    padding-bottom: 23px;
+    color: white;
+    max-width: 800px;
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+}
+
+#header-gov-links {
+  .header-gov-link:hover,
+  .header-gov-link:link,
+  .header-gov-link:visited {
+    line-height: 10px;  
+  }
+  .header-gov-link:nth-child(2) {
+    line-height: 22px;
+    margin-left: 1px;
+  }
+}
+
+#menu a {
+  text-decoration: none;
+}
+
+#hero {
+  height: 300px;
+  position: relative;
+  .hero-teaser {
+    background-color: rgba(0,82,157,0.8);
+    border-bottom: #e41f13 solid 4px;
+    bottom: 0;
+    max-width: 520px;
+    padding: 30px;
+    position: absolute;
+    color: #ffffff;
+  }
+
+  h2 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.11;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.39;
+  }
+}
+
+#introduction {
+  background-color: $sand;
+  padding-top: 58px;
+  padding-bottom: 58px;
+  div {
+    padding: 0;
+  }
+  p {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.25;
+  }
+  .button {
+    width: 295px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+#industry-pages-container {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 0;
+  span {
+    background-color: #006ccc;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.39;
+    color: white;
+    display: inline-block;
+  }
+  img {
+    width: 100%;
+  }
+  a {
+    margin-bottom: 60px;
+  }
+}
+.error-reporting {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+

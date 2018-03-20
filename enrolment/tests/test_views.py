@@ -9,14 +9,15 @@ from django.views.generic import TemplateView
 
 from zenpy.lib.api_objects import Ticket, User
 
-from enrolment import constants, forms
+from enrolment import constants, forms, views
 from enrolment.views import (
     api_client,
     AnonymousSubscribeFormView,
     LeadGenerationFormView,
     SectorDetailView,
 )
-from ui.views import ConditionalEnableTranslationsMixin
+from core.views import ConditionalEnableTranslationsMixin
+import industry.views
 
 
 @pytest.fixture
@@ -125,11 +126,35 @@ def test_international_landing_page_sector_context(client):
     assert pages['food-and-drink']['context'] == constants.FOOD_SECTOR_CONTEXT
 
 
-def test_international_sector_list_context(client):
+def test_international_sector_list_context(client, settings):
+    settings.FEATURE_CMS_ENABLED = False
+
     view_name = 'sector-list'
     response = client.get(reverse(view_name))
 
     assert response.context['active_view_name'] == view_name
+
+
+def test_international_sector_list_cms_feature_flag_off(client, settings):
+    settings.FEATURE_CMS_ENABLED = False
+
+    response = client.get(reverse('sector-list'))
+
+    assert response.template_name == [views.SectorListView.template_name]
+
+
+@patch(
+    'industry.views.SectorLandingPageCMSView.get_context_data',
+    Mock(return_value={})
+)
+def test_international_sector_list_cms_feature_flag_on(client, settings):
+    settings.FEATURE_CMS_ENABLED = True
+
+    response = client.get(reverse('sector-list'))
+
+    assert response.template_name == [
+        industry.views.SectorLandingPageCMSView.template_name
+    ]
 
 
 def test_terms_page_success(client):
@@ -234,6 +259,7 @@ def test_international_landing_page_flag_off_advanced_manufacturing(settings):
 
 
 def test_industry_list_page_enabled_language_translations(settings, client):
+    settings.FEATURE_CMS_ENABLED = False
     settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE = []  # all languages enabled
 
     url = reverse('sector-list')
@@ -245,6 +271,7 @@ def test_industry_list_page_enabled_language_translations(settings, client):
 
 
 def test_industry_list_page_disabled_language_translations(settings, client):
+    settings.FEATURE_CMS_ENABLED = False
     settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE = ['en-gb']
 
     url = reverse('sector-list')

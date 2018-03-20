@@ -120,7 +120,7 @@ def test_industry_page_context(
         sectors='value', size=6
     )
     assert response.context_data['page'] == industry_detail_response.json()
-    assert response.template_name == ['industry/sector-detail.html']
+    assert response.template_name == ['industry/detail.html']
 
 
 def test_article_page_context(settings, client, industry_article_response):
@@ -132,4 +132,46 @@ def test_article_page_context(settings, client, industry_article_response):
     response = client.get(url)
 
     assert response.context_data['page'] == industry_article_response.json()
-    assert response.template_name == ['industry/sector-article.html']
+    assert response.template_name == ['industry/article.html']
+
+
+@patch('core.helpers.cms_client.find_a_supplier.list_industry_pages')
+@patch('core.helpers.cms_client.find_a_supplier.get_industries_landing_page')
+def test_industries_page_context(
+    mock_get_industries_landing_page, mock_list_industry_pages, settings,
+    client
+):
+    settings.FEATURE_CMS_ENABLED = True
+    mock_get_industries_landing_page.return_value = create_response(
+        status_code=200, json_payload={'title': 'the page'}
+    )
+
+    mock_list_industry_pages.return_value = create_response(
+        status_code=200, json_payload={'items': [{'title': 'good 1'}]}
+    )
+
+    response = client.get(reverse('sector-list'))
+
+    assert response.status_code == 200
+    assert response.context_data['page'] == {'title': 'the page'}
+    assert response.context_data['pages'] == [{'title': 'good 1'}]
+
+
+@patch('core.helpers.cms_client.find_a_supplier.list_industry_pages')
+@patch('core.helpers.cms_client.find_a_supplier.get_industries_landing_page')
+def test_industries_page_not_found(
+    mock_get_industries_landing_page, mock_list_industry_pages, settings,
+    client
+):
+    settings.FEATURE_CMS_ENABLED = True
+    mock_get_industries_landing_page.return_value = create_response(
+        status_code=404
+    )
+
+    mock_list_industry_pages.return_value = create_response(
+        status_code=200, json_payload={'items': [{'title': 'good 1'}]}
+    )
+
+    response = client.get(reverse('sector-list'))
+
+    assert response.status_code == 404
