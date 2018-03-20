@@ -121,3 +121,33 @@ def test_grouper():
         '        <li>9</li>'
         '    </ul>'
     )
+
+
+def test_grouper_remainder():
+    template = Template(
+        '{% load grouper from cms_tags %}'
+        '{% for chunk in the_list|grouper:3 %}'
+        '<ul>'
+        '    {% for item in chunk %}'
+        '    <li>{{ item }}</li>'
+        '    {% endfor %}'
+        '</ul>'
+        '{% endfor %}'
+
+    )
+    context = Context({
+        'the_list': range(1, 6)
+    })
+    html = template.render(context)
+
+    assert html == (
+        '<ul>'
+        '        <li>1</li>'
+        '        <li>2</li>'
+        '        <li>3</li>'
+        '    </ul>'
+        '<ul>'
+        '        <li>4</li>'
+        '        <li>5</li>'
+        '    </ul>'
+    )
