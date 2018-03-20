@@ -1,5 +1,4 @@
 import datetime
-import itertools
 import re
 
 from bs4 import BeautifulSoup
@@ -59,6 +58,6 @@ def to_date(value):
 
 
 @register.filter
-def grouper(iterable, n):
-    args = [iter(iterable or [])] * n
-    return itertools.zip_longest(*args, fillvalue=None)
+def grouper(value, n):
+    ungrouped = value or []
+    return [ungrouped[x:x+n] for x in range(0, len(ungrouped), n)]
