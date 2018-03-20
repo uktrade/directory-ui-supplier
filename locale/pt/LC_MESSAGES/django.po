@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-14 15:28+0000\n"
+"POT-Creation-Date: 2018-03-20 17:29+0000\n"
 "PO-Revision-Date: 2017-07-07 16:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -521,12 +521,12 @@ msgstr ""
 
 #: enrolment/templates/bidi/sector-list.html:20
 #: enrolment/templates/sector-list.html:20
-msgid "Celebrating UK Innovation"
+msgid "Celebrating UK innovation"
 msgstr "Nós queremos celebrar a inovação no Reino Unido"
 
 #: enrolment/templates/bidi/sector-list.html:22
 #: enrolment/templates/sector-list.html:22
-msgid "Great Festival of Innovation: Hong Kong 21st March – 24th March 2018"
+msgid "Great Festival of Innovation: Hong Kong 21 to 24 March 2018"
 msgstr "Great Festival of Innovation: Hong Kong de 21 a 24 de Março"
 
 #: enrolment/templates/bidi/sector-list.html:34
