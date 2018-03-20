@@ -64,10 +64,10 @@
 					<div class="span10 ed-checkbox-container {{ form.terms.css_classes|default:'input-field-container' }}">
 						{{ form.terms.errors }}
 						<div class="form-field checkbox">
+							<input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox">
 							<label for="{{ form.terms.id_for_label }}">
 								<a target="_self" href="{% url 'terms-and-conditions' %}">I agree to the great.gov.uk terms and conditions</a>.
 							</label>
-							<input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox">
 						</div>
 					</div>
 					<div class="span2 btn-container ed-landing-page-register-button-container">
