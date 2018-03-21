@@ -533,12 +533,12 @@ msgstr "Découvrez les capacités du Royaume-Uni dans ces industries clés"
 #: enrolment/templates/bidi/sector-list.html:20
 #: enrolment/templates/sector-list.html:20
 msgid "Celebrating UK innovation"
-msgstr "Découvrez les capacités du Royaume-Uni dans ces industries clés"
+msgstr "Célébrons l’innovation britannique"
 
 #: enrolment/templates/bidi/sector-list.html:22
 #: enrolment/templates/sector-list.html:22
 msgid "Great Festival of Innovation: Hong Kong 21 to 24 March 2018"
-msgstr "&nbsp;"
+msgstr "Grand festival de l’innovation: Hong Kong - 21 au 24 mars 2018"
 
 #: enrolment/templates/bidi/sector-list.html:34
 #: enrolment/templates/industry-teasers.html:5
