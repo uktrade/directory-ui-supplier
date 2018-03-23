@@ -2,7 +2,7 @@ from django.conf import settings
 from django.utils import translation
 from django.utils.cache import set_response_etag
 
-from core import helpers
+from core import forms, helpers
 from enrolment.forms import LanguageForm, get_language_form_initial_data
 
 
@@ -67,3 +67,21 @@ class GetCMSPageMixin:
             language_code=translation.get_language(),
         )
         return helpers.handle_cms_response(response)
+
+
+class CMSLanguageSwitcherMixin:
+    def get_context_data(self, page, *args, **kwargs):
+        form = forms.LanguageForm(
+            initial={'lang': translation.get_language()},
+            language_choices=page['languages']
+        )
+        show_language_switcher = (
+            len(page['languages']) > 1 and
+            form.is_language_available(translation.get_language())
+        )
+        return super().get_context_data(
+            page=page,
+            language_switcher={'form': form, 'show': show_language_switcher},
+            *args,
+            **kwargs
+        )

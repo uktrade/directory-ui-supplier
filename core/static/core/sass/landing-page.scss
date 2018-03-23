@@ -14,6 +14,17 @@ body #content {
   padding-bottom: 0;
 }
 
+#header-gov-links {
+  .header-gov-link:hover,
+  .header-gov-link:link,
+  .header-gov-link:visited {
+    line-height: 10px;  
+  }
+  .header-gov-link:nth-child(2) {
+    line-height: 22px;
+  }
+}
+
 #search-area,
 #industries-container,
 #services-container {

@@ -18,17 +18,29 @@ class CMSFeatureFlagViewNegotiator(TemplateView):
         return ViewClass(*args, **kwargs)
 
 
-class BaseCMSView(mixins.ConditionalEnableTranslationsMixin, TemplateView):
+class BaseCMSView(TemplateView):
 
     def dispatch(self, *args, **kwargs):
+        translation.activate(self.request.LANGUAGE_CODE)
         if not settings.FEATURE_CMS_ENABLED:
             raise Http404()
         return super().dispatch(*args, **kwargs)
 
 
-class LandingPageCMSView(mixins.ActiveViewNameMixin, BaseCMSView):
+class LandingPageCMSView(
+    mixins.CMSLanguageSwitcherMixin, mixins.ActiveViewNameMixin, BaseCMSView
+):
     active_view_name = 'index'
     template_name = 'core/landing-page.html'
+
+    def get_context_data(self, *args, **kwargs):
+        return super().get_context_data(
+            pages=self.list_pages()['items'],
+            page=self.get_cms_page(),
+            search_form=forms.SearchForm(),
+            *args,
+            **kwargs
+        )
 
     def list_pages(self):
         response = helpers.cms_client.find_a_supplier.list_industry_pages(
@@ -43,12 +55,3 @@ class LandingPageCMSView(mixins.ActiveViewNameMixin, BaseCMSView):
             draft_token=self.request.GET.get('draft_token'),
         )
         return helpers.handle_cms_response(response)
-
-    def get_context_data(self, *args, **kwargs):
-        return super().get_context_data(
-            pages=self.list_pages()['items'],
-            page=self.get_cms_page(),
-            search_form=forms.SearchForm(),
-            *args,
-            **kwargs
-        )

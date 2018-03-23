@@ -4,11 +4,15 @@ from django.utils import translation
 
 from core.helpers import cms_client, handle_cms_response
 from core.views import BaseCMSView
-from core.mixins import ActiveViewNameMixin, GetCMSPageMixin
+from core.mixins import (
+    ActiveViewNameMixin, GetCMSPageMixin, CMSLanguageSwitcherMixin
+)
 from exportopportunity.helpers import get_showcase_companies
 
 
-class SectorDetailCMSView(GetCMSPageMixin, BaseCMSView):
+class SectorDetailCMSView(
+    CMSLanguageSwitcherMixin, GetCMSPageMixin, BaseCMSView
+):
     template_name = 'industry/detail.html'
 
     def get_context_data(self, *args, **kwargs):
@@ -23,7 +27,9 @@ class SectorDetailCMSView(GetCMSPageMixin, BaseCMSView):
         return get_showcase_companies(sectors=sector_value, size=6)
 
 
-class SectorArticleCMSView(GetCMSPageMixin, BaseCMSView):
+class SectorArticleCMSView(
+    CMSLanguageSwitcherMixin, GetCMSPageMixin, BaseCMSView
+):
     template_name = 'industry/article.html'
 
     def get_context_data(self, *args, **kwargs):
@@ -40,7 +46,9 @@ class SectorArticleCMSView(GetCMSPageMixin, BaseCMSView):
         )
 
 
-class SectorLandingPageCMSView(ActiveViewNameMixin, BaseCMSView):
+class SectorLandingPageCMSView(
+    CMSLanguageSwitcherMixin, ActiveViewNameMixin, BaseCMSView
+):
     active_view_name = 'sector-list'
     template_name = 'industry/list.html'
 

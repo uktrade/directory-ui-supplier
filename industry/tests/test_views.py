@@ -21,6 +21,7 @@ def industry_detail_response():
         status_code=200,
         json_payload={
             'sector_value': 'value',
+            'languages': ['en-gb']
         }
     )
 
@@ -33,6 +34,7 @@ def industry_article_response():
             'title': 'Hello world',
             'body': '<h2>Hello world</h2>',
             'date': '2018-01-01',
+            'languages': ['en-gb']
         }
     )
 
@@ -143,7 +145,8 @@ def test_industries_page_context(
 ):
     settings.FEATURE_CMS_ENABLED = True
     mock_get_industries_landing_page.return_value = create_response(
-        status_code=200, json_payload={'title': 'the page'}
+        status_code=200,
+        json_payload={'title': 'the page', 'languages': ['en-gb']}
     )
 
     mock_list_industry_pages.return_value = create_response(
@@ -153,7 +156,10 @@ def test_industries_page_context(
     response = client.get(reverse('sector-list'))
 
     assert response.status_code == 200
-    assert response.context_data['page'] == {'title': 'the page'}
+    assert response.context_data['page'] == {
+        'title': 'the page',
+        'languages': ['en-gb'],
+    }
     assert response.context_data['pages'] == [{'title': 'good 1'}]
 
 
