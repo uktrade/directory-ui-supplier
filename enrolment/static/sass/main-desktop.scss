@@ -211,16 +211,6 @@ p {
   font-size: 1em;
 }
 
-.external-link-white:after {
-  content: "";
-  width: 12px;
-  height: 12px;
-  background: url(images/external-link-white.svg) no-repeat;
-  background-size: 12px 12px;
-  display: inline-block;
-  margin-left: .5em;
-}
-
 a.white-link {
   color: $white;
   border-bottom: 1px solid $white;
@@ -263,7 +253,6 @@ a.teal:focus {
     width: 100%;
     -webkit-appearance: none; 
     appearance: none; 
-    background: url(images/down-arrow.svg) no-repeat 98% white;
   }
 
   textarea {

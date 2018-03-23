@@ -2,7 +2,7 @@ import pytest
 import requests_mock
 from django.views.generic import TemplateView
 
-from core.mixins import SetEtagMixin
+from core import mixins
 
 
 @pytest.mark.parametrize('method,expected', (
@@ -15,7 +15,7 @@ from core.mixins import SetEtagMixin
     ('options', None),
 ))
 def test_set_etag_mixin(rf, method, expected):
-    class MyView(SetEtagMixin, TemplateView):
+    class MyView(mixins.SetEtagMixin, TemplateView):
 
         template_name = 'core/base.html'
 
@@ -46,7 +46,7 @@ def test_set_etag_mixin(rf, method, expected):
     assert response.get('Etag') == expected
 
 
-@pytest.mark.parametrize('view_class', SetEtagMixin.__subclasses__())
+@pytest.mark.parametrize('view_class', mixins.SetEtagMixin.__subclasses__())
 def test_cached_views_not_dynamic(rf, settings, view_class):
     # exception will be raised if the views perform http request, which are an
     # indicator that the views rely on dynamic data.
@@ -59,3 +59,33 @@ def test_cached_views_not_dynamic(rf, settings, view_class):
         request.session = None
         response = view(request)
         assert response.status_code == 200
+
+
+def test_conditional_translate_bidi_template(rf):
+    class View(mixins.ConditionalEnableTranslationsMixin, TemplateView):
+        template_name_bidi = 'bidi.html'
+        template_name = 'non-bidi.html'
+
+    view = View.as_view()
+    request = rf.get('/')
+    request.LANGUAGE_CODE = 'ar'
+
+    response = view(request)
+
+    assert response.status_code == 200
+    assert response.template_name == ['bidi.html']
+
+
+def test_conditional_translate_non_bidi_template(rf):
+    class View(mixins.ConditionalEnableTranslationsMixin, TemplateView):
+        template_name_bidi = 'bidi.html'
+        template_name = 'non-bidi.html'
+
+    view = View.as_view()
+    request = rf.get('/')
+    request.LANGUAGE_CODE = 'en-gb'
+
+    response = view(request)
+
+    assert response.status_code == 200
+    assert response.template_name == ['non-bidi.html']

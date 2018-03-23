@@ -5,18 +5,12 @@ import pytest
 
 from django.conf import settings
 from django.core.urlresolvers import reverse
-from django.views.generic import TemplateView
 
 from zenpy.lib.api_objects import Ticket, User
 
+import core.views
 from enrolment import constants, forms, views
-from enrolment.views import (
-    api_client,
-    AnonymousSubscribeFormView,
-    LeadGenerationFormView,
-    SectorDetailView,
-)
-from core.views import ConditionalEnableTranslationsMixin
+from enrolment.views import AnonymousSubscribeFormView, LeadGenerationFormView
 import industry.views
 
 
@@ -47,7 +41,8 @@ def buyer_request_invalid(rf, client):
     return request
 
 
-def test_international_landing_view_context(client):
+def test_international_landing_view_context(client, settings):
+    settings.FEATURE_CMS_ENABLED = False
     response = client.get(reverse('index'))
 
     lang_context = response.context['language_switcher']
@@ -104,7 +99,7 @@ def test_international_landing_page_sector_specific_unknown(client, settings):
 def test_international_landing_page_sector_specific_known(client, settings):
     settings.FEATURE_CMS_ENABLED = False
 
-    pages = SectorDetailView.get_active_pages()
+    pages = views.SectorDetailView.get_active_pages()
     for slug, values in pages.items():
         context = values['context']
         template_name = values['template']
@@ -119,7 +114,7 @@ def test_international_landing_page_sector_specific_known(client, settings):
 
 
 def test_international_landing_page_sector_context(client):
-    pages = SectorDetailView.get_active_pages()
+    pages = views.SectorDetailView.get_active_pages()
     assert pages['health']['context'] == constants.HEALTH_SECTOR_CONTEXT
     assert pages['tech']['context'] == constants.TECH_SECTOR_CONTEXT
     assert pages['creative']['context'] == constants.CREATIVE_SECTOR_CONTEXT
@@ -174,7 +169,7 @@ def test_privacy_cookiues_success(client):
 
 
 @pytest.mark.django_db
-@patch.object(api_client.buyer, 'send_form')
+@patch.object(views.api_client.buyer, 'send_form')
 def test_subscribe_view_submit(
     mock_send_form, buyer_request, buyer_form_data
 ):
@@ -229,7 +224,7 @@ def test_lead_generation_view_submit_with_comment(
 @pytest.mark.django_db
 @patch('zenpy.lib.api.UserApi.create_or_update')
 @patch('zenpy.lib.api.TicketApi.create')
-@patch.object(api_client.buyer, 'send_form')
+@patch.object(views.api_client.buyer, 'send_form')
 def test_subscribe_view_submit_invalid(
     mock_send_form, mock_ticket_create, mock_user_create_or_update,
     buyer_request_invalid
@@ -246,14 +241,14 @@ def test_subscribe_view_submit_invalid(
 
 def test_international_landing_page_flag_on_advanced_manufacturing(settings):
     settings.FEATURE_ADVANCED_MANUFACTURING_ENABLED = True
-    view = SectorDetailView
+    view = views.SectorDetailView
 
     assert 'advanced-manufacturing' in view.get_active_pages()
 
 
 def test_international_landing_page_flag_off_advanced_manufacturing(settings):
     settings.FEATURE_ADVANCED_MANUFACTURING_ENABLED = False
-    view = SectorDetailView
+    view = views.SectorDetailView
 
     assert 'advanced-manufacturing' not in view.get_active_pages()
 
@@ -304,7 +299,8 @@ def test_industry_page_disabled_language_translations(client):
     assert 'language_switcher' not in response.context_data
 
 
-def test_international_landing_view_translations(client):
+def test_international_landing_view_translations(client, settings):
+    settings.FEATURE_CMS_ENABLED = False
     url = reverse('index')
 
     response = client.get(url)
@@ -313,31 +309,25 @@ def test_international_landing_view_translations(client):
     assert 'language_switcher' in response.context_data
 
 
-def test_conditional_translate_bidi_template(rf):
-    class View(ConditionalEnableTranslationsMixin, TemplateView):
-        template_name_bidi = 'bidi.html'
-        template_name = 'non-bidi.html'
+@patch(
+    'core.views.LandingPageCMSView.get_context_data', Mock(return_value={})
+)
+def test_landing_page_cms_feature_flag_off(client, settings):
+    settings.FEATURE_CMS_ENABLED = False
 
-    view = View.as_view()
-    request = rf.get('/')
-    request.LANGUAGE_CODE = 'ar'
+    response = client.get(reverse('index'))
 
-    response = view(request)
-
-    assert response.status_code == 200
-    assert response.template_name == ['bidi.html']
+    assert response.template_name == [views.LandingView.template_name]
 
 
-def test_conditional_translate_non_bidi_template(rf):
-    class View(ConditionalEnableTranslationsMixin, TemplateView):
-        template_name_bidi = 'bidi.html'
-        template_name = 'non-bidi.html'
+@patch(
+    'core.views.LandingPageCMSView.get_context_data', Mock(return_value={})
+)
+def test_landing_page_cms_feature_flag_on(client, settings):
+    views.LandingPageNegotiator.feature_flag = True
 
-    view = View.as_view()
-    request = rf.get('/')
-    request.LANGUAGE_CODE = 'en-gb'
+    response = client.get(reverse('index'))
 
-    response = view(request)
-
-    assert response.status_code == 200
-    assert response.template_name == ['non-bidi.html']
+    assert response.template_name == [
+        core.views.LandingPageCMSView.template_name
+    ]

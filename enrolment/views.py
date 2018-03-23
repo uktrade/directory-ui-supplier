@@ -8,11 +8,13 @@ from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
 from api_client import api_client
-from core.mixins import SetEtagMixin
+from core.mixins import (
+    ActiveViewNameMixin, ConditionalEnableTranslationsMixin,
+    SetEtagMixin
+)
 from enrolment import constants, forms
-from core.views import ActiveViewNameMixin, ConditionalEnableTranslationsMixin
 import industry.views
-
+import core.views
 
 ZENPY_CREDENTIALS = {
     'email': settings.ZENDESK_EMAIL,
@@ -83,15 +85,6 @@ class LandingView(
     template_name = 'landing-page.html'
     template_name_bidi = 'bidi/landing-page.html'
     active_view_name = 'index'
-
-
-class SectorListViewNegotiator(TemplateView):
-    def __new__(cls, *args, **kwargs):
-        if settings.FEATURE_CMS_ENABLED:
-            ViewClass = industry.views.SectorLandingPageCMSView
-        else:
-            ViewClass = SectorListView
-        return ViewClass(*args, **kwargs)
 
 
 class SectorListView(
@@ -189,3 +182,13 @@ class SectorDetailView(
         context['show_proposition'] = self.kwargs['show_proposition']
         context['slug'] = self.kwargs['slug']
         return context
+
+
+class SectorListViewNegotiator(core.views.CMSFeatureFlagViewNegotiator):
+    default_view_class = SectorListView
+    feature_flagged_view_class = industry.views.SectorLandingPageCMSView
+
+
+class LandingPageNegotiator(core.views.CMSFeatureFlagViewNegotiator):
+    default_view_class = LandingView
+    feature_flagged_view_class = core.views.LandingPageCMSView

@@ -1,34 +1,11 @@
 from directory_components.helpers import SocialLinkBuilder
 
-from django.conf import settings
-from django.shortcuts import Http404
 from django.utils import translation
-from django.views.generic import TemplateView
 
 from core.helpers import cms_client, handle_cms_response
-from core.views import ActiveViewNameMixin, ConditionalEnableTranslationsMixin
-from enrolment.forms import LanguageIndustriesForm
+from core.views import BaseCMSView
+from core.mixins import ActiveViewNameMixin, GetCMSPageMixin
 from exportopportunity.helpers import get_showcase_companies
-
-
-class GetCMSPageMixin:
-    def get_cms_page(self):
-        response = cms_client.get_page(
-            page_id=self.kwargs['cms_page_id'],
-            draft_token=self.request.GET.get('draft_token'),
-            language_code=translation.get_language(),
-        )
-        return handle_cms_response(response)
-
-
-class BaseCMSView(ConditionalEnableTranslationsMixin, TemplateView):
-
-    language_form_class = LanguageIndustriesForm
-
-    def dispatch(self, *args, **kwargs):
-        if not settings.FEATURE_CMS_ENABLED:
-            raise Http404()
-        return super().dispatch(*args, **kwargs)
 
 
 class SectorDetailCMSView(GetCMSPageMixin, BaseCMSView):
