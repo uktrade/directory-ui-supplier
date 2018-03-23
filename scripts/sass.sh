@@ -28,9 +28,10 @@ input_output_map="\
 	enrolment/static/sass/ie8fixes.scss:enrolment/static/ie8fixes.css \
 	enrolment/static/sass/company-search_results.scss:enrolment/static/company-search_results.css \
 	enrolment/static/sass/lead-generation-page.scss:enrolment/static/lead-generation-page.css \
-	enrolment/static/sass/industries.scss:enrolment/static/industries.css \
-	enrolment/static/sass/industry-article.scss:enrolment/static/industry-article.css \
-	enrolment/static/sass/industry-list.scss:enrolment/static/industry-list.css \
+	industry/static/industry/sass/industries.scss:industry/static/industry/industries.css \
+	industry/static/industry/sass/industry-article.scss:industry/static/industry/industry-article.css \
+	industry/static/industry/sass/industry-list.scss:industry/static/industry/industry-list.css \
+	core/static/core/sass/landing-page.scss:core/static/core/landing-page.css \
 "
 
 prod_command="sass --sourcemap=none --style compressed"

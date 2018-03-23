@@ -1,0 +1,113 @@
+{% extends 'core/base.html' %}
+{% load static from staticfiles %}
+{% load search_url from company_tags %}
+{% load first_paragraph first_heading from cms_tags %}
+
+{% block head_css %}
+    {{ block.super }}
+    <link href="{% static 'core/landing-page.css' %}" media="all" rel="stylesheet" />
+{% endblock %}
+
+{% block meta_description %}
+    {{ page.meta_description }}
+{% endblock %}
+
+{% block head_title %}
+    {{ page.seo_title }}
+{% endblock %}
+
+{% block content %}
+<section id="hero" style="background-image: url({{ page.hero_image.url }});">
+    <div class="container">
+        <div class="hero-teaser">
+            {{ page.hero_text|safe }}
+        </div>
+        <div id="search-area">
+            <form action="{% url 'company-search' %}" method="get" >
+                <div class="column-one-half">
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="{{ search_form.term.name }}"
+                        id="{{ search_form.term.id }}"
+                        placeholder="{{ page.search_field_placeholder }}"
+                    />
+                </div>
+                <div class="column-one-half">
+                    <div class="column-one-half">
+                        {# translations provided by the app #}
+                        {{ search_form.sectors }}
+                    </div>
+                    <div>
+                        <button class="button">{{ page.search_button_text }}</button>
+                    </div>
+                </div>
+            </form>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <section id="introduction" class="grid-row">
+        <div class="column-one-half">
+            {{ page.proposition_text|safe }}
+        </div>
+        <div class="column-one-half button-container">
+            <a href="{{ directory_components_urls.contact_us }}" class="button">{{ page.call_to_action_text }}</a>
+        </div>
+    </section>
+
+    <section class="grid-row"  id="industries-container">
+        {{ page.industries_list_text|safe }}
+            {% for item in pages %}
+                <a href="{{ item.url }}" class="column-one-third industry-card">
+                    <span>{{ item.hero_text|first_heading|striptags }}</span>
+                    <img src="{{ item.hero_image.url }}" />
+                    <div>
+                        {{ item.hero_text|first_paragraph|safe }}
+                    </div>
+                </a>
+            {% endfor %}
+        <div class="clearfix"></div>
+        <a class="button" href="{% url 'sector-list' %}">{{ page.industries_list_call_to_action_text }}</a>
+    </section>
+
+    <section id="services-container" class="grid-row">
+        <div class="column-one-half">
+            {{ page.services_list_text|safe }}
+        </div>
+        <div class="clearfix"></div>
+        <div class="column-one-quarter">
+            <img src="{{ page.services_column_two_icon.url}}" />
+            {{ page.services_column_one|safe }}
+        </div>
+        <div class="column-one-quarter">
+            <img src="{{ page.services_column_one_icon.url }}" />
+            {{ page.services_column_two|safe }}
+        </div>
+        <div class="column-one-quarter">
+            <img src="{{ page.services_column_three_icon.url }}" />
+            {{ page.services_column_three|safe }}
+        </div>
+        <div class="column-one-quarter">
+            <img src="{{ page.services_column_four_icon.url }}" />
+            {{ page.services_column_four|safe }}
+        </div>
+        <div class="clearfix"></div>
+    </section>
+
+    <section id="articles-container">
+        {% include "industry/sector-article-summary.html" with article=page.article_one %}
+        {% include "industry/sector-article-summary.html" with article=page.article_two %}
+        {% include "industry/sector-article-summary.html" with article=page.article_three %}
+        {% include "industry/sector-article-summary.html" with article=page.article_four %}
+        {% include "industry/sector-article-summary.html" with article=page.article_five %}
+        {% include "industry/sector-article-summary.html" with article=page.article_six %}
+    </section>
+
+</div>
+{% endblock content %}
+
+
+{% block feedback_reporter %}{% endblock %}

@@ -1,49 +1,54 @@
 from django.conf import settings
+from django.shortcuts import Http404
 from django.utils import translation
+from django.views.generic import TemplateView
 
-from enrolment.forms import LanguageForm, get_language_form_initial_data
+from core import forms, helpers, mixins
 
 
-class ConditionalEnableTranslationsMixin:
-    translations_enabled = True
-    template_name_bidi = None
-    language_form_class = LanguageForm
+class CMSFeatureFlagViewNegotiator(TemplateView):
+    default_view_class = None
+    feature_flagged_view_class = None
 
-    def __init__(self, *args, **kwargs):
-        dependency = 'ui.middleware.ForceDefaultLocale'
-        assert dependency in settings.MIDDLEWARE_CLASSES
-        super().__init__(*args, **kwargs)
+    def __new__(cls, *args, **kwargs):
+        if settings.FEATURE_CMS_ENABLED:
+            ViewClass = cls.feature_flagged_view_class
+        else:
+            ViewClass = cls.default_view_class
+        return ViewClass(*args, **kwargs)
 
-    def dispatch(self, request, *args, **kwargs):
-        if self.translations_enabled:
-            translation.activate(request.LANGUAGE_CODE)
-        return super().dispatch(request, *args, **kwargs)
+
+class BaseCMSView(mixins.ConditionalEnableTranslationsMixin, TemplateView):
+
+    def dispatch(self, *args, **kwargs):
+        if not settings.FEATURE_CMS_ENABLED:
+            raise Http404()
+        return super().dispatch(*args, **kwargs)
+
+
+class LandingPageCMSView(mixins.ActiveViewNameMixin, BaseCMSView):
+    active_view_name = 'index'
+    template_name = 'core/landing-page.html'
+
+    def list_pages(self):
+        response = helpers.cms_client.find_a_supplier.list_industry_pages(
+            language_code=translation.get_language(),
+            draft_token=self.request.GET.get('draft_token'),
+        )
+        return helpers.handle_cms_response(response)
+
+    def get_cms_page(self):
+        response = helpers.cms_client.find_a_supplier.get_landing_page(
+            language_code=translation.get_language(),
+            draft_token=self.request.GET.get('draft_token'),
+        )
+        return helpers.handle_cms_response(response)
 
     def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context['LANGUAGE_BIDI'] = translation.get_language_bidi()
-        language_form_kwargs = self.get_language_form_kwargs()
-        if self.translations_enabled:
-            context['language_switcher'] = {
-                'show': True,
-                'form': self.language_form_class(**language_form_kwargs),
-            }
-        return context
-
-    def get_language_form_kwargs(self, **kwargs):
-        return {
-            'initial': get_language_form_initial_data(),
-            **kwargs,
-        }
-
-    def get_template_names(self):
-        if translation.get_language_bidi():
-            return [self.template_name_bidi]
-        return super().get_template_names()
-
-
-class ActiveViewNameMixin:
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['active_view_name'] = self.active_view_name
-        return context
+        return super().get_context_data(
+            pages=self.list_pages()['items'],
+            page=self.get_cms_page(),
+            search_form=forms.SearchForm(),
+            *args,
+            **kwargs
+        )

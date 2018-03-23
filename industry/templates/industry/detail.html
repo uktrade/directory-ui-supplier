@@ -5,7 +5,7 @@
 
 {% block head_css %}
     {{ block.super }}
-    <link href="{% static 'industries.css' %}" media="all" rel="stylesheet" />
+    <link href="{% static 'industry/industries.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
 {% block meta_description %}
@@ -111,3 +111,5 @@
     </section>
 </div>
 {% endblock content %}
+
+{% block feedback_reporter %}{% endblock %}

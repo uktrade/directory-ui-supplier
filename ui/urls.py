@@ -35,7 +35,7 @@ urlpatterns = [
     ),
     url(
         r"^$",
-        enrolment.views.LandingView.as_view(),
+        enrolment.views.LandingPageNegotiator.as_view(),
         name="index"
     ),
     url(

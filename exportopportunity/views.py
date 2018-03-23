@@ -10,7 +10,7 @@ from formtools.wizard.views import SessionWizardView
 from api_client import api_client
 from core.mixins import SetEtagMixin
 from exportopportunity import forms, helpers
-from core.views import ConditionalEnableTranslationsMixin
+from core.mixins import ConditionalEnableTranslationsMixin
 
 
 industry_map = {
