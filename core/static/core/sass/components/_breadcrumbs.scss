@@ -29,3 +29,12 @@
     text-indent: -1000px;
     z-index: -1;
 }
+
+@media (max-width: 769px) {
+ .breadcrumbs {
+ 	padding: 20px;
+    a {
+        font-size: 15px;
+    }
+ }
+}
