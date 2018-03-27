@@ -27,19 +27,7 @@ $blue: rgba(0, 82, 157, 0.8);
     padding: 30px;
     position: absolute;
     color: #ffffff;
-  }
-
-  h1 {
-    position: absolute;
-    bottom: 0;
     text-transform: uppercase;
-    width: 425px;
-    background-color: $blue;
-    border-bottom: 7px solid $red;
-    padding: 30px;
-    padding-bottom: 23px;
-    color: white;
-    max-width: 800px;
     font-size: 36px;
     font-weight: bold;
   }
@@ -100,5 +88,37 @@ $blue: rgba(0, 82, 157, 0.8);
   }
   a {
     margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 769px) {
+  #hero {
+    height: 350px;
+    margin-bottom: 0;
+    background-size: 1200px 350px;
+    .hero-teaser {
+      margin-right: 15px;
+      padding: 15px;
+    }
+  }
+
+  #introduction {
+    padding: 30px;
+    text-align: center;
+    .button {
+      margin-top: 30px;
+    }
+  }
+
+  #industry-pages-container {
+    display: block;
+    padding: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+    a {
+      padding: 0;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
   }
 }
