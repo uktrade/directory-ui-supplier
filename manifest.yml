@@ -1,6 +1,3 @@
 ---
 applications:
-- name: directory-ui-supplier
-  memory: 256M
-  disk_quota: 2G
-  buildpack: python_buildpack
+  - buildpack: python_buildpack

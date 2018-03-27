@@ -2,6 +2,7 @@
 @import 'partials/reset';
 @import 'partials/base';
 @import 'components/breadcrumbs';
+@import 'components/articles-container';
 
 $sand: #f5f2ed;
 $gray: #333333;
@@ -164,39 +165,10 @@ $gray: #333333;
   }
 }
 
-#articles {
-  padding: 60px;
-  margin-bottom: 40px;
-  p {
-    margin-bottom: 40px;
-  }
-  h2 {
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 1.11;
-    color: $gray;
-    margin-bottom: 45px;
-  }
-  img {
-    width: 100%;
-  }
-  .article-meta {
-    font-size: 15px;
-    line-height: 1.47;
-    span {
-      color: $gray;
-    }
-  }
-}
-
-.error-reporting {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
 #content > .container {
   max-width: 1320px;
 }
+
 
 @media (max-width: 769px) {
   #hero .hero-teaser {

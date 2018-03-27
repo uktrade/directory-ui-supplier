@@ -1,6 +1,7 @@
 @import 'main.scss';
 @import 'partials/reset';
 @import 'partials/base';
+@import 'components/articles-container';
 
 $gray: #333333;
 $gray-light: #767676;
@@ -175,31 +176,14 @@ section {
 }
 
 #articles-container {
-  background-color: $sand;
-  padding: 60px;
-  margin-bottom: 0;
-  p {
-    margin-bottom: 40px;
-  }
-  h2 {
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 1.11;
-    color: $gray;
-    margin-bottom: 45px;
-  }
-  img {
-    width: 100%;
-  }
-  .article-meta {
-    font-size: 15px;
-    line-height: 1.47;
-    span {
-      color: $gray;
-    }
+  margin-top: 0;
+  .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 40px;
+    background-color: $sand;
   }
 }
-
 
 @media (max-width: 769px) {
   #hero {
@@ -246,6 +230,12 @@ section {
     .image-container {
       float: left;
       margin-right: 15px;
+    }
+  }
+
+  #articles-container {
+    .container {
+      padding: 30px;
     }
   }
 }

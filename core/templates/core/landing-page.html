@@ -122,13 +122,15 @@
     </div>
 </section>
 
-<section id="articles-container" class="container">
-    {% include "industry/sector-article-summary.html" with article=page.article_one %}
-    {% include "industry/sector-article-summary.html" with article=page.article_two %}
-    {% include "industry/sector-article-summary.html" with article=page.article_three %}
-    {% include "industry/sector-article-summary.html" with article=page.article_four %}
-    {% include "industry/sector-article-summary.html" with article=page.article_five %}
-    {% include "industry/sector-article-summary.html" with article=page.article_six %}
+<section id="articles-container">
+    <div class="container">
+        {% include "industry/sector-article-summary.html" with article=page.article_one %}
+        {% include "industry/sector-article-summary.html" with article=page.article_two %}
+        {% include "industry/sector-article-summary.html" with article=page.article_three %}
+        {% include "industry/sector-article-summary.html" with article=page.article_four %}
+        {% include "industry/sector-article-summary.html" with article=page.article_five %}
+        {% include "industry/sector-article-summary.html" with article=page.article_six %}
+    </div>
 </section>
 
 </div>
