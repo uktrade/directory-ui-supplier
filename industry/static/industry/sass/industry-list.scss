@@ -7,6 +7,7 @@ $sand: #f5f2ed;
 $red: #E22014;
 $blue: rgba(0, 82, 157, 0.8);
 
+
 #hero {
   background-size: 1200px 300px;
   background-repeat: no-repeat;
@@ -15,6 +16,18 @@ $blue: rgba(0, 82, 157, 0.8);
   margin-bottom: 30px;
   padding-top: 220px;
   position: relative;
+  height: 300px;
+  position: relative;
+
+  .hero-teaser {
+    background-color: rgba(0,82,157,0.8);
+    border-bottom: #e41f13 solid 4px;
+    bottom: 0;
+    max-width: 520px;
+    padding: 30px;
+    position: absolute;
+    color: #ffffff;
+  }
 
   h1 {
     position: absolute;
@@ -29,21 +42,6 @@ $blue: rgba(0, 82, 157, 0.8);
     max-width: 800px;
     font-size: 36px;
     font-weight: bold;
-  }
-
-}
-
-#hero {
-  height: 300px;
-  position: relative;
-  .hero-teaser {
-    background-color: rgba(0,82,157,0.8);
-    border-bottom: #e41f13 solid 4px;
-    bottom: 0;
-    max-width: 520px;
-    padding: 30px;
-    position: absolute;
-    color: #ffffff;
   }
 
   h2 {

@@ -13,7 +13,8 @@ def test_landing_page_context(
     settings.FEATURE_CMS_ENABLED = True
 
     mock_get_landing_page.return_value = helpers.create_response(
-        status_code=200, json_payload={'title': 'the page'}
+        status_code=200,
+        json_payload={'title': 'the page', 'languages': ['en-gb']}
     )
 
     mock_list_industry_pages.return_value = helpers.create_response(
@@ -23,7 +24,10 @@ def test_landing_page_context(
     response = client.get(reverse('index'))
 
     assert response.status_code == 200
-    assert response.context_data['page'] == {'title': 'the page'}
+    assert response.context_data['page'] == {
+        'title': 'the page',
+        'languages': ['en-gb'],
+    }
     assert response.context_data['pages'] == [{'title': 'good 1'}]
 
 

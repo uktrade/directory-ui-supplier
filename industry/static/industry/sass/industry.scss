@@ -171,9 +171,12 @@ $gray: #333333;
 
 
 @media (max-width: 769px) {
-  #hero .hero-teaser {
-    margin-right: 15px;
-    padding: 15px;
+  #hero {
+    height: 350px;
+    .hero-teaser {
+      margin-right: 15px;
+      padding: 15px;
+    }
   }
 
   #lede {
@@ -181,6 +184,9 @@ $gray: #333333;
     text-align: center;
     div {
       padding: 0;
+    }
+    a {
+      width: 100%;
     }
     p {
       font-size: 24px;
@@ -207,8 +213,11 @@ $gray: #333333;
   }
 
   #companies {
-    padding: 30px;
+    padding: 20px;
     padding-top: 60px;
+    .button {
+      width: auto;
+    }
     h2 {
       font-size: 24px;
       font-weight: bold;
@@ -222,7 +231,7 @@ $gray: #333333;
     }
     form {
       button {
-        right: -29px;
+        right: 0;
       }
     }
     a {
@@ -233,5 +242,9 @@ $gray: #333333;
       font-size: 15px;
       line-height: 1.33;
     }
+  }
+
+  #articles-container {
+    margin-bottom: 30px;
   }
 }
