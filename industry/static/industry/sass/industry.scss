@@ -1,42 +1,11 @@
 @import 'main.scss';
 @import 'partials/reset';
-@import 'partials/breadcrumbs';
-
-body,
-a {
-  font-family: arial,helvetica,sans-serif!important;
-}
-
-#menu {
-  height: auto;
-}
-@media (max-width: 641px) {
-  .container {
-    margin-left: 0px;
-  }
-}
+@import 'partials/base';
+@import 'components/breadcrumbs';
+@import 'components/articles-container';
 
 $sand: #f5f2ed;
 $gray: #333333;
-
-body #content {
-  padding-top: 0;
-}
-
-#header-gov-links {
-  .header-gov-link:hover,
-  .header-gov-link:link,
-  .header-gov-link:visited {
-    line-height: 10px;  
-  }
-  .header-gov-link:nth-child(2) {
-    line-height: 22px;
-  }
-}
-
-#menu a {
-  text-decoration: none;
-}
 
 #hero {
   height: 300px;
@@ -67,8 +36,7 @@ body #content {
 #lede {
   padding: 60px;
   background-color: $sand;
-  h2 {
-    width: 670px;
+  p {
     font-size: 24px;
     font-weight: 500;
     line-height: 1.25;
@@ -80,38 +48,6 @@ body #content {
     border-radius: 3px;
     text-align: center;
   }
-}
-
-.breadcrumbs {
-  background-color: #fff;
-  padding: 30px 0;
-
-  .separator {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    content: "";
-    border-style: solid;
-    display: inline-block;
-    height: 5px;
-    position: relative;
-    vertical-align: top;
-    width: 5px;
-    vertical-align: middle;
-    border-color: #d8d8d8;
-    border-width: 2px 2px 0 0;
-    margin: 0 5px;
-    top: 0;
-    box-sizing: initial;
-    overflow: hidden;
-    text-indent: -1000px;
-  }
-}
-
-.verbose {
-    overflow: hidden;
-    position: absolute;
-    text-indent: -1000px;
-    z-index: -1;
 }
 
 #lede-columns {
@@ -153,6 +89,20 @@ body #content {
 #companies {
   padding: 60px;
   background-color: $sand;
+
+  h2 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.11;
+    color: $gray;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.67;
+    margin-bottom: 15px;
+  }
 
   form {
     margin-bottom: 25px!important;
@@ -215,36 +165,86 @@ body #content {
   }
 }
 
-#articles {
-  padding: 60px;
-  margin-bottom: 40px;
-  p {
-    margin-bottom: 40px;
-  }
-  h2 {
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 1.11;
-    color: $gray;
-    margin-bottom: 45px;
-  }
-  img {
-    width: 100%;
-  }
-  .article-meta {
-    font-size: 15px;
-    line-height: 1.47;
-    span {
-      color: $gray;
-    }
-  }
-}
-
-.error-reporting {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
 #content > .container {
   max-width: 1320px;
+}
+
+
+@media (max-width: 769px) {
+  #hero {
+    height: 350px;
+    .hero-teaser {
+      margin-right: 15px;
+      padding: 15px;
+    }
+  }
+
+  #lede {
+    padding: 30px;
+    text-align: center;
+    div {
+      padding: 0;
+    }
+    a {
+      width: 100%;
+    }
+    p {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.25;
+      margin-bottom: 30px;
+    }
+  }
+
+  #lede-columns {
+    padding: 30px;
+    div {
+      margin-left: 30px;
+      margin-bottom: 30px;
+      padding-right: 0;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.67;
+    }
+  }
+
+  #companies {
+    padding: 20px;
+    padding-top: 60px;
+    .button {
+      width: auto;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.67;
+      margin-bottom: 15px
+    }
+    form {
+      button {
+        right: 0;
+      }
+    }
+    a {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+    dd {
+      font-size: 15px;
+      line-height: 1.33;
+    }
+  }
+
+  #articles-container {
+    margin-bottom: 30px;
+  }
 }

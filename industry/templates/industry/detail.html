@@ -5,7 +5,7 @@
 
 {% block head_css %}
     {{ block.super }}
-    <link href="{% static 'industry/industries.css' %}" media="all" rel="stylesheet" />
+    <link href="{% static 'industry/industry.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
 {% block meta_description %}
@@ -41,7 +41,7 @@
 <div class="container">
     <section id="lede" class="grid-row">
         <div class="column-two-thirds">
-            <h2>{{ page.lede|safe }}</h2>
+            {{ page.introduction_text|safe }}
         </div>
         <div class="column-one-third">
             <a href="{{ directory_components_urls.contact_us }}" class="button button-primary">Contact us</a>
@@ -50,23 +50,22 @@
 
     <section id="lede-columns" class="grid-row">
         <div class="column-one-third">
-            <img src="{{ page.lede_column_two_icon.url}}" />
-            {{ page.lede_column_one|safe }}
+            <img src="{{ page.introduction_column_two_icon.url}}" />
+            {{ page.introduction_column_one_text|safe }}
         </div>
         <div class="column-one-third">
-            <img src="{{ page.lede_column_one_icon.url }}" />
-            {{ page.lede_column_two|safe }}
+            <img src="{{ page.introduction_column_one_icon.url }}" />
+            {{ page.introduction_column_two_text|safe }}
         </div>
         <div class="column-one-third">
-            <img src="{{ page.lede_column_three_icon.url }}" />
-            {{ page.lede_column_three|safe }}
+            <img src="{{ page.introduction_column_three_icon.url }}" />
+            {{ page.introduction_column_three_text|safe }}
         </div>
         <div class="clearfix"></div>
     </section>
 
     <section id="companies">
-        <h2 class="heading-large">Search for UK {{ page.sector_label }} suppliers</h2>
-        
+        {{ page.company_list_text|safe }}
         <div class="grid-row">
             <div class="column-one-half">
                 <form method="get" action="{% url 'company-search' %}">
@@ -93,22 +92,19 @@
         {% endfor %}
         </ul>
         <div>
-            <a href="{% search_url sector_value=page.sector_value %}" class="button">View all</a>
+            <a href="{% search_url sector_value=page.sector_value %}" class="button">{{ page.company_list_call_to_action_text }} </a>
         </div>
     </section>
 
-    <section id="case-study">
-        <div class="grid-row">
-            <div class="column-one-half">
-                {{ page.case_study|safe }}
-                <a href="{{ page.case_study_url }}" class="link">Find our more</a>
-            </div>
-            <div class="column-one-half">
-                <img src="{{ page.case_study_image.url }}"></img>
-            </div>
-        </div>
-        
+    <section id="articles-container" class="container">
+        {% include "industry/sector-article-summary.html" with article=page.article_one %}
+        {% include "industry/sector-article-summary.html" with article=page.article_two %}
+        {% include "industry/sector-article-summary.html" with article=page.article_three %}
+        {% include "industry/sector-article-summary.html" with article=page.article_four %}
+        {% include "industry/sector-article-summary.html" with article=page.article_five %}
+        {% include "industry/sector-article-summary.html" with article=page.article_six %}
     </section>
+
 </div>
 {% endblock content %}
 

@@ -1,20 +1,8 @@
 @import 'main.scss';
 @import 'partials/reset';
-@import 'partials/breadcrumbs';
+@import 'partials/base';
 
-#menu {
-  height: auto;
-}
-@media (max-width: 641px) {
-  .container {
-    margin-left: 0px;
-  }
-}
-
-body,
-a {
-  font-family: arial,helvetica,sans-serif!important;
-}
+@import 'components/breadcrumbs';
 
 $sand: #f5f2ed;
 $gray: #333333;
@@ -40,10 +28,6 @@ p {
   line-height: 1.39;
 }
 
-body #content {
-  padding-top: 0;
-}
-
 #header-gov-links {
   .header-gov-link:hover,
   .header-gov-link:link,
@@ -53,15 +37,6 @@ body #content {
   .header-gov-link:nth-child(2) {
     line-height: 22px;
   }
-}
-
-#menu a {
-  text-decoration: none;
-}
-
-.error-reporting {
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 #table-of-contents {
