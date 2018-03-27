@@ -6,6 +6,7 @@ libraries="\
 	--load-path node_modules/govuk_frontend_toolkit/stylesheets \
 	--load-path node_modules/trade_elements/sass \
 	--load-path enrolment/static/sass \
+	--load-path core/static/core/sass \
 	--load-path node_modules/govuk-elements-sass/public/sass \
 "
 
@@ -28,7 +29,7 @@ input_output_map="\
 	enrolment/static/sass/ie8fixes.scss:enrolment/static/ie8fixes.css \
 	enrolment/static/sass/company-search_results.scss:enrolment/static/company-search_results.css \
 	enrolment/static/sass/lead-generation-page.scss:enrolment/static/lead-generation-page.css \
-	industry/static/industry/sass/industries.scss:industry/static/industry/industries.css \
+	industry/static/industry/sass/industry.scss:industry/static/industry/industry.css \
 	industry/static/industry/sass/industry-article.scss:industry/static/industry/industry-article.css \
 	industry/static/industry/sass/industry-list.scss:industry/static/industry/industry-list.css \
 	core/static/core/sass/landing-page.scss:core/static/core/landing-page.css \

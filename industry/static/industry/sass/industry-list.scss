@@ -1,28 +1,11 @@
 @import 'main.scss';
 @import 'partials/reset';
-@import 'partials/breadcrumbs';
-
-body,
-a {
-  font-family: arial,helvetica,sans-serif!important;
-}
-
-#menu {
-  height: auto;
-}
-@media (max-width: 641px) {
-  .container {
-    margin-left: 0px;
-  }
-}
+@import 'partials/base';
+@import 'components/breadcrumbs';
 
 $sand: #f5f2ed;
 $red: #E22014;
 $blue: rgba(0, 82, 157, 0.8);
-
-body #content {
-  padding-top: 0;
-}
 
 #hero {
   background-size: 1200px 300px;
@@ -48,22 +31,6 @@ body #content {
     font-weight: bold;
   }
 
-}
-
-#header-gov-links {
-  .header-gov-link:hover,
-  .header-gov-link:link,
-  .header-gov-link:visited {
-    line-height: 10px;  
-  }
-  .header-gov-link:nth-child(2) {
-    line-height: 22px;
-    margin-left: 1px;
-  }
-}
-
-#menu a {
-  text-decoration: none;
 }
 
 #hero {
@@ -137,8 +104,3 @@ body #content {
     margin-bottom: 60px;
   }
 }
-.error-reporting {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-

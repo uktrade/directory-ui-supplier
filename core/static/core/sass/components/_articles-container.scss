@@ -1,0 +1,39 @@
+$gray: #333333;
+
+#articles-container {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  p {
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.11;
+    color: $gray;
+    margin-bottom: 45px;
+  }
+  img {
+    width: 100%;
+  }
+  .article-meta {
+    font-size: 15px;
+    line-height: 1.47;
+    span {
+      color: $gray;
+    }
+  }
+  .article-image-container {
+    float: right;
+  }
+}
+
+@media (max-width: 769px) {
+  #articles-container {
+    margin-bottom: 0;
+    .article-image-container {
+      float: none;
+    }
+  }
+
+}
