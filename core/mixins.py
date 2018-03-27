@@ -73,10 +73,10 @@ class CMSLanguageSwitcherMixin:
     def get_context_data(self, page, *args, **kwargs):
         form = forms.LanguageForm(
             initial={'lang': translation.get_language()},
-            language_choices=page['languages']
+            language_choices=page['meta']['languages']
         )
         show_language_switcher = (
-            len(page['languages']) > 1 and
+            len(page['meta']['languages']) > 1 and
             form.is_language_available(translation.get_language())
         )
         return super().get_context_data(

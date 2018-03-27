@@ -99,10 +99,10 @@ def test_cms_language_switcher_one_language(rf):
         template_name = 'core/base.html'
 
         def get_context_data(self, *args, **kwargs):
-            languages = (('en-gb', 'English'),)
-            return super().get_context_data(
-                page={'languages': languages}, *args, **kwargs
-            )
+            page = {
+                'meta': {'languages': [('en-gb', 'English')]}
+            }
+            return super().get_context_data(page=page, *args, **kwargs)
 
     request = rf.get('/')
     with translation.override('de'):
@@ -119,10 +119,12 @@ def test_cms_language_switcher_active_language_unavailable(rf):
         template_name = 'core/base.html'
 
         def get_context_data(self, *args, **kwargs):
-            languages = (('en-gb', 'English'), ('de', 'German'))
-            return super().get_context_data(
-                page={'languages': languages}, *args, **kwargs
-            )
+            page = {
+                'meta': {
+                    'languages': [('en-gb', 'English'), ('de', 'German')]
+                }
+            }
+            return super().get_context_data(page=page, *args, **kwargs)
 
     request = rf.get('/')
     with translation.override('fr'):
@@ -139,10 +141,12 @@ def test_cms_language_switcher_active_language_available(rf):
         template_name = 'core/base.html'
 
         def get_context_data(self, *args, **kwargs):
-            languages = (('en-gb', 'English'), ('de', 'German'))
-            return super().get_context_data(
-                page={'languages': languages}, *args, **kwargs
-            )
+            page = {
+                'meta': {
+                    'languages': [('en-gb', 'English'), ('de', 'German')]
+                }
+            }
+            return super().get_context_data(page=page, *args, **kwargs)
 
     request = rf.get('/')
     with translation.override('de'):

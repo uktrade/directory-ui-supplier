@@ -10,7 +10,7 @@
             </div>
             <h2>{{ article.title }}</h2>
             {{ article.body|first_paragraph|safe }}
-            <a href="{{ article.url }}" class="link">Find out more</a>
+            <a href="{{ article.meta.url }}" class="link">Find out more</a>
         </div>
     </div>
 {% endif %}

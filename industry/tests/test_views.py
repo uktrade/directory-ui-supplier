@@ -21,7 +21,7 @@ def industry_detail_response():
         status_code=200,
         json_payload={
             'sector_value': 'value',
-            'languages': ['en-gb']
+            'meta': {'languages': ['en-gb']}
         }
     )
 
@@ -34,7 +34,9 @@ def industry_article_response():
             'title': 'Hello world',
             'body': '<h2>Hello world</h2>',
             'date': '2018-01-01',
-            'languages': ['en-gb']
+            'meta': {
+                'languages': ['en-gb']
+            }
         }
     )
 
@@ -137,45 +139,34 @@ def test_article_page_context(settings, client, industry_article_response):
     assert response.template_name == ['industry/article.html']
 
 
-@patch('core.helpers.cms_client.find_a_supplier.list_industry_pages')
 @patch('core.helpers.cms_client.find_a_supplier.get_industries_landing_page')
 def test_industries_page_context(
-    mock_get_industries_landing_page, mock_list_industry_pages, settings,
-    client
+    mock_get_industries_landing_page, settings, client
 ):
     settings.FEATURE_CMS_ENABLED = True
+    page = {
+        'title': 'the page',
+        'industries': [{'title': 'good 1'}],
+        'meta': {'languages': ['en-gb']},
+    }
     mock_get_industries_landing_page.return_value = create_response(
         status_code=200,
-        json_payload={'title': 'the page', 'languages': ['en-gb']}
-    )
-
-    mock_list_industry_pages.return_value = create_response(
-        status_code=200, json_payload={'items': [{'title': 'good 1'}]}
+        json_payload=page
     )
 
     response = client.get(reverse('sector-list'))
 
     assert response.status_code == 200
-    assert response.context_data['page'] == {
-        'title': 'the page',
-        'languages': ['en-gb'],
-    }
-    assert response.context_data['pages'] == [{'title': 'good 1'}]
+    assert response.context_data['page'] == page
 
 
-@patch('core.helpers.cms_client.find_a_supplier.list_industry_pages')
 @patch('core.helpers.cms_client.find_a_supplier.get_industries_landing_page')
 def test_industries_page_not_found(
-    mock_get_industries_landing_page, mock_list_industry_pages, settings,
-    client
+    mock_get_industries_landing_page, settings, client
 ):
     settings.FEATURE_CMS_ENABLED = True
     mock_get_industries_landing_page.return_value = create_response(
         status_code=404
-    )
-
-    mock_list_industry_pages.return_value = create_response(
-        status_code=200, json_payload={'items': [{'title': 'good 1'}]}
     )
 
     response = client.get(reverse('sector-list'))
