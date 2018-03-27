@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 {% load static from staticfiles %}
 {% load search_url from company_tags %}
-{% load first_paragraph first_heading from cms_tags %}
+{% load first_paragraph first_heading grouper from cms_tags %}
 
 {% block head_css %}
     {{ block.super }}
@@ -48,63 +48,88 @@
     </div>
 </section>
 
-<div class="container">
-    <section id="introduction" class="grid-row">
+
+<section id="introduction" class="container">
+    <div class="grid-row">
         <div class="column-one-half">
             {{ page.proposition_text|safe }}
         </div>
         <div class="column-one-half button-container">
             <a href="{{ directory_components_urls.contact_us }}" class="button">{{ page.call_to_action_text }}</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="grid-row"  id="industries-container">
-        {{ page.industries_list_text|safe }}
-            {% for item in pages %}
+<section id="industries-container" class="container">
+    {{ page.industries_list_text|safe }}
+    {% for row in pages|grouper:3 %}
+        <div class="grid-row">
+            {% for item in row %}
                 <a href="{{ item.url }}" class="column-one-third industry-card">
                     <span>{{ item.hero_text|first_heading|striptags }}</span>
                     <img src="{{ item.hero_image.url }}" />
                     <div>
                         {{ item.hero_text|first_paragraph|safe }}
                     </div>
+                    <div class="clearfix"></div>
                 </a>
             {% endfor %}
-        <div class="clearfix"></div>
-        <a class="button" href="{% url 'sector-list' %}">{{ page.industries_list_call_to_action_text }}</a>
-    </section>
+        </div>
+    {% endfor %}
+    <a class="button" href="{% url 'sector-list' %}">{{ page.industries_list_call_to_action_text }}</a>
+</section>
 
-    <section id="services-container" class="grid-row">
+<section id="services-container" class="container">
+    <div class="grid-row">
         <div class="column-one-half">
             {{ page.services_list_text|safe }}
         </div>
         <div class="clearfix"></div>
         <div class="column-one-quarter">
-            <img src="{{ page.services_column_two_icon.url}}" />
+            <div class="image-container">
+                <img src="{{ page.services_column_two_icon.url}}" />
+            </div>
+            <div>
             {{ page.services_column_one|safe }}
+                <div class="clearfix"></div>
+            </div>
         </div>
         <div class="column-one-quarter">
-            <img src="{{ page.services_column_one_icon.url }}" />
-            {{ page.services_column_two|safe }}
+            <div class="image-container">
+                <img src="{{ page.services_column_one_icon.url }}" />
+            </div>
+            <div>
+                {{ page.services_column_two|safe }}
+            </div>
         </div>
         <div class="column-one-quarter">
-            <img src="{{ page.services_column_three_icon.url }}" />
-            {{ page.services_column_three|safe }}
+            <div class="image-container">
+                <img src="{{ page.services_column_three_icon.url }}" />
+            </div>
+            <div>
+                {{ page.services_column_three|safe }}
+            </div>
         </div>
         <div class="column-one-quarter">
-            <img src="{{ page.services_column_four_icon.url }}" />
-            {{ page.services_column_four|safe }}
+            <div class="image-container">
+                <img src="{{ page.services_column_four_icon.url }}" />
+            </div>
+            <div>
+                {{ page.services_column_four|safe }}
+            </div>
         </div>
         <div class="clearfix"></div>
-    </section>
+    </div>
+</section>
 
-    <section id="articles-container">
-        {% include "industry/sector-article-summary.html" with article=page.article_one %}
-        {% include "industry/sector-article-summary.html" with article=page.article_two %}
-        {% include "industry/sector-article-summary.html" with article=page.article_three %}
-        {% include "industry/sector-article-summary.html" with article=page.article_four %}
-        {% include "industry/sector-article-summary.html" with article=page.article_five %}
-        {% include "industry/sector-article-summary.html" with article=page.article_six %}
-    </section>
+<section id="articles-container" class="container">
+    {% include "industry/sector-article-summary.html" with article=page.article_one %}
+    {% include "industry/sector-article-summary.html" with article=page.article_two %}
+    {% include "industry/sector-article-summary.html" with article=page.article_three %}
+    {% include "industry/sector-article-summary.html" with article=page.article_four %}
+    {% include "industry/sector-article-summary.html" with article=page.article_five %}
+    {% include "industry/sector-article-summary.html" with article=page.article_six %}
+</section>
 
 </div>
 {% endblock content %}

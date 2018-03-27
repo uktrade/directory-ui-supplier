@@ -1,20 +1,8 @@
 @import 'main.scss';
 @import 'partials/reset';
+@import 'partials/base';
+
 @import 'components/breadcrumbs';
-
-#menu {
-  height: auto;
-}
-@media (max-width: 641px) {
-  .container {
-    margin-left: 0px;
-  }
-}
-
-body,
-a {
-  font-family: arial,helvetica,sans-serif!important;
-}
 
 $sand: #f5f2ed;
 $gray: #333333;
@@ -40,10 +28,6 @@ p {
   line-height: 1.39;
 }
 
-body #content {
-  padding-top: 0;
-}
-
 #header-gov-links {
   .header-gov-link:hover,
   .header-gov-link:link,
@@ -54,10 +38,6 @@ body #content {
     line-height: 22px;
     margin-left: 1px;
   }
-}
-
-#menu a {
-  text-decoration: none;
 }
 
 .error-reporting {

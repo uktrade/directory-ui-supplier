@@ -1,0 +1,69 @@
+body,
+a {
+  font-family: arial,helvetica,sans-serif!important;
+}
+
+#menu {
+  height: auto;
+  a {
+    text-decoration: none;
+  }
+}
+
+#footer {
+  a {
+    text-decoration: none; 
+  }
+}
+
+body #content {
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#header-gov-links {
+  .header-gov-link:hover,
+  .header-gov-link:link,
+  .header-gov-link:visited {
+    line-height: 10px;  
+  }
+  .header-gov-link:nth-child(2) {
+    line-height: 22px;
+    margin-left: 1px;
+  }
+}
+
+@media (max-width: 641px) {
+  .container {
+    margin-left: 0px;
+  }
+
+  body.js-enabled #menu {
+      display: none;
+  }
+  #menu-control {
+    display: none;
+  }
+  body.js-enabled #menu-control {
+    display: block;
+  }
+  .ed-language-switcher select, .ed-language-switcher p {
+    color: black;
+  }
+
+  body.js-enabled .ed-language-switcher select, .ed-language-switcher p {
+    color: white;
+  }
+
+  .ed-language-switcher {
+      float: left;
+      margin-top: 15px;
+  }
+
+  body.js-enabled .ed-language-switcher {
+    float: right;
+    margin-top: 5px;
+  }
+}
+
