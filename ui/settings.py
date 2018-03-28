@@ -58,6 +58,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE_CLASSES = [
+    'core.middleware.MaintenanceModeMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'ui.middleware.LocaleQuerystringMiddleware',
     'ui.middleware.PersistLocaleMiddleware',
@@ -83,7 +84,6 @@ TEMPLATES = [
                 'ui.context_processors.lead_generation_form',
                 'directory_components.context_processors.analytics',
                 'directory_components.context_processors.urls_processor',
-                'ui.context_processors.feature_flags',
 
             ],
         },
@@ -186,6 +186,10 @@ FEATURE_LEGAL_CAMPAIGN_ENABLED = (
     os.getenv('FEATURE_LEGAL_CAMPAIGN_ENABLED') == 'true'
 )
 FEATURE_CMS_ENABLED = os.getenv('FEATURE_CMS_ENABLED') == 'true'
+
+FEATURE_MAINTENANCE_MODE_ENABLED = os.getenv(
+    'FEATURE_MAINTENANCE_MODE_ENABLED'
+) == 'true'
 
 FOOD_CAMPAIGN_DISABLED_COUNTRIES = os.getenv(
     'FOOD_CAMPAIGN_DISABLED_COUNTRIES', ''
