@@ -49,10 +49,10 @@
 </div>
 
 <div class="container" id="industry-pages-container">
-    {% for row in pages|grouper:3 %}
+    {% for row in page.industries|grouper:3 %}
         <section class="grid-row">
             {% for item in row %}
-                <a href="{{ item.url }}" class="column-one-third">
+                <a href="{{ item.meta.url }}" class="column-one-third">
                     <span>{{ item.hero_text|first_heading|striptags }}</span>
                     <img src="{{ item.hero_image.url }}" />
                 </a>
