@@ -62,10 +62,10 @@
 
 <section id="industries-container" class="container">
     {{ page.industries_list_text|safe }}
-    {% for row in pages|grouper:3 %}
+    {% for row in page.industries|grouper:3 %}
         <div class="grid-row">
             {% for item in row %}
-                <a href="{{ item.url }}" class="column-one-third industry-card">
+                <a href="{{ item.meta.url }}" class="column-one-third industry-card">
                     <span>{{ item.hero_text|first_heading|striptags }}</span>
                     <img src="{{ item.hero_image.url }}" />
                     <div>

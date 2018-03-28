@@ -35,19 +35,11 @@ class LandingPageCMSView(
 
     def get_context_data(self, *args, **kwargs):
         return super().get_context_data(
-            pages=self.list_pages()['items'],
             page=self.get_cms_page(),
             search_form=forms.SearchForm(),
             *args,
             **kwargs
         )
-
-    def list_pages(self):
-        response = helpers.cms_client.find_a_supplier.list_industry_pages(
-            language_code=translation.get_language(),
-            draft_token=self.request.GET.get('draft_token'),
-        )
-        return helpers.handle_cms_response(response)
 
     def get_cms_page(self):
         response = helpers.cms_client.find_a_supplier.get_landing_page(

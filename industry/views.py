@@ -52,13 +52,6 @@ class SectorLandingPageCMSView(
     active_view_name = 'sector-list'
     template_name = 'industry/list.html'
 
-    def list_pages(self):
-        response = cms_client.find_a_supplier.list_industry_pages(
-            language_code=translation.get_language(),
-            draft_token=self.request.GET.get('draft_token'),
-        )
-        return handle_cms_response(response)
-
     def get_cms_page(self):
         response = cms_client.find_a_supplier.get_industries_landing_page(
             language_code=translation.get_language(),
@@ -68,7 +61,6 @@ class SectorLandingPageCMSView(
 
     def get_context_data(self, *args, **kwargs):
         return super().get_context_data(
-            pages=self.list_pages()['items'],
             page=self.get_cms_page(),
             *args,
             **kwargs
