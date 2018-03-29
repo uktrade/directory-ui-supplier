@@ -1,23 +1,15 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base_cms.html' %}
 {% load static from staticfiles %}
 {% load trans from i18n %}
 {% load search_url from company_tags %}
-{% load to_date from cms_tags %}
+{% load add_anchors table_of_contents to_date from cms_tags %}
+
 {% block head_css %}
     {{ block.super }}
     <link href="{% static 'industry/industry-article.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
-{% block meta_description %}
-    {{ page.search_description }}
-{% endblock %}
-
-{% block head_title %}
-    {{ page.seo_title }}
-{% endblock %}
-
 {% block content %}
-{% load add_anchors table_of_contents from cms_tags %}
 
 <div>
     <div class="container">

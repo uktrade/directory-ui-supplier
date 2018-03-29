@@ -1,9 +1,16 @@
 from django.conf import settings
+from django.shortcuts import redirect
 from django.utils import translation
 from django.utils.cache import set_response_etag
 
 from core import forms, helpers
 from enrolment.forms import LanguageForm, get_language_form_initial_data
+
+
+class IncorrectSlug(Exception):
+    def __init__(self, canonical_url, *args, **kwargs):
+        self.canonical_url = canonical_url
+        super().__init__(*args, **kwargs)
 
 
 class SetEtagMixin:
@@ -46,11 +53,6 @@ class ConditionalEnableTranslationsMixin:
             **kwargs,
         }
 
-    def get_template_names(self):
-        if translation.get_language_bidi():
-            return [self.template_name_bidi]
-        return super().get_template_names()
-
 
 class ActiveViewNameMixin:
     def get_context_data(self, **kwargs):
@@ -66,7 +68,19 @@ class GetCMSPageMixin:
             draft_token=self.request.GET.get('draft_token'),
             language_code=translation.get_language(),
         )
-        return helpers.handle_cms_response(response)
+        return self.handle_cms_response(response)
+
+    def handle_cms_response(self, response):
+        page = helpers.handle_cms_response(response)
+        if page['meta']['slug'] != self.kwargs['slug']:
+            raise IncorrectSlug(page['meta']['url'])
+        return page
+
+    def dispatch(self, *args, **kwargs):
+        try:
+            return super().dispatch(*args, **kwargs)
+        except IncorrectSlug as exception:
+            return redirect(exception.canonical_url)
 
 
 class CMSLanguageSwitcherMixin:
