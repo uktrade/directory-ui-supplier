@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block head_other %}
+    {{ super }}
+    {% for language_code, url in page.meta.localised_urls %}
+        <link rel="alternate" href="{{ url }}" hreflang="{{ language_code }}" />
+    {% endfor %}
+{% endblock %}
+
+{% block meta_description %}
+    {{ page.meta_description }}
+{% endblock %}
+
+{% block head_title %}
+    {{ page.seo_title }}
+{% endblock %}

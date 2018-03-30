@@ -8,14 +8,6 @@
     <link href="{% static 'core/landing-page.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
-{% block meta_description %}
-    {{ page.meta_description }}
-{% endblock %}
-
-{% block head_title %}
-    {{ page.seo_title }}
-{% endblock %}
-
 {% block content %}
 <section id="hero" style="background-image: url({{ page.hero_image.url }});">
     <div class="container">

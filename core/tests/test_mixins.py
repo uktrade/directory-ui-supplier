@@ -63,36 +63,6 @@ def test_cached_views_not_dynamic(rf, settings, view_class):
         assert response.status_code == 200
 
 
-def test_conditional_translate_bidi_template(rf):
-    class View(mixins.ConditionalEnableTranslationsMixin, TemplateView):
-        template_name_bidi = 'bidi.html'
-        template_name = 'non-bidi.html'
-
-    view = View.as_view()
-    request = rf.get('/')
-    request.LANGUAGE_CODE = 'ar'
-
-    response = view(request)
-
-    assert response.status_code == 200
-    assert response.template_name == ['bidi.html']
-
-
-def test_conditional_translate_non_bidi_template(rf):
-    class View(mixins.ConditionalEnableTranslationsMixin, TemplateView):
-        template_name_bidi = 'bidi.html'
-        template_name = 'non-bidi.html'
-
-    view = View.as_view()
-    request = rf.get('/')
-    request.LANGUAGE_CODE = 'en-gb'
-
-    response = view(request)
-
-    assert response.status_code == 200
-    assert response.template_name == ['non-bidi.html']
-
-
 def test_cms_language_switcher_one_language(rf):
     class MyView(mixins.CMSLanguageSwitcherMixin, TemplateView):
 
