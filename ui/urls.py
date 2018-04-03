@@ -71,12 +71,17 @@ urlpatterns = [
     ),
     url(
         r'^industries/(?P<cms_page_id>[0-9]+)/(?P<slug>[\w-]+)/$',
-        industry.views.SectorDetailCMSView.as_view(),
+        industry.views.IndustryDetailCMSView.as_view(),
         name='sector-detail-cms-verbose',
     ),
     url(
+        r'^industries/(?P<cms_page_id>[0-9]+)/(?P<slug>[\w-]+)/contact/$',
+        industry.views.IndustryDetailContactCMSView.as_view(),
+        name='sector-detail-cms-contact',
+    ),
+    url(
         r'^industry-articles/(?P<cms_page_id>[0-9]+)/(?P<slug>[\w-]+)/$',
-        industry.views.SectorArticleCMSView.as_view(),
+        industry.views.IndustryArticleCMSView.as_view(),
         name='sector-article',
     ),
     url(

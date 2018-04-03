@@ -1,17 +1,21 @@
 from directory_components.helpers import SocialLinkBuilder
 
 from django.utils import translation
+from django.views.generic import TemplateView
+from django.views.generic.edit import FormView
 
 from core.helpers import cms_client, handle_cms_response
-from core.views import BaseCMSView
+from core.views import CMSFeatureFlagMixin
 from core.mixins import (
     ActiveViewNameMixin, GetCMSPageMixin, CMSLanguageSwitcherMixin
 )
 from exportopportunity.helpers import get_showcase_companies
+from industry import forms
 
 
-class SectorDetailCMSView(
-    CMSLanguageSwitcherMixin, GetCMSPageMixin, BaseCMSView
+class IndustryDetailCMSView(
+    CMSFeatureFlagMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
+    TemplateView
 ):
     template_name = 'industry/detail.html'
 
@@ -27,8 +31,21 @@ class SectorDetailCMSView(
         return get_showcase_companies(sectors=sector_value, size=6)
 
 
-class SectorArticleCMSView(
-    CMSLanguageSwitcherMixin, GetCMSPageMixin, BaseCMSView
+class IndustryDetailContactCMSView(
+    CMSFeatureFlagMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
+    FormView
+):
+    template_name = 'industry/contact.html'
+    form_class = forms.ContactForm
+
+    def get_context_data(self, *args, **kwargs):
+        page = self.get_cms_page()
+        return super().get_context_data(page=page, *args, **kwargs)
+
+
+class IndustryArticleCMSView(
+    CMSFeatureFlagMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
+    TemplateView
 ):
     template_name = 'industry/article.html'
 
@@ -46,8 +63,9 @@ class SectorArticleCMSView(
         )
 
 
-class SectorLandingPageCMSView(
-    CMSLanguageSwitcherMixin, ActiveViewNameMixin, BaseCMSView
+class IndustryLandingPageCMSView(
+    CMSFeatureFlagMixin, CMSLanguageSwitcherMixin, ActiveViewNameMixin,
+    TemplateView
 ):
     active_view_name = 'sector-list'
     template_name = 'industry/list.html'

@@ -1,0 +1,45 @@
+{% extends 'core/base_cms.html' %}
+{% load static from staticfiles %}
+{% load trans from i18n %}
+{% load search_url from company_tags %}
+
+{% block head_css %}
+    {{ block.super }}
+    <link href="{% static 'industry/contact.css' %}" media="all" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="container">
+        <p class="breadcrumbs">
+            <span class="label verbose">You are here:</span>
+            <a href="/">Home</a>
+            <span class="separator">,</span>
+            <a href="{% url 'sector-list' %}">Industries</a>
+            <span class="separator">,</span>
+            <a href="{{ page.meta.url }}">{{ page.sector_label }}</a>
+            <span class="separator">,</span>
+            <span class="Current">{{ page.contact_us_breadcrumb_label }}</span>
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <section id="lede" class="grid-row">
+        <div class="column-one-third">
+            {{ page.contact_introduction_text|safe }}
+
+            <form action="" method="post">
+                {{ form.as_p }}
+                <div>
+                    <input class="button" type="submit" value="{{ page.submit_button_text }}">
+                </div>
+            </form>
+        </div>
+    </section>
+
+   
+</div>
+{% endblock content %}
+
+{% block feedback_reporter %}{% endblock %}

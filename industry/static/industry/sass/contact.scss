@@ -1,0 +1,55 @@
+@import 'main.scss';
+@import 'partials/reset';
+@import 'partials/base';
+@import 'components/breadcrumbs';
+
+$sand: #f5f2ed;
+$gray: #333333;
+
+#content .form-control {
+  border: 2px solid #0b0c0c;
+  width: 100%;
+}
+
+#lede {
+  padding: 60px;
+  p {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.25;
+    font-weight: bold;
+  }
+  a {
+    width: 300px;
+    height: 60px;
+    border-radius: 3px;
+    text-align: center;
+  }
+}
+
+
+#content > .container {
+  max-width: 1320px;
+}
+
+
+@media (max-width: 769px) {
+
+  #lede {
+    padding: 30px;
+    text-align: center;
+    div {
+      padding: 0;
+    }
+    a {
+      width: 100%;
+    }
+    p {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.25;
+      margin-bottom: 30px;
+    }
+  }
+
+}

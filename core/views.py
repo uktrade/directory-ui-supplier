@@ -18,8 +18,7 @@ class CMSFeatureFlagViewNegotiator(TemplateView):
         return ViewClass(*args, **kwargs)
 
 
-class BaseCMSView(TemplateView):
-
+class CMSFeatureFlagMixin:
     def dispatch(self, *args, **kwargs):
         translation.activate(self.request.LANGUAGE_CODE)
         if not settings.FEATURE_CMS_ENABLED:
@@ -28,7 +27,8 @@ class BaseCMSView(TemplateView):
 
 
 class LandingPageCMSView(
-    mixins.CMSLanguageSwitcherMixin, mixins.ActiveViewNameMixin, BaseCMSView
+    mixins.CMSLanguageSwitcherMixin, mixins.ActiveViewNameMixin,
+    CMSFeatureFlagMixin, TemplateView
 ):
     active_view_name = 'index'
     template_name = 'core/landing-page.html'

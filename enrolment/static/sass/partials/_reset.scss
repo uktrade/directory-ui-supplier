@@ -10,3 +10,7 @@ html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, ab
 blockquote, q {
   quotes: none; 
 }
+
+*, *:before, *:after {
+	box-sizing: initial;
+}
