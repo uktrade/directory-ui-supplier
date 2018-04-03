@@ -2,6 +2,7 @@
 {% load static from staticfiles %}
 {% load trans from i18n %}
 {% load search_url from company_tags %}
+{% load add_export_elements_classes from cms_tags %}
 
 {% block head_css %}
     {{ block.super }}
@@ -19,20 +20,20 @@
             <span class="separator">,</span>
             <a href="{{ page.meta.url }}">{{ page.sector_label }}</a>
             <span class="separator">,</span>
-            <span class="Current">{{ page.contact_us_breadcrumb_label }}</span>
+            <span class="Current">{{ page.contact_breadcrumb_label }}</span>
         </p>
     </div>
 </div>
 
 <div class="container">
     <section id="lede" class="grid-row">
-        <div class="column-one-third">
-            {{ page.contact_introduction_text|safe }}
+        <div class="column-one-half">
+            {{ page.contact_introduction_text|add_export_elements_classes|safe }}
 
             <form action="" method="post">
                 {{ form.as_p }}
                 <div>
-                    <input class="button" type="submit" value="{{ page.submit_button_text }}">
+                    <input class="button" type="submit" value="{{ page.contact_button_text }}">
                 </div>
             </form>
         </div>
