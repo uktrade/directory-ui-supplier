@@ -28,31 +28,15 @@
 <div class="container">
     <section id="lede" class="grid-row">
         <div class="column-one-half">
-            {{ page.contact_introduction_text|add_export_elements_classes|safe }}
-
-            <form action="" method="post">
-                {{ form.as_p }}
-                <div>
-                    <input class="button" type="submit" value="{{ page.contact_button_text }}">
-                </div>
-            </form>
+            {{ page.contact_success_message_text|add_export_elements_classes|safe }}
+            <div>
+                <a href="{% url 'sector-detail-cms-verbose' cms_page_id=page.meta.pk slug=page.meta.slug %}">
+                {{ page.contact_success_back_link_text }}
+                </a>
+            </div>
         </div>
     </section>
-
-   
 </div>
 {% endblock content %}
 
 {% block feedback_reporter %}{% endblock %}
-
-{% block body_js %}
-    {{ block.super }}
-    <script type="text/javascript" src="{% static 'javascripts/lead-generation.js' %}"></script>
-    <script type="text/javascript">
-      var others = document.getElementsByClassName('js-field-other');
-      var selectors = document.getElementsByClassName('js-field-other-selector');
-      for(var i=0; i<others.length; i++) {
-          GOVUK.utils.toggleOtherOnSelect(others[i], selectors[i]);
-      }
-    </script>
-{% endblock body_js %}

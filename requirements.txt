@@ -14,7 +14,7 @@ contextlib2==0.5.5        # via raven
 directory-api-client==9.15.3
 directory-client-core==0.2.1  # via directory-api-client, directory-cms-client
 directory-cms-client==0.4.0
-directory_components==1.2.0
+directory_components==1.8.0
 directory_constants==6.5.2
 directory_validators==4.5.0
 django-formtools==2.0
@@ -23,7 +23,7 @@ django==1.11.10
 django_recaptcha==1.2.0
 djangorestframework==3.7.7  # via sigauth
 docutils==0.14            # via botocore
-export-elements==0.8.1
+export-elements==0.10.2
 gunicorn==19.5.0
 idna==2.6                 # via requests
 jmespath==0.9.3           # via boto3, botocore

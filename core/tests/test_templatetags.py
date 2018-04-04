@@ -151,3 +151,22 @@ def test_grouper_remainder():
         '        <li>5</li>'
         '    </ul>'
     )
+
+
+def test_add_export_elements_classes():
+    template = Template(
+        '{% load add_export_elements_classes from cms_tags %}'
+        '{{ html|add_export_elements_classes|safe }}'
+
+    )
+    context = Context({
+        'html': '<br/><h2>Title one</h2><h2>Title two</h2><br/>'
+    })
+    html = template.render(context)
+
+    assert html == (
+        '<br/>'
+        '<h2 class="heading-large">Title one</h2>'
+        '<h2 class="heading-large">Title two</h2>'
+        '<br/>'
+    )

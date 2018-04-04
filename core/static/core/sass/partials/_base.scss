@@ -9,6 +9,11 @@ $asset-path: '../';
 @import 'main-tablet.scss';
 @import 'main-mobile.scss';
 
+body,
+a {
+  font-family: arial,helvetica,sans-serif!important;
+}
+
 #content {
   padding-top: 0;
 }
@@ -18,7 +23,6 @@ $asset-path: '../';
     max-width: 1200px;
     width: 100%;
 }
-
 
 @media (max-width: 641px) {
   .container {

@@ -69,6 +69,7 @@ def grouper(value, n):
     ungrouped = value or []
     return [ungrouped[x:x+n] for x in range(0, len(ungrouped), n)]
 
+
 @register.filter
 def add_export_elements_classes(value):
     soup = BeautifulSoup(value, 'html.parser')

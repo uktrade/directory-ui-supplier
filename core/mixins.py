@@ -62,6 +62,7 @@ class ActiveViewNameMixin:
 
 
 class GetCMSPageMixin:
+
     def get_cms_page(self):
         response = helpers.cms_client.get_page(
             page_id=self.kwargs['cms_page_id'],
