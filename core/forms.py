@@ -1,3 +1,5 @@
+from django.forms import Select
+
 from directory_components import forms, fields
 from django.utils.translation import ugettext as _
 
@@ -14,7 +16,8 @@ class SearchForm(forms.Form):
         required=False,
         choices=(
             (('', _('All industries')),) + choices.INDUSTRIES
-        )
+        ),
+        widget=Select(attrs={'class': 'bidi-rtl'})
     )
 
 

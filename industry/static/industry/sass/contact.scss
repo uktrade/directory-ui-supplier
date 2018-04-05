@@ -1,6 +1,7 @@
 @import 'partials/reset';
 @import 'partials/base';
 @import 'components/breadcrumbs';
+@import 'partials/bidi';
 
 $sand: #f5f2ed;
 $gray: #333333;
@@ -61,4 +62,20 @@ $gray: #333333;
     }
   }
 
+}
+
+body.bidi {
+
+  #lede {
+    form {
+      .form-label, .form-hint, .form-control {
+        @include mirror_relative_to_parent();
+        text-align: right;
+      }
+      select {
+        direction: rtl;
+        padding-right: 40px;
+      }
+    }
+  }
 }

@@ -13,34 +13,34 @@
 
 <div id="hero" style="background-image: url({{ page.hero_image.url }});">
     <div class="container">
-        <h1 class="hero-teaser">{{ page.hero_title }}</h1>
+        <h1 class="hero-teaser bidi-rtl">{{ page.hero_title }}</h1>
     </div>
 </div>
 
 <div>
     <div class="container">
         <p class="breadcrumbs">
-            <span class="label verbose">You are here:</span>
-            <a href="/">Home</a>
+            <span class="label verbose bidi-ltr">You are here:</span>
+            <a href="/" class="bidi-rtl">Home</a>
             <span class="separator">,</span>
-            <span class="current">{{ page.breadcrumbs_label }}</span>
+            <span class="current bidi-rtl">{{ page.breadcrumbs_label }}</span>
         </p>
     </div>
 </div>
 
 <div class="container" id="introduction">
-    <div class="column-one-half">
+    <div class="column-one-half bidi-rtl">
         <p>
             {{ page.proposition_text }}
         </p>
     </div>
-    <div class="column-one-half">
+    <div class="column-one-half bidi-rtl">
         <a href="{{ directory_components_urls.contact_us }}" class="button button-primary">{{ page.call_to_action_text }}</a>
     </div>
     <span class="clearfix"></span>
 </div>
 
-<div class="container" id="industry-pages-container">
+<div class="container bidi-rtl" id="industry-pages-container">
     {% for row in page.industries|grouper:3 %}
         <section class="grid-row">
             {% for item in row %}

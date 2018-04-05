@@ -87,6 +87,14 @@ $gray: #333333;
   }
 }
 
+body.bidi #lede-columns {
+  div {
+    img {
+      left: 0;
+    }
+  }
+}
+
 #companies {
   padding: 60px;
   background-color: $sand;

@@ -115,6 +115,13 @@ body #menu {
   }
 }
 
+body.bidi {
+  #menu {
+    border-right: 1px solid $grey-3;
+    border-left: 0;
+  }
+}
+
 #menu-control {
   display: none; /* only on tablet+mobile */
 }

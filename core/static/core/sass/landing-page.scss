@@ -70,13 +70,28 @@ section {
     }
     input, select {
       width: 100%;
-      border-right: 0;
+      border-right-width: 0;
       height: 48px;
       background-color: white;
     }
   }
   input, select {
     color: $gray;
+  }
+}
+
+body.bidi {
+  #hero {
+    #search-area {
+      select {
+        direction: rtl;
+        padding-right: 40px;
+      }
+      input, select {
+        border-left-width: 0;
+        border-right-width: 2px;
+      }
+    }
   }
 }
 
