@@ -35,7 +35,7 @@
         </p>
     </div>
     <div class="column-one-half bidi-rtl">
-        <a href="{{ directory_components_urls.contact_us }}" class="button button-primary">{{ page.call_to_action_text }}</a>
+        <a href="{% url 'sector-list-cms-contact' slug=page.breadcrumbs.industrycontactpage.slug %}" class="button button-primary">{{ page.call_to_action_text }}</a>
     </div>
     <span class="clearfix"></span>
 </div>
@@ -45,7 +45,7 @@
         <section class="grid-row">
             {% for item in row %}
                 <a href="{{ item.meta.url }}" class="column-one-third">
-                    <span>{{ item.hero_text|first_heading|striptags }}</span>
+                    <span>{{ item.breadcrumbs_label }}</span>
                     <img src="{{ item.hero_image.url }}" />
                 </a>
             {% endfor %}

@@ -140,7 +140,21 @@ def test_international_sector_list_cms_feature_flag_off(client, settings):
 
 @patch(
     'industry.views.IndustryLandingPageCMSView.get_context_data',
-    Mock(return_value={})
+    Mock(return_value={
+        'page': {
+            'breadcrumbs': {
+                'landingpage': {
+                    'slug': 'home',
+                },
+                'industrylandingpage': {
+                    'slug': 'industries',
+                },
+                'industrycontactpage': {
+                    'slug': 'contact-us'
+                },
+            }
+        }
+    })
 )
 def test_international_sector_list_cms_feature_flag_on(client, settings):
     settings.FEATURE_CMS_ENABLED = True
