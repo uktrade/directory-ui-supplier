@@ -1,0 +1,81 @@
+@import 'partials/reset';
+@import 'partials/base';
+@import 'components/breadcrumbs';
+@import 'partials/bidi';
+
+$sand: #f5f2ed;
+$gray: #333333;
+
+#content .form-control {
+  border: 2px solid #0b0c0c;
+  width: 100%;
+}
+
+#content input[type=checkbox].form-control {
+  width: 40px;
+}
+
+#lede {
+  padding: 60px;
+  padding-top: 0;
+  p {
+    line-height: 1.58;
+    margin-bottom: 30px;
+  }
+  a {
+    width: 300px;
+    height: 60px;
+    border-radius: 3px;
+    text-align: center;
+  }
+  form {
+    width: 80%;
+    input {
+      height: 48px;
+    }
+  }
+}
+
+
+#content > .container {
+  max-width: 1320px;
+}
+
+.button {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+@media (max-width: 769px) {
+
+  #lede {
+    padding: 30px;
+    text-align: center;
+    div {
+      padding: 0;
+    }
+    a {
+      width: 100%;
+    }
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
+}
+
+body.bidi {
+
+  #lede {
+    form {
+      .form-label, .form-hint, .form-control {
+        @include mirror_relative_to_parent();
+        text-align: right;
+      }
+      select {
+        direction: rtl;
+        padding-right: 40px;
+      }
+    }
+  }
+}

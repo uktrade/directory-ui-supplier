@@ -1,37 +1,28 @@
+$asset-path: '../';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Overpass:400,700');
+
+@import 'mixins.scss';
+@import 'partials/bidi.scss';
+@import 'components/header-footer';
+@import 'components/language-switcher';
+@import 'variables.scss';
+@import 'main-tablet.scss';
+@import 'main-mobile.scss';
+
 body,
 a {
   font-family: arial,helvetica,sans-serif!important;
 }
 
-#menu {
-  height: auto;
-  a {
-    text-decoration: none;
-  }
-}
-
-#footer {
-  a {
-    text-decoration: none; 
-  }
-}
-
-body #content {
+#content {
   padding-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
 
-#header-gov-links {
-  .header-gov-link:hover,
-  .header-gov-link:link,
-  .header-gov-link:visited {
-    line-height: 10px;  
-  }
-  .header-gov-link:nth-child(2) {
-    line-height: 22px;
-    margin-left: 1px;
-  }
+.container {
+    padding: 0 30px;
+    max-width: 1200px;
+    width: 100%;
 }
 
 @media (max-width: 641px) {
@@ -67,3 +58,43 @@ body #content {
   }
 }
 
+.screen-reader-only { 
+  height: 1px;
+  left: -10000px;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  width: 1px;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+// The 'a11y' class is a CSS technique for preventing text
+// from visually rendering on-screen but still being available for screen readers.
+.a11y {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.js-enabled {
+  .ed-language-switcher {
+    button {
+      display: none;
+    }
+  }
+}

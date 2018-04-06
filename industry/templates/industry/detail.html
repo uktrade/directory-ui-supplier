@@ -11,7 +11,7 @@
 {% block content %}
 <section id="hero" style="background-image: url({{ page.hero_image.url }});">
     <div class="container">
-        <div class="hero-teaser">
+        <div class="hero-teaser bidi-rtl">
             {{ page.hero_text|safe }}
         </div>
     </div>
@@ -20,50 +20,50 @@
 <div>
     <div class="container">
         <p class="breadcrumbs">
-            <span class="label verbose">You are here:</span>
-            <a href="/">Home</a>
+            <span class="label verbose bidi-ltr">You are here:</span>
+            <a href="/" class="bidi-rtl">Home</a>
             <span class="separator">,</span>
-            <a href="{% url 'sector-list' %}">Industries</a>
+            <a href="{% url 'sector-list' %}" class="bidi-rtl">Industries</a>
             <span class="separator">,</span>
-            <span class="current">{{ page.sector_label }}</span>
+            <span class="current bidi-rtl">{{ page.sector_label }}</span>
         </p>
     </div>
 </div>
 
 <div class="container">
     <section id="lede" class="grid-row">
-        <div class="column-two-thirds">
+        <div class="column-two-thirds bidi-rtl">
             {{ page.introduction_text|safe }}
         </div>
-        <div class="column-one-third">
-            <a href="{{ directory_components_urls.contact_us }}" class="button button-primary">Contact us</a>
+        <div class="column-one-third bidi-rtl">
+            <a href="{% url 'sector-detail-cms-contact' cms_page_id=page.meta.pk slug=page.meta.slug %}" class="button button-primary">Contact us</a>
         </div>
     </section>
 
     <section id="lede-columns" class="grid-row">
         <div class="column-one-third">
-            <img src="{{ page.introduction_column_two_icon.url}}" />
-            {{ page.introduction_column_one_text|safe }}
+            <img class="bidi-ltr" src="{{ page.introduction_column_two_icon.url}}" />
+            <div class="bidi-rtl">{{ page.introduction_column_one_text|safe }}</div>
         </div>
         <div class="column-one-third">
-            <img src="{{ page.introduction_column_one_icon.url }}" />
-            {{ page.introduction_column_two_text|safe }}
+            <img class="bidi-ltr" src="{{ page.introduction_column_one_icon.url }}" />
+            <div class="bidi-rtl">{{ page.introduction_column_two_text|safe }}</div>
         </div>
         <div class="column-one-third">
-            <img src="{{ page.introduction_column_three_icon.url }}" />
-            {{ page.introduction_column_three_text|safe }}
+            <img class="bidi-ltr" src="{{ page.introduction_column_three_icon.url }}" />
+            <div class="bidi-rtl">{{ page.introduction_column_three_text|safe }}</div>
         </div>
         <div class="clearfix"></div>
     </section>
 
     <section id="companies">
-        {{ page.company_list_text|safe }}
+        <div class="bidi-rtl">{{ page.company_list_text|safe }}</div>
         <div class="grid-row">
             <div class="column-one-half">
                 <form method="get" action="{% url 'company-search' %}">
                     <input type="hidden" value="{{ page.sector_value }}" name="sectors" />
-                    <input type="text" name="term"/>
-                    <button type="submit">search</button>
+                    <input type="text" name="term" class="form-control" />
+                    <button type="submit" class="button bidi-rtl">search</button>
                 </form>
             </div>
         </div>
@@ -75,7 +75,7 @@
                     <div>
                         <img src="{{ company.logo }}"></img>
                     </div>
-                    <dl>
+                    <dl class="bidi-rtl">
                         <dt><a href="{{ company.public_profile_url }}" class="link">{{ company.name }}</a></dt>
                         <dd>{{ company.summary|default:company.description|truncatechars:150 }}</dd>
                     </dl>
@@ -84,7 +84,7 @@
         {% endfor %}
         </ul>
         <div>
-            <a href="{% search_url sector_value=page.sector_value %}" class="button">{{ page.company_list_call_to_action_text }} </a>
+            <a href="{% search_url sector_value=page.sector_value %}" class="button bidi-rtl">{{ page.company_list_call_to_action_text }} </a>
         </div>
     </section>
 

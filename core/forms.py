@@ -1,4 +1,6 @@
-from django import forms
+from django.forms import Select
+
+from directory_components import forms, fields
 from django.utils.translation import ugettext as _
 
 from directory_constants.constants import choices
@@ -6,20 +8,21 @@ from directory_constants.constants import choices
 
 class SearchForm(forms.Form):
 
-    term = forms.CharField(
+    term = fields.CharField(
         max_length=255,
         required=False,
     )
-    sectors = forms.ChoiceField(
+    sectors = fields.ChoiceField(
         required=False,
         choices=(
             (('', _('All industries')),) + choices.INDUSTRIES
-        )
+        ),
+        widget=Select(attrs={'class': 'bidi-rtl'})
     )
 
 
 class LanguageForm(forms.Form):
-    lang = forms.ChoiceField(
+    lang = fields.ChoiceField(
         choices=[]  # set by __init__
     )
 

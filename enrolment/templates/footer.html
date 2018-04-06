@@ -5,22 +5,22 @@
 <footer id="footer">
 	<div class="container">
 		<ul id="footer-links">
-			<li>
+			<li class="bidi-ltr">
 				<a href="{% external_url 'DIT' %}" title="">
 					{% trans "Department for International Trade" %}
 				</a>
 			</li>
-			<li>
+			<li class="bidi-ltr">
 				<a href="{% external_url 'contact_directory' %}" title="">
 					{% trans "Contact us" %}
 				</a>
 			</li>
-			<li>
+			<li class="bidi-ltr">
 				<a href="{% url 'privacy-and-cookies' %}" title="">
 					{% trans "Privacy and cookies" %}
 				</a>
 			</li>
-			<li>
+			<li class="bidi-ltr">
 				<a href="{% url 'terms-and-conditions' %}" title="">
 					{% trans "Terms &amp; conditions" %}
 				</a>
@@ -28,10 +28,10 @@
 		</ul>
 		<p id="footer-credits">
 			<a href="https://www.gov.uk/" target="_blank">
-				<img src="{% static 'images/hmg-logo.png' %}" alt="HM Government" width="162">
+				<img src="{% static 'images/hmg-logo.png' %}" alt="HM Government" width="162" class="bidi-ltr">
 			</a>
-			<span class="copyright-text">&copy; {% trans "Crown Copyright" %} {% now "Y" %}</span>
-			<img class="dit-iigb-logo" alt="Welcome to Great Britain &amp; Northern Ireland" src="{% static 'images/welcome-to-great-logo-white.png' %}" width="220"> 
+			<span class="copyright-text bidi-ltr">&copy; {% trans "Crown Copyright" %} {% now "Y" %}</span>
+			<img class="dit-iigb-logo bidi-ltr" alt="Welcome to Great Britain &amp; Northern Ireland" src="{% static 'images/welcome-to-great-logo-white.png' %}" width="220"> 
 		</p>
 	</div>
 	<div class="clearfix"></div>

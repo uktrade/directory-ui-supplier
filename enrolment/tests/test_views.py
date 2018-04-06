@@ -139,7 +139,7 @@ def test_international_sector_list_cms_feature_flag_off(client, settings):
 
 
 @patch(
-    'industry.views.SectorLandingPageCMSView.get_context_data',
+    'industry.views.IndustryLandingPageCMSView.get_context_data',
     Mock(return_value={})
 )
 def test_international_sector_list_cms_feature_flag_on(client, settings):
@@ -148,7 +148,7 @@ def test_international_sector_list_cms_feature_flag_on(client, settings):
     response = client.get(reverse('sector-list'))
 
     assert response.template_name == [
-        industry.views.SectorLandingPageCMSView.template_name
+        industry.views.IndustryLandingPageCMSView.template_name
     ]
 
 

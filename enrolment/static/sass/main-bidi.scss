@@ -64,63 +64,8 @@ blockquote {
   }
 }
 
-.ed-language-switcher {
-	float: left;
-  
-  .trackedSelect {
-    left: 0;
-    right: initial;
-    width: auto;
-  }
-}
-
-.header-gov-link {
-  &:hover,
-  &:link, 
-  &:visited {
-    border-left: none;
-    border-right: 1px solid white;
-    padding: 0 10px 0 5px;
-  }
-}
-
-#footer-links {
-	padding-left: 40px;
-	padding-right: 0;
-}
-
 #intro {
   [class*="span"] {
     padding-left: 0;
-  }
-}
-
-#menu {
-	float: left;
-}
-
-#site-logo {
-  float: right;
-}
-
-
-/* Tablet and mobile tweaks */
-@media (max-width: 799px) {
-  #menu {
-    float: none;
-  }
-  
-  #menu-control {
-    float: left;
-  }
-}
-
-@media (max-width: 320px) {
-  .header-gov-link {
-    &:hover, 
-    &:link, 
-    &:visited {
-	    padding: 0 7px 0 0;
-    }
   }
 }

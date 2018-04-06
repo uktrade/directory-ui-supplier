@@ -1,5 +1,7 @@
 $asset-path: '../';
 
+@import 'components/header-footer';
+@import 'components/language-switcher';
 @import 'variables.scss';
 @import 'mixins.scss';
 
@@ -561,94 +563,6 @@ a.ed-filled-button-primary {
   border-bottom: 7px solid #B00D23;
 }
 
-.ed-language-switcher {
-  color: $white;
-  float: right;
-  margin: 5px 0 0 0;
-  position: relative;
-  z-index: 0;
-  
-  .ed-not-translated {
-    background: #FFC347;
-    color: $dark-grey;
-    height: 31px;
-    margin-top: -2px;
-    img {
-      height: 22px;
-      margin-left: 7px;
-      margin-top: 5px;
-      vertical-align: top;
-    }
-    span {
-      display: inline-block;
-      padding: 4px 5px;
-    }
-  }
-  
-  form {
-    margin: 0;
-    position: relative;
-  }
-  
-  option {
-    background-color: $grey-5;
-    color: black;
-  }
-  
-  select, p {
-    background-color: transparent;
-    border: 1px solid $grey-2;
-    border-radius: 0;
-    color: $white;
-    font-size: 15px;
-    height: 27px;
-    line-height: 27px;
-    margin: 0;
-    padding: 0;
-    width: auto;
-  }
-  
-  button {
-    background-color: $grey-4;
-    border: 1px outset $grey-2;
-    color: $white;
-    font-size: 14px;
-    line-height: 24px;
-    padding: 0 10px;
-  }
-  
-  .LanguageSelectTracker {
-    background-image: url(/static/images/language-icon.svg);
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: 25px;
-    border: none;
-    padding-left: 30px;
-    .language-code {
-      text-transform: uppercase;
-      &:after {
-        content: " - ";
-      }
-    }
-  }
-  
-  .trackedSelect {
-    border: none;
-    opacity: 0;
-    position: absolute;
-    right: 0;
-    text-indent: -1000px;
-    top: 0;
-    width: 100%;
-    &:focus {
-      min-width: 150px;
-      & + p {
-        outline: 3px solid $focus;
-      }
-    }
-  }
-}
-
 .js-enabled {
   .ed-language-switcher {
     button {
@@ -686,34 +600,6 @@ a.ed-filled-button-primary {
   
   .title {
     @include font-title-3;
-  }
-}
-
-.header-gov-link {
-  text-decoration: none;
-  &:hover,
-  &:link,
-  &:visited {
-    color: $white;
-    display: inline-block;
-    font-size: 14px; 
-    border-left: 1px solid white;
-    line-height: 22px;
-    padding: 0 5px 0 10px;
-    vertical-align: bottom;
-  }
-  
-  img {
-    height: 24px;
-    margin-left: -2px;
-    max-width: 141px;
-    width: 100%;
-    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
-  }
-  
-  .site {
-    font-weight: bold;
   }
 }
 
@@ -1052,140 +938,6 @@ input[type="color"],
 .helptext {
   @include font-standard-2;
 }
-
-
-/* Header
- *****************/
-#header-gov-links {
-  display: inline-block;
-  padding: 6px 0 6px 0;
-  position: relative;
-  z-index: 1;
-  .separator {
-    display: none;
-  }
-}
-
-#menu {
-  border-left: 1px solid $grey-3;
-  float: right;
-  height: auto;
-
-  a,
-  a:focus,
-  a:hover {
-    border-right: 1px solid $grey-3;
-    color: $black;
-    display: block;
-    font-size: 16px;
-    font-weight: 300;
-    height: 70px;
-    padding: 24px 32px;
-    width: 100%;
-  }
-  
-  li {
-    display: table-cell;
-    float: none;
-  }
-  
-  ul {
-    margin :0;
-  }
-  
-  .active {
-    background-color: $grey-5;
-  }
-}
-
-#menu-control {
-  display: none; /* only on tablet+mobile */
-}
-
-#navbar {
-  background-color: $white;
-  border-bottom: 1px solid $grey-3;
-  margin-bottom: 0;
-}
-
-#site-logo {
-  float: left;
-  height: 40px;
-  margin: 16px 0 10px 0;
-  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
-  max-width: 326px;
-}
-
-
-/* Footer
- ******************/
-#footer {
-  background-color: $grey-6;
-  border: none;
-  color: $white;
-  padding: 40px 0;
-  
-  a:link, a:hover, a:visited {
-    color: $white;
-    font-size: 17px;
-    letter-spacing: -0.9px;
-    line-height: 21px;
-   
-    img {
-      border-left: 1px solid white;
-      padding-left: 5px;
-    }
-  }
-  
-  img {
-    image-rendering: -webkit-optimize-contrast;
-    -ms-interpolation-mode: nearest-neighbor;
-    max-width: inherit;
-  }
-}
-
-#footer-credits {
-  display: table-cell;
-  text-align: right;
-  width: 25%;
-  
-  a {
-    display: inline-block;
-    margin-right: 58px;
-  }
-  
-  .copyright-text {
-    display: inline-block;
-    font-size: 14px;
-    margin-bottom: 15px;
-    margin-right: 70px;
-    min-width: 160px;
-  }
-}
-
-#footer-links {
-  display: table-cell;
-  margin: 0;
-  padding-right: 40px;
-  width: 75%;
-  
-  li {
-    display: inline-block;
-    &:before {
-      color: $white;
-  	  content: "|";
-  	  display: inline-block;
-  	  padding: 0 5px;
-    } 
-    &:first-child {
-      &:before {
-        display: none;
-      }
-    }
-  }
-}
-
 
 /* Components
  *****************/

@@ -74,9 +74,7 @@ class OpportunityBusinessSectorFoodForm(OpportunityBusinessSectorBaseForm):
     )
 
     business_model = forms.MultipleChoiceField(
-        choices=(
-            choices.FOOD_LEAD_GENERATION_BUSINESS_MODELS + (('', 'Other'),)
-        ),
+        choices=choices.FOOD_LEAD_GENERATION_BUSINESS_MODELS,
         label='What type of business do you have?',
         help_text=MESSAGE_SELECT_ALL_APPLICABLE,
         error_messages={

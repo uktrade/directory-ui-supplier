@@ -1,15 +1,19 @@
-from unittest.mock import call, patch
+from unittest.mock import call, patch, Mock
 
 import pytest
 
 from django.core.urlresolvers import resolve, reverse
 
 from core.tests.helpers import create_response
+from industry import constants, views
 
 
 details_cms_urls = (
     reverse(
         'sector-detail-cms-verbose', kwargs={'slug': 'slug', 'cms_page_id': 1}
+    ),
+    reverse(
+        'sector-detail-cms-contact', kwargs={'slug': 'slug', 'cms_page_id': 1}
     ),
     reverse('sector-article', kwargs={'slug': 'slug', 'cms_page_id': 2}),
 )
@@ -26,7 +30,8 @@ def industry_detail_data():
         'meta': {
             'languages': ['en-gb'],
             'slug': 'slug',
-            'url': 'https://www.example.com/1/slug/'
+            'url': 'https://www.example.com/1/slug/',
+            'pk': '1',
         }
     }
 
@@ -39,6 +44,7 @@ def industry_list_data():
         'meta': {
             'languages': ['en-gb'],
             'slug': 'slug',
+            'pk': '2',
         },
     }
 
@@ -52,7 +58,8 @@ def industry_article_data():
         'meta': {
             'languages': ['en-gb'],
             'slug': 'slug',
-            'url': 'https://www.example.com/1/slug/'
+            'url': 'https://www.example.com/1/slug/',
+            'pk': '3',
         }
     }
 
@@ -211,3 +218,68 @@ def test_industries_page_not_found(
     response = client.get(reverse('sector-list'))
 
     assert response.status_code == 404
+
+
+@pytest.mark.django_db
+@patch('zenpy.lib.api.UserApi.create_or_update')
+@patch('zenpy.lib.api.TicketApi.create')
+def test_contact_form_submit_with_comment(
+    mock_ticket_create, mock_user_create_or_update, client
+):
+    mock_user_create_or_update.return_value = Mock(id=999)
+    url = reverse(
+        'sector-detail-cms-contact', kwargs={'slug': 'slug', 'cms_page_id': 1}
+    )
+    data = {
+        'full_name': 'Jeff',
+        'email_address': 'jeff@example.com',
+        'sector': 'AEROSPACE',
+        'organisation_name': 'My name is Jeff',
+        'organisation_size': '1-10',
+        'country': 'United Kingdom',
+        'body': 'hello',
+        'source': constants.MARKETING_SOURCES[1][0],
+        'terms_agreed': True,
+    }
+    response = client.post(url, data)
+
+    assert response.status_code == 200
+    assert response.template_name == (
+        views.IndustryDetailContactCMSView.template_name_success
+    )
+
+    assert mock_user_create_or_update.call_count == 1
+    user = mock_user_create_or_update.call_args[0][0]
+    assert user.email == data['email_address']
+    assert user.name == data['full_name']
+
+    assert mock_ticket_create.call_count == 1
+    ticket = mock_ticket_create.call_args[0][0]
+    assert ticket.subject == 'AEROSPACE contact form submitted.'
+    assert ticket.submitter_id == 999
+    assert ticket.requester_id == 999
+
+    assert ticket.description == (
+        'Body: hello\n'
+        'Country: United Kingdom\n'
+        'Email Address: jeff@example.com\n'
+        'Full Name: Jeff\n'
+        'Organisation Name: My name is Jeff\n'
+        'Organisation Size: 1-10\n'
+        'Sector: AEROSPACE\n'
+        'Source: Print - posters or billboards\n'
+        'Source Other: \n'
+        'Terms Agreed: True'
+    )
+
+
+@pytest.mark.django_db
+def test_contact_form_prefills_sector(client, industry_detail_data):
+    url = reverse(
+        'sector-detail-cms-contact', kwargs={'slug': 'slug', 'cms_page_id': 1}
+    )
+    response = client.get(url)
+
+    assert response.context_data['form'].initial['sector'] == (
+        industry_detail_data['sector_value']
+    )

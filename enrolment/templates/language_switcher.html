@@ -1,7 +1,7 @@
 {% load language trans from i18n %}
 {% load static from staticfiles %}
 {% language request.LANGUAGE_CODE %}
-    <div class="ed-language-switcher">
+    <div class="ed-language-switcher bidi-ltr">
     {% if language_switcher.show %}
         <form method="get">
             {{ language_switcher.form.lang }}

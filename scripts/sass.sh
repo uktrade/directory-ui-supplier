@@ -32,6 +32,7 @@ input_output_map="\
 	industry/static/industry/sass/industry.scss:industry/static/industry/industry.css \
 	industry/static/industry/sass/industry-article.scss:industry/static/industry/industry-article.css \
 	industry/static/industry/sass/industry-list.scss:industry/static/industry/industry-list.css \
+	industry/static/industry/sass/contact.scss:industry/static/industry/contact.css \
 	core/static/core/sass/landing-page.scss:core/static/core/landing-page.css \
 "
 
