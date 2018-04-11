@@ -160,7 +160,10 @@ def test_add_export_elements_classes():
 
     )
     context = Context({
-        'html': '<br/><h2>Title one</h2><h2>Title two</h2><br/>'
+        'html': (
+            '<br/><h2>Title one</h2><h2>Title two</h2><br/>'
+            '<br/><h3>Title three</h3><h3>Title four</h3><br/>'
+        )
     })
     html = template.render(context)
 
@@ -168,5 +171,9 @@ def test_add_export_elements_classes():
         '<br/>'
         '<h2 class="heading-large">Title one</h2>'
         '<h2 class="heading-large">Title two</h2>'
+        '<br/>'
+        '<br/>'
+        '<h3 class="heading-medium">Title three</h3>'
+        '<h3 class="heading-medium">Title four</h3>'
         '<br/>'
     )
