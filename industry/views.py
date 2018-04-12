@@ -46,26 +46,11 @@ class IndustryDetailCMSView(
         return get_showcase_companies(sectors=sector_value, size=6)
 
 
-class IndustryDetailContactCMSView(
-    CMSFeatureFlagMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
-    FormView
-):
+class BaseIndustryContactView(FormView):
+
     template_name = 'industry/contact.html'
     template_name_success = 'industry/contact-success.html'
     form_class = forms.ContactForm
-
-    def get_context_data(self, *args, **kwargs):
-        page = self.get_cms_page()
-        return super().get_context_data(page=page, *args, **kwargs)
-
-    def get_initial(self):
-        initial = super().get_initial()
-        initial['sector'] = self.get_cms_page()['sector_value']
-        return initial
-
-    @functools.lru_cache()
-    def get_cms_page(self):
-        return super().get_cms_page()
 
     def form_valid(self, form):
         zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
@@ -97,6 +82,59 @@ class IndustryDetailContactCMSView(
             requester_id=zendesk_user.id,
         )
         zenpy_client.tickets.create(ticket)
+
+
+class IndustryDetailContactCMSView(
+    CMSFeatureFlagMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
+    BaseIndustryContactView
+):
+
+    def get_context_data(self, *args, **kwargs):
+        return super().get_context_data(
+            page=self.get_contact_page(),
+            industry_page=self.get_industry_page(),
+            *args, **kwargs
+        )
+
+    def get_initial(self):
+        initial = super().get_initial()
+        initial['sector'] = self.get_industry_page()['sector_value']
+        return initial
+
+    @functools.lru_cache()
+    def get_contact_page(self):
+        response = cms_client.find_a_supplier.get_industry_contact_page(
+            language_code=translation.get_language(),
+            draft_token=self.request.GET.get('draft_token'),
+        )
+        return handle_cms_response(response)
+
+    @functools.lru_cache()
+    def get_industry_page(self):
+        response = cms_client.get_page(
+            page_id=self.kwargs['cms_page_id'],
+            language_code=translation.get_language(),
+        )
+        return self.handle_cms_response(response)
+
+
+class IndustryLandingPageContactCMSView(
+    CMSFeatureFlagMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
+    BaseIndustryContactView
+):
+
+    def get_context_data(self, *args, **kwargs):
+        return super().get_context_data(
+            page=self.get_cms_page(),
+            *args, **kwargs
+        )
+
+    def get_cms_page(self):
+        response = cms_client.find_a_supplier.get_industry_contact_page(
+            language_code=translation.get_language(),
+            draft_token=self.request.GET.get('draft_token'),
+        )
+        return self.handle_cms_response(response)
 
 
 class IndustryArticleCMSView(

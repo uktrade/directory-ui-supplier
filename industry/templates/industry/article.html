@@ -15,9 +15,9 @@
     <div class="container">
         <p class="breadcrumbs">
             <span class="label verbose bidi-ltr">You are here:</span>
-            <a href="/" class="bidi-rtl">Home</a>
+            <a href="/" class="bidi-rtl">{{ page.breadcrumbs.landingpage.label }}</a>
             <span class="separator">,</span>
-            <span class="current bidi-rtl">Industry content</span>
+            <span class="current bidi-rtl">{{ page.breadcrumbs_label }}</span>
         </p>
     </div>
 </div>
@@ -46,8 +46,8 @@
             </div>
         </div>
         <div class="column-one-quarter" id="contact-area">
-            Tell us what products or services you're looking for and we'll find the best UK suppliers for you.
-            <a href="{{ directory_components_urls.contact_us }}" class="button">Contact us</a>
+            {{ page.proposition_text|safe }}
+            <a href="{% url 'sector-list-cms-contact' slug=page.breadcrumbs.industrycontactpage.slug %}" class="button">{{ page.call_to_action_text }}</a>
         </div>
         
     </section>

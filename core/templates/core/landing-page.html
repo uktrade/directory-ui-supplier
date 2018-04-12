@@ -58,7 +58,7 @@
         <div class="grid-row">
             {% for item in row %}
                 <a href="{{ item.meta.url }}" class="column-one-third industry-card">
-                    <span>{{ item.hero_text|first_heading|striptags }}</span>
+                    <span>{{ item.breadcrumbs_label }}</span>
                     <img src="{{ item.hero_image.url }}" />
                     <div>
                         {{ item.hero_text|first_paragraph|safe }}
