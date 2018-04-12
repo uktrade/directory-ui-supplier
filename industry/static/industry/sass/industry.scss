@@ -254,5 +254,8 @@ body.bidi #lede-columns {
 
   #articles-container {
     margin-bottom: 30px;
+    article {
+      border-bottom: 1px solid $gray;
+    }
   }
 }

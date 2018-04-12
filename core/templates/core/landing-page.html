@@ -60,7 +60,7 @@
         <div class="grid-row">
             {% for item in row %}
                 <a href="{{ item.meta.url }}" class="column-one-third industry-card">
-                    <span>{{ item.hero_text|first_heading|striptags }}</span>
+                    <span>{{ item.breadcrumbs_label }}</span>
                     <img src="{{ item.hero_image.url }}" />
                     <div>
                         {{ item.hero_text|first_paragraph|safe }}
@@ -116,18 +116,16 @@
     </div>
 </section>
 
+{% if page.article_summaries %}
 <section id="articles-container">
     <div class="container">
-        {% include "industry/sector-article-summary.html" with article=page.article_one %}
-        {% include "industry/sector-article-summary.html" with article=page.article_two %}
-        {% include "industry/sector-article-summary.html" with article=page.article_three %}
-        {% include "industry/sector-article-summary.html" with article=page.article_four %}
-        {% include "industry/sector-article-summary.html" with article=page.article_five %}
-        {% include "industry/sector-article-summary.html" with article=page.article_six %}
+        {% for article in page.article_summaries %}
+            {% include "industry/sector-article-summary.html" with article=article %}
+        {% endfor %}
     </div>
 </section>
+{% endif %}
 
-</div>
 {% endblock content %}
 
 

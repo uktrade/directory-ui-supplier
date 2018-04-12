@@ -14,13 +14,15 @@
     <div class="container">
         <p class="breadcrumbs">
             <span class="label verbose">You are here:</span>
-            <a href="/">Home</a>
+            <a href="/">{{ page.breadcrumbs.landingpage.label }}</a>
             <span class="separator">,</span>
-            <a href="{% url 'sector-list' %}">Industries</a>
+            <a href="{% url 'sector-list' %}">{{ page.breadcrumbs.industrylandingpage.label }}</a>
             <span class="separator">,</span>
-            <a href="{{ page.meta.url }}">{{ page.sector_label }}</a>
+            {% if industry_page %}
+            <a href="{{ industry_page.meta.url }}">{{ industry_page.breadcrumbs_label }}</a>
             <span class="separator">,</span>
-            <span class="Current">{{ page.contact_breadcrumb_label }}</span>
+            {% endif %}
+            <span class="Current">{{ page.breadcrumbs_label }}</span>
         </p>
     </div>
 </div>
@@ -28,11 +30,17 @@
 <div class="container">
     <section id="lede" class="grid-row">
         <div class="column-one-half">
-            {{ page.contact_success_message_text|add_export_elements_classes|safe }}
+            {{ page.success_message_text|add_export_elements_classes|safe }}
             <div>
-                <a href="{% url 'sector-detail-cms-verbose' cms_page_id=page.meta.pk slug=page.meta.slug %}">
-                {{ page.contact_success_back_link_text }}
-                </a>
+                {% if industry_page %}
+                    <a href="{{ industry_page.meta.url }}">
+                        {{ page.success_back_link_text }} {{ industry_page.breadcrumbs_label }}
+                    </a>
+                {% else %}
+                    <a href="{% url 'sector-list' %}">
+                        {{ page.success_back_link_text }} {{ page.breadcrumbs.industrylandingpage.label }}
+                    </a>
+                {% endif %}
             </div>
         </div>
     </section>

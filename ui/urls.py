@@ -75,9 +75,14 @@ urlpatterns = [
         name='sector-detail-cms-verbose',
     ),
     url(
-        r'^industries/(?P<cms_page_id>[0-9]+)/contact/(?P<slug>[\w-]+)/$',
+        r'^industries/contact/(?P<cms_page_id>[0-9]+)/(?P<slug>[\w-]+)/$',
         industry.views.IndustryDetailContactCMSView.as_view(),
         name='sector-detail-cms-contact',
+    ),
+    url(
+        r'^industries/help/(?P<slug>[\w-]+)/$',
+        industry.views.IndustryLandingPageContactCMSView.as_view(),
+        name='sector-list-cms-contact',
     ),
     url(
         r'^industry-articles/(?P<cms_page_id>[0-9]+)/(?P<slug>[\w-]+)/$',
