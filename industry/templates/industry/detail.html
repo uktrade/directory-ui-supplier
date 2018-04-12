@@ -25,7 +25,7 @@
             <span class="separator">,</span>
             <a href="{% url 'sector-list' %}" class="bidi-rtl">Industries</a>
             <span class="separator">,</span>
-            <span class="current bidi-rtl">{{ page.sector_label }}</span>
+            <span class="current bidi-rtl">{{ page.breadcrumbs_label }}</span>
         </p>
     </div>
 </div>
@@ -89,12 +89,9 @@
     </section>
 
     <section id="articles-container" class="container">
-        {% include "industry/sector-article-summary.html" with article=page.article_one %}
-        {% include "industry/sector-article-summary.html" with article=page.article_two %}
-        {% include "industry/sector-article-summary.html" with article=page.article_three %}
-        {% include "industry/sector-article-summary.html" with article=page.article_four %}
-        {% include "industry/sector-article-summary.html" with article=page.article_five %}
-        {% include "industry/sector-article-summary.html" with article=page.article_six %}
+        {% for article in page.article_summaries %}
+            {% include "industry/sector-article-summary.html" with article=article %}
+        {% endfor %}
     </section>
 
 </div>

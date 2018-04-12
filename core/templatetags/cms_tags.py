@@ -75,4 +75,6 @@ def add_export_elements_classes(value):
     soup = BeautifulSoup(value, 'html.parser')
     for element in soup.findAll('h2'):
         element.attrs['class'] = 'heading-large'
+    for element in soup.findAll('h3'):
+        element.attrs['class'] = 'heading-medium'
     return str(soup)
