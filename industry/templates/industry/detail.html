@@ -32,12 +32,10 @@
 
 <div class="container">
     <section id="lede" class="grid-row">
-        <div class="column-two-thirds bidi-rtl">
-            {{ page.introduction_text|safe }}
-        </div>
-        <div class="column-one-third bidi-rtl">
-            <a href="{% url 'sector-detail-cms-contact' cms_page_id=page.meta.pk slug=page.meta.slug %}" class="button button-primary">Contact us</a>
-        </div>
+        <h2 class="heading-large bidi-rtl">{{ page.introduction_text|safe }}</h2>
+        <a href="{% url 'sector-detail-cms-contact' cms_page_id=page.meta.pk slug=page.meta.slug %}" class="button button-primary bidi-rtl">
+            {{ page.introduction_call_to_action_button_text }}
+        </a>
     </section>
 
     <section id="lede-columns" class="grid-row">
@@ -63,7 +61,7 @@
                 <form method="get" action="{% url 'company-search' %}">
                     <input type="hidden" value="{{ page.sector_value }}" name="sectors" />
                     <input type="text" name="term" class="form-control" placeholder="{{ page.company_list_search_input_placeholder_text }}" />
-                    <button type="submit" class="button bidi-rtl">search</button>
+                    <button type="submit" class="button bidi-rtl"></button>
                 </form>
             </div>
         </div>
