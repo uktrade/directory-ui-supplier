@@ -73,8 +73,13 @@ def grouper(value, n):
 @register.filter
 def add_export_elements_classes(value):
     soup = BeautifulSoup(value, 'html.parser')
-    for element in soup.findAll('h2'):
-        element.attrs['class'] = 'heading-large'
-    for element in soup.findAll('h3'):
-        element.attrs['class'] = 'heading-medium'
+    mapping = [
+        ('h2', 'heading-large'),
+        ('h3', 'heading-medium'),
+        ('ul', 'list list-bullet'),
+        ('ol', 'list list-number'),
+    ]
+    for tag_name, class_name in mapping:
+        for element in soup.findAll(tag_name):
+            element.attrs['class'] = class_name
     return str(soup)

@@ -32,7 +32,7 @@
 
 <div class="container">
     <section id="lede" class="grid-row">
-        <h2 class="heading-large bidi-rtl">{{ page.introduction_text|safe }}</h2>
+        <h2 class="heading-large bidi-rtl">{{ page.introduction_text }}</h2>
         <a href="{% url 'sector-detail-cms-contact' cms_page_id=page.meta.pk slug=page.meta.slug %}" class="button button-primary bidi-rtl">
             {{ page.introduction_call_to_action_button_text }}
         </a>
