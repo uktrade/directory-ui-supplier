@@ -21,7 +21,7 @@
                         class="form-control bidi-rtl"
                         type="text"
                         name="{{ search_form.term.name }}"
-                        id="{{ search_form.term.id }}"
+                        id="{{ search_form.term.id_for_label }}"
                         placeholder="{{ page.search_field_placeholder }}"
                     />
                 </div>
@@ -30,8 +30,10 @@
                         {# translations provided by the app #}
                         {{ search_form.sectors }}
                     </div>
-                    <div>
-                        <button class="button bidi-rtl">{{ page.search_button_text }}</button>
+                    <div class="column-one-half">
+                        <div class="button-container">
+                            <button class="button bidi-rtl">{{ page.search_button_text }}</button>
+                        </div>
                     </div>
                 </div>
             </form>

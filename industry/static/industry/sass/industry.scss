@@ -9,6 +9,7 @@ $gray: #333333;
 #hero {
   height: 300px;
   position: relative;
+  background-repeat: no-repeat;
   .hero-teaser {
     background-color: rgba(0,82,157,0.8);
     border-bottom: #e41f13 solid 4px;
@@ -28,13 +29,15 @@ $gray: #333333;
     margin-bottom: 15px;
   }
   p {
-    font-size: 18px;
+    font-size: 19px;
     line-height: 1.39;
   }
 }
 #lede {
+  display: flex;
   padding: 60px;
   background-color: $sand;
+
   p {
     font-size: 24px;
     font-weight: 500;
@@ -44,10 +47,20 @@ $gray: #333333;
   a {
     width: 300px;
     height: 60px;
-    border-radius: 3px;
     text-align: center;
     line-height: 60px;
-    padding: 0
+    padding: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 100px;
+  }
+  h2 {
+    width: 52%;
+    margin-right: 100px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.25;
+    margin: 0;
   }
 }
 
@@ -104,7 +117,6 @@ body.bidi #lede-columns {
     font-weight: bold;
     line-height: 1.11;
     color: $gray;
-    text-transform: uppercase;
     margin-bottom: 15px;
   }
   p {
@@ -112,19 +124,25 @@ body.bidi #lede-columns {
     line-height: 1.67;
     margin-bottom: 15px;
   }
-
   form {
     margin-bottom: 25px!important;
     position: relative;
     input {
       width: 100%;
-      height: 47px;
+      height: 50px;
     }
     button {
       position: absolute;
       top: 0;
-      right: -79px;
-      padding: 12px;
+      right: -50px;
+      background-image: url(/static/industry/images/search.svg);
+      height: 50px;
+      width: 50px;
+      background-repeat: no-repeat;
+      background-position: 100%;
+      background-color: #1e1348;
+      background-size: 50px 25px;
+      padding: 0;
     }
   }
 
@@ -160,7 +178,6 @@ body.bidi #lede-columns {
   }
 
   a.button {
-    border-radius: 3px;
     display: block;
     font-weight: bold;
     height: 60px;
@@ -188,13 +205,18 @@ body.bidi #lede-columns {
   }
 
   #lede {
+    display: block;
     padding: 30px;
     text-align: center;
+    h2 {
+        width: 100%;
+    }
     div {
       padding: 0;
     }
     a {
       width: 100%;
+      margin-left: 0;
     }
     p {
       font-size: 24px;
