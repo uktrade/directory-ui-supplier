@@ -55,7 +55,7 @@
     </section>
 
     <section id="companies">
-        <div class="bidi-rtl">{{ page.company_list_text|safe }}</div>
+        <div class="bidi-rtl" id="companies-list-text">{{ page.company_list_text|safe }}</div>
         <div class="grid-row">
             <div class="column-one-half">
                 <form method="get" action="{% url 'company-search' %}">
