@@ -1,15 +1,17 @@
 $gray: #333333;
+$gray-light: #e8e8e8;
 
-  
 #articles-container {
   margin-top: 60px;
   margin-bottom: 60px;
   article {
-    margin-bottom: 40px;
-    padding-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-top: solid 2px $gray-light;
   }
-  p {
-    margin-bottom: 40px;
+  article:first-child {
+    border-top: 0;
+    padding-top: 0;
   }
   h2 {
     font-size: 36px;

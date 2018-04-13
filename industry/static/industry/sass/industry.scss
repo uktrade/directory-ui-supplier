@@ -110,26 +110,30 @@ body.bidi #lede-columns {
 
 #companies {
   padding: 60px;
+  padding-top: 80px;
   background-color: $sand;
 
-  h2 {
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 1.11;
-    color: $gray;
-    margin-bottom: 15px;
-  }
-  p {
-    font-size: 18px;
-    line-height: 1.67;
-    margin-bottom: 15px;
+  #companies-list-text {
+    margin-bottom: 45px;
+    h2 {
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1.11;
+      color: $gray;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.67;
+    }
   }
   form {
-    margin-bottom: 25px!important;
+    margin-bottom: 45px!important;
     position: relative;
     input {
       width: 100%;
       height: 50px;
+      padding-left: 15px;
     }
     button {
       position: absolute;
