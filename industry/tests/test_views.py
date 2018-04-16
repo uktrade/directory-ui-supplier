@@ -123,6 +123,17 @@ def mock_get_showcase_companies():
 
 
 @pytest.fixture(autouse=True)
+def mock_list_companies():
+    response = create_response(json_payload={'results': []})
+    stub = patch(
+        'api_client.api_client.company.list_public_profiles',
+        return_value=response
+    )
+    yield stub.start()
+    stub.stop()
+
+
+@pytest.fixture(autouse=True)
 def mock_get_contact_page(contact_page_data):
     stub = patch(
         'core.helpers.cms_client.find_a_supplier.get_industry_contact_page',
@@ -133,9 +144,7 @@ def mock_get_contact_page(contact_page_data):
 
 
 @pytest.mark.parametrize('url', cms_urls)
-def test_cms_pages_feature_flag_on(
-    mock_get_showcase_companies, settings, client, url
-):
+def test_cms_pages_feature_flag_on(settings, client, url):
     settings.FEATURE_CMS_ENABLED = True
 
     response = client.get(url)
@@ -197,10 +206,31 @@ def test_cms_pages_cms_page_404(settings, client, url, mock_get_page):
     assert response.status_code == 404
 
 
-def test_industry_page_context(
+def test_industry_page_context_curated_feature_enabled(
+    mock_list_companies, settings, client, industry_detail_data
+):
+    settings.FEATURE_CMS_ENABLED = True
+    settings.FEATURE_CURATED_COMPANIES_ENABLED = True
+
+    url = reverse(
+        'sector-detail-cms-verbose',
+        kwargs={'cms_page_id': '1', 'slug': 'slug'}
+    )
+    response = client.get(url)
+
+    assert mock_list_companies.call_count == 1
+    assert mock_list_companies.call_args == call(
+        sectors='value', is_showcase_company=True, size=6
+    )
+    assert response.context_data['page'] == industry_detail_data
+    assert response.template_name == ['industry/detail.html']
+
+
+def test_industry_page_context_curated_feature_disabled(
     mock_get_showcase_companies, settings, client, industry_detail_data
 ):
     settings.FEATURE_CMS_ENABLED = True
+    settings.FEATURE_CURATED_COMPANIES_ENABLED = False
 
     url = reverse(
         'sector-detail-cms-verbose',
