@@ -203,8 +203,11 @@ body.bidi #lede-columns {
   #hero {
     height: 350px;
     .hero-teaser {
-      margin-right: 15px;
       padding: 15px;
+      margin: 0;
+    }
+    .container {
+      padding: 0;
     }
   }
 

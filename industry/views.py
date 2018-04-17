@@ -39,7 +39,7 @@ class IndustryDetailCMSView(
         page = self.get_cms_page()
         return super().get_context_data(
             page=page,
-            companies=self.get_companies(page['sector_value']),
+            companies=self.get_companies(page['search_filter_sector'][0]),
             *args, **kwargs
         )
 

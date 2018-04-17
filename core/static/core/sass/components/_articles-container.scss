@@ -48,5 +48,10 @@ $gray-light: #e8e8e8;
       float: none;
     }
   }
-
+  #articles-container {
+    iframe,
+    img {
+      width: 100%;
+    }
+  }
 }
