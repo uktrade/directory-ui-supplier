@@ -9,6 +9,7 @@ from django.core.urlresolvers import reverse
 from zenpy.lib.api_objects import Ticket, User
 
 import core.views
+from core.tests.helpers import create_response
 from enrolment import constants, forms, views
 from enrolment.views import AnonymousSubscribeFormView, LeadGenerationFormView
 import industry.views
@@ -334,11 +335,21 @@ def test_landing_page_cms_feature_flag_off(client, settings):
     assert response.template_name == [views.LandingView.template_name]
 
 
-@patch(
-    'core.views.LandingPageCMSView.get_context_data', Mock(return_value={})
-)
-def test_landing_page_cms_feature_flag_on(client, settings):
+@patch('core.helpers.cms_client.find_a_supplier.get_landing_page')
+def test_landing_page_cms_feature_flag_on(
+    mock_get_landing_page, client, settings, breadcrumbs
+):
     views.LandingPageNegotiator.feature_flag = True
+    page = {
+        'title': 'the page',
+        'industries': [{'title': 'good 1'}],
+        'meta': {'languages': ['en-gb']},
+        'breadcrumbs': breadcrumbs,
+    }
+    mock_get_landing_page.return_value = create_response(
+        status_code=200,
+        json_payload=page
+    )
 
     response = client.get(reverse('index'))
 

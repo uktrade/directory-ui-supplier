@@ -81,3 +81,18 @@ def api_response_400():
     response = requests.Response()
     response.status_code = 400
     return response
+
+
+@pytest.fixture
+def breadcrumbs():
+    return {
+        'landingpage': {
+            'slug': 'home',
+        },
+        'industrylandingpage': {
+            'slug': 'industries',
+        },
+        'industrycontactpage': {
+            'slug': 'contact-us'
+        },
+    }

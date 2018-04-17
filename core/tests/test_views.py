@@ -7,7 +7,7 @@ from core.tests import helpers
 
 @patch('core.helpers.cms_client.find_a_supplier.get_landing_page')
 def test_landing_page_context(
-    mock_get_landing_page, settings, client
+    mock_get_landing_page, settings, client, breadcrumbs
 ):
     settings.FEATURE_CMS_ENABLED = True
 
@@ -15,6 +15,7 @@ def test_landing_page_context(
         'title': 'the page',
         'industries': [{'title': 'good 1'}],
         'meta': {'languages': ['en-gb']},
+        'breadcrumbs': breadcrumbs,
     }
     mock_get_landing_page.return_value = helpers.create_response(
         status_code=200,
