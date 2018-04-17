@@ -1,6 +1,9 @@
 import functools
 
 from directory_components.helpers import SocialLinkBuilder
+from industry import forms
+from zenpy import Zenpy
+from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
 from django.conf import settings
 from django.template.response import TemplateResponse
@@ -8,15 +11,13 @@ from django.utils import translation
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
+from api_client import api_client
 from core.helpers import cms_client, handle_cms_response
 from core.views import CMSFeatureFlagMixin
 from core.mixins import (
     ActiveViewNameMixin, GetCMSPageMixin, CMSLanguageSwitcherMixin
 )
 from exportopportunity.helpers import get_showcase_companies
-from industry import forms
-from zenpy import Zenpy
-from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
 
 ZENPY_CREDENTIALS = {
@@ -42,8 +43,19 @@ class IndustryDetailCMSView(
             *args, **kwargs
         )
 
-    def get_companies(self, sector_value):
+    def get_curated_companies(self, sector_value):
+        response = api_client.company.list_public_profiles(
+            sectors=sector_value, is_showcase_company=True, size=6
+        )
+        return response.json()['results']
+
+    def get_companies_in_sector(self, sector_value):
         return get_showcase_companies(sectors=sector_value, size=6)
+
+    def get_companies(self, sector_value):
+        if settings.FEATURE_CURATED_COMPANIES_ENABLED:
+            return self.get_curated_companies(sector_value)
+        return self.get_companies_in_sector(sector_value)
 
 
 class BaseIndustryContactView(FormView):
