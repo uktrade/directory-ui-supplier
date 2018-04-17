@@ -11,7 +11,6 @@ from django.utils import translation
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
-from api_client import api_client
 from core.helpers import cms_client, handle_cms_response
 from core.views import CMSFeatureFlagMixin
 from core.mixins import (
@@ -37,25 +36,23 @@ class IndustryDetailCMSView(
 
     def get_context_data(self, *args, **kwargs):
         page = self.get_cms_page()
+        companies = self.get_companies(
+            sector_values=page['search_filter_sector'],
+            term=page['search_filter_text'],
+        )
         return super().get_context_data(
-            page=page,
-            companies=self.get_companies(page['search_filter_sector'][0]),
-            *args, **kwargs
+            page=page, companies=companies, *args, **kwargs
         )
 
-    def get_curated_companies(self, sector_value):
-        response = api_client.company.list_public_profiles(
-            sectors=sector_value, is_showcase_company=True, size=6
-        )
-        return response.json()['results']
-
-    def get_companies_in_sector(self, sector_value):
-        return get_showcase_companies(sectors=sector_value, size=6)
-
-    def get_companies(self, sector_value):
+    def get_companies(self, sector_values, term):
+        kwargs = {'size': 6}
+        if sector_values:
+            kwargs['sectors'] = sector_values
+        if term:
+            kwargs['term'] = term
         if settings.FEATURE_CURATED_COMPANIES_ENABLED:
-            return self.get_curated_companies(sector_value)
-        return self.get_companies_in_sector(sector_value)
+            kwargs['is_showcase_company'] = True
+        return get_showcase_companies(**kwargs)
 
 
 class BaseIndustryContactView(FormView):
@@ -110,7 +107,9 @@ class IndustryDetailContactCMSView(
 
     def get_initial(self):
         initial = super().get_initial()
-        initial['sector'] = self.get_industry_page()['sector_value']
+        page = self.get_industry_page()
+        if page['search_filter_sector']:
+            initial['sector'] = page['search_filter_sector'][0]
         return initial
 
     @functools.lru_cache()
