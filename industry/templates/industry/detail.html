@@ -59,7 +59,9 @@
         <div class="grid-row">
             <div class="column-one-half">
                 <form method="get" action="{% url 'company-search' %}">
-                    <input type="hidden" value="{{ page.sector_value }}" name="sectors" />
+                    {% for value in page.search_filter_sector %}
+                        <input type="hidden" value="{{ value }}" name="sectors" />
+                    {% endfor %}
                     <input type="text" name="term" class="form-control" placeholder="{{ page.company_list_search_input_placeholder_text }}" />
                     <button type="submit" class="button bidi-rtl"></button>
                 </form>
