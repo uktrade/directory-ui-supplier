@@ -1,5 +1,33 @@
 {% extends 'core/base.html' %}
 
+{% block head_css %}
+    {{ block.super }}
+    <style type="text/css">
+        #hero {
+            background-size: cover;
+            background-position: top
+            background-repeat: no-repeat;
+        }
+        {% if not page.hero_image and not page.mobile_hero_image %}
+            #hero {
+                background-image: url({{ page.hero_image.url }});
+            }
+        {% else  %}
+            @media (min-width: 770px) {
+                #hero {
+                    background-image: url({{ page.hero_image.url }});
+                }
+            }
+            @media (max-width: 769px) {
+                #hero {
+                    background-image: url({{ page.mobile_hero_image.url }});
+                    background-size: 100%;
+                }
+            }
+        {% endif %}
+    </style>
+{% endblock %}
+
 {% block head_other %}
     {{ super }}
     {% for language_code, url in page.meta.localised_urls %}

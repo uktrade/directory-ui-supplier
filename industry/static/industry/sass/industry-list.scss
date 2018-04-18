@@ -8,9 +8,6 @@ $blue: rgba(0, 82, 157, 0.8);
 
 
 #hero {
-  background-size: 1200px 300px;
-  background-repeat: no-repeat;
-  background-position: center;
   color: $white;
   margin-bottom: 30px;
   padding-top: 220px;
@@ -98,8 +95,11 @@ $blue: rgba(0, 82, 157, 0.8);
     margin-bottom: 0;
     background-size: 1200px 350px;
     .hero-teaser {
-      margin-right: 15px;
+      margin: 0;
       padding: 15px;
+    }
+    .container {
+      padding: 0;
     }
   }
 
@@ -108,6 +108,7 @@ $blue: rgba(0, 82, 157, 0.8);
     text-align: center;
     .button {
       margin-top: 30px;
+      width: 100%;
     }
   }
 
@@ -120,6 +121,10 @@ $blue: rgba(0, 82, 157, 0.8);
       padding: 0;
       display: inline-block;
       margin-bottom: 10px;
+    }
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }
