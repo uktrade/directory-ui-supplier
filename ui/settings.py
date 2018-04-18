@@ -153,6 +153,7 @@ LANGUAGES = helpers.remove_disabled_languages(
         ('pt', 'Português'),                # Portuguese
         ('pt-br', 'Português Brasileiro'),  # Portuguese (Brazilian)
         ('ar', 'العربيّة'),                 # Arabic
+        ('ru', 'Русский'),                  # Russian
     ]
 )
 
