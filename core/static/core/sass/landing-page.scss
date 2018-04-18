@@ -45,8 +45,10 @@ section {
   margin-bottom: 60px;
   padding-top: 110px;
   .hero-teaser {
-    max-width: 470px;
     margin-bottom: 30px;
+    p {
+      max-width: 470px;
+    }
   }
   h2 {
     font-size: 48px;
