@@ -67,7 +67,7 @@ $gray: #333333;
 #lede-columns {
   padding: 60px;
   position: relative;
-  font-size: 15px;
+  font-size: 19px;
   div {
     position: relative;
     padding-right: 40px;
@@ -203,8 +203,11 @@ body.bidi #lede-columns {
   #hero {
     height: 350px;
     .hero-teaser {
-      margin-right: 15px;
       padding: 15px;
+      margin: 0;
+    }
+    .container {
+      padding: 0;
     }
   }
 

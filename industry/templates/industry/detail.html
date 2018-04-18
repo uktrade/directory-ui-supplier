@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-<section id="hero" style="background-image: url({{ page.hero_image.url }});">
+<section id="hero">
     <div class="container">
         <div class="hero-teaser bidi-rtl">
             {{ page.hero_text|add_href_target:request|safe }}

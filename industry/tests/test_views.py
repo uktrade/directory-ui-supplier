@@ -21,21 +21,6 @@ cms_urls = details_cms_urls + list_cms_urls
 
 
 @pytest.fixture
-def breadcrumbs():
-    return {
-        'landingpage': {
-            'slug': 'home',
-        },
-        'industrylandingpage': {
-            'slug': 'industries',
-        },
-        'industrycontactpage': {
-            'slug': 'contact-us'
-        },
-    }
-
-
-@pytest.fixture
 def contact_page_data(breadcrumbs):
     return {
         'breadcrumbs': breadcrumbs,
