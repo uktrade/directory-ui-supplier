@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 {% load trans from i18n %}
 {% load search_url from company_tags %}
-{% load add_anchors add_export_elements_classes table_of_contents from cms_tags %}
+{% load add_anchors add_export_elements_classes table_of_contents add_href_target from cms_tags %}
 
 {% block head_css %}
     {{ block.super }}
@@ -35,7 +35,7 @@
         </div>
         <div class="column-one-half">
             <h1 id="introduction" class="h1">{{ page.introduction_title }}</h1>
-            {{ page.body|add_export_elements_classes|add_anchors|safe }}
+            {{ page.body|add_export_elements_classes|add_anchors|add_href_target:request|safe }}
             <br>
             <br>
             <p>Back to <a class="link" href="{% url 'index' %}">home</a></p>
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="column-one-quarter" id="contact-area">
-            {{ page.proposition_text|add_export_elements_classes|safe }}
+            {{ page.proposition_text|add_export_elements_classes|add_href_target:request|safe }}
             <a href="{% url 'sector-list-cms-contact' slug=page.breadcrumbs.industrycontactpage.slug %}" class="button">{{ page.call_to_action_text }}</a>
         </div>
         

@@ -1,6 +1,7 @@
 from collections import OrderedDict
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+import itertools
 import urllib.parse
 
 from django import template
@@ -41,10 +42,14 @@ def date_recency(value):
 
 @register.simple_tag
 def search_url(sector_value=None, term=None):
+    if isinstance(sector_value, str):
+        sector_value = [sector_value]
+
     params = OrderedDict()
+
     if sector_value:
-        sectors = CONFLATED.get(sector_value, {sector_value})
-        params['sectors'] = sectors
+        sectors = [CONFLATED.get(item, {item}) for item in sector_value]
+        params['sectors'] = list(itertools.chain(*sectors))
     if term:
         params['term'] = term
     querystring = urllib.parse.urlencode(params, doseq=True)

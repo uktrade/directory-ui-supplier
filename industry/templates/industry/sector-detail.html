@@ -1,7 +1,7 @@
 {% extends 'core/base_cms.html' %}
 {% load static from staticfiles %}
 {% load trans from i18n %}
-{% load search_url from company_tags %}
+{% load search_url add_href_target from company_tags %}
 
 {% block head_css %}
     {{ block.super }}
@@ -12,7 +12,7 @@
 <section id="hero" style="background-image: url({{ page.hero_image.url }});">
     <div class="container">
         <div class="hero-teaser">
-            {{ page.hero_text|safe }}
+            {{ page.hero_text|add_href_target:request|safe }}
         </div>
     </div>
 </section>
@@ -33,7 +33,7 @@
 <div class="container">
     <section id="lede" class="grid-row">
         <div class="column-two-thirds">
-            <h2>{{ page.lede|safe }}</h2>
+            <h2>{{ page.lede|add_href_target:request|safe }}</h2>
         </div>
         <div class="column-one-third">
             <a href="{{ directory_components_urls.contact_us }}" class="button button-primary">Contact us</a>
@@ -43,15 +43,15 @@
     <section id="lede-columns" class="grid-row">
         <div class="column-one-third">
             <img src="{{ page.lede_column_two_icon.url}}" />
-            {{ page.lede_column_one|safe }}
+            {{ page.lede_column_one|add_href_target:request|safe }}
         </div>
         <div class="column-one-third">
             <img src="{{ page.lede_column_one_icon.url }}" />
-            {{ page.lede_column_two|safe }}
+            {{ page.lede_column_two|add_href_target:request|safe }}
         </div>
         <div class="column-one-third">
             <img src="{{ page.lede_column_three_icon.url }}" />
-            {{ page.lede_column_three|safe }}
+            {{ page.lede_column_three|add_href_target:request|safe }}
         </div>
         <div class="clearfix"></div>
     </section>

@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 {% load trans from i18n %}
 {% load search_url from company_tags %}
-{% load add_export_elements_classes from cms_tags %}
+{% load add_export_elements_classes add_href_target from cms_tags %}
 
 {% block head_css %}
     {{ block.super }}
@@ -31,7 +31,7 @@
     <section id="lede" class="grid-row">
         <div class="column-one-half">
             <div class="bidi-rtl">
-                {{ page.introduction_text|add_export_elements_classes|safe }}
+                {{ page.introduction_text|add_export_elements_classes|add_href_target:request|safe }}
             </div>
 
             <form action="" method="post">
