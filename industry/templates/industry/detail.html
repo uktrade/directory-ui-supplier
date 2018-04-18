@@ -2,6 +2,7 @@
 {% load static from staticfiles %}
 {% load trans from i18n %}
 {% load search_url from company_tags %}
+{% load add_href_target from cms_tags %}
 
 {% block head_css %}
     {{ block.super }}
@@ -12,7 +13,7 @@
 <section id="hero" style="background-image: url({{ page.hero_image.url }});">
     <div class="container">
         <div class="hero-teaser bidi-rtl">
-            {{ page.hero_text|safe }}
+            {{ page.hero_text|add_href_target:request|safe }}
         </div>
     </div>
 </section>
@@ -41,21 +42,21 @@
     <section id="lede-columns" class="grid-row">
         <div class="column-one-third">
             <img class="bidi-ltr" src="{{ page.introduction_column_two_icon.url}}" />
-            <div class="bidi-rtl">{{ page.introduction_column_one_text|safe }}</div>
+            <div class="bidi-rtl">{{ page.introduction_column_one_text|add_href_target:request|safe }}</div>
         </div>
         <div class="column-one-third">
             <img class="bidi-ltr" src="{{ page.introduction_column_one_icon.url }}" />
-            <div class="bidi-rtl">{{ page.introduction_column_two_text|safe }}</div>
+            <div class="bidi-rtl">{{ page.introduction_column_two_text|add_href_target:request|safe }}</div>
         </div>
         <div class="column-one-third">
             <img class="bidi-ltr" src="{{ page.introduction_column_three_icon.url }}" />
-            <div class="bidi-rtl">{{ page.introduction_column_three_text|safe }}</div>
+            <div class="bidi-rtl">{{ page.introduction_column_three_text|add_href_target:request|safe }}</div>
         </div>
         <div class="clearfix"></div>
     </section>
 
     <section id="companies">
-        <div class="bidi-rtl" id="companies-list-text">{{ page.company_list_text|safe }}</div>
+        <div class="bidi-rtl" id="companies-list-text">{{ page.company_list_text|add_href_target:request|safe }}</div>
         <div class="grid-row">
             <div class="column-one-half">
                 <form method="get" action="{% url 'company-search' %}">
@@ -84,7 +85,7 @@
         {% endfor %}
         </ul>
         <div>
-            <a href="{% search_url sector_value=page.sector_value %}" class="button bidi-rtl">{{ page.company_list_call_to_action_text }} </a>
+            <a href="{% search_url sector_value=page.search_filter_sector %}" class="button bidi-rtl">{{ page.company_list_call_to_action_text }} </a>
         </div>
     </section>
 

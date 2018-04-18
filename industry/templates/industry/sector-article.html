@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 {% load trans from i18n %}
 {% load search_url from company_tags %}
-{% load add_anchors table_of_contents to_date from cms_tags %}
+{% load add_anchors table_of_contents to_date add_href_target from cms_tags %}
 
 {% block head_css %}
     {{ block.super }}
@@ -38,7 +38,7 @@
                 {{ page.author_name }} | {{ page.job_title }} | {{ page.date|to_date|date:"l d F Y" }}
             </div>
             <h1 id="introduction" class="h1">{{ page.title }}</h1>
-            {{ page.body|add_anchors|safe }}
+            {{ page.body|add_anchors|add_href_target:request|safe }}
             <br>
             <br>
             <p>Back to <a class="link" href="{% url 'index' %}">home</a></p>

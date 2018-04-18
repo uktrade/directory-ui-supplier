@@ -177,3 +177,29 @@ def test_add_export_elements_classes():
         '<ul class="list list-bullet">List one</ul>'
         '<ol class="list list-number">List two</ol>'
     )
+
+
+def test_add_href_target(rf):
+    request = rf.get('/', HTTP_HOST='www.example.com')
+    template = Template(
+        '{% load add_href_target from cms_tags %}'
+        '{{ html|add_href_target:request|safe }}'
+
+    )
+    context = Context({
+        'request': request,
+        'html': (
+            '<a href="http://www.google.com"></a>'
+            '<a href="https://www.google.com"></a>'
+            '<a href="http://www.example.com"></a>'
+            '<a href="https://www.example.com"></a>'
+        )
+    })
+    html = template.render(context)
+
+    assert html == (
+        '<a href="http://www.google.com" target="_blank"></a>'
+        '<a href="https://www.google.com" target="_blank"></a>'
+        '<a href="http://www.example.com"></a>'
+        '<a href="https://www.example.com"></a>'
+    )

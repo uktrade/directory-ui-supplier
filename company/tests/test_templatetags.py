@@ -224,6 +224,21 @@ def test_search_url_handles_company_term():
     assert value == reverse('company-search') + expected
 
 
+def test_search_url_handles_multiple_sectors():
+    value = company_tags.search_url(
+        sector_value=['SMART_CITIES', 'CHEMICALS'], term='thing'
+    )
+
+    expected = (
+        '?sectors=ELECTRONICS_AND_IT_HARDWARE'
+        '&sectors=SOFTWARE_AND_COMPUTER_SERVICES'
+        '&sectors=CHEMICALS'
+        '&term=thing'
+    )
+
+    assert value == reverse('company-search') + expected
+
+
 def test_search_url_handles_company_term_legal():
     value = company_tags.search_url(sector_value='LEGAL', term='legal')
 
