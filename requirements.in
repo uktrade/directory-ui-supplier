@@ -12,7 +12,7 @@ redis==2.10.5
 sorl-thumbnail==12.3
 zenpy==1.1.10
 directory-cms-client==0.5.0
-directory-api-client==9.15.3
+directory-api-client==9.16.0
 directory_validators==4.5.0
 directory_constants==6.6.0
 directory_components==1.8.0

@@ -36,7 +36,8 @@ def contact_page_data(breadcrumbs):
 @pytest.fixture
 def industry_detail_data(breadcrumbs):
     return {
-        'sector_value': 'value',
+        'search_filter_sector': ['value'],
+        'search_filter_text': 'great',
         'breadcrumbs': breadcrumbs,
         'meta': {
             'languages': ['en-gb'],
@@ -103,17 +104,6 @@ def mock_get_industries_list_page(industry_list_data):
 @pytest.fixture(autouse=True)
 def mock_get_showcase_companies():
     stub = patch('industry.views.get_showcase_companies', return_value=[])
-    yield stub.start()
-    stub.stop()
-
-
-@pytest.fixture(autouse=True)
-def mock_list_companies():
-    response = create_response(json_payload={'results': []})
-    stub = patch(
-        'api_client.api_client.company.list_public_profiles',
-        return_value=response
-    )
     yield stub.start()
     stub.stop()
 
@@ -192,7 +182,7 @@ def test_cms_pages_cms_page_404(settings, client, url, mock_get_page):
 
 
 def test_industry_page_context_curated_feature_enabled(
-    mock_list_companies, settings, client, industry_detail_data
+    mock_get_showcase_companies, settings, client, industry_detail_data
 ):
     settings.FEATURE_CMS_ENABLED = True
     settings.FEATURE_CURATED_COMPANIES_ENABLED = True
@@ -203,9 +193,9 @@ def test_industry_page_context_curated_feature_enabled(
     )
     response = client.get(url)
 
-    assert mock_list_companies.call_count == 1
-    assert mock_list_companies.call_args == call(
-        sectors='value', is_showcase_company=True, size=6
+    assert mock_get_showcase_companies.call_count == 1
+    assert mock_get_showcase_companies.call_args == call(
+        sectors=['value'], is_showcase_company=True, size=6, term='great'
     )
     assert response.context_data['page'] == industry_detail_data
     assert response.template_name == ['industry/detail.html']
@@ -225,7 +215,7 @@ def test_industry_page_context_curated_feature_disabled(
 
     assert mock_get_showcase_companies.call_count == 1
     assert mock_get_showcase_companies.call_args == call(
-        sectors='value', size=6
+        sectors=['value'], size=6, term='great'
     )
     assert response.context_data['page'] == industry_detail_data
     assert response.template_name == ['industry/detail.html']
@@ -334,7 +324,7 @@ def test_contact_form_prefills_sector(client, industry_detail_data):
     response = client.get(url)
 
     assert response.context_data['form'].initial['sector'] == (
-        industry_detail_data['sector_value']
+        industry_detail_data['search_filter_sector'][0]
     )
 
 
