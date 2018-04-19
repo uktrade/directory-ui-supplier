@@ -45,10 +45,10 @@
 
 <section id="introduction" class="container">
     <div class="grid-row">
-        <div class="column-one-half bidi-rtl">
+        <div class="proposition-container bidi-rtl">
             {{ page.proposition_text|safe }}
         </div>
-        <div class="column-one-half button-container bidi-rtl">
+        <div class="button-container bidi-rtl">
             <a href="{% url 'sector-list-cms-contact' slug=page.breadcrumbs.industrycontactpage.slug %}" class="button">{{ page.call_to_action_text }}</a>
         </div>
     </div>
