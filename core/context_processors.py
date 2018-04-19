@@ -9,6 +9,9 @@ def feature_flags(request):
             'FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED': (
                 settings.FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED
             ),
+            'FEATURE_CMS_ENABLED': (
+                settings.FEATURE_CMS_ENABLED
+            )
         }
     }
 

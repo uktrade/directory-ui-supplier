@@ -1,24 +1,26 @@
 from django.core.urlresolvers import reverse
 
-from ui import context_processors
+from core import context_processors
 from enrolment.forms import AnonymousSubscribeForm, LeadGenerationForm
 
 
 def test_feature_flags_installed(settings):
     processors = settings.TEMPLATES[0]['OPTIONS']['context_processors']
 
-    assert 'ui.context_processors.feature_flags' in processors
+    assert 'core.context_processors.feature_flags' in processors
 
 
 def test_feature_returns_expected_features(rf, settings):
 
     settings.FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED = True
+    settings.FEATURE_CMS_ENABLED = False
     request = rf.get('/')
     actual = context_processors.feature_flags(request)
 
     assert actual == {
         'features': {
             'FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED': True,
+            'FEATURE_CMS_ENABLED': False,
         },
     }
 
@@ -26,7 +28,7 @@ def test_feature_returns_expected_features(rf, settings):
 def test_subscribe_form_installed(settings):
     processors = settings.TEMPLATES[0]['OPTIONS']['context_processors']
 
-    assert 'ui.context_processors.subscribe_form' in processors
+    assert 'core.context_processors.subscribe_form' in processors
 
 
 def test_subscribe_form_exposes_form_details(rf):
@@ -62,7 +64,7 @@ def test_analytics_installed(settings):
 def test_lead_generation_form_installed(settings):
     processors = settings.TEMPLATES[0]['OPTIONS']['context_processors']
 
-    assert 'ui.context_processors.lead_generation_form' in processors
+    assert 'core.context_processors.lead_generation_form' in processors
 
 
 def test_lead_generation_form_exposes_form_details(rf):

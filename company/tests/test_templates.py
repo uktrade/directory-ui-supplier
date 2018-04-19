@@ -34,6 +34,7 @@ CONTACT_COMPANY_LABEL = 'Contact company'
 EMAIL_COMPANY_LABEL = 'Email company'
 RECENT_PROJECTS_LABEL = 'Recent projects'
 SEARCH_FILTERS_LABEL = 'Filter results'
+ANON_SUBSCRIBE_FORM_LABEL = 'Receive email updates'
 
 
 def test_case_study_detail_report_button():
@@ -248,6 +249,22 @@ def test_company_profile_details_renders_keywords():
     assert default_context['company']['keywords']
     for keyword in default_context['company']['keywords']:
         assert keyword in html
+
+
+@pytest.mark.parametrize('enabled,expected', [[True, False], [False, True]])
+def test_company_cms_feature_flag(enabled, expected):
+    template_name = 'company-search-results-list.html'
+    context = {
+        'form': forms.CompanySearchForm(),
+        'features': {
+            'FEATURE_CMS_ENABLED': enabled
+        },
+        'results': [default_context['company']]
+    }
+
+    html = render_to_string(template_name, context)
+
+    assert (ANON_SUBSCRIBE_FORM_LABEL in html) is expected
 
 
 def test_company_search_unsubmitted_hides_filters():
