@@ -39,18 +39,20 @@ class IndustryDetailCMSView(
         companies = self.get_companies(
             sector_values=page['search_filter_sector'],
             term=page['search_filter_text'],
+            search_filter_showcase_only=page['search_filter_showcase_only']
         )
         return super().get_context_data(
             page=page, companies=companies, *args, **kwargs
         )
 
-    def get_companies(self, sector_values, term):
+    @staticmethod
+    def get_companies(sector_values, term, search_filter_showcase_only):
         kwargs = {'size': 6}
         if sector_values:
             kwargs['sectors'] = sector_values
         if term:
             kwargs['term'] = term
-        if settings.FEATURE_CURATED_COMPANIES_ENABLED:
+        if search_filter_showcase_only:
             kwargs['is_showcase_company'] = True
         return get_showcase_companies(**kwargs)
 
