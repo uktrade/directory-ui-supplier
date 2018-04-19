@@ -11,10 +11,11 @@
 fas-industries-content
 {% endblock %}
 
-{% block hero_title %}
-{% trans "Discover the UK's capability in these key industries" %}
+{% block hero_title_container %}
+	<div id="hero-event-details">
+		<h1 class="ed-hero-sub-header-title">{% trans "Discover the UK's capability in these key industries" %}</h1>
+	</div>
 {% endblock %}
-
 {% block hero_image_extra_attrs %}
 	style="padding-top: 165px; background-image:url('{% static "images/covers/miro-rtl.jpg" %}');"
 {% endblock %}
