@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-20 17:29+0000\n"
+"POT-Creation-Date: 2018-04-19 13:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: core/forms.py:18
+#, fuzzy
+#| msgid "UK industries"
+msgid "All industries"
+msgstr "Industries du Royaume-Uni"
 
 #: enrolment/constants.py:13
 #, fuzzy
@@ -365,11 +371,11 @@ msgstr ""
 msgid "Your name"
 msgstr "Votre nom"
 
-#: enrolment/forms.py:28 enrolment/forms.py:50
+#: enrolment/forms.py:28 enrolment/forms.py:50 industry/forms.py:24
 msgid "Email address"
 msgstr "Adresse e-mail"
 
-#: enrolment/forms.py:30
+#: enrolment/forms.py:30 industry/forms.py:27
 msgid "Industry"
 msgstr "Industrie"
 
@@ -377,19 +383,19 @@ msgstr "Industrie"
 msgid "Company name"
 msgstr "Nom de l'entreprise"
 
-#: enrolment/forms.py:36 enrolment/forms.py:52
+#: enrolment/forms.py:36 enrolment/forms.py:52 industry/forms.py:40
 msgid "Country"
 msgstr "Pays"
 
-#: enrolment/forms.py:51
+#: enrolment/forms.py:51 industry/forms.py:31
 msgid "Organisation name"
 msgstr "Nom de l'organisation"
 
-#: enrolment/forms.py:54
+#: enrolment/forms.py:54 industry/forms.py:44
 msgid "Describe what you need"
 msgstr "Décrivez vos exigences commerciales"
 
-#: enrolment/forms.py:55
+#: enrolment/forms.py:55 industry/forms.py:45
 msgid "Maximum 1000 characters."
 msgstr "Maximum 1000 caractères."
 
@@ -527,27 +533,18 @@ msgid "Send"
 msgstr "Envoyer"
 
 #: enrolment/templates/bidi/sector-list.html:15
+#: enrolment/templates/sector-list.html:19
 msgid "Discover the UK's capability in these key industries"
 msgstr "Découvrez les capacités du Royaume-Uni dans ces industries clés"
 
-#: enrolment/templates/bidi/sector-list.html:20
-#: enrolment/templates/sector-list.html:20
-msgid "Celebrating UK innovation"
-msgstr "Célébrons l’innovation britannique"
-
-#: enrolment/templates/bidi/sector-list.html:22
-#: enrolment/templates/sector-list.html:22
-msgid "Great Festival of Innovation: Hong Kong 21 to 24 March 2018"
-msgstr "Grand festival de l’innovation: Hong Kong - 21 au 24 mars 2018"
-
-#: enrolment/templates/bidi/sector-list.html:34
+#: enrolment/templates/bidi/sector-list.html:25
 #: enrolment/templates/industry-teasers.html:5
-#: enrolment/templates/sector-list.html:34
+#: enrolment/templates/sector-list.html:29
 msgid "UK industries"
 msgstr "Industries du Royaume-Uni"
 
-#: enrolment/templates/bidi/sector-list.html:36
-#: enrolment/templates/sector-list.html:36
+#: enrolment/templates/bidi/sector-list.html:27
+#: enrolment/templates/sector-list.html:31
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -560,8 +557,8 @@ msgstr ""
 "relations commerciales avec les grandes et petites entreprises de tous les "
 "secteurs d'activité."
 
-#: enrolment/templates/bidi/sector-list.html:39
-#: enrolment/templates/sector-list.html:39
+#: enrolment/templates/bidi/sector-list.html:30
+#: enrolment/templates/sector-list.html:34
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
@@ -2254,6 +2251,28 @@ msgstr ""
 #| msgid "Creative services"
 msgid "Search legal services"
 msgstr "Services créatifs"
+
+#: industry/forms.py:20
+#, fuzzy
+#| msgid "Your name"
+msgid "Full name"
+msgstr "Votre nom"
+
+#: industry/forms.py:35
+#, fuzzy
+#| msgid "Organisation name"
+msgid "Organisation size (optional)"
+msgstr "Nom de l'organisation"
+
+#: industry/forms.py:50
+msgid "Where did you hear about us (optional)"
+msgstr ""
+
+#~ msgid "Celebrating UK innovation"
+#~ msgstr "Célébrons l’innovation britannique"
+
+#~ msgid "Great Festival of Innovation: Hong Kong 21 to 24 March 2018"
+#~ msgstr "Grand festival de l’innovation: Hong Kong - 21 au 24 mars 2018"
 
 #~ msgid "Find a Supplier"
 #~ msgstr "Trouver un fournisseur"
