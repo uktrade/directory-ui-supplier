@@ -15,13 +15,8 @@ fas-industries-content
 {% endblock %}
 
 
-{% block hero_title_container %}
-	<div id="hero-event-details">
-		<h1 class="ed-hero-sub-header-title">{% trans "Celebrating UK innovation" %}</h1>
-		<div>
-			{% trans "Great Festival of Innovation: Hong Kong 21 to 24 March 2018" %}
-		</div>
-	</div>
+{% block hero_title %}
+{% trans "Discover the UK's capability in these key industries" %}
 {% endblock %}
 
 {% block hero_image_extra_attrs %}
@@ -39,8 +34,8 @@ fas-industries-content
 			{% trans "We can help you make vital business connections with ideal companies. Choose from the businesses in these UK industries to work with you." %}
 		</p>
 	</section>
-	
-	{% include 'industry-teasers.html' %}	
+
+	{% include 'industry-teasers.html' %}
 	{% include 'search-companies.html' %}
 	{% include 'lead-generation-form.html' with form=lead_generation.form %}
 </div>
