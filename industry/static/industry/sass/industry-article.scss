@@ -63,6 +63,7 @@ p {
 
 #contact-area {
   margin: 10px;
+  padding: 30px 20px;
   @media (min-width: 641px) {
     position: sticky;
     top: 100px;
@@ -70,10 +71,8 @@ p {
     margin: 0;
     margin-left: 122px;
     width: 200px;
-    height: 315px;
   }
   right: 0;
-  padding: 20px;
   background-color: $sand;
   font-size: 19px;
   font-weight: bold;
@@ -90,6 +89,10 @@ p {
     padding-right: 20px;
     line-height: 50px;
     text-align: center;
+  }
+  b {
+    font-weight: bold;
+    font-size: 19px;
   }
 }
 
