@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-20 17:29+0000\n"
+"POT-Creation-Date: 2018-04-19 13:23+0000\n"
 "PO-Revision-Date: 2017-07-07 16:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +23,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "#-#-#-#-#  new-u.po  #-#-#-#-#\n"
 "Generated-By: xls-to-po 1.0\n"
+
+#: core/forms.py:18
+#, fuzzy
+#| msgid "UK industries"
+msgid "All industries"
+msgstr "Sectores da indústria do Reino Unido"
 
 #: enrolment/constants.py:13
 msgid "Rebekah Marine using an i-limb"
@@ -357,11 +363,11 @@ msgstr "Assinale a caixa para confirmar que aceita os termos e condições."
 msgid "Your name"
 msgstr "O seu nome"
 
-#: enrolment/forms.py:28 enrolment/forms.py:50
+#: enrolment/forms.py:28 enrolment/forms.py:50 industry/forms.py:24
 msgid "Email address"
 msgstr "Endereço de e-mail"
 
-#: enrolment/forms.py:30
+#: enrolment/forms.py:30 industry/forms.py:27
 msgid "Industry"
 msgstr "Sector da indústria"
 
@@ -369,19 +375,19 @@ msgstr "Sector da indústria"
 msgid "Company name"
 msgstr "Nome da empresa"
 
-#: enrolment/forms.py:36 enrolment/forms.py:52
+#: enrolment/forms.py:36 enrolment/forms.py:52 industry/forms.py:40
 msgid "Country"
 msgstr "País"
 
-#: enrolment/forms.py:51
+#: enrolment/forms.py:51 industry/forms.py:31
 msgid "Organisation name"
 msgstr "Nome da organização"
 
-#: enrolment/forms.py:54
+#: enrolment/forms.py:54 industry/forms.py:44
 msgid "Describe what you need"
 msgstr "Descreva as suas necessidades"
 
-#: enrolment/forms.py:55
+#: enrolment/forms.py:55 industry/forms.py:45
 msgid "Maximum 1000 characters."
 msgstr "Máximo de 1000 caracteres."
 
@@ -515,28 +521,18 @@ msgid "Send"
 msgstr "Enviar"
 
 #: enrolment/templates/bidi/sector-list.html:15
+#: enrolment/templates/sector-list.html:19
 msgid "Discover the UK's capability in these key industries"
-msgstr ""
-"Descubra a capacidade do Reino Unido nestes sectores-chave da indústria"
+msgstr "Descubra a capacidade do Reino Unido nestes sectores-chave da indústria"
 
-#: enrolment/templates/bidi/sector-list.html:20
-#: enrolment/templates/sector-list.html:20
-msgid "Celebrating UK innovation"
-msgstr "Nós queremos celebrar a inovação no Reino Unido"
-
-#: enrolment/templates/bidi/sector-list.html:22
-#: enrolment/templates/sector-list.html:22
-msgid "Great Festival of Innovation: Hong Kong 21 to 24 March 2018"
-msgstr "Great Festival of Innovation: Hong Kong de 21 a 24 de Março"
-
-#: enrolment/templates/bidi/sector-list.html:34
+#: enrolment/templates/bidi/sector-list.html:25
 #: enrolment/templates/industry-teasers.html:5
-#: enrolment/templates/sector-list.html:34
+#: enrolment/templates/sector-list.html:29
 msgid "UK industries"
 msgstr "Sectores da indústria do Reino Unido"
 
-#: enrolment/templates/bidi/sector-list.html:36
-#: enrolment/templates/sector-list.html:36
+#: enrolment/templates/bidi/sector-list.html:27
+#: enrolment/templates/sector-list.html:31
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -548,8 +544,8 @@ msgstr ""
 "e de alta qualidade. É a melhor forma de criar as ligações comerciais certas "
 "com grandes e pequenas empresas em todos os sectores da indústria."
 
-#: enrolment/templates/bidi/sector-list.html:39
-#: enrolment/templates/sector-list.html:39
+#: enrolment/templates/bidi/sector-list.html:30
+#: enrolment/templates/sector-list.html:34
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
@@ -2122,6 +2118,28 @@ msgstr ""
 #: exportopportunity/templates/exportopportunity/lead-generation-success-legal.html:13
 msgid "Search legal services"
 msgstr ""
+
+#: industry/forms.py:20
+#, fuzzy
+#| msgid "Your name"
+msgid "Full name"
+msgstr "O seu nome"
+
+#: industry/forms.py:35
+#, fuzzy
+#| msgid "Organisation name"
+msgid "Organisation size (optional)"
+msgstr "Nome da organização"
+
+#: industry/forms.py:50
+msgid "Where did you hear about us (optional)"
+msgstr ""
+
+#~ msgid "Celebrating UK Innovation"
+#~ msgstr "Nós queremos celebrar a inovação no Reino Unido"
+
+#~ msgid "Great Festival of Innovation: Hong Kong 21st March – 24th March 2018"
+#~ msgstr "Great Festival of Innovation: Hong Kong de 21 a 24 de Março"
 
 #~ msgid "Find a Supplier"
 #~ msgstr "Encontrar um fornecedor"
