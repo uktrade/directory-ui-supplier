@@ -39,6 +39,9 @@ p {
 }
 
 #table-of-contents {
+  &.hidden {
+    visibility: hidden;
+  }
   @media (min-width: 641px) {
     position: sticky;
     top: 100px;
