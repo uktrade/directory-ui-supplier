@@ -88,6 +88,20 @@ $blue: rgba(0, 82, 157, 0.8);
   a {
     margin-bottom: 60px;
   }
+  h3 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  ul {
+    -webkit-columns: 4;
+    -moz-columns: 4;
+    columns: 4;
+    a {
+      font-size: 19px;
+      line-height: 1.68;
+    }
+  }
 }
 
 @media (max-width: 769px) {
