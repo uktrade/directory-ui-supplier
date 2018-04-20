@@ -38,6 +38,7 @@ def industry_detail_data(breadcrumbs):
     return {
         'search_filter_sector': ['value'],
         'search_filter_text': 'great',
+        'search_filter_showcase_only': False,
         'breadcrumbs': breadcrumbs,
         'meta': {
             'languages': ['en-gb'],
@@ -185,7 +186,7 @@ def test_industry_page_context_curated_feature_enabled(
     mock_get_showcase_companies, settings, client, industry_detail_data
 ):
     settings.FEATURE_CMS_ENABLED = True
-    settings.FEATURE_CURATED_COMPANIES_ENABLED = True
+    industry_detail_data['search_filter_showcase_only'] = True
 
     url = reverse(
         'sector-detail-cms-verbose',
@@ -205,7 +206,7 @@ def test_industry_page_context_curated_feature_disabled(
     mock_get_showcase_companies, settings, client, industry_detail_data
 ):
     settings.FEATURE_CMS_ENABLED = True
-    settings.FEATURE_CURATED_COMPANIES_ENABLED = False
+    industry_detail_data['search_filter_showcase_only'] = False
 
     url = reverse(
         'sector-detail-cms-verbose',
