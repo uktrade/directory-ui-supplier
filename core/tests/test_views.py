@@ -28,19 +28,14 @@ def test_landing_page_context(
     assert response.context_data['page'] == page
 
 
-@patch('core.helpers.cms_client.find_a_supplier.list_industry_pages')
 @patch('core.helpers.cms_client.find_a_supplier.get_landing_page')
 def test_landing_page_not_found(
-    mock_get_landing_page, mock_list_industry_pages, settings, client
+    mock_get_landing_page, settings, client
 ):
     settings.FEATURE_CMS_ENABLED = True
 
     mock_get_landing_page.return_value = helpers.create_response(
         status_code=404
-    )
-
-    mock_list_industry_pages.return_value = helpers.create_response(
-        status_code=200, json_payload={'items': [{'title': 'good 1'}]}
     )
 
     response = client.get(reverse('index'))
