@@ -10,6 +10,7 @@ $gray: #333333;
   height: 300px;
   position: relative;
   background-repeat: no-repeat;
+  background-position: 100% 40%;
   .hero-teaser {
     background-color: rgba(0,82,157,0.8);
     border-bottom: #e41f13 solid 4px;
@@ -133,6 +134,7 @@ body.bidi #lede-columns {
     input {
       width: 100%;
       height: 50px;
+      font-size: 16px;
       padding-left: 15px;
     }
     button {
