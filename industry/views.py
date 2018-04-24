@@ -124,8 +124,8 @@ class IndustryDetailContactCMSView(
 
     @functools.lru_cache()
     def get_industry_page(self):
-        response = cms_client.get_page(
-            page_id=self.kwargs['cms_page_id'],
+        response = cms_client.lookup_by_slug(
+            slug=self.kwargs['slug'],
             language_code=translation.get_language(),
         )
         return self.handle_cms_response(response)
@@ -147,7 +147,7 @@ class IndustryLandingPageContactCMSView(
             language_code=translation.get_language(),
             draft_token=self.request.GET.get('draft_token'),
         )
-        return self.handle_cms_response(response)
+        return handle_cms_response(response)
 
 
 class IndustryArticleCMSView(

@@ -9,10 +9,8 @@ from industry import constants, views
 
 
 details_cms_urls = (
-    reverse(
-        'sector-detail-cms-verbose', kwargs={'slug': 'slug', 'cms_page_id': 1}
-    ),
-    reverse('sector-article', kwargs={'slug': 'slug', 'cms_page_id': 2}),
+    reverse('sector-detail-verbose', kwargs={'slug': 'industry'}),
+    reverse('sector-article', kwargs={'slug': 'article'}),
 )
 list_cms_urls = (
     reverse('sector-list'),
@@ -28,7 +26,7 @@ def contact_page_data(breadcrumbs):
             'languages': ['en-gb'],
             'slug': 'contact-us',
             'url': 'https://www.example.com/industries/contact-us/',
-            'pk': '1',
+            'pk': 'industry',
         }
     }
 
@@ -42,9 +40,9 @@ def industry_detail_data(breadcrumbs):
         'breadcrumbs': breadcrumbs,
         'meta': {
             'languages': ['en-gb'],
-            'slug': 'slug',
+            'slug': 'industry',
             'url': 'https://www.example.com/1/slug/',
-            'pk': '1',
+            'pk': 'industry',
         }
     }
 
@@ -57,8 +55,8 @@ def industry_list_data(breadcrumbs):
         'breadcrumbs': breadcrumbs,
         'meta': {
             'languages': ['en-gb'],
-            'slug': 'slug',
-            'pk': '2',
+            'slug': 'industry',
+            'pk': 'article',
         },
     }
 
@@ -72,7 +70,7 @@ def industry_article_data(breadcrumbs):
         'breadcrumbs': breadcrumbs,
         'meta': {
             'languages': ['en-gb'],
-            'slug': 'slug',
+            'slug': 'article',
             'url': 'https://www.example.com/1/slug/',
             'pk': '3',
         }
@@ -80,14 +78,18 @@ def industry_article_data(breadcrumbs):
 
 
 @pytest.fixture(autouse=True)
-def mock_get_page(industry_detail_data, industry_article_data):
-    def side_effect(page_id, *args, **kwargs):
+def mock_lookup_by_slug(industry_detail_data, industry_article_data):
+    def side_effect(slug, *args, **kwargs):
+        slug_1 = industry_detail_data['meta']['slug']
+        slug_2 = industry_article_data['meta']['slug']
         return {
-            '1': create_response(json_payload=industry_detail_data),
-            '2': create_response(json_payload=industry_article_data),
-        }[page_id]
+            slug_1: create_response(json_payload=industry_detail_data),
+            slug_2: create_response(json_payload=industry_article_data),
+        }[slug]
 
-    stub = patch('core.helpers.cms_client.get_page', side_effect=side_effect)
+    stub = patch(
+        'core.helpers.cms_client.lookup_by_slug', side_effect=side_effect
+    )
     yield stub.start()
     stub.stop()
 
@@ -138,42 +140,38 @@ def test_cms_pages_feature_flag_off(settings, client, url):
 
 
 @pytest.mark.parametrize('url', details_cms_urls)
-def test_cms_pages_cms_client_params(settings, client, url, mock_get_page):
+def test_cms_pages_cms_client_params(
+    settings, client, url, mock_lookup_by_slug
+):
     settings.FEATURE_CMS_ENABLED = True
 
     response = client.get(url, {'draft_token': '123', 'lang': 'de'})
 
     assert response.status_code == 200
-    assert mock_get_page.call_count == 1
-    assert mock_get_page.call_args == call(
-        page_id=resolve(url).kwargs['cms_page_id'],
+    assert mock_lookup_by_slug.call_count == 1
+    assert mock_lookup_by_slug.call_args == call(
+        slug=resolve(url).kwargs['slug'],
         draft_token='123',
         language_code='de',
     )
 
 
 @pytest.mark.parametrize('url', (
-    reverse(
-        'sector-detail-cms-verbose',
-        kwargs={'slug': 'a', 'cms_page_id': 1}
-    ),
-    reverse(
-        'sector-article',
-        kwargs={'slug': 'a', 'cms_page_id': 2}
-    ),
+    reverse('sector-detail-verbose', kwargs={'slug': 'industry'}),
+    reverse('sector-article', kwargs={'slug': 'article'}),
 ))
 def test_cms_pages_cms_slug(settings, client, url):
     settings.FEATURE_CMS_ENABLED = True
 
     response = client.get(url)
 
-    assert response.status_code == 302
+    assert response.status_code == 200
 
 
 @pytest.mark.parametrize('url', details_cms_urls)
-def test_cms_pages_cms_page_404(settings, client, url, mock_get_page):
-    mock_get_page.side_effect = None
-    mock_get_page.return_value = create_response(status_code=404)
+def test_cms_pages_cms_page_404(settings, client, url, mock_lookup_by_slug):
+    mock_lookup_by_slug.side_effect = None
+    mock_lookup_by_slug.return_value = create_response(status_code=404)
 
     settings.FEATURE_CMS_ENABLED = True
 
@@ -188,10 +186,7 @@ def test_industry_page_context_curated_feature_enabled(
     settings.FEATURE_CMS_ENABLED = True
     industry_detail_data['search_filter_showcase_only'] = True
 
-    url = reverse(
-        'sector-detail-cms-verbose',
-        kwargs={'cms_page_id': '1', 'slug': 'slug'}
-    )
+    url = reverse('sector-detail-verbose', kwargs={'slug': 'industry'})
     response = client.get(url)
 
     assert mock_get_showcase_companies.call_count == 1
@@ -208,10 +203,7 @@ def test_industry_page_context_curated_feature_disabled(
     settings.FEATURE_CMS_ENABLED = True
     industry_detail_data['search_filter_showcase_only'] = False
 
-    url = reverse(
-        'sector-detail-cms-verbose',
-        kwargs={'cms_page_id': '1', 'slug': 'slug'}
-    )
+    url = reverse('sector-detail-verbose', kwargs={'slug': 'industry'})
     response = client.get(url)
 
     assert mock_get_showcase_companies.call_count == 1
@@ -225,10 +217,7 @@ def test_industry_page_context_curated_feature_disabled(
 def test_article_page_context(settings, client, industry_article_data):
     settings.FEATURE_CMS_ENABLED = True
 
-    url = reverse(
-        'sector-article',
-        kwargs={'cms_page_id': '2', 'slug': 'slug'}
-    )
+    url = reverse('sector-article', kwargs={'slug': 'article'})
     response = client.get(url)
 
     assert response.context_data['page'] == industry_article_data
@@ -271,9 +260,7 @@ def test_contact_form_submit_with_comment(
     mock_ticket_create, mock_user_create_or_update, client
 ):
     mock_user_create_or_update.return_value = Mock(id=999)
-    url = reverse(
-        'sector-detail-cms-contact', kwargs={'slug': 'slug', 'cms_page_id': 1}
-    )
+    url = reverse('sector-detail-cms-contact', kwargs={'slug': 'industry'})
     data = {
         'full_name': 'Jeff',
         'email_address': 'jeff@example.com',
@@ -319,9 +306,7 @@ def test_contact_form_submit_with_comment(
 
 @pytest.mark.django_db
 def test_contact_form_prefills_sector(client, industry_detail_data):
-    url = reverse(
-        'sector-detail-cms-contact', kwargs={'slug': 'slug', 'cms_page_id': 1}
-    )
+    url = reverse('sector-detail-cms-contact', kwargs={'slug': 'industry'})
     response = client.get(url)
 
     assert response.context_data['form'].initial['sector'] == (
@@ -335,15 +320,14 @@ def test_contact_form_prefills_sector(client, industry_detail_data):
 @patch('core.helpers.cms_client.find_a_supplier.get_industries_landing_page')
 def test_industry_list_contact_form_submit_with_comment(
     mock_get_industries_landing_page, mock_ticket_create,
-    mock_user_create_or_update, client, industry_list_data
+    mock_user_create_or_update, client, industry_list_data, settings
 ):
+    settings.FEATURE_CMS_ENABLED = True
     mock_get_industries_landing_page.return_value = create_response(
         json_payload=industry_list_data,
     )
     mock_user_create_or_update.return_value = Mock(id=999)
-    url = reverse(
-        'sector-list-cms-contact', kwargs={'slug': 'contact-us'}
-    )
+    url = reverse('sector-list-cms-contact')
     data = {
         'full_name': 'Jeff',
         'email_address': 'jeff@example.com',

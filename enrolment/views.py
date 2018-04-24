@@ -192,3 +192,8 @@ class SectorListViewNegotiator(core.views.CMSFeatureFlagViewNegotiator):
 class LandingPageNegotiator(core.views.CMSFeatureFlagViewNegotiator):
     default_view_class = LandingView
     feature_flagged_view_class = core.views.LandingPageCMSView
+
+
+class SectorDetailViewNegotiator(core.views.CMSFeatureFlagViewNegotiator):
+    default_view_class = SectorDetailView
+    feature_flagged_view_class = industry.views.IndustryDetailCMSView

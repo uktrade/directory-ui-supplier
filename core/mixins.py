@@ -64,8 +64,8 @@ class ActiveViewNameMixin:
 class GetCMSPageMixin:
 
     def get_cms_page(self):
-        response = helpers.cms_client.get_page(
-            page_id=self.kwargs['cms_page_id'],
+        response = helpers.cms_client.lookup_by_slug(
+            slug=self.kwargs['slug'],
             draft_token=self.request.GET.get('draft_token'),
             language_code=translation.get_language(),
         )
