@@ -43,3 +43,6 @@
 {% block head_title %}
     {{ page.seo_title }}
 {% endblock %}
+
+
+{% block css_layout_class %}{% if LANGUAGE_BIDI and language_switcher.show %}bidi {% endif %}{% endblock %}

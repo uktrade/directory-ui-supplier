@@ -61,7 +61,7 @@
             {% for item in row %}
                 <a href="{{ item.meta.url }}" class="column-one-third industry-card">
                     <span>{{ item.breadcrumbs_label }}</span>
-                    <img src="{{ item.hero_image.url }}" />
+                    <img src="{{ item.summary_image.url }}" />
                     <div>
                         {{ item.hero_text|first_paragraph|safe }}
                     </div>
