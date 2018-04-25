@@ -1,6 +1,6 @@
 {% load static from static %}
 {% load trans from i18n %}
-<header class="ed-header-gov-row" id="header">
+<header class="ed-header-gov-row {{ LANGUAGE_BIDI|yesno:'bidi,' }}" id="header">
 	<div class="container">
 		<div id="header-gov-links">
 			<a class="header-gov-link" href="https://www.gov.uk/" target="_blank">
