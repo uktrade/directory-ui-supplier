@@ -6,7 +6,8 @@
   transform: scale(-1,1);
 }
 
-body.bidi {
+header.bidi,
+main.bidi {
   @include mirror_relative_to_parent();
   .bidi-rtl {
     @include mirror_relative_to_parent();

@@ -124,7 +124,7 @@ $white:  #ffffff;
   }
 }
 
-body.bidi #lede-columns {
+main.bidi #lede-columns {
   div {
     img {
       left: 0;
@@ -207,15 +207,15 @@ body.bidi #lede-columns {
   }
 
   a.button {
-    display: block;
+    display: table;
     font-weight: bold;
     height: 60px;
+    line-height: 60px;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 0;
+    padding-top: 0;
     text-align: center;
-    width: 300px;
-    line-height: 60px;
-    padding: 0
   }
 }
 

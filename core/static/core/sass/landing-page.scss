@@ -112,7 +112,7 @@ section {
   }
 }
 
-body.bidi {
+main.bidi {
   #hero {
     #search-area {
       select {
@@ -120,8 +120,13 @@ body.bidi {
         padding-right: 40px;
       }
       input, select {
-        border-left-width: 0;
         border-right-width: 2px;
+      }
+      input {
+        border-left-width: 0;
+      }
+      select {
+        border-left-width: 2px
       }
     }
   }
