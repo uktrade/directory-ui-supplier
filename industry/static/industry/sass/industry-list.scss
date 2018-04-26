@@ -10,11 +10,23 @@ $blue: rgba(0, 82, 157, 0.8);
 #hero {
   color: $white;
   margin-bottom: 30px;
-  padding-top: 220px;
   position: relative;
   height: 300px;
   position: relative;
   background-position: 100% 40%;
+
+  .container {
+    position: relative;
+    height: 300px;
+  }
+  .image-caption {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    font-size: 15px;
+    line-height: 1.53;
+    color: $white;
+  }
 
   .hero-teaser {
     background-color: rgba(0,82,157,0.8);
@@ -115,6 +127,10 @@ $blue: rgba(0, 82, 157, 0.8);
     }
     .container {
       padding: 0;
+      height: 350px;
+    }
+    .image-caption {
+      display: none;
     }
   }
 

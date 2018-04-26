@@ -15,6 +15,7 @@
         <div class="hero-teaser bidi-rtl">
             {{ page.hero_text|add_href_target:request|safe }}
         </div>
+        <div class="image-caption">{{ page.hero_image_caption }}</div>
     </div>
 </section>
 
@@ -39,20 +40,22 @@
         </a>
     </section>
 
-    <section id="lede-columns" class="grid-row">
-        <div class="column-one-third">
-            <img class="bidi-ltr" src="{{ page.introduction_column_one_icon.url}}" />
-            <div class="bidi-rtl">{{ page.introduction_column_one_text|add_href_target:request|safe }}</div>
+    <section id="lede-columns">
+        <h2 class="heading-large">{{ page.introduction_title }}</h2>
+        <div class="grid-row">
+            <div class="column-one-third">
+                <img class="bidi-ltr" src="{{ page.introduction_column_one_icon.url}}" />
+                <div class="bidi-rtl">{{ page.introduction_column_one_text|add_href_target:request|safe }}</div>
+            </div>
+            <div class="column-one-third">
+                <img class="bidi-ltr" src="{{ page.introduction_column_two_icon.url }}" />
+                <div class="bidi-rtl">{{ page.introduction_column_two_text|add_href_target:request|safe }}</div>
+            </div>
+            <div class="column-one-third">
+                <img class="bidi-ltr" src="{{ page.introduction_column_three_icon.url }}" />
+                <div class="bidi-rtl">{{ page.introduction_column_three_text|add_href_target:request|safe }}</div>
+            </div>
         </div>
-        <div class="column-one-third">
-            <img class="bidi-ltr" src="{{ page.introduction_column_two_icon.url }}" />
-            <div class="bidi-rtl">{{ page.introduction_column_two_text|add_href_target:request|safe }}</div>
-        </div>
-        <div class="column-one-third">
-            <img class="bidi-ltr" src="{{ page.introduction_column_three_icon.url }}" />
-            <div class="bidi-rtl">{{ page.introduction_column_three_text|add_href_target:request|safe }}</div>
-        </div>
-        <div class="clearfix"></div>
     </section>
 
     <section id="companies">

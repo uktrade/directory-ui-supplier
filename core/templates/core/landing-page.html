@@ -11,34 +11,37 @@
 {% block content %}
 <section id="hero" style="background-image: url({{ page.hero_image.url }});">
     <div class="container">
-        <div class="hero-teaser">
-            {{ page.hero_text|safe }}
-        </div>
-        <div id="search-area">
-            <form action="{% url 'company-search' %}" method="get" >
-                <div class="column-one-half">
-                    <input
-                        class="form-control bidi-rtl"
-                        type="text"
-                        name="{{ search_form.term.name }}"
-                        id="{{ search_form.term.id_for_label }}"
-                        placeholder="{{ page.search_field_placeholder }}"
-                    />
-                </div>
-                <div class="column-one-half">
+        <div id="hero-content">
+            <div class="hero-teaser">
+                {{ page.hero_text|safe }}
+            </div>
+            <div id="search-area">
+                <form action="{% url 'company-search' %}" method="get" >
                     <div class="column-one-half">
-                        {# translations provided by the app #}
-                        {{ search_form.sectors }}
+                        <input
+                            class="form-control bidi-rtl"
+                            type="text"
+                            name="{{ search_form.term.name }}"
+                            id="{{ search_form.term.id_for_label }}"
+                            placeholder="{{ page.search_field_placeholder }}"
+                        />
                     </div>
                     <div class="column-one-half">
-                        <div class="button-container">
-                            <button class="button bidi-rtl">{{ page.search_button_text }}</button>
+                        <div class="column-one-half">
+                            {# translations provided by the app #}
+                            {{ search_form.sectors }}
+                        </div>
+                        <div class="column-one-half">
+                            <div class="button-container">
+                                <button class="button bidi-rtl">{{ page.search_button_text }}</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
-            <div class="clearfix"></div>
+                </form>
+                <div class="clearfix"></div>
+            </div>
         </div>
+        <div class="image-caption">{{ page.hero_image_caption }}</div>
     </div>
 </section>
 

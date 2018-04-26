@@ -43,7 +43,24 @@ section {
   background-repeat: no-repeat;
   color: $white;
   margin-bottom: 60px;
-  padding-top: 110px;
+  #hero-content {
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+  }
+  .container {
+    position: relative;
+    height: 450px;
+  }
+  .image-caption {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    font-size: 15px;
+    line-height: 1.53;
+    color: $white;
+  }
+
   .hero-teaser {
     margin-bottom: 30px;
     p {
@@ -253,6 +270,10 @@ main.bidi {
     }
     .container {
       padding: 10px;
+      height: 400px;
+    }
+    .image-caption {
+      display: none;
     }
     .hero-teaser {
       padding-left: 10px;

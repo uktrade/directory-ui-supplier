@@ -5,12 +5,17 @@
 
 $sand: #f5f2ed;
 $gray: #333333;
+$white:  #ffffff;
 
 #hero {
   height: 300px;
   position: relative;
   background-repeat: no-repeat;
   background-position: 100% 40%;
+  .container {
+    position: relative;
+    height: 300px;
+  }
   .hero-teaser {
     background-color: rgba(0,82,157,0.8);
     border-bottom: #e41f13 solid 4px;
@@ -18,14 +23,21 @@ $gray: #333333;
     max-width: 520px;
     padding: 30px;
     position: absolute;
-    color: #ffffff;
+    color: $white;
   }
-
+  .image-caption {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    font-size: 15px;
+    line-height: 1.53;
+    color: $white;
+  }
   h2 {
     font-size: 36px;
     font-weight: bold;
     line-height: 1.11;
-    color: #ffffff;
+    color: $white;
     text-transform: uppercase;
     margin-bottom: 15px;
   }
@@ -71,7 +83,7 @@ $gray: #333333;
   font-size: 19px;
   div {
     position: relative;
-    padding-right: 40px;
+    padding-right: 20px;
     img {
       position: absolute;
       height: 40px;
@@ -79,12 +91,23 @@ $gray: #333333;
     }
   }
   h2 {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.29;
-    letter-spacing: -0.4px;
-    color: #333333;
-    margin-bottom: 15px;
+    color: $gray;
+    font-size: 36px;
+    letter-spacing: -0.7px;
+    line-height: 1.11;
+    margin-bottom: 60px;
+    margin-top: 0;
+  }
+  .grid-row {
+    padding-right: 0;
+    h2 {
+      color: $gray;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: -0.4px;
+      line-height: 1.29;
+      margin-bottom: 15px;
+    }
   }
   &:after {
     border-color: $sand;
@@ -159,7 +182,7 @@ main.bidi #lede-columns {
       max-height: 250px;
       display: flex;
       padding: 20px 30px;
-      background-color: #ffffff;
+      background-color: $white;
       border: solid 1px #d8d8d8;
       margin-bottom: 30px;
       img {
@@ -211,6 +234,9 @@ main.bidi #lede-columns {
     .container {
       padding: 0;
     }
+    .image-caption {
+      display: none;
+    }
   }
 
   #lede {
@@ -238,12 +264,17 @@ main.bidi #lede-columns {
   #lede-columns {
     padding: 30px;
     div {
-      margin-left: 30px;
+      margin-left: 20px;
       margin-bottom: 30px;
       padding-right: 0;
     }
     h2 {
-      margin-bottom: 10px;
+      margin-bottom: 30px;
+    }
+    .grid-row {
+      h2 {
+        margin-bottom: 10px;
+      }
     }
     p {
       font-size: 15px;
