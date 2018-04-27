@@ -9,11 +9,12 @@ $blue: rgba(0, 82, 157, 0.8);
 
 #hero {
   color: $white;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   position: relative;
   height: 300px;
   position: relative;
   background-position: 100% 40%;
+  padding-top: 0;
 
   .container {
     position: relative;
