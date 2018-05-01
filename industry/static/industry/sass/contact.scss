@@ -36,6 +36,12 @@ $gray: #333333;
   }
 }
 
+#content {
+  background: linear-gradient(to right, #fff 54%, #f6f4f1 46%);
+  .breadcrumbs {
+    background-color: transparent;
+  }
+}
 
 #content > .container {
   max-width: 1320px;
@@ -47,6 +53,10 @@ $gray: #333333;
 }
 
 @media (max-width: 769px) {
+
+  #content {
+    background: white;
+  }
 
   #lede {
     padding: 30px;
