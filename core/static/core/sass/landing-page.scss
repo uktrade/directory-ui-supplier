@@ -15,7 +15,6 @@ $sand: #f5f2ed;
   .button {
     background-color: $blue;
     line-height: 30px;
-    padding: 0;
     color: white;
     font-weight: bold;
     font-size: 19px;
@@ -39,20 +38,24 @@ section {
 }
 
 #hero {
-  height: 450px;
+  min-height: 450px;
+  padding-top: 100px;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   color: $white;
   margin-bottom: 60px;
-  padding-top: 0;
+
   #hero-content {
-    position: absolute;
     width: 100%;
     bottom: 50px;
   }
+
   .container {
-    position: relative;
-    height: 450px;
+    margin: 0 auto;
+    padding: 0 60px;
   }
+
   .image-caption {
     position: absolute;
     right: 0;
@@ -77,9 +80,7 @@ section {
     font-size: 19px;
     line-height: 1.63;
   }
-  .container {
-    padding-bottom: 60px;
-  }
+
   #search-area {
     background-color: $off-white;
     padding: 30px;
@@ -102,7 +103,7 @@ section {
     }
     input, select, button {
       line-height: 30px;
-      padding-left: 19px;
+      padding: 0 19px;
     }
     input[type=text] {
       border-right-width: 0;
@@ -220,7 +221,7 @@ main.bidi {
 
 
 #services-container {
-  padding-top: 60px;  
+  padding-top: 60px;
 
   h2 {
     color: $gray;
@@ -260,8 +261,12 @@ main.bidi {
 @media (max-width: 769px) {
   #hero {
     padding-top: 35px;
-    height: 400px;
     margin-bottom: 30px;
+
+    .container {
+      padding: 0 60px;
+    }
+
     h2 {
       font-size: 32px;
       margin-bottom: 10px;
@@ -269,30 +274,25 @@ main.bidi {
     p {
       font-size: 15px;
     }
-    .container {
-      padding: 10px;
-      height: 400px;
-    }
     .image-caption {
       display: none;
     }
     .hero-teaser {
       padding-left: 10px;
       padding-right: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
     }
     #search-area {
-      padding: 20px 10px;
+      padding: 20px;
       margin-bottom: 20px;
       select {
         display: none;
       }
       .button-container {
-        padding-left: 0;
+        width: 100%;
       }
       input[type=text] {
         border-right-width: 2px;
-        margin-bottom: 15px;
       }
     }
   }
@@ -345,6 +345,24 @@ main.bidi {
   #articles-container {
     .container {
       padding: 30px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  #hero {
+    .container {
+      padding: 0 30px;
+    }
+
+    #search-area {
+      .button-container {
+        padding-left: 0;
+      }
+
+      input[type=text] {
+        margin-bottom: 15px;
+      }
     }
   }
 }
