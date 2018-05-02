@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-19 13:23+0000\n"
+"POT-Creation-Date: 2018-05-02 15:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -373,9 +373,9 @@ msgstr "Votre nom"
 
 #: enrolment/forms.py:28 enrolment/forms.py:50 industry/forms.py:24
 msgid "Email address"
-msgstr "Adresse e-mail"
+msgstr "Courriel"
 
-#: enrolment/forms.py:30 industry/forms.py:27
+#: enrolment/forms.py:30
 msgid "Industry"
 msgstr "Industrie"
 
@@ -383,15 +383,15 @@ msgstr "Industrie"
 msgid "Company name"
 msgstr "Nom de l'entreprise"
 
-#: enrolment/forms.py:36 enrolment/forms.py:52 industry/forms.py:40
+#: enrolment/forms.py:36 enrolment/forms.py:52
 msgid "Country"
 msgstr "Pays"
 
-#: enrolment/forms.py:51 industry/forms.py:31
+#: enrolment/forms.py:51
 msgid "Organisation name"
 msgstr "Nom de l'organisation"
 
-#: enrolment/forms.py:54 industry/forms.py:44
+#: enrolment/forms.py:54
 msgid "Describe what you need"
 msgstr "Décrivez vos exigences commerciales"
 
@@ -420,8 +420,6 @@ msgid "Terms &amp; conditions"
 msgstr "Conditions générales"
 
 #: enrolment/templates/bidi/footer.html:33 enrolment/templates/footer.html:33
-#, fuzzy
-#| msgid "Crown Copyright 2017"
 msgid "Crown Copyright"
 msgstr "Crown Copyright 2017"
 
@@ -500,8 +498,6 @@ msgstr ""
 
 #: enrolment/templates/bidi/landing-page.html:43
 #: enrolment/templates/landing-page.html:46
-#, fuzzy
-#| msgid "UK industries"
 msgid "See more industries"
 msgstr "Industries du Royaume-Uni"
 
@@ -532,19 +528,19 @@ msgstr "J'accepte les conditions générales de great.gov.uk"
 msgid "Send"
 msgstr "Envoyer"
 
-#: enrolment/templates/bidi/sector-list.html:15
+#: enrolment/templates/bidi/sector-list.html:16
 #: enrolment/templates/sector-list.html:19
 msgid "Discover the UK's capability in these key industries"
 msgstr "Découvrez les capacités du Royaume-Uni dans ces industries clés"
 
-#: enrolment/templates/bidi/sector-list.html:25
+#: enrolment/templates/bidi/sector-list.html:26
 #: enrolment/templates/industry-teasers.html:5
-#: enrolment/templates/sector-list.html:29
+#: enrolment/templates/sector-list.html:30
 msgid "UK industries"
 msgstr "Industries du Royaume-Uni"
 
-#: enrolment/templates/bidi/sector-list.html:27
-#: enrolment/templates/sector-list.html:31
+#: enrolment/templates/bidi/sector-list.html:28
+#: enrolment/templates/sector-list.html:32
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -557,8 +553,8 @@ msgstr ""
 "relations commerciales avec les grandes et petites entreprises de tous les "
 "secteurs d'activité."
 
-#: enrolment/templates/bidi/sector-list.html:30
-#: enrolment/templates/sector-list.html:34
+#: enrolment/templates/bidi/sector-list.html:31
+#: enrolment/templates/sector-list.html:35
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
@@ -696,8 +692,6 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/creative.html:6
-#, fuzzy
-#| msgid "Healthcare and life sciences from the UK"
 msgid "Buy creative services from the UK"
 msgstr "Santé et sciences de la vie au Royaume-Uni"
 
@@ -1163,10 +1157,6 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/health.html:7
-#, fuzzy
-#| msgid ""
-#| "See the UK's healthcare and life sciences providers on the Find a "
-#| "supplier service"
 msgid "Buy UK healthcare and life sciences products and services"
 msgstr ""
 "Découvrez les fournisseurs du secteur de la santé et des sciences de la vie "
@@ -1695,8 +1685,6 @@ msgid ""
 msgstr ""
 
 #: enrolment/templates/marketing-pages/tech.html:7
-#, fuzzy
-#| msgid "Find your UK technology trade partner"
 msgid "Buy UK technology products and services"
 msgstr "Trouvez votre partenaire commercial au Royaume-Uni"
 
@@ -1926,8 +1914,6 @@ msgstr ""
 
 #: exportopportunity/templates/exportopportunity/campaign-base.html:174
 #: exportopportunity/templates/exportopportunity/lead-generation-success-base.html:49
-#, fuzzy
-#| msgid "Find a supplier"
 msgid "More UK suppliers"
 msgstr "Trouver un fournisseur"
 
@@ -1957,8 +1943,6 @@ msgid ""
 msgstr ""
 
 #: exportopportunity/templates/exportopportunity/campaign-food.html:17
-#, fuzzy
-#| msgid "The UK's food and drink"
 msgid "What makes UK food and drink unique"
 msgstr "Produits alimentaires et boissons au Royaume-Uni"
 
@@ -1982,8 +1966,6 @@ msgid ""
 msgstr ""
 
 #: exportopportunity/templates/exportopportunity/campaign-food.html:37
-#, fuzzy
-#| msgid "Advanced technology"
 msgid "Innovation and technology"
 msgstr "Technologie avancée"
 
@@ -2003,8 +1985,6 @@ msgid ""
 msgstr ""
 
 #: exportopportunity/templates/exportopportunity/campaign-food.html:63
-#, fuzzy
-#| msgid "Find UK food and drink companies to meet your needs"
 msgid "Find the right food and drink supplier for you"
 msgstr ""
 "Découvrez les entreprises de produits alimentaires et boissons du Royaume-"
@@ -2034,8 +2014,6 @@ msgid "We match you with the best UK food and drink companies"
 msgstr ""
 
 #: exportopportunity/templates/exportopportunity/campaign-food.html:80
-#, fuzzy
-#| msgid "UK food and drink"
 msgid "In-demand food and drink"
 msgstr "Produits alimentaires et boissons au Royaume-Uni"
 
@@ -2050,8 +2028,6 @@ msgstr ""
 #: exportopportunity/templates/exportopportunity/campaign-food.html:88
 #: exportopportunity/templates/exportopportunity/campaign-food.html:104
 #: exportopportunity/templates/exportopportunity/campaign-food.html:120
-#, fuzzy
-#| msgid "UK food and drink"
 msgid "Search UK food and drink"
 msgstr "Produits alimentaires et boissons au Royaume-Uni"
 
@@ -2171,8 +2147,6 @@ msgstr ""
 #: exportopportunity/templates/exportopportunity/campaign-legal.html:88
 #: exportopportunity/templates/exportopportunity/campaign-legal.html:104
 #: exportopportunity/templates/exportopportunity/campaign-legal.html:120
-#, fuzzy
-#| msgid "The UK's creative services"
 msgid "Search UK legal services"
 msgstr "Les services créatifs du Royaume-Uni"
 
@@ -2199,8 +2173,6 @@ msgid ""
 msgstr ""
 
 #: exportopportunity/templates/exportopportunity/lead-generation-form-contact.html:7
-#, fuzzy
-#| msgid "Contact us"
 msgid "Contact details"
 msgstr "Contactez-nous"
 
@@ -2212,8 +2184,6 @@ msgid ""
 msgstr ""
 
 #: exportopportunity/templates/exportopportunity/lead-generation-form-needs.html:7
-#, fuzzy
-#| msgid "Describe what you need"
 msgid "Explain what you need"
 msgstr "Décrivez vos exigences commerciales"
 
@@ -2235,8 +2205,6 @@ msgid ""
 msgstr ""
 
 #: exportopportunity/templates/exportopportunity/lead-generation-success-food.html:13
-#, fuzzy
-#| msgid "UK food and drink"
 msgid "Search food and drink"
 msgstr "Produits alimentaires et boissons au Royaume-Uni"
 
@@ -2247,26 +2215,49 @@ msgid ""
 msgstr ""
 
 #: exportopportunity/templates/exportopportunity/lead-generation-success-legal.html:13
-#, fuzzy
-#| msgid "Creative services"
 msgid "Search legal services"
 msgstr "Services créatifs"
 
 #: industry/forms.py:20
-#, fuzzy
-#| msgid "Your name"
 msgid "Full name"
-msgstr "Votre nom"
+msgstr "Prénom et nom"
+
+#: industry/forms.py:27
+msgid "Your industry"
+msgstr "Votre secteur d'activité"
+
+#: industry/forms.py:31
+msgid "Your organisation name"
+msgstr "Nom de votre entreprise"
 
 #: industry/forms.py:35
-#, fuzzy
-#| msgid "Organisation name"
-msgid "Organisation size (optional)"
-msgstr "Nom de l'organisation"
+msgid "Size of your organisation"
+msgstr "Taille de votre entreprise"
+
+#: industry/forms.py:40
+msgid "Your country"
+msgstr "Votre pays"
+
+#: industry/forms.py:44
+msgid "Describe what products or services you need"
+msgstr "Décrivez les produits ou services dont vous avez besoin"
 
 #: industry/forms.py:50
-msgid "Where did you hear about us (optional)"
+msgid "Where did you hear about great.gov.uk?"
+msgstr "Comment avez-vous entendu parler de great.gov.uk?"
+
+#: industry/forms.py:57
+msgid "Other source (optional)"
 msgstr ""
+
+#: industry/forms.py:63
+#, python-brace-format
+msgid ""
+"I agree to the <a href=\"{url}\" target=\"_blank\">great.gov.uk terms and "
+"conditions</a>"
+msgstr ""
+"J'accepte <a href=\"{url}\" target=\"_blank\">les conditions générales de "
+"great.gov.uk</a>"
 
 #~ msgid "Celebrating UK innovation"
 #~ msgstr "Célébrons l’innovation britannique"
