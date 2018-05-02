@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-02 15:19+0000\n"
+"POT-Creation-Date: 2018-05-02 17:26+0000\n"
 "PO-Revision-Date: 2017-06-13 15:19+0100\n"
 "Language: ar\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -343,7 +343,7 @@ msgstr "حدد المربع لتؤكد أنك توافق على البنود و�
 msgid "Your name"
 msgstr "اسمك"
 
-#: enrolment/forms.py:28 enrolment/forms.py:50 industry/forms.py:24
+#: enrolment/forms.py:28 enrolment/forms.py:50 industry/forms.py:33
 msgid "Email address"
 msgstr "عنوان البريد الإلكتروني"
 
@@ -367,7 +367,7 @@ msgstr "اسم المؤسسة"
 msgid "Describe what you need"
 msgstr "اكتب وصفًا لما تحتاج إليه"
 
-#: enrolment/forms.py:55 industry/forms.py:45
+#: enrolment/forms.py:55 industry/forms.py:54
 msgid "Maximum 1000 characters."
 msgstr "1000 حرف كحد أقصى."
 
@@ -2062,59 +2062,64 @@ msgstr ""
 msgid "Search legal services"
 msgstr ""
 
-#: industry/forms.py:20
-#, fuzzy
-#| msgid "Your name"
-msgid "Full name"
-msgstr "اسمك"
-
-#: industry/forms.py:27
-#, fuzzy
-#| msgid "Industry"
-msgid "Your industry"
-msgstr "الصناعة"
-
-#: industry/forms.py:31
-#, fuzzy
-#| msgid "Organisation name"
-msgid "Your organisation name"
-msgstr "اسم المؤسسة"
-
-#: industry/forms.py:35
-msgid "Size of your organisation"
-msgstr ""
-
-#: industry/forms.py:40
-#, fuzzy
-#| msgid "Country"
-msgid "Your country"
-msgstr "البلد"
-
-#: industry/forms.py:44
-#, fuzzy
-#| msgid "Describe what you need"
-msgid "Describe what products or services you need"
-msgstr "اكتب وصفًا لما تحتاج إليه"
-
-#: industry/forms.py:50
-#, fuzzy
-#| msgid "I agree to the great.gov.uk terms and conditions"
-msgid "Where did you hear about great.gov.uk?"
-msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
-
-#: industry/forms.py:57
-#, fuzzy
-#| msgid "Organisation name"
-msgid "Other source (optional)"
-msgstr "اسم المؤسسة"
-
-#: industry/forms.py:63
+#: industry/forms.py:24
 #, fuzzy, python-brace-format
 #| msgid "I agree to the great.gov.uk terms and conditions"
 msgid ""
 "I agree to the <a href=\"{url}\" target=\"_blank\">great.gov.uk terms and "
 "conditions</a>"
 msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
+
+#: industry/forms.py:29
+#, fuzzy
+#| msgid "Your name"
+msgid "Full name"
+msgstr "اسمك"
+
+#: industry/forms.py:36
+#, fuzzy
+#| msgid "Industry"
+msgid "Your industry"
+msgstr "الصناعة"
+
+#: industry/forms.py:40
+#, fuzzy
+#| msgid "Organisation name"
+msgid "Your organisation name"
+msgstr "اسم المؤسسة"
+
+#: industry/forms.py:44
+msgid "Size of your organisation"
+msgstr ""
+
+#: industry/forms.py:49
+#, fuzzy
+#| msgid "Country"
+msgid "Your country"
+msgstr "البلد"
+
+#: industry/forms.py:53
+#, fuzzy
+#| msgid "Describe what you need"
+msgid "Describe what products or services you need"
+msgstr "اكتب وصفًا لما تحتاج إليه"
+
+#: industry/forms.py:59
+#, fuzzy
+#| msgid "I agree to the great.gov.uk terms and conditions"
+msgid "Where did you hear about great.gov.uk?"
+msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
+
+#: industry/forms.py:66
+#, fuzzy
+#| msgid "Organisation name"
+msgid "Other source (optional)"
+msgstr "اسم المؤسسة"
+
+#, fuzzy
+#~| msgid "I agree to the great.gov.uk terms and conditions"
+#~ msgid "great.gov.uk terms and conditions"
+#~ msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
 
 #~ msgid "Celebrating UK Innovation"
 #~ msgstr "احتفال بالابتكار في المملكه المتحده"

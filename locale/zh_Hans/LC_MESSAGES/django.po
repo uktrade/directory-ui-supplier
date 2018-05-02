@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-02 15:19+0000\n"
+"POT-Creation-Date: 2018-05-02 17:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -325,7 +325,7 @@ msgstr "请勾选复选框以确认您同意以上条款和条件。"
 msgid "Your name"
 msgstr "您的姓名"
 
-#: enrolment/forms.py:28 enrolment/forms.py:50 industry/forms.py:24
+#: enrolment/forms.py:28 enrolment/forms.py:50 industry/forms.py:33
 msgid "Email address"
 msgstr "电子邮件地址"
 
@@ -349,7 +349,7 @@ msgstr "组织名称"
 msgid "Describe what you need"
 msgstr "描述您的需求"
 
-#: enrolment/forms.py:55 industry/forms.py:45
+#: enrolment/forms.py:55 industry/forms.py:54
 msgid "Maximum 1000 characters."
 msgstr "最多 1000 个字符。"
 
@@ -1924,44 +1924,49 @@ msgstr ""
 msgid "Search legal services"
 msgstr "来自英国的创新服务"
 
-#: industry/forms.py:20
-msgid "Full name"
-msgstr "全名"
-
-#: industry/forms.py:27
-msgid "Your industry"
-msgstr "您的行业"
-
-#: industry/forms.py:31
-msgid "Your organisation name"
-msgstr "贵机构的名称"
-
-#: industry/forms.py:35
-msgid "Size of your organisation"
-msgstr "贵机构的规模"
-
-#: industry/forms.py:40
-msgid "Your country"
-msgstr "您的国家"
-
-#: industry/forms.py:44
-msgid "Describe what products or services you need"
-msgstr "请描述您需要什么产品或服务"
-
-#: industry/forms.py:50
-msgid "Where did you hear about great.gov.uk?"
-msgstr "您是从哪里听说great.gov.uk的？"
-
-#: industry/forms.py:57
-msgid "Other source (optional)"
-msgstr ""
-
-#: industry/forms.py:63
-#, python-brace-format
+#: industry/forms.py:24
 msgid ""
 "I agree to the <a href=\"{url}\" target=\"_blank\">great.gov.uk terms and "
 "conditions</a>"
-msgstr "<a href=\"{url}\" target=\"_blank\">我同意great.gov.uk的条款和条件</a>"
+msgstr "我同意 <a href=\"{url}\" target=\"_blank\">great.gov.uk 的条款和条件。</a>"
+
+#: industry/forms.py:29
+msgid "Full name"
+msgstr "全名"
+
+#: industry/forms.py:36
+msgid "Your industry"
+msgstr "您的行业"
+
+#: industry/forms.py:40
+msgid "Your organisation name"
+msgstr "贵机构的名称"
+
+#: industry/forms.py:44
+msgid "Size of your organisation"
+msgstr "贵机构的规模"
+
+#: industry/forms.py:49
+msgid "Your country"
+msgstr "您的国家"
+
+#: industry/forms.py:53
+msgid "Describe what products or services you need"
+msgstr "请描述您需要什么产品或服务"
+
+#: industry/forms.py:59
+msgid "Where did you hear about great.gov.uk?"
+msgstr "您是从哪里听说great.gov.uk的？"
+
+#: industry/forms.py:66
+msgid "Other source (optional)"
+msgstr ""
+
+#~ msgid "I agree to the "
+#~ msgstr "我同意 "
+
+#~ msgid "great.gov.uk terms and conditions"
+#~ msgstr "great.gov.uk 的条款和条件"
 
 #~ msgid "Celebrating UK Innovation"
 #~ msgstr "庆祝英国科技创新"
