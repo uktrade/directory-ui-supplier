@@ -1,7 +1,7 @@
 from urllib.parse import urljoin
 
 from django.forms import Textarea, TextInput, Select
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
 
 from directory_constants.constants import choices
