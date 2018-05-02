@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-19 13:23+0000\n"
+"POT-Creation-Date: 2018-05-02 15:19+0000\n"
 "PO-Revision-Date: 2017-06-16 17:01+0100\n"
 "Language: ja\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -343,7 +343,7 @@ msgstr "お名前"
 msgid "Email address"
 msgstr "メールアドレス"
 
-#: enrolment/forms.py:30 industry/forms.py:27
+#: enrolment/forms.py:30
 msgid "Industry"
 msgstr "業種"
 
@@ -351,15 +351,15 @@ msgstr "業種"
 msgid "Company name"
 msgstr "企業名"
 
-#: enrolment/forms.py:36 enrolment/forms.py:52 industry/forms.py:40
+#: enrolment/forms.py:36 enrolment/forms.py:52
 msgid "Country"
 msgstr "国名"
 
-#: enrolment/forms.py:51 industry/forms.py:31
+#: enrolment/forms.py:51
 msgid "Organisation name"
 msgstr "組織名"
 
-#: enrolment/forms.py:54 industry/forms.py:44
+#: enrolment/forms.py:54
 msgid "Describe what you need"
 msgstr "何をお求めかをご説明ください。"
 
@@ -493,19 +493,19 @@ msgstr "great.gov.uk の利用規約に同意します。"
 msgid "Send"
 msgstr "送信"
 
-#: enrolment/templates/bidi/sector-list.html:15
+#: enrolment/templates/bidi/sector-list.html:16
 #: enrolment/templates/sector-list.html:19
 msgid "Discover the UK's capability in these key industries"
 msgstr "主要産業における英国のパワーをご覧ください"
 
-#: enrolment/templates/bidi/sector-list.html:25
+#: enrolment/templates/bidi/sector-list.html:26
 #: enrolment/templates/industry-teasers.html:5
-#: enrolment/templates/sector-list.html:29
+#: enrolment/templates/sector-list.html:30
 msgid "UK industries"
 msgstr "英国の産業"
 
-#: enrolment/templates/bidi/sector-list.html:27
-#: enrolment/templates/sector-list.html:31
+#: enrolment/templates/bidi/sector-list.html:28
+#: enrolment/templates/sector-list.html:32
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -516,8 +516,8 @@ msgstr ""
 "以外を探す必要はありません。英国では、大手企業から小規模な企業まで、あらゆる"
 "産業において最適な取引相手が見つかります。"
 
-#: enrolment/templates/bidi/sector-list.html:30
-#: enrolment/templates/sector-list.html:34
+#: enrolment/templates/bidi/sector-list.html:31
+#: enrolment/templates/sector-list.html:35
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
@@ -2057,15 +2057,58 @@ msgstr "英国のクリエイティブ･サービス"
 msgid "Full name"
 msgstr "お名前（フルネーム）"
 
-#: industry/forms.py:35
+#: industry/forms.py:27
+#, fuzzy
+#| msgid "Industry"
+msgid "Your industry"
+msgstr "業種"
+
+#: industry/forms.py:31
 #, fuzzy
 #| msgid "Organisation name"
-msgid "Organisation size (optional)"
+msgid "Your organisation name"
 msgstr "組織名"
 
-#: industry/forms.py:50
-msgid "Where did you hear about us (optional)"
+#: industry/forms.py:35
+msgid "Size of your organisation"
 msgstr ""
+
+#: industry/forms.py:40
+#, fuzzy
+#| msgid "Your company"
+msgid "Your country"
+msgstr "企業情報"
+
+#: industry/forms.py:44
+#, fuzzy
+#| msgid "Describe what you need"
+msgid "Describe what products or services you need"
+msgstr "何をお求めかをご説明ください。"
+
+#: industry/forms.py:50
+#, fuzzy
+#| msgid "I agree to the great.gov.uk terms and conditions"
+msgid "Where did you hear about great.gov.uk?"
+msgstr "great.gov.uk の利用規約に同意します。"
+
+#: industry/forms.py:57
+#, fuzzy
+#| msgid "Work phone (optional)"
+msgid "Other source (optional)"
+msgstr "職場の電話番号（任意）"
+
+#: industry/forms.py:63
+#, fuzzy, python-brace-format
+#| msgid "I agree to the great.gov.uk terms and conditions"
+msgid ""
+"I agree to the <a href=\"{url}\" target=\"_blank\">great.gov.uk terms and "
+"conditions</a>"
+msgstr "great.gov.uk の利用規約に同意します。"
+
+#, fuzzy
+#~| msgid "Organisation name"
+#~ msgid "Organisation size (optional)"
+#~ msgstr "組織名"
 
 #~ msgid "Celebrating UK Innovation"
 #~ msgstr "英国イノベーションを祝う"
@@ -2075,11 +2118,6 @@ msgstr ""
 
 #~ msgid "Find a Supplier"
 #~ msgstr "サプライヤー検索"
-
-#, fuzzy
-#~| msgid "I agree to the great.gov.uk terms and conditions"
-#~ msgid "I agree to the great.gov.uk"
-#~ msgstr "great.gov.uk の利用規約に同意します。"
 
 #, fuzzy
 #~| msgid "Terms &amp; conditions"
@@ -2359,12 +2397,6 @@ msgstr ""
 
 #~ msgid "Work email"
 #~ msgstr "職場のメールアドレス"
-
-#~ msgid "Work phone (optional)"
-#~ msgstr "職場の電話番号（任意）"
-
-#~ msgid "Your company"
-#~ msgstr "企業情報"
 
 #~ msgid "Enter your company name"
 #~ msgstr "貴社の社名を入力してください。"

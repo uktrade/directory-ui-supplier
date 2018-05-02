@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-19 13:23+0000\n"
+"POT-Creation-Date: 2018-05-02 15:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -372,7 +372,7 @@ msgstr "Nombre"
 msgid "Email address"
 msgstr "Dirección de correo electrónico"
 
-#: enrolment/forms.py:30 industry/forms.py:27
+#: enrolment/forms.py:30
 msgid "Industry"
 msgstr "Sector"
 
@@ -380,15 +380,15 @@ msgstr "Sector"
 msgid "Company name"
 msgstr "Nombre de la empresa"
 
-#: enrolment/forms.py:36 enrolment/forms.py:52 industry/forms.py:40
+#: enrolment/forms.py:36 enrolment/forms.py:52
 msgid "Country"
 msgstr "País"
 
-#: enrolment/forms.py:51 industry/forms.py:31
+#: enrolment/forms.py:51
 msgid "Organisation name"
 msgstr "Nombre de la organización"
 
-#: enrolment/forms.py:54 industry/forms.py:44
+#: enrolment/forms.py:54
 msgid "Describe what you need"
 msgstr "Describa lo que necesita"
 
@@ -417,8 +417,6 @@ msgid "Terms &amp; conditions"
 msgstr "Términos y condiciones"
 
 #: enrolment/templates/bidi/footer.html:33 enrolment/templates/footer.html:33
-#, fuzzy
-#| msgid "Crown Copyright 2016"
 msgid "Crown Copyright"
 msgstr "Crown Copyright 2016"
 
@@ -497,8 +495,6 @@ msgstr ""
 
 #: enrolment/templates/bidi/landing-page.html:43
 #: enrolment/templates/landing-page.html:46
-#, fuzzy
-#| msgid "UK industries"
 msgid "See more industries"
 msgstr "Sectores del Reino Unido"
 
@@ -528,19 +524,19 @@ msgstr "Acepto los términos y condiciones de great.gov.uk."
 msgid "Send"
 msgstr "Enviar"
 
-#: enrolment/templates/bidi/sector-list.html:15
+#: enrolment/templates/bidi/sector-list.html:16
 #: enrolment/templates/sector-list.html:19
 msgid "Discover the UK's capability in these key industries"
 msgstr "Descubra el potencial del Reino Unido en estos sectores clave"
 
-#: enrolment/templates/bidi/sector-list.html:25
+#: enrolment/templates/bidi/sector-list.html:26
 #: enrolment/templates/industry-teasers.html:5
-#: enrolment/templates/sector-list.html:29
+#: enrolment/templates/sector-list.html:30
 msgid "UK industries"
 msgstr "Sectores del Reino Unido"
 
-#: enrolment/templates/bidi/sector-list.html:27
-#: enrolment/templates/sector-list.html:31
+#: enrolment/templates/bidi/sector-list.html:28
+#: enrolment/templates/sector-list.html:32
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -553,8 +549,8 @@ msgstr ""
 "comerciales exitosas con grandes organizaciones y empresas más pequeñas de "
 "todos los sectores."
 
-#: enrolment/templates/bidi/sector-list.html:30
-#: enrolment/templates/sector-list.html:34
+#: enrolment/templates/bidi/sector-list.html:31
+#: enrolment/templates/sector-list.html:35
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
@@ -2148,28 +2144,55 @@ msgstr ""
 
 #: industry/forms.py:20
 msgid "Full name"
-msgstr "Nombre completo"
+msgstr "Nombre y apellido(s)"
+
+#: industry/forms.py:27
+msgid "Your industry"
+msgstr "Su sector"
+
+#: industry/forms.py:31
+msgid "Your organisation name"
+msgstr "Nombre de su organización"
 
 #: industry/forms.py:35
-#, fuzzy
-#| msgid "Organisation name"
-msgid "Organisation size (optional)"
-msgstr "Nombre de la organización"
+msgid "Size of your organisation"
+msgstr "Tamaño de su organización"
+
+#: industry/forms.py:40
+msgid "Your country"
+msgstr "Su país"
+
+#: industry/forms.py:44
+msgid "Describe what products or services you need"
+msgstr "Describa los productos o servicios que necesita"
 
 #: industry/forms.py:50
-msgid "Where did you hear about us (optional)"
+msgid "Where did you hear about great.gov.uk?"
+msgstr "¿Cómo supo de la existencia de great.gov.uk?"
+
+#: industry/forms.py:57
+msgid "Other source (optional)"
 msgstr ""
+
+#: industry/forms.py:63
+#, python-brace-format
+msgid ""
+"I agree to the <a href=\"{url}\" target=\"_blank\">great.gov.uk terms and "
+"conditions</a>"
+msgstr ""
+"Acepto <a href=\"{url}\" target=\"_blank\">los términos y condiciones de "
+"great.gov.uk</a>"
+
+#, fuzzy
+#~| msgid "Organisation name"
+#~ msgid "Organisation size (optional)"
+#~ msgstr "Nombre de la organización"
 
 #~ msgid "Celebrating UK Innovation"
 #~ msgstr "Celebrando la innovacion en el Reino Unido"
 
 #~ msgid "Great Festival of Innovation: Hong Kong 21st March – 24th March 2018"
 #~ msgstr "Great Festival of Innovation: Hong Kong del 21 al 24 de Marzo"
-
-#, fuzzy
-#~| msgid "I agree to the great.gov.uk terms and conditions"
-#~ msgid "I agree to the great.gov.uk"
-#~ msgstr "Acepto los términos y condiciones de great.gov.uk."
 
 #, fuzzy
 #~| msgid "Terms &amp; conditions"
@@ -2439,12 +2462,6 @@ msgstr ""
 
 #~ msgid "Work email"
 #~ msgstr "Correo electrónico de trabajo"
-
-#~ msgid "Work phone (optional)"
-#~ msgstr "Teléfono de trabajo (opcional)"
-
-#~ msgid "Your company"
-#~ msgstr "Su empresa"
 
 #~ msgid "Enter your company name"
 #~ msgstr "Introduzca el nombre de su empresa"

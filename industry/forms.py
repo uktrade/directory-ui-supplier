@@ -24,43 +24,43 @@ class ContactForm(forms.Form):
         label=_('Email address'),
     )
     sector = fields.ChoiceField(
-        label=_('Industry'),
+        label=_('Your industry'),
         choices=(('', ''),) + choices.INDUSTRIES,
     )
     organisation_name = fields.CharField(
-        label=_('Organisation name'),
+        label=_('Your organisation name'),
         max_length=255,
     )
     organisation_size = fields.ChoiceField(
-        label=_('Organisation size (optional)'),
+        label=_('Size of your organisation'),
         choices=choices.EMPLOYEES,
         required=False,
     )
     country = fields.CharField(
-        label=_('Country'),
+        label=_('Your country'),
         max_length=255,
     )
     body = fields.CharField(
-        label=_('Describe what you need'),
+        label=_('Describe what products or services you need'),
         help_text=_('Maximum 1000 characters.'),
         max_length=1000,
         widget=Textarea,
     )
     source = fields.ChoiceField(
-        label=_('Where did you hear about us (optional)'),
+        label=_('Where did you hear about great.gov.uk?'),
         choices=(('', ''),) + constants.MARKETING_SOURCES,
         required=False,
         initial=' ',  # prevent "other" being selected by default
         widget=Select(attrs={'class': 'js-field-other-selector'})
     )
     source_other = fields.CharField(
-        label="Other source (optional)",
+        label=_("Other source (optional)"),
         required=False,
         widget=TextInput(attrs={'class': 'js-field-other'}),
     )
     terms_agreed = fields.BooleanField(
-        label=mark_safe(
-            'I accept the <a href="{url}" target="_blank">'
+        label=mark_safe(_(
+            'I agree to the <a href="{url}" target="_blank">'
             'great.gov.uk terms and conditions</a>'.format(url=TERMS_URL)
-        )
+        ))
     )

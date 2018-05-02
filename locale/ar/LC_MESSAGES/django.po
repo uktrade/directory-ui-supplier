@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-19 13:23+0000\n"
+"POT-Creation-Date: 2018-05-02 15:19+0000\n"
 "PO-Revision-Date: 2017-06-13 15:19+0100\n"
 "Language: ar\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -347,7 +347,7 @@ msgstr "اسمك"
 msgid "Email address"
 msgstr "عنوان البريد الإلكتروني"
 
-#: enrolment/forms.py:30 industry/forms.py:27
+#: enrolment/forms.py:30
 msgid "Industry"
 msgstr "الصناعة"
 
@@ -355,15 +355,15 @@ msgstr "الصناعة"
 msgid "Company name"
 msgstr "اسم الشركة"
 
-#: enrolment/forms.py:36 enrolment/forms.py:52 industry/forms.py:40
+#: enrolment/forms.py:36 enrolment/forms.py:52
 msgid "Country"
 msgstr "البلد"
 
-#: enrolment/forms.py:51 industry/forms.py:31
+#: enrolment/forms.py:51
 msgid "Organisation name"
 msgstr "اسم المؤسسة"
 
-#: enrolment/forms.py:54 industry/forms.py:44
+#: enrolment/forms.py:54
 msgid "Describe what you need"
 msgstr "اكتب وصفًا لما تحتاج إليه"
 
@@ -500,19 +500,19 @@ msgstr "أوافق على البنود والشروط الواردة في موق
 msgid "Send"
 msgstr "إرسال"
 
-#: enrolment/templates/bidi/sector-list.html:15
+#: enrolment/templates/bidi/sector-list.html:16
 #: enrolment/templates/sector-list.html:19
 msgid "Discover the UK's capability in these key industries"
 msgstr "اكتشف إمكانيات المملكة المتحدة في هذه الصناعات الرئيسية"
 
-#: enrolment/templates/bidi/sector-list.html:25
+#: enrolment/templates/bidi/sector-list.html:26
 #: enrolment/templates/industry-teasers.html:5
-#: enrolment/templates/sector-list.html:29
+#: enrolment/templates/sector-list.html:30
 msgid "UK industries"
 msgstr "صناعات المملكة المتحدة"
 
-#: enrolment/templates/bidi/sector-list.html:27
-#: enrolment/templates/sector-list.html:31
+#: enrolment/templates/bidi/sector-list.html:28
+#: enrolment/templates/sector-list.html:32
 msgid ""
 "As a decision-maker in an international business you need look no further "
 "than the UK for innovative, high-quality products and services. It is the "
@@ -524,8 +524,8 @@ msgstr ""
 "لتأسيس العلاقات التجارية المناسبة مع شركات رئيسية وشركات أصغر منتشرة في كل "
 "القطاعات."
 
-#: enrolment/templates/bidi/sector-list.html:30
-#: enrolment/templates/sector-list.html:34
+#: enrolment/templates/bidi/sector-list.html:31
+#: enrolment/templates/sector-list.html:35
 msgid ""
 "We can help you make vital business connections with ideal companies. Choose "
 "from the businesses in these UK industries to work with you."
@@ -2068,26 +2068,59 @@ msgstr ""
 msgid "Full name"
 msgstr "اسمك"
 
-#: industry/forms.py:35
+#: industry/forms.py:27
+#, fuzzy
+#| msgid "Industry"
+msgid "Your industry"
+msgstr "الصناعة"
+
+#: industry/forms.py:31
 #, fuzzy
 #| msgid "Organisation name"
-msgid "Organisation size (optional)"
+msgid "Your organisation name"
 msgstr "اسم المؤسسة"
 
-#: industry/forms.py:50
-msgid "Where did you hear about us (optional)"
+#: industry/forms.py:35
+msgid "Size of your organisation"
 msgstr ""
+
+#: industry/forms.py:40
+#, fuzzy
+#| msgid "Country"
+msgid "Your country"
+msgstr "البلد"
+
+#: industry/forms.py:44
+#, fuzzy
+#| msgid "Describe what you need"
+msgid "Describe what products or services you need"
+msgstr "اكتب وصفًا لما تحتاج إليه"
+
+#: industry/forms.py:50
+#, fuzzy
+#| msgid "I agree to the great.gov.uk terms and conditions"
+msgid "Where did you hear about great.gov.uk?"
+msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
+
+#: industry/forms.py:57
+#, fuzzy
+#| msgid "Organisation name"
+msgid "Other source (optional)"
+msgstr "اسم المؤسسة"
+
+#: industry/forms.py:63
+#, fuzzy, python-brace-format
+#| msgid "I agree to the great.gov.uk terms and conditions"
+msgid ""
+"I agree to the <a href=\"{url}\" target=\"_blank\">great.gov.uk terms and "
+"conditions</a>"
+msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
 
 #~ msgid "Celebrating UK Innovation"
 #~ msgstr "احتفال بالابتكار في المملكه المتحده"
 
 #~ msgid "Great Festival of Innovation: Hong Kong 21st March – 24th March 2018"
 #~ msgstr "مهرجان الابتكار العظيم : هونج كونج 21 الى 24 مارس 2018"
-
-#, fuzzy
-#~| msgid "I agree to the great.gov.uk terms and conditions"
-#~ msgid "I agree to the great.gov.uk"
-#~ msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
 
 #, fuzzy
 #~| msgid "Terms &amp; conditions"
