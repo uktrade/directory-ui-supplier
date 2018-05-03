@@ -86,7 +86,7 @@ urlpatterns = [
     ),
     url(
         r'^industries/(?P<slug>.+)/summary/$',
-        enrolment.views.SectorDetailView.as_view(),
+        enrolment.views.SectorDetailSummaryViewNegotiator.as_view(),
         {'show_proposition': False},
         name='sector-detail-summary',
     ),

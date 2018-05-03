@@ -1,11 +1,12 @@
+from directory_constants.constants import lead_generation, sectors
+from formtools.wizard.views import SessionWizardView
+
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.template.response import TemplateResponse
 from django.views.generic import TemplateView
-
-from directory_constants.constants import lead_generation, sectors
-from formtools.wizard.views import SessionWizardView
+from django.shortcuts import redirect
 
 from api_client import api_client
 from core.mixins import SetEtagMixin
@@ -178,6 +179,13 @@ class BaseCampaignView(
     def dispatch(self, *args, **kwargs):
         if not self.feature_flag:
             raise Http404()
+        if settings.FEATURE_CMS_ENABLED:
+            if self.kwargs['campaign'] == lead_generation.FOOD_IS_GREAT:
+                slug = 'food-and-drink'
+            elif self.kwargs['campaign'] == lead_generation.LEGAL_IS_GREAT:
+                slug = 'legal'
+            url = reverse('sector-detail-verbose', kwargs={'slug': slug})
+            return redirect(url)
         return super().dispatch(*args, **kwargs)
 
     def get_language_form_kwargs(self):

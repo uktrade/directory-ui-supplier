@@ -50,6 +50,7 @@ def test_lead_generation_feature_flag(enabled, status, client, settings):
               Mock(return_value=showcase_case_studies))
 def test_food_is_great_feature_flag(url, enabled, status, client, settings):
     settings.FEATURE_FOOD_CAMPAIGN_ENABLED = enabled
+    settings.FEATURE_CMS_ENABLED = False
 
     response = client.get(url)
 
@@ -68,7 +69,7 @@ def test_food_is_great_feature_flag(url, enabled, status, client, settings):
               Mock(return_value=showcase_case_studies))
 def test_legal_is_great_feature_flag(url, enabled, status, client, settings):
     settings.FEATURE_LEGAL_CAMPAIGN_ENABLED = enabled
-
+    settings.FEATURE_CMS_ENABLED = False
     response = client.get(url)
 
     assert response.status_code == status
@@ -113,6 +114,7 @@ def test_exportopportunity_view_context(
     query, template_name, client, settings, search_keyword
 ):
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
+    settings.FEATURE_CMS_ENABLED = False
 
     response = client.get(url)
 
@@ -152,6 +154,7 @@ def test_exportopportunity_disabled_countries_lead_generation_legal(
     mock_get_showcase_case_studies, mock_get_showcase_companies,
     disabled_countries, expected, url, client, settings
 ):
+    settings.FEATURE_CMS_ENABLED = False
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
     settings.LEGAL_CAMPAIGN_DISABLED_COUNTRIES = disabled_countries
     response = client.get(url)
@@ -184,6 +187,7 @@ def test_exportopportunity_disabled_countries_lead_generation_food(
     mock_get_showcase_case_studies, mock_get_showcase_companies,
     disabled_countries, expected, url, client, settings
 ):
+    settings.FEATURE_CMS_ENABLED = False
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
     settings.FOOD_CAMPAIGN_DISABLED_COUNTRIES = disabled_countries
 
@@ -214,6 +218,7 @@ def test_exportopportunity_disabled_countries_lead_generation_food(
 def test_campaign_language_switcher(
     showcase_objects, client, url, languages, settings
 ):
+    settings.FEATURE_CMS_ENABLED = False
     settings.FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = True
     settings.FOOD_IS_GREAT_ENABLED_LANGUAGES = ['en-gb', 'fr']
 
@@ -417,3 +422,29 @@ def test_submit_export_opportunity_legal(
     )
 
     assert mock_clean_captcha.call_count == 1
+
+
+@pytest.mark.parametrize('url,expected', (
+    (
+        reverse('food-is-great-campaign-france'),
+        reverse('sector-detail-verbose', kwargs={'slug': 'food-and-drink'}),
+    ),
+    (
+        reverse('food-is-great-campaign-singapore'),
+        reverse('sector-detail-verbose', kwargs={'slug': 'food-and-drink'}),
+    ),
+    (
+        reverse('legal-is-great-campaign-france'),
+        reverse('sector-detail-verbose', kwargs={'slug': 'legal'}),
+    ),
+    (
+        reverse('legal-is-great-campaign-singapore'),
+        reverse('sector-detail-verbose', kwargs={'slug': 'legal'}),
+    )
+))
+def test_redirect_to_cms(url, expected, settings, client):
+    settings.FEATURE_CMS_ENABLED = True
+
+    response = client.get(url)
+
+    assert response.url == expected
