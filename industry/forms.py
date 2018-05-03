@@ -21,7 +21,7 @@ class ContactForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields['terms_agreed'].label = mark_safe(ugettext(
+        self.fields['terms_agreed'].widget.label = mark_safe(ugettext(
             'I agree to the <a href="{url}" target="_blank">'
             'great.gov.uk terms and conditions</a>').format(url=TERMS_URL)
         )
