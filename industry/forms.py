@@ -2,6 +2,7 @@ from urllib.parse import urljoin
 
 from django.forms import Textarea, TextInput, Select
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext
 from django.utils.safestring import mark_safe
 
 from directory_constants.constants import choices
@@ -10,11 +11,20 @@ from directory_components.context_processors import get_url
 
 from industry import constants
 
+TERMS_URL = urljoin(
+    get_url("HEADER_FOOTER_URLS_GREAT_HOME"), 'terms-and-conditions/'
+)
+
 
 class ContactForm(forms.Form):
-    TERMS_URL = urljoin(
-        get_url("HEADER_FOOTER_URLS_GREAT_HOME"), 'terms-and-conditions/'
-    )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['terms_agreed'].label = mark_safe(ugettext(
+            'I agree to the <a href="{url}" target="_blank">'
+            'great.gov.uk terms and conditions</a>').format(url=TERMS_URL)
+        )
 
     full_name = fields.CharField(
         label=_('Full name'),
@@ -58,9 +68,4 @@ class ContactForm(forms.Form):
         required=False,
         widget=TextInput(attrs={'class': 'js-field-other'}),
     )
-    terms_agreed = fields.BooleanField(
-        label=mark_safe(_(
-            'I agree to the <a href="{url}" target="_blank">'
-            'great.gov.uk terms and conditions</a>'.format(url=TERMS_URL)
-        ))
-    )
+    terms_agreed = fields.BooleanField()

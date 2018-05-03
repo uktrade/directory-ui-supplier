@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-02 15:19+0000\n"
+"POT-Creation-Date: 2018-05-02 17:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -296,7 +296,7 @@ msgstr ""
 msgid "Your name"
 msgstr ""
 
-#: enrolment/forms.py:28 enrolment/forms.py:50 industry/forms.py:24
+#: enrolment/forms.py:28 enrolment/forms.py:50 industry/forms.py:33
 msgid "Email address"
 msgstr ""
 
@@ -320,7 +320,7 @@ msgstr ""
 msgid "Describe what you need"
 msgstr ""
 
-#: enrolment/forms.py:55 industry/forms.py:45
+#: enrolment/forms.py:55 industry/forms.py:54
 msgid "Maximum 1000 characters."
 msgstr ""
 
@@ -1761,41 +1761,41 @@ msgstr ""
 msgid "Search legal services"
 msgstr ""
 
-#: industry/forms.py:20
-msgid "Full name"
-msgstr ""
-
-#: industry/forms.py:27
-msgid "Your industry"
-msgstr ""
-
-#: industry/forms.py:31
-msgid "Your organisation name"
-msgstr ""
-
-#: industry/forms.py:35
-msgid "Size of your organisation"
-msgstr ""
-
-#: industry/forms.py:40
-msgid "Your country"
-msgstr ""
-
-#: industry/forms.py:44
-msgid "Describe what products or services you need"
-msgstr ""
-
-#: industry/forms.py:50
-msgid "Where did you hear about great.gov.uk?"
-msgstr ""
-
-#: industry/forms.py:57
-msgid "Other source (optional)"
-msgstr ""
-
-#: industry/forms.py:63
+#: industry/forms.py:24
 #, python-brace-format
 msgid ""
 "I agree to the <a href=\"{url}\" target=\"_blank\">great.gov.uk terms and "
 "conditions</a>"
+msgstr ""
+
+#: industry/forms.py:29
+msgid "Full name"
+msgstr ""
+
+#: industry/forms.py:36
+msgid "Your industry"
+msgstr ""
+
+#: industry/forms.py:40
+msgid "Your organisation name"
+msgstr ""
+
+#: industry/forms.py:44
+msgid "Size of your organisation"
+msgstr ""
+
+#: industry/forms.py:49
+msgid "Your country"
+msgstr ""
+
+#: industry/forms.py:53
+msgid "Describe what products or services you need"
+msgstr ""
+
+#: industry/forms.py:59
+msgid "Where did you hear about great.gov.uk?"
+msgstr ""
+
+#: industry/forms.py:66
+msgid "Other source (optional)"
 msgstr ""
