@@ -4,7 +4,9 @@ from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 from django.conf import settings
 from django.shortcuts import redirect, Http404
 from django.template.response import TemplateResponse
+from django.urls import reverse
 from django.views.generic import TemplateView
+from django.views.generic.base import RedirectView
 from django.views.generic.edit import FormView
 
 from api_client import api_client
@@ -197,3 +199,19 @@ class LandingPageNegotiator(core.views.CMSFeatureFlagViewNegotiator):
 class SectorDetailViewNegotiator(core.views.CMSFeatureFlagViewNegotiator):
     default_view_class = SectorDetailView
     feature_flagged_view_class = industry.views.IndustryDetailCMSView
+
+
+class RedirectToArticleSummaryView(RedirectView):
+    query_string = True
+
+    def get_redirect_url(self, *args, **kwargs):
+        return reverse(
+            'sector-detail-verbose', kwargs={'slug': self.kwargs['slug']}
+        )
+
+
+class SectorDetailSummaryViewNegotiator(
+    core.views.CMSFeatureFlagViewNegotiator
+):
+    default_view_class = SectorDetailView
+    feature_flagged_view_class = RedirectToArticleSummaryView

@@ -3,7 +3,6 @@ from unittest.mock import patch, Mock
 
 import pytest
 
-from django.conf import settings
 from django.core.urlresolvers import reverse
 
 from zenpy.lib.api_objects import Ticket, User
@@ -67,7 +66,10 @@ def test_international_landing_page_sectorhandles_legacy_verbose(
     assert response.get('Location') == expected_url
 
 
-def test_international_landing_page_sector_context_non_verbose(client):
+def test_international_landing_page_sector_context_non_verbose(
+    client, settings
+):
+    settings.FEATURE_CMS_ENABLED = False
     url = reverse('sector-detail-summary', kwargs={'slug': 'health'})
 
     response = client.get(url)
@@ -292,7 +294,21 @@ def test_industry_list_page_disabled_language_translations(settings, client):
     assert 'language_switcher' not in response.context_data
 
 
+def test_industry_page_summary_redirect_cms(settings, client):
+    settings.FEATURE_CMS_ENABLED = True
+
+    url = reverse('sector-detail-summary', kwargs={'slug': 'health'})
+
+    response = client.get(url)
+
+    assert response.status_code == 302
+    assert response.url == reverse(
+        'sector-detail-verbose', kwargs={'slug': 'health'}
+    )
+
+
 def test_industry_page_enabled_language_translations(settings, client):
+    settings.FEATURE_CMS_ENABLED = False
     settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE = []  # all languages enabled
 
     url = reverse('sector-detail-summary', kwargs={'slug': 'health'})
@@ -303,7 +319,8 @@ def test_industry_page_enabled_language_translations(settings, client):
     assert 'language_switcher' in response.context_data
 
 
-def test_industry_page_disabled_language_translations(client):
+def test_industry_page_disabled_language_translations(client, settings):
+    settings.FEATURE_CMS_ENABLED = False
     settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE = ['en-gb']
 
     url = reverse('sector-detail-summary', kwargs={'slug': 'health'})
