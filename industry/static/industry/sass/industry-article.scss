@@ -62,6 +62,12 @@ p {
 }
 #industry-article-container {
   position: relative;
+
+  .column-one-half {
+    p {
+      margin-bottom: 1em
+    }
+  }
 }
 
 #contact-area {
