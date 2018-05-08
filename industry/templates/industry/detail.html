@@ -71,25 +71,26 @@
                 </form>
             </div>
         </div>
-        
-        <ul class="grid-row">
-        {% for company in companies %}
-            <div class="column-one-half">
-                <li>
-                    <div>
-                        <img src="{{ company.logo }}"></img>
-                    </div>
-                    <dl class="bidi-rtl">
-                        <dt><a href="{{ company.public_profile_url }}" class="link">{{ company.name }}</a></dt>
-                        <dd>{{ company.summary|default:company.description|truncatechars:150 }}</dd>
-                    </dl>
-                </li>
+        {% if companies %}
+            <ul class="grid-row">
+            {% for company in companies %}
+                <div class="column-one-half">
+                    <li>
+                        <div>
+                            <img src="{{ company.logo }}"></img>
+                        </div>
+                        <dl class="bidi-rtl">
+                            <dt><a href="{{ company.public_profile_url }}" class="link">{{ company.name }}</a></dt>
+                            <dd>{{ company.summary|default:company.description|truncatechars:150 }}</dd>
+                        </dl>
+                    </li>
+                </div>
+            {% endfor %}
+            </ul>
+            <div>
+                <a href="{% search_url sector_value=page.search_filter_sector %}" class="button bidi-rtl">{{ page.company_list_call_to_action_text }} </a>
             </div>
-        {% endfor %}
-        </ul>
-        <div>
-            <a href="{% search_url sector_value=page.search_filter_sector %}" class="button bidi-rtl">{{ page.company_list_call_to_action_text }} </a>
-        </div>
+        {% endif %}
     </section>
 
     <section id="articles-container" class="container">
