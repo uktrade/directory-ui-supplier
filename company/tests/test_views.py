@@ -535,6 +535,24 @@ def test_company_search_pagination_param(
     )
 
 
+@pytest.mark.django_db
+@patch('api_client.api_client.company.search_company')
+def test_company_search_sector_empty(
+    mock_search, client, search_results, api_response_search_200
+):
+    mock_search.return_value = api_response_search_200
+
+    url = reverse('company-search')
+    response = client.get(
+        url, {'term': '123', 'page': 1, 'sectors': ''}
+    )
+    assert response.status_code == 200
+    assert mock_search.call_count == 1
+    assert mock_search.call_args == call(
+        page=1, size=10, term='123', sectors=[],
+    )
+
+
 @patch('api_client.api_client.company.search_company')
 def test_company_search_pagination_empty_page(
     mock_search, client, search_results, api_response_search_200
