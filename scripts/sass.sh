@@ -38,5 +38,8 @@ input_output_map="\
 
 prod_command="sass --sourcemap=none --style compressed"
 
-eval 'rm enrolment/static/*.css'
+rm enrolment/static/*.css
+rm industry/static/industry/*.css
+rm core/static/core/*.css
+
 eval $prod_command$libraries$input_output_map
