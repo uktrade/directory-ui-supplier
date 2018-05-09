@@ -53,7 +53,7 @@ section {
 
   .container {
     margin: 0 auto;
-    padding: 0 60px;
+    padding: 0 30px;
   }
 
   .image-caption {
@@ -259,6 +259,14 @@ main.bidi {
   }
 }
 
+@media (min-width: 769px) {
+  #articles-container {
+    .article-text-container {
+      padding-right: 130px;
+    }
+  }
+}
+
 @media (max-width: 769px) {
   #hero {
     padding-top: 35px;
@@ -337,12 +345,15 @@ main.bidi {
     p {
       font-size: 19px;
     }
+    .service-card {
+      display: flex;
+    }
     .image-container {
-      float: left;
       margin-right: 15px;
     }
     img {
       margin-bottom: 0;
+      max-width: 119px;
     }
   }
 
