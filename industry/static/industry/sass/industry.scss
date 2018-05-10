@@ -1,11 +1,15 @@
 @import 'partials/reset';
 @import 'partials/base';
 @import 'components/breadcrumbs';
-@import 'components/articles-container';
+@import 'components/articles-section';
 
 $sand: #f5f2ed;
 $gray: #333333;
 $white:  #ffffff;
+
+#content {
+  padding-bottom: 0;  
+}
 
 #hero {
   height: 300px;
@@ -47,11 +51,12 @@ $white:  #ffffff;
     line-height: 1.39;
   }
 }
-#lede {
-  display: flex;
+#lede-section {
   padding: 60px;
   background-color: $sand;
-
+  .container {
+    display: flex;
+  }
   p {
     font-size: 24px;
     font-weight: 500;
@@ -78,7 +83,7 @@ $white:  #ffffff;
   }
 }
 
-#lede-columns {
+#lede-columns-section {
   padding: 60px 48px;
   position: relative;
   font-size: 19px;
@@ -126,7 +131,7 @@ $white:  #ffffff;
   }
 }
 
-main.bidi #lede-columns {
+main.bidi #lede-columns-section {
   div {
     img {
       left: 0;
@@ -134,7 +139,7 @@ main.bidi #lede-columns {
   }
 }
 
-#companies {
+#companies-section {
   padding: 60px;
   padding-top: 80px;
   background-color: $sand;
@@ -221,13 +226,8 @@ main.bidi #lede-columns {
   }
 }
 
-#content > .container {
-  max-width: 1320px;
-}
-
-
 @media (max-width: 769px) {
-  #hero {
+  #hero-section {
     height: 350px;
     .hero-teaser {
       padding: 15px;
@@ -242,8 +242,10 @@ main.bidi #lede-columns {
     }
   }
 
-  #lede {
-    display: block;
+  #lede-section {
+    .container {
+      display: block;
+    }
     padding: 30px;
     text-align: center;
     h2 {
@@ -265,14 +267,13 @@ main.bidi #lede-columns {
     }
   }
 
-  #lede-columns {
+  #lede-columns-section {
     padding: 30px;
     padding-left: 5px;
     padding-right: 5px;
     div {
       margin-left: 5px;
       margin-bottom: 30px;
-      padding-right: 0;
       img {
         left: -5px;
       }
@@ -293,7 +294,7 @@ main.bidi #lede-columns {
     }
   }
 
-  #companies {
+  #companies-section {
     padding: 20px;
     padding-top: 60px;
     margin-left: -15px;
@@ -354,7 +355,7 @@ main.bidi #lede-columns {
     }
   }
 
-  #articles-container {
+  #articles-section {
     margin-bottom: 30px;
     article {
       border-bottom: 1px solid $gray;

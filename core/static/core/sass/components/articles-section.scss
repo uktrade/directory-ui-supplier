@@ -1,7 +1,7 @@
 $gray: #333333;
 $gray-light: #e8e8e8;
 
-#articles-container {
+#articles-section {
   margin-top: 60px;
   margin-bottom: 60px;
   article {
@@ -45,16 +45,14 @@ $gray-light: #e8e8e8;
 }
 
 @media (max-width: 769px) {
-  #articles-container {
+  #articles-section {
     margin-bottom: 0;
-    .article-image-container {
-      float: none;
-    }
-  }
-  #articles-container {
     iframe,
     img {
       width: 100%;
+    }
+    .article-image-container {
+      float: none;
     }
   }
 }

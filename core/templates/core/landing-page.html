@@ -44,81 +44,87 @@
 </section>
 
 
-<section id="introduction" class="container">
-    <div class="grid-row">
-        <div class="proposition-container bidi-rtl">
-            {{ page.proposition_text|safe }}
-        </div>
-        <div class="button-container bidi-rtl">
-            <a href="{% url 'sector-list-cms-contact' %}" class="button">{{ page.call_to_action_text }}</a>
+<section id="introduction-section">
+    <div class="container">
+        <div class="grid-row">
+            <div class="proposition-container bidi-rtl">
+                {{ page.proposition_text|safe }}
+            </div>
+            <div class="button-container bidi-rtl">
+                <a href="{% url 'sector-list-cms-contact' %}" class="button">{{ page.call_to_action_text }}</a>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="industries-container" class="container bidi-rtl">
-    {{ page.industries_list_text|safe }}
-    {% for row in page.industries|grouper:3 %}
-        <div class="grid-row">
-            {% for item in row %}
-                <a href="{{ item.meta.url }}" class="column-one-third industry-card">
-                    <span>{{ item.breadcrumbs_label }}</span>
-                    <img src="{{ item.summary_image.url }}" />
-                    <div>
-                        {{ item.hero_text|first_paragraph|safe }}
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            {% endfor %}
-        </div>
-    {% endfor %}
-    <a class="button" href="{% url 'sector-list' %}">{{ page.industries_list_call_to_action_text }}</a>
+<section id="industries-section" class="bidi-rtl">
+    <div class="container">
+        {{ page.industries_list_text|safe }}
+        {% for row in page.industries|grouper:3 %}
+            <div class="grid-row">
+                {% for item in row %}
+                    <a href="{{ item.meta.url }}" class="column-one-third industry-card">
+                        <span>{{ item.breadcrumbs_label }}</span>
+                        <img src="{{ item.summary_image.url }}" />
+                        <div>
+                            {{ item.hero_text|first_paragraph|safe }}
+                        </div>
+                        <div class="clearfix"></div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <a class="button" href="{% url 'sector-list' %}">{{ page.industries_list_call_to_action_text }}</a>
+    </div>
 </section>
 
-<section id="services-container" class="container">
-    <div class="grid-row">
-        <div class="column-one-half bidi-rtl">
-            {{ page.services_list_text|safe }}
+<section id="services-section">
+    <div class="container">
+        <div class="grid-row">
+            <div class="column-one-half bidi-rtl">
+                {{ page.services_list_text|safe }}
+            </div>
+            <div class="clearfix"></div>
+            <div class="column-one-quarter service-card">
+                <div class="image-container">
+                    <img class="bidi-ltr" src="{{ page.services_column_two_icon.url}}" />
+                </div>
+                <div class="bidi-rtl"">
+                    {{ page.services_column_one|safe }}
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="column-one-quarter service-card">
+                <div class="image-container">
+                    <img class="bidi-ltr" src="{{ page.services_column_one_icon.url }}" />
+                </div>
+                <div class="bidi-rtl">
+                    {{ page.services_column_two|safe }}
+                </div>
+            </div>
+            <div class="column-one-quarter service-card">
+                <div class="image-container">
+                    <img class="bidi-ltr" src="{{ page.services_column_three_icon.url }}" />
+                </div>
+                <div class="bidi-rtl">
+                    {{ page.services_column_three|safe }}
+                </div>
+            </div>
+            <div class="column-one-quarter service-card">
+                <div class="image-container">
+                    <img class="bidi-ltr" src="{{ page.services_column_four_icon.url }}" />
+                </div>
+                <div class="bidi-rtl">
+                    {{ page.services_column_four|safe }}
+                </div>
+            </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
-        <div class="column-one-quarter service-card">
-            <div class="image-container">
-                <img class="bidi-ltr" src="{{ page.services_column_two_icon.url}}" />
-            </div>
-            <div class="bidi-rtl"">
-                {{ page.services_column_one|safe }}
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <div class="column-one-quarter service-card">
-            <div class="image-container">
-                <img class="bidi-ltr" src="{{ page.services_column_one_icon.url }}" />
-            </div>
-            <div class="bidi-rtl">
-                {{ page.services_column_two|safe }}
-            </div>
-        </div>
-        <div class="column-one-quarter service-card">
-            <div class="image-container">
-                <img class="bidi-ltr" src="{{ page.services_column_three_icon.url }}" />
-            </div>
-            <div class="bidi-rtl">
-                {{ page.services_column_three|safe }}
-            </div>
-        </div>
-        <div class="column-one-quarter service-card">
-            <div class="image-container">
-                <img class="bidi-ltr" src="{{ page.services_column_four_icon.url }}" />
-            </div>
-            <div class="bidi-rtl">
-                {{ page.services_column_four|safe }}
-            </div>
-        </div>
-        <div class="clearfix"></div>
     </div>
 </section>
 
 {% if page.article_summaries %}
-<section id="articles-container">
+<section id="articles-section">
     <div class="container">
         {% for article in page.article_summaries %}
             {% include "industry/sector-article-summary.html" with article=article %}

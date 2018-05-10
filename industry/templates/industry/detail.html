@@ -32,15 +32,17 @@
     </div>
 </div>
 
-<div class="container">
-    <section id="lede" class="grid-row">
+<section id="lede-section" class="grid-row container">
+    <div class="container">
         <h2 class="heading-large bidi-rtl">{{ page.introduction_text }}</h2>
         <a href="{% url 'sector-detail-cms-contact' slug=page.meta.slug %}" class="button button-primary bidi-rtl">
             {{ page.introduction_call_to_action_button_text }}
         </a>
-    </section>
+    </div>
+</section>
 
-    <section id="lede-columns">
+<section id="lede-columns-section">
+    <div class="container">
         <h2 class="heading-large">{{ page.introduction_title }}</h2>
         <div class="grid-row">
             <div class="column-one-third">
@@ -56,9 +58,11 @@
                 <div class="bidi-rtl">{{ page.introduction_column_three_text|add_href_target:request|safe }}</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="companies">
+<section id="companies-section">
+    <div class="container">
         <div class="bidi-rtl" id="companies-list-text">{{ page.company_list_text|add_href_target:request|safe }}</div>
         <div class="grid-row">
             <div class="column-one-half">
@@ -91,15 +95,19 @@
                 <a href="{% search_url sector_value=page.search_filter_sector %}" class="button bidi-rtl">{{ page.company_list_call_to_action_text }} </a>
             </div>
         {% endif %}
-    </section>
+    </div>
+</section>
 
-    <section id="articles-container" class="container">
-        {% for article in page.article_summaries %}
-            {% include "industry/sector-article-summary.html" with article=article %}
-        {% endfor %}
+{% if page.article_summaries %}
+    <section id="articles-section">
+        <div class="container">
+            {% for article in page.article_summaries %}
+                {% include "industry/sector-article-summary.html" with article=article %}
+            {% endfor %}
+        </div>
     </section>
+{% endif %}
 
-</div>
 {% endblock content %}
 
 {% block feedback_reporter %}{% endblock %}
