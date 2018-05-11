@@ -185,8 +185,14 @@ class IndustryLandingPageCMSView(
         return handle_cms_response(response)
 
     def get_context_data(self, *args, **kwargs):
+        page = self.get_cms_page()
+        showcase_industries = [
+            industry for industry in page['industries']
+            if industry['show_on_industries_showcase_page']
+        ]
         return super().get_context_data(
-            page=self.get_cms_page(),
+            page=page,
+            showcase_industries=showcase_industries,
             *args,
             **kwargs
         )

@@ -51,7 +51,12 @@ def industry_detail_data(breadcrumbs):
 def industry_list_data(breadcrumbs):
     return {
         'title': 'the page',
-        'industries': [{'title': 'good 1'}],
+        'industries': [
+            {'title': 'one', 'show_on_industries_showcase_page': False},
+            {'title': 'two', 'show_on_industries_showcase_page': False},
+            {'title': 'three', 'show_on_industries_showcase_page': True},
+            {'title': 'four', 'show_on_industries_showcase_page': True}
+        ],
         'breadcrumbs': breadcrumbs,
         'meta': {
             'languages': ['en-gb'],
@@ -237,6 +242,10 @@ def test_industries_page_context(
 
     assert response.status_code == 200
     assert response.context_data['page'] == industry_list_data
+    assert response.context_data['showcase_industries'] == [
+        industry_list_data['industries'][2],
+        industry_list_data['industries'][3],
+    ]
 
 
 @patch('core.helpers.cms_client.find_a_supplier.get_industries_landing_page')

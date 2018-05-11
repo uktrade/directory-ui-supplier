@@ -42,7 +42,7 @@
 </div>
 
 <div class="container bidi-rtl" id="industry-pages-container">
-    {% for row in page.industries|slice:":9"|grouper:3 %}
+    {% for row in showcase_industries|grouper:3 %}
         <section class="grid-row">
             {% for item in row %}
                 <a href="{{ item.meta.url }}" class="column-one-third">
