@@ -1,6 +1,6 @@
 @import 'partials/reset';
 @import 'partials/base';
-@import 'components/articles-container';
+@import 'components/articles-section';
 
 $gray: #333333;
 $gray-light: #767676;
@@ -9,9 +9,13 @@ $white: #ffffff;
 $blue: #006ccc;
 $sand: #f5f2ed;
 
+#content {
+  padding-bottom: 0;
+}
+
 #search-area,
-#industries-container,
-#services-container {
+#industries-section,
+#services-section {
   .button {
     background-color: $blue;
     line-height: 30px;
@@ -134,7 +138,7 @@ main.bidi {
   }
 }
 
-#introduction {
+#introduction-section {
   .grid-row {
     margin: 0;
     display: flex;
@@ -173,7 +177,7 @@ main.bidi {
 }
 
 
-#industries-container {
+#industries-section {
   background-color: $sand;
   padding-top: 60px;
   padding-bottom: 60px;
@@ -221,7 +225,7 @@ main.bidi {
 }
 
 
-#services-container {
+#services-section {
   padding-top: 60px;
 
   h2 {
@@ -250,17 +254,17 @@ main.bidi {
   }
 }
 
-#articles-container {
-  margin-top: 0;
+#articles-section {
+  margin: 0;
+  background-color: $sand;
   .container {
     padding-top: 60px;
     padding-left: 40px;
-    background-color: $sand;
   }
 }
 
 @media (min-width: 769px) {
-  #articles-container {
+  #articles-section {
     .article-text-container {
       padding-right: 130px;
     }
@@ -305,7 +309,7 @@ main.bidi {
       }
     }
   }
-  #introduction {
+  #introduction-section {
     .button {
       width: 100%;
       margin-top: 30px;
@@ -320,7 +324,7 @@ main.bidi {
       display: inline-block;
     }
   }
-  #industries-container {
+  #industries-section {
     padding-top: 30px;
     padding-bottom: 30px;
     margin-top: 30px;
@@ -339,7 +343,7 @@ main.bidi {
       }
     }
   }
-  #services-container {
+  #services-section {
     padding: 30px;
     padding-bottom: 0;
     p {
@@ -357,7 +361,7 @@ main.bidi {
     }
   }
 
-  #articles-container {
+  #articles-section {
     .container {
       padding: 30px;
     }
