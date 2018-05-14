@@ -76,7 +76,8 @@ class AnonymousSubscribeFormView(FormView):
 
     def form_valid(self, form):
         data = forms.serialize_anonymous_subscriber_forms(form.cleaned_data)
-        api_client.buyer.send_form(data)
+        response = api_client.buyer.send_form(data)
+        response.raise_for_status()
         return TemplateResponse(self.request, self.success_template)
 
 

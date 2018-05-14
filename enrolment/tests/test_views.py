@@ -2,6 +2,7 @@ import http
 from unittest.mock import patch, Mock
 
 import pytest
+import requests
 
 from django.core.urlresolvers import reverse
 
@@ -198,6 +199,17 @@ def test_subscribe_view_submit(
     mock_send_form.assert_called_once_with(
         forms.serialize_anonymous_subscriber_forms(buyer_form_data)
     )
+
+
+@pytest.mark.django_db
+@patch.object(views.api_client.buyer, 'send_form')
+def test_subscribe_view_submit_non_200(
+    mock_send_form, buyer_request
+):
+    mock_send_form.return_value = create_response(status_code=401)
+
+    with pytest.raises(requests.exceptions.HTTPError):
+        AnonymousSubscribeFormView.as_view()(buyer_request)
 
 
 @pytest.mark.django_db
