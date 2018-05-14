@@ -38,11 +38,11 @@
             {{ page.body|add_export_elements_classes|add_anchors|add_href_target:request|safe }}
             <br>
             <br>
-            <p>Back to <a class="link" href="{% url 'index' %}">home</a></p>
+            <p><a class="link" href="{% url 'index' %}">{{ page.back_to_home_link_text }}</a></p>
             <br>
             <br>
             <div>
-                {% include 'directory_components/social_share_links.html' %}
+            {% include 'directory_components/social_share_links.html' with title=page.social_share_title %}
             </div>
         </div>
         <div class="column-one-quarter" id="contact-area">
