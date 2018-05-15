@@ -272,17 +272,15 @@ main.bidi {
 }
 
 @media (max-width: 769px) {
+  h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
   #hero {
     padding-top: 35px;
     margin-bottom: 30px;
-
     .container {
       padding: 0 60px;
-    }
-
-    h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
     }
     p {
       font-size: 15px;
