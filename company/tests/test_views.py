@@ -454,7 +454,6 @@ def test_contact_company_view_feature_submit_failure(
 ):
     settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = True
     mock_send_email.return_value = api_response_400
-    view = views.ContactCompanyView
     url = reverse(
         'contact-company',
         kwargs={
@@ -462,10 +461,8 @@ def test_contact_company_view_feature_submit_failure(
         },
     )
 
-    response = client.post(url, valid_contact_company_data)
-
-    assert response.status_code == http.client.OK
-    assert response.template_name == view.failure_template_name
+    with pytest.raises(requests.exceptions.HTTPError):
+        client.post(url, valid_contact_company_data)
 
 
 @patch.object(views.api_client.company, 'retrieve_public_profile', Mock)
