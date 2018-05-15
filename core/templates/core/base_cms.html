@@ -8,6 +8,11 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+        @media (max-width: 769px) {
+            #hero {
+                background-size: 600px 350px;
+            }
+        }
         {% if not page.hero_image and not page.mobile_hero_image %}
             #hero {
                 background-image: url({{ page.hero_image.url }});
