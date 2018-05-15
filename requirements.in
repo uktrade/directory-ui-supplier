@@ -14,7 +14,7 @@ zenpy==1.1.10
 directory-cms-client==1.0.0
 directory-api-client==9.16.0
 directory_validators==4.5.0
-directory_constants==6.6.0
+directory_constants==6.7.0
 directory_components==1.9.0
 export-elements==0.10.2
 beautifulsoup4==4.6.0
