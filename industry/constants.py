@@ -1,37 +1,40 @@
+from django.utils.translation import gettext_lazy as _
+
+
 MARKETING_SOURCES = (
     (
         'Print- magazines, newspaper or trade press',
-        'Magazines, newspaper or trade press',
+        _('Magazines, newspaper or trade press'),
     ),
     (
         'Print - posters or billboards',
-        'Posters or billboard'
+        _('Posters or billboard')
     ),
     (
         'Digital - outdoor advertising digital screens',
-        'Outdoor advertising digital screen'
+        _('Outdoor advertising digital screen')
     ),
     (
         'Digital - advertisement / banner',
-        'Website advertisement'
+        _('Website advertisement')
     ),
     (
         'Digital - articles',
-        'Website article'
+        _('Website article')
     ),
     (
         (
             'Digital - social networking site '
             '(e.g. LinkedIn, Xing!, Twitter, Facebook, YouTube)'
         ),
-        'Social media website'
+        _('Social media website')
     ),
     (
         'At an event',
-        'At an event',
+        _('At an event'),
     ),
     (
         '',
-        'Other'
+        _('Other')
     ),
 )
