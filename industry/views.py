@@ -63,6 +63,24 @@ class BaseIndustryContactView(FormView):
     template_name_success = 'industry/contact-success.html'
     form_class = forms.ContactForm
 
+    def get_form_kwargs(self, *args, **kwargs):
+        industry_choices = [
+            (item['meta']['slug'], item['breadcrumbs_label'])
+            for item in self.get_contact_page()['industry_options']
+        ]
+        return {
+            **super().get_form_kwargs(*args, **kwargs),
+            'industry_choices': industry_choices,
+        }
+
+    @functools.lru_cache()
+    def get_contact_page(self):
+        response = cms_client.find_a_supplier.get_industry_contact_page(
+            language_code=translation.get_language(),
+            draft_token=self.request.GET.get('draft_token'),
+        )
+        return handle_cms_response(response)
+
     def form_valid(self, form):
         zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
         self.create_zendesk_ticket(form.cleaned_data, zendesk_user)
@@ -110,17 +128,8 @@ class IndustryDetailContactCMSView(
     def get_initial(self):
         initial = super().get_initial()
         page = self.get_industry_page()
-        if page['search_filter_sector']:
-            initial['sector'] = page['search_filter_sector'][0]
+        initial['sector'] = page['meta']['slug']
         return initial
-
-    @functools.lru_cache()
-    def get_contact_page(self):
-        response = cms_client.find_a_supplier.get_industry_contact_page(
-            language_code=translation.get_language(),
-            draft_token=self.request.GET.get('draft_token'),
-        )
-        return handle_cms_response(response)
 
     @functools.lru_cache()
     def get_industry_page(self):
@@ -143,11 +152,7 @@ class IndustryLandingPageContactCMSView(
         )
 
     def get_cms_page(self):
-        response = cms_client.find_a_supplier.get_industry_contact_page(
-            language_code=translation.get_language(),
-            draft_token=self.request.GET.get('draft_token'),
-        )
-        return handle_cms_response(response)
+        return self.get_contact_page()
 
 
 class IndustryArticleCMSView(
