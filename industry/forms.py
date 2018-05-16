@@ -18,13 +18,14 @@ TERMS_URL = urljoin(
 
 class ContactForm(forms.Form):
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, industry_choices, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.fields['terms_agreed'].widget.label = mark_safe(ugettext(
             'I agree to the <a href="{url}" target="_blank">'
             'great.gov.uk terms and conditions</a>').format(url=TERMS_URL)
         )
+        self.fields['sector'].choices = industry_choices
 
     full_name = fields.CharField(
         label=_('Full name'),
@@ -35,7 +36,7 @@ class ContactForm(forms.Form):
     )
     sector = fields.ChoiceField(
         label=_('Your industry'),
-        choices=(('', ''),) + choices.INDUSTRIES,
+        choices=[],  # set in __init__
     )
     organisation_name = fields.CharField(
         label=_('Your organisation name'),
