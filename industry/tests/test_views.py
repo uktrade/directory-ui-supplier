@@ -22,6 +22,16 @@ cms_urls = details_cms_urls + list_cms_urls
 def contact_page_data(breadcrumbs):
     return {
         'breadcrumbs': breadcrumbs,
+        'industry_options': [
+            {
+                'breadcrumbs_label': 'Agriculture',
+                'meta': {'slug': 'agriculture'},
+            },
+            {
+                'breadcrumbs_label': 'Technology',
+                'meta': {'slug': 'industry'},
+            },
+        ],
         'meta': {
             'languages': ['en-gb'],
             'slug': 'contact-us',
@@ -38,6 +48,7 @@ def industry_detail_data(breadcrumbs):
         'search_filter_text': 'great',
         'search_filter_showcase_only': False,
         'breadcrumbs': breadcrumbs,
+        'breadcrumbs_label': 'Technology',
         'meta': {
             'languages': ['en-gb'],
             'slug': 'industry',
@@ -273,7 +284,7 @@ def test_contact_form_submit_with_comment(
     data = {
         'full_name': 'Jeff',
         'email_address': 'jeff@example.com',
-        'sector': 'AEROSPACE',
+        'sector': 'industry',
         'organisation_name': 'My name is Jeff',
         'organisation_size': '1-10',
         'country': 'United Kingdom',
@@ -295,7 +306,7 @@ def test_contact_form_submit_with_comment(
 
     assert mock_ticket_create.call_count == 1
     ticket = mock_ticket_create.call_args[0][0]
-    assert ticket.subject == 'AEROSPACE contact form submitted.'
+    assert ticket.subject == 'industry contact form submitted.'
     assert ticket.submitter_id == 999
     assert ticket.requester_id == 999
 
@@ -306,7 +317,7 @@ def test_contact_form_submit_with_comment(
         'Full Name: Jeff\n'
         'Organisation Name: My name is Jeff\n'
         'Organisation Size: 1-10\n'
-        'Sector: AEROSPACE\n'
+        'Sector: industry\n'
         'Source: Print - posters or billboards\n'
         'Source Other: \n'
         'Terms Agreed: True'
@@ -319,7 +330,7 @@ def test_contact_form_prefills_sector(client, industry_detail_data):
     response = client.get(url)
 
     assert response.context_data['form'].initial['sector'] == (
-        industry_detail_data['search_filter_sector'][0]
+        industry_detail_data['meta']['slug']
     )
 
 
@@ -340,7 +351,7 @@ def test_industry_list_contact_form_submit_with_comment(
     data = {
         'full_name': 'Jeff',
         'email_address': 'jeff@example.com',
-        'sector': 'AEROSPACE',
+        'sector': 'industry',
         'organisation_name': 'My name is Jeff',
         'organisation_size': '1-10',
         'country': 'United Kingdom',
@@ -362,7 +373,7 @@ def test_industry_list_contact_form_submit_with_comment(
 
     assert mock_ticket_create.call_count == 1
     ticket = mock_ticket_create.call_args[0][0]
-    assert ticket.subject == 'AEROSPACE contact form submitted.'
+    assert ticket.subject == 'industry contact form submitted.'
     assert ticket.submitter_id == 999
     assert ticket.requester_id == 999
 
@@ -373,7 +384,7 @@ def test_industry_list_contact_form_submit_with_comment(
         'Full Name: Jeff\n'
         'Organisation Name: My name is Jeff\n'
         'Organisation Size: 1-10\n'
-        'Sector: AEROSPACE\n'
+        'Sector: industry\n'
         'Source: Print - posters or billboards\n'
         'Source Other: \n'
         'Terms Agreed: True'
