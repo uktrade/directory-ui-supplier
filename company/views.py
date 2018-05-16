@@ -150,7 +150,6 @@ class CaseStudyDetailView(TemplateView):
 class ContactCompanyView(FormView):
     template_name = 'company-contact-form.html'
     success_template_name = 'company-contact-success.html'
-    failure_template_name = 'company-contact-error.html'
     form_class = forms.ContactCompanyForm
 
     def form_valid(self, form):
@@ -159,12 +158,11 @@ class ContactCompanyView(FormView):
             company_number=self.kwargs['company_number'],
         )
         response = api_client.company.send_email(data)
-        if response.ok:
-            template = self.success_template_name
-        else:
-            template = self.failure_template_name
+        response.raise_for_status()
         context = self.get_context_data()
-        return TemplateResponse(self.request, template, context)
+        return TemplateResponse(
+            self.request, self.success_template_name, context
+        )
 
     @staticmethod
     def serialize_form_data(cleaned_data, company_number):
