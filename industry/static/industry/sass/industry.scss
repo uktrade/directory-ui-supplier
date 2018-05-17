@@ -145,7 +145,7 @@ main.bidi #lede-columns-section {
   background-color: $sand;
 
   #companies-list-text {
-    margin-bottom: 45px;
+    margin-bottom: 15px;
     h2 {
       font-size: 36px;
       font-weight: bold;
@@ -159,7 +159,7 @@ main.bidi #lede-columns-section {
     }
   }
   form {
-    margin-bottom: 45px!important;
+    margin-bottom: 30px;
     position: relative;
     input {
       width: 100%;
@@ -299,9 +299,6 @@ main.bidi #lede-columns-section {
     padding-top: 60px;
     margin-left: -15px;
     margin-right: -15px;
-    .button {
-      width: auto;
-    }
     h2 {
       font-size: 24px;
       font-weight: bold;
