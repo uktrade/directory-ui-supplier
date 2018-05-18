@@ -76,6 +76,16 @@ def industry_list_data(breadcrumbs):
 
 
 @pytest.fixture
+def industry_list_no_showcase_data(industry_list_data):
+    data = industry_list_data
+    data['industries'] = [
+        {'title': i, 'show_on_industries_showcase_page': False}
+        for i in range(19)
+    ]
+    return data
+
+
+@pytest.fixture
 def industry_article_data(breadcrumbs):
     return {
         'title': 'Hello world',
@@ -224,6 +234,26 @@ def test_industries_page_context(
 
 
 @patch('core.helpers.cms_client.lookup_by_slug')
+@patch('core.helpers.cms_client.find_a_supplier.get_industries_landing_page')
+def test_industries_page_context_no_showcase_industries(
+    mock_get_industries_landing_page, settings, client,
+    industry_list_no_showcase_data
+):
+    settings.FEATURE_CMS_ENABLED = True
+    mock_get_industries_landing_page.return_value = create_response(
+        json_payload=industry_list_no_showcase_data,
+    )
+
+    response = client.get(reverse('sector-list'))
+
+    assert response.status_code == 200
+    assert response.context_data['page'] == industry_list_no_showcase_data
+    assert response.context_data['showcase_industries'] == (
+        industry_list_no_showcase_data['industries'][:9]
+    )
+
+
+@patch('core.helpers.cms_client.find_a_supplier.get_industries_landing_page')
 def test_industries_page_not_found(
     mock_get_industries_landing_page, settings, client
 ):

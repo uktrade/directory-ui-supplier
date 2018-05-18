@@ -55,7 +55,7 @@
 
     <h3 class="heading-medium">{{ page.more_industries_title }}</h3>
     <ul>
-    {% for item in page.industries|slice:"9:" %}
+    {% for item in page.industries %}
         <li><a class="link" href="{{ item.meta.url }}">{{ item.breadcrumbs_label }}</a></li>
     {% endfor %}
     </ul>
