@@ -1,6 +1,3 @@
-import pytest
-
-from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
 
 from core import forms

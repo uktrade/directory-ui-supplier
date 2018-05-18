@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     "raven.contrib.django.raven_compat",
     "django.contrib.sessions",
     "django.contrib.sitemaps",
-    "ui",
     "enrolment",
     "company",
     "core",
@@ -57,15 +56,15 @@ INSTALLED_APPS = [
 MIDDLEWARE_CLASSES = [
     'core.middleware.MaintenanceModeMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'ui.middleware.LocaleQuerystringMiddleware',
-    'ui.middleware.PersistLocaleMiddleware',
-    'ui.middleware.ForceDefaultLocale',
+    'core.middleware.LocaleQuerystringMiddleware',
+    'core.middleware.PersistLocaleMiddleware',
+    'core.middleware.ForceDefaultLocale',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
 
-ROOT_URLCONF = 'ui.urls'
+ROOT_URLCONF = 'conf.urls'
 
 TEMPLATES = [
     {
@@ -77,9 +76,9 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.template.context_processors.i18n',
-                'ui.context_processors.feature_flags',
-                'ui.context_processors.subscribe_form',
-                'ui.context_processors.lead_generation_form',
+                'core.context_processors.feature_flags',
+                'core.context_processors.subscribe_form',
+                'core.context_processors.lead_generation_form',
                 'directory_components.context_processors.analytics',
                 'directory_components.context_processors.urls_processor',
 
@@ -88,7 +87,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ui.wsgi.application'
+WSGI_APPLICATION = 'conf.wsgi.application'
 
 
 # # Database
@@ -241,7 +240,7 @@ RAVEN_CONFIG = {
     "dsn": os.getenv("SENTRY_DSN"),
     "processors": (
         'raven.processors.SanitizePasswordsProcessor',
-        'ui.sentry_processors.SanitizeEmailMessagesProcessor',
+        'core.sentry_processors.SanitizeEmailMessagesProcessor',
     )
 }
 

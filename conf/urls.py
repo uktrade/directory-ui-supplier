@@ -8,11 +8,11 @@ import core.views
 import company.views
 import industry.views
 import notifications.views
-import ui.sitemaps
+import conf.sitemaps
 
 sitemaps = {
-    'static': ui.sitemaps.StaticViewSitemap,
-    'industries': ui.sitemaps.SectorLandingPageSitemap,
+    'static': conf.sitemaps.StaticViewSitemap,
+    'industries': conf.sitemaps.SectorLandingPageSitemap,
 }
 
 urlpatterns = [

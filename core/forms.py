@@ -1,5 +1,6 @@
 from captcha.fields import ReCaptchaField
 
+from django.conf import settings
 from django.forms import Textarea
 from django.forms import Select
 from django.utils import translation
@@ -31,7 +32,7 @@ class LanguageForm(forms.Form):
         choices=[]  # set by __init__
     )
 
-    def __init__(self, language_choices, *args, **kwargs):
+    def __init__(self, language_choices=settings.LANGUAGES, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['lang'].choices = language_choices
 

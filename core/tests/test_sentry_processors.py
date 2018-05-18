@@ -2,7 +2,7 @@ from unittest.mock import Mock
 
 import raven
 
-from ui import sentry_processors
+from core import sentry_processors
 
 
 def get_stack_trace_data_real(data):

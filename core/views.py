@@ -63,19 +63,12 @@ class RedirectToCMSIndustryView(RedirectView):
 
 
 class LeadGenerationFormView(
-    mixins.ConditionalEnableTranslationsMixin, FormView
+    mixins.EnableTranslationsMixin, FormView
 ):
     success_template = 'lead-generation-success.html'
     template_name = 'lead-generation.html'
     template_name_bidi = 'bidi/lead-generation.html'
     form_class = forms.LeadGenerationForm
-
-    @property
-    def translations_enabled(self):
-        return (
-            self.request.LANGUAGE_CODE not in
-            settings.DISABLED_LANGUAGES_INDUSTRIES_PAGE
-        )
 
     def get_or_create_zendesk_user(self, cleaned_data):
         zendesk_user = ZendeskUser(
