@@ -26,7 +26,7 @@ class ConditionalEnableTranslationsMixin:
     language_form_class = forms.LanguageForm
 
     def __init__(self, *args, **kwargs):
-        dependency = 'ui.middleware.ForceDefaultLocale'
+        dependency = 'core.middleware.ForceDefaultLocale'
         assert dependency in settings.MIDDLEWARE_CLASSES
         super().__init__(*args, **kwargs)
 

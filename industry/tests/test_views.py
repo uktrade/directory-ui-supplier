@@ -234,13 +234,12 @@ def test_industries_page_context(
 
 
 @patch('core.helpers.cms_client.lookup_by_slug')
-@patch('core.helpers.cms_client.find_a_supplier.get_industries_landing_page')
 def test_industries_page_context_no_showcase_industries(
-    mock_get_industries_landing_page, settings, client,
-    industry_list_no_showcase_data
+    mock_lookup_by_slug, settings, client, industry_list_no_showcase_data
 ):
     settings.FEATURE_CMS_ENABLED = True
-    mock_get_industries_landing_page.return_value = create_response(
+    mock_lookup_by_slug.side_effect = None
+    mock_lookup_by_slug.return_value = create_response(
         json_payload=industry_list_no_showcase_data,
     )
 
@@ -253,13 +252,11 @@ def test_industries_page_context_no_showcase_industries(
     )
 
 
-@patch('core.helpers.cms_client.find_a_supplier.get_industries_landing_page')
+@patch('core.helpers.cms_client.lookup_by_slug')
 def test_industries_page_not_found(
-    mock_get_industries_landing_page, settings, client
+    mock_lookup_by_slug, settings, client
 ):
-    mock_get_industries_landing_page.return_value = create_response(
-        status_code=404
-    )
+    mock_lookup_by_slug.return_value = create_response(status_code=404)
 
     response = client.get(reverse('sector-list'))
 

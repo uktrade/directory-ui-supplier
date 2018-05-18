@@ -8,7 +8,7 @@ from core import mixins
 
 
 @pytest.mark.parametrize('method,expected', (
-    ('get', '"632887a7892be73e5780770a1d80788b"'),
+    ('get', '"5c4183c52a1ada6c0953ea85c8e42dad"'),
     ('post', None),
     ('patch', None),
     ('put', None),
