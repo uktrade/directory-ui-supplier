@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 
-from ui import helpers
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -49,7 +47,6 @@ INSTALLED_APPS = [
     "industry",
     "formtools",
     "notifications",
-    "exportopportunity",
     "directory_constants",
     "captcha",
     "sorl.thumbnail",
@@ -117,92 +114,29 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-# languages that are disabled across all pages
-DISABLED_LANGUAGES = os.getenv('DISABLED_LANGUAGES', '').split(',')
 
-# of the languages that are not disabled, disable these on specific page
-DISABLED_LANGUAGES_INDUSTRIES_PAGE = (
-    os.getenv('DISABLED_LANGUAGES_INDUSTRIES_PAGE', '').split(',')
-)
-DISABLED_LANGUAGES_SUBMIT_OPPORTUNITY_PAGES = (
-    os.getenv('DISABLED_LANGUAGES_SUBMIT_OPPORTUNITY_PAGES', '').split(',')
-)
-
-FOOD_IS_GREAT_ENABLED_LANGUAGES = (
-    os.getenv('FOOD_IS_GREAT_ENABLED_LANGUAGES', '').split(',')
-)
-FOOD_IS_GREAT_SEARCH_KEYWORD = os.getenv('FOOD_IS_GREAT_SEARCH_KEYWORD', '')
-
-LEGAL_IS_GREAT_ENABLED_LANGUAGES = (
-    os.getenv('LEGAL_IS_GREAT_ENABLED_LANGUAGES', '').split(',')
-)
-LEGAL_IS_GREAT_SEARCH_KEYWORD = os.getenv(
-    'LEGAL_IS_GREAT_SEARCH_KEYWORD', 'legal'
-)
 
 # https://github.com/django/django/blob/master/django/conf/locale/__init__.py
-LANGUAGES = helpers.remove_disabled_languages(
-    disabled_languages=DISABLED_LANGUAGES,
-    languages=[
-        ('en-gb', 'English'),               # English
-        ('de', 'Deutsch'),                  # German
-        ('ja', '日本語'),                    # Japanese
-        ('zh-hans', '简体中文'),             # Simplified Chinese
-        ('fr', 'Français'),                 # French
-        ('es', 'español'),                  # Spanish
-        ('pt', 'Português'),                # Portuguese
-        ('pt-br', 'Português Brasileiro'),  # Portuguese (Brazilian)
-        ('ar', 'العربيّة'),                 # Arabic
-        ('ru', 'Русский'),                  # Russian
-    ]
-)
-
-LANGUAGES_INDUSTRIY_PAGES = helpers.remove_disabled_languages(
-    disabled_languages=DISABLED_LANGUAGES_INDUSTRIES_PAGE,
-    languages=LANGUAGES,
-)
-LANGUAGES_LEAD_GENERATION_PAGES = helpers.remove_disabled_languages(
-    disabled_languages=DISABLED_LANGUAGES_SUBMIT_OPPORTUNITY_PAGES,
-    languages=LANGUAGES,
-)
+LANGUAGES = [
+    ('en-gb', 'English'),               # English
+    ('de', 'Deutsch'),                  # German
+    ('ja', '日本語'),                    # Japanese
+    ('zh-hans', '简体中文'),             # Simplified Chinese
+    ('fr', 'Français'),                 # French
+    ('es', 'español'),                  # Spanish
+    ('pt', 'Português'),                # Portuguese
+    ('pt-br', 'Português Brasileiro'),  # Portuguese (Brazilian)
+    ('ar', 'العربيّة'),                 # Arabic
+    ('ru', 'Русский'),                  # Russian
+]
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
-FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED = (
-    os.getenv('FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED') == 'true'
-)
-FEATURE_ADVANCED_MANUFACTURING_ENABLED = (
-    os.getenv('FEATURE_ADVANCED_MANUFACTURING_ENABLED') == 'true'
-)
-FEATURE_SPORTS_INFRASTRUCTURE_ENABLED = (
-    os.getenv('FEATURE_SPORTS_INFRASTRUCTURE_ENABLED') == 'true'
-)
-FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED = (
-    os.getenv('FEATURE_EXPORT_OPPORTUNITY_LEAD_GENERATION_ENABLED') == 'true'
-)
-FEATURE_FOOD_CAMPAIGN_ENABLED = (
-    os.getenv('FEATURE_FOOD_CAMPAIGN_ENABLED') == 'true'
-)
-FEATURE_LEGAL_CAMPAIGN_ENABLED = (
-    os.getenv('FEATURE_LEGAL_CAMPAIGN_ENABLED') == 'true'
-)
-FEATURE_CMS_ENABLED = os.getenv('FEATURE_CMS_ENABLED') == 'true'
 
 FEATURE_MAINTENANCE_MODE_ENABLED = os.getenv(
     'FEATURE_MAINTENANCE_MODE_ENABLED'
 ) == 'true'
-
-FEATURE_CURATED_COMPANIES_ENABLED = os.getenv(
-    'FEATURE_CURATED_COMPANIES_ENABLED'
-) == 'true'
-
-FOOD_CAMPAIGN_DISABLED_COUNTRIES = os.getenv(
-    'FOOD_CAMPAIGN_DISABLED_COUNTRIES', ''
-).split(',')
-LEGAL_CAMPAIGN_DISABLED_COUNTRIES = os.getenv(
-    'LEGAL_CAMPAIGN_DISABLED_COUNTRIES', ''
-).split(',')
 
 # needed only for dev local storage
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
@@ -323,8 +257,6 @@ API_CLIENT_CLASSES = {
 }
 API_CLIENT_CLASS_NAME = os.getenv('API_CLIENT_CLASS_NAME', 'default')
 API_CLIENT_CLASS = API_CLIENT_CLASSES[API_CLIENT_CLASS_NAME]
-
-SECTOR_LINKS = helpers.parse_sector_links(os.environ['SECTOR_LINKS_JSON'])
 
 # Google Recaptcha
 RECAPTCHA_PUBLIC_KEY = os.environ['RECAPTCHA_PUBLIC_KEY']

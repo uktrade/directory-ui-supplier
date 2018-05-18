@@ -1,14 +1,11 @@
 from django.conf import settings
 
-from enrolment.forms import AnonymousSubscribeForm, LeadGenerationForm
+from core.forms import AnonymousSubscribeForm, LeadGenerationForm
 
 
 def feature_flags(request):
     return {
         'features': {
-            'FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED': (
-                settings.FEATURE_MORE_INDUSTRIES_BUTTON_ENABLED
-            ),
         }
     }
 

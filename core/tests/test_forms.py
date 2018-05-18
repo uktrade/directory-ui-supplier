@@ -1,6 +1,6 @@
 from django.forms.fields import Field
 
-from enrolment import forms
+from core import forms
 
 
 REQUIRED_MESSAGE = Field.default_error_messages['required']

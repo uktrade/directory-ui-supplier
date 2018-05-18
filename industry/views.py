@@ -1,7 +1,7 @@
 import functools
 
 from directory_components.helpers import SocialLinkBuilder
-from industry import forms
+from directory_cms_client import constants as cms_constants
 from zenpy import Zenpy
 from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
@@ -16,7 +16,8 @@ from core.views import CMSFeatureFlagMixin
 from core.mixins import (
     ActiveViewNameMixin, GetCMSPageMixin, CMSLanguageSwitcherMixin
 )
-from exportopportunity.helpers import get_showcase_companies
+from industry import forms
+from industry.helpers import get_showcase_companies
 
 
 ZENPY_CREDENTIALS = {
@@ -75,7 +76,8 @@ class BaseIndustryContactView(FormView):
 
     @functools.lru_cache()
     def get_contact_page(self):
-        response = cms_client.find_a_supplier.get_industry_contact_page(
+        response = cms_client.lookup_by_slug(
+            slug=cms_constants.FIND_A_SUPPLIER_INDUSTRY_CONTACT_SLUG,
             language_code=translation.get_language(),
             draft_token=self.request.GET.get('draft_token'),
         )
@@ -183,7 +185,8 @@ class IndustryLandingPageCMSView(
     template_name = 'industry/list.html'
 
     def get_cms_page(self):
-        response = cms_client.find_a_supplier.get_industries_landing_page(
+        response = cms_client.lookup_by_slug(
+            slug=cms_constants.FIND_A_SUPPLIER_INDUSTRY_LANDING_SLUG,
             language_code=translation.get_language(),
             draft_token=self.request.GET.get('draft_token'),
         )

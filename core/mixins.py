@@ -4,7 +4,6 @@ from django.utils import translation
 from django.utils.cache import set_response_etag
 
 from core import forms, helpers
-from enrolment.forms import LanguageForm, get_language_form_initial_data
 
 
 class IncorrectSlug(Exception):
@@ -24,7 +23,7 @@ class SetEtagMixin:
 class ConditionalEnableTranslationsMixin:
     translations_enabled = True
     template_name_bidi = None
-    language_form_class = LanguageForm
+    language_form_class = forms.LanguageForm
 
     def __init__(self, *args, **kwargs):
         dependency = 'ui.middleware.ForceDefaultLocale'
@@ -49,7 +48,7 @@ class ConditionalEnableTranslationsMixin:
 
     def get_language_form_kwargs(self, **kwargs):
         return {
-            'initial': get_language_form_initial_data(),
+            'initial': forms.get_language_form_initial_data(),
             **kwargs,
         }
 
