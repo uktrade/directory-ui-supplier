@@ -88,7 +88,9 @@
                         </div>
                         <dl class="bidi-rtl">
                             <dt><a href="{{ company.public_profile_url }}" class="link">{{ company.name }}</a></dt>
-                            <dd>{{ company.summary|default:company.description|truncatechars:150 }}</dd>
+                            {% with company.summary|default:company.description as summary %}
+                                <dd>{{ summary|truncatechars:180 }}</dd>
+                            {% endwith %}
                         </dl>
                     </li>
                 </div>
