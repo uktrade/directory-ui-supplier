@@ -4,7 +4,6 @@ from django.utils import translation
 from django.utils.cache import set_response_etag
 
 from core import forms, helpers
-from enrolment.forms import LanguageForm, get_language_form_initial_data
 
 
 class IncorrectSlug(Exception):
@@ -21,35 +20,32 @@ class SetEtagMixin:
         return response
 
 
-class ConditionalEnableTranslationsMixin:
-    translations_enabled = True
+class EnableTranslationsMixin:
     template_name_bidi = None
-    language_form_class = LanguageForm
+    language_form_class = forms.LanguageForm
 
     def __init__(self, *args, **kwargs):
-        dependency = 'ui.middleware.ForceDefaultLocale'
+        dependency = 'core.middleware.ForceDefaultLocale'
         assert dependency in settings.MIDDLEWARE_CLASSES
         super().__init__(*args, **kwargs)
 
     def dispatch(self, request, *args, **kwargs):
-        if self.translations_enabled:
-            translation.activate(request.LANGUAGE_CODE)
+        translation.activate(request.LANGUAGE_CODE)
         return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['LANGUAGE_BIDI'] = translation.get_language_bidi()
         language_form_kwargs = self.get_language_form_kwargs()
-        if self.translations_enabled:
-            context['language_switcher'] = {
-                'show': True,
-                'form': self.language_form_class(**language_form_kwargs),
-            }
+        context['language_switcher'] = {
+            'show': True,
+            'form': self.language_form_class(**language_form_kwargs),
+        }
         return context
 
     def get_language_form_kwargs(self, **kwargs):
         return {
-            'initial': get_language_form_initial_data(),
+            'initial': forms.get_language_form_initial_data(),
             **kwargs,
         }
 
