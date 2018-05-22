@@ -79,21 +79,19 @@
             </div>
         </div>
         {% if companies %}
-            <ul class="grid-row">
+            <ul>
             {% for company in companies %}
-                <div class="column-one-half">
-                    <li>
-                        <div>
-                            <img src="{{ company.logo }}"></img>
-                        </div>
-                        <dl class="bidi-rtl">
-                            <dt><a href="{{ company.public_profile_url }}" class="link">{{ company.name }}</a></dt>
-                            {% with company.summary|default:company.description as summary %}
-                                <dd>{{ summary|truncatechars:180 }}</dd>
-                            {% endwith %}
-                        </dl>
-                    </li>
-                </div>
+                <li>
+                    <div>
+                        <img src="{{ company.logo }}"></img>
+                    </div>
+                    <dl class="bidi-rtl">
+                        <dt><a href="{{ company.public_profile_url }}" class="link">{{ company.name }}</a></dt>
+                        {% with company.summary|default:company.description as summary %}
+                            <dd>{{ summary|truncatechars:180 }}</dd>
+                        {% endwith %}
+                    </dl>
+                </li>
             {% endfor %}
             </ul>
             <div>
