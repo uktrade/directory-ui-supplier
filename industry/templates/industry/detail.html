@@ -95,7 +95,7 @@
             {% endfor %}
             </ul>
             <div>
-                <a href="{% search_url sector_value=page.search_filter_sector %}" class="button bidi-rtl">{{ page.company_list_call_to_action_text }} </a>
+                <a href="{% search_url sector_value=page.search_filter_sector term=page.search_filter_text %}" class="button bidi-rtl">{{ page.company_list_call_to_action_text }} </a>
             </div>
         {% endif %}
     </div>
