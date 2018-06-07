@@ -1,10 +1,12 @@
 {% load add_export_elements_classes add_href_target from cms_tags %}
 <article class="grid-row">
-    <div class="column-one-half article-image-container">
+    <div class="column-one-half article-media-container">
         {% if article.image %}
             <img src="{{ article.image.url }}" />
-        {% elif article.video %}
-            {{ article.video|safe }}
+        {% elif article.video_media %}
+            <video controls controlsList="nodownload">
+              <source src="{{ article.video_media.url }}" type="video/{{ article.video_media.file_extension|default:'mp4' }}">
+            </video>
         {% endif %}
     </div>
     <div class="column-one-half bidi-rtl article-text-container">
