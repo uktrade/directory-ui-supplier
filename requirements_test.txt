@@ -16,7 +16,7 @@ coverage==4.5.1           # via codecov, pytest-cov
 directory-api-client==9.16.0
 directory-client-core==0.2.1  # via directory-api-client, directory-cms-client
 directory-cms-client==2.0.0
-directory_components==2.1.0
+directory-components==2.7.2
 directory_constants==6.7.0
 directory_validators==4.5.0
 django-formtools==2.0

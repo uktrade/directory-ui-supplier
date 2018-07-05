@@ -117,7 +117,8 @@ DEBUG_SET_ENV_VARS := \
 	export SECURE_HSTS_SECONDS=0 ;\
 	export SECURE_SSL_REDIRECT=false; \
 	export CMS_URL=http://cms.trade.great:8010; \
-	export CMS_SIGNATURE_SECRET=debug
+	export CMS_SIGNATURE_SECRET=debug; \
+	export FEATURE_SEARCH_ENGINE_INDEXING_DISABLED=true
 
 
 debug_webserver:

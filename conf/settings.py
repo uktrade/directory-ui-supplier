@@ -54,7 +54,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE_CLASSES = [
-    'core.middleware.MaintenanceModeMiddleware',
+    'directory_components.middleware.MaintenanceModeMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'core.middleware.LocaleQuerystringMiddleware',
     'core.middleware.PersistLocaleMiddleware',
@@ -62,6 +62,7 @@ MIDDLEWARE_CLASSES = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'directory_components.middleware.RobotsIndexControlHeaderMiddlware',
 ]
 
 ROOT_URLCONF = 'conf.urls'
@@ -135,6 +136,10 @@ LOCALE_PATHS = (
 
 FEATURE_MAINTENANCE_MODE_ENABLED = os.getenv(
     'FEATURE_MAINTENANCE_MODE_ENABLED'
+) == 'true'
+
+FEATURE_SEARCH_ENGINE_INDEXING_DISABLED = os.getenv(
+    'FEATURE_SEARCH_ENGINE_INDEXING_DISABLED'
 ) == 'true'
 
 # needed only for dev local storage
