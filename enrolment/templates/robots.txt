@@ -1,2 +1,0 @@
-User-agent: *
-Sitemap: http://{{ request.get_host }}{% url 'sitemap' %}
