@@ -419,8 +419,6 @@ def test_contact_company_view_feature_submit_success(
     mock_send_email, settings, client, valid_contact_company_data,
     retrieve_profile_data
 ):
-    settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = True
-
     view = views.ContactCompanyView
     url = reverse(
         'contact-company',
@@ -452,7 +450,6 @@ def test_contact_company_view_feature_submit_failure(
     mock_send_email, api_response_400, settings, client,
     valid_contact_company_data, retrieve_profile_data
 ):
-    settings.FEATURE_CONTACT_COMPANY_FORM_ENABLED = True
     mock_send_email.return_value = api_response_400
     url = reverse(
         'contact-company',
