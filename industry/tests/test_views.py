@@ -237,7 +237,6 @@ def test_industries_page_context(
 def test_industries_page_context_no_showcase_industries(
     mock_lookup_by_slug, settings, client, industry_list_no_showcase_data
 ):
-    settings.FEATURE_CMS_ENABLED = True
     mock_lookup_by_slug.side_effect = None
     mock_lookup_by_slug.return_value = create_response(
         json_payload=industry_list_no_showcase_data,
