@@ -47,6 +47,11 @@ urlpatterns = [
         name='contact-company',
     ),
     url(
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/contact/success/$',
+        company.views.ContactCompanySentView.as_view(),
+        name='contact-company-sent',
+    ),
+    url(
         r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$',
         company.views.PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail',

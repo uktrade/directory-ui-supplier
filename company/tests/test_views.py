@@ -419,7 +419,6 @@ def test_contact_company_view_feature_submit_success(
     mock_send_email, settings, client, valid_contact_company_data,
     retrieve_profile_data
 ):
-    view = views.ContactCompanyView
     url = reverse(
         'contact-company',
         kwargs={
@@ -439,8 +438,11 @@ def test_contact_company_view_feature_submit_success(
         'recipient_company_number': '01234567',
     }
 
-    assert response.status_code == http.client.OK
-    assert response.template_name == view.success_template_name
+    assert response.status_code == 302
+    assert response.url == reverse(
+        'contact-company-sent',
+        kwargs={'company_number': retrieve_profile_data['number']}
+    )
     assert mock_send_email.call_count == 1
     assert mock_send_email.call_args == call(expected_data)
 
@@ -678,3 +680,45 @@ def test_company_profile_url_routing_404(name, number, slug):
 
     with pytest.raises(NoReverseMatch):
         assert reverse(name, kwargs=kwargs)
+
+
+def test_contact_company_sent_no_referer(client):
+    url = reverse(
+        'contact-company-sent', kwargs={'company_number': '01111111'}
+    )
+    expected_url = reverse(
+        'contact-company', kwargs={'company_number': '01111111'}
+    )
+    response = client.get(url, {})
+
+    assert response.status_code == 302
+    assert response.url == expected_url
+
+
+def test_contact_company_sent_incorrect_referer(client):
+    url = reverse(
+        'contact-company-sent', kwargs={'company_number': '01111111'}
+    )
+    expected_url = reverse(
+        'contact-company', kwargs={'company_number': '01111111'}
+    )
+    referer_url = 'http://www.googe.com'
+    response = client.get(url, {}, HTTP_REFERER=referer_url)
+
+    assert response.status_code == 302
+    assert response.url == expected_url
+
+
+def test_contact_company_sent_correct_referer(client):
+    url = reverse(
+        'contact-company-sent', kwargs={'company_number': '01111111'}
+    )
+    referer_url = reverse(
+        'contact-company', kwargs={'company_number': '01111111'}
+    )
+    response = client.get(url, {}, HTTP_REFERER=referer_url)
+
+    assert response.status_code == 200
+    assert response.template_name == [
+        views.ContactCompanySentView.template_name
+    ]

@@ -23,6 +23,16 @@ class SubmitFormOnGetMixin:
         return super().post(request, *args, **kwargs)
 
 
+class CompanyProfileMixin:
+
+    @cached_property
+    def company(self):
+        return helpers.get_company_profile(self.kwargs['company_number'])
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(company=self.company, **kwargs)
+
+
 class CompanySearchView(SubmitFormOnGetMixin, FormView):
     template_name = 'company-search-results-list.html'
     form_class = forms.CompanySearchForm
@@ -80,12 +90,8 @@ class PublishedProfileListView(RedirectView):
         return reverse('company-search')
 
 
-class PublishedProfileDetailView(TemplateView):
+class PublishedProfileDetailView(CompanyProfileMixin, TemplateView):
     template_name = 'company-profile-detail.html'
-
-    @cached_property
-    def company(self):
-        return helpers.get_company_profile(self.kwargs['company_number'])
 
     def get_canonical_url(self):
         kwargs = {
@@ -109,7 +115,6 @@ class PublishedProfileDetailView(TemplateView):
         }
         return super().get_context_data(
             show_description='verbose' in self.request.GET,
-            company=self.company,
             social=social,
             **kwargs
         )
@@ -147,10 +152,15 @@ class CaseStudyDetailView(TemplateView):
         )
 
 
-class ContactCompanyView(FormView):
+class ContactCompanyView(CompanyProfileMixin, FormView):
     template_name = 'company-contact-form.html'
-    success_template_name = 'company-contact-success.html'
     form_class = forms.ContactCompanyForm
+
+    def get_success_url(self):
+        return reverse(
+            'contact-company-sent',
+            kwargs={'company_number': self.kwargs['company_number']}
+        )
 
     def form_valid(self, form):
         data = self.serialize_form_data(
@@ -159,10 +169,7 @@ class ContactCompanyView(FormView):
         )
         response = api_client.company.send_email(data)
         response.raise_for_status()
-        context = self.get_context_data()
-        return TemplateResponse(
-            self.request, self.success_template_name, context
-        )
+        return super().form_valid(form)
 
     @staticmethod
     def serialize_form_data(cleaned_data, company_number):
@@ -171,6 +178,17 @@ class ContactCompanyView(FormView):
             company_number,
         )
 
-    def get_context_data(self, **kwargs):
-        company = helpers.get_company_profile(self.kwargs['company_number'])
-        return super().get_context_data(company=company, **kwargs)
+
+class ContactCompanySentView(CompanyProfileMixin, TemplateView):
+
+    template_name = 'company-contact-success.html'
+
+    def dispatch(self, *args, **kwargs):
+        contact_company_url = reverse(
+            'contact-company',
+            kwargs={'company_number': self.kwargs['company_number']}
+        )
+        referer = self.request.META.get('HTTP_REFERER', '')
+        if contact_company_url not in referer:
+            return redirect(contact_company_url)
+        return super().dispatch(*args, **kwargs)
