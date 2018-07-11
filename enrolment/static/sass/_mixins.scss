@@ -1,3 +1,5 @@
+@import 'variables';
+
 @mixin form-container {
   border: 1px solid $grey-3;
   border-bottom: 4px solid $red-1;
