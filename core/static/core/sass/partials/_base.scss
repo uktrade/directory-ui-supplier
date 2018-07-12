@@ -10,9 +10,8 @@ $asset-path: '../';
 @import 'main-tablet.scss';
 @import 'main-mobile.scss';
 
-body,
-a {
-  font-family: arial,helvetica,sans-serif!important;
+body {
+  font-family: 'Roboto', arial, helvetica, sans-serif;
 }
 
 #content {
@@ -22,7 +21,6 @@ a {
 .container {
     padding: 0 30px;
     max-width: 1200px;
-    width: 100%;
 }
 
 @media (max-width: 641px) {
@@ -58,7 +56,7 @@ a {
   }
 }
 
-.screen-reader-only { 
+.screen-reader-only {
   height: 1px;
   left: -10000px;
   overflow: hidden;

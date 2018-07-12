@@ -3,36 +3,74 @@
 {% load external_url from constants_tags %}
 
 <footer id="footer">
-	<div class="container">
-		<ul id="footer-links">
-			<li class="bidi-ltr">
-				<a href="{% external_url 'DIT' %}" title="">
-					{% trans "Department for International Trade" %}
-				</a>
-			</li>
-			<li class="bidi-ltr">
-				<a href="{% external_url 'contact_directory' %}" title="">
-					{% trans "Contact us" %}
-				</a>
-			</li>
-			<li class="bidi-ltr">
-				<a href="{{ directory_components_urls.privacy }}" title="">
-					{% trans "Privacy and cookies" %}
-				</a>
-			</li>
-			<li class="bidi-ltr">
-				<a href="{{ directory_components_urls.terms }}" title="">
-					{% trans "Terms &amp; conditions" %}
-				</a>
-			</li>
-		</ul>
-		<p id="footer-credits">
-			<a href="https://www.gov.uk/" target="_blank">
-				<img src="{% static 'images/hmg-logo.png' %}" alt="HM Government" width="162" class="bidi-ltr">
-			</a>
-			<span class="copyright-text bidi-ltr">&copy; {% trans "Crown Copyright" %} {% now "Y" %}</span>
-			<img class="dit-iigb-logo bidi-ltr" alt="Welcome to Great Britain &amp; Northern Ireland" src="{% static 'images/welcome-to-great-logo-white.png' %}" width="220"> 
-		</p>
-	</div>
-	<div class="clearfix"></div>
+  <div class="container">
+    <div id="footer-logos">
+      <a href="https://www.gov.uk/" target="_blank">
+        <img src="{% static 'images/HM_Government_logo.png' %}" alt="HM Government" class="bidi-ltr">
+      </a>
+      <img class="dit-iigb-logo bidi-ltr" alt="Welcome to Great Britain &amp; Northern Ireland" src="{% static 'images/welcome-to-great-logo-stacked.png' %}">
+    </div>
+
+    <div id="footer-main-links">
+      <ul>
+        <li>
+          <a href="{% url 'index' %}">{% trans "Home" %}</a>
+        </li>
+        <li>
+          <a href="{% url 'company-search' %}">{% trans "Find a supplier" %}</a>
+        </li>
+        <li>
+          <a href="{% url 'sector-list' %}">{% trans "Industries" %}</a>
+        </li>
+        <li>
+          <a href="{% url 'lead-generation' %}">{% trans "Contact us" %}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="footer-sub-links">
+    <div class="container">
+      <ul>
+        <li>
+          <a href="{{ header_footer_urls.about }}">
+            {% trans "About" %}
+          </a>
+        </li>
+        <li>
+          <a href="{% external_url 'contact_directory' %}">
+            {% trans "Contact us" %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ directory_components_urls.privacy }}">
+            {% trans "Privacy and cookies" %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ directory_components_urls.terms }}">
+            {% trans "Terms &amp; conditions" %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ directory_components_urls.performance }}">
+            {% trans "Performance" %}
+          </a>
+        </li>
+        <li>
+          <a href="{% external_url 'DIT' %}">
+            {% trans "Department for International Trade" %}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div id="footer-copyright">
+    <div class="container">
+      <p dir="ltr">&copy; {% trans "Crown Copyright" %} {% now "Y" %} {% trans "All rights reserved." %}</p>
+    </div>
+  </div>
+
 </footer>
