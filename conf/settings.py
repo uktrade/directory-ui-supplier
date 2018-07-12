@@ -85,8 +85,9 @@ TEMPLATES = [
                 'core.context_processors.lead_generation_form',
                 'directory_components.context_processors.analytics',
                 'directory_components.context_processors.urls_processor',
+                ('directory_components.context_processors.'
+                    'header_footer_processor'),
                 'directory_components.context_processors.feature_flags',
-
             ],
         },
     },
