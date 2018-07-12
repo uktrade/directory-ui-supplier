@@ -5,10 +5,10 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "sass-prod": "./scripts/sass.sh prod",
+    "sass": "gulp sass",
     "test": "mocha enrolment/tests/javascript"
   },
-  "author": "Graham Veal",
+  "author": "DIT",
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
