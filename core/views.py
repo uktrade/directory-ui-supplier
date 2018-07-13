@@ -23,7 +23,7 @@ ZENPY_CREDENTIALS = {
 zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
-class CMSFeatureFlagMixin:
+class ActivateTranslationMixin:
     def dispatch(self, *args, **kwargs):
         translation.activate(self.request.LANGUAGE_CODE)
         return super().dispatch(*args, **kwargs)
@@ -31,7 +31,7 @@ class CMSFeatureFlagMixin:
 
 class LandingPageCMSView(
     mixins.CMSLanguageSwitcherMixin, mixins.ActiveViewNameMixin,
-    CMSFeatureFlagMixin, TemplateView
+    ActivateTranslationMixin, TemplateView
 ):
     active_view_name = 'index'
     template_name = 'core/landing-page.html'

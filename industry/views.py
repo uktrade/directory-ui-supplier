@@ -6,15 +6,18 @@ from zenpy import Zenpy
 from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
 from django.conf import settings
-from django.template.response import TemplateResponse
 from django.utils import translation
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
+from django.urls import reverse, reverse_lazy
 
 from core.helpers import cms_client, handle_cms_response
-from core.views import CMSFeatureFlagMixin
+from core.views import ActivateTranslationMixin
 from core.mixins import (
-    ActiveViewNameMixin, GetCMSPageMixin, CMSLanguageSwitcherMixin
+    ActiveViewNameMixin,
+    CMSLanguageSwitcherMixin,
+    GetCMSPageMixin,
+    SpecificRefererRequiredMixin
 )
 from industry import forms
 from industry.helpers import get_showcase_companies
@@ -30,7 +33,7 @@ zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
 class IndustryDetailCMSView(
-    CMSFeatureFlagMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
+    ActivateTranslationMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
     TemplateView
 ):
     template_name = 'industry/detail.html'
@@ -58,10 +61,42 @@ class IndustryDetailCMSView(
         return get_showcase_companies(**kwargs)
 
 
+class GetContactPageMixin:
+    @functools.lru_cache()
+    def get_contact_page(self):
+        response = cms_client.lookup_by_slug(
+            slug=cms_constants.FIND_A_SUPPLIER_INDUSTRY_CONTACT_SLUG,
+            language_code=translation.get_language(),
+            draft_token=self.request.GET.get('draft_token'),
+        )
+        return handle_cms_response(response)
+
+    def get_context_data(self, *args, **kwargs):
+        return super().get_context_data(
+            page=self.get_contact_page(),
+            *args, **kwargs
+        )
+
+
+class GetIndustryPageMixin:
+    @functools.lru_cache()
+    def get_industry_page(self):
+        response = cms_client.lookup_by_slug(
+            slug=self.kwargs['slug'],
+            language_code=translation.get_language(),
+        )
+        return self.handle_cms_response(response)
+
+    def get_context_data(self, *args, **kwargs):
+        return super().get_context_data(
+            industry_page=self.get_industry_page(),
+            *args, **kwargs
+        )
+
+
 class BaseIndustryContactView(FormView):
 
     template_name = 'industry/contact.html'
-    template_name_success = 'industry/contact-success.html'
     form_class = forms.ContactForm
 
     def get_form_kwargs(self, *args, **kwargs):
@@ -74,23 +109,10 @@ class BaseIndustryContactView(FormView):
             'industry_choices': industry_choices,
         }
 
-    @functools.lru_cache()
-    def get_contact_page(self):
-        response = cms_client.lookup_by_slug(
-            slug=cms_constants.FIND_A_SUPPLIER_INDUSTRY_CONTACT_SLUG,
-            language_code=translation.get_language(),
-            draft_token=self.request.GET.get('draft_token'),
-        )
-        return handle_cms_response(response)
-
     def form_valid(self, form):
         zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
         self.create_zendesk_ticket(form.cleaned_data, zendesk_user)
-        return TemplateResponse(
-            self.request,
-            self.template_name_success,
-            self.get_context_data(),
-        )
+        return super().form_valid(form)
 
     @staticmethod
     def get_or_create_zendesk_user(cleaned_data):
@@ -116,16 +138,12 @@ class BaseIndustryContactView(FormView):
 
 
 class IndustryDetailContactCMSView(
-    CMSFeatureFlagMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
-    BaseIndustryContactView
+    ActivateTranslationMixin, GetIndustryPageMixin, GetCMSPageMixin,
+    GetContactPageMixin, CMSLanguageSwitcherMixin, BaseIndustryContactView
 ):
 
-    def get_context_data(self, *args, **kwargs):
-        return super().get_context_data(
-            page=self.get_contact_page(),
-            industry_page=self.get_industry_page(),
-            *args, **kwargs
-        )
+    def get_success_url(self):
+        return reverse('sector-detail-cms-contact-sent', kwargs=self.kwargs)
 
     def get_initial(self):
         initial = super().get_initial()
@@ -133,32 +151,38 @@ class IndustryDetailContactCMSView(
         initial['sector'] = page['meta']['slug']
         return initial
 
-    @functools.lru_cache()
-    def get_industry_page(self):
-        response = cms_client.lookup_by_slug(
-            slug=self.kwargs['slug'],
-            language_code=translation.get_language(),
-        )
-        return self.handle_cms_response(response)
-
 
 class IndustryLandingPageContactCMSView(
-    CMSFeatureFlagMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
-    BaseIndustryContactView
+    ActivateTranslationMixin, GetCMSPageMixin, GetContactPageMixin,
+    CMSLanguageSwitcherMixin, BaseIndustryContactView
 ):
+    success_url = reverse_lazy('sector-list-cms-contact-sent')
 
-    def get_context_data(self, *args, **kwargs):
-        return super().get_context_data(
-            page=self.get_cms_page(),
-            *args, **kwargs
-        )
 
-    def get_cms_page(self):
-        return self.get_contact_page()
+class IndustryDetailContactCMSSentView(
+    ActivateTranslationMixin, SpecificRefererRequiredMixin, GetCMSPageMixin,
+    GetContactPageMixin, GetIndustryPageMixin, TemplateView
+):
+    template_name = 'industry/contact-success.html'
+
+    @property
+    def expected_referer_url(self):
+        return reverse('sector-detail-cms-contact', kwargs=self.kwargs)
+
+
+class IndustryLandingPageContactCMSSentView(
+    ActivateTranslationMixin, SpecificRefererRequiredMixin, GetCMSPageMixin,
+    GetContactPageMixin, TemplateView
+):
+    template_name = 'industry/contact-success.html'
+
+    @property
+    def expected_referer_url(self):
+        return reverse('sector-list-cms-contact')
 
 
 class IndustryArticleCMSView(
-    CMSFeatureFlagMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
+    ActivateTranslationMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
     TemplateView
 ):
     template_name = 'industry/article.html'
@@ -178,7 +202,7 @@ class IndustryArticleCMSView(
 
 
 class IndustryLandingPageCMSView(
-    CMSFeatureFlagMixin, CMSLanguageSwitcherMixin, ActiveViewNameMixin,
+    ActivateTranslationMixin, CMSLanguageSwitcherMixin, ActiveViewNameMixin,
     TemplateView
 ):
     active_view_name = 'sector-list'

@@ -8,6 +8,7 @@ from django.views.generic.edit import FormView
 
 from api_client import api_client
 from company import forms, helpers
+import core.mixins
 
 
 class SubmitFormOnGetMixin:
@@ -179,16 +180,15 @@ class ContactCompanyView(CompanyProfileMixin, FormView):
         )
 
 
-class ContactCompanySentView(CompanyProfileMixin, TemplateView):
+class ContactCompanySentView(
+    core.mixins.SpecificRefererRequiredMixin, CompanyProfileMixin, TemplateView
+):
 
     template_name = 'company-contact-success.html'
 
-    def dispatch(self, *args, **kwargs):
-        contact_company_url = reverse(
+    @property
+    def expected_referer_url(self):
+        return reverse(
             'contact-company',
             kwargs={'company_number': self.kwargs['company_number']}
         )
-        referer = self.request.META.get('HTTP_REFERER', '')
-        if contact_company_url not in referer:
-            return redirect(contact_company_url)
-        return super().dispatch(*args, **kwargs)
