@@ -96,3 +96,14 @@ class CMSLanguageSwitcherMixin:
             *args,
             **kwargs
         )
+
+
+class SpecificRefererRequiredMixin:
+
+    expected_referer_url = None
+
+    def dispatch(self, *args, **kwargs):
+        referer = self.request.META.get('HTTP_REFERER', '')
+        if self.expected_referer_url not in referer:
+            return redirect(self.expected_referer_url)
+        return super().dispatch(*args, **kwargs)

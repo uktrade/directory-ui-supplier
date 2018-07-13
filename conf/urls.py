@@ -62,6 +62,16 @@ urlpatterns = [
         name='sector-list',
     ),
     url(
+        r'^industries/contact/sent/$',
+        industry.views.IndustryLandingPageContactCMSSentView.as_view(),
+        name='sector-list-cms-contact-sent',
+    ),
+    url(
+        r'^industries/contact/(?P<slug>[\w-]+)/sent/$',
+        industry.views.IndustryDetailContactCMSSentView.as_view(),
+        name='sector-detail-cms-contact-sent',
+    ),
+    url(
         r'^industries/contact/(?P<slug>[\w-]+)/$',
         industry.views.IndustryDetailContactCMSView.as_view(),
         name='sector-detail-cms-contact',

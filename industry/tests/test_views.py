@@ -283,9 +283,9 @@ def test_contact_form_submit_with_comment(
     }
     response = client.post(url, data)
 
-    assert response.status_code == 200
-    assert response.template_name == (
-        views.IndustryDetailContactCMSView.template_name_success
+    assert response.status_code == 302
+    assert response.url == (
+        reverse('sector-detail-cms-contact-sent', kwargs={'slug': 'industry'})
     )
 
     assert mock_user_create_or_update.call_count == 1
@@ -345,9 +345,9 @@ def test_industry_list_contact_form_submit_with_comment(
     }
     response = client.post(url, data)
 
-    assert response.status_code == 200
-    assert response.template_name == (
-        views.IndustryDetailContactCMSView.template_name_success
+    assert response.status_code == 302
+    assert response.url == (
+        reverse('sector-list-cms-contact-sent')
     )
 
     assert mock_user_create_or_update.call_count == 1
@@ -373,3 +373,75 @@ def test_industry_list_contact_form_submit_with_comment(
         'Source Other: \n'
         'Terms Agreed: True'
     )
+
+
+def test_contact_industry_detail_sent_no_referer(client):
+    url = reverse(
+        'sector-detail-cms-contact-sent', kwargs={'slug': 'industry'}
+    )
+    expected_url = reverse(
+        'sector-detail-cms-contact', kwargs={'slug': 'industry'}
+    )
+    response = client.get(url, {})
+
+    assert response.status_code == 302
+    assert response.url == expected_url
+
+
+def test_contact_industry_detail_sent_incorrect_referer(client):
+    url = reverse(
+        'sector-detail-cms-contact-sent', kwargs={'slug': 'industry'}
+    )
+    expected_url = reverse(
+        'sector-detail-cms-contact', kwargs={'slug': 'industry'}
+    )
+    referer_url = 'http://www.googe.com'
+    response = client.get(url, {}, HTTP_REFERER=referer_url)
+
+    assert response.status_code == 302
+    assert response.url == expected_url
+
+
+def test_contact_industry_detail_sent_correct_referer(client):
+    url = reverse(
+        'sector-detail-cms-contact-sent', kwargs={'slug': 'industry'}
+    )
+    referer_url = reverse(
+        'sector-detail-cms-contact', kwargs={'slug': 'industry'}
+    )
+    response = client.get(url, {}, HTTP_REFERER=referer_url)
+
+    assert response.status_code == 200
+    assert response.template_name == [
+        views.IndustryDetailContactCMSSentView.template_name
+    ]
+
+
+def test_contact_industry_list_sent_no_referer(client):
+    url = reverse('sector-list-cms-contact-sent')
+    expected_url = reverse('sector-list-cms-contact')
+    response = client.get(url, {})
+
+    assert response.status_code == 302
+    assert response.url == expected_url
+
+
+def test_contact_industry_list_sent_incorrect_referer(client):
+    url = reverse('sector-list-cms-contact-sent')
+    expected_url = reverse('sector-list-cms-contact')
+    referer_url = 'http://www.googe.com'
+    response = client.get(url, {}, HTTP_REFERER=referer_url)
+
+    assert response.status_code == 302
+    assert response.url == expected_url
+
+
+def test_contact_industry_list_sent_correct_referer(client):
+    url = reverse('sector-list-cms-contact-sent')
+    referer_url = reverse('sector-list-cms-contact')
+    response = client.get(url, {}, HTTP_REFERER=referer_url)
+
+    assert response.status_code == 200
+    assert response.template_name == [
+        views.IndustryLandingPageContactCMSSentView.template_name
+    ]
