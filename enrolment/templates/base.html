@@ -1,10 +1,11 @@
 {% load static from staticfiles %}
 {# deprecated. use core/base.html instead #}
 {% load trans from i18n %}
+{% get_current_language as LANGUAGE %}
 
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--><html lang="en" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}><!--<![endif]-->
+<!--[if gt IE 8]><!--><html lang="{{ LANGUAGE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}><!--<![endif]-->
     <head>
          {% include 'directory_components/google_tag_manager_head.html' %}
         {% include 'social.html' %}
@@ -19,7 +20,7 @@
           <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
         <![endif]-->
-	
+
         <link href='{% static 'images/favicon-192x192.png' %}' rel='shortcut icon' type='image/png'>
         <!--[if IE]> <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" /> <![endif]-->
 
@@ -60,7 +61,7 @@
             {% block content %}
             {% endblock content %}
         </main>
-				
+
         {% include LANGUAGE_BIDI|yesno:'bidi/footer.html,footer.html' %}
 
         <div id="global-app-error" class="app-error hidden"></div>
