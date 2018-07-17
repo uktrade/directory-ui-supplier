@@ -88,6 +88,7 @@ TEMPLATES = [
                 ('directory_components.context_processors.'
                     'header_footer_processor'),
                 'directory_components.context_processors.feature_flags',
+                'core.context_processors.html_lang_attribute',
             ],
         },
     },
