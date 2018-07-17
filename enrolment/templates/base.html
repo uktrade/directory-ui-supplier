@@ -1,11 +1,10 @@
 {% load static from staticfiles %}
 {# deprecated. use core/base.html instead #}
 {% load i18n %}
-{% get_current_language as LANGUAGE %}
 
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--><html lang="{{ LANGUAGE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}><!--<![endif]-->
+<!--[if gt IE 8]><!--><html lang="{{ directory_components_html_lang_attribute }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}><!--<![endif]-->
     <head>
          {% include 'directory_components/google_tag_manager_head.html' %}
         {% include 'social.html' %}
