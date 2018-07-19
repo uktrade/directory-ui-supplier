@@ -185,13 +185,19 @@ main.bidi #lede-columns-section {
   ul {
     margin-bottom: 30px;
     li {
+      div {
+        min-width: 170px;
+        text-align: center;
+      }
       display: flex;
       padding: 30px;
       background-color: $white;
       border: solid 1px #d8d8d8;
       margin-bottom: 30px;
+      position: relative;
       img {
-        width: 170px;
+        max-width: 170px;
+        max-height: 150px;
       }
       dl {
         overflow: hidden;
