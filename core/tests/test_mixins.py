@@ -8,13 +8,13 @@ from core import mixins
 
 
 @pytest.mark.parametrize('method,expected', (
-    ('get', '"2fc7087a9a8bfe0de1274a315c8708d3"'),
-    ('post', None),
-    ('patch', None),
-    ('put', None),
-    ('delete', None),
-    ('head', None),
-    ('options', None),
+    ('get', True),
+    ('post', False),
+    ('patch', False),
+    ('put', False),
+    ('delete', False),
+    ('head', False),
+    ('options', False),
 ))
 def test_set_etag_mixin(rf, method, expected):
     class MyView(mixins.SetEtagMixin, TemplateView):
@@ -45,7 +45,7 @@ def test_set_etag_mixin(rf, method, expected):
     response = view(request)
 
     response.render()
-    assert response.get('Etag') == expected
+    assert ('Etag' in response) is expected
 
 
 @pytest.mark.parametrize('view_class', mixins.SetEtagMixin.__subclasses__())

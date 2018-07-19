@@ -111,7 +111,7 @@ class BaseIndustryContactView(FormView):
 
     def form_valid(self, form):
         zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
-        self.create_zendesk_ticket(form.cleaned_data, zendesk_user)
+        self.create_zendesk_ticket(form.zendesk_cleaned_data, zendesk_user)
         return super().form_valid(form)
 
     @staticmethod

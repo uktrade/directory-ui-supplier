@@ -266,7 +266,7 @@ def test_industries_page_not_found(
 @patch('zenpy.lib.api.UserApi.create_or_update')
 @patch('zenpy.lib.api.TicketApi.create')
 def test_contact_form_submit_with_comment(
-    mock_ticket_create, mock_user_create_or_update, client
+    mock_ticket_create, mock_user_create_or_update, client, captcha_stub
 ):
     mock_user_create_or_update.return_value = Mock(id=999)
     url = reverse('sector-detail-cms-contact', kwargs={'slug': 'industry'})
@@ -280,6 +280,7 @@ def test_contact_form_submit_with_comment(
         'body': 'hello',
         'source': constants.MARKETING_SOURCES[1][0],
         'terms_agreed': True,
+        'recaptcha_response_field': captcha_stub,
     }
     response = client.post(url, data)
 
@@ -328,7 +329,7 @@ def test_contact_form_prefills_sector(client, industry_detail_data):
 @patch('zenpy.lib.api.TicketApi.create')
 def test_industry_list_contact_form_submit_with_comment(
     mock_ticket_create, mock_user_create_or_update, client, industry_list_data,
-    settings
+    settings, captcha_stub
 ):
     mock_user_create_or_update.return_value = Mock(id=999)
     url = reverse('sector-list-cms-contact')
@@ -342,6 +343,7 @@ def test_industry_list_contact_form_submit_with_comment(
         'body': 'hello',
         'source': constants.MARKETING_SOURCES[1][0],
         'terms_agreed': True,
+        'recaptcha_response_field': captcha_stub,
     }
     response = client.post(url, data)
 
