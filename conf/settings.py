@@ -321,6 +321,9 @@ AWS_S3_ENCRYPTION = False
 AWS_S3_FILE_OVERWRITE = False
 AWS_S3_CUSTOM_DOMAIN = env.str('AWS_S3_CUSTOM_DOMAIN', '')
 AWS_S3_URL_PROTOCOL = env.str('AWS_S3_URL_PROTOCOL', 'https:')
+# Needed for new AWS regions
+# https://github.com/jschneier/django-storages/issues/203
+AWS_S3_SIGNATURE_VERSION = os.getenv('AWS_S3_SIGNATURE_VERSION', 's3v4')
 
 # directory CMS
 CMS_URL = env.str('CMS_URL')
