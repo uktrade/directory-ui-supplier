@@ -19,7 +19,7 @@ directory_constants==6.7.0
 directory_validators==4.5.0
 django-environ==0.4.5
 django-formtools==2.0
-django-storages==1.5.1
+django-storages==1.6.6
 django==1.11.10
 django_recaptcha==1.2.0
 djangorestframework==3.7.7  # via sigauth
