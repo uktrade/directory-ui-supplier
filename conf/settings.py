@@ -320,11 +320,14 @@ AWS_QUERYSTRING_AUTH = False
 AWS_S3_ENCRYPTION = False
 AWS_S3_FILE_OVERWRITE = False
 AWS_S3_CUSTOM_DOMAIN = env.str('AWS_S3_CUSTOM_DOMAIN', '')
+AWS_S3_REGION_NAME = env.str('AWS_S3_CUSTOM_DOMAIN', 'eu-west-2')
 AWS_S3_URL_PROTOCOL = env.str('AWS_S3_URL_PROTOCOL', 'https:')
 # Needed for new AWS regions
 # https://github.com/jschneier/django-storages/issues/203
 AWS_S3_SIGNATURE_VERSION = env.str('AWS_S3_SIGNATURE_VERSION', 's3v4')
+AWS_QUERYSTRING_AUTH = env.bool('AWS_S3_SIGNATURE_VERSION', False)
 S3_USE_SIGV4 = env.bool('S3_USE_SIGV4', True)
+AWS_S3_HOST = env.str('AWS_S3_HOST', 's3.eu-west-2.amazonaws.com')
 
 # directory CMS
 CMS_URL = env.str('CMS_URL')
