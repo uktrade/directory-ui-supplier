@@ -4,7 +4,7 @@
 [![code-climate-image]][code-climate]
 [![circle-ci-image]][circle-ci]
 [![codecov-image]][codecov]
-[![gemnasium-image]][gemnasium]
+[![snyk-image]][snyk]
 
 ---
 ### See also:
@@ -135,5 +135,5 @@ To compile `.mo` files (no need to add these to source code, as this is done aut
 [codecov-image]: https://codecov.io/gh/uktrade/directory-ui-supplier/branch/master/graph/badge.svg
 [codecov]: https://codecov.io/gh/uktrade/directory-ui-supplier
 
-[gemnasium-image]: https://gemnasium.com/badges/github.com/uktrade/directory-ui-supplier.svg
-[gemnasium]: https://gemnasium.com/github.com/uktrade/directory-ui-supplier
+[snyk-image]: https://snyk.io/test/github/uktrade/directory-ui-supplier/badge.svg
+[snyk]: https://snyk.io/test/github/uktrade/directory-ui-supplier
