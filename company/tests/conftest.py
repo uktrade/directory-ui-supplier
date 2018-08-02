@@ -8,6 +8,22 @@ import pytest
 
 
 @pytest.fixture
+def valid_contact_company_data(captcha_stub):
+    return {
+        'full_name': 'Jim Example',
+        'company_name': 'Example Corp',
+        'country': 'China',
+        'email_address': 'jim@example.com',
+        'email_full_name': 'Jeremy',
+        'sector': 'AEROSPACE',
+        'subject': 'greetings',
+        'body': 'and salutations',
+        'g-recaptcha-response': captcha_stub,
+        'terms': True,
+    }
+
+
+@pytest.fixture
 def list_public_profiles_data(retrieve_profile_data):
     return {
         'results': [

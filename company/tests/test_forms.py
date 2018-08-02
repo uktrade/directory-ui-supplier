@@ -1,3 +1,5 @@
+from unittest import mock
+
 from django.forms.fields import Field
 from directory_validators.common import not_contains_url_or_email
 
@@ -80,9 +82,8 @@ def test_serialize_contact_company_form():
         'sector': 'AEROSPACE',
         'subject': 'Whatever',
         'body': 'This is my united states of whatever',
-        'recipient_company_number': '01234567',
     }
-    actual = forms.serialize_contact_company_form(data, '01234567')
+    actual = forms.serialize_contact_company_form(data)
 
     assert actual == expected
 
@@ -113,3 +114,54 @@ def test_search_required_empty_sector_term():
     assert form.errors == {
         '__all__': [forms.CompanySearchForm.MESSAGE_MISSING_SECTOR_TERM]
     }
+
+
+@mock.patch(
+    'directory_forms_api_client.client.forms_api_client.submit_generic'
+)
+@mock.patch('company.forms.render_to_string')
+def test_contact_supplier_body_text(
+    mock_render_to_string, mock_submit_generic, valid_contact_company_data
+):
+    form = forms.ContactCompanyForm(data=valid_contact_company_data)
+
+    assert form.is_valid()
+
+    form.save(
+        recipients=['test@example.com'],
+        subject='Hello',
+        reply_to='reply_to@example.com',
+        from_email='from_email@example.com',
+        recipient_name=valid_contact_company_data['company_name'],
+    )
+
+    expected_context = {
+        'email_address': valid_contact_company_data['email_address'],
+        'body': valid_contact_company_data['body'],
+        'company_name': valid_contact_company_data['company_name'],
+        'full_name': valid_contact_company_data['full_name'],
+        'terms': True,
+        'recipient_name': valid_contact_company_data['company_name'],
+        'sector': valid_contact_company_data['sector'],
+        'country': valid_contact_company_data['country'],
+        'subject': valid_contact_company_data['subject'],
+        'captcha': 'PASSED',
+    }
+
+    mock_render_to_string.reset_mock()
+
+    form.html_body
+
+    assert mock_render_to_string.call_count == 1
+    assert mock_render_to_string.call_args == mock.call(
+        'company/email_to_supplier.html', expected_context
+    )
+
+    mock_render_to_string.reset_mock()
+
+    form.text_body
+
+    assert mock_render_to_string.call_count == 1
+    assert mock_render_to_string.call_args == mock.call(
+        'company/email_to_supplier.txt', expected_context
+    )

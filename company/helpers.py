@@ -135,7 +135,8 @@ def format_company_details(details):
             details['twitter_url'] or
             details['facebook_url'] or
             details['linkedin_url']
-        )
+        ),
+        'email_full_name': details['email_full_name'],
     }
 
 

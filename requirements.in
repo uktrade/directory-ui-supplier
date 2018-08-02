@@ -14,7 +14,7 @@ sorl-thumbnail==12.3
 zenpy==1.1.10
 directory-cms-client==3.0.0
 directory-api-client==10.0.0
-directory-forms-api-client==1.1.0
+directory-forms-api-client==2.0.0
 directory-validators==4.5.0
 directory-constants==6.7.0
 directory-components==2.16.0

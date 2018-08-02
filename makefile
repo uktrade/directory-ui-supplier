@@ -9,7 +9,7 @@ test_requirements:
 	pip install -r requirements_test.txt
 
 FLAKE8 := flake8 . --exclude=migrations,.venv,node_modules
-PYTEST := pytest . --ignore=node_modules --cov=. --cov-config=.coveragerc --capture=no $(pytest_args)
+PYTEST := pytest . --ignore=node_modules --cov=. --cov-config=.coveragerc --capture=no $(pytest_args) -vv
 COLLECT_STATIC := python manage.py collectstatic --noinput
 COMPILE_TRANSLATIONS := python manage.py compilemessages
 CODECOV := \
@@ -59,8 +59,10 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_CMS_URL=http://cms.trade.great:8010; \
 	export DIRECTORY_UI_SUPPLIER_CMS_SIGNATURE_SECRET=debug; \
 	export DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_BASE_URL=forms.trade.great:8011;\
-	export DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_API_KEY=$$DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_API_KEY; \
-	export DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_SENDER_ID=$$DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_SENDER_ID
+	export DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_API_KEY=debug; \
+	export DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_SENDER_ID=debug; \
+	export DIRECTORY_UI_SUPPLIER_FEATURE_DIRECTORY_FORMS_API_ENABLED=true; \
+	export DIRECTORY_UI_SUPPLIER_CONTACT_SUPPLIER_FROM_EMAIL=test@example.com
 
 
 docker_test_env_files:
@@ -120,9 +122,11 @@ DEBUG_SET_ENV_VARS := \
 	export CMS_URL=http://cms.trade.great:8010; \
 	export CMS_SIGNATURE_SECRET=debug; \
 	export FEATURE_SEARCH_ENGINE_INDEXING_DISABLED=true; \
-	export DIRECTORY_FORMS_API_BASE_URL=forms.trade.great:8011;\
+	export DIRECTORY_FORMS_API_BASE_URL=http://forms.trade.great:8011;\
 	export DIRECTORY_FORMS_API_API_KEY=$$DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_API_KEY; \
-	export DIRECTORY_FORMS_SENDER_ID=$$DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_SENDER_ID
+	export DIRECTORY_FORMS_SENDER_ID=$$DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_SENDER_ID; \
+	export FEATURE_DIRECTORY_FORMS_API_ENABLED=true; \
+	export CONTACT_SUPPLIER_FROM_EMAIL=test@example.com
 
 
 debug_webserver:

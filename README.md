@@ -48,7 +48,7 @@ Requires all host environment variables to be set.
 
 ## Directory Forms
 
-Form submissions are powered by [directory-forms-api](). Set that up locally then generate a API client [here](http://forms.trade.great:8011/admin/client/client/) and add the following entries to your `~/.bashrc`.
+Form submissions are powered by [directory-forms-api](https://github.com/uktrade/directory-forms-api). Set that up locally then generate a API client [here](http://forms.trade.great:8011/admin/client/client/) and add the following entries to your `~/.bashrc`.
 
 | Host environment variable                         | Notes                             |
 | ------------------------------------------------- | --------------------------------- |
