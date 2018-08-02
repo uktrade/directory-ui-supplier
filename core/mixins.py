@@ -1,3 +1,5 @@
+from directory_cms_client.client import cms_api_client
+
 from django.conf import settings
 from django.shortcuts import redirect
 from django.utils import translation
@@ -60,7 +62,7 @@ class ActiveViewNameMixin:
 class GetCMSPageMixin:
 
     def get_cms_page(self):
-        response = helpers.cms_client.lookup_by_slug(
+        response = cms_api_client.lookup_by_slug(
             slug=self.kwargs['slug'],
             draft_token=self.request.GET.get('draft_token'),
             language_code=translation.get_language(),

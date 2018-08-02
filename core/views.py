@@ -1,4 +1,5 @@
 from directory_cms_client import constants as cms_constants
+from directory_cms_client.client import cms_api_client
 from zenpy import Zenpy
 from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
@@ -10,7 +11,7 @@ from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 from django.views.generic.base import RedirectView
 
-from api_client import api_client
+from directory_api_client.client import api_client
 from core import forms, helpers, mixins
 
 
@@ -45,7 +46,7 @@ class LandingPageCMSView(
         )
 
     def get_cms_page(self):
-        response = helpers.cms_client.lookup_by_slug(
+        response = cms_api_client.lookup_by_slug(
             slug=cms_constants.FIND_A_SUPPLIER_LANDING_SLUG,
             language_code=translation.get_language(),
             draft_token=self.request.GET.get('draft_token'),

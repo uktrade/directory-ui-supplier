@@ -2,6 +2,7 @@ from copy import deepcopy
 import http
 from unittest.mock import patch
 
+from directory_api_client.client import api_client
 import requests
 import pytest
 
@@ -64,8 +65,8 @@ def api_response_retrieve_public_case_study_200(
 
 @pytest.fixture(autouse=True)
 def list_public_profiles(api_response_list_public_profile_200):
-    stub = patch(
-        'api_client.api_client.company.list_public_profiles',
+    stub = patch.object(
+        api_client.company, 'list_public_profiles',
         return_value=api_response_list_public_profile_200,
     )
     stub.start()
@@ -77,8 +78,8 @@ def list_public_profiles(api_response_list_public_profile_200):
 def retrieve_supplier_case_study(
     api_response_retrieve_public_case_study_200
 ):
-    stub = patch(
-        'api_client.api_client.company.retrieve_public_case_study',
+    stub = patch.object(
+        api_client.company, 'retrieve_public_case_study',
         return_value=api_response_retrieve_public_case_study_200,
     )
     stub.start()
@@ -88,8 +89,8 @@ def retrieve_supplier_case_study(
 
 @pytest.fixture(autouse=True)
 def retrieve_profile(api_response_company_profile_200):
-    stub = patch(
-        'api_client.api_client.company.retrieve_private_profile',
+    stub = patch.object(
+        api_client.company, 'retrieve_private_profile',
         return_value=api_response_company_profile_200,
     )
     stub.start()
@@ -99,8 +100,8 @@ def retrieve_profile(api_response_company_profile_200):
 
 @pytest.fixture(autouse=True)
 def retrieve_public_profile(api_response_company_profile_200):
-    stub = patch(
-        'api_client.api_client.company.retrieve_public_profile',
+    stub = patch.object(
+        api_client.company, 'retrieve_public_profile',
         return_value=api_response_company_profile_200,
     )
     stub.start()

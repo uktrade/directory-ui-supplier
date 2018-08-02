@@ -30,18 +30,17 @@ def test_contact_company__form_length_of_fields():
 
 
 def test_contact_company_form_capcha_valid(captcha_stub):
-    form = forms.ContactCompanyForm({'recaptcha_response_field': captcha_stub})
+    form = forms.ContactCompanyForm({'g-recaptcha-response': captcha_stub})
 
     form.is_valid()
 
     assert 'captcha' not in form.errors
 
 
-def test_contact_company_form_captcha_valid():
-    form = forms.ContactCompanyForm({'recaptcha_response_field': 'INVALID'})
+def test_contact_company_form_captcha_invalid():
+    form = forms.ContactCompanyForm({})
 
-    form.is_valid()
-
+    assert form.is_valid() is False
     assert 'captcha' in form.errors
 
 

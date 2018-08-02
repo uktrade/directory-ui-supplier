@@ -1,3 +1,5 @@
+from directory_api_client.client import api_client
+
 from django.core.paginator import EmptyPage, Paginator
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
@@ -6,7 +8,6 @@ from django.utils.functional import cached_property
 from django.views.generic import RedirectView, TemplateView
 from django.views.generic.edit import FormView
 
-from api_client import api_client
 from company import forms, helpers
 import core.mixins
 

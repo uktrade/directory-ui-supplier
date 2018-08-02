@@ -1,5 +1,6 @@
 from unittest.mock import call, patch, Mock
 
+from directory_cms_client.client import cms_api_client
 import pytest
 
 from django.core.urlresolvers import resolve, reverse
@@ -118,8 +119,8 @@ def mock_lookup_by_slug(
             for resource in resources
         }[slug]
 
-    stub = patch(
-        'core.helpers.cms_client.lookup_by_slug', side_effect=side_effect
+    stub = patch.object(
+        cms_api_client, 'lookup_by_slug', side_effect=side_effect
     )
     yield stub.start()
     stub.stop()
@@ -140,7 +141,7 @@ def test_cms_pages(settings, client, url):
 
 
 @pytest.mark.parametrize('url', details_cms_urls)
-def test_cms_pages_cms_client_params(
+def test_cms_api_client_params(
     settings, client, url, mock_lookup_by_slug
 ):
     response = client.get(url, {'draft_token': '123', 'lang': 'de'})
@@ -215,7 +216,7 @@ def test_article_page_context(settings, client, industry_article_data):
     assert response.template_name == ['industry/article.html']
 
 
-@patch('core.helpers.cms_client.lookup_by_slug')
+@patch.object(cms_api_client, 'lookup_by_slug')
 def test_industries_page_context(
     mock_get_industries_landing_page, settings, client, industry_list_data
 ):
@@ -233,7 +234,7 @@ def test_industries_page_context(
     ]
 
 
-@patch('core.helpers.cms_client.lookup_by_slug')
+@patch.object(cms_api_client, 'lookup_by_slug')
 def test_industries_page_context_no_showcase_industries(
     mock_lookup_by_slug, settings, client, industry_list_no_showcase_data
 ):
@@ -251,10 +252,8 @@ def test_industries_page_context_no_showcase_industries(
     )
 
 
-@patch('core.helpers.cms_client.lookup_by_slug')
-def test_industries_page_not_found(
-    mock_lookup_by_slug, settings, client
-):
+@patch.object(cms_api_client, 'lookup_by_slug')
+def test_industries_page_not_found(mock_lookup_by_slug, settings, client):
     mock_lookup_by_slug.return_value = create_response(status_code=404)
 
     response = client.get(reverse('sector-list'))
@@ -280,7 +279,7 @@ def test_contact_form_submit_with_comment(
         'body': 'hello',
         'source': constants.MARKETING_SOURCES[1][0],
         'terms_agreed': True,
-        'recaptcha_response_field': captcha_stub,
+        'g-recaptcha-response': captcha_stub,
     }
     response = client.post(url, data)
 
@@ -343,7 +342,7 @@ def test_industry_list_contact_form_submit_with_comment(
         'body': 'hello',
         'source': constants.MARKETING_SOURCES[1][0],
         'terms_agreed': True,
-        'recaptcha_response_field': captcha_stub,
+        'g-recaptcha-response': captcha_stub,
     }
     response = client.post(url, data)
 

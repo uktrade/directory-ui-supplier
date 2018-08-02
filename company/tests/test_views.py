@@ -33,7 +33,7 @@ def valid_contact_company_data(captcha_stub):
         'sector': 'AEROSPACE',
         'subject': 'greetings',
         'body': 'and salutations',
-        'recaptcha_response_field': captcha_stub,
+        'g-recaptcha-response': captcha_stub,
         'terms': True,
     }
 
@@ -513,7 +513,7 @@ def test_company_search_pagination_count(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_search_pagination_param(
     mock_search, client, search_results, api_response_search_200
 ):
@@ -532,7 +532,7 @@ def test_company_search_pagination_param(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_search_sector_empty(
     mock_search, client, search_results, api_response_search_200
 ):
@@ -549,7 +549,7 @@ def test_company_search_sector_empty(
     )
 
 
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_search_pagination_empty_page(
     mock_search, client, search_results, api_response_search_200
 ):
@@ -583,7 +583,7 @@ def test_company_search_sets_active_view_name(client):
     assert response.context_data['active_view_name'] == expected_value
 
 
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_search_api_call_error(mock_search, api_response_400, client):
     mock_search.return_value = api_response_400
 
@@ -592,7 +592,7 @@ def test_company_search_api_call_error(mock_search, api_response_400, client):
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 @patch('company.helpers.get_results_from_search_response')
 def test_company_search_api_success(
     mock_get_results_from_search_response, mock_search,
@@ -613,7 +613,7 @@ def test_company_search_api_success(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_search_response_no_highlight(
     mock_search, api_response_search_200, client
 ):
@@ -625,7 +625,7 @@ def test_company_search_response_no_highlight(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_highlight_description(
     mock_search, api_response_search_description_highlight_200, client
 ):
@@ -641,7 +641,7 @@ def test_company_highlight_description(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_search_highlight_summary(
     mock_search, api_response_search_summary_highlight_200, client
 ):
