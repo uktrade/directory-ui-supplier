@@ -14,10 +14,11 @@ codecov==2.0.9
 contextlib2==0.5.5        # via raven
 coverage==4.5.1           # via codecov, pytest-cov
 directory-api-client==10.0.0
-directory-client-core==4.0.1  # via directory-api-client, directory-cms-client
+directory-client-core==4.0.1  # via directory-api-client, directory-cms-client, directory-forms-api-client
 directory-cms-client==3.0.0
 directory-components==2.16.0
 directory-constants==6.7.0
+directory-forms-api-client==1.1.0
 directory-validators==4.5.0
 django-environ==0.4.5
 django-formtools==2.0

@@ -46,16 +46,14 @@ Requires all host environment variables to be set.
 ### Host environment variables for docker-compose
 ``.env`` files will be automatically created (with ``env_writer.py`` based on ``env.json``) by ``make docker_test``, based on host environment variables with ``DIRECTORY_UI_SUPPLIER_`` prefix.
 
-#### Web server
-| Host environment variable | Docker environment variable  |
-| ------------- | ------------- |
-| DIRECTORY_UI_SUPPLIER_SECRET_KEY | SECRET_KEY |
-| DIRECTORY_UI_SUPPLIER_PORT | PORT |
-| DIRECTORY_UI_SUPPLIER_API_SIGNATURE_SECRET | API_SIGNATURE_SECRET |
-| DIRECTORY_UI_SUPPLIER_API_CLIENT_BASE_URL | API_CLIENT_BASE_URL |
-| DIRECTORY_UI_SUPPLIER_COMPANIES_HOUSE_SEARCH_URL | COMPANIES_HOUSE_SEARCH_URL |
-| DIRECTORY_UI_SUPPLIER_SSO_API_CLIENT_BASE_URL | SSO_API_CLIENT_BASE_URL |
-| DIRECTORY_UI_SUPPLIER_UI_SESSION_COOKIE_SECURE | UI_SESSION_COOKIE_SECURE |
+## Directory Forms
+
+Form submissions are powered by [directory-forms-api](). Set that up locally then generate a API client [here](http://forms.trade.great:8011/admin/client/client/) and add the following entries to your `~/.bashrc`.
+
+| Host environment variable                         | Notes                             |
+| ------------------------------------------------- | --------------------------------- |
+| DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_API_KEY | Populate from client `access_key` |
+| DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_SENDER_ID   | Populate from client `identifier` |
 
 ## Debugging
 
@@ -104,6 +102,7 @@ To make sso work locally add the following to your machine's `/etc/hosts`:
 | 127.0.0.1 | api.trade.great      |
 | 127.0.0.1 | profile.trade.great  |
 | 127.0.0.1 | exred.trade.great    |
+| 127.0.0.1 | forms.trade.great    |
 
 Then log into `directory-sso` via `sso.trade.great:8004`, and use `directory-ui-supplier` on `supplier.trade.great:8005`
 
