@@ -49,7 +49,6 @@ def test_get_showcase_companies_200(search_company):
             'public_profile_url': '/suppliers/01234567/great-company/',
             'modified': datetime.datetime(2016, 11, 23, 11, 21, 10, 977518),
             'employees': '501-1,000',
-            'email_full_name': 'Jeremy',
             'number': '01234567',
             'name': 'Great company',
             'twitter_url': 'http://www.twitter.com',

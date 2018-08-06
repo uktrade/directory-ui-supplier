@@ -175,15 +175,15 @@ class ContactCompanyView(CompanyProfileMixin, FormView):
             response = form.save(
                 recipients=[self.company['email_address']],
                 subject=form.cleaned_data.pop('subject'),
-                reply_to=form.cleaned_data.pop('email_address'),
+                reply_to=[form.cleaned_data.pop('email_address')],
                 from_email=settings.CONTACT_SUPPLIER_FROM_EMAIL,
-                recipient_name=self.company['email_full_name'],
+                recipient_name=self.company['name'],
             )
         else:
-            data = {
-                **forms.serialize_contact_company_form(form.cleaned_data),
-                'recipient_company_number': self.kwargs['company_number'],
-            }
+            data = forms.serialize_contact_company_form(
+                form.cleaned_data,
+                self.kwargs['company_number'],
+            )
             response = api_client.company.send_email(data)
         return response
 
