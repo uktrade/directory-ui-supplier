@@ -118,26 +118,6 @@ section {
   }
 }
 
-main.bidi {
-  #hero {
-    #search-area {
-      select {
-        direction: rtl;
-        padding-right: 40px;
-      }
-      input, select {
-        border-right-width: 2px;
-      }
-      input {
-        border-left-width: 0;
-      }
-      select {
-        border-left-width: 2px
-      }
-    }
-  }
-}
-
 #introduction-section {
   .grid-row {
     margin: 0;

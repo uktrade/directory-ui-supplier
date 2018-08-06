@@ -31,7 +31,7 @@ p {
   .header-gov-link:hover,
   .header-gov-link:link,
   .header-gov-link:visited {
-    line-height: 10px;  
+    line-height: 10px;
   }
   .header-gov-link:nth-child(2) {
     line-height: 22px;
@@ -42,24 +42,20 @@ p {
   &.hidden {
     visibility: hidden;
   }
-  @media (min-width: 641px) {
-    position: sticky;
-    top: 100px;
-    float: left;
-    margin-right: 80px;
-    width: auto;
-  }
+
   h3 {
     font-size: 24px;
     font-weight: bold;
     line-height: 1.25;
     color: $gray;
   }
+
   li a {
     font-size: 15px;
     line-height: 1.67;
   }
 }
+
 #industry-article-container {
   position: relative;
 
@@ -71,22 +67,14 @@ p {
 }
 
 #contact-area {
-  margin: 10px;
   padding: 30px 20px;
-  @media (min-width: 641px) {
-    position: sticky;
-    top: 100px;
-    float: left;
-    margin: 0;
-    margin-left: 122px;
-    width: 200px;
-  }
   right: 0;
   background-color: $sand;
   font-size: 19px;
   font-weight: bold;
   line-height: 1.32;
   color: $gray;
+
   a {
     margin-top: 30px;
     min-width: 160px;
@@ -95,10 +83,15 @@ p {
     padding-right: 20px;
     text-align: center;
   }
+
   p {
     font-weight: bold;
     font-size: 19px;
   }
+}
+
+.article-content {
+  margin-bottom: 60px;
 }
 
 .sharing-links {
@@ -121,5 +114,20 @@ p {
   img {
     width: 100%;
     height: auto;
+  }
+}
+
+@media (min-width: 641px) {
+  #contact-area {
+    margin: 0;
+    width: 200px;
+    position: sticky;
+    top: 100px;
+    float: right;
+  }
+
+  #table-of-contents {
+    position: sticky;
+    top: 100px;
   }
 }
