@@ -42,8 +42,8 @@ html[dir=rtl] {
   }
 
   #footer-sub-links {
-    ul li {
-      float: left;
+    ul {
+      text-align: left;
     }
   }
 }
