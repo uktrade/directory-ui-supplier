@@ -10,7 +10,7 @@ from industry import helpers
 @pytest.fixture
 def search_company(api_response_search_200):
     stub = patch(
-        'api_client.api_client.company.search_company',
+        'directory_api_client.client.api_client.company.search_company',
         return_value=api_response_search_200,
     )
     stub.start()
@@ -21,7 +21,7 @@ def search_company(api_response_search_200):
 @pytest.fixture
 def search_company_400(api_response_400):
     stub = patch(
-        'api_client.api_client.company.search_company',
+        'directory_api_client.client.api_client.company.search_company',
         return_value=api_response_400,
     )
     stub.start()

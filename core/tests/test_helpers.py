@@ -7,14 +7,6 @@ from core import helpers
 import core.tests.helpers
 
 
-def test_cms_secrets(settings):
-    assert helpers.cms_client.base_url == settings.CMS_URL
-    assert (
-        helpers.cms_client.request_signer.secret ==
-        settings.CMS_SIGNATURE_SECRET
-    )
-
-
 @pytest.mark.parametrize('status_code,exception', (
     (400, requests.exceptions.HTTPError),
     (404, Http404),

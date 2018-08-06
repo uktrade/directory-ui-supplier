@@ -13,12 +13,13 @@ chardet==3.0.4            # via requests
 codecov==2.0.9
 contextlib2==0.5.5        # via raven
 coverage==4.5.1           # via codecov, pytest-cov
-directory-api-client==9.16.0
-directory-client-core==0.2.1  # via directory-api-client, directory-cms-client
-directory-cms-client==2.0.0
-directory-components==2.9.0
-directory_constants==6.7.0
-directory_validators==4.5.0
+directory-api-client==10.0.0
+directory-client-core==4.0.1  # via directory-api-client, directory-cms-client, directory-forms-api-client
+directory-cms-client==3.0.0
+directory-components==2.16.0
+directory-constants==6.7.0
+directory-forms-api-client==2.0.0
+directory-validators==4.5.0
 django-environ==0.4.5
 django-formtools==2.0
 django-storages==1.6.6
@@ -26,7 +27,7 @@ django==1.11.10
 django_recaptcha==1.2.0
 djangorestframework==3.7.7  # via sigauth
 docutils==0.14            # via botocore
-export-elements==0.10.2
+export-elements==0.16.0   # via directory-components
 flake8==3.0.4
 freezegun==0.3.8
 gunicorn==19.5.0
@@ -54,7 +55,7 @@ redis==2.10.5
 requests==2.18.4
 requests_mock==1.1.0
 s3transfer==0.1.13        # via boto3
-sigauth==2.1.2            # via directory-client-core
+sigauth==4.0.1            # via directory-client-core
 six==1.11.0               # via freezegun, mohawk, python-dateutil, requests-mock
 sorl-thumbnail==12.3
 termcolor==1.1.0          # via pytest-sugar

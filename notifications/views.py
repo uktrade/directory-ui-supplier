@@ -1,9 +1,9 @@
+from directory_api_client.client import api_client
+
 from django.template.response import TemplateResponse
 from django.views.generic.edit import FormView
 
 from notifications import forms
-
-from api_client import api_client
 
 
 class AnonymousUnsubscribeView(FormView):

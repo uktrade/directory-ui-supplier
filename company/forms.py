@@ -1,11 +1,12 @@
 from captcha.fields import ReCaptchaField
 from directory_constants.constants import choices
 from directory_validators.common import not_contains_url_or_email
+from directory_forms_api_client.forms import EmailAPIForm
 
 from django import forms
+from django.template.loader import render_to_string
 
 from company import widgets
-
 
 SELECT_LABEL = 'Please select your industry'
 
@@ -46,7 +47,7 @@ class CompanySearchForm(forms.Form):
         return self.cleaned_data['page'] or self.fields['page'].initial
 
 
-class ContactCompanyForm(forms.Form):
+class ContactCompanyForm(EmailAPIForm):
 
     error_css_class = 'input-field-container has-error'
     TERMS_CONDITIONS_MESSAGE = (
@@ -96,6 +97,25 @@ class ContactCompanyForm(forms.Form):
         widget=widgets.PreventRenderWidget
     )
 
+    def save(self, recipient_name, *args, **kwargs):
+        self.recipient_name = recipient_name
+        return super().save(*args, **kwargs)
+
+    def get_context_data(self):
+        return {**self.cleaned_data, 'recipient_name': self.recipient_name}
+
+    @property
+    def html_body(self):
+        return render_to_string(
+            'company/email_to_supplier.html', self.get_context_data()
+        )
+
+    @property
+    def text_body(self):
+        return render_to_string(
+            'company/email_to_supplier.txt', self.get_context_data()
+        )
+
 
 def serialize_contact_company_form(cleaned_data, company_number):
     """
@@ -103,7 +123,6 @@ def serialize_contact_company_form(cleaned_data, company_number):
     company
 
     @param {dict} cleaned_data - Fields from `ContactCompanyForm`
-    @param {str}  company_number - the recipient's company house number
     @returns dict
 
     """

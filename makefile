@@ -9,7 +9,7 @@ test_requirements:
 	pip install -r requirements_test.txt
 
 FLAKE8 := flake8 . --exclude=migrations,.venv,node_modules
-PYTEST := pytest . --ignore=node_modules --cov=. --cov-config=.coveragerc --capture=no $(pytest_args)
+PYTEST := pytest . --ignore=node_modules --cov=. --cov-config=.coveragerc --capture=no $(pytest_args) -vv
 COLLECT_STATIC := python manage.py collectstatic --noinput
 COMPILE_TRANSLATIONS := python manage.py compilemessages
 CODECOV := \
@@ -37,8 +37,8 @@ docker_run:
 
 DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_API_CLIENT_CLASS_NAME=unit-test; \
-	export DIRECTORY_UI_SUPPLIER_API_SIGNATURE_SECRET=debug; \
-	export DIRECTORY_UI_SUPPLIER_API_CLIENT_BASE_URL=http://api.trade.great:8000; \
+	export DIRECTORY_UI_SUPPLIER_DIRECTORY_API_CLIENT_API_KEY=debug; \
+	export DIRECTORY_UI_SUPPLIER_DIRECTORY_API_CLIENT_BASE_URL=http://api.trade.great:8000; \
 	export DIRECTORY_UI_SUPPLIER_PORT=8005; \
 	export DIRECTORY_UI_SUPPLIER_SECRET_KEY=debug; \
 	export DIRECTORY_UI_SUPPLIER_DEBUG=true; \
@@ -52,12 +52,17 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_UTM_COOKIE_DOMAIN=.great; \
 	export DIRECTORY_UI_SUPPLIER_THUMBNAIL_STORAGE_CLASS_NAME=local-storage; \
 	export DIRECTORY_UI_SUPPLIER_THUMBNAIL_KVSTORE_CLASS_NAME=dummy; \
-	export DIRECTORY_UI_SUPPLIER_NOCAPTCHA=false; \
+	export DIRECTORY_UI_SUPPLIER_NOCAPTCHA=true; \
 	export DIRECTORY_UI_SUPPLIER_SESSION_COOKIE_SECURE=false; \
 	export DIRECTORY_UI_SUPPLIER_SECURE_HSTS_SECONDS=0; \
 	export DIRECTORY_UI_SUPPLIER_SECURE_SSL_REDIRECT=false; \
-	export DIRECTORY_UI_SUPPLIER_CMS_URL=http://cms.trade.great:8010; \
-	export DIRECTORY_UI_SUPPLIER_CMS_SIGNATURE_SECRET=debug
+	export DIRECTORY_UI_SUPPLIER_DIRECTORY_CMS_API_CLIENT_BASE_URL=http://cms.trade.great:8010; \
+	export DIRECTORY_UI_SUPPLIER_DIRECTORY_CMS_API_CLIENT_API_KEY=debug; \
+	export DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_BASE_URL=forms.trade.great:8011;\
+	export DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_API_KEY=debug; \
+	export DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_SENDER_ID=debug; \
+	export DIRECTORY_UI_SUPPLIER_FEATURE_DIRECTORY_FORMS_API_ENABLED=true; \
+	export DIRECTORY_UI_SUPPLIER_CONTACT_SUPPLIER_FROM_EMAIL=test@example.com
 
 
 docker_test_env_files:
@@ -97,8 +102,8 @@ DEBUG_SET_ENV_VARS := \
 	export PORT=8005; \
 	export SECRET_KEY=debug; \
 	export DEBUG=true ;\
-	export API_SIGNATURE_SECRET=debug; \
-	export API_CLIENT_BASE_URL=http://api.trade.great:8000; \
+	export DIRECTORY_API_CLIENT_API_KEY=debug; \
+	export DIRECTORY_API_CLIENT_BASE_URL=http://api.trade.great:8000; \
 	export RECAPTCHA_PUBLIC_KEY=$$DIRECTORY_UI_SUPPLIER_RECAPTCHA_PUBLIC_KEY; \
 	export RECAPTCHA_PRIVATE_KEY=$$DIRECTORY_UI_SUPPLIER_RECAPTCHA_PRIVATE_KEY; \
 	export GOOGLE_TAG_MANAGER_ID=GTM-TC46J8K; \
@@ -114,9 +119,14 @@ DEBUG_SET_ENV_VARS := \
 	export SESSION_COOKIE_SECURE=false; \
 	export SECURE_HSTS_SECONDS=0 ;\
 	export SECURE_SSL_REDIRECT=false; \
-	export CMS_URL=http://cms.trade.great:8010; \
-	export CMS_SIGNATURE_SECRET=debug; \
-	export FEATURE_SEARCH_ENGINE_INDEXING_DISABLED=true
+	export DIRECTORY_CMS_API_CLIENT_BASE_URL=http://cms.trade.great:8010; \
+	export DIRECTORY_CMS_API_CLIENT_API_KEY=debug; \
+	export FEATURE_SEARCH_ENGINE_INDEXING_DISABLED=true; \
+	export DIRECTORY_FORMS_API_BASE_URL=http://forms.trade.great:8011;\
+	export DIRECTORY_FORMS_API_API_KEY=$$DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_API_KEY; \
+	export DIRECTORY_FORMS_SENDER_ID=$$DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_SENDER_ID; \
+	export FEATURE_DIRECTORY_FORMS_API_ENABLED=true; \
+	export CONTACT_SUPPLIER_FROM_EMAIL=test@example.com
 
 
 debug_webserver:
@@ -127,6 +137,9 @@ debug_pytest:
 
 debug_test:
 	$(DEBUG_SET_ENV_VARS) && $(COLLECT_STATIC) && $(COMPILE_TRANSLATIONS) && $(FLAKE8) && $(PYTEST) --cov-report=html
+
+debug_test_last_failed:
+	make debug_test pytest_args='--last-failed'
 
 debug_manage:
 	$(DEBUG_SET_ENV_VARS) && ./manage.py $(cmd)

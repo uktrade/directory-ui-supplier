@@ -1,14 +1,13 @@
 import datetime
 import http
 
+from directory_api_client.client import api_client
 from directory_constants.constants import choices
 from directory_validators.helpers import tokenize_keywords
 
 from django.http import Http404
 from django.core.urlresolvers import reverse
 from django.utils.html import escape, mark_safe
-
-from api_client import api_client
 
 
 EMPLOYEE_CHOICES = dict(choices.EMPLOYEES)
@@ -136,7 +135,7 @@ def format_company_details(details):
             details['twitter_url'] or
             details['facebook_url'] or
             details['linkedin_url']
-        )
+        ),
     }
 
 

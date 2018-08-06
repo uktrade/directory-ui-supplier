@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 from core.tests import helpers
 
 
-@patch('core.helpers.cms_client.lookup_by_slug')
+@patch('directory_cms_client.client.cms_api_client.lookup_by_slug')
 def test_landing_page_context(
     mock_get_landing_page, settings, client, breadcrumbs
 ):
@@ -26,7 +26,7 @@ def test_landing_page_context(
     assert response.context_data['page'] == page
 
 
-@patch('core.helpers.cms_client.lookup_by_slug')
+@patch('directory_cms_client.client.cms_api_client.lookup_by_slug')
 def test_landing_page_not_found(
     mock_get_landing_page, settings, client
 ):

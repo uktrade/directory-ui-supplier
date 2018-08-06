@@ -24,21 +24,6 @@ def api_response_404(*args, **kwargs):
 
 
 @pytest.fixture
-def valid_contact_company_data(captcha_stub):
-    return {
-        'full_name': 'Jim Example',
-        'company_name': 'Example Corp',
-        'country': 'China',
-        'email_address': 'jim@example.com',
-        'sector': 'AEROSPACE',
-        'subject': 'greetings',
-        'body': 'and salutations',
-        'recaptcha_response_field': captcha_stub,
-        'terms': True,
-    }
-
-
-@pytest.fixture
 def api_response_search_description_highlight_200(
     api_response_200, search_results
 ):
@@ -419,6 +404,10 @@ def test_contact_company_view_feature_submit_success(
     mock_send_email, settings, client, valid_contact_company_data,
     retrieve_profile_data
 ):
+    settings.FEATURE_FLAGS = {
+        **settings.FEATURE_FLAGS,
+        'DIRECTORY_FORMS_API_ON': False,
+    }
     url = reverse(
         'contact-company',
         kwargs={
@@ -447,11 +436,41 @@ def test_contact_company_view_feature_submit_success(
     assert mock_send_email.call_args == call(expected_data)
 
 
+@patch.object(views.ContactCompanyView.form_class.action_class, 'save')
+def test_contact_company_view_feature_submit_forms_api_success(
+    mock_save, settings, client, valid_contact_company_data,
+    retrieve_profile_data
+):
+    settings.FEATURE_FLAGS = {
+        **settings.FEATURE_FLAGS,
+        'DIRECTORY_FORMS_API_ON': True,
+    }
+    url = reverse(
+        'contact-company',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+        },
+    )
+    response = client.post(url, valid_contact_company_data)
+
+    assert response.status_code == 302
+    assert response.url == reverse(
+        'contact-company-sent',
+        kwargs={'company_number': retrieve_profile_data['number']}
+    )
+    assert mock_save.call_count == 1
+
+
 @patch.object(views.api_client.company, 'send_email')
 def test_contact_company_view_feature_submit_failure(
     mock_send_email, api_response_400, settings, client,
-    valid_contact_company_data, retrieve_profile_data
+    valid_contact_company_data, retrieve_profile_data,
 ):
+    settings.FEATURE_FLAGS = {
+        **settings.FEATURE_FLAGS,
+        'DIRECTORY_FORMS_API_ON': False,
+    }
+
     mock_send_email.return_value = api_response_400
     url = reverse(
         'contact-company',
@@ -460,6 +479,27 @@ def test_contact_company_view_feature_submit_failure(
         },
     )
 
+    with pytest.raises(requests.exceptions.HTTPError):
+        client.post(url, valid_contact_company_data)
+
+
+@patch.object(views.ContactCompanyView.form_class.action_class, 'save')
+def test_contact_company_view_feature_submit_api_forms_failure(
+    mock_save, api_response_400, settings, client,
+    valid_contact_company_data, retrieve_profile_data,
+):
+    settings.FEATURE_FLAGS = {
+        **settings.FEATURE_FLAGS,
+        'DIRECTORY_FORMS_API_ON': True,
+    }
+
+    mock_save.return_value = api_response_400
+    url = reverse(
+        'contact-company',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+        },
+    )
     with pytest.raises(requests.exceptions.HTTPError):
         client.post(url, valid_contact_company_data)
 
@@ -513,7 +553,7 @@ def test_company_search_pagination_count(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_search_pagination_param(
     mock_search, client, search_results, api_response_search_200
 ):
@@ -532,7 +572,7 @@ def test_company_search_pagination_param(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_search_sector_empty(
     mock_search, client, search_results, api_response_search_200
 ):
@@ -549,7 +589,7 @@ def test_company_search_sector_empty(
     )
 
 
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_search_pagination_empty_page(
     mock_search, client, search_results, api_response_search_200
 ):
@@ -583,7 +623,7 @@ def test_company_search_sets_active_view_name(client):
     assert response.context_data['active_view_name'] == expected_value
 
 
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_search_api_call_error(mock_search, api_response_400, client):
     mock_search.return_value = api_response_400
 
@@ -592,7 +632,7 @@ def test_company_search_api_call_error(mock_search, api_response_400, client):
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 @patch('company.helpers.get_results_from_search_response')
 def test_company_search_api_success(
     mock_get_results_from_search_response, mock_search,
@@ -613,7 +653,7 @@ def test_company_search_api_success(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_search_response_no_highlight(
     mock_search, api_response_search_200, client
 ):
@@ -625,7 +665,7 @@ def test_company_search_response_no_highlight(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_highlight_description(
     mock_search, api_response_search_description_highlight_200, client
 ):
@@ -641,7 +681,7 @@ def test_company_highlight_description(
 
 
 @pytest.mark.django_db
-@patch('api_client.api_client.company.search_company')
+@patch('directory_api_client.client.api_client.company.search_company')
 def test_company_search_highlight_summary(
     mock_search, api_response_search_summary_highlight_200, client
 ):
