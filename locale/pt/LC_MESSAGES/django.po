@@ -397,7 +397,7 @@ msgstr ""
 
 #: enrolment/templates/bidi/footer.html:10 enrolment/templates/footer.html:10
 msgid "Department for International Trade"
-msgstr "Departamento de Comércio Internacional"
+msgstr ""
 
 #: enrolment/templates/bidi/footer.html:15 enrolment/templates/footer.html:15
 msgid "Contact us"

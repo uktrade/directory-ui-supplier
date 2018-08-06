@@ -241,7 +241,7 @@ msgstr ""
 
 #: enrolment/constants.py:237
 msgid "Tim Warrillow"
-msgstr "im Warrillow"
+msgstr ""
 
 #: enrolment/constants.py:242
 msgid "Food and drink"
@@ -359,7 +359,7 @@ msgstr ""
 
 #: enrolment/templates/bidi/footer.html:10 enrolment/templates/footer.html:10
 msgid "Department for International Trade"
-msgstr "国际贸易部"
+msgstr ""
 
 #: enrolment/templates/bidi/footer.html:15 enrolment/templates/footer.html:15
 msgid "Contact us"
