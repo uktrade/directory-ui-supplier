@@ -21,6 +21,7 @@ class CompanySearchForm(forms.Form):
             attrs={
                 'placeholder': 'Search for UK suppliers',
                 'autofocus': 'autofocus',
+                'dir': 'auto'
             }
         ),
         required=False,
@@ -33,7 +34,11 @@ class CompanySearchForm(forms.Form):
     sectors = forms.MultipleChoiceField(
         required=False,
         choices=choices.INDUSTRIES,
-        widget=widgets.CheckboxSelectMultipleIgnoreEmpty()
+        widget=widgets.CheckboxSelectMultipleIgnoreEmpty(
+            attrs={
+                'dir': 'ltr',
+            }
+        )
     )
 
     def clean(self):

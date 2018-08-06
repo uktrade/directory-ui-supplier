@@ -75,7 +75,12 @@ class ContactForm(forms.Form):
     source_other = fields.CharField(
         label=_("Other source (optional)"),
         required=False,
-        widget=TextInput(attrs={'class': 'js-field-other'}),
+        widget=TextInput(
+            attrs={
+                'class': 'js-field-other',
+                'dir': 'auto',
+            }
+        ),
         validators=[not_contains_url_or_email],
     )
     terms_agreed = fields.BooleanField()
