@@ -82,8 +82,9 @@ def test_serialize_contact_company_form():
         'sector': 'AEROSPACE',
         'subject': 'Whatever',
         'body': 'This is my united states of whatever',
+        'recipient_company_number': '01234567'
     }
-    actual = forms.serialize_contact_company_form(data)
+    actual = forms.serialize_contact_company_form(data, '01234567')
 
     assert actual == expected
 

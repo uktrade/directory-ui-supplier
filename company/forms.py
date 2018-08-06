@@ -117,7 +117,7 @@ class ContactCompanyForm(EmailAPIForm):
         )
 
 
-def serialize_contact_company_form(cleaned_data):
+def serialize_contact_company_form(cleaned_data, company_number):
     """
     Return the shape directory-api-client expects for sending a email to a
     company
@@ -135,4 +135,5 @@ def serialize_contact_company_form(cleaned_data):
         'sector': cleaned_data['sector'],
         'subject': cleaned_data['subject'],
         'body': cleaned_data['body'],
+        'recipient_company_number': company_number,
     }
