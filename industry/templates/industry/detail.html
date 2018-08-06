@@ -12,7 +12,7 @@
 {% block content %}
 <section id="hero">
     <div class="container">
-        <div class="hero-teaser bidi-rtl">
+        <div class="hero-teaser">
             {{ page.hero_text|add_href_target:request|safe }}
         </div>
         <div class="image-caption">{{ page.hero_image_caption }}</div>
@@ -22,20 +22,20 @@
 <div>
     <div class="container">
         <p class="breadcrumbs">
-            <span class="label verbose bidi-ltr">You are here:</span>
-            <a href="/" class="bidi-rtl">{{ page.breadcrumbs.landingpage.label }}</a>
+            <span class="label verbose">You are here:</span>
+            <a href="/">{{ page.breadcrumbs.landingpage.label }}</a>
             <span class="separator">,</span>
-            <a href="{% url 'sector-list' %}" class="bidi-rtl">{{ page.breadcrumbs.industrylandingpage.label }}</a>
+            <a href="{% url 'sector-list' %}">{{ page.breadcrumbs.industrylandingpage.label }}</a>
             <span class="separator">,</span>
-            <span class="current bidi-rtl">{{ page.breadcrumbs_label }}</span>
+            <span class="current">{{ page.breadcrumbs_label }}</span>
         </p>
     </div>
 </div>
 
 <section id="lede-section" class="grid-row container">
     <div class="container">
-        <h2 class="heading-large bidi-rtl">{{ page.introduction_text }}</h2>
-        <a href="{% url 'sector-detail-cms-contact' slug=page.meta.slug %}" class="button button-primary bidi-rtl">
+        <h2 class="heading-large">{{ page.introduction_text }}</h2>
+        <a href="{% url 'sector-detail-cms-contact' slug=page.meta.slug %}" class="button button-primary">
             {{ page.introduction_call_to_action_button_text }}
         </a>
     </div>
@@ -46,16 +46,16 @@
         <h2 class="heading-large">{{ page.introduction_title }}</h2>
         <div class="grid-row">
             <div class="column-one-third">
-                <img class="bidi-ltr" src="{{ page.introduction_column_one_icon.url}}" />
-                <div class="bidi-rtl">{{ page.introduction_column_one_text|add_href_target:request|safe }}</div>
+                <img src="{{ page.introduction_column_one_icon.url}}" />
+                <div>{{ page.introduction_column_one_text|add_href_target:request|safe }}</div>
             </div>
             <div class="column-one-third">
-                <img class="bidi-ltr" src="{{ page.introduction_column_two_icon.url }}" />
-                <div class="bidi-rtl">{{ page.introduction_column_two_text|add_href_target:request|safe }}</div>
+                <img src="{{ page.introduction_column_two_icon.url }}" />
+                <div>{{ page.introduction_column_two_text|add_href_target:request|safe }}</div>
             </div>
             <div class="column-one-third">
-                <img class="bidi-ltr" src="{{ page.introduction_column_three_icon.url }}" />
-                <div class="bidi-rtl">{{ page.introduction_column_three_text|add_href_target:request|safe }}</div>
+                <img src="{{ page.introduction_column_three_icon.url }}" />
+                <div>{{ page.introduction_column_three_text|add_href_target:request|safe }}</div>
             </div>
         </div>
     </div>
@@ -63,7 +63,7 @@
 
 <section id="companies-section">
     <div class="container">
-        <div class="bidi-rtl" id="companies-list-text">
+        <div id="companies-list-text">
             {{ page.company_list_text|add_href_target:request|safe }}
             <p>{{ page.company_list_search_input_placeholder_text }}</p>
         </div>
@@ -74,7 +74,7 @@
                         <input type="hidden" value="{{ value }}" name="sectors" />
                     {% endfor %}
                     <input type="text" name="term" class="form-control" />
-                    <button type="submit" class="button bidi-rtl"></button>
+                    <button type="submit" class="button"></button>
                 </form>
             </div>
         </div>
@@ -85,7 +85,7 @@
                     <div>
                         <img src="{{ company.logo }}"></img>
                     </div>
-                    <dl class="bidi-rtl">
+                    <dl>
                         <dt><a href="{{ company.public_profile_url }}" class="link">{{ company.name }}</a></dt>
                         {% with company.summary|default:company.description as summary %}
                             <dd>{{ summary|truncatechars:180 }}</dd>
@@ -95,7 +95,7 @@
             {% endfor %}
             </ul>
             <div>
-                <a href="{% search_url sector_value=page.search_filter_sector term=page.search_filter_text %}" class="button bidi-rtl">{{ page.company_list_call_to_action_text }} </a>
+                <a href="{% search_url sector_value=page.search_filter_sector term=page.search_filter_text %}" class="button">{{ page.company_list_call_to_action_text }} </a>
             </div>
         {% endif %}
     </div>
