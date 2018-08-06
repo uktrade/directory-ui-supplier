@@ -35,8 +35,7 @@
 
 @media (max-width: 769px) {
  .breadcrumbs {
- 	padding: 20px;
-    a {
+    a, span {
         font-size: 15px;
     }
  }

@@ -24,12 +24,10 @@ body {
 
 @media (max-width: 641px) {
   .container {
-    margin-left: 0px;
+    margin: 0 15px;
+    padding: 0 15px;
   }
 
-  body.js-enabled #ed-menu {
-      display: none;
-  }
   #menu-control {
     display: none;
   }

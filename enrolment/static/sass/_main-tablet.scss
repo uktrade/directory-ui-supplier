@@ -15,7 +15,7 @@
   }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 767px) {
   .container {
     padding: 0 15px;
   }
@@ -90,10 +90,5 @@
       margin: 0 6px 3px 0;
       width: 16px;
     }
-  }
-
-  #site-logo {
-    max-width: 296px;
-    width: 65%;
   }
 }

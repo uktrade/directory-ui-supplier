@@ -36,7 +36,7 @@
       </aside>
 
       <article class="column-one-half">
-        <h1 id="introduction" class="h1">{{ page.introduction_title }}</h1>
+        <h1 id="introduction" class="heading-xlarge">{{ page.introduction_title }}</h1>
         <div class="article-content">
           {{ page.body|add_export_elements_classes|add_anchors|add_href_target:request|safe }}
           <p><a class="link" href="{% url 'index' %}">{{ page.back_to_home_link_text }}</a></p>

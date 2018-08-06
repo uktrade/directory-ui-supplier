@@ -5,8 +5,11 @@ $grey: #333333;
 body #ed-menu {
   height: auto;
   margin-top: 0;
+  max-width: 60%;
+
   a {
     text-decoration: none;
+    white-space: nowrap;
   }
 }
 
@@ -37,6 +40,10 @@ body #ed-menu {
   min-height: 40px;
   width: 100%;
   z-index: 1;
+
+  & > .container {
+    padding: 0;
+  }
 }
 
 .header-gov-link {
@@ -68,7 +75,7 @@ body #ed-menu {
 }
 
 /* Header
- *****************/
+*****************/
 #header-gov-links {
   display: inline-block;
   padding: 6px 0 6px 0;
@@ -122,17 +129,17 @@ body #ed-menu {
 }
 
 #site-logo {
+  max-width: calc(40% - 15px);
   float: left;
   height: 40px;
-  margin: 16px 0 10px 0;
+  margin: 15px 15px 15px 0;
   image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
   -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
-  max-width: 326px;
 }
 
 
 /* Footer
- ******************/
+******************/
 #ed-footer {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -234,7 +241,13 @@ body #ed-menu {
 }
 
 
-@media (max-width: 799px) {
+@media (max-width: 767px) {
+  #navbar {
+    .container {
+      padding: 0;
+    }
+  }
+
   #footer-main-links {
     width: calc(100% - 150px);
     text-align: right;
@@ -245,6 +258,11 @@ body #ed-menu {
       border: 0;
       margin-bottom: 10px;
     }
+  }
+
+  body.js-enabled #ed-menu {
+    display: none;
+    max-width: 100%;
   }
 
   #footer-sub-links {
@@ -258,5 +276,15 @@ body #ed-menu {
   #footer-credits {
     float: left;
     margin: 30px 0 0 0;
+  }
+
+  #site-logo {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 420px) {
+  #site-logo {
+    max-width: calc(100% - 100px);
   }
 }

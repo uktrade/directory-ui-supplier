@@ -1,10 +1,8 @@
 @import 'partials/fonts';
 @import 'variables';
 
-html[dir=rtl] {
-  #skip-link {
-    left: auto;
-  }
+#skip-link {
+  left: auto;
 }
 
 :lang(ar) {
@@ -15,7 +13,7 @@ html[dir=rtl] {
   }
 }
 
-#ed-header.bidi {
+#ed-header {
   #header-gov-links {
     float: left;
     display: block;
@@ -30,7 +28,7 @@ html[dir=rtl] {
   }
 }
 
-#ed-footer.bidi {
+#ed-footer {
   #footer-main-links {
     ul li:first-child {
       border-left: 2px solid $stone;
@@ -48,79 +46,105 @@ html[dir=rtl] {
   }
 }
 
-main.bidi {
+
+.column-one-half,
+.column-one-third,
+.column-one-quarter,
+.column-one-two-thirds {
+  float: right;
+}
+
+#introduction-section .button-container {
+  margin-left: 0;
+  width: 50%;
+
+  .button {
+    float: left;
+  }
+}
+
+#hero #search-area input[type=text] {
+  border-right-width: 2px;
+  border-left-width: 0;
+}
+
+#companies-section form button {
+  right: auto;
+  left: 0;
+}
+
+#lede {
+  form {
+    .form-label, .form-hint, .form-control {
+      text-align: right;
+    }
+    select {
+      direction: rtl;
+      padding-right: 40px;
+    }
+  }
+}
+
+#lede-columns-section {
+  div {
+    img {
+      left: 0;
+    }
+  }
+}
+
+#lede-section {
+  & > .container {
+    position: relative;
+  }
+
+  .button {
+    margin-left: 0;
+    position: absolute;
+    left: 0;
+  }
+}
+
+#hero {
+  .hero-teaser {
+    left: 0;
+  }
+}
+
+.breadcrumbs {
+  .separator {
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+  }
+}
+
+#contact-area {
+  float: left;
+}
+
+
+@media (max-width: 799px) {
+  #footer-main-links ul li:first-child {
+    border: 0;
+  }
+}
+
+@media (max-width: 641px) {
   .column-one-half,
   .column-one-third,
   .column-one-quarter,
   .column-one-two-thirds {
-    float: right;
-  }
-
-  #introduction-section .button-container {
-    margin-left: 0;
-    width: 50%;
-
-    .button {
-      float: left;
-    }
+    float: none;
   }
 
   #hero #search-area input[type=text] {
-    border-right-width: 2px;
-    border-left-width: 0;
-  }
-
-  #companies-section form button {
-    right: auto;
-    left: -50px;
-  }
-
-  #lede {
-    form {
-      .form-label, .form-hint, .form-control {
-        text-align: right;
-      }
-      select {
-        direction: rtl;
-        padding-right: 40px;
-      }
-    }
-  }
-
-  #lede-columns-section {
-    div {
-      img {
-        left: 0;
-      }
-    }
+    border-left-width: 2px;
   }
 
   #lede-section {
-    & > .container {
-      position: relative;
-    }
-
     .button {
-      margin-left: 0;
-      position: absolute;
-      left: 0;
+      position: static;
+      left: auto;
     }
-  }
-
-  #hero {
-    .hero-teaser {
-      left: 0;
-    }
-  }
-
-  .breadcrumbs {
-    .separator {
-      -webkit-transform: rotate(225deg);
-      transform: rotate(225deg);
-    }
-  }
-
-  #contact-area {
-    float: left;
   }
 }
