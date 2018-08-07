@@ -15,7 +15,7 @@ zenpy==1.1.10
 directory-components==2.17.0
 directory-cms-client==3.0.0
 directory-api-client==10.0.0
-directory-forms-api-client==2.0.0
+directory-forms-api-client==2.0.2
 directory-validators==4.5.0
 directory-constants==6.7.0
 beautifulsoup4==4.6.0
