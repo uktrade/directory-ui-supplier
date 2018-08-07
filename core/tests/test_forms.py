@@ -52,9 +52,10 @@ def test_lead_generation_form_accepts_valid_data(captcha_stub):
             'company_name': 'Deutsche Bank',
             'country': 'Germany',
             'terms': True,
-            'recaptcha_response_field': captcha_stub
+            'g-recaptcha-response': captcha_stub
         }
     )
+
     assert form.is_valid()
 
 

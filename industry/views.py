@@ -11,7 +11,8 @@ from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 from django.urls import reverse, reverse_lazy
 
-from core.helpers import cms_client, handle_cms_response
+from directory_cms_client.client import cms_api_client
+
 from core.views import ActivateTranslationMixin
 from core.mixins import (
     ActiveViewNameMixin,
@@ -19,6 +20,7 @@ from core.mixins import (
     GetCMSPageMixin,
     SpecificRefererRequiredMixin
 )
+from core.helpers import handle_cms_response
 from industry import forms
 from industry.helpers import get_showcase_companies
 
@@ -64,7 +66,7 @@ class IndustryDetailCMSView(
 class GetContactPageMixin:
     @functools.lru_cache()
     def get_contact_page(self):
-        response = cms_client.lookup_by_slug(
+        response = cms_api_client.lookup_by_slug(
             slug=cms_constants.FIND_A_SUPPLIER_INDUSTRY_CONTACT_SLUG,
             language_code=translation.get_language(),
             draft_token=self.request.GET.get('draft_token'),
@@ -81,7 +83,7 @@ class GetContactPageMixin:
 class GetIndustryPageMixin:
     @functools.lru_cache()
     def get_industry_page(self):
-        response = cms_client.lookup_by_slug(
+        response = cms_api_client.lookup_by_slug(
             slug=self.kwargs['slug'],
             language_code=translation.get_language(),
         )
@@ -110,15 +112,19 @@ class BaseIndustryContactView(FormView):
         }
 
     def form_valid(self, form):
-        zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
-        self.create_zendesk_ticket(form.zendesk_cleaned_data, zendesk_user)
+        if settings.FEATURE_FLAGS['DIRECTORY_FORMS_API_ON']:
+            response = form.save()
+            response.raise_for_status()
+        else:
+            zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
+            self.create_zendesk_ticket(form.cleaned_data, zendesk_user)
         return super().form_valid(form)
 
     @staticmethod
     def get_or_create_zendesk_user(cleaned_data):
         zendesk_user = ZendeskUser(
             name=cleaned_data['full_name'],
-            email=cleaned_data['email_address'],
+            email=cleaned_data['requester_email'],
         )
         return zenpy_client.users.create_or_update(zendesk_user)
 
@@ -209,7 +215,7 @@ class IndustryLandingPageCMSView(
     template_name = 'industry/list.html'
 
     def get_cms_page(self):
-        response = cms_client.lookup_by_slug(
+        response = cms_api_client.lookup_by_slug(
             slug=cms_constants.FIND_A_SUPPLIER_INDUSTRY_LANDING_SLUG,
             language_code=translation.get_language(),
             draft_token=self.request.GET.get('draft_token'),

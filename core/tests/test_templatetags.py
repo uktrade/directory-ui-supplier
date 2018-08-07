@@ -1,25 +1,6 @@
 from django.template import Context, Template
 
 
-def test_add_anchors():
-    template = Template(
-        '{% load add_anchors from cms_tags %}'
-        '{{ html|add_anchors|safe }}'
-    )
-
-    context = Context({
-        'html': '<br/><h2>Title one</h2><h2>Title two</h2><br/>'
-    })
-    html = template.render(context)
-
-    assert html == (
-        '<br/>'
-        '<h2 id="title-one-section">Title one</h2>'
-        '<h2 id="title-two-section">Title two</h2>'
-        '<br/>'
-    )
-
-
 def test_table_of_contents():
     template = Template(
         '{% load table_of_contents from cms_tags %}'
@@ -51,40 +32,6 @@ def test_first_paragraph():
     html = template.render(context)
 
     assert html == '<p>The first paragraph</p>'
-
-
-def test_first_image():
-    template = Template(
-        '{% load first_image from cms_tags %}'
-        '{{ html|first_image|safe }}'
-
-    )
-    context = Context({
-        'html': (
-            '<p>The first paragraph</p>'
-            '<p><img src="path/to/image" height="100" width="50"/></p>'
-        )
-    })
-    html = template.render(context)
-
-    assert html == '<img src="path/to/image" width="50"/>'
-
-
-def test_first_image_empty():
-    template = Template(
-        '{% load first_image from cms_tags %}'
-        '{{ html|first_image|safe }}'
-
-    )
-    context = Context({
-        'html': (
-            '<p>The first paragraph</p>'
-            '<p></p>'
-        )
-    })
-    html = template.render(context)
-
-    assert html == ''
 
 
 def test_grouper():
@@ -150,32 +97,6 @@ def test_grouper_remainder():
         '        <li>4</li>'
         '        <li>5</li>'
         '    </ul>'
-    )
-
-
-def test_add_export_elements_classes():
-    template = Template(
-        '{% load add_export_elements_classes from cms_tags %}'
-        '{{ html|add_export_elements_classes|safe }}'
-
-    )
-    context = Context({
-        'html': (
-            '<br/>'
-            '<h2>Title one</h2>'
-            '<h3>Title two</h3>'
-            '<ul>List one</ul>'
-            '<ol>List two</ol>'
-        )
-    })
-    html = template.render(context)
-
-    assert html == (
-        '<br/>'
-        '<h2 class="heading-large">Title one</h2>'
-        '<h3 class="heading-medium">Title two</h3>'
-        '<ul class="list list-bullet">List one</ul>'
-        '<ol class="list list-number">List two</ol>'
     )
 
 

@@ -1,3 +1,6 @@
+from directory_api_client.client import api_client
+
+from django.conf import settings
 from django.core.paginator import EmptyPage, Paginator
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
@@ -6,7 +9,6 @@ from django.utils.functional import cached_property
 from django.views.generic import RedirectView, TemplateView
 from django.views.generic.edit import FormView
 
-from api_client import api_client
 from company import forms, helpers
 import core.mixins
 
@@ -164,20 +166,26 @@ class ContactCompanyView(CompanyProfileMixin, FormView):
         )
 
     def form_valid(self, form):
-        data = self.serialize_form_data(
-            cleaned_data=form.cleaned_data,
-            company_number=self.kwargs['company_number'],
-        )
-        response = api_client.company.send_email(data)
+        response = self.send_email(form)
         response.raise_for_status()
         return super().form_valid(form)
 
-    @staticmethod
-    def serialize_form_data(cleaned_data, company_number):
-        return forms.serialize_contact_company_form(
-            cleaned_data,
-            company_number,
-        )
+    def send_email(self, form):
+        if settings.FEATURE_FLAGS['DIRECTORY_FORMS_API_ON']:
+            response = form.save(
+                recipients=[self.company['email_address']],
+                subject=form.cleaned_data['subject'],
+                reply_to=[form.cleaned_data['email_address']],
+                from_email=settings.CONTACT_SUPPLIER_FROM_EMAIL,
+                recipient_name=self.company['name'],
+            )
+        else:
+            data = forms.serialize_contact_company_form(
+                form.cleaned_data,
+                self.kwargs['company_number'],
+            )
+            response = api_client.company.send_email(data)
+        return response
 
 
 class ContactCompanySentView(

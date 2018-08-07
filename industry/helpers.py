@@ -1,4 +1,4 @@
-from api_client import api_client
+from directory_api_client.client import api_client
 
 from company.helpers import format_company_details
 

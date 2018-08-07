@@ -1,8 +1,10 @@
+from directory_cms_client.client import cms_api_client
+import directory_cms_client.constants
+
 from django.contrib import sitemaps
 from django.core.urlresolvers import reverse
 
 from core import helpers
-import directory_cms_client.constants
 
 
 class SectorLandingPageSitemap(sitemaps.Sitemap):
@@ -10,7 +12,7 @@ class SectorLandingPageSitemap(sitemaps.Sitemap):
     changefreq = 'daily'
 
     def items(self):
-        response = helpers.cms_client.list_by_page_type(
+        response = cms_api_client.list_by_page_type(
             directory_cms_client.constants.FIND_A_SUPPLIER_INDUSTRY_TYPE
         )
         pages = helpers.handle_cms_response(response)['items']

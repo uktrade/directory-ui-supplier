@@ -6,6 +6,7 @@ from directory_constants.constants import choices
 from directory_components import forms, fields
 from directory_components.context_processors import get_url
 from directory_validators.common import not_contains_url_or_email
+from directory_forms_api_client.forms import ZendeskActionMixin
 
 from django.forms import Textarea, TextInput, Select
 from django.utils.translation import ugettext_lazy as _
@@ -20,7 +21,7 @@ TERMS_URL = urljoin(
 )
 
 
-class ContactForm(forms.Form):
+class ContactForm(ZendeskActionMixin, forms.Form):
 
     def __init__(self, industry_choices, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -36,7 +37,7 @@ class ContactForm(forms.Form):
         max_length=255,
         validators=[not_contains_url_or_email],
     )
-    email_address = fields.EmailField(
+    requester_email = fields.EmailField(
         label=_('Email address'),
     )
     sector = fields.ChoiceField(
@@ -86,8 +87,7 @@ class ContactForm(forms.Form):
     terms_agreed = fields.BooleanField()
     captcha = ReCaptchaField()
 
-    @property
-    def zendesk_cleaned_data(self):
-        data = {**self.cleaned_data}
-        del data['captcha']
-        return data
+    def clean(self):
+        cleaned_data = super().clean()
+        del cleaned_data['captcha']
+        return cleaned_data
