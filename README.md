@@ -53,7 +53,7 @@ Form submissions are powered by [directory-forms-api](https://github.com/uktrade
 | Host environment variable                         | Notes                             |
 | ------------------------------------------------- | --------------------------------- |
 | DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_API_KEY | Populate from client `access_key` |
-| DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_SENDER_ID   | Populate from client `identifier` |
+| DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_SENDER_ID   | Populate from client `identifier` |
 
 ## Debugging
 
