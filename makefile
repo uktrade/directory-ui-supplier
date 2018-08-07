@@ -60,8 +60,8 @@ DOCKER_SET_DEBUG_ENV_VARS := \
 	export DIRECTORY_UI_SUPPLIER_DIRECTORY_CMS_API_CLIENT_API_KEY=debug; \
 	export DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_BASE_URL=forms.trade.great:8011;\
 	export DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_API_KEY=debug; \
-	export DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_SENDER_ID=debug; \
-	export DIRECTORY_UI_SUPPLIER_FEATURE_DIRECTORY_FORMS_API_ENABLED=true; \
+	export DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_SENDER_ID=debug; \
+	export DIRECTORY_UI_SUPPLIER_FEATURE_DIRECTORY_FORMS_API_ENABLED=false; \
 	export DIRECTORY_UI_SUPPLIER_CONTACT_SUPPLIER_FROM_EMAIL=test@example.com
 
 
@@ -124,7 +124,7 @@ DEBUG_SET_ENV_VARS := \
 	export FEATURE_SEARCH_ENGINE_INDEXING_DISABLED=true; \
 	export DIRECTORY_FORMS_API_BASE_URL=http://forms.trade.great:8011;\
 	export DIRECTORY_FORMS_API_API_KEY=$$DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_API_KEY; \
-	export DIRECTORY_FORMS_SENDER_ID=$$DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_SENDER_ID; \
+	export DIRECTORY_FORMS_API_SENDER_ID=$$DIRECTORY_UI_SUPPLIER_DIRECTORY_FORMS_API_SENDER_ID; \
 	export FEATURE_DIRECTORY_FORMS_API_ENABLED=true; \
 	export CONTACT_SUPPLIER_FROM_EMAIL=test@example.com
 
@@ -163,10 +163,6 @@ integration_tests:
 
 compile_requirements:
 	python3 -m piptools compile requirements.in
-
-compile_test_requirements:
 	python3 -m piptools compile requirements_test.in
-
-compile_all_requirements: compile_requirements compile_test_requirements
 
 .PHONY: build clean test_requirements docker_run docker_debug docker_webserver_bash docker_test debug_webserver debug_test debug heroku_deploy_dev heroku_deploy_demo
