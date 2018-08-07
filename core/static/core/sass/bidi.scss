@@ -1,0 +1,150 @@
+@import 'partials/fonts';
+@import 'variables';
+
+#skip-link:focus {
+  left: auto;
+}
+
+:lang(ar) {
+  font-family: 'ge-ss', 'Roboto', Helvetica, Arial, sans-serif;
+
+  a:link {
+    font-family: 'ge-ss', 'Roboto', Helvetica, Arial, sans-serif;
+  }
+}
+
+#ed-header {
+  #header-gov-links {
+    float: left;
+    display: block;
+  }
+
+  #navbar {
+    clear: both;
+  }
+
+  .ed-language-switcher {
+    float: right;
+  }
+}
+
+#ed-footer {
+  #footer-main-links {
+    ul li:first-child {
+      border-left: 2px solid $stone;
+    }
+
+    ul li:last-child {
+      border-left: 0;
+    }
+  }
+
+  #footer-sub-links {
+    ul {
+      text-align: left;
+    }
+  }
+}
+
+
+.column-one-half,
+.column-one-third,
+.column-one-quarter,
+.column-one-two-thirds {
+  float: right;
+}
+
+#introduction-section .button-container {
+  margin-left: 0;
+  width: 50%;
+
+  .button {
+    float: left;
+  }
+}
+
+#hero #search-area input[type=text] {
+  border-right-width: 2px;
+  border-left-width: 0;
+}
+
+#companies-section form button {
+  right: auto;
+  left: 0;
+}
+
+#lede {
+  form {
+    .form-label, .form-hint, .form-control {
+      text-align: right;
+    }
+    select {
+      direction: rtl;
+      padding-right: 40px;
+    }
+  }
+}
+
+#lede-columns-section {
+  div {
+    img {
+      left: 0;
+    }
+  }
+}
+
+#lede-section {
+  & > .container {
+    position: relative;
+  }
+
+  .button {
+    margin-left: 0;
+    position: absolute;
+    left: 0;
+  }
+}
+
+#hero {
+  .hero-teaser {
+    left: 0;
+  }
+}
+
+.breadcrumbs {
+  .separator {
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+  }
+}
+
+#contact-area {
+  float: left;
+}
+
+
+@media (max-width: 767px) {
+  #ed-footer #footer-main-links ul li:first-child {
+    border-left: 0;
+  }
+}
+
+@media (max-width: 641px) {
+  .column-one-half,
+  .column-one-third,
+  .column-one-quarter,
+  .column-one-two-thirds {
+    float: none;
+  }
+
+  #hero #search-area input[type=text] {
+    border-left-width: 2px;
+  }
+
+  #lede-section {
+    .button {
+      position: static;
+      left: auto;
+    }
+  }
+}

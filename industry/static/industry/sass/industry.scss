@@ -8,7 +8,7 @@ $gray: #333333;
 $white:  #ffffff;
 
 #content {
-  padding-bottom: 0;  
+  padding-bottom: 0;
 }
 
 #hero {
@@ -87,16 +87,19 @@ $white:  #ffffff;
   padding: 60px 48px;
   position: relative;
   font-size: 19px;
+
   div {
     position: relative;
     padding-left: 22px;
     padding-right: 22px;
+
     img {
       position: absolute;
       height: 40px;
       left: -10px;
     }
   }
+
   h2 {
     color: $gray;
     font-size: 36px;
@@ -131,14 +134,6 @@ $white:  #ffffff;
   }
 }
 
-main.bidi #lede-columns-section {
-  div {
-    img {
-      left: 0;
-    }
-  }
-}
-
 #companies-section {
   padding: 60px;
   padding-top: 80px;
@@ -161,8 +156,9 @@ main.bidi #lede-columns-section {
   form {
     margin-bottom: 30px;
     position: relative;
+
     input {
-      width: 100%;
+      width: calc(100% - 50px);
       height: 50px;
       font-size: 16px;
       padding-left: 15px;
@@ -170,7 +166,7 @@ main.bidi #lede-columns-section {
     button {
       position: absolute;
       top: 0;
-      right: -50px;
+      right: 0;
       background-image: url(/static/industry/images/search.svg);
       height: 50px;
       width: 50px;
@@ -230,7 +226,7 @@ main.bidi #lede-columns-section {
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 767px) {
   #hero-section {
     height: 350px;
     .hero-teaser {
@@ -361,5 +357,21 @@ main.bidi #lede-columns-section {
     article {
       border-bottom: 1px solid $gray;
     }
+  }
+}
+
+@media (max-width: 641px) {
+  #hero {
+    height: auto;
+  }
+
+  #hero .container {
+    height: auto;
+    padding: 0;
+  }
+
+  #hero .hero-teaser {
+    position: static;
+    max-width: 100%;
   }
 }

@@ -11,13 +11,14 @@ cachetools==2.0.1         # via zenpy
 certifi==2018.1.18        # via requests
 chardet==3.0.4            # via requests
 contextlib2==0.5.5        # via raven
+directory-components==2.17.0
+directory_constants==6.7.0
+directory_validators==4.5.0
 directory-api-client==10.0.0
 directory-client-core==4.0.1  # via directory-api-client, directory-cms-client, directory-forms-api-client
 directory-cms-client==3.0.0
-directory-components==2.16.0
-directory-constants==6.7.0
 directory-forms-api-client==2.0.2
-directory-validators==4.5.0
+directory-constants==6.7.0
 django-environ==0.4.5
 django-formtools==2.0
 django-storages==1.6.6

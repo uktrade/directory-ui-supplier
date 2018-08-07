@@ -1,7 +1,7 @@
 /* Tablet
  ******************/
 @media (max-width: 979px) {
-  
+
   #site-logo {
     height: auto;
   }
@@ -15,20 +15,20 @@
   }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 767px) {
   .container {
     padding: 0 15px;
   }
-  
+
   .ed-hero-sub-header {
     padding-top: 265px;
-    
+
     .ed-hero-sub-header-title {
       @include font-title-2;
       width: 540px;
     }
   }
-  
+
   #footer-links {
     border-bottom: 1px solid $white;
     display: block;
@@ -36,12 +36,12 @@
     padding-right: 0;
     width: 100%;
   }
-  
+
   #footer-credits {
     float: left;
     margin: 30px 0 0 0;
   }
-  
+
   #intro {
     [class*="span"] {
       display: block;
@@ -49,27 +49,27 @@
       width: auto;
     }
   }
-  
-  #menu {
+
+  #ed-menu {
     border-top: 1px solid $grey-3;
     clear: both;
     float: none;
     height: 0;
     position: relative;
     top: 1px;
-    
+
     li {
       border-bottom: 1px solid $grey-3;
       border-right: none;
       display: block;
       width: 100%;
     }
-    
+
     a {
       text-align: center;
     }
   }
-  
+
   #menu-control {
     background: none;
     border: $grey-4 solid 1px;
@@ -80,7 +80,7 @@
     line-height: 0.9em;
     margin: 15px 0 10px 0;
     padding: 11px 12px 9px 12px;
-  
+
     .bar {
       background-color: $grey-4;
       clear: left;
@@ -90,10 +90,5 @@
       margin: 0 6px 3px 0;
       width: 16px;
     }
-  }
-
-  #site-logo {
-    max-width: 296px;
-    width: 65%;
   }
 }

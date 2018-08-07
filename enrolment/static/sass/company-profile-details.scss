@@ -16,19 +16,19 @@ h3 {
 .company-profile-details-body {
   margin-top: 30px;
   position: relative;
-  
+
   li {
-    list-style-type: disc; 
+    list-style-type: disc;
   }
 }
 
 .company-profile-module-description {
   word-wrap: break-word;
-}  
+}
 
 .company-profile-module-details {
   padding-left: 30px;
-  
+
   a {
     display: inline-block;
     max-width: 100%;
@@ -36,7 +36,7 @@ h3 {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  
+
   p {
     margin: 0;
   }
@@ -45,7 +45,7 @@ h3 {
 .company-profile-module-social-links,
 .company-profile-module-facts {
   border-left: 1px solid $grey-3;
-  
+
   p {
     margin: 0;
   }
@@ -56,7 +56,7 @@ h3 {
     top: -5px;
     width: 30px;
   }
-  
+
   .social-link {
     line-height: 1.2em;
     margin-bottom: 20px;
@@ -159,29 +159,29 @@ h3 {
 #company-profiles {
   display: table;
   table-layout: fixed;
-  
+
   [class*="span"] {
     display: table-cell;
     float: none;
     margin: 0;
     vertical-align: top;
   }
-  
+
   .span2 {
     padding: 0;
     width: 20%;
   }
-    
+
   .span4 {
     padding: 0 30px;
     width: 30%;
   }
-  
+
   .span6 {
     padding-right: 30px;
     width: 50%;
   }
-  
+
   .span8 {
     padding-right: 30px;
     width: 70%;
@@ -196,15 +196,15 @@ h3 {
   border: none;
   margin: 5px 0;
   padding: 0;
-  
+
   img {
     margin-bottom: 15px;
   }
-  
+
   p {
     @include font-standard-2;
   }
-  
+
   article {
     margin-bottom: 30px;
     &:nth-child(3n+2) {
@@ -216,24 +216,28 @@ h3 {
 
 /* TABLET
  ****************/
-@media (max-width: 799px) {
+@media (max-width: 767px) {
   .company-profile-details-body {
     .company-profile-module-description {
       padding-right: 40px;
     }
   }
-  
+
+  #navbar > .container {
+    padding: 0 15px;
+  }
+
   .company-profile-module-social-links,
   .company-profile-module-facts {
     border: none;
   }
-  
+
   #company-projects {
     img {
       max-width: 50%;
       width: auto;
     }
-    
+
     .span4 {
       margin: 0 0 30px 0;
       width: 100%;
@@ -245,32 +249,32 @@ h3 {
 /* MOBILE
  ****************/
 @media (max-width: 640px) {
-  #company-details, 
+  #company-details,
   #company-profiles {
     [class*="span"] {
       display: block;
       float: left;
     }
-    
+
     .span4,
     .span8 {
     	border-left: none;
     	padding: 0;
-    	width: 100%; 
+    	width: 100%;
     }
-    
+
     .span6 {
       padding-right: 0;
       width: 80%;
     }
   }
-  
+
   #company-details {
     .company-profile-module-facts {
       padding-top: 30px;
     }
   }
-  
+
   #company-profiles {
     padding-bottom: 0;
   }
@@ -284,7 +288,7 @@ h3 {
       width: 100%;
     }
   }
-  
+
   #company-details,
   #company-projects {
     img {
@@ -309,7 +313,7 @@ h3 {
 
 /* IE targeted hack because 10+ no longer supports Conditional Comments */
 @media screen\0 {
-  
+
   /* Fix lack of max-width support because container doesn't have set width */
   .company-logo img {
     width: 100%;

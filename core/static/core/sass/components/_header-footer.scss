@@ -2,11 +2,14 @@
 
 $grey: #333333;
 
-body #menu {
+body #ed-menu {
   height: auto;
   margin-top: 0;
+  max-width: 60%;
+
   a {
     text-decoration: none;
+    white-space: nowrap;
   }
 }
 
@@ -68,7 +71,7 @@ body #menu {
 }
 
 /* Header
- *****************/
+*****************/
 #header-gov-links {
   display: inline-block;
   padding: 6px 0 6px 0;
@@ -79,7 +82,11 @@ body #menu {
   }
 }
 
-#menu {
+#ed-header .container {
+  padding: 0;
+}
+
+#ed-menu {
   border-left: 1px solid $grey-3;
   float: right;
   height: auto;
@@ -111,13 +118,6 @@ body #menu {
   }
 }
 
-header.bidi {
-  #menu {
-    border-right: 1px solid $grey-3;
-    border-left: 0;
-  }
-}
-
 #menu-control {
   display: none; /* only on tablet+mobile */
 }
@@ -129,18 +129,18 @@ header.bidi {
 }
 
 #site-logo {
+  max-width: calc(40% - 15px);
   float: left;
   height: 40px;
-  margin: 16px 0 10px 0;
+  margin: 15px 15px 15px 0;
   image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
   -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
-  max-width: 326px;
 }
 
 
 /* Footer
- ******************/
-#footer {
+******************/
+#ed-footer {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Roboto', arial, helvetica, sans-serif;
@@ -157,7 +157,7 @@ header.bidi {
   }
 }
 
-#footer > .container {
+#ed-footer > .container {
   position: relative;
   margin-bottom: 45px;
 }
@@ -229,16 +229,19 @@ header.bidi {
   }
 }
 
-#footer-copyright {
-  color: $white;
-  font-size: 12px;
-  text-align: right;
-  line-height: 35px;
-  height: 35px;
+#ed-footer-copyright {
+  p {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif; // set font here to avoid arabic font being used when lang = ar
+    color: $white;
+    font-size: 12px;
+    text-align: right;
+    line-height: 35px;
+    height: 35px;
+  }
 }
 
 
-@media (max-width: 799px) {
+@media (max-width: 767px) {
   #footer-main-links {
     width: calc(100% - 150px);
     text-align: right;
@@ -249,6 +252,12 @@ header.bidi {
       border: 0;
       margin-bottom: 10px;
     }
+  }
+
+  body.js-enabled #ed-menu.collapse {
+    height: 1px;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   #footer-sub-links {
@@ -262,5 +271,15 @@ header.bidi {
   #footer-credits {
     float: left;
     margin: 30px 0 0 0;
+  }
+
+  #site-logo {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 420px) {
+  #site-logo {
+    max-width: calc(100% - 100px);
   }
 }

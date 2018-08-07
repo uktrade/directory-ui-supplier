@@ -14,44 +14,45 @@
 <div>
     <div class="container">
         <p class="breadcrumbs">
-            <span class="label verbose bidi-ltr">You are here:</span>
-            <a href="/" class="bidi-rtl">{{ page.breadcrumbs.landingpage.label }}</a>
+            <span class="label verbose">You are here:</span>
+            <a href="/">{{ page.breadcrumbs.landingpage.label }}</a>
             <span class="separator">,</span>
-            <span class="current bidi-rtl">{{ page.breadcrumbs_label }}</span>
+            <span class="current">{{ page.breadcrumbs_label }}</span>
         </p>
     </div>
 </div>
 
-<div class="container bidi-rtl" id="industry-article-container">
-    <section class="grid-row">
-        <div class="column-one-quarter {% if not page.show_table_of_content %}hidden{% endif %}" id="table-of-contents">
-            <h3>Contents:</h3>
-            <ul>
-                <li><a class="link" href="#introduction">Introduction</a></li>
-                {% for anchor_id, label in page.body|table_of_contents %}
-                    <li><a class="link" href="#{{ anchor_id }}">{{ label }}</a></li>
-                {% endfor %}
-            </ul>
+<section class="container" id="industry-article-container">
+  <article class="">
+    <div class="grid-row">
+      <aside class="column-one-quarter {% if not page.show_table_of_content %}hidden{% endif %}" id="table-of-contents">
+        <h3><span dir="ltr">Contents:</span></h3>
+        <ul>
+          <li><a class="link" href="#introduction">Introduction</a></li>
+          {% for anchor_id, label in page.body|table_of_contents %}
+          <li><a class="link" href="#{{ anchor_id }}">{{ label }}</a></li>
+          {% endfor %}
+        </ul>
+      </aside>
+
+      <article class="column-one-half">
+        <h1 id="introduction" class="heading-xlarge">{{ page.introduction_title }}</h1>
+        <div class="article-content">
+          {{ page.body|add_export_elements_classes|add_anchors|add_href_target:request|safe }}
+          <p><a class="link" href="{% url 'index' %}">{{ page.back_to_home_link_text }}</a></p>
         </div>
-        <div class="column-one-half">
-            <h1 id="introduction" class="h1">{{ page.introduction_title }}</h1>
-            {{ page.body|add_export_elements_classes|add_anchors|add_href_target:request|safe }}
-            <br>
-            <br>
-            <p><a class="link" href="{% url 'index' %}">{{ page.back_to_home_link_text }}</a></p>
-            <br>
-            <br>
-            <div>
-            {% include 'directory_components/social_share_links.html' with title=page.social_share_title %}
-            </div>
-        </div>
-        <div class="column-one-quarter" id="contact-area">
-            {{ page.proposition_text|add_export_elements_classes|add_href_target:request|safe }}
-            <a href="{% url 'sector-list-cms-contact' %}" class="button">{{ page.call_to_action_text }}</a>
-        </div>
-        
-    </section>
-</div>
+        {% include 'directory_components/social_share_links.html' with title=page.social_share_title %}
+      </article>
+
+      <aside id="contact-area">
+        {{ page.proposition_text|add_export_elements_classes|add_href_target:request|safe }}
+        <a href="{% url 'sector-list-cms-contact' %}" class="button">{{ page.call_to_action_text }}</a>
+      </aside>
+
+    </div>
+
+  </article>
+</section>
 {% endblock content %}
 
 {% block feedback_reporter %}{% endblock %}

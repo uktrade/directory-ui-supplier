@@ -1,4 +1,7 @@
 {% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
 
 {% block head_css %}
     {{ block.super }}
@@ -38,6 +41,9 @@
     {% for language_code, url in page.meta.localised_urls %}
         <link rel="alternate" href="{{ url }}" hreflang="{{ language_code }}" />
     {% endfor %}
+    {% if LANGUAGE_BIDI %}
+      <link href="{% static 'core/bidi.css' %}" media="all" rel="stylesheet" />
+    {% endif %}
 {% endblock %}
 
 {% block head_sharing_metadata %}

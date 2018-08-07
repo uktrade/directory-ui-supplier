@@ -3,7 +3,6 @@ $asset-path: '../';
 @import url('https://fonts.googleapis.com/css?family=Overpass:400,700');
 
 @import 'mixins.scss';
-@import 'partials/bidi.scss';
 @import 'components/header-footer';
 @import 'components/language-switcher';
 @import 'variables.scss';
@@ -25,12 +24,10 @@ body {
 
 @media (max-width: 641px) {
   .container {
-    margin-left: 0px;
+    margin: 0 15px;
+    padding: 0 15px;
   }
 
-  body.js-enabled #menu {
-      display: none;
-  }
   #menu-control {
     display: none;
   }

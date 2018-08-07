@@ -7,10 +7,10 @@
 		<div>
 			{% trans "Tell us what kind of goods or services you need. We'll put you in touch with relevant UK suppliers." %}
 		</div>
-		<div class="row-fluid">
+		<div class="">
 			<form action="{% url 'lead-generation' %}" method="post" style="margin-top: 30px;">
-				<div class="row-fluid">
-					<div class="span6">
+				<div class="grid-row">
+					<div class="column-half">
 						<div class="{{ form.full_name.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.full_name.id_for_label }}">
 								{{ form.full_name.errors }}
@@ -20,7 +20,7 @@
 						</div>
 					</div>
 
-					<div class="span6">
+					<div class="column-half">
 						<div class="{{ form.email_address.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.email_address.id_for_label }}">
 								{{ form.email_address.errors }}
@@ -32,8 +32,8 @@
 
 				</div>
 
-				<div class="row-fluid">
-					<div class="span6">
+				<div class="grid-row">
+					<div class="column-half">
 						<div class="{{ form.company_name.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.company_name.id_for_label }}">
 								{{ form.company_name.errors }}
@@ -43,7 +43,7 @@
 						</div>
 					</div>
 
-					<div class="span6">
+					<div class="column-half">
 						<div class="{{ form.country.css_classes|default:'input-field-container' }}">
 							<label for="{{ form.country.id_for_label }}">
 								{{ form.country.errors }}
@@ -54,42 +54,32 @@
 					</div>
 				</div>
 
-				<div class="row-fluid">
-					<div class="span12">
-						<div class="{{ form.comment.css_classes|default:'input-field-container' }}">
-							<label for="{{ form.comment.id_for_label }}">
-								{{ form.comment.errors }}
-								<span>{% trans form.comment.label %}</span>
-								{{ form.comment }}
-								<span class="helptext">{% trans form.comment.help_text %}</span>
-							</label>
-						</div>
-					</div>
+				<div class="{{ form.comment.css_classes|default:'input-field-container' }}">
+					<label for="{{ form.comment.id_for_label }}">
+						{{ form.comment.errors }}
+						<span>{% trans form.comment.label %}</span>
+						{{ form.comment }}
+						<span class="helptext">{% trans form.comment.help_text %}</span>
+					</label>
 				</div>
 
-				<div class="row-fluid">
-					<div class="span12">
-						<div class="{{ form.captcha.css_classes|default:'input-field-container' }}">
-							{{ form.captcha }}
-						</div>
-					</div>
+				<div class="{{ form.captcha.css_classes|default:'input-field-container' }}">
+					{{ form.captcha }}
 				</div>
 
-				<div class="row-fluid">
-					<div class="span10 ed-checkbox-container {{ form.terms.css_classes|default:'input-field-container' }}">
-						{{ form.terms.errors }}
-						<div class="field checkbox">
-							<input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox">
-							<label for="{{ form.terms.id_for_label }}">
-								<a target="_self" href="{{ directory_components_urls.terms }}">{% trans "I agree to the great.gov.uk terms and conditions" %}</a>
-							</label>
-						</div>
+				<div class="{{ form.terms.css_classes|default:'input-field-container' }}">
+					{{ form.terms.errors }}
+					<div class="multiple-choice">
+						<input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox">
+						<label for="{{ form.terms.id_for_label }}">
+							<a target="_self" href="{{ directory_components_urls.terms }}">{% trans "I agree to the great.gov.uk terms and conditions" %}</a>
+						</label>
 					</div>
-					<div class="span2 btn-container ed-landing-page-register-button-container">
-						<button class="button-primary">
-							{% trans "Send" %}
-						</button>
-					</div>
+				</div>
+				<div class="span2 btn-container ed-landing-page-register-button-container">
+					<button class="button-primary">
+						{% trans "Send" %}
+					</button>
 				</div>
 			</form>
 

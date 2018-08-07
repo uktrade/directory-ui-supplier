@@ -31,6 +31,11 @@
         {% block css %}
             <link href="{% static 'main.css' %}" media="all" rel="stylesheet" />
         {% endblock %}
+
+        {% if LANGUAGE_BIDI %}
+          <link href="{% static 'core/bidi.css' %}" media="all" rel="stylesheet" />
+        {% endif %}
+
         <!--[if IE 8]><link href="{% static 'ie8fixes.css' %}" media="screen" rel="stylesheet" /><![endif]-->
     </head>
 
@@ -38,7 +43,7 @@
          {% include 'directory_components/google_tag_manager_body.html' %}
         <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
-        {% include LANGUAGE_BIDI|yesno:'bidi/header.html,header.html' %}
+        {% include 'header.html' %}
 
         <main id="content" class="enrolment-content">
             {% block sub_header %}
@@ -59,9 +64,14 @@
 
             {% block content %}
             {% endblock content %}
+
+              <div class="container" dir="ltr">
+                {% block feedback_reporter %}
+                {% endblock %}
+              </div>
         </main>
 
-        {% include LANGUAGE_BIDI|yesno:'bidi/footer.html,footer.html' %}
+        {% include 'footer.html' %}
 
         <div id="global-app-error" class="app-error hidden"></div>
         <!--[if gte IE 9]><!-->

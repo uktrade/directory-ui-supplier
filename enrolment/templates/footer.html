@@ -2,13 +2,13 @@
 {% load trans from i18n %}
 {% load external_url from constants_tags %}
 
-<footer id="footer">
+<footer id="ed-footer" class="{{ LANGUAGE_BIDI|yesno:'bidi,' }}">
   <div class="container">
     <div id="footer-logos">
       <a href="https://www.gov.uk/" target="_blank">
-        <img src="{% static 'images/HM_Government_logo.png' %}" alt="HM Government" class="bidi-ltr">
+        <img src="{% static 'images/HM_Government_logo.png' %}" alt="HM Government">
       </a>
-      <img class="dit-iigb-logo bidi-ltr" alt="Welcome to Great Britain &amp; Northern Ireland" src="{% static 'images/welcome-to-great-logo-stacked.png' %}">
+      <img class="dit-iigb-logo" alt="Welcome to Great Britain &amp; Northern Ireland" src="{% static 'images/welcome-to-great-logo-stacked.png' %}">
     </div>
 
     <div id="footer-main-links">
@@ -67,7 +67,7 @@
   </div>
 
 
-  <div id="footer-copyright">
+  <div id="ed-footer-copyright">
     <div class="container">
       <p dir="ltr">&copy; {% trans "Crown Copyright" %} {% now "Y" %} {% trans "All rights reserved." %}</p>
     </div>

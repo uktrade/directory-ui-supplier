@@ -23,7 +23,7 @@ class SearchForm(forms.Form):
         choices=(
             (('', _('All industries')),) + choices.INDUSTRIES
         ),
-        widget=Select(attrs={'class': 'bidi-rtl'})
+        widget=Select(attrs={'dir': 'ltr'})
     )
 
 
