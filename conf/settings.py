@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 
 import environ
-
+from directory_constants.constants import cms
 
 env = environ.Env()
 
@@ -333,6 +333,7 @@ DIRECTORY_CMS_API_CLIENT_SENDER_ID = env.str(
 DIRECTORY_CMS_API_CLIENT_DEFAULT_TIMEOUT = env.int(
     'DIRECTORY_CMS_API_CLIENT_DEFAULT_TIMEOUT', 15
 )
+DIRECTORY_CMS_API_CLIENT_SERVICE_NAME = cms.FIND_A_SUPPLIER
 
 # directory API client
 DIRECTORY_API_CLIENT_BASE_URL = env.str('DIRECTORY_API_CLIENT_BASE_URL')
