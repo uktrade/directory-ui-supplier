@@ -64,6 +64,12 @@
 
             {% block content %}
             {% endblock content %}
+
+            {% block feedback_reporter %}
+              <div class="container" dir="ltr">
+                {{ block.super }}
+              </div>
+            {% endblock %}
         </main>
 
         {% include 'footer.html' %}

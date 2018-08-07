@@ -29,7 +29,7 @@ p {
   margin-bottom: 1.2em;
 }
 
-.screen-reader-only { 
+.screen-reader-only {
   height: 1px;
   left: -10000px;
   overflow: hidden;
@@ -244,7 +244,7 @@ a.teal:focus {
       display: inline-block;
     }
   }
-  
+
   input[type='checkbox'] {
     height: 14px;
     width: 14px;
@@ -253,8 +253,8 @@ a.teal:focus {
   select {
     height: 50px;
     width: 100%;
-    -webkit-appearance: none; 
-    appearance: none; 
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   textarea {
@@ -392,7 +392,7 @@ body {
     margin: 0;
     max-width: 800px;
   }
-  
+
   &:after {
     background-color: $red-1;
     bottom: 0;
@@ -586,7 +586,7 @@ a.ed-filled-button-primary {
     margin-bottom: 0;
     margin-top: 0;
     text-align: right;
-    
+
     @media (max-width: 767px) {
       text-align: left;
     }
@@ -596,11 +596,22 @@ a.ed-filled-button-primary {
   }
   textarea {
     min-height: 100px;
+    width: 100%;
+    border: 1px solid $grey-3;
   }
-  
+
   .title {
     @include font-title-3;
   }
+}
+
+.multiple-choice [type=checkbox]+label:after,
+.multiple-choice [type=checkbox]+label:before {
+  -webkit-box-sizing: initial;
+}
+
+.multiple-choice [type=checkbox]+label:before {
+  border-color: $grey-3;
 }
 
 .ed-pretty-radio-select {
@@ -644,7 +655,7 @@ a.ed-filled-button-primary {
     -moz-border-radius: 50%;
     border-radius: 50%;
   }
-  
+
   input:focus {
     outline: none;
   }
@@ -682,14 +693,14 @@ a.ed-filled-button-primary {
  ******************/
 a {
   &:link {
-    /* 
-    Match selector to overwrite gov-template styles, 
+    /*
+    Match selector to overwrite gov-template styles,
     but makes button styles more difficult. Would
     be better without psuedo class raising priority.
     */
     @include font-standard-1;
   }
-  
+
   &:focus {
     background-color: transparent;
     outline: 3px solid $focus;
@@ -720,7 +731,6 @@ section {
 .container {
   padding: 0 30px;
   max-width: 1200px;
-  width: 100%;
 }
 
 .errorlist {
@@ -756,10 +766,10 @@ input[type="button"],
   vertical-align: top;
   -webkit-appearance: none;
   -webkit-font-smoothing: antialiased;
-  
+
   &:focus {
     outline: 3px solid $focus;
-  }  
+  }
 }
 
 .button-primary,
@@ -777,13 +787,13 @@ label {
   @include font-standard-1;
 }
 
-label, 
-select, 
-button, 
-input[type="button"], 
-input[type="reset"], 
-input[type="submit"], 
-input[type="radio"], 
+label,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
 input[type="checkbox"] {
   /* overwrite confusing Bootstrap style */
 	cursor: initial;
@@ -814,17 +824,17 @@ input[type="color"],
   height: 50px;
   margin-bottom: 10px;
   width: 100%;
-  
+
   &:focus,
   &:focus:invalid {
     border-color: $grey-3;
     color: inherit;
     outline: 3px solid $focus;
-    
+
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-      
+
     -webkit-transition: none;
     -moz-transition: none;
     -o-transition: none;
@@ -899,7 +909,7 @@ input[type="color"],
       -webkit-appearance: none;
       margin-left: 0;
     }
-     
+
     input:checked + label:after {
       content: "";
       border-color: $mid-blue;
@@ -944,15 +954,15 @@ input[type="color"],
 blockquote {
   border: none;
   padding: 20px;
-  
+
   cite {
     @include font-standard-2;
   }
-  
+
   span {
     display: block;
   }
-  
+
   .text {
     margin-bottom: 1em;
     &:after {
@@ -977,7 +987,7 @@ blockquote {
     margin-bottom: 0;
     width: 55%;
   }
-    
+
   .button {
     background-color: $white;
     border: 2px solid $blue-2;
@@ -987,7 +997,7 @@ blockquote {
     text-align: center;
     right: 25px;
   }
-  
+
   .title {
     @include font-title-3;
     background-image: url(/static/images/globe-icon.png);

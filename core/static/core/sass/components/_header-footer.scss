@@ -40,10 +40,6 @@ body #ed-menu {
   min-height: 40px;
   width: 100%;
   z-index: 1;
-
-  & > .container {
-    padding: 0;
-  }
 }
 
 .header-gov-link {
@@ -84,6 +80,10 @@ body #ed-menu {
   .separator {
     display: none;
   }
+}
+
+#ed-header .container {
+  padding: 0;
 }
 
 #ed-menu {
@@ -242,12 +242,6 @@ body #ed-menu {
 
 
 @media (max-width: 767px) {
-  #navbar {
-    .container {
-      padding: 0;
-    }
-  }
-
   #footer-main-links {
     width: calc(100% - 150px);
     text-align: right;
@@ -260,9 +254,10 @@ body #ed-menu {
     }
   }
 
-  body.js-enabled #ed-menu {
-    display: none;
+  body.js-enabled #ed-menu.collapse {
+    height: 1px;
     max-width: 100%;
+    overflow: hidden;
   }
 
   #footer-sub-links {

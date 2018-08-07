@@ -8,6 +8,13 @@
     <script src="{% static 'directory_components/js/third-party.js' %}"></script>
 {% endblock %}
 
+{% block head_css %}
+  {{ block.super }}
+  {% if LANGUAGE_BIDI %}
+    <link href="{% static 'core/bidi.css' %}" media="all" rel="stylesheet" />
+  {% endif %}
+{% endblock %}
+
 {% block body_header %}
     {% include 'header.html' %}
 {% endblock %}
@@ -23,13 +30,19 @@
         GOVUK.page.init();
         var menu = document.getElementById('ed-menu');
         document.getElementById('menu-control').addEventListener('click', function() {
-            menu.style.display = menu.style.display === '' ? 'block' : '';
+            if (menu.style.height === 'auto') {
+              menu.style.height = '1px';
+              menu.style.display = 'none';
+            } else {
+              menu.style.height = 'auto';
+              menu.style.display = 'block';
+            }
         });
     </script>
 {% endblock %}
 
 {% block feedback_reporter %}
-    <div class="container">
+    <div class="container" dir="ltr">
         {{ block.super }}
     </div>
 {% endblock %}
