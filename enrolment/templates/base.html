@@ -65,11 +65,10 @@
             {% block content %}
             {% endblock content %}
 
-            {% block feedback_reporter %}
               <div class="container" dir="ltr">
-                {{ block.super }}
+                {% block feedback_reporter %}
+                {% endblock %}
               </div>
-            {% endblock %}
         </main>
 
         {% include 'footer.html' %}
