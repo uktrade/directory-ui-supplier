@@ -123,9 +123,9 @@
 }
 
 
-@media (max-width: 799px) {
-  #footer-main-links ul li:first-child {
-    border: 0;
+@media (max-width: 767px) {
+  #ed-footer #footer-main-links ul li:first-child {
+    border-left: 0;
   }
 }
 
