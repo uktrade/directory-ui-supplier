@@ -176,7 +176,6 @@ class ContactCompanyView(CompanyProfileMixin, FormView):
                 recipients=[self.company['email_address']],
                 subject=form.cleaned_data['subject'],
                 reply_to=[form.cleaned_data['email_address']],
-                from_email=settings.CONTACT_SUPPLIER_FROM_EMAIL,
                 recipient_name=self.company['name'],
             )
         else:

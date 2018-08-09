@@ -276,7 +276,7 @@ def test_contact_form_submit_with_comment(
     url = reverse('sector-detail-cms-contact', kwargs={'slug': 'industry'})
     data = {
         'full_name': 'Jeff',
-        'requester_email': 'jeff@example.com',
+        'email_address': 'jeff@example.com',
         'sector': 'industry',
         'organisation_name': 'My name is Jeff',
         'organisation_size': '1-10',
@@ -295,7 +295,7 @@ def test_contact_form_submit_with_comment(
 
     assert mock_user_create_or_update.call_count == 1
     user = mock_user_create_or_update.call_args[0][0]
-    assert user.email == data['requester_email']
+    assert user.email == data['email_address']
     assert user.name == data['full_name']
 
     assert mock_ticket_create.call_count == 1
@@ -307,10 +307,10 @@ def test_contact_form_submit_with_comment(
     assert ticket.description == (
         'Body: hello\n'
         'Country: United Kingdom\n'
+        'Email Address: jeff@example.com\n'
         'Full Name: Jeff\n'
         'Organisation Name: My name is Jeff\n'
         'Organisation Size: 1-10\n'
-        'Requester Email: jeff@example.com\n'
         'Sector: industry\n'
         'Source: Print - posters or billboards\n'
         'Source Other: \n'
@@ -334,7 +334,7 @@ def test_contact_form_submit_with_comment_forms_api(
     url = reverse('sector-detail-cms-contact', kwargs={'slug': 'industry'})
     data = {
         'full_name': 'Jeff',
-        'requester_email': 'jeff@example.com',
+        'email_address': 'jeff@example.com',
         'sector': 'industry',
         'organisation_name': 'My name is Jeff',
         'organisation_size': '1-10',
@@ -356,7 +356,7 @@ def test_contact_form_submit_with_comment_forms_api(
         'organisation_name': 'My name is Jeff',
         'source_other': '',
         'organisation_size': '1-10',
-        'requester_email': 'jeff@example.com',
+        'email_address': 'jeff@example.com',
         'country': 'United Kingdom',
         'full_name': 'Jeff',
         'body': 'hello',
@@ -390,7 +390,7 @@ def test_industry_list_contact_form_submit_with_comment(
     url = reverse('sector-list-cms-contact')
     data = {
         'full_name': 'Jeff',
-        'requester_email': 'jeff@example.com',
+        'email_address': 'jeff@example.com',
         'sector': 'industry',
         'organisation_name': 'My name is Jeff',
         'organisation_size': '1-10',
@@ -409,7 +409,7 @@ def test_industry_list_contact_form_submit_with_comment(
 
     assert mock_user_create_or_update.call_count == 1
     user = mock_user_create_or_update.call_args[0][0]
-    assert user.email == data['requester_email']
+    assert user.email == data['email_address']
     assert user.name == data['full_name']
 
     assert mock_ticket_create.call_count == 1
@@ -421,10 +421,10 @@ def test_industry_list_contact_form_submit_with_comment(
     assert ticket.description == (
         'Body: hello\n'
         'Country: United Kingdom\n'
+        'Email Address: jeff@example.com\n'
         'Full Name: Jeff\n'
         'Organisation Name: My name is Jeff\n'
         'Organisation Size: 1-10\n'
-        'Requester Email: jeff@example.com\n'
         'Sector: industry\n'
         'Source: Print - posters or billboards\n'
         'Source Other: \n'
@@ -448,7 +448,7 @@ def test_sector_list_submit_with_comment_forms_api(
     url = reverse('sector-list-cms-contact')
     data = {
         'full_name': 'Jeff',
-        'requester_email': 'jeff@example.com',
+        'email_address': 'jeff@example.com',
         'sector': 'industry',
         'organisation_name': 'My name is Jeff',
         'organisation_size': '1-10',
@@ -470,7 +470,7 @@ def test_sector_list_submit_with_comment_forms_api(
         'organisation_name': 'My name is Jeff',
         'source_other': '',
         'organisation_size': '1-10',
-        'requester_email': 'jeff@example.com',
+        'email_address': 'jeff@example.com',
         'country': 'United Kingdom',
         'full_name': 'Jeff',
         'body': 'hello',

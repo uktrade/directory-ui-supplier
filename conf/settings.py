@@ -16,6 +16,7 @@ import environ
 from directory_constants.constants import cms
 
 env = environ.Env()
+env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -352,5 +353,4 @@ DIRECTORY_FORMS_API_SENDER_ID = env.str('DIRECTORY_FORMS_API_SENDER_ID')
 DIRECTORY_FORMS_API_DEFAULT_TIMEOUT = env.int(
     'DIRECTORY_API_FORMS_DEFAULT_TIMEOUT', 5
 )
-
-CONTACT_SUPPLIER_FROM_EMAIL = env.str('CONTACT_SUPPLIER_FROM_EMAIL')
+DIRECTORY_FORMS_API_NAMESPACE = 'find-a-supplier'

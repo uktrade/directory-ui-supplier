@@ -37,7 +37,7 @@ class ContactForm(ZendeskActionMixin, forms.Form):
         max_length=255,
         validators=[not_contains_url_or_email],
     )
-    requester_email = fields.EmailField(
+    email_address = fields.EmailField(
         label=_('Email address'),
     )
     sector = fields.ChoiceField(

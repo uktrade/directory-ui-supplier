@@ -113,7 +113,12 @@ class BaseIndustryContactView(FormView):
 
     def form_valid(self, form):
         if settings.FEATURE_FLAGS['DIRECTORY_FORMS_API_ON']:
-            response = form.save()
+            cleaned_data = form.cleaned_data
+            response = form.save(
+                email_address=cleaned_data['email_address'],
+                full_name=cleaned_data['full_name'],
+                subject=cleaned_data['sector'] + ' contact form submitted.'
+            )
             response.raise_for_status()
         else:
             zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
@@ -124,7 +129,7 @@ class BaseIndustryContactView(FormView):
     def get_or_create_zendesk_user(cleaned_data):
         zendesk_user = ZendeskUser(
             name=cleaned_data['full_name'],
-            email=cleaned_data['requester_email'],
+            email=cleaned_data['email_address'],
         )
         return zenpy_client.users.create_or_update(zendesk_user)
 
