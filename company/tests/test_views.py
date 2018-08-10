@@ -436,7 +436,7 @@ def test_contact_company_view_feature_submit_success(
     assert mock_send_email.call_args == call(expected_data)
 
 
-@patch.object(views.ContactCompanyView.form_class.action_class, 'save')
+@patch.object(views.ContactCompanyView.form_class, 'save')
 def test_contact_company_view_feature_submit_forms_api_success(
     mock_save, settings, client, valid_contact_company_data,
     retrieve_profile_data
@@ -459,6 +459,12 @@ def test_contact_company_view_feature_submit_forms_api_success(
         kwargs={'company_number': retrieve_profile_data['number']}
     )
     assert mock_save.call_count == 1
+    assert mock_save.call_args == call(
+        recipients=['test@example.com'],
+        subject=valid_contact_company_data['subject'],
+        reply_to=[valid_contact_company_data['email_address']],
+        recipient_name='Great company',
+    )
 
 
 @patch.object(views.api_client.company, 'send_email')
