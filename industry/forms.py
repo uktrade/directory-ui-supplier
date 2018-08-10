@@ -89,5 +89,8 @@ class ContactForm(ZendeskActionMixin, forms.Form):
 
     def clean(self):
         cleaned_data = super().clean()
-        del cleaned_data['captcha']
+
+        if cleaned_data.get('captcha'):
+            del cleaned_data['captcha']
+
         return cleaned_data
