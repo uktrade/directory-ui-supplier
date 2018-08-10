@@ -13,17 +13,17 @@ chardet==3.0.4            # via requests
 codecov==2.0.9
 contextlib2==0.5.5        # via raven
 coverage==4.5.1           # via codecov, pytest-cov
-directory-api-client==10.0.0
-directory-client-core==4.0.1  # via directory-api-client, directory-cms-client, directory-forms-api-client
-directory-cms-client==4.0.1
-directory-components==2.17.0
+directory-api-client==10.0.2
+directory-client-core==4.0.2  # via directory-api-client, directory-cms-client, directory-forms-api-client
+directory-cms-client==4.0.2
+directory-components==2.17.2
 directory-constants==7.1.0
 directory-forms-api-client==2.2.0
-directory-validators==4.5.0
+directory-validators==5.0.1
 django-environ==0.4.5
 django-formtools==2.0
 django-storages==1.6.6
-django==1.11.10
+django==1.11.15
 django_recaptcha==1.2.0
 djangorestframework==3.7.7  # via sigauth
 docutils==0.14            # via botocore

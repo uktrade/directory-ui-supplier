@@ -319,6 +319,34 @@ def test_contact_form_submit_with_comment(
 
 
 @pytest.mark.django_db
+@patch('zenpy.lib.api.UserApi.create_or_update')
+@patch('zenpy.lib.api.TicketApi.create')
+def test_contact_form_submit_with_comment_no_captcha(
+    mock_ticket_create, mock_user_create_or_update, client, settings
+):
+    settings.FEATURE_FLAGS = {
+        **settings.FEATURE_FLAGS,
+        'DIRECTORY_FORMS_API_ON': False,
+    }
+    mock_user_create_or_update.return_value = Mock(id=999)
+    url = reverse('sector-detail-cms-contact', kwargs={'slug': 'industry'})
+    data = {
+        'full_name': 'Jeff',
+        'requester_email': 'jeff@example.com',
+        'sector': 'industry',
+        'organisation_name': 'My name is Jeff',
+        'organisation_size': '1-10',
+        'country': 'United Kingdom',
+        'body': 'hello',
+        'source': constants.MARKETING_SOURCES[1][0],
+        'terms_agreed': True
+    }
+    response = client.post(url, data)
+
+    assert 'This field is required' in str(response.content)
+
+
+@pytest.mark.django_db
 @patch.object(
     views.IndustryDetailContactCMSView.form_class.action_class, 'save'
 )
