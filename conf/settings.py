@@ -110,9 +110,24 @@ DATABASES = {
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        # 'LOCATION': 'unique-snowflake',
-    }
+        'LOCATION': 'unique-snowflake',
+    },
 }
+
+if env.str('REDIS_URL', ''):
+    CACHES['cms_fallback'] = {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': env.str('REDIS_URL'),
+        'OPTIONS': {
+            'CLIENT_CLASS': "django_redis.client.DefaultClient",
+        }
+    }
+else:
+    CACHES['cms_fallback'] = {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
@@ -303,7 +318,7 @@ THUMBNAIL_STORAGE = THUMBNAIL_STORAGE_CLASSES[THUMBNAIL_STORAGE_CLASS_NAME]
 THUMBNAIL_FORCE_OVERWRITE = True
 
 # Redis for thumbnails cache
-if os.getenv('REDIS_URL'):
+if env.str('REDIS_URL', ''):
     THUMBNAIL_REDIS_URL = env.str('REDIS_URL')
 
 # django-storages for thumbnails
@@ -332,7 +347,7 @@ DIRECTORY_CMS_API_CLIENT_SENDER_ID = env.str(
     'DIRECTORY_CMS_API_CLIENT_SENDER_ID', 'directory'
 )
 DIRECTORY_CMS_API_CLIENT_DEFAULT_TIMEOUT = env.int(
-    'DIRECTORY_CMS_API_CLIENT_DEFAULT_TIMEOUT', 15
+    'DIRECTORY_CMS_API_CLIENT_DEFAULT_TIMEOUT', 2
 )
 DIRECTORY_CMS_API_CLIENT_SERVICE_NAME = cms.FIND_A_SUPPLIER
 
