@@ -87,10 +87,9 @@ class ContactForm(ZendeskActionMixin, forms.Form):
     terms_agreed = fields.BooleanField()
     captcha = ReCaptchaField()
 
-    def clean(self):
-        cleaned_data = super().clean()
-
-        if cleaned_data.get('captcha'):
-            del cleaned_data['captcha']
-
-        return cleaned_data
+    @property
+    def serialized_data(self):
+        data = self.cleaned_data.copy()
+        del data['captcha']
+        del data['terms_agreed']
+        return data

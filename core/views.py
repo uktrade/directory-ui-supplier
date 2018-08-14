@@ -95,8 +95,18 @@ class LeadGenerationFormView(
         zenpy_client.tickets.create(ticket)
 
     def form_valid(self, form):
-        zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
-        self.create_zendesk_ticket(form.cleaned_data, zendesk_user)
+        if settings.FEATURE_FLAGS['DIRECTORY_FORMS_API_ON']:
+            cleaned_data = form.cleaned_data
+            response = form.save(
+                email_address=cleaned_data['email_address'],
+                full_name=cleaned_data['full_name'],
+                subject=settings.ZENDESK_TICKET_SUBJECT
+            )
+            response.raise_for_status()
+        else:
+            zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
+            self.create_zendesk_ticket(form.cleaned_data, zendesk_user)
+
         return TemplateResponse(self.request, self.success_template)
 
 
