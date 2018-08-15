@@ -5,6 +5,15 @@
   left: auto;
 }
 
+.list.list-bullet.list-bullet li {
+  padding: 0 30px 0 0;
+
+  &:before {
+    left: auto;
+    right: 0;
+  }
+}
+
 :lang(ar) {
   font-family: 'ge-ss', 'Roboto', Helvetica, Arial, sans-serif;
 
