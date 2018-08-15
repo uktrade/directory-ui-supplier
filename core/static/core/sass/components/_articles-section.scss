@@ -22,10 +22,8 @@ $gray-light: #e8e8e8;
   }
   iframe,
   img {
-    width: 570px;
-  }
-  img {
-    height: 320px;
+    height: auto;
+    width: 100%;
   }
   p {
     margin-bottom: 1em
@@ -54,9 +52,6 @@ $gray-light: #e8e8e8;
     img {
       width: 100%;
       height: auto;
-    }
-    .article-media-container {
-      float: none;
     }
   }
 }
