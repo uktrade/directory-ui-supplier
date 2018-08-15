@@ -261,7 +261,6 @@ def test_industries_page_not_found(mock_lookup_by_slug, settings, client):
     assert response.status_code == 404
 
 
-@pytest.mark.django_db
 @patch('zenpy.lib.api.UserApi.create_or_update')
 @patch('zenpy.lib.api.TicketApi.create')
 def test_contact_form_submit_with_comment(
@@ -313,12 +312,10 @@ def test_contact_form_submit_with_comment(
         'Organisation Size: 1-10\n'
         'Sector: industry\n'
         'Source: Print - posters or billboards\n'
-        'Source Other: \n'
-        'Terms Agreed: True'
+        'Source Other: '
     )
 
 
-@pytest.mark.django_db
 @patch('zenpy.lib.api.UserApi.create_or_update')
 @patch('zenpy.lib.api.TicketApi.create')
 def test_contact_form_submit_with_comment_no_captcha(
@@ -346,7 +343,6 @@ def test_contact_form_submit_with_comment_no_captcha(
     assert 'This field is required' in str(response.content)
 
 
-@pytest.mark.django_db
 @patch.object(
     views.IndustryDetailContactCMSView.form_class.action_class, 'save'
 )
@@ -389,11 +385,9 @@ def test_contact_form_submit_with_comment_forms_api(
         'full_name': 'Jeff',
         'body': 'hello',
         'source': constants.MARKETING_SOURCES[1][0],
-        'terms_agreed': True,
     })
 
 
-@pytest.mark.django_db
 def test_contact_form_prefills_sector(client, industry_detail_data):
     url = reverse('sector-detail-cms-contact', kwargs={'slug': 'industry'})
     response = client.get(url)
@@ -403,7 +397,6 @@ def test_contact_form_prefills_sector(client, industry_detail_data):
     )
 
 
-@pytest.mark.django_db
 @patch('zenpy.lib.api.UserApi.create_or_update')
 @patch('zenpy.lib.api.TicketApi.create')
 def test_industry_list_contact_form_submit_with_comment(
@@ -455,12 +448,10 @@ def test_industry_list_contact_form_submit_with_comment(
         'Organisation Size: 1-10\n'
         'Sector: industry\n'
         'Source: Print - posters or billboards\n'
-        'Source Other: \n'
-        'Terms Agreed: True'
+        'Source Other: '
     )
 
 
-@pytest.mark.django_db
 @patch.object(
     views.IndustryLandingPageContactCMSView.form_class.action_class, 'save'
 )
@@ -503,7 +494,6 @@ def test_sector_list_submit_with_comment_forms_api(
         'full_name': 'Jeff',
         'body': 'hello',
         'source': constants.MARKETING_SOURCES[1][0],
-        'terms_agreed': True,
     })
 
 

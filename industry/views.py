@@ -122,7 +122,7 @@ class BaseIndustryContactView(FormView):
             response.raise_for_status()
         else:
             zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
-            self.create_zendesk_ticket(form.cleaned_data, zendesk_user)
+            self.create_zendesk_ticket(form.serialized_data, zendesk_user)
         return super().form_valid(form)
 
     @staticmethod
