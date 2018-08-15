@@ -122,9 +122,7 @@ DEBUG_SET_ENV_VARS := \
 	export DIRECTORY_CMS_API_CLIENT_API_KEY=debug; \
 	export FEATURE_SEARCH_ENGINE_INDEXING_DISABLED=true; \
 	export DIRECTORY_FORMS_API_BASE_URL=http://forms.trade.great:8011;\
-	export FEATURE_DIRECTORY_FORMS_API_ENABLED=true; \
-	export DIRECTORY_FORMS_API_API_KEY=debug; \
-	export DIRECTORY_FORMS_API_SENDER_ID=debug
+	export FEATURE_DIRECTORY_FORMS_API_ENABLED=true
 
 
 debug_webserver:
@@ -159,7 +157,7 @@ integration_tests:
 	cd directory-tests && \
 	make docker_integration_tests
 
-compile_all_requirements:
+compile_requirements:
 	python3 -m piptools compile requirements.in
 	python3 -m piptools compile requirements_test.in
 
