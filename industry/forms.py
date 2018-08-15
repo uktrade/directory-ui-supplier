@@ -89,6 +89,9 @@ class ContactForm(ZendeskActionMixin, forms.Form):
 
     @property
     def serialized_data(self):
+        # this data will be sent to zendesk. `captcha` and `terms_agreed` are
+        # not useful to the zendesk user as those fields have to be present
+        # for the form to be submitted.
         data = self.cleaned_data.copy()
         del data['captcha']
         del data['terms_agreed']
