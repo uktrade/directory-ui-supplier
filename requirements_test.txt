@@ -28,7 +28,7 @@ django==1.11.15
 django_recaptcha==1.2.0
 djangorestframework==3.7.7  # via sigauth
 docutils==0.14            # via botocore
-export-elements==0.16.0   # via directory-components
+export-elements==0.17.3
 flake8==3.0.4
 freezegun==0.3.8
 gunicorn==19.5.0

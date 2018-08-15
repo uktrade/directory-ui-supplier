@@ -16,6 +16,12 @@
   {% endif %}
 {% endblock %}
 
+{% block cookie_notice %}
+  <div dir="ltr">
+    {{ block.super }}
+  </div>
+{% endblock %}
+
 {% block body_header %}
     {% include 'header.html' %}
 {% endblock %}
