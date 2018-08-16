@@ -90,6 +90,7 @@ TEMPLATES = [
                     'header_footer_processor'),
                 'directory_components.context_processors.feature_flags',
                 'core.context_processors.html_lang_attribute',
+                'directory_components.context_processors.cookie_notice',
             ],
         },
     },
@@ -369,3 +370,6 @@ DIRECTORY_FORMS_API_DEFAULT_TIMEOUT = env.int(
     'DIRECTORY_API_FORMS_DEFAULT_TIMEOUT', 5
 )
 DIRECTORY_FORMS_API_NAMESPACE = 'find-a-supplier'
+
+# directory-components
+PRIVACY_COOKIE_DOMAIN = env.str('PRIVACY_COOKIE_DOMAIN')
