@@ -83,14 +83,9 @@
 }
 
 #lede {
-  form {
-    .form-label, .form-hint, .form-control {
-      text-align: right;
-    }
-    select {
-      direction: rtl;
-      padding-right: 40px;
-    }
+  form select {
+    direction: rtl;
+    padding-right: 40px;
   }
 }
 
