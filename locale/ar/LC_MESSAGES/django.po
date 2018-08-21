@@ -2095,52 +2095,38 @@ msgid "Other"
 msgstr ""
 
 #: industry/forms.py:25
-#, fuzzy, python-brace-format
-#| msgid "I agree to the great.gov.uk terms and conditions"
 msgid ""
 "I agree to the <a href=\"{url}\" target=\"_blank\">great.gov.uk terms and "
 "conditions</a>"
-msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
+msgstr "أوافق على <a href=\"{url}\" target=\"_blank\">البنود الأساسية في موقع <bdi>great.gov.uk</bdi></a>.‎"
 
 #: industry/forms.py:31
-#, fuzzy
-#| msgid "Your name"
 msgid "Full name"
 msgstr "اسمك"
 
 #: industry/forms.py:38
-#, fuzzy
-#| msgid "Industry"
 msgid "Your industry"
 msgstr "الصناعة"
 
 #: industry/forms.py:42
-#, fuzzy
-#| msgid "Organisation name"
 msgid "Your organisation name"
 msgstr "اسم المؤسسة"
 
 #: industry/forms.py:46
 msgid "Size of your organisation"
-msgstr ""
+msgstr "حجم مؤسستك"
 
 #: industry/forms.py:51
-#, fuzzy
-#| msgid "Country"
 msgid "Your country"
 msgstr "البلد"
 
 #: industry/forms.py:55
-#, fuzzy
-#| msgid "Describe what you need"
 msgid "Describe what products or services you need"
 msgstr "اكتب وصفًا لما تحتاج إليه"
 
 #: industry/forms.py:61
-#, fuzzy
-#| msgid "I agree to the great.gov.uk terms and conditions"
 msgid "Where did you hear about great.gov.uk?"
-msgstr "أوافق على البنود والشروط الواردة في موقع great.gov.uk.‎"
+msgstr "أين سمعت بموقع great.gov.uk؟"
 
 #: industry/forms.py:68
 #, fuzzy

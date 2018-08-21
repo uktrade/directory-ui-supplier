@@ -36,9 +36,15 @@ class ContactForm(ZendeskActionMixin, forms.Form):
         label=_('Full name'),
         max_length=255,
         validators=[not_contains_url_or_email],
+        widget=TextInput(
+            attrs={'dir': 'auto'}
+        ),
     )
     email_address = fields.EmailField(
         label=_('Email address'),
+        widget=TextInput(
+            attrs={'dir': 'auto'}
+        ),
     )
     sector = fields.ChoiceField(
         label=_('Your industry'),
@@ -48,6 +54,9 @@ class ContactForm(ZendeskActionMixin, forms.Form):
         label=_('Your organisation name'),
         max_length=255,
         validators=[not_contains_url_or_email],
+        widget=TextInput(
+            attrs={'dir': 'auto'}
+        ),
     )
     organisation_size = fields.ChoiceField(
         label=_('Size of your organisation'),
@@ -58,12 +67,17 @@ class ContactForm(ZendeskActionMixin, forms.Form):
         label=_('Your country'),
         max_length=255,
         validators=[not_contains_url_or_email],
+        widget=TextInput(
+            attrs={'dir': 'auto'}
+        ),
     )
     body = fields.CharField(
         label=_('Describe what products or services you need'),
         help_text=_('Maximum 1000 characters.'),
         max_length=1000,
-        widget=Textarea,
+        widget=Textarea(
+            attrs={'dir': 'auto'}
+        ),
         validators=[not_contains_url_or_email],
     )
     source = fields.ChoiceField(
@@ -71,7 +85,9 @@ class ContactForm(ZendeskActionMixin, forms.Form):
         choices=(('', ''),) + constants.MARKETING_SOURCES,
         required=False,
         initial=' ',  # prevent "other" being selected by default
-        widget=Select(attrs={'class': 'js-field-other-selector'})
+        widget=Select(
+            attrs={'class': 'js-field-other-selector'}
+        )
     )
     source_other = fields.CharField(
         label=_("Other source (optional)"),

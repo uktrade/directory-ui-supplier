@@ -142,6 +142,9 @@ debug_test_last_failed:
 debug_manage:
 	$(DEBUG_SET_ENV_VARS) && ./manage.py $(cmd)
 
+compile_translations:
+	$(DEBUG_SET_ENV_VARS) && $(COMPILE_TRANSLATIONS)
+
 debug_shell:
 	$(DEBUG_SET_ENV_VARS) && ./manage.py shell
 
