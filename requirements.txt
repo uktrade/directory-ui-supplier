@@ -13,7 +13,7 @@ chardet==3.0.4            # via requests
 contextlib2==0.5.5        # via raven
 directory-api-client==10.0.2
 directory-client-core==4.0.2  # via directory-api-client, directory-cms-client, directory-forms-api-client
-directory-cms-client==4.3.2
+directory-cms-client==5.0.0
 directory-components==2.18.0
 directory-constants==7.1.0
 directory-forms-api-client==2.2.0
