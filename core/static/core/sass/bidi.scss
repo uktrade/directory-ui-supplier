@@ -126,6 +126,13 @@
   float: left;
 }
 
+.industry-contact {
+  background: linear-gradient(to right, #f6f4f1 30%, #fff 30%);
+
+  .column-two-thirds {
+    float: right;
+  }
+}
 
 @media (max-width: 767px) {
   #ed-footer #footer-main-links ul li:first-child {

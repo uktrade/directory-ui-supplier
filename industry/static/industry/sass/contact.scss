@@ -16,28 +16,32 @@ $gray: #333333;
 }
 
 #lede {
-  padding: 60px;
   padding-top: 0;
+
   p {
     line-height: 1.58;
     margin-bottom: 30px;
   }
+
   a {
     width: 300px;
     height: 60px;
     border-radius: 3px;
     text-align: center;
   }
+
   form {
     width: 80%;
+
     input {
       height: 48px;
     }
   }
 }
 
-#content {
-  background: linear-gradient(to right, #fff 54%, #f6f4f1 46%);
+.industry-contact {
+  background: linear-gradient(to right, #fff 70%, #f6f4f1 70%);
+
   .breadcrumbs {
     background-color: transparent;
   }
@@ -83,4 +87,10 @@ $gray: #333333;
     margin-left: 40px;
   }
 
+}
+
+@media (max-width: 640px) {
+  #lede .column-two-thirds {
+    float: none;
+  }
 }
