@@ -39,16 +39,17 @@ $gray: #333333;
   }
 }
 
+#content.industry-contact,
+#content.industry-contact-success {
+  padding-bottom: 4em;
+}
+
 .industry-contact {
   background: linear-gradient(to right, #fff 70%, #f6f4f1 70%);
 
   .breadcrumbs {
     background-color: transparent;
   }
-}
-
-#content > .container {
-  max-width: 1320px;
 }
 
 .button {
@@ -67,8 +68,6 @@ $gray: #333333;
   }
 
   #lede {
-    padding: 20px;
-    padding-top: 0;
     div {
       padding: 0;
     }
