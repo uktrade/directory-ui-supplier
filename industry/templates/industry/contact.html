@@ -4,6 +4,7 @@
 {% load search_url from company_tags %}
 {% load add_href_target from cms_tags %}
 {% load add_export_elements_classes from directory_components_tags %}
+{% load render_form from directory_components_tags %}
 
 {% block head_css %}
     {{ block.super }}
@@ -33,7 +34,7 @@
       {{ page.introduction_text|add_export_elements_classes|add_href_target:request|safe }}
 
       <form action="" method="post">
-          {{ form.as_p }}
+          {% render_form form %}
           <div>
               <input class="button" type="submit" value="{{ page.submit_button_text }}">
           </div>
