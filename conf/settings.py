@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'directory_components',
     'export_elements',
+    'directory_healthcheck',
+    'health_check',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -374,3 +376,6 @@ DIRECTORY_FORMS_API_NAMESPACE = 'find-a-supplier'
 
 # directory-components
 PRIVACY_COOKIE_DOMAIN = env.str('PRIVACY_COOKIE_DOMAIN')
+
+# Healthcheck
+HEALTH_CHECK_TOKEN = env.str('HEALTH_CHECK_TOKEN')
