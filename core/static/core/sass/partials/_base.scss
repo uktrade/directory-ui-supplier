@@ -21,6 +21,10 @@ body {
   max-width: 1200px;
 }
 
+body section {
+  overflow: visible;
+}
+
 @media (max-width: 641px) {
   .container {
     margin: 0 15px;
