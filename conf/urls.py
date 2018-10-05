@@ -105,6 +105,21 @@ urlpatterns = [
         name='sector-article',
     ),
     url(
+        r'^industries/creative/$',
+        core.views.RedirectToCMSIndustryView.as_view(),
+        {'slug': 'creative-services'},
+    ),
+    url(
+        r'^industries/health/$',
+        core.views.RedirectToCMSIndustryView.as_view(),
+        {'slug': 'healthcare'},
+    ),
+    url(
+        r'^industries/tech/$',
+        core.views.RedirectToCMSIndustryView.as_view(),
+        {'slug': 'technology'},
+    ),
+    url(
         r'^industries/(?P<slug>.+)/$',
         industry.views.IndustryDetailCMSView.as_view(),
         name='sector-detail-verbose',
