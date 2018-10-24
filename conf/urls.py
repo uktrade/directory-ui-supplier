@@ -115,6 +115,11 @@ urlpatterns = [
         {'slug': 'healthcare'},
     ),
     url(
+        r'^industries/legal/$',
+        core.views.RedirectToCMSIndustryView.as_view(),
+        {'slug': 'legal-services'},
+    ),
+    url(
         r'^industries/tech/$',
         core.views.RedirectToCMSIndustryView.as_view(),
         {'slug': 'technology'},
