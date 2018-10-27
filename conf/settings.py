@@ -72,7 +72,12 @@ MIDDLEWARE_CLASSES = [
     'directory_components.middleware.RobotsIndexControlHeaderMiddlware',
 ]
 
-ROOT_URLCONF = 'conf.urls'
+FEATURE_URL_PREFIX_ENABLED = env.str('FEATURE_URL_PREFIX_ENABLED', False)
+
+if FEATURE_URL_PREFIX_ENABLED:
+    ROOT_URLCONF = 'conf.urls_prefixed'
+else:
+    ROOT_URLCONF = 'conf.urls'
 
 TEMPLATES = [
     {
