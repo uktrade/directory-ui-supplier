@@ -66,13 +66,20 @@ MIDDLEWARE_CLASSES = [
     'core.middleware.LocaleQuerystringMiddleware',
     'core.middleware.PersistLocaleMiddleware',
     'core.middleware.ForceDefaultLocale',
+    'core.middleware.PrefixUrlMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'directory_components.middleware.RobotsIndexControlHeaderMiddlware',
 ]
 
-ROOT_URLCONF = 'conf.urls'
+FEATURE_URL_PREFIX_ENABLED = env.str('FEATURE_URL_PREFIX_ENABLED', False)
+URL_PREFIX_DOMAIN = env.str('URL_PREFIX_DOMAIN', '')
+
+if FEATURE_URL_PREFIX_ENABLED:
+    ROOT_URLCONF = 'conf.urls_prefixed'
+else:
+    ROOT_URLCONF = 'conf.urls'
 
 TEMPLATES = [
     {
