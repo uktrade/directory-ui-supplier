@@ -1,7 +1,7 @@
 import sys
 from urllib.parse import urlsplit, urlunsplit
 
-from directory_components.middleware import AbsctractPrefixUrlMiddleware
+from directory_components.middleware import AbstractPrefixUrlMiddleware
 
 from django.http import HttpResponseRedirect
 from django.conf import settings
@@ -64,5 +64,5 @@ class ForceDefaultLocale:
             translation.activate(request.LANGUAGE_CODE)
 
 
-class PrefixUrlMiddleware(AbsctractPrefixUrlMiddleware):
+class PrefixUrlMiddleware(AbstractPrefixUrlMiddleware):
     prefix = '/trade/'
