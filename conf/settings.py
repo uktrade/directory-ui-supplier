@@ -171,6 +171,9 @@ FEATURE_FLAGS = {
     'SEARCH_ENGINE_INDEXING_OFF': env.bool(
         'FEATURE_SEARCH_ENGINE_INDEXING_DISABLED', False
     ),
+    'EU_EXIT_BANNER_ON': env.bool(
+        'FEATURE_EU_EXIT_BANNER_ENABLED', False
+    ),
     'DIRECTORY_FORMS_API_ON': env.bool(
         'FEATURE_DIRECTORY_FORMS_API_ENABLED', False
     ),
