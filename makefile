@@ -126,7 +126,8 @@ DEBUG_SET_ENV_VARS := \
 	export DIRECTORY_FORMS_API_BASE_URL=http://forms.trade.great:8011;\
 	export FEATURE_DIRECTORY_FORMS_API_ENABLED=true; \
 	export PRIVACY_COOKIE_DOMAIN=.trade.great; \
-	export HEALTH_CHECK_TOKEN=debug
+	export HEALTH_CHECK_TOKEN=debug; \
+	export FEATURE_EU_EXIT_BANNER_ENABLED=true
 
 
 debug_webserver:

@@ -1,4 +1,4 @@
-from directory_cms_client import constants as cms_constants
+from directory_constants.constants import cms
 from directory_cms_client.client import cms_api_client
 from zenpy import Zenpy
 from zenpy.lib.api_objects import Ticket, User as ZendeskUser
@@ -6,6 +6,7 @@ from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 from django.conf import settings
 from django.urls import reverse
 from django.utils import translation
+from django.utils.functional import cached_property
 from django.template.response import TemplateResponse
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
@@ -32,22 +33,25 @@ class ActivateTranslationMixin:
 
 class LandingPageCMSView(
     mixins.CMSLanguageSwitcherMixin, mixins.ActiveViewNameMixin,
+    mixins.GetCMSComponentMixin,
     ActivateTranslationMixin, TemplateView
 ):
     active_view_name = 'index'
     template_name = 'core/landing-page.html'
+    component_slug = cms.COMPONENTS_BANNER_INTERNATIONAL_SLUG
 
     def get_context_data(self, *args, **kwargs):
         return super().get_context_data(
-            page=self.get_cms_page(),
+            page=self.page,
             search_form=forms.SearchForm(),
             *args,
             **kwargs
         )
 
-    def get_cms_page(self):
+    @cached_property
+    def page(self):
         response = cms_api_client.lookup_by_slug(
-            slug=cms_constants.FIND_A_SUPPLIER_LANDING_SLUG,
+            slug=cms.FIND_A_SUPPLIER_LANDING_SLUG,
             language_code=translation.get_language(),
             draft_token=self.request.GET.get('draft_token'),
         )

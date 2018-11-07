@@ -37,10 +37,6 @@ section {
   border: none;
 }
 
-.grid-row {
-  margin: 0 -25px;
-}
-
 #hero {
   min-height: 450px;
   padding-top: 100px;
@@ -48,7 +44,7 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   color: $white;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 
   #hero-content {
     width: 100%;
@@ -128,6 +124,8 @@ section {
 }
 
 #introduction-section {
+  padding-top: 30px;
+
   .grid-row {
     margin: 0;
     display: flex;

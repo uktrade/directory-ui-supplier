@@ -2,6 +2,7 @@
 {% load static from staticfiles %}
 {% load search_url from company_tags %}
 {% load first_paragraph grouper from cms_tags %}
+{% load banner from directory_components_tags %}
 
 {% block head_css %}
     {{ block.super }}
@@ -43,6 +44,13 @@
     </div>
 </section>
 
+{% if features.EU_EXIT_BANNER_ON and cms_component %}
+  <div class="banner-container margin-bottom-30" dir="{{ component_is_bidi|yesno:'rtl,ltr' }}">
+    <div class="container">
+      {% banner banner_content=cms_component.banner_content badge_content=cms_component.banner_label %}
+    </div>
+  </div>
+{% endif %}
 
 <section id="introduction-section">
     <div class="container">
