@@ -14,10 +14,10 @@ codecov==2.0.9
 contextlib2==0.5.5        # via raven
 coverage==4.5.1           # via codecov, pytest-cov
 directory-api-client==10.0.2
-directory-client-core==4.0.2  # via directory-api-client, directory-cms-client, directory-forms-api-client
-directory-cms-client==7.0.0
+directory-client-core==4.2.0  # via directory-api-client, directory-cms-client, directory-forms-api-client
+directory-cms-client==8.1.0
 directory-components==2.29.0
-directory-constants==9.0.0
+directory-constants==9.1.0
 directory-forms-api-client==2.2.0
 directory-healthcheck==0.6.0
 directory-validators==5.0.1

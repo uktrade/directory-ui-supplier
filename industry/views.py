@@ -1,7 +1,7 @@
 import functools
 
+from directory_constants.constants import cms
 from directory_components.helpers import SocialLinkBuilder
-from directory_cms_client import constants as cms_constants
 from zenpy import Zenpy
 from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
@@ -67,7 +67,7 @@ class GetContactPageMixin:
     @functools.lru_cache()
     def get_contact_page(self):
         response = cms_api_client.lookup_by_slug(
-            slug=cms_constants.FIND_A_SUPPLIER_INDUSTRY_CONTACT_SLUG,
+            slug=cms.FIND_A_SUPPLIER_INDUSTRY_CONTACT_SLUG,
             language_code=translation.get_language(),
             draft_token=self.request.GET.get('draft_token'),
         )
@@ -221,7 +221,7 @@ class IndustryLandingPageCMSView(
 
     def get_cms_page(self):
         response = cms_api_client.lookup_by_slug(
-            slug=cms_constants.FIND_A_SUPPLIER_INDUSTRY_LANDING_SLUG,
+            slug=cms.FIND_A_SUPPLIER_INDUSTRY_LANDING_SLUG,
             language_code=translation.get_language(),
             draft_token=self.request.GET.get('draft_token'),
         )
