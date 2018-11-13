@@ -145,6 +145,9 @@ debug_test_last_failed:
 debug_manage:
 	$(DEBUG_SET_ENV_VARS) && ./manage.py $(cmd)
 
+translations:
+	$(DEBUG_SET_ENV_VARS) && python manage.py makemessages -a
+
 compile_translations:
 	$(DEBUG_SET_ENV_VARS) && $(COMPILE_TRANSLATIONS)
 
