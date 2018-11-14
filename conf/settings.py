@@ -93,6 +93,7 @@ TEMPLATES = [
                 'django.template.context_processors.i18n',
                 'core.context_processors.subscribe_form',
                 'core.context_processors.lead_generation_form',
+                'core.context_processors.footer_contact_us_link',
                 'directory_components.context_processors.analytics',
                 'directory_components.context_processors.urls_processor',
                 ('directory_components.context_processors.'
@@ -389,3 +390,7 @@ PRIVACY_COOKIE_DOMAIN = env.str('PRIVACY_COOKIE_DOMAIN')
 
 # Healthcheck
 HEALTH_CHECK_TOKEN = env.str('HEALTH_CHECK_TOKEN')
+
+# Header & footer/other services urls
+HEADER_FOOTER_URLS_GREAT_HOME = env.str('HEADER_FOOTER_URLS_GREAT_HOME', '')
+HEADER_FOOTER_URLS_CONTACT_US = env.str('HEADER_FOOTER_URLS_CONTACT_US', '')
