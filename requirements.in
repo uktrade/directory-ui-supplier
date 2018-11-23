@@ -12,7 +12,7 @@ django_recaptcha==1.2.0
 redis==2.10.5
 sorl-thumbnail==12.3
 zenpy==1.1.10
-directory-forms-api-client==2.2.0
+directory-forms-api-client==3.0.0
 directory-components==2.29.0
 export-elements==0.23.0
 directory-cms-client==8.1.0

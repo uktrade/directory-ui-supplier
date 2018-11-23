@@ -104,7 +104,8 @@ class LeadGenerationFormView(
             response = form.save(
                 email_address=cleaned_data['email_address'],
                 full_name=cleaned_data['full_name'],
-                subject=settings.ZENDESK_TICKET_SUBJECT
+                subject=settings.ZENDESK_TICKET_SUBJECT,
+                service_name=settings.DIRECTORY_FORMS_API_ZENDESK_SEVICE_NAME,
             )
             response.raise_for_status()
         else:
