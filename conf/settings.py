@@ -62,6 +62,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE_CLASSES = [
     'directory_components.middleware.MaintenanceModeMiddleware',
+    'admin_ip_restrictor.middleware.AdminIPRestrictorMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'core.middleware.LocaleQuerystringMiddleware',
     'core.middleware.PersistLocaleMiddleware',
@@ -399,3 +400,11 @@ HEALTH_CHECK_TOKEN = env.str('HEALTH_CHECK_TOKEN')
 # Header & footer/other services urls
 HEADER_FOOTER_URLS_GREAT_HOME = env.str('HEADER_FOOTER_URLS_GREAT_HOME', '')
 HEADER_FOOTER_URLS_CONTACT_US = env.str('HEADER_FOOTER_URLS_CONTACT_US', '')
+
+# ip-restrictor
+RESTRICT_ADMIN = env.bool('IP_RESTRICTOR_RESTRICT_IPS', False)
+ALLOWED_ADMIN_IPS = env.list('IP_RESTRICTOR_ALLOWED_ADMIN_IPS', default=[])
+ALLOWED_ADMIN_IP_RANGES = env.list(
+    'IP_RESTRICTOR_ALLOWED_ADMIN_IP_RANGES', default=[]
+)
+RESTRICTED_APP_NAMES = ['admin', '']

@@ -21,9 +21,11 @@ directory-constants==9.1.0
 directory-forms-api-client==3.0.0
 directory-healthcheck==0.6.0
 directory-validators==5.0.1
+django-admin-ip-restrictor==1.0.0
 django-environ==0.4.5
 django-formtools==2.0
 django-health-check==3.0.0  # via directory-healthcheck
+django-ipware==2.1.0      # via django-admin-ip-restrictor
 django-redis==4.8.0
 django-storages==1.6.6
 django==1.11.15
