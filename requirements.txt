@@ -14,12 +14,12 @@ contextlib2==0.5.5        # via raven
 directory-api-client==10.0.2
 directory-client-core==4.2.0  # via directory-api-client, directory-cms-client, directory-forms-api-client
 directory-cms-client==8.1.0
-directory-components==2.29.0
+directory-components==2.33.0
 directory-constants==9.1.0
 directory-forms-api-client==3.0.0
 directory-healthcheck==0.6.0
 directory-validators==5.0.1
-django-admin-ip-restrictor==1.0.0
+django-admin-ip-restrictor==1.0.0  # via directory-components
 django-environ==0.4.5
 django-formtools==2.0
 django-health-check==3.0.0  # via directory-healthcheck
