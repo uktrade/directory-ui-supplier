@@ -2,7 +2,7 @@ import directory_components.views
 import directory_healthcheck.views
 
 from django.conf import settings
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib.sitemaps.views import sitemap
 from django.views.static import serve
 
@@ -18,22 +18,31 @@ sitemaps = {
     'industries': conf.sitemaps.SectorLandingPageSitemap,
 }
 
+healthcheck_urls = [
+    url(
+        r'^api/$',
+        directory_healthcheck.views.APIHealthcheckView.as_view(),
+        name='api'
+    ),
+    url(
+        r'^forms-api/$',
+        directory_healthcheck.views.FormsAPIBackendHealthcheckView.as_view(),
+        name='single-sign-on'
+    ),
+    url(
+        r'^sentry/$',
+        directory_healthcheck.views.SentryHealthcheckView.as_view(),
+        name='sentry'
+    ),
+]
+
 
 urlpatterns = [
     url(
-        r'^healthcheck/api/$',
-        directory_healthcheck.views.APIHealthcheckView.as_view(),
-        name='healthcheck-api'
-    ),
-    url(
-        r'^healthcheck/forms-api/$',
-        directory_healthcheck.views.FormsAPIBackendHealthcheckView.as_view(),
-        name='healthcheck-single-sign-on'
-    ),
-    url(
-        r'^healthcheck/sentry/$',
-        directory_healthcheck.views.SentryHealthcheckView.as_view(),
-        name='healthcheck-sentry'
+        r'^healthcheck/',
+        include(
+            healthcheck_urls, namespace='healthcheck', app_name='healthcheck'
+        )
     ),
     url(
         r"^sitemap\.xml$", sitemap, {'sitemaps': sitemaps},
