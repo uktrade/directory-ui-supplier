@@ -1,10 +1,7 @@
-from urllib.parse import urljoin
-
 from captcha.fields import ReCaptchaField
 
-from directory_constants.constants import choices
+from directory_constants.constants import choices, urls
 from directory_components import forms, fields
-from directory_components.context_processors import get_url
 from directory_validators.common import not_contains_url_or_email
 from directory_forms_api_client.forms import ZendeskActionMixin
 
@@ -16,19 +13,15 @@ from django.utils.safestring import mark_safe
 from industry import constants
 
 
-TERMS_URL = urljoin(
-    get_url("HEADER_FOOTER_URLS_GREAT_HOME"), 'terms-and-conditions/'
-)
-
-
 class ContactForm(ZendeskActionMixin, forms.Form):
 
     def __init__(self, industry_choices, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.fields['terms_agreed'].widget.label = mark_safe(ugettext(
-            'I agree to the <a href="{url}" target="_blank">'
-            'great.gov.uk terms and conditions</a>').format(url=TERMS_URL)
+            'I agree to the '
+            f'<a href="{urls.TERMS_AND_CONDITIONS}" target="_blank">'
+            'great.gov.uk terms and conditions</a>')
         )
         self.fields['sector'].choices = industry_choices
 

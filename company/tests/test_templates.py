@@ -89,7 +89,6 @@ def test_profile_case_studies_present():
     assert RECENT_PROJECTS_LABEL in html
 
 
-@pytest.mark.django_db
 def test_public_profile_contact_button():
     context = {
         'company': default_context['company'],
@@ -110,7 +109,6 @@ def test_public_profile_contact_button_no_email():
     assert CONTACT_COMPANY_LABEL not in html
 
 
-@pytest.mark.django_db
 def test_public_profile_sectors_link():
     html = render_to_string('company-profile-detail.html', default_context)
 
@@ -239,7 +237,6 @@ def test_case_study_handles_not_present_image_one():
     assert 'None' not in html
 
 
-@pytest.mark.django_db
 def test_company_profile_details_renders_keywords():
     template_name = 'company-profile-detail.html'
     html = render_to_string(template_name, default_context)
@@ -271,7 +268,6 @@ def test_company_search_submitted_shows_filters():
     assert SEARCH_FILTERS_LABEL in html
 
 
-@pytest.mark.django_db
 @pytest.mark.parametrize('count,expected', [
     [0, 'did not match any UK trade profiles'],
     [1, 'Your search found 1 company'],

@@ -111,25 +111,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'conf.wsgi.application'
 
-
-# # Database
-# hard to get rid of this
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'unique-snowflake',
-    },
-}
-
 if env.str('REDIS_URL', ''):
-    CACHES['cms_fallback'] = {
+    cache = {
         'BACKEND': 'django_redis.cache.RedisCache',
         'LOCATION': env.str('REDIS_URL'),
         'OPTIONS': {
@@ -137,11 +120,15 @@ if env.str('REDIS_URL', ''):
         }
     }
 else:
-    CACHES['cms_fallback'] = {
+    cache = {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
         'LOCATION': 'unique-snowflake',
     }
 
+CACHES = {
+    'default': cache,
+    'cms_fallback': cache,
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/

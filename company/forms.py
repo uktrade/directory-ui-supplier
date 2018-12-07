@@ -1,4 +1,7 @@
 from captcha.fields import ReCaptchaField
+from directory_components.context_processors import (
+    urls_processor, header_footer_processor
+)
 from directory_constants.constants import choices
 from directory_validators.common import not_contains_url_or_email
 from directory_forms_api_client.forms import EmailAPIForm
@@ -107,18 +110,25 @@ class ContactCompanyForm(EmailAPIForm):
         return super().save(*args, **kwargs)
 
     def get_context_data(self):
-        return {**self.cleaned_data, 'recipient_name': self.recipient_name}
+        return {
+            **self.cleaned_data,
+            **urls_processor(None),
+            **header_footer_processor(None),
+            'recipient_name': self.recipient_name,
+        }
 
     @property
     def html_body(self):
         return render_to_string(
-            'company/email_to_supplier.html', self.get_context_data()
+            'company/email_to_supplier.html',
+            self.get_context_data(),
         )
 
     @property
     def text_body(self):
         return render_to_string(
-            'company/email_to_supplier.txt', self.get_context_data()
+            'company/email_to_supplier.txt',
+            self.get_context_data(),
         )
 
 
