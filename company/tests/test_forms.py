@@ -147,6 +147,8 @@ def test_contact_supplier_body_text(
         'country': valid_contact_company_data['country'],
         'subject': valid_contact_company_data['subject'],
         'captcha': 'PASSED',
+        'services_urls': mock.ANY,
+        'header_footer_urls': mock.ANY,
     }
 
     mock_render_to_string.reset_mock()

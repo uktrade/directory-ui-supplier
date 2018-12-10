@@ -1,7 +1,7 @@
 from core.forms import AnonymousSubscribeForm, LeadGenerationForm
 from django.utils import translation
 from django.conf import settings
-from directory_components.context_processors import get_url, lazy_build_url
+from directory_constants.constants import urls
 
 
 def subscribe_form(request):
@@ -26,17 +26,11 @@ def html_lang_attribute(request):
     }
 
 
-international_contact_url = lazy_build_url(
-    'HEADER_FOOTER_URLS_GREAT_HOME', 'international/contact/')
-
-
 def footer_contact_us_link(request):
-    feedback_url = get_url('HEADER_FOOTER_URLS_CONTACT_US')
-
     if settings.FEATURE_FLAGS.get('INTERNATIONAL_CONTACT_LINK_ON'):
-        footer_contact_us_link = international_contact_url
+        footer_contact_us_link = urls.build_great_url('international/contact/')
     else:
-        footer_contact_us_link = feedback_url
+        footer_contact_us_link = urls.CONTACT_US
 
     return {
         'footer_contact_us_link': footer_contact_us_link

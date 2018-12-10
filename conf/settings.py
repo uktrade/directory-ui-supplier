@@ -111,25 +111,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'conf.wsgi.application'
 
-
-# # Database
-# hard to get rid of this
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'unique-snowflake',
-    },
-}
-
 if env.str('REDIS_URL', ''):
-    CACHES['cms_fallback'] = {
+    cache = {
         'BACKEND': 'django_redis.cache.RedisCache',
         'LOCATION': env.str('REDIS_URL'),
         'OPTIONS': {
@@ -137,11 +120,15 @@ if env.str('REDIS_URL', ''):
         }
     }
 else:
-    CACHES['cms_fallback'] = {
+    cache = {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
         'LOCATION': 'unique-snowflake',
     }
 
+CACHES = {
+    'default': cache,
+    'cms_fallback': cache,
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
@@ -399,18 +386,52 @@ PRIVACY_COOKIE_DOMAIN = env.str('PRIVACY_COOKIE_DOMAIN')
 # Healthcheck
 HEALTH_CHECK_TOKEN = env.str('HEALTH_CHECK_TOKEN')
 
-# Header & footer/other services urls
-HEADER_FOOTER_URLS_GREAT_HOME = env.str('HEADER_FOOTER_URLS_GREAT_HOME', '')
-HEADER_FOOTER_URLS_CONTACT_US = env.str('HEADER_FOOTER_URLS_CONTACT_US', '')
+# HEADER AND FOOTER LINKS
+DIRECTORY_CONSTANTS_URL_EXPORT_READINESS = env.str(
+    'DIRECTORY_CONSTANTS_URL_EXPORT_READINESS', ''
+)
+DIRECTORY_CONSTANTS_URL_EXPORT_OPPORTUNITIES = env.str(
+    'DIRECTORY_CONSTANTS_URL_EXPORT_OPPORTUNITIES', ''
+)
+DIRECTORY_CONSTANTS_URL_SELLING_ONLINE_OVERSEAS = env.str(
+    'DIRECTORY_CONSTANTS_URL_SELLING_ONLINE_OVERSEAS', ''
+)
+DIRECTORY_CONSTANTS_URL_EVENTS = env.str(
+    'DIRECTORY_CONSTANTS_URL_EVENTS', ''
+)
+DIRECTORY_CONSTANTS_URL_INVEST = env.str('DIRECTORY_CONSTANTS_URL_INVEST', '')
+DIRECTORY_CONSTANTS_URL_FIND_A_SUPPLIER = env.str(
+    'DIRECTORY_CONSTANTS_URL_FIND_A_SUPPLIER', ''
+)
+DIRECTORY_CONSTANTS_URL_SINGLE_SIGN_ON = env.str(
+    'DIRECTORY_CONSTANTS_URL_SINGLE_SIGN_ON', ''
+)
+DIRECTORY_CONSTANTS_URL_FIND_A_BUYER = env.str(
+    'DIRECTORY_CONSTANTS_URL_FIND_A_BUYER', ''
+)
 
 # ip-restrictor
+IP_RESTRICTOR_SKIP_CHECK_ENABLED = env.bool(
+    'IP_RESTRICTOR_SKIP_CHECK_ENABLED', False
+)
+IP_RESTRICTOR_SKIP_CHECK_SENDER_ID = env.str(
+    'IP_RESTRICTOR_SKIP_CHECK_SENDER_ID', ''
+)
+IP_RESTRICTOR_SKIP_CHECK_SECRET = env.str(
+    'IP_RESTRICTOR_SKIP_CHECK_SECRET', ''
+)
+IP_RESTRICTOR_REMOTE_IP_ADDRESS_RETRIEVER = env.str(
+    'IP_RESTRICTOR_REMOTE_IP_ADDRESS_RETRIEVER',
+    IP_RETRIEVER_NAME_GOV_UK
+)
 RESTRICT_ADMIN = env.bool('IP_RESTRICTOR_RESTRICT_IPS', False)
 ALLOWED_ADMIN_IPS = env.list('IP_RESTRICTOR_ALLOWED_ADMIN_IPS', default=[])
 ALLOWED_ADMIN_IP_RANGES = env.list(
     'IP_RESTRICTOR_ALLOWED_ADMIN_IP_RANGES', default=[]
 )
-RESTRICTED_APP_NAMES = ['admin', '']
-REMOTE_IP_ADDRESS_RETRIEVER = env.str(
-    'IP_RESTRICTOR_REMOTE_IP_ADDRESS_RETRIEVER',
-    IP_RETRIEVER_NAME_GOV_UK
+RESTRICTED_APP_NAMES = env.list(
+    'IP_RESTRICTOR_RESTRICTED_APP_NAMES', default=['admin']
 )
+if env.bool('IP_RESTRICTOR_RESTRICT_UI', False):
+    # restrict all pages that are not in apps API, healthcheck, admin, etc
+    RESTRICTED_APP_NAMES.append('')
