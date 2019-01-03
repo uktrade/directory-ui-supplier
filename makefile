@@ -34,9 +34,6 @@ DEBUG_SET_ENV_VARS := \
 	export RECAPTCHA_PRIVATE_KEY=$$DIRECTORY_UI_SUPPLIER_RECAPTCHA_PRIVATE_KEY; \
 	export GOOGLE_TAG_MANAGER_ID=GTM-TC46J8K; \
 	export GOOGLE_TAG_MANAGER_ENV=&gtm_auth=Ok4kd4Wf_NKgs4c5Z5lUFQ&gtm_preview=env-6&gtm_cookies_win=x; \
-	export ZENDESK_EMAIL=""; \
-	export ZENDESK_SUBDOMAIN=""; \
-	export ZENDESK_TOKEN=debug; \
 	export UTM_COOKIE_DOMAIN=.trade.great; \
 	export THUMBNAIL_STORAGE_CLASS_NAME=local-storage; \
 	export THUMBNAIL_KVSTORE_CLASS_NAME=redis; \
@@ -49,7 +46,6 @@ DEBUG_SET_ENV_VARS := \
 	export DIRECTORY_CMS_API_CLIENT_API_KEY=debug; \
 	export FEATURE_SEARCH_ENGINE_INDEXING_DISABLED=true; \
 	export DIRECTORY_FORMS_API_BASE_URL=http://forms.trade.great:8011;\
-	export FEATURE_DIRECTORY_FORMS_API_ENABLED=true; \
 	export PRIVACY_COOKIE_DOMAIN=.trade.great; \
 	export HEALTH_CHECK_TOKEN=debug; \
 	export FEATURE_EU_EXIT_BANNER_ENABLED=true; \

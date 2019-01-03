@@ -1,4 +1,4 @@
-from unittest.mock import call, patch, Mock
+from unittest.mock import call, patch
 
 from directory_cms_client.client import cms_api_client
 import pytest
@@ -261,88 +261,6 @@ def test_industries_page_not_found(mock_lookup_by_slug, settings, client):
     assert response.status_code == 404
 
 
-@patch('zenpy.lib.api.UserApi.create_or_update')
-@patch('zenpy.lib.api.TicketApi.create')
-def test_contact_form_submit_with_comment(
-    mock_ticket_create, mock_user_create_or_update, client, captcha_stub,
-    settings
-):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'DIRECTORY_FORMS_API_ON': False,
-    }
-    mock_user_create_or_update.return_value = Mock(id=999)
-    url = reverse('sector-detail-cms-contact', kwargs={'slug': 'industry'})
-    data = {
-        'full_name': 'Jeff',
-        'email_address': 'jeff@example.com',
-        'sector': 'industry',
-        'organisation_name': 'My name is Jeff',
-        'organisation_size': '1-10',
-        'country': 'United Kingdom',
-        'body': 'hello',
-        'source': constants.MARKETING_SOURCES[1][0],
-        'terms_agreed': True,
-        'g-recaptcha-response': captcha_stub,
-    }
-    response = client.post(url, data)
-
-    assert response.status_code == 302
-    assert response.url == (
-        reverse('sector-detail-cms-contact-sent', kwargs={'slug': 'industry'})
-    )
-
-    assert mock_user_create_or_update.call_count == 1
-    user = mock_user_create_or_update.call_args[0][0]
-    assert user.email == data['email_address']
-    assert user.name == data['full_name']
-
-    assert mock_ticket_create.call_count == 1
-    ticket = mock_ticket_create.call_args[0][0]
-    assert ticket.subject == 'industry contact form submitted.'
-    assert ticket.submitter_id == 999
-    assert ticket.requester_id == 999
-
-    assert ticket.description == (
-        'Body: hello\n'
-        'Country: United Kingdom\n'
-        'Email Address: jeff@example.com\n'
-        'Full Name: Jeff\n'
-        'Organisation Name: My name is Jeff\n'
-        'Organisation Size: 1-10\n'
-        'Sector: industry\n'
-        'Source: Print - posters or billboards\n'
-        'Source Other: '
-    )
-
-
-@patch('zenpy.lib.api.UserApi.create_or_update')
-@patch('zenpy.lib.api.TicketApi.create')
-def test_contact_form_submit_with_comment_no_captcha(
-    mock_ticket_create, mock_user_create_or_update, client, settings
-):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'DIRECTORY_FORMS_API_ON': False,
-    }
-    mock_user_create_or_update.return_value = Mock(id=999)
-    url = reverse('sector-detail-cms-contact', kwargs={'slug': 'industry'})
-    data = {
-        'full_name': 'Jeff',
-        'requester_email': 'jeff@example.com',
-        'sector': 'industry',
-        'organisation_name': 'My name is Jeff',
-        'organisation_size': '1-10',
-        'country': 'United Kingdom',
-        'body': 'hello',
-        'source': constants.MARKETING_SOURCES[1][0],
-        'terms_agreed': True
-    }
-    response = client.post(url, data)
-
-    assert 'This field is required' in str(response.content)
-
-
 @patch.object(
     views.IndustryDetailContactCMSView.form_class.action_class, 'save'
 )
@@ -394,61 +312,6 @@ def test_contact_form_prefills_sector(client, industry_detail_data):
 
     assert response.context_data['form'].initial['sector'] == (
         industry_detail_data['meta']['slug']
-    )
-
-
-@patch('zenpy.lib.api.UserApi.create_or_update')
-@patch('zenpy.lib.api.TicketApi.create')
-def test_industry_list_contact_form_submit_with_comment(
-    mock_ticket_create, mock_user_create_or_update, client, industry_list_data,
-    settings, captcha_stub
-):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'DIRECTORY_FORMS_API_ON': False,
-    }
-    mock_user_create_or_update.return_value = Mock(id=999)
-    url = reverse('sector-list-cms-contact')
-    data = {
-        'full_name': 'Jeff',
-        'email_address': 'jeff@example.com',
-        'sector': 'industry',
-        'organisation_name': 'My name is Jeff',
-        'organisation_size': '1-10',
-        'country': 'United Kingdom',
-        'body': 'hello',
-        'source': constants.MARKETING_SOURCES[1][0],
-        'terms_agreed': True,
-        'g-recaptcha-response': captcha_stub,
-    }
-    response = client.post(url, data)
-
-    assert response.status_code == 302
-    assert response.url == (
-        reverse('sector-list-cms-contact-sent')
-    )
-
-    assert mock_user_create_or_update.call_count == 1
-    user = mock_user_create_or_update.call_args[0][0]
-    assert user.email == data['email_address']
-    assert user.name == data['full_name']
-
-    assert mock_ticket_create.call_count == 1
-    ticket = mock_ticket_create.call_args[0][0]
-    assert ticket.subject == 'industry contact form submitted.'
-    assert ticket.submitter_id == 999
-    assert ticket.requester_id == 999
-
-    assert ticket.description == (
-        'Body: hello\n'
-        'Country: United Kingdom\n'
-        'Email Address: jeff@example.com\n'
-        'Full Name: Jeff\n'
-        'Organisation Name: My name is Jeff\n'
-        'Organisation Size: 1-10\n'
-        'Sector: industry\n'
-        'Source: Print - posters or billboards\n'
-        'Source Other: '
     )
 
 

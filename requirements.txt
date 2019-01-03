@@ -7,7 +7,6 @@
 beautifulsoup4==4.6.0
 boto3==1.9.62
 botocore==1.12.62         # via boto3, s3transfer
-cachetools==2.0.1         # via zenpy
 certifi==2018.1.18        # via requests
 chardet==3.0.4            # via requests
 contextlib2==0.5.5        # via raven
@@ -16,7 +15,7 @@ directory-client-core==4.2.0  # via directory-api-client, directory-cms-client, 
 directory-cms-client==8.1.0
 directory-components==3.5.0
 directory-constants==11.1.0
-directory-forms-api-client==3.0.0
+directory-forms-api-client==3.1.0
 directory-healthcheck==0.6.0
 directory-validators==5.0.1
 django-admin-ip-restrictor==1.0.0  # via directory-components
@@ -40,7 +39,7 @@ monotonic==1.4            # via directory-client-core
 olefile==0.44             # via directory-validators, pillow
 phonenumberslite==7.7.4   # via directory-validators
 pillow==4.2.1             # via directory-validators
-python-dateutil==2.6.1    # via botocore, zenpy
+python-dateutil==2.6.1    # via botocore
 pytz==2017.2              # via directory-healthcheck, directory-validators, django
 raven==5.19.0
 redis==2.10.5
@@ -53,4 +52,3 @@ urllib3==1.22             # via botocore, requests
 w3lib==1.19.0             # via directory-cms-client
 waitress==0.8.9
 whitenoise==3.1
-zenpy==1.1.10
