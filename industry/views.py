@@ -2,8 +2,6 @@ import functools
 
 from directory_constants.constants import cms
 from directory_components.helpers import SocialLinkBuilder
-from zenpy import Zenpy
-from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
 from django.conf import settings
 from django.utils import translation
@@ -23,15 +21,6 @@ from core.mixins import (
 from core.helpers import handle_cms_response
 from industry import forms
 from industry.helpers import get_showcase_companies
-
-
-ZENPY_CREDENTIALS = {
-    'email': settings.ZENDESK_EMAIL,
-    'token': settings.ZENDESK_TOKEN,
-    'subdomain': settings.ZENDESK_SUBDOMAIN
-}
-# Zenpy will let the connection timeout after 5s and will retry 3 times
-zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
 class IndustryDetailCMSView(
@@ -112,41 +101,14 @@ class BaseIndustryContactView(FormView):
         }
 
     def form_valid(self, form):
-        if settings.FEATURE_FLAGS['DIRECTORY_FORMS_API_ON']:
-            cleaned_data = form.cleaned_data
-            response = form.save(
-                email_address=cleaned_data['email_address'],
-                full_name=cleaned_data['full_name'],
-                subject=cleaned_data['sector'] + ' contact form submitted.',
-                service_name=settings.DIRECTORY_FORMS_API_ZENDESK_SEVICE_NAME,
-            )
-            response.raise_for_status()
-        else:
-            zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
-            self.create_zendesk_ticket(form.serialized_data, zendesk_user)
+        response = form.save(
+            email_address=form.cleaned_data['email_address'],
+            full_name=form.cleaned_data['full_name'],
+            subject=form.cleaned_data['sector'] + ' contact form submitted.',
+            service_name=settings.DIRECTORY_FORMS_API_ZENDESK_SEVICE_NAME,
+        )
+        response.raise_for_status()
         return super().form_valid(form)
-
-    @staticmethod
-    def get_or_create_zendesk_user(cleaned_data):
-        zendesk_user = ZendeskUser(
-            name=cleaned_data['full_name'],
-            email=cleaned_data['email_address'],
-        )
-        return zenpy_client.users.create_or_update(zendesk_user)
-
-    @staticmethod
-    def create_zendesk_ticket(cleaned_data, zendesk_user):
-        description = [
-            '{0}: {1}'.format(key.title().replace('_', ' '), value)
-            for key, value in sorted(cleaned_data.items())
-        ]
-        ticket = Ticket(
-            subject=cleaned_data['sector'] + ' contact form submitted.',
-            description='\n'.join(description),
-            submitter_id=zendesk_user.id,
-            requester_id=zendesk_user.id,
-        )
-        zenpy_client.tickets.create(ticket)
 
 
 class IndustryDetailContactCMSView(

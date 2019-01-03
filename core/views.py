@@ -1,7 +1,5 @@
 from directory_constants.constants import cms
 from directory_cms_client.client import cms_api_client
-from zenpy import Zenpy
-from zenpy.lib.api_objects import Ticket, User as ZendeskUser
 
 from django.conf import settings
 from django.urls import reverse
@@ -14,15 +12,6 @@ from django.views.generic.base import RedirectView
 
 from directory_api_client.client import api_client
 from core import forms, helpers, mixins
-
-
-ZENPY_CREDENTIALS = {
-    'email': settings.ZENDESK_EMAIL,
-    'token': settings.ZENDESK_TOKEN,
-    'subdomain': settings.ZENDESK_SUBDOMAIN
-}
-# Zenpy will let the connection timeout after 5s and will retry 3 times
-zenpy_client = Zenpy(timeout=5, **ZENPY_CREDENTIALS)
 
 
 class ActivateTranslationMixin:
@@ -75,43 +64,15 @@ class LeadGenerationFormView(
     template_name_bidi = 'bidi/lead-generation.html'
     form_class = forms.LeadGenerationForm
 
-    def get_or_create_zendesk_user(self, cleaned_data):
-        zendesk_user = ZendeskUser(
-            name=cleaned_data['full_name'],
-            email=cleaned_data['email_address'],
-        )
-        return zenpy_client.users.create_or_update(zendesk_user)
-
-    def create_zendesk_ticket(self, cleaned_data, zendesk_user):
-        description = (
-            'Name: {full_name}\n'
-            'Email: {email_address}\n'
-            'Company: {company_name}\n'
-            'Country: {country}\n'
-            'Comment: {comment}'
-        ).format(**cleaned_data)
-        ticket = Ticket(
-            subject=settings.ZENDESK_TICKET_SUBJECT,
-            description=description,
-            submitter_id=zendesk_user.id,
-            requester_id=zendesk_user.id,
-        )
-        zenpy_client.tickets.create(ticket)
-
     def form_valid(self, form):
-        if settings.FEATURE_FLAGS['DIRECTORY_FORMS_API_ON']:
-            cleaned_data = form.cleaned_data
-            response = form.save(
-                email_address=cleaned_data['email_address'],
-                full_name=cleaned_data['full_name'],
-                subject=settings.ZENDESK_TICKET_SUBJECT,
-                service_name=settings.DIRECTORY_FORMS_API_ZENDESK_SEVICE_NAME,
-            )
-            response.raise_for_status()
-        else:
-            zendesk_user = self.get_or_create_zendesk_user(form.cleaned_data)
-            self.create_zendesk_ticket(form.cleaned_data, zendesk_user)
-
+        response = form.save(
+            email_address=form.cleaned_data['email_address'],
+            full_name=form.cleaned_data['full_name'],
+            subject=settings.ZENDESK_TICKET_SUBJECT,
+            service_name=settings.DIRECTORY_FORMS_API_ZENDESK_SEVICE_NAME,
+            form_url=self.request.path,
+        )
+        response.raise_for_status()
         return TemplateResponse(self.request, self.success_template)
 
 

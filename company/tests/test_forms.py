@@ -134,6 +134,7 @@ def test_contact_supplier_body_text(
         reply_to='reply_to@example.com',
         from_email='from_email@example.com',
         recipient_name=valid_contact_company_data['company_name'],
+        form_url='/some/path/',
     )
 
     expected_context = {

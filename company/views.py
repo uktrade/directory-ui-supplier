@@ -1,6 +1,5 @@
 from directory_api_client.client import api_client
 
-from django.conf import settings
 from django.core.paginator import EmptyPage, Paginator
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
@@ -171,20 +170,13 @@ class ContactCompanyView(CompanyProfileMixin, FormView):
         return super().form_valid(form)
 
     def send_email(self, form):
-        if settings.FEATURE_FLAGS['DIRECTORY_FORMS_API_ON']:
-            response = form.save(
-                recipients=[self.company['email_address']],
-                subject=form.cleaned_data['subject'],
-                reply_to=[form.cleaned_data['email_address']],
-                recipient_name=self.company['name'],
-            )
-        else:
-            data = forms.serialize_contact_company_form(
-                form.cleaned_data,
-                self.kwargs['company_number'],
-            )
-            response = api_client.company.send_email(data)
-        return response
+        return form.save(
+            recipients=[self.company['email_address']],
+            subject=form.cleaned_data['subject'],
+            reply_to=[form.cleaned_data['email_address']],
+            recipient_name=self.company['name'],
+            form_url=self.request.path,
+        )
 
 
 class ContactCompanySentView(

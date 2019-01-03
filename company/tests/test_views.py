@@ -390,52 +390,11 @@ def test_contact_company_view(client, retrieve_profile_data):
     assert response.status_code == http.client.OK
 
 
-@patch.object(views.api_client.company, 'send_email')
-def test_contact_company_view_feature_submit_success(
-    mock_send_email, settings, client, valid_contact_company_data,
-    retrieve_profile_data
-):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'DIRECTORY_FORMS_API_ON': False,
-    }
-    url = reverse(
-        'contact-company',
-        kwargs={
-            'company_number': retrieve_profile_data['number'],
-        },
-    )
-    response = client.post(url, valid_contact_company_data)
-
-    expected_data = {
-        'sender_email': valid_contact_company_data['email_address'],
-        'sender_name': valid_contact_company_data['full_name'],
-        'sender_company_name': valid_contact_company_data['company_name'],
-        'sender_country': valid_contact_company_data['country'],
-        'sector': valid_contact_company_data['sector'],
-        'subject': valid_contact_company_data['subject'],
-        'body': valid_contact_company_data['body'],
-        'recipient_company_number': '01234567',
-    }
-
-    assert response.status_code == 302
-    assert response.url == reverse(
-        'contact-company-sent',
-        kwargs={'company_number': retrieve_profile_data['number']}
-    )
-    assert mock_send_email.call_count == 1
-    assert mock_send_email.call_args == call(expected_data)
-
-
 @patch.object(views.ContactCompanyView.form_class, 'save')
 def test_contact_company_view_feature_submit_forms_api_success(
-    mock_save, settings, client, valid_contact_company_data,
-    retrieve_profile_data
+    mock_save, client, valid_contact_company_data, retrieve_profile_data
 ):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'DIRECTORY_FORMS_API_ON': True,
-    }
+
     url = reverse(
         'contact-company',
         kwargs={
@@ -455,41 +414,15 @@ def test_contact_company_view_feature_submit_forms_api_success(
         subject=valid_contact_company_data['subject'],
         reply_to=[valid_contact_company_data['email_address']],
         recipient_name='Great company',
+        form_url=url,
     )
-
-
-@patch.object(views.api_client.company, 'send_email')
-def test_contact_company_view_feature_submit_failure(
-    mock_send_email, api_response_400, settings, client,
-    valid_contact_company_data, retrieve_profile_data,
-):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'DIRECTORY_FORMS_API_ON': False,
-    }
-
-    mock_send_email.return_value = api_response_400
-    url = reverse(
-        'contact-company',
-        kwargs={
-            'company_number': retrieve_profile_data['number'],
-        },
-    )
-
-    with pytest.raises(requests.exceptions.HTTPError):
-        client.post(url, valid_contact_company_data)
 
 
 @patch.object(views.ContactCompanyView.form_class.action_class, 'save')
 def test_contact_company_view_feature_submit_api_forms_failure(
-    mock_save, api_response_400, settings, client,
+    mock_save, api_response_400, client,
     valid_contact_company_data, retrieve_profile_data,
 ):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'DIRECTORY_FORMS_API_ON': True,
-    }
-
     mock_save.return_value = api_response_400
     url = reverse(
         'contact-company',
