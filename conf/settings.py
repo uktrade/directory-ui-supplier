@@ -15,6 +15,7 @@ import os
 import environ
 from directory_components.constants import IP_RETRIEVER_NAME_GOV_UK
 from directory_constants.constants import cms
+import directory_healthcheck.backends
 
 
 env = environ.Env()
@@ -59,7 +60,6 @@ INSTALLED_APPS = [
     'directory_components',
     'export_elements',
     'directory_healthcheck',
-    'health_check',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -376,7 +376,12 @@ ZENDESK_TICKET_SUBJECT = env.str(
 PRIVACY_COOKIE_DOMAIN = env.str('PRIVACY_COOKIE_DOMAIN')
 
 # Healthcheck
-HEALTH_CHECK_TOKEN = env.str('HEALTH_CHECK_TOKEN')
+DIRECTORY_HEALTHCHECK_TOKEN = env.str('HEALTH_CHECK_TOKEN')
+DIRECTORY_HEALTHCHECK_BACKENDS = [
+    directory_healthcheck.backends.APIBackend,
+    directory_healthcheck.backends.SentryBackend,
+    directory_healthcheck.backends.FormsAPIBackend,
+]
 
 # HEADER AND FOOTER LINKS
 DIRECTORY_CONSTANTS_URL_EXPORT_READINESS = env.str(
