@@ -392,7 +392,8 @@ def test_contact_company_view(client, retrieve_profile_data):
 
 @patch.object(views.ContactCompanyView.form_class, 'save')
 def test_contact_company_view_feature_submit_forms_api_success(
-    mock_save, client, valid_contact_company_data, retrieve_profile_data
+    mock_save, client, valid_contact_company_data, retrieve_profile_data,
+    settings
 ):
 
     url = reverse(
@@ -411,7 +412,7 @@ def test_contact_company_view_feature_submit_forms_api_success(
     assert mock_save.call_count == 1
     assert mock_save.call_args == call(
         recipients=['test@example.com'],
-        subject=valid_contact_company_data['subject'],
+        subject=settings.CONTACT_SUPPLIER_SUBJECT,
         reply_to=[valid_contact_company_data['email_address']],
         recipient_name='Great company',
         form_url=url,
