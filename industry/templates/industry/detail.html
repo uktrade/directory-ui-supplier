@@ -23,7 +23,7 @@
     <div class="container">
         <p class="breadcrumbs">
             <span class="label verbose">You are here:</span>
-            <a href="/">{{ page.breadcrumbs.landingpage.label }}</a>
+            <a href="{% url 'index' %}">{{ page.breadcrumbs.landingpage.label }}</a>
             <span class="separator">,</span>
             <a href="{% url 'sector-list' %}">{{ page.breadcrumbs.industrylandingpage.label }}</a>
             <span class="separator">,</span>
