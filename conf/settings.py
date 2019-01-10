@@ -432,3 +432,10 @@ RESTRICTED_APP_NAMES = env.list(
 if env.bool('IP_RESTRICTOR_RESTRICT_UI', False):
     # restrict all pages that are not in apps API, healthcheck, admin, etc
     RESTRICTED_APP_NAMES.append('')
+
+
+# Settings for email to supplier
+CONTACT_SUPPLIER_SUBJECT = env.str(
+    'CONTACT_SUPPLIER_SUBJECT',
+    'Someone is interested in your Find a Buyer profile'
+)
