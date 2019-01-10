@@ -21,9 +21,9 @@
     <div class="container">
         <p class="breadcrumbs">
             <span class="label verbose">You are here:</span>
-            <a href="/">Home</a>
+            <a href="{% url 'index' %}">Home</a>
             <span class="separator">,</span>
-            <a href="/">Industries</a>
+            <a href="{% url 'index' %}">Industries</a>
             <span class="separator">,</span>
             <span class="current">{{ page.sector_label }}</span>
         </p>
