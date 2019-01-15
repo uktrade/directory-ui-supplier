@@ -27,7 +27,7 @@ django-health-check==3.8.0  # via directory-healthcheck
 django-ipware==2.1.0      # via django-admin-ip-restrictor
 django-redis==4.8.0
 django-storages==1.6.6
-django==1.11.15
+django==1.11.18
 django_recaptcha==1.2.0
 djangorestframework==3.7.7  # via sigauth
 docutils==0.14            # via botocore

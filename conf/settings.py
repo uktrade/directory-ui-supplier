@@ -379,7 +379,6 @@ PRIVACY_COOKIE_DOMAIN = env.str('PRIVACY_COOKIE_DOMAIN')
 DIRECTORY_HEALTHCHECK_TOKEN = env.str('HEALTH_CHECK_TOKEN')
 DIRECTORY_HEALTHCHECK_BACKENDS = [
     directory_healthcheck.backends.APIBackend,
-    directory_healthcheck.backends.SentryBackend,
     directory_healthcheck.backends.FormsAPIBackend,
 ]
 
