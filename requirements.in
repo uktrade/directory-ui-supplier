@@ -1,5 +1,5 @@
 boto3==1.9.62
-Django==1.11.15
+Django==1.11.18
 django-environ==0.4.5
 django-formtools==2.0
 django-storages==1.6.6
