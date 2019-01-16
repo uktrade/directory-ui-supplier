@@ -21,5 +21,5 @@ directory-constants>=11.0.0,<12.0.0
 beautifulsoup4==4.6.0
 waitress==0.8.9
 django-redis==4.8.0
-directory-healthcheck==1.0.0
+directory-healthcheck==1.0.1
 urllib3>=1.23.0<2.0.0
