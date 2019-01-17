@@ -106,6 +106,7 @@ class BaseIndustryContactView(FormView):
             full_name=form.cleaned_data['full_name'],
             subject=form.cleaned_data['sector'] + ' contact form submitted.',
             service_name=settings.DIRECTORY_FORMS_API_ZENDESK_SEVICE_NAME,
+            form_url=self.request.path,
         )
         response.raise_for_status()
         return super().form_valid(form)

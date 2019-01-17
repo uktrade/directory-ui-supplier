@@ -56,10 +56,7 @@ def test_html_lang_attribute_processor_set_lang(rf):
 
 
 def test_footer_contact_link_processor_flag(settings):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'INTERNATIONAL_CONTACT_LINK_ON': True,
-    }
+    settings.FEATURE_FLAGS['INTERNATIONAL_CONTACT_LINK_ON'] = True
     settings.HEADER_FOOTER_URLS_GREAT_HOME = None
 
     actual = context_processors.footer_contact_us_link(None)
@@ -69,10 +66,7 @@ def test_footer_contact_link_processor_flag(settings):
 
 
 def test_footer_contact_link_processor_flag_off(settings):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'INTERNATIONAL_CONTACT_LINK_ON': False,
-    }
+    settings.FEATURE_FLAGS['INTERNATIONAL_CONTACT_LINK_ON'] = False
     settings.HEADER_FOOTER_URLS_CONTACT_US = None
 
     actual = context_processors.footer_contact_us_link(None)

@@ -86,10 +86,7 @@ def test_contact_form_submit_with_comment_forms_api(
 def test_landing_page_cms_component(
     mock_get_page, mock_get_component, client, settings
 ):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'EU_EXIT_BANNER_ON': True,
-    }
+    settings.FEATURE_FLAGS['EU_EXIT_BANNER_ON'] = True
     mock_get_page.return_value = {
         'title': 'the page',
         'sectors': [],
@@ -118,10 +115,7 @@ def test_landing_page_cms_component(
 def test_landing_page_cms_component_bidi(
     mock_get_page, mock_get_component, client, settings
 ):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'EU_EXIT_BANNER_ON': True,
-    }
+    settings.FEATURE_FLAGS['EU_EXIT_BANNER_ON'] = True
     mock_get_page.return_value = {
         'title': 'the page',
         'sectors': [],
