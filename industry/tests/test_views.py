@@ -265,12 +265,8 @@ def test_industries_page_not_found(mock_lookup_by_slug, settings, client):
     views.IndustryDetailContactCMSView.form_class.action_class, 'save'
 )
 def test_contact_form_submit_with_comment_forms_api(
-    mock_save, client, captcha_stub, settings
+    mock_save, client, captcha_stub
 ):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'DIRECTORY_FORMS_API_ON': True,
-    }
     mock_save.return_value = create_response(status_code=200)
 
     url = reverse('sector-detail-cms-contact', kwargs={'slug': 'industry'})
@@ -315,16 +311,10 @@ def test_contact_form_prefills_sector(client, industry_detail_data):
     )
 
 
-@patch.object(
-    views.IndustryLandingPageContactCMSView.form_class.action_class, 'save'
-)
+@patch.object(views.IndustryLandingPageContactCMSView.form_class, 'save')
 def test_sector_list_submit_with_comment_forms_api(
-    mock_save, client, captcha_stub, settings
+    mock_save, client, captcha_stub
 ):
-    settings.FEATURE_FLAGS = {
-        **settings.FEATURE_FLAGS,
-        'DIRECTORY_FORMS_API_ON': True,
-    }
     mock_save.return_value = create_response(status_code=200)
 
     url = reverse('sector-list-cms-contact')
@@ -347,17 +337,13 @@ def test_sector_list_submit_with_comment_forms_api(
         reverse('sector-list-cms-contact-sent')
     )
     assert mock_save.call_count == 1
-    assert mock_save.call_args == call({
-        'sector': 'industry',
-        'organisation_name': 'My name is Jeff',
-        'source_other': '',
-        'organisation_size': '1-10',
-        'email_address': 'jeff@example.com',
-        'country': 'United Kingdom',
-        'full_name': 'Jeff',
-        'body': 'hello',
-        'source': constants.MARKETING_SOURCES[1][0],
-    })
+    assert mock_save.call_args == call(
+        email_address='jeff@example.com',
+        form_url='/industries/contact/',
+        full_name='Jeff',
+        service_name='Directory',
+        subject='industry contact form submitted.'
+    )
 
 
 def test_contact_industry_detail_sent_no_referer(client):
