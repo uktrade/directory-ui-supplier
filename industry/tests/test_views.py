@@ -273,6 +273,7 @@ def test_contact_form_submit_with_comment_forms_api(
     data = {
         'full_name': 'Jeff',
         'email_address': 'jeff@example.com',
+        'phone_number': '1231312',
         'sector': 'industry',
         'organisation_name': 'My name is Jeff',
         'organisation_size': '1-10',
@@ -295,10 +296,12 @@ def test_contact_form_submit_with_comment_forms_api(
         'source_other': '',
         'organisation_size': '1-10',
         'email_address': 'jeff@example.com',
+        'phone_number': '1231312',
         'country': 'United Kingdom',
         'full_name': 'Jeff',
         'body': 'hello',
         'source': constants.MARKETING_SOURCES[1][0],
+
     })
 
 
@@ -321,6 +324,7 @@ def test_sector_list_submit_with_comment_forms_api(
     data = {
         'full_name': 'Jeff',
         'email_address': 'jeff@example.com',
+        'phone_number': '3223232',
         'sector': 'industry',
         'organisation_name': 'My name is Jeff',
         'organisation_size': '1-10',
@@ -342,7 +346,12 @@ def test_sector_list_submit_with_comment_forms_api(
         form_url='/industries/contact/',
         full_name='Jeff',
         service_name='Directory',
-        subject='industry contact form submitted.'
+        sender={
+            'email_address': ['jeff@example.com'],
+            'country_code': 'United Kingdom'
+        },
+        subject='industry contact form submitted.',
+        spam_control={'contents': ['hello']}
     )
 
 

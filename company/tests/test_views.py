@@ -414,6 +414,10 @@ def test_contact_company_view_feature_submit_forms_api_success(
         recipients=['test@example.com'],
         subject=settings.CONTACT_SUPPLIER_SUBJECT,
         reply_to=[valid_contact_company_data['email_address']],
+        sender={
+            'email_address': ['jim@example.com'], 'country_code': 'China'
+        },
+        spam_control={'contents': ['greetings', 'and salutations']},
         recipient_name='Great company',
         form_url=url,
     )

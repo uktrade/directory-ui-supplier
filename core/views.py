@@ -1,5 +1,6 @@
 from directory_constants.constants import cms
 from directory_cms_client.client import cms_api_client
+import directory_forms_api_client.helpers
 
 from django.conf import settings
 from django.urls import reverse
@@ -65,12 +66,21 @@ class LeadGenerationFormView(
     form_class = forms.LeadGenerationForm
 
     def form_valid(self, form):
+        sender = directory_forms_api_client.helpers.Sender(
+            email_address=[form.cleaned_data['email_address']],
+            country_code=form.cleaned_data['country'],
+        )
+        spam_control = directory_forms_api_client.helpers.SpamControl(
+            contents=[form.cleaned_data['comment']]
+        )
         response = form.save(
             email_address=form.cleaned_data['email_address'],
             full_name=form.cleaned_data['full_name'],
             subject=settings.ZENDESK_TICKET_SUBJECT,
             service_name=settings.DIRECTORY_FORMS_API_ZENDESK_SEVICE_NAME,
             form_url=self.request.path,
+            sender=sender,
+            spam_control=spam_control,
         )
         response.raise_for_status()
         return TemplateResponse(self.request, self.success_template)

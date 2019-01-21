@@ -1,4 +1,5 @@
 from directory_api_client.client import api_client
+import directory_forms_api_client.helpers
 
 from django.conf import settings
 from django.core.paginator import EmptyPage, Paginator
@@ -171,12 +172,21 @@ class ContactCompanyView(CompanyProfileMixin, FormView):
         return super().form_valid(form)
 
     def send_email(self, form):
+        sender = directory_forms_api_client.helpers.Sender(
+            email_address=[form.cleaned_data['email_address']],
+            country_code=form.cleaned_data['country'],
+        )
+        spam_control = directory_forms_api_client.helpers.SpamControl(
+            contents=[form.cleaned_data['subject'], form.cleaned_data['body']]
+        )
         return form.save(
             recipients=[self.company['email_address']],
             subject=settings.CONTACT_SUPPLIER_SUBJECT,
             reply_to=[form.cleaned_data['email_address']],
             recipient_name=self.company['name'],
             form_url=self.request.path,
+            sender=sender,
+            spam_control=spam_control,
         )
 
 

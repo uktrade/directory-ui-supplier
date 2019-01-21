@@ -11,7 +11,7 @@ jsonschema==2.6.0
 django_recaptcha==1.2.0
 redis==2.10.5
 sorl-thumbnail==12.3
-directory-forms-api-client==3.1.0
+directory-forms-api-client==3.3.0
 directory-components==3.5.0
 export-elements==0.23.0
 directory-cms-client==8.1.0
