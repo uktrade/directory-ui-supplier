@@ -39,6 +39,12 @@ class ContactForm(ZendeskActionMixin, forms.Form):
             attrs={'dir': 'auto'}
         ),
     )
+    phone_number = fields.CharField(
+        label=_('Phone number'),
+        widget=TextInput(
+            attrs={'dir': 'auto'}
+        ),
+    )
     sector = fields.ChoiceField(
         label=_('Your industry'),
         choices=[],  # set in __init__

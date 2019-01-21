@@ -17,7 +17,7 @@ directory-client-core==4.2.0  # via directory-api-client, directory-cms-client, 
 directory-cms-client==8.1.0
 directory-components==3.5.0
 directory-constants==11.1.0
-directory-forms-api-client==3.1.0
+directory-forms-api-client==3.3.0
 directory-healthcheck==1.0.1
 directory-validators==5.0.1
 django-admin-ip-restrictor==1.0.0  # via directory-components
@@ -44,10 +44,9 @@ monotonic==1.4            # via directory-client-core
 olefile==0.44             # via directory-validators, pillow
 phonenumberslite==7.7.4   # via directory-validators
 pillow==4.2.1             # via directory-validators
-py==1.5.2                 # via pytest, pytest-catchlog
+py==1.5.2                 # via pytest
 pycodestyle==2.0.0        # via flake8
 pyflakes==1.2.3           # via flake8
-pytest-catchlog==1.2.2
 pytest-cov==2.3.1
 pytest-django==3.0.0
 pytest-sugar==0.9.1
