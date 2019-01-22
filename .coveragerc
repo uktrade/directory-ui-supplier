@@ -1,2 +1,13 @@
 [run]
-omit = .venv/*,ui/wsgi.py,manage.py,**/tests,**/settings.py,**/conftest.py,conftest.py,node_modules
+omit =
+    .venv/*
+    conf/wsgi.py
+    conf/settings.py
+    manage.py
+    **/tests/*
+    *__init__*
+    conf/urls_prefixed.py
+    **/tests
+    **/conftest.py
+    conftest.py
+    node_modules

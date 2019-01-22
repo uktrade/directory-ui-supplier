@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-13 10:50+0000\n"
+"POT-Creation-Date: 2019-01-22 15:48+0000\n"
 "PO-Revision-Date: 2017-06-13 15:19+0100\n"
 "Language: ar\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr "حدد المربع لتؤكد أنك توافق على البنود و�
 msgid "Your name"
 msgstr "اسمك"
 
-#: core/forms.py:53 core/forms.py:75 industry/forms.py:44
+#: core/forms.py:53 core/forms.py:75 industry/forms.py:38
 msgid "Email address"
 msgstr "عنوان البريد الإلكتروني"
 
@@ -81,51 +81,51 @@ msgstr "أوافق على البنود والشروط الواردة في موق
 msgid "Send"
 msgstr "إرسال"
 
-#: enrolment/templates/footer.html:17 enrolment/templates/header.html:30
+#: enrolment/templates/footer.html:16 enrolment/templates/header.html:30
 msgid "Home"
 msgstr "الصفحة الرئيسية"
 
-#: enrolment/templates/footer.html:20 enrolment/templates/header.html:33
+#: enrolment/templates/footer.html:19 enrolment/templates/header.html:33
 msgid "Find a supplier"
 msgstr "العثور على مورّد"
 
-#: enrolment/templates/footer.html:23 enrolment/templates/header.html:36
+#: enrolment/templates/footer.html:22 enrolment/templates/header.html:36
 msgid "Industries"
 msgstr "الصناعات"
 
-#: enrolment/templates/footer.html:26
+#: enrolment/templates/footer.html:25
 msgid "Find UK companies"
 msgstr "العثور على/إيجاد شركات بريطانية"
 
-#: enrolment/templates/footer.html:37
+#: enrolment/templates/footer.html:36
 msgid "About"
 msgstr ""
 
-#: enrolment/templates/footer.html:42
+#: enrolment/templates/footer.html:41
 msgid "Contact us"
 msgstr "الاتصال بنا"
 
-#: enrolment/templates/footer.html:47
+#: enrolment/templates/footer.html:46
 msgid "Privacy and cookies"
 msgstr "الخصوصية وملفات تعريف الارتباط"
 
-#: enrolment/templates/footer.html:52
+#: enrolment/templates/footer.html:51
 msgid "Terms &amp; conditions"
 msgstr "البنود والشروط"
 
-#: enrolment/templates/footer.html:57
+#: enrolment/templates/footer.html:56
 msgid "Performance"
 msgstr ""
 
-#: enrolment/templates/footer.html:62
+#: enrolment/templates/footer.html:61
 msgid "Department for International Trade"
 msgstr ""
 
-#: enrolment/templates/footer.html:72
+#: enrolment/templates/footer.html:71
 msgid "Crown Copyright"
 msgstr "Crown Copyright"
 
-#: enrolment/templates/footer.html:72
+#: enrolment/templates/footer.html:71
 msgid "All rights reserved."
 msgstr ""
 
@@ -169,7 +169,7 @@ msgstr ""
 msgid "Other"
 msgstr ""
 
-#: industry/forms.py:30
+#: industry/forms.py:23
 #, python-brace-format
 msgid ""
 "I agree to the <a href=\"{url}\" target=\"_blank\">great.gov.uk terms and "
@@ -178,9 +178,13 @@ msgstr ""
 "أوافق على <a href=\"{url}\" target=\"_blank\">البنود الأساسية في موقع "
 "<bdi>great.gov.uk</bdi></a>.‎"
 
-#: industry/forms.py:36
+#: industry/forms.py:30
 msgid "Full name"
 msgstr "اسمك"
+
+#: industry/forms.py:44
+msgid "Phone number"
+msgstr "هاتف"
 
 #: industry/forms.py:50
 msgid "Your industry"

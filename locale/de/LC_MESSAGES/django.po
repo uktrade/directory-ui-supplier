@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-13 10:50+0000\n"
+"POT-Creation-Date: 2019-01-22 15:48+0000\n"
 "PO-Revision-Date: 2017-06-12 12:17+0100\n"
 "Language: de\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Your name"
 msgstr "Ihr Name"
 
-#: core/forms.py:53 core/forms.py:75 industry/forms.py:44
+#: core/forms.py:53 core/forms.py:75 industry/forms.py:38
 msgid "Email address"
 msgstr "E-Mail-Adresse"
 
@@ -83,51 +83,51 @@ msgstr "Ich akzeptiere die AGB von great.gov.uk"
 msgid "Send"
 msgstr "Absenden"
 
-#: enrolment/templates/footer.html:17 enrolment/templates/header.html:30
+#: enrolment/templates/footer.html:16 enrolment/templates/header.html:30
 msgid "Home"
 msgstr "Startseite"
 
-#: enrolment/templates/footer.html:20 enrolment/templates/header.html:33
+#: enrolment/templates/footer.html:19 enrolment/templates/header.html:33
 msgid "Find a supplier"
 msgstr "Anbieter finden"
 
-#: enrolment/templates/footer.html:23 enrolment/templates/header.html:36
+#: enrolment/templates/footer.html:22 enrolment/templates/header.html:36
 msgid "Industries"
 msgstr "Branchen"
 
-#: enrolment/templates/footer.html:26
+#: enrolment/templates/footer.html:25
 msgid "Find UK companies"
 msgstr "Britische Partner Firmen finden"
 
-#: enrolment/templates/footer.html:37
+#: enrolment/templates/footer.html:36
 msgid "About"
 msgstr ""
 
-#: enrolment/templates/footer.html:42
+#: enrolment/templates/footer.html:41
 msgid "Contact us"
 msgstr "Kontakt"
 
-#: enrolment/templates/footer.html:47
+#: enrolment/templates/footer.html:46
 msgid "Privacy and cookies"
 msgstr "Datenschutz und Cookies"
 
-#: enrolment/templates/footer.html:52
+#: enrolment/templates/footer.html:51
 msgid "Terms &amp; conditions"
 msgstr "Allgemeine Geschäftsbedingungen"
 
-#: enrolment/templates/footer.html:57
+#: enrolment/templates/footer.html:56
 msgid "Performance"
 msgstr ""
 
-#: enrolment/templates/footer.html:62
+#: enrolment/templates/footer.html:61
 msgid "Department for International Trade"
 msgstr ""
 
-#: enrolment/templates/footer.html:72
+#: enrolment/templates/footer.html:71
 msgid "Crown Copyright"
 msgstr ""
 
-#: enrolment/templates/footer.html:72
+#: enrolment/templates/footer.html:71
 msgid "All rights reserved."
 msgstr ""
 
@@ -171,7 +171,7 @@ msgstr "Bei einem Event"
 msgid "Other"
 msgstr "Anderes"
 
-#: industry/forms.py:30
+#: industry/forms.py:23
 #, python-brace-format
 msgid ""
 "I agree to the <a href=\"{url}\" target=\"_blank\">great.gov.uk terms and "
@@ -180,9 +180,13 @@ msgstr ""
 "Ich akzeptiere <a href=\"{url}\" target=\"_blank\">die AGB von great.gov.uk</"
 "a>"
 
-#: industry/forms.py:36
+#: industry/forms.py:30
 msgid "Full name"
 msgstr "Vollständiger Name"
+
+#: industry/forms.py:44
+msgid "Phone number"
+msgstr "Telefonnummer"
 
 #: industry/forms.py:50
 msgid "Your industry"
