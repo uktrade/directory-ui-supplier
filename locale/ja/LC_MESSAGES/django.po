@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-13 10:50+0000\n"
+"POT-Creation-Date: 2019-01-22 15:48+0000\n"
 "PO-Revision-Date: 2017-06-16 17:01+0100\n"
 "Language: ja\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr "ボックスをオンにして、利用規約に同意したことをご
 msgid "Your name"
 msgstr "お名前"
 
-#: core/forms.py:53 core/forms.py:75 industry/forms.py:44
+#: core/forms.py:53 core/forms.py:75 industry/forms.py:38
 msgid "Email address"
 msgstr "メールアドレス"
 
@@ -81,51 +81,51 @@ msgstr "great.gov.uk の利用規約に同意します。"
 msgid "Send"
 msgstr "送信"
 
-#: enrolment/templates/footer.html:17 enrolment/templates/header.html:30
+#: enrolment/templates/footer.html:16 enrolment/templates/header.html:30
 msgid "Home"
 msgstr "ホーム"
 
-#: enrolment/templates/footer.html:20 enrolment/templates/header.html:33
+#: enrolment/templates/footer.html:19 enrolment/templates/header.html:33
 msgid "Find a supplier"
 msgstr "サプライヤ検索"
 
-#: enrolment/templates/footer.html:23 enrolment/templates/header.html:36
+#: enrolment/templates/footer.html:22 enrolment/templates/header.html:36
 msgid "Industries"
 msgstr "産業"
 
-#: enrolment/templates/footer.html:26
+#: enrolment/templates/footer.html:25
 msgid "Find UK companies"
 msgstr "英国企業を検索"
 
-#: enrolment/templates/footer.html:37
+#: enrolment/templates/footer.html:36
 msgid "About"
 msgstr ""
 
-#: enrolment/templates/footer.html:42
+#: enrolment/templates/footer.html:41
 msgid "Contact us"
 msgstr "連絡先"
 
-#: enrolment/templates/footer.html:47
+#: enrolment/templates/footer.html:46
 msgid "Privacy and cookies"
 msgstr "プライバシーと Cookie"
 
-#: enrolment/templates/footer.html:52
+#: enrolment/templates/footer.html:51
 msgid "Terms &amp; conditions"
 msgstr "利用規約"
 
-#: enrolment/templates/footer.html:57
+#: enrolment/templates/footer.html:56
 msgid "Performance"
 msgstr ""
 
-#: enrolment/templates/footer.html:62
+#: enrolment/templates/footer.html:61
 msgid "Department for International Trade"
 msgstr ""
 
-#: enrolment/templates/footer.html:72
+#: enrolment/templates/footer.html:71
 msgid "Crown Copyright"
 msgstr ""
 
-#: enrolment/templates/footer.html:72
+#: enrolment/templates/footer.html:71
 msgid "All rights reserved."
 msgstr ""
 
@@ -169,7 +169,7 @@ msgstr "イベント"
 msgid "Other"
 msgstr "その他"
 
-#: industry/forms.py:30
+#: industry/forms.py:23
 #, python-brace-format
 msgid ""
 "I agree to the <a href=\"{url}\" target=\"_blank\">great.gov.uk terms and "
@@ -177,9 +177,13 @@ msgid ""
 msgstr ""
 "<a href=\"{url}\" target=\"_blank\">great.gov.uk</a> の利用規約に同意します。"
 
-#: industry/forms.py:36
+#: industry/forms.py:30
 msgid "Full name"
 msgstr "氏名（フルネーム）"
+
+#: industry/forms.py:44
+msgid "Phone number"
+msgstr "電話番号"
 
 #: industry/forms.py:50
 msgid "Your industry"

@@ -18,10 +18,11 @@ class ContactForm(ZendeskActionMixin, forms.Form):
     def __init__(self, industry_choices, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields['terms_agreed'].widget.label = mark_safe(ugettext(
-            'I agree to the '
-            f'<a href="{urls.TERMS_AND_CONDITIONS}" target="_blank">'
-            'great.gov.uk terms and conditions</a>')
+        self.fields['terms_agreed'].widget.label = mark_safe(
+            ugettext(
+                'I agree to the <a href="{url}" target="_blank">'
+                'great.gov.uk terms and conditions</a>'
+            ).format(url=urls.TERMS_AND_CONDITIONS)
         )
         self.fields['sector'].choices = industry_choices
 
