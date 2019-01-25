@@ -111,10 +111,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'conf.wsgi.application'
 
-if env.str('REDIS_URL', ''):
+VCAP_SERVICES = env.json('VCAP_SERVICES', {})
+
+if 'redis' in VCAP_SERVICES:
+    REDIS_URL = VCAP_SERVICES['redis'][0]['credentials']['uri'].replace(
+        'rediss://', 'redis://'
+    )
+else:
+    REDIS_URL = env.str('REDIS_URL', '')
+
+if REDIS_URL:
     cache = {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': env.str('REDIS_URL'),
+        'LOCATION': REDIS_URL,
         'OPTIONS': {
             'CLIENT_CLASS': "django_redis.client.DefaultClient",
         }
@@ -313,8 +322,8 @@ THUMBNAIL_STORAGE = THUMBNAIL_STORAGE_CLASSES[THUMBNAIL_STORAGE_CLASS_NAME]
 THUMBNAIL_FORCE_OVERWRITE = True
 
 # Redis for thumbnails cache
-if env.str('REDIS_URL', ''):
-    THUMBNAIL_REDIS_URL = env.str('REDIS_URL')
+if REDIS_URL:
+    THUMBNAIL_REDIS_URL = REDIS_URL
 
 # django-storages for thumbnails
 AWS_STORAGE_BUCKET_NAME = env.str('AWS_STORAGE_BUCKET_NAME', '')
