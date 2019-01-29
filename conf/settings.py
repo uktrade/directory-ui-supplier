@@ -445,3 +445,11 @@ CONTACT_SUPPLIER_SUBJECT = env.str(
     'CONTACT_SUPPLIER_SUBJECT',
     'Someone is interested in your Find a Buyer profile'
 )
+CONTACT_INDUSTRY_EMAIL_ADDRESS = env.str(
+    'CONTACT_INDUSTRY_EMAIL_ADDRESS'
+
+)
+CONTACT_INDUSTRY_TEMPLATE_ID = env.str(
+    'CONTACT_INDUSTRY_TEMPLATE_ID',
+    'a9318bce-7d65-41b2-8d4c-b4a76ba285a2'
+)
