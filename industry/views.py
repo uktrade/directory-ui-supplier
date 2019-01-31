@@ -101,7 +101,7 @@ class BaseIndustryContactView(FormView):
             'industry_choices': industry_choices,
         }
 
-    def form_valid(self, form):
+    def send_agent_email(self, form):
         sender = directory_forms_api_client.helpers.Sender(
             email_address=form.cleaned_data['email_address'],
             country_code=form.cleaned_data['country'],
@@ -110,13 +110,25 @@ class BaseIndustryContactView(FormView):
             contents=[form.cleaned_data['body']]
         )
         response = form.save(
-            email_address=settings.CONTACT_INDUSTRY_EMAIL_ADDRESS,
-            template_id=settings.CONTACT_INDUSTRY_TEMPLATE_ID,
             form_url=self.request.path,
+            email_address=settings.CONTACT_INDUSTRY_AGENT_EMAIL_ADDRESS,
+            template_id=settings.CONTACT_INDUSTRY_AGENT_TEMPLATE_ID,
             sender=sender,
             spam_control=spam_control,
         )
         response.raise_for_status()
+
+    def send_user_email(self, form):
+        response = form.save(
+            form_url=self.request.path,
+            email_address=form.cleaned_data['email_address'],
+            template_id=settings.CONTACT_INDUSTRY_USER_TEMPLATE_ID,
+        )
+        response.raise_for_status()
+
+    def form_valid(self, form):
+        self.send_agent_email(form)
+        self.send_user_email(form)
         return super().form_valid(form)
 
 

@@ -289,8 +289,8 @@ def test_contact_form_submit_with_comment_forms_api(
     assert response.url == (
         reverse('sector-detail-cms-contact-sent', kwargs={'slug': 'industry'})
     )
-    assert mock_save.call_count == 1
-    assert mock_save.call_args == call({
+    assert mock_save.call_count == 2
+    assert mock_save.call_args_list[0] == mock_save.call_args_list[1] == call({
         'sector': 'industry',
         'organisation_name': 'My name is Jeff',
         'source_other': '',
@@ -301,7 +301,6 @@ def test_contact_form_submit_with_comment_forms_api(
         'full_name': 'Jeff',
         'body': 'hello',
         'source': constants.MARKETING_SOURCES[1][0],
-
     })
 
 
@@ -340,9 +339,9 @@ def test_sector_list_submit_with_comment_forms_api(
     assert response.url == (
         reverse('sector-list-cms-contact-sent')
     )
-    assert mock_save.call_count == 1
-    assert mock_save.call_args == call(
-        email_address='rikatee@gmail.com',
+    assert mock_save.call_count == 2
+    assert mock_save.call_args_list[0] == call(
+        email_address='buying@example.com',
         form_url='/industries/contact/',
         sender={
             'email_address': 'jeff@example.com',
@@ -350,7 +349,12 @@ def test_sector_list_submit_with_comment_forms_api(
         },
         spam_control={
             'contents': ['hello']},
-        template_id=settings.CONTACT_INDUSTRY_TEMPLATE_ID,
+        template_id=settings.CONTACT_INDUSTRY_AGENT_TEMPLATE_ID,
+    )
+    assert mock_save.call_args_list[1] == call(
+        email_address='jeff@example.com',
+        form_url='/industries/contact/',
+        template_id=settings.CONTACT_INDUSTRY_USER_TEMPLATE_ID,
     )
 
 
