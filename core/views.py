@@ -67,7 +67,7 @@ class LeadGenerationFormView(
 
     def form_valid(self, form):
         sender = directory_forms_api_client.helpers.Sender(
-            email_address=[form.cleaned_data['email_address']],
+            email_address=form.cleaned_data['email_address'],
             country_code=form.cleaned_data['country'],
         )
         spam_control = directory_forms_api_client.helpers.SpamControl(
