@@ -347,7 +347,7 @@ def test_sector_list_submit_with_comment_forms_api(
         full_name='Jeff',
         service_name='Directory',
         sender={
-            'email_address': ['jeff@example.com'],
+            'email_address': 'jeff@example.com',
             'country_code': 'United Kingdom'
         },
         subject='industry contact form submitted.',
