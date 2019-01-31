@@ -110,10 +110,8 @@ class BaseIndustryContactView(FormView):
             contents=[form.cleaned_data['body']]
         )
         response = form.save(
-            email_address=form.cleaned_data['email_address'],
-            full_name=form.cleaned_data['full_name'],
-            subject=form.cleaned_data['sector'] + ' contact form submitted.',
-            service_name=settings.DIRECTORY_FORMS_API_ZENDESK_SEVICE_NAME,
+            email_address=settings.CONTACT_INDUSTRY_EMAIL_ADDRESS,
+            template_id=settings.CONTACT_INDUSTRY_TEMPLATE_ID,
             form_url=self.request.path,
             sender=sender,
             spam_control=spam_control,

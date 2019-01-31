@@ -3,7 +3,7 @@ from captcha.fields import ReCaptchaField
 from directory_constants.constants import choices, urls
 from directory_components import forms, fields
 from directory_validators.common import not_contains_url_or_email
-from directory_forms_api_client.forms import ZendeskActionMixin
+from directory_forms_api_client.forms import GovNotifyActionMixin
 
 from django.forms import Textarea, TextInput, Select
 from django.utils.translation import ugettext_lazy as _
@@ -13,7 +13,7 @@ from django.utils.safestring import mark_safe
 from industry import constants
 
 
-class ContactForm(ZendeskActionMixin, forms.Form):
+class ContactForm(GovNotifyActionMixin, forms.Form):
 
     def __init__(self, industry_choices, *args, **kwargs):
         super().__init__(*args, **kwargs)

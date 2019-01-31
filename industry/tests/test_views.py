@@ -316,7 +316,7 @@ def test_contact_form_prefills_sector(client, industry_detail_data):
 
 @patch.object(views.IndustryLandingPageContactCMSView.form_class, 'save')
 def test_sector_list_submit_with_comment_forms_api(
-    mock_save, client, captcha_stub
+    mock_save, client, captcha_stub, settings
 ):
     mock_save.return_value = create_response(status_code=200)
 
@@ -342,16 +342,15 @@ def test_sector_list_submit_with_comment_forms_api(
     )
     assert mock_save.call_count == 1
     assert mock_save.call_args == call(
-        email_address='jeff@example.com',
+        email_address='rikatee@gmail.com',
         form_url='/industries/contact/',
-        full_name='Jeff',
-        service_name='Directory',
         sender={
             'email_address': 'jeff@example.com',
             'country_code': 'United Kingdom'
         },
-        subject='industry contact form submitted.',
-        spam_control={'contents': ['hello']}
+        spam_control={
+            'contents': ['hello']},
+        template_id=settings.CONTACT_INDUSTRY_TEMPLATE_ID,
     )
 
 
