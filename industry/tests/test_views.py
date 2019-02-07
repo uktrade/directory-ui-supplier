@@ -355,6 +355,7 @@ def test_sector_list_submit_with_comment_forms_api(
         email_address='jeff@example.com',
         form_url='/industries/contact/',
         template_id=settings.CONTACT_INDUSTRY_USER_TEMPLATE_ID,
+        email_reply_to_id=settings.CONTACT_INDUSTRY_USER_REPLY_TO_ID,
     )
 
 
