@@ -66,6 +66,14 @@ p {
   }
 }
 
+// contact-area box is quite narrow so we need to
+// hyphenate words in German
+:lang(de) {
+  #contact-area {
+    hyphens: auto;
+  }
+}
+
 #contact-area {
   padding: 30px 20px;
   right: 0;
