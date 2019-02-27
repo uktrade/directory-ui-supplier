@@ -73,18 +73,12 @@ Form submissions are powered by [directory-forms-api](https://github.com/uktrade
 
 ### Requirements
 [node](https://nodejs.org/en/download/)
-[SASS](http://sass-lang.com/)
 
 	$ npm install
-	$ npm run sass-dev
 
 ### Update CSS under version control
 
-	$ npm run sass-prod
-
-### Rebuild the CSS files when the scss file changes
-
-	$ npm run sass-watch
+	$ gulp sass
 
 ## Session
 
