@@ -1,4 +1,4 @@
-from unittest.mock import call, patch
+from unittest.mock import call, patch, PropertyMock, Mock
 
 from directory_cms_client.client import cms_api_client
 import pytest
@@ -7,10 +7,9 @@ from django.core.urlresolvers import resolve, reverse
 
 from core.tests.helpers import create_response
 from industry import constants, views
-
+from industry.views import IndustryDetailCMSView
 
 details_cms_urls = (
-    reverse('sector-detail-verbose', kwargs={'slug': 'industry'}),
     reverse('sector-article', kwargs={'slug': 'article'}),
 )
 list_cms_urls = (reverse('sector-list'),)
@@ -105,9 +104,11 @@ def industry_article_data(breadcrumbs):
 @pytest.fixture(autouse=True)
 def mock_lookup_by_slug(
     industry_detail_data, industry_article_data, contact_page_data,
-    industry_list_data
+    industry_list_data, request
 ):
     def side_effect(slug, *args, **kwargs):
+        if 'noautofixture' in request.keywords:
+            return
         resources = [
             industry_detail_data,
             industry_article_data,
@@ -156,7 +157,6 @@ def test_cms_api_client_params(
 
 
 @pytest.mark.parametrize('url', (
-    reverse('sector-detail-verbose', kwargs={'slug': 'industry'}),
     reverse('sector-article', kwargs={'slug': 'article'}),
 ))
 def test_cms_pages_cms_slug(settings, client, url):
@@ -176,9 +176,13 @@ def test_cms_pages_cms_page_404(settings, client, url, mock_lookup_by_slug):
     assert response.status_code == 404
 
 
+@patch.object(IndustryDetailCMSView, 'international_industry_page',
+              new_callable=PropertyMock)
 def test_industry_page_context_curated_feature_enabled(
-    mock_get_showcase_companies, settings, client, industry_detail_data
+        mock_page_exists, mock_get_showcase_companies, client,
+        industry_detail_data
 ):
+    mock_page_exists.return_value = None
     industry_detail_data['search_filter_showcase_only'] = True
 
     url = reverse('sector-detail-verbose', kwargs={'slug': 'industry'})
@@ -192,9 +196,13 @@ def test_industry_page_context_curated_feature_enabled(
     assert response.template_name == ['industry/detail.html']
 
 
+@patch.object(IndustryDetailCMSView, 'international_industry_page',
+              new_callable=PropertyMock)
 def test_industry_page_context_curated_feature_disabled(
-    mock_get_showcase_companies, settings, client, industry_detail_data
+        mock_page_exists, mock_get_showcase_companies, settings, client,
+        industry_detail_data
 ):
+    mock_page_exists.return_value = None
     industry_detail_data['search_filter_showcase_only'] = False
 
     url = reverse('sector-detail-verbose', kwargs={'slug': 'industry'})
@@ -429,3 +437,29 @@ def test_contact_industry_list_sent_correct_referer(client):
     assert response.template_name == [
         views.IndustryLandingPageContactCMSSentView.template_name
     ]
+
+
+@pytest.mark.noautofixture
+@patch('directory_cms_client.client.cms_api_client.lookup_by_slug')
+def test_industry_page_exists_in_international(mock_get_page, client):
+    mocked_response = Mock(status_code=200)
+    mocked_response.json.return_value = {'full_url': 'http://test.com'}
+    mock_get_page.return_value = mocked_response
+    url = reverse('sector-detail-verbose', kwargs={'slug': 'foo'})
+    response = client.get(url)
+    assert mock_get_page.call_args == call(draft_token=None,
+                                           language_code='en-gb',
+                                           service_name='GREAT_INTERNATIONAL',
+                                           slug='foo')
+    assert response.status_code == 302
+    assert response.url == 'http://test.com'
+
+
+@patch.object(IndustryDetailCMSView, 'international_industry_page',
+              new_callable=PropertyMock)
+def test_industry_page_does_not_exist_in_international(mock_page_exists,
+                                                       client):
+    mock_page_exists.return_value = None
+    url = reverse('sector-detail-verbose', kwargs={'slug': 'industry'})
+    response = client.get(url)
+    assert response.status_code == 200

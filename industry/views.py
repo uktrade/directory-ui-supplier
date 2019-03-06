@@ -5,7 +5,9 @@ from directory_constants.constants import cms
 from directory_components.helpers import SocialLinkBuilder
 
 from django.conf import settings
+from django.shortcuts import redirect
 from django.utils import translation
+from django.utils.functional import cached_property
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 from django.urls import reverse, reverse_lazy
@@ -51,6 +53,24 @@ class IndustryDetailCMSView(
         if search_filter_showcase_only:
             kwargs['is_showcase_company'] = True
         return get_showcase_companies(**kwargs)
+
+    @cached_property
+    def international_industry_page(self):
+        response = cms_api_client.lookup_by_slug(
+            slug=self.kwargs['slug'],
+            language_code=translation.get_language(),
+            draft_token=self.request.GET.get('draft_token'),
+            service_name=cms.GREAT_INTERNATIONAL
+        )
+        if response.status_code == 200:
+            return response.json()
+        return None
+
+    def dispatch(self, request, *args, **kwargs):
+        page = self.international_industry_page
+        if page:
+            return redirect(page['full_url'])
+        return super().dispatch(request, *args, **kwargs)
 
 
 class GetContactPageMixin:
