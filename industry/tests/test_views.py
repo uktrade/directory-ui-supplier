@@ -460,6 +460,6 @@ def test_industry_page_exists_in_international(mock_get_page, client):
 def test_industry_page_does_not_exist_in_international(mock_page_exists,
                                                        client):
     mock_page_exists.return_value = None
-    url = reverse('sector-detail-verbose', kwargs={'slug': 'foo'})
+    url = reverse('sector-detail-verbose', kwargs={'slug': 'industry'})
     response = client.get(url)
     assert response.status_code == 200
