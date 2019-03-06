@@ -176,7 +176,7 @@ def test_cms_pages_cms_page_404(settings, client, url, mock_lookup_by_slug):
     assert response.status_code == 404
 
 
-@patch.object(IndustryDetailCMSView, 'international_industry_page_exists',
+@patch.object(IndustryDetailCMSView, 'international_industry_page',
               new_callable=PropertyMock)
 def test_industry_page_context_curated_feature_enabled(
         mock_page_exists, mock_get_showcase_companies, client,
@@ -196,7 +196,7 @@ def test_industry_page_context_curated_feature_enabled(
     assert response.template_name == ['industry/detail.html']
 
 
-@patch.object(IndustryDetailCMSView, 'international_industry_page_exists',
+@patch.object(IndustryDetailCMSView, 'international_industry_page',
               new_callable=PropertyMock)
 def test_industry_page_context_curated_feature_disabled(
         mock_page_exists, mock_get_showcase_companies, settings, client,
@@ -455,7 +455,7 @@ def test_industry_page_exists_in_international(mock_get_page, client):
     assert response.url == 'http://test.com'
 
 
-@patch.object(IndustryDetailCMSView, 'international_industry_page_exists',
+@patch.object(IndustryDetailCMSView, 'international_industry_page',
               new_callable=PropertyMock)
 def test_industry_page_does_not_exist_in_international(mock_page_exists,
                                                        client):

@@ -55,7 +55,7 @@ class IndustryDetailCMSView(
         return get_showcase_companies(**kwargs)
 
     @cached_property
-    def international_industry_page_exists(self):
+    def international_industry_page(self):
         response = cms_api_client.lookup_by_slug(
             slug=self.kwargs['slug'],
             language_code=translation.get_language(),
@@ -67,7 +67,7 @@ class IndustryDetailCMSView(
         return None
 
     def dispatch(self, request, *args, **kwargs):
-        page = self.international_industry_page_exists
+        page = self.international_industry_page
         if page:
             return redirect(page['full_url'])
         return super().dispatch(request, *args, **kwargs)
