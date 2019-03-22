@@ -120,7 +120,6 @@ class GetCMSComponentMixin:
         response = cms_api_client.lookup_by_slug(
             slug=self.component_slug,
             language_code=translation.get_language(),
-            draft_token=self.request.GET.get('draft_token'),
             service_name=cms.COMPONENTS,
         )
         return handle_cms_response_allow_404(response)
