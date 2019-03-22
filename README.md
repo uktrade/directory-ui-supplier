@@ -4,7 +4,6 @@
 [![code-climate-image]][code-climate]
 [![circle-ci-image]][circle-ci]
 [![codecov-image]][codecov]
-[![snyk-image]][snyk]
 
 ---
 ### See also:
@@ -16,11 +15,9 @@ For more information on installation please check the [Developers Onboarding Che
 
 ## Requirements
 
-[Python 3.5](https://www.python.org/downloads/release/python-350/)
+[Python 3.6](https://www.python.org/downloads/release/python-366/)
 
-[Docker >= 1.10](https://docs.docker.com/engine/installation/)
-
-[Docker Compose >= 1.8](https://docs.docker.com/compose/install/)
+[redis](https://redis.io/)
 
 
 ## Local installation
@@ -29,26 +26,9 @@ For more information on installation please check the [Developers Onboarding Che
     $ cd directory-ui-supplier
     $ make
 
-## Running with Docker
-Requires all host environment variables to be set.
-
-    $ make docker_run
-
-### Run debug webserver in Docker
-
-    $ brew link gettext --force (OS X only)
-    $ make docker_debug
-
-### Run tests in Docker
-
-    $ make docker_test
-
-### Host environment variables for docker-compose
-``.env`` files will be automatically created (with ``env_writer.py`` based on ``env.json``) by ``make docker_test``, based on host environment variables with ``DIRECTORY_UI_SUPPLIER_`` prefix.
-
 ## Directory Forms
 
-Form submissions are powered by [directory-forms-api](https://github.com/uktrade/directory-forms-api). Set that up locally then generate a API client [here](http://forms.trade.great:8011/admin/client/client/) and add the following entries to your `~/.bashrc`.
+Form submissions are powered by [directory-forms-api](https://github.com/uktrade/directory-forms-api). Set that up locally then generate a API client [here](http://forms.trade.great:8011/admin/client/client/) and add the following entries to your `conf/.env`.
 
 | Host environment variable                         | Notes                             |
 | ------------------------------------------------- | --------------------------------- |
@@ -71,14 +51,18 @@ Form submissions are powered by [directory-forms-api](https://github.com/uktrade
 
 ## CSS development
 
-### Requirements
-[node](https://nodejs.org/en/download/)
+If you're doing front-end development work you will need to be able to compile the SASS to CSS. For this you need:
 
-	$ npm install
+    $ npm install yarn
+    $ yarn install --production=false
+
+We add compiled CSS files to version control. This will sometimes result in conflicts if multiple developers are working on the same SASS files. However, by adding the compiled CSS to version control we avoid having to install node, npm, node-sass, etc to non-development machines.
+
+You should not edit CSS files directly, instead edit their SCSS counterparts.
 
 ### Update CSS under version control
 
-	$ gulp sass
+	$ gulp make compile_css
 
 ## Session
 
@@ -127,6 +111,3 @@ To compile `.mo` files (no need to add these to source code, as this is done aut
 
 [codecov-image]: https://codecov.io/gh/uktrade/directory-ui-supplier/branch/master/graph/badge.svg
 [codecov]: https://codecov.io/gh/uktrade/directory-ui-supplier
-
-[snyk-image]: https://snyk.io/test/github/uktrade/directory-ui-supplier/badge.svg
-[snyk]: https://snyk.io/test/github/uktrade/directory-ui-supplier
