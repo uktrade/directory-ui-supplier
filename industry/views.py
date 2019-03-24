@@ -3,6 +3,7 @@ import functools
 import directory_forms_api_client.helpers
 from directory_constants.constants import cms
 from directory_components.helpers import SocialLinkBuilder
+from directory_components.mixins import CountryDisplayMixin
 
 from django.conf import settings
 from django.shortcuts import redirect
@@ -27,7 +28,10 @@ from industry.helpers import get_showcase_companies
 
 
 class IndustryDetailCMSView(
-    ActivateTranslationMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
+    ActivateTranslationMixin,
+    CMSLanguageSwitcherMixin,
+    GetCMSPageMixin,
+    CountryDisplayMixin,
     TemplateView
 ):
     template_name = 'industry/detail.html'
@@ -106,7 +110,7 @@ class GetIndustryPageMixin:
         )
 
 
-class BaseIndustryContactView(FormView):
+class BaseIndustryContactView(CountryDisplayMixin, FormView):
 
     template_name = 'industry/contact.html'
     form_class = forms.ContactForm
@@ -177,7 +181,7 @@ class IndustryLandingPageContactCMSView(
 
 class IndustryDetailContactCMSSentView(
     ActivateTranslationMixin, SpecificRefererRequiredMixin, GetCMSPageMixin,
-    GetContactPageMixin, GetIndustryPageMixin, TemplateView
+    GetContactPageMixin, GetIndustryPageMixin, CountryDisplayMixin, TemplateView
 ):
     template_name = 'industry/contact-success.html'
 
@@ -188,7 +192,7 @@ class IndustryDetailContactCMSSentView(
 
 class IndustryLandingPageContactCMSSentView(
     ActivateTranslationMixin, SpecificRefererRequiredMixin, GetCMSPageMixin,
-    GetContactPageMixin, TemplateView
+    GetContactPageMixin, CountryDisplayMixin, TemplateView
 ):
     template_name = 'industry/contact-success.html'
 
@@ -199,7 +203,7 @@ class IndustryLandingPageContactCMSSentView(
 
 class IndustryArticleCMSView(
     ActivateTranslationMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
-    TemplateView
+    CountryDisplayMixin, TemplateView
 ):
     template_name = 'industry/article.html'
 
@@ -219,7 +223,7 @@ class IndustryArticleCMSView(
 
 class IndustryLandingPageCMSView(
     ActivateTranslationMixin, CMSLanguageSwitcherMixin, ActiveViewNameMixin,
-    TemplateView
+    CountryDisplayMixin, TemplateView
 ):
     active_view_name = 'sector-list'
     template_name = 'industry/list.html'

@@ -13,6 +13,7 @@ from django.views.generic.base import RedirectView
 
 from directory_api_client.client import api_client
 from core import forms, helpers, mixins
+from directory_components.mixins import CountryDisplayMixin
 
 
 class ActivateTranslationMixin:
@@ -22,9 +23,12 @@ class ActivateTranslationMixin:
 
 
 class LandingPageCMSView(
-    mixins.CMSLanguageSwitcherMixin, mixins.ActiveViewNameMixin,
+    mixins.CMSLanguageSwitcherMixin,
+    mixins.ActiveViewNameMixin,
     mixins.GetCMSComponentMixin,
-    ActivateTranslationMixin, TemplateView
+    ActivateTranslationMixin,
+    CountryDisplayMixin,
+    TemplateView
 ):
     active_view_name = 'index'
     template_name = 'core/landing-page.html'
@@ -48,7 +52,7 @@ class LandingPageCMSView(
         return helpers.handle_cms_response(response)
 
 
-class RedirectToCMSIndustryView(RedirectView):
+class RedirectToCMSIndustryView(CountryDisplayMixin, RedirectView):
     query_string = True
 
     def get_redirect_url(self, *args, **kwargs):
@@ -58,7 +62,7 @@ class RedirectToCMSIndustryView(RedirectView):
 
 
 class LeadGenerationFormView(
-    mixins.EnableTranslationsMixin, FormView
+    mixins.EnableTranslationsMixin, CountryDisplayMixin, FormView
 ):
     success_template = 'lead-generation-success.html'
     template_name = 'lead-generation.html'
@@ -86,7 +90,7 @@ class LeadGenerationFormView(
         return TemplateResponse(self.request, self.success_template)
 
 
-class AnonymousSubscribeFormView(FormView):
+class AnonymousSubscribeFormView(CountryDisplayMixin, FormView):
     success_template = 'anonymous-subscribe-success.html'
     template_name = 'anonymous-subscribe.html'
     form_class = forms.AnonymousSubscribeForm

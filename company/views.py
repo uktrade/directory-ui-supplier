@@ -9,6 +9,7 @@ from django.template.response import TemplateResponse
 from django.utils.functional import cached_property
 from django.views.generic import RedirectView, TemplateView
 from django.views.generic.edit import FormView
+from directory_components.mixins import CountryDisplayMixin
 
 from company import forms, helpers
 import core.mixins
@@ -37,7 +38,7 @@ class CompanyProfileMixin:
         return super().get_context_data(company=self.company, **kwargs)
 
 
-class CompanySearchView(SubmitFormOnGetMixin, FormView):
+class CompanySearchView(SubmitFormOnGetMixin, CountryDisplayMixin, FormView):
     template_name = 'company-search-results-list.html'
     form_class = forms.CompanySearchForm
     page_size = 10
@@ -83,7 +84,7 @@ class CompanySearchView(SubmitFormOnGetMixin, FormView):
         return redirect(url)
 
 
-class PublishedProfileListView(RedirectView):
+class PublishedProfileListView(CountryDisplayMixin, RedirectView):
 
     def get_redirect_url(self, *args, **kwargs):
         sectors = self.request.GET.get('sectors')
@@ -94,7 +95,7 @@ class PublishedProfileListView(RedirectView):
         return reverse('company-search')
 
 
-class PublishedProfileDetailView(CompanyProfileMixin, TemplateView):
+class PublishedProfileDetailView(CompanyProfileMixin, CountryDisplayMixin, TemplateView):
     template_name = 'company-profile-detail.html'
 
     def get_canonical_url(self):
@@ -124,7 +125,7 @@ class PublishedProfileDetailView(CompanyProfileMixin, TemplateView):
         )
 
 
-class CaseStudyDetailView(TemplateView):
+class CaseStudyDetailView(CountryDisplayMixin, TemplateView):
     template_name = 'supplier-case-study-detail.html'
 
     @cached_property
@@ -156,7 +157,7 @@ class CaseStudyDetailView(TemplateView):
         )
 
 
-class ContactCompanyView(CompanyProfileMixin, FormView):
+class ContactCompanyView(CompanyProfileMixin, CountryDisplayMixin, FormView):
     template_name = 'company-contact-form.html'
     form_class = forms.ContactCompanyForm
 
