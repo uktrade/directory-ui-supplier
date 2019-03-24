@@ -58,7 +58,6 @@ INSTALLED_APPS = [
     'captcha',
     'sorl.thumbnail',
     'directory_components',
-    'export_elements',
     'directory_healthcheck',
 ]
 
