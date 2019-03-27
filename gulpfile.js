@@ -62,10 +62,10 @@ gulp.task('sass:industry', function () {
     .pipe(gulp.dest(INDUSTRY_OUT));
 });
 
-gulp.task('sass', ['sass:core', 'sass:enrolment', 'sass:industry']);
+gulp.task('sass', gulp.series('sass:core', 'sass:enrolment', 'sass:industry'));
 
 gulp.task('sass:watch', function () {
   gulp.watch([CORE_IN, ENROLMENT_IN, INDUSTRY_IN], ['sass']);
 });
 
-gulp.task('default', ['sass']);
+gulp.task('default', gulp.series('sass'));
