@@ -181,7 +181,8 @@ class IndustryLandingPageContactCMSView(
 
 class IndustryDetailContactCMSSentView(
     ActivateTranslationMixin, SpecificRefererRequiredMixin, GetCMSPageMixin,
-    GetContactPageMixin, GetIndustryPageMixin, CountryDisplayMixin, TemplateView
+    GetContactPageMixin, GetIndustryPageMixin, CountryDisplayMixin,
+    TemplateView
 ):
     template_name = 'industry/contact-success.html'
 

@@ -95,7 +95,11 @@ class PublishedProfileListView(CountryDisplayMixin, RedirectView):
         return reverse('company-search')
 
 
-class PublishedProfileDetailView(CompanyProfileMixin, CountryDisplayMixin, TemplateView):
+class PublishedProfileDetailView(
+    CompanyProfileMixin,
+    CountryDisplayMixin,
+    TemplateView
+):
     template_name = 'company-profile-detail.html'
 
     def get_canonical_url(self):
