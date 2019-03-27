@@ -1,0 +1,75 @@
+{% load static %}
+{% load trans from i18n %}
+
+<footer id="ed-footer" class="{{ LANGUAGE_BIDI|yesno:'bidi,' }}">
+  <div class="container">
+    <div id="footer-logos">
+      <a href="https://www.gov.uk/" target="_blank">
+        <img src="{% static 'images/HM_Government_logo.png' %}" alt="HM Government">
+      </a>
+      <img class="dit-iigb-logo" alt="Welcome to Great Britain &amp; Northern Ireland" src="{% static 'images/welcome-to-great-logo-stacked.png' %}">
+    </div>
+
+    <div id="footer-main-links">
+      <ul>
+        <li>
+          <a href="{% url 'index' %}">{% trans "Home" %}</a>
+        </li>
+        <li>
+          <a href="{% url 'company-search' %}">{% trans "Find a supplier" %}</a>
+        </li>
+        <li>
+          <a href="{% url 'sector-list' %}">{% trans "Industries" %}</a>
+        </li>
+        <li>
+          <a href="{% url 'sector-list-cms-contact' %}">{% trans "Find UK companies" %}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="footer-sub-links">
+    <div class="container">
+      <ul>
+        <li>
+          <a href="{{ header_footer_urls.about }}">
+            {% trans "About" %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ footer_contact_us_link }}">
+            {% trans "Contact us" %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ header_footer_urls.privacy_and_cookies }}">
+            {% trans "Privacy and cookies" %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ header_footer_urls.terms_and_conditions }}">
+            {% trans "Terms &amp; conditions" %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ header_footer_urls.performance }}">
+            {% trans "Performance" %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ header_footer_urls.dit }}">
+            {% trans "Department for International Trade" %}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div id="ed-footer-copyright">
+    <div class="container">
+      <p dir="ltr">&copy; {% trans "Crown Copyright" %} {% now "Y" %} {% trans "All rights reserved." %}</p>
+    </div>
+  </div>
+
+</footer>
