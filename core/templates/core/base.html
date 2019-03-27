@@ -5,8 +5,12 @@
 {% block head_title %}Find a Buyer - GREAT.gov.uk{% endblock %}
 
 {% block head_js %}
+    <script src="{% static 'directory_components/js/dit.classes.Dropdown.js' %}"></script>
+    <script src="{% static 'directory_components/js/dit.responsive.js' %}"></script>
     <script src="{% static 'directory_components/js/third-party.js' %}"></script>
     <script src="{% static 'directory_components/js/dit.components.cookie-notice.js' %}"></script>
+    <script src="{% static 'directory_components/js/dit.components.countrySelector.js' %}"></script>
+    <script src="{% static 'directory_components/js/dit.components.greatInternationalHeader.js' %}"></script>
 {% endblock %}
 
 {% block head_css %}
@@ -14,7 +18,7 @@
   {% if LANGUAGE_BIDI %}
     <link href="{% static 'core/bidi.css' %}" media="all" rel="stylesheet" />
   {% endif %}
-	<link href="{% static 'directory_components/vendor/flag-icons/css/flag-icon.min.css' %}" media="all" rel="stylesheet" />
+    <link href="{% static 'directory_components/vendor/flag-icons/css/flag-icon.min.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
 {% block cookie_notice %}
