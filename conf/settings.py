@@ -73,7 +73,6 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'directory_components.middleware.RobotsIndexControlHeaderMiddlware',
-    'django.middleware.locale.LocaleMiddleware',
     'directory_components.middleware.CountryMiddleware',
 ]
 
