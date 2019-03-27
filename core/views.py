@@ -52,7 +52,7 @@ class LandingPageCMSView(
         return helpers.handle_cms_response(response)
 
 
-class RedirectToCMSIndustryView(CountryDisplayMixin, RedirectView):
+class RedirectToCMSIndustryView(RedirectView):
     query_string = True
 
     def get_redirect_url(self, *args, **kwargs):
