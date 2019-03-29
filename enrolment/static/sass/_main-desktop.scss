@@ -637,23 +637,6 @@ a.ed-filled-button-primary {
 
 /* General
  ******************/
-a {
-  //&:link {
-  //  /*
-  //  Match selector to overwrite gov-template styles,
-  //  but makes button styles more difficult. Would
-  //  be better without psuedo class raising priority.
-  //  */
-  //  @include font-standard-1;
-  //}
-
-  &:focus {
-    background-color: transparent;
-    outline: 3px solid $focus;
-    text-decoration: underline;
-  }
-}
-
 body {
   @include font-standard-1;
   background-color: $white;
