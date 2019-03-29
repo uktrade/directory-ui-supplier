@@ -48,7 +48,7 @@ def test_utm_cookie_domain():
             'UTM_COOKIE_DOMAIN': '.thing.com',
         }
     }
-    html = render_to_string('base.html', context)
+    html = render_to_string('enrolment-base.html', context)
 
     assert '<meta id="utmCookieDomain" value=".thing.com" />' in html
 
