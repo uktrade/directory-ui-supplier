@@ -1,7 +1,5 @@
 $asset-path: '../';
 
-@import 'components/header-footer';
-@import 'components/language-switcher';
 @import 'variables.scss';
 @import 'mixins.scss';
 
@@ -19,10 +17,6 @@ html {
 
 ul, li {
   list-style: none;
-}
-
-ul, ol {
-  margin: 10px 25px;
 }
 
 p {
@@ -692,14 +686,14 @@ a.ed-filled-button-primary {
 /* General
  ******************/
 a {
-  &:link {
-    /*
-    Match selector to overwrite gov-template styles,
-    but makes button styles more difficult. Would
-    be better without psuedo class raising priority.
-    */
-    @include font-standard-1;
-  }
+  //&:link {
+  //  /*
+  //  Match selector to overwrite gov-template styles,
+  //  but makes button styles more difficult. Would
+  //  be better without psuedo class raising priority.
+  //  */
+  //  @include font-standard-1;
+  //}
 
   &:focus {
     background-color: transparent;
@@ -726,11 +720,6 @@ section {
   border: $grey-3 solid 1px;
   margin-bottom: 30px;
   padding: 30px;
-}
-
-.container {
-  padding: 0 30px;
-  max-width: 1200px;
 }
 
 .errorlist {
