@@ -1,7 +1,7 @@
 /* Mobile
  *****************/
 @media (max-width: 640px) {
-  
+
   .browse-companies-container,
   .search-companies-container {
     h3 {
@@ -10,20 +10,21 @@
       padding-right: 51px;
     }
   }
-  
+
   .LanguageSelectTracker {
     .language-code:after,
     .language-label {
       display: none;
     }
   }
-  
+
   #companies .browse-companies-container,
   #intro .search-companies-container {
     p {
       margin-bottom: 1em;
       width: 100%;
     }
+
     .button {
       position: static;
     }
@@ -31,24 +32,7 @@
 }
 
 
-@media (max-width: 580px) {
-  .ed-hero-sub-header {
-    min-height: 350px;
-    padding-top: 132px;
-  
-    .ed-hero-sub-header-title {
-      @include font-title-3;
-      width: 317px;
-    }
-  }
-}
-
-
 @media (max-width: 480px) {
-  body .container {
-    padding: 0 15px;  
-  }
-
   .browse-companies-container,
   .search-companies-container {
     p {
@@ -63,38 +47,6 @@
   
   .ed-landing-page-form-container {
     padding: 30px 15px;
-  }
-  
-  #menu-control {
-    margin-top: 11px;
-  }
-}
-
-@media (max-width: 420px) {
-  .header-gov-link .text {
-    display: none;
-  }
-}
-
-
-@media (max-width: 340px) {
-  
-  .header-gov-link {
-    &:hover, 
-    &:link, 
-    &:visited {
-      padding: 0 0 0 7px;
-    }
-  }
-
-  #menu-control {
-    margin-bottom: 11px;
-  }
-  
-  #site-logo {
-    height: 27px;
-    margin-bottom: 16px;
-    width: auto;
   }
 }
 

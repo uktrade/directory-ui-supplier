@@ -84,16 +84,6 @@ p {
   margin-left: 2.5em;
 }
 
-.nav {
-  li {
-    text-indent: 0;
-    &:before {
-      display: none;
-      position: static;
-    }
-  }
-}
-
 .grid-row.grid-row--great {
     background: #F2EEE8;
     margin-top: 30px;
@@ -438,37 +428,6 @@ body {
   }
 }
 
-.header-nav-menu-toggle-button {
-  color: white;
-  font-weight: bold;
-  position: absolute;
-  bottom: 0;
-  right: 5px;
-}
-
-.header-nav-menu-toggle-button {
-  display: none;
-  @media (max-width: 960px) {
-    display: block;
-  }
-}
-
-.ed-header-level-two {
-  .ed-header-image-container {
-    position: relative;
-    @media (max-width: 979px) {
-      padding-left: 5px;
-    }
-  }
-}
-
-.header-main-logo {
-  width: 300px;
-  @media (max-width: 640px) {
-    width: 70%;
-  }
-}
-
 a.no-focus-highlight {
   background-color: inherit;
 }
@@ -544,13 +503,6 @@ a.ed-filled-button-primary {
     color: white;
     outline: 0;
   }
-}
-
-.ed-header-gov-row {
-  background-color: #333;
-  min-height: 40px;
-  width: 100%;
-  z-index: 1;
 }
 
 .ed-special-bottom-border {
@@ -729,11 +681,6 @@ section {
   padding: 15px;
   margin: 0;
 }
-
-.section-header {
-  @include font-title-2;
-}
-
 
 /* Buttons
  *****************/
