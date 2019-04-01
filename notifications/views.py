@@ -1,4 +1,5 @@
 from directory_api_client.client import api_client
+from directory_components.mixins import CountryDisplayMixin
 
 from django.template.response import TemplateResponse
 from django.views.generic.edit import FormView
@@ -6,7 +7,7 @@ from django.views.generic.edit import FormView
 from notifications import forms
 
 
-class AnonymousUnsubscribeView(FormView):
+class AnonymousUnsubscribeView(CountryDisplayMixin, FormView):
     form_class = forms.AnonymousUnsubscribeForm
     template_name = 'anonymous_unsubscribe.html'
     success_template_name = 'anonymous_unsubscribe_success.html'

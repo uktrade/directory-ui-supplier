@@ -58,7 +58,6 @@ INSTALLED_APPS = [
     'captcha',
     'sorl.thumbnail',
     'directory_components',
-    'export_elements',
     'directory_healthcheck',
 ]
 
@@ -74,6 +73,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'directory_components.middleware.RobotsIndexControlHeaderMiddlware',
+    'directory_components.middleware.CountryMiddleware',
 ]
 
 FEATURE_URL_PREFIX_ENABLED = env.str('FEATURE_URL_PREFIX_ENABLED', False)
@@ -175,6 +175,7 @@ FEATURE_FLAGS = {
     'EU_EXIT_BANNER_ON': env.bool(
         'FEATURE_EU_EXIT_BANNER_ENABLED', False
     ),
+    'NEWS_SECTION_ON': env.bool('FEATURE_NEWS_SECTION_ENABLED', False),
 }
 
 
@@ -393,8 +394,8 @@ DIRECTORY_HEALTHCHECK_BACKENDS = [
 ]
 
 # HEADER AND FOOTER LINKS
-DIRECTORY_CONSTANTS_URL_EXPORT_READINESS = env.str(
-    'DIRECTORY_CONSTANTS_URL_EXPORT_READINESS', ''
+DIRECTORY_CONSTANTS_URL_GREAT_DOMESTIC = env.str(
+    'DIRECTORY_CONSTANTS_URL_GREAT_DOMESTIC', ''
 )
 DIRECTORY_CONSTANTS_URL_EXPORT_OPPORTUNITIES = env.str(
     'DIRECTORY_CONSTANTS_URL_EXPORT_OPPORTUNITIES', ''
