@@ -44,7 +44,7 @@ def test_robots(rf):
 
 def test_utm_cookie_domain():
     context = {
-        'analytics': {
+        'directory_components_analytics': {
             'UTM_COOKIE_DOMAIN': '.thing.com',
         }
     }
