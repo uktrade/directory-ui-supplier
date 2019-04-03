@@ -58,3 +58,9 @@ $asset-path: '../';
     }
   }
 }
+
+select.form-control {
+  width: 100%;
+  display: block;
+  border: #d8d8d8 solid 1px;
+}
