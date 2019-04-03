@@ -2,7 +2,8 @@
 {% load date_recency from company_tags %}
 {% load staticfiles %}
 {% load thumbnail %}
-{% block css %}
+{% block head_css %}
+    {{ block.super }}
 	<link href="{% static 'company-search_results.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 {% block meta_description %}Find the right UK company to do business with from thousands of international trade profiles{% endblock %}
