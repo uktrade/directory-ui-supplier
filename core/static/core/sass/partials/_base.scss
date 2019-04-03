@@ -3,8 +3,6 @@ $asset-path: '../';
 @import url('https://fonts.googleapis.com/css?family=Overpass:400,700');
 
 @import 'mixins.scss';
-@import 'components/header-footer';
-@import 'components/language-switcher';
 @import 'variables.scss';
 @import 'main-tablet.scss';
 @import 'main-mobile.scss';
