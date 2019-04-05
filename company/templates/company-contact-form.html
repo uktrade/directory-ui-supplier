@@ -1,15 +1,18 @@
-{% extends 'enrolment-base.html' %}
+{% extends 'enrolment-with-hero-base.html' %}
+
 {% load naturaltime from humanize %}
 {% load staticfiles %}
-{% block css %}
+{% block head_css %}
+    {{ block.super }}
 	<link href="{% static 'company-profile-details.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
-{% block hero_title %}Contact company{% endblock %}
+
 {% block sub_header %}
 	<br>
 	<br>
 {% endblock %}
-{% block content %}
+
+{% block company_content %}
 	<div class="container">
 		<div class="ed-contact-form-container">
 			<div class="row-fluid">

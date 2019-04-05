@@ -1,5 +1,6 @@
 {% extends 'enrolment-base.html' %}
-{{ services_urls.fab }}{% block sub_header %}{# prevent the subheader from showing on form pages #}{% endblock %}
+{{ services_urls.fab }}
+
 {% block content %}
 <div class="ed-error-page-container container">
     <h1 class="ed-error-page-title">Something went wrong</h1>
@@ -10,5 +11,4 @@
     <hr>
     <p class="ed-error-page-status">HTTP 400 Error Code - Bad Request</p>
 </div>
-
 {% endblock %}

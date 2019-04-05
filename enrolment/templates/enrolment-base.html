@@ -3,6 +3,8 @@
 
 {% block head_css %}
     {{ block.super }}
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" media="all" rel="stylesheet" />
+    <link href="{% static 'vendor/bootstrap/css/bootstrap-responsive.min.css' %}" media="all" rel="stylesheet" />
     <link href="{% static 'main.css' %}" media="all" rel="stylesheet" />
     <link href="{% static 'enrolment.css' %}" media="all" rel="stylesheet"/>
 {% endblock %}
