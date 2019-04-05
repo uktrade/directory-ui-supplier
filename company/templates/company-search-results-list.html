@@ -131,6 +131,7 @@
 </div>
 {% endblock %}
 
-{% block bodyScripts %}
+{% block body_js %}
     <script type="text/javascript" src="{% static 'javascripts/company-search.js' %}"></script>
-{% endblock bodyScripts %}
+    {{ block.super }}
+{% endblock %}
