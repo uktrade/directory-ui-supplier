@@ -1,14 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'enrolment-base.html' %}
 {% load date_recency from company_tags %}
 {% load staticfiles %}
 {% load thumbnail %}
-{% block css %}
+{% block head_css %}
+    {{ block.super }}
 	<link href="{% static 'company-search_results.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 {% block meta_description %}Find the right UK company to do business with from thousands of international trade profiles{% endblock %}
 {% block head_title %}Search the database of UK suppliers' trade profiles - trade.great.gov.uk{% endblock %}
-{% block hero_title %}Browse UK company trade profiles{% endblock %}
-{% block sub_header %}
+
+{% block content %}
 <form action="" method="get">
 	<section id="fassearch-intro">
 		<div class="container">
@@ -20,8 +21,6 @@
 			</div>
 		</div>
 	</section>
-{% endblock %}
-{% block content %}
 	<div id="fassearch-content" class="container">
 		<div>
 			<div class="span3 ed-js-filter-list-mobile-closed" id="ed-search-filters-container">
@@ -132,6 +131,7 @@
 </div>
 {% endblock %}
 
-{% block bodyScripts %}
+{% block body_js %}
     <script type="text/javascript" src="{% static 'javascripts/company-search.js' %}"></script>
-{% endblock bodyScripts %}
+    {{ block.super }}
+{% endblock %}

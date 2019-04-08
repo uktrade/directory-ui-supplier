@@ -1,7 +1,5 @@
 $asset-path: '../';
 
-@import 'components/header-footer';
-@import 'components/language-switcher';
 @import 'variables.scss';
 @import 'mixins.scss';
 
@@ -19,10 +17,6 @@ html {
 
 ul, li {
   list-style: none;
-}
-
-ul, ol {
-  margin: 10px 25px;
 }
 
 p {
@@ -88,16 +82,6 @@ p {
 .list-inset {
   list-style-type: circle;
   margin-left: 2.5em;
-}
-
-.nav {
-  li {
-    text-indent: 0;
-    &:before {
-      display: none;
-      position: static;
-    }
-  }
 }
 
 .grid-row.grid-row--great {
@@ -444,37 +428,6 @@ body {
   }
 }
 
-.header-nav-menu-toggle-button {
-  color: white;
-  font-weight: bold;
-  position: absolute;
-  bottom: 0;
-  right: 5px;
-}
-
-.header-nav-menu-toggle-button {
-  display: none;
-  @media (max-width: 960px) {
-    display: block;
-  }
-}
-
-.ed-header-level-two {
-  .ed-header-image-container {
-    position: relative;
-    @media (max-width: 979px) {
-      padding-left: 5px;
-    }
-  }
-}
-
-.header-main-logo {
-  width: 300px;
-  @media (max-width: 640px) {
-    width: 70%;
-  }
-}
-
 a.no-focus-highlight {
   background-color: inherit;
 }
@@ -550,13 +503,6 @@ a.ed-filled-button-primary {
     color: white;
     outline: 0;
   }
-}
-
-.ed-header-gov-row {
-  background-color: #333;
-  min-height: 40px;
-  width: 100%;
-  z-index: 1;
 }
 
 .ed-special-bottom-border {
@@ -691,23 +637,6 @@ a.ed-filled-button-primary {
 
 /* General
  ******************/
-a {
-  &:link {
-    /*
-    Match selector to overwrite gov-template styles,
-    but makes button styles more difficult. Would
-    be better without psuedo class raising priority.
-    */
-    @include font-standard-1;
-  }
-
-  &:focus {
-    background-color: transparent;
-    outline: 3px solid $focus;
-    text-decoration: underline;
-  }
-}
-
 body {
   @include font-standard-1;
   background-color: $white;
@@ -728,11 +657,6 @@ section {
   padding: 30px;
 }
 
-.container {
-  padding: 0 30px;
-  max-width: 1200px;
-}
-
 .errorlist {
   border-left: 4px solid #b10e1e;
   color: #b10e1e;
@@ -740,11 +664,6 @@ section {
   padding: 15px;
   margin: 0;
 }
-
-.section-header {
-  @include font-title-2;
-}
-
 
 /* Buttons
  *****************/
@@ -1046,4 +965,8 @@ div.ed-multi-step-form {
 
     }
   }
+}
+
+#fassearch-intro {
+  border: none;
 }
