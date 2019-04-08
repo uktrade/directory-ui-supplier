@@ -57,12 +57,13 @@ DEBUG_SET_ENV_VARS := \
 	export DIRECTORY_CONSTANTS_URL_INVEST=http://invest.trade.great:8012; \
 	export DIRECTORY_CONSTANTS_URL_SINGLE_SIGN_ON=http://sso.trade.great:8004; \
 	export DIRECTORY_CONSTANTS_URL_GREAT_DOMESTIC=http://exred.trade.great:8007; \
-	export CONTACT_INDUSTRY_AGENT_EMAIL_ADDRESS=buying@example.com
+	export CONTACT_INDUSTRY_AGENT_EMAIL_ADDRESS=buying@example.com; \
+	export URL_PREFIX_DOMAIN=http://supplier.trade.great:8005
 
 TEST_SET_ENV_VARS := \
 	export DIRECTORY_FORMS_API_API_KEY=debug; \
-	export DIRECTORY_FORMS_API_SENDER_ID=debug
-
+	export DIRECTORY_FORMS_API_SENDER_ID=debug; \
+	export URL_PREFIX_DOMAIN=http://testserver
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)

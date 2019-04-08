@@ -6,7 +6,6 @@ omit =
     manage.py
     **/tests/*
     *__init__*
-    conf/urls_prefixed.py
     **/tests
     **/conftest.py
     conftest.py

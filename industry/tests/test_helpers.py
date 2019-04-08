@@ -46,7 +46,7 @@ def test_get_showcase_companies_200(search_company):
             'facebook_url': 'http://www.facebook.com',
             'linkedin_url': 'http://www.linkedin.com',
             'logo': 'nice.jpg',
-            'public_profile_url': '/suppliers/01234567/great-company/',
+            'public_profile_url': '/trade/suppliers/01234567/great-company/',
             'modified': datetime.datetime(2016, 11, 23, 11, 21, 10, 977518),
             'employees': '501-1,000',
             'number': '01234567',

@@ -39,7 +39,7 @@ def test_robots(rf):
 
     html = render_to_string('robots.txt', context)
 
-    assert 'Sitemap: http://testserver/sitemap.xml' in html
+    assert 'Sitemap: http://testserver/trade/sitemap.xml' in html
 
 
 def test_utm_cookie_domain():
