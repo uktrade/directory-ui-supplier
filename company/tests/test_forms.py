@@ -133,7 +133,7 @@ def test_contact_supplier_body_text(
         subject='Hello',
         reply_to='reply_to@example.com',
         recipient_name=valid_contact_company_data['company_name'],
-        form_url='/some/path/',
+        form_url='/trade/some/path/',
     )
 
     expected_context = {

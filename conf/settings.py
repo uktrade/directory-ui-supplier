@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 
 import environ
-from directory_components.constants import IP_RETRIEVER_NAME_GOV_UK
 from directory_constants.constants import cms
 import directory_healthcheck.backends
 
@@ -63,7 +62,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE_CLASSES = [
     'directory_components.middleware.MaintenanceModeMiddleware',
-    'directory_components.middleware.IPRestrictorMiddleware',
+    'admin_ip_restrictor.middleware.AdminIPRestrictorMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'core.middleware.LocaleQuerystringMiddleware',
     'core.middleware.PersistLocaleMiddleware',
@@ -72,17 +71,12 @@ MIDDLEWARE_CLASSES = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'directory_components.middleware.RobotsIndexControlHeaderMiddlware',
     'directory_components.middleware.CountryMiddleware',
 ]
 
-FEATURE_URL_PREFIX_ENABLED = env.str('FEATURE_URL_PREFIX_ENABLED', False)
-URL_PREFIX_DOMAIN = env.str('URL_PREFIX_DOMAIN', '')
-
-if FEATURE_URL_PREFIX_ENABLED:
-    ROOT_URLCONF = 'conf.urls_prefixed'
-else:
-    ROOT_URLCONF = 'conf.urls'
+FEATURE_URL_PREFIX_ENABLED = True
+URL_PREFIX_DOMAIN = env.str('URL_PREFIX_DOMAIN')
+ROOT_URLCONF = 'conf.urls'
 
 TEMPLATES = [
     {
@@ -167,11 +161,9 @@ LOCALE_PATHS = (
 FEATURE_FLAGS = {
     'EXPORT_JOURNEY_ON': False,  # not used in this project
     'INTERNATIONAL_CONTACT_LINK_ON': env.bool(
-        'FEATURE_INTERNATIONAL_CONTACT_LINK_ENABLED', False),
-    'MAINTENANCE_MODE_ON': env.bool('FEATURE_MAINTENANCE_MODE_ENABLED', False),
-    'SEARCH_ENGINE_INDEXING_OFF': env.bool(
-        'FEATURE_SEARCH_ENGINE_INDEXING_DISABLED', False
+        'FEATURE_INTERNATIONAL_CONTACT_LINK_ENABLED', False
     ),
+    'MAINTENANCE_MODE_ON': env.bool('FEATURE_MAINTENANCE_MODE_ENABLED', False),
     'EU_EXIT_BANNER_ON': env.bool(
         'FEATURE_EU_EXIT_BANNER_ENABLED', False
     ),
@@ -417,32 +409,12 @@ DIRECTORY_CONSTANTS_URL_FIND_A_BUYER = env.str(
     'DIRECTORY_CONSTANTS_URL_FIND_A_BUYER', ''
 )
 
-# ip-restrictor
-IP_RESTRICTOR_SKIP_CHECK_ENABLED = env.bool(
-    'IP_RESTRICTOR_SKIP_CHECK_ENABLED', False
-)
-IP_RESTRICTOR_SKIP_CHECK_SENDER_ID = env.str(
-    'IP_RESTRICTOR_SKIP_CHECK_SENDER_ID', ''
-)
-IP_RESTRICTOR_SKIP_CHECK_SECRET = env.str(
-    'IP_RESTRICTOR_SKIP_CHECK_SECRET', ''
-)
-IP_RESTRICTOR_REMOTE_IP_ADDRESS_RETRIEVER = env.str(
-    'IP_RESTRICTOR_REMOTE_IP_ADDRESS_RETRIEVER',
-    IP_RETRIEVER_NAME_GOV_UK
-)
+# Admin restrictor
 RESTRICT_ADMIN = env.bool('IP_RESTRICTOR_RESTRICT_IPS', False)
 ALLOWED_ADMIN_IPS = env.list('IP_RESTRICTOR_ALLOWED_ADMIN_IPS', default=[])
 ALLOWED_ADMIN_IP_RANGES = env.list(
     'IP_RESTRICTOR_ALLOWED_ADMIN_IP_RANGES', default=[]
 )
-RESTRICTED_APP_NAMES = env.list(
-    'IP_RESTRICTOR_RESTRICTED_APP_NAMES', default=['admin']
-)
-if env.bool('IP_RESTRICTOR_RESTRICT_UI', False):
-    # restrict all pages that are not in apps API, healthcheck, admin, etc
-    RESTRICTED_APP_NAMES.append('')
-
 
 # Settings for email to supplier
 CONTACT_SUPPLIER_SUBJECT = env.str(
