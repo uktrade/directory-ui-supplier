@@ -145,7 +145,7 @@ def test_cms_pages(settings, client, url):
 def test_cms_api_client_params(
     settings, client, url, mock_lookup_by_slug
 ):
-    response = client.get(url, {'draft_token': '123', 'lang': 'de'})
+    response = client.get(url, {'draft_token': '123', 'language': 'de'})
 
     assert response.status_code == 200
     assert mock_lookup_by_slug.call_count == 1
