@@ -10,13 +10,14 @@ botocore==1.12.62         # via boto3, s3transfer
 certifi==2018.1.18        # via requests
 chardet==3.0.4            # via requests
 codecov==2.0.9
+colorama==0.4.1           # via pytest
 contextlib2==0.5.5        # via raven
 coverage==4.5.1           # via codecov, pytest-cov
 directory-api-client==10.0.2
 directory-client-core==4.4.0  # via directory-api-client, directory-cms-client, directory-forms-api-client
 directory-cms-client==8.2.0
-directory-components==8.10.0
-directory-constants==14.4.0
+directory-components==9.1.0
+directory-constants==15.0.0
 directory-forms-api-client==3.3.0
 directory-healthcheck==1.0.1
 directory-validators==5.0.1
