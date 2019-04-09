@@ -13,7 +13,9 @@ from django.views.generic.base import RedirectView
 
 from directory_api_client.client import api_client
 from core import forms, helpers, mixins
-from directory_components.mixins import CountryDisplayMixin
+from directory_components.mixins import (
+    CountryDisplayMixin, LanguageSwitcherMixin
+)
 
 
 class ActivateTranslationMixin:
@@ -28,6 +30,7 @@ class LandingPageCMSView(
     mixins.GetCMSComponentMixin,
     ActivateTranslationMixin,
     CountryDisplayMixin,
+    LanguageSwitcherMixin,
     TemplateView
 ):
     active_view_name = 'index'
