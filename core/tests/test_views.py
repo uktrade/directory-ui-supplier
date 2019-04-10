@@ -129,7 +129,7 @@ def test_landing_page_cms_component_bidi(
     }
 
     translation.activate('ar')
-    response = client.get('/trade/?lang=ar')
+    response = client.get('/trade/?language=ar')
     soup = BeautifulSoup(response.content, 'html.parser')
 
     assert soup.select('.banner-container')[0].get('dir') == 'rtl'
