@@ -1,3 +1,5 @@
+import pytest
+
 from django.conf import settings
 from django.http import HttpResponse
 from django.utils import translation
@@ -10,18 +12,32 @@ def test_locale_middleware_installed():
     assert expected in settings.MIDDLEWARE_CLASSES
 
 
-def test_locale_middleware_sets_querystring_language(rf):
-    request = rf.get('/', {'lang': 'en-gb'})
+@pytest.mark.parametrize('query_string_object,expected_language_code', (
+    ({'lang': 'fr'}, 'fr'),
+    ({'lang': 'en-gb'}, 'en-gb'),
+    ({'language': 'de'}, 'de'),
+    ({'language': 'en-gb'}, 'en-gb'),
+    ({'language': 'zh-hans', 'lang': 'zh-hans'}, 'zh-hans'),
+    ({'lang': 'ja', 'language': 'ja'}, 'ja'),
+    ({'language': 'es', 'lang': 'ar'}, 'es'),
+    ({'lang': 'pt-br', 'language': 'ru'}, 'ru'),
+))
+def test_locale_middleware_sets_querystring_language(
+        query_string_object,
+        expected_language_code,
+        rf
+):
+    request = rf.get('/', query_string_object)
     instance = middleware.LocaleQuerystringMiddleware()
 
     instance.process_request(request)
 
-    expected = 'en-gb'
-    assert request.LANGUAGE_CODE == expected == translation.get_language()
+    assert request.LANGUAGE_CODE == expected_language_code
+    assert translation.get_language() == expected_language_code
 
 
 def test_locale_middleware_ignored_invalid_querystring_language(rf):
-    request = rf.get('/', {'lang': 'plip'})
+    request = rf.get('/', {'language': 'plip'})
     instance = middleware.LocaleQuerystringMiddleware()
 
     instance.process_request(request)
