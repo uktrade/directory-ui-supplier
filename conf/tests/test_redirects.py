@@ -2,10 +2,10 @@ import pytest
 
 
 @pytest.mark.parametrize('source_url,destination_url', (
-    ('/industries/creative/', '/industries/creative-services/'),
-    ('/industries/health/', '/industries/healthcare/'),
-    ('/industries/tech/', '/industries/technology/'),
-    ('/industries/legal/', '/industries/legal-services/'),
+    ('/trade/industries/creative/', '/trade/industries/creative-services/'),
+    ('/trade/industries/health/', '/trade/industries/healthcare/'),
+    ('/trade/industries/tech/', '/trade/industries/technology/'),
+    ('/trade/industries/legal/', '/trade/industries/legal-services/'),
 ))
 def test_redirects(source_url, destination_url, client):
     response = client.get(source_url)
