@@ -1,13 +1,12 @@
 from captcha.fields import ReCaptchaField
 
-from django.conf import settings
 from django.forms import Textarea
 from django.forms import Select
 from django.utils import translation
 from django.utils.translation import ugettext as _
 
 from directory_components import forms, fields
-from directory_constants.constants import choices
+from directory_constants import choices
 from directory_forms_api_client.forms import ZendeskActionMixin
 from directory_validators.common import not_contains_url_or_email
 from directory_validators.company import no_html
@@ -26,20 +25,6 @@ class SearchForm(forms.Form):
         ),
         widget=Select(attrs={'dir': 'ltr'})
     )
-
-
-class LanguageForm(forms.Form):
-    lang = fields.ChoiceField(
-        choices=[]  # set by __init__
-    )
-
-    def __init__(self, language_choices=settings.LANGUAGES, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['lang'].choices = language_choices
-
-    def is_language_available(self, language_code):
-        language_codes = [code for code, _ in self.fields['lang'].choices]
-        return language_code in language_codes
 
 
 class AnonymousSubscribeForm(forms.Form):

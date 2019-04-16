@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 
 import environ
-from directory_constants.constants import cms
+from directory_constants import cms
 import directory_healthcheck.backends
 
 
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'company',
     'core',
     'industry',
+    'investment_support_directory',
     'formtools',
     'notifications',
     'directory_constants',
@@ -62,16 +63,15 @@ INSTALLED_APPS = [
 
 MIDDLEWARE_CLASSES = [
     'directory_components.middleware.MaintenanceModeMiddleware',
-    'admin_ip_restrictor.middleware.AdminIPRestrictorMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'core.middleware.LocaleQuerystringMiddleware',
-    'core.middleware.PersistLocaleMiddleware',
-    'core.middleware.ForceDefaultLocale',
+    'directory_components.middleware.PersistLocaleMiddleware',
+    'directory_components.middleware.ForceDefaultLocale',
+    'directory_components.middleware.CountryMiddleware',
     'core.middleware.PrefixUrlMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'directory_components.middleware.CountryMiddleware',
 ]
 
 FEATURE_URL_PREFIX_ENABLED = True
@@ -160,6 +160,9 @@ LOCALE_PATHS = (
 
 FEATURE_FLAGS = {
     'EXPORT_JOURNEY_ON': False,  # not used in this project
+    'INVESTMENT_SUPPORT_DIRECTORY_ON': env.bool(
+        'FEATURE_INVESTMENT_SUPPORT_DIRECTORY_ENABLED', False
+    ),
     'INTERNATIONAL_CONTACT_LINK_ON': env.bool(
         'FEATURE_INTERNATIONAL_CONTACT_LINK_ENABLED', False
     ),
@@ -410,13 +413,6 @@ DIRECTORY_CONSTANTS_URL_SINGLE_SIGN_ON = env.str(
 )
 DIRECTORY_CONSTANTS_URL_FIND_A_BUYER = env.str(
     'DIRECTORY_CONSTANTS_URL_FIND_A_BUYER', ''
-)
-
-# Admin restrictor
-RESTRICT_ADMIN = env.bool('IP_RESTRICTOR_RESTRICT_IPS', False)
-ALLOWED_ADMIN_IPS = env.list('IP_RESTRICTOR_ALLOWED_ADMIN_IPS', default=[])
-ALLOWED_ADMIN_IP_RANGES = env.list(
-    'IP_RESTRICTOR_ALLOWED_ADMIN_IP_RANGES', default=[]
 )
 
 # Settings for email to supplier

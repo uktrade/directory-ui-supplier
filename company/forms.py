@@ -2,7 +2,7 @@ from captcha.fields import ReCaptchaField
 from directory_components.context_processors import (
     urls_processor, header_footer_processor
 )
-from directory_constants.constants import choices
+from directory_constants import choices
 from directory_validators.common import not_contains_url_or_email
 from directory_forms_api_client.forms import EmailAPIForm
 

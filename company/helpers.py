@@ -2,7 +2,7 @@ import datetime
 import http
 
 from directory_api_client.client import api_client
-from directory_constants.constants import choices
+from directory_constants import choices
 from directory_validators.helpers import tokenize_keywords
 
 from django.http import Http404
