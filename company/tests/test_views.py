@@ -68,7 +68,7 @@ def test_public_profile_different_slug_redirected(
 
     response = client.get(url)
 
-    assert response.status_code == http.client.MOVED_PERMANENTLY
+    assert response.status_code == 302
     assert response.get('Location') == expected_redirect_url
 
 
@@ -89,7 +89,7 @@ def test_public_profile_missing_slug_redirected(client, retrieve_profile_data):
 
     response = client.get(url)
 
-    assert response.status_code == http.client.MOVED_PERMANENTLY
+    assert response.status_code == 302
     assert response.get('Location') == expected_redirect_url
 
 
@@ -306,7 +306,7 @@ def test_case_study_different_slug_redirected(
 
     response = client.get(url)
 
-    assert response.status_code == http.client.MOVED_PERMANENTLY
+    assert response.status_code == 302
     assert response.get('Location') == expected_redirect_url
 
 
@@ -327,7 +327,7 @@ def test_case_study_missing_slug_redirected(supplier_case_study_data, client):
 
     response = client.get(url)
 
-    assert response.status_code == http.client.MOVED_PERMANENTLY
+    assert response.status_code == 302
     assert response.get('Location') == expected_redirect_url
 
 

@@ -9,6 +9,7 @@ from django.views.static import serve
 import core.views
 import company.views
 import industry.views
+import investment_support_directory.views
 import notifications.views
 import conf.sitemaps
 
@@ -148,7 +149,19 @@ urlpatterns = [
         notifications.views.AnonymousUnsubscribeView.as_view(),
         name='anonymous-unsubscribe'
     ),
-
+    url(
+        r'^investment-support-directory/$',
+        investment_support_directory.views.CompanySearchView.as_view(),
+        name='investment-support-directory-search'
+    ),
+    url(
+        (
+            r'^investment-support-directory/'
+            r'(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$'
+        ),
+        investment_support_directory.views.ProfileView.as_view(),
+        name='investment-support-directory-profile'
+    ),
     # old export opportunity urls. redirect to CMS industry pages.
     url(
         r'^campaign/food-is-great/.*/$',
@@ -187,6 +200,14 @@ urlpatterns = [
         r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/$',
         company.views.PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail-slugless'
+    ),
+    url(
+        (
+            r'^investment-support-directory/'
+            r'(?P<company_number>[a-zA-Z0-9]+)/$'
+        ),
+        investment_support_directory.views.ProfileView.as_view(),
+        name='investment-support-directory-profile-slugless'
     ),
 ]
 

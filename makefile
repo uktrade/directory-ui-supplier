@@ -59,7 +59,8 @@ DEBUG_SET_ENV_VARS := \
 	export DIRECTORY_CONSTANTS_URL_GREAT_DOMESTIC=http://exred.trade.great:8007; \
 	export DIRECTORY_CONSTANTS_URL_GREAT_INTERNATIONAL=http://international.trade.great:8012/international/; \
 	export CONTACT_INDUSTRY_AGENT_EMAIL_ADDRESS=buying@example.com; \
-	export URL_PREFIX_DOMAIN=http://supplier.trade.great:8005
+	export URL_PREFIX_DOMAIN=http://supplier.trade.great:8005; \
+	export FEATURE_INVESTMENT_SUPPORT_DIRECTORY_ENABLED=true
 
 TEST_SET_ENV_VARS := \
 	export DIRECTORY_FORMS_API_API_KEY=debug; \

@@ -8,7 +8,7 @@ from django import template
 from django.core.paginator import EmptyPage
 from django.core.urlresolvers import reverse
 
-from directory_constants.constants.sectors import CONFLATED
+from directory_constants.sectors import CONFLATED
 
 
 register = template.Library()

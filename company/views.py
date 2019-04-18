@@ -34,9 +34,6 @@ class CompanyProfileMixin:
     def company(self):
         return helpers.get_company_profile(self.kwargs['company_number'])
 
-    def get_context_data(self, **kwargs):
-        return super().get_context_data(company=self.company, **kwargs)
-
 
 class CompanySearchView(SubmitFormOnGetMixin, CountryDisplayMixin, FormView):
     template_name = 'company-search-results-list.html'
@@ -96,9 +93,7 @@ class PublishedProfileListView(CountryDisplayMixin, RedirectView):
 
 
 class PublishedProfileDetailView(
-    CompanyProfileMixin,
-    CountryDisplayMixin,
-    TemplateView
+    CompanyProfileMixin, CountryDisplayMixin, TemplateView
 ):
     template_name = 'company-profile-detail.html'
 
@@ -111,7 +106,7 @@ class PublishedProfileDetailView(
 
     def get(self, *args, **kwargs):
         if self.kwargs.get('slug') != self.company['slug']:
-            return redirect(to=self.get_canonical_url(), permanent=True)
+            return redirect(to=self.get_canonical_url())
         return super().get(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
@@ -125,6 +120,7 @@ class PublishedProfileDetailView(
         return super().get_context_data(
             show_description='verbose' in self.request.GET,
             social=social,
+            company=self.company,
             **kwargs
         )
 
@@ -145,7 +141,7 @@ class CaseStudyDetailView(CountryDisplayMixin, TemplateView):
 
     def get(self, *args, **kwargs):
         if self.kwargs.get('slug') != self.case_study['slug']:
-            return redirect(to=self.get_canonical_url(), permanent=True)
+            return redirect(to=self.get_canonical_url())
         return super().get(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
@@ -164,6 +160,9 @@ class CaseStudyDetailView(CountryDisplayMixin, TemplateView):
 class ContactCompanyView(CompanyProfileMixin, CountryDisplayMixin, FormView):
     template_name = 'company-contact-form.html'
     form_class = forms.ContactCompanyForm
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(company=self.company, **kwargs)
 
     def get_success_url(self):
         return reverse(
@@ -207,3 +206,6 @@ class ContactCompanySentView(
             'contact-company',
             kwargs={'company_number': self.kwargs['company_number']}
         )
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(company=self.company, **kwargs)
