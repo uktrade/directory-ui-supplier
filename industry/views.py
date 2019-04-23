@@ -4,7 +4,7 @@ import directory_forms_api_client.helpers
 from directory_constants import cms, slugs
 from directory_components.helpers import SocialLinkBuilder
 from directory_components.mixins import (
-    CMSLanguageSwitcherMixin, CountryDisplayMixin, EnableTranslationsMixin
+    CMSLanguageSwitcherMixin, CountryDisplayMixin
 )
 
 from django.conf import settings
@@ -28,7 +28,6 @@ from industry.helpers import get_showcase_companies
 
 
 class IndustryDetailCMSView(
-    EnableTranslationsMixin,
     CMSLanguageSwitcherMixin,
     GetCMSPageMixin,
     CountryDisplayMixin,
@@ -159,8 +158,8 @@ class BaseIndustryContactView(CountryDisplayMixin, FormView):
 
 
 class IndustryDetailContactCMSView(
-    EnableTranslationsMixin, GetIndustryPageMixin, GetCMSPageMixin,
-    GetContactPageMixin, CMSLanguageSwitcherMixin, BaseIndustryContactView
+    GetIndustryPageMixin, GetCMSPageMixin, GetContactPageMixin,
+    CMSLanguageSwitcherMixin, BaseIndustryContactView
 ):
 
     def get_success_url(self):
@@ -174,14 +173,14 @@ class IndustryDetailContactCMSView(
 
 
 class IndustryLandingPageContactCMSView(
-    EnableTranslationsMixin, GetCMSPageMixin, GetContactPageMixin,
-    CMSLanguageSwitcherMixin, BaseIndustryContactView
+    GetCMSPageMixin, GetContactPageMixin, CMSLanguageSwitcherMixin,
+    BaseIndustryContactView
 ):
     success_url = reverse_lazy('sector-list-cms-contact-sent')
 
 
 class IndustryDetailContactCMSSentView(
-    EnableTranslationsMixin, SpecificRefererRequiredMixin, GetCMSPageMixin,
+    CMSLanguageSwitcherMixin, SpecificRefererRequiredMixin, GetCMSPageMixin,
     GetContactPageMixin, GetIndustryPageMixin, CountryDisplayMixin,
     TemplateView
 ):
@@ -193,8 +192,8 @@ class IndustryDetailContactCMSSentView(
 
 
 class IndustryLandingPageContactCMSSentView(
-    EnableTranslationsMixin, SpecificRefererRequiredMixin, GetCMSPageMixin,
-    GetContactPageMixin, CountryDisplayMixin, TemplateView
+    SpecificRefererRequiredMixin, GetCMSPageMixin, GetContactPageMixin,
+    CMSLanguageSwitcherMixin, CountryDisplayMixin, TemplateView
 ):
     template_name = 'industry/contact-success.html'
 
@@ -204,7 +203,7 @@ class IndustryLandingPageContactCMSSentView(
 
 
 class IndustryArticleCMSView(
-    EnableTranslationsMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
+    CMSLanguageSwitcherMixin, GetCMSPageMixin,
     CountryDisplayMixin, TemplateView
 ):
     template_name = 'industry/article.html'
@@ -223,7 +222,7 @@ class IndustryArticleCMSView(
 
 
 class IndustryLandingPageCMSView(
-    EnableTranslationsMixin, CMSLanguageSwitcherMixin, ActiveViewNameMixin,
+    CMSLanguageSwitcherMixin, ActiveViewNameMixin,
     CountryDisplayMixin, TemplateView
 ):
     active_view_name = 'sector-list'
