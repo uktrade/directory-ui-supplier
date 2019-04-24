@@ -44,16 +44,7 @@ class GetCMSPageMixin:
         return self.handle_cms_response(response)
 
     def handle_cms_response(self, response):
-        page = helpers.handle_cms_response(response)
-        if page['meta']['slug'] != self.kwargs['slug']:
-            raise IncorrectSlug(page['meta']['url'])
-        return page
-
-    def dispatch(self, *args, **kwargs):
-        try:
-            return super().dispatch(*args, **kwargs)
-        except IncorrectSlug as exception:
-            return redirect(exception.canonical_url)
+        return helpers.handle_cms_response(response)
 
 
 class SpecificRefererRequiredMixin:

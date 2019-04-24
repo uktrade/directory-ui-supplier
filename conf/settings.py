@@ -64,7 +64,7 @@ INSTALLED_APPS = [
 MIDDLEWARE_CLASSES = [
     'directory_components.middleware.MaintenanceModeMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'core.middleware.LocaleQuerystringMiddleware',
+    'directory_components.middleware.LocaleQuerystringMiddleware',
     'directory_components.middleware.PersistLocaleMiddleware',
     'directory_components.middleware.ForceDefaultLocale',
     'directory_components.middleware.CountryMiddleware',

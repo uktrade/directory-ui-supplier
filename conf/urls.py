@@ -6,6 +6,8 @@ from django.conf.urls import include, url
 from django.contrib.sitemaps.views import sitemap
 from django.views.static import serve
 
+from directory_constants import slugs
+
 import core.views
 import company.views
 import industry.views
@@ -82,6 +84,7 @@ urlpatterns = [
     url(
         r'^industries/contact/sent/$',
         industry.views.IndustryLandingPageContactCMSSentView.as_view(),
+        {'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT},
         name='sector-list-cms-contact-sent',
     ),
     url(
@@ -97,6 +100,7 @@ urlpatterns = [
     url(
         r'^industries/contact/$',
         industry.views.IndustryLandingPageContactCMSView.as_view(),
+        {'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT},
         name='sector-list-cms-contact',
     ),
     url(
