@@ -40,6 +40,12 @@ class CompanySearchView(SubmitFormOnGetMixin, CountryDisplayMixin, FormView):
     form_class = forms.CompanySearchForm
     page_size = 10
 
+    def dispatch(self, *args, **kwargs):
+        if 'term' in self.request.GET:
+            url = self.request.get_full_path()
+            return redirect(url.replace('term=', 'q='))
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         return super().get_context_data(
             active_view_name='public-company-profiles-list',

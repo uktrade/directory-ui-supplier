@@ -472,6 +472,15 @@ def test_company_search_submit_form_on_get(
     assert response.context_data['results'] == results
 
 
+def test_company_search_redirects_using_term(client):
+
+    url = reverse('company-search')
+    response = client.get(url, {'term': '123'})
+
+    assert response.status_code == 302
+    assert response.url == url + '?q=123'
+
+
 @patch('company.views.CompanySearchView.get_results_and_count')
 def test_company_search_pagination_count(
     mock_get_results_and_count, client, search_results
