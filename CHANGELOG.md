@@ -9,7 +9,7 @@
 - Upgraded [API client][directory-api-client], [Forms client][directory-forms-api-client] and because [CMS client][directory-cms-client] upgrade results in [Client core][directory-client-core] being upgraded.
 - Added `DIRECTORY_CLIENT_CORE_CACHE_EXPIRE_SECONDS` env var.
 - Use international header and base templates provided by [Directory components][directory-components].
-  - Implement language switching introduced in the international header and footer
+- Implement language switching introduced in the international header and footer
 - Hard-code /trade/ url prefix (was previously feature flagged).
 - Upgraded [Constants][directory-constants].
 - Removed application-level IP filtering (replaced with routing solution at platform level).
