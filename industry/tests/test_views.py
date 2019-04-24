@@ -441,7 +441,7 @@ def test_contact_industry_list_sent_incorrect_referer(client):
 def test_contact_industry_list_sent_correct_referer(client):
     url = reverse(
         'sector-list-cms-contact-sent',
-      kwargs={'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT})
+        kwargs={'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT})
     referer_url = reverse(
         'sector-list-cms-contact',
         kwargs={'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT})
