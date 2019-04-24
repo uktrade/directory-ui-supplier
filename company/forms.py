@@ -18,7 +18,7 @@ class CompanySearchForm(forms.Form):
 
     MESSAGE_MISSING_SECTOR_TERM = 'Please specify a search term or a sector.'
 
-    term = forms.CharField(
+    q = forms.CharField(
         label='Search by product, service or company keyword',
         max_length=255,
         widget=forms.TextInput(
@@ -47,7 +47,7 @@ class CompanySearchForm(forms.Form):
 
     def clean(self):
         cleaned_data = super().clean()
-        if not cleaned_data.get('term') and not cleaned_data.get('sectors'):
+        if not cleaned_data.get('q') and not cleaned_data.get('sectors'):
             raise forms.ValidationError(self.MESSAGE_MISSING_SECTOR_TERM)
         return cleaned_data
 

@@ -69,7 +69,7 @@ Signed cookies are used as the session backend to avoid using a database. We the
 
 ## Translations
 
-Follow the <a href="https://docs.djangoproject.com/en/1.9/topics/i18n/translation/#localization-how-to-create-language-files" target="_blank">Django documentation</a>
+Follow the [Django documentation](https://docs.djangoproject.com/en/1.9/topics/i18n/translation/#localization-how-to-create-language-files).
 
 To create or update `.po` files:
 

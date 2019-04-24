@@ -129,6 +129,7 @@ else:
 CACHES = {
     'default': cache,
     'cms_fallback': cache,
+    'api_fallback': cache,
 }
 
 # Internationalization
@@ -376,7 +377,10 @@ ZENDESK_TICKET_SUBJECT = env.str(
 )
 
 # directory client core
-DIRECTORY_CLIENT_CORE_CACHE_EXPIRE_SECONDS = 60 * 60 * 24 * 30  # 30 days
+DIRECTORY_CLIENT_CORE_CACHE_EXPIRE_SECONDS = env.int(
+    'DIRECTORY_CLIENT_CORE_CACHE_EXPIRE_SECONDS',
+    60 * 60 * 24 * 30  # 30 days
+)
 
 # directory-components
 PRIVACY_COOKIE_DOMAIN = env.str('PRIVACY_COOKIE_DOMAIN')

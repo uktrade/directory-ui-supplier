@@ -12,12 +12,12 @@ chardet==3.0.4            # via requests
 codecov==2.0.9
 contextlib2==0.5.5        # via raven
 coverage==4.5.1           # via codecov, pytest-cov
-directory-api-client==10.0.2
-directory-client-core==4.4.0  # via directory-api-client, directory-cms-client, directory-forms-api-client
-directory-cms-client==8.2.0
+directory-api-client==14.0.0
+directory-client-core==5.0.0  # via directory-api-client, directory-cms-client, directory-forms-api-client
+directory-cms-client==10.0.0
 directory-components==10.4.1
 directory-constants==16.0.0
-directory-forms-api-client==3.3.0
+directory-forms-api-client==4.0.0
 directory-healthcheck==1.0.1
 directory-validators==5.0.1
 django-environ==0.4.5
@@ -59,7 +59,7 @@ sigauth==4.0.1            # via directory-client-core
 six==1.11.0               # via freezegun, mohawk, python-dateutil, requests-mock, w3lib
 sorl-thumbnail==12.3
 termcolor==1.1.0          # via pytest-sugar
-urllib3==1.24.1
+urllib3==1.24.2
 w3lib==1.19.0             # via directory-client-core
 waitress==0.8.9
 whitenoise==3.1
