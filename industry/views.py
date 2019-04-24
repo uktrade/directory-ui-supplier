@@ -77,7 +77,7 @@ class IndustryDetailCMSView(
         return super().dispatch(request, *args, **kwargs)
 
 
-class GetContactPageMixin:
+class GetCMSContactPageMixin:
     @functools.lru_cache()
     def get_contact_page(self):
         response = cms_api_client.lookup_by_slug(
@@ -93,6 +93,10 @@ class GetContactPageMixin:
             *args, **kwargs
         )
 
+    @cached_property
+    def page(self):
+        return self.get_contact_page()
+
 
 class GetIndustryPageMixin:
     @functools.lru_cache()
@@ -101,7 +105,7 @@ class GetIndustryPageMixin:
             slug=self.kwargs['slug'],
             language_code=translation.get_language(),
         )
-        return self.handle_cms_response(response)
+        return handle_cms_response(response)
 
     def get_context_data(self, *args, **kwargs):
         return super().get_context_data(
@@ -158,7 +162,7 @@ class BaseIndustryContactView(CountryDisplayMixin, FormView):
 
 
 class IndustryDetailContactCMSView(
-    GetIndustryPageMixin, GetCMSPageMixin, GetContactPageMixin,
+    GetIndustryPageMixin, GetCMSContactPageMixin,
     CMSLanguageSwitcherMixin, BaseIndustryContactView
 ):
 
@@ -173,15 +177,15 @@ class IndustryDetailContactCMSView(
 
 
 class IndustryLandingPageContactCMSView(
-    GetCMSPageMixin, GetContactPageMixin, CMSLanguageSwitcherMixin,
+    GetCMSContactPageMixin, CMSLanguageSwitcherMixin,
     BaseIndustryContactView
 ):
     success_url = reverse_lazy('sector-list-cms-contact-sent')
 
 
 class IndustryDetailContactCMSSentView(
-    CMSLanguageSwitcherMixin, SpecificRefererRequiredMixin, GetCMSPageMixin,
-    GetContactPageMixin, GetIndustryPageMixin, CountryDisplayMixin,
+    CMSLanguageSwitcherMixin, SpecificRefererRequiredMixin,
+    GetCMSContactPageMixin, GetIndustryPageMixin, CountryDisplayMixin,
     TemplateView
 ):
     template_name = 'industry/contact-success.html'
@@ -192,8 +196,8 @@ class IndustryDetailContactCMSSentView(
 
 
 class IndustryLandingPageContactCMSSentView(
-    SpecificRefererRequiredMixin, GetCMSPageMixin, GetContactPageMixin,
-    CMSLanguageSwitcherMixin, CountryDisplayMixin, TemplateView
+    CMSLanguageSwitcherMixin, SpecificRefererRequiredMixin,
+    GetCMSContactPageMixin, CountryDisplayMixin, TemplateView
 ):
     template_name = 'industry/contact-success.html'
 
