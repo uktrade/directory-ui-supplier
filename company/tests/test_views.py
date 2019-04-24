@@ -466,7 +466,7 @@ def test_company_search_submit_form_on_get(
     results = [{'number': '1234567', 'slug': 'thing'}]
     mock_get_results_and_count.return_value = (results, 20)
 
-    response = client.get(reverse('company-search'), {'term': '123'})
+    response = client.get(reverse('company-search'), {'q': '123'})
 
     assert response.status_code == 200
     assert response.context_data['results'] == results
@@ -479,7 +479,7 @@ def test_company_search_pagination_count(
     results = [{'number': '1234567', 'slug': 'thing'}]
     mock_get_results_and_count.return_value = (results, 20)
 
-    response = client.get(reverse('company-search'), {'term': '123'})
+    response = client.get(reverse('company-search'), {'q': '123'})
 
     assert response.status_code == 200
     assert response.context_data['pagination'].paginator.count == 20
@@ -493,7 +493,7 @@ def test_company_search_pagination_param(
 
     url = reverse('company-search')
     response = client.get(
-        url, {'term': '123', 'page': 1, 'sectors': ['AEROSPACE']}
+        url, {'q': '123', 'page': 1, 'sectors': ['AEROSPACE']}
     )
 
     assert response.status_code == 200
@@ -511,7 +511,7 @@ def test_company_search_sector_empty(
 
     url = reverse('company-search')
     response = client.get(
-        url, {'term': '123', 'page': 1, 'sectors': ''}
+        url, {'q': '123', 'page': 1, 'sectors': ''}
     )
     assert response.status_code == 200
     assert mock_search.call_count == 1
@@ -527,10 +527,10 @@ def test_company_search_pagination_empty_page(
     mock_search.return_value = api_response_search_200
 
     url = reverse('company-search')
-    response = client.get(url, {'term': '123', 'page': 100})
+    response = client.get(url, {'q': '123', 'page': 100})
 
     assert response.status_code == 302
-    assert response.get('Location') == '/trade/search/?term=123'
+    assert response.get('Location') == '/trade/search/?q=123'
 
 
 @patch('company.views.CompanySearchView.get_results_and_count')
@@ -557,7 +557,7 @@ def test_company_search_api_call_error(mock_search, api_response_400, client):
     mock_search.return_value = api_response_400
 
     with pytest.raises(requests.exceptions.HTTPError):
-        client.get(reverse('company-search'), {'term': '123'})
+        client.get(reverse('company-search'), {'q': '123'})
 
 
 @patch('directory_api_client.client.api_client.company.search_company')
@@ -571,7 +571,7 @@ def test_company_search_api_success(
         'results': [],
         'hits': {'total': 2}
     }
-    response = client.get(reverse('company-search'), {'term': '123'})
+    response = client.get(reverse('company-search'), {'q': '123'})
 
     assert response.status_code == 200
     assert mock_get_results_from_search_response.call_count == 1
@@ -586,7 +586,7 @@ def test_company_search_response_no_highlight(
 ):
     mock_search.return_value = api_response_search_200
 
-    response = client.get(reverse('company-search'), {'term': 'wolf'})
+    response = client.get(reverse('company-search'), {'q': 'wolf'})
 
     assert b'this is a short summary' in response.content
 
@@ -597,7 +597,7 @@ def test_company_highlight_description(
 ):
     mock_search.return_value = api_response_search_description_highlight_200
 
-    response = client.get(reverse('company-search'), {'term': 'wolf'})
+    response = client.get(reverse('company-search'), {'q': 'wolf'})
     expected = (
         b'<em>wolf</em> in sheep clothing description...'
         b'to the max <em>wolf</em>.'
@@ -612,7 +612,7 @@ def test_company_search_highlight_summary(
 ):
     mock_search.return_value = api_response_search_summary_highlight_200
 
-    response = client.get(reverse('company-search'), {'term': 'wolf'})
+    response = client.get(reverse('company-search'), {'q': 'wolf'})
 
     assert b'<em>wolf</em> in sheep clothing summary.' in response.content
 

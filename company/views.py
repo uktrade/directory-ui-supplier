@@ -63,7 +63,7 @@ class CompanySearchView(SubmitFormOnGetMixin, CountryDisplayMixin, FormView):
 
     def get_results_and_count(self, form):
         response = api_client.company.search_company(
-            term=form.cleaned_data['term'],
+            term=form.cleaned_data['q'],
             page=form.cleaned_data['page'],
             sectors=form.cleaned_data['sectors'],
             size=self.page_size,
@@ -74,9 +74,9 @@ class CompanySearchView(SubmitFormOnGetMixin, CountryDisplayMixin, FormView):
 
     @staticmethod
     def handle_empty_page(form):
-        url = '{url}?term={term}'.format(
+        url = '{url}?q={q}'.format(
             url=reverse('company-search'),
-            term=form.cleaned_data['term']
+            q=form.cleaned_data['q']
         )
         return redirect(url)
 
