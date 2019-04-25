@@ -1,4 +1,8 @@
-from directory_constants.constants import cms
+from directory_api_client.client import api_client
+from directory_components.mixins import (
+    CMSLanguageSwitcherMixin, CountryDisplayMixin, EnableTranslationsMixin
+)
+from directory_constants import slugs
 from directory_cms_client.client import cms_api_client
 import directory_forms_api_client.helpers
 
@@ -11,31 +15,19 @@ from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 from django.views.generic.base import RedirectView
 
-from directory_api_client.client import api_client
 from core import forms, helpers, mixins
-from directory_components.mixins import (
-    CountryDisplayMixin, LanguageSwitcherMixin
-)
-
-
-class ActivateTranslationMixin:
-    def dispatch(self, *args, **kwargs):
-        translation.activate(self.request.LANGUAGE_CODE)
-        return super().dispatch(*args, **kwargs)
 
 
 class LandingPageCMSView(
-    mixins.CMSLanguageSwitcherMixin,
+    CMSLanguageSwitcherMixin,
     mixins.ActiveViewNameMixin,
     mixins.GetCMSComponentMixin,
-    ActivateTranslationMixin,
     CountryDisplayMixin,
-    LanguageSwitcherMixin,
     TemplateView
 ):
     active_view_name = 'index'
     template_name = 'core/landing-page.html'
-    component_slug = cms.COMPONENTS_BANNER_INTERNATIONAL_SLUG
+    component_slug = slugs.COMPONENTS_BANNER_INTERNATIONAL
 
     def get_context_data(self, *args, **kwargs):
         return super().get_context_data(
@@ -48,7 +40,7 @@ class LandingPageCMSView(
     @cached_property
     def page(self):
         response = cms_api_client.lookup_by_slug(
-            slug=cms.FIND_A_SUPPLIER_LANDING_SLUG,
+            slug=slugs.FIND_A_SUPPLIER_LANDING,
             language_code=translation.get_language(),
             draft_token=self.request.GET.get('draft_token'),
         )
@@ -65,7 +57,7 @@ class RedirectToCMSIndustryView(RedirectView):
 
 
 class LeadGenerationFormView(
-    mixins.EnableTranslationsMixin, CountryDisplayMixin, FormView
+    EnableTranslationsMixin, CountryDisplayMixin, FormView
 ):
     success_template = 'lead-generation-success.html'
     template_name = 'lead-generation.html'

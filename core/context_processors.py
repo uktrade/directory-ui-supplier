@@ -1,7 +1,7 @@
 from core.forms import AnonymousSubscribeForm, LeadGenerationForm
 from django.utils import translation
 from django.conf import settings
-from directory_constants.constants import urls
+from directory_constants import urls
 
 
 def subscribe_form(request):

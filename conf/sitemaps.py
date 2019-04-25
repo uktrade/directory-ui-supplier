@@ -1,4 +1,4 @@
-from directory_constants.constants import cms
+from directory_constants import cms
 from directory_cms_client.client import cms_api_client
 
 from django.contrib import sitemaps

@@ -15,8 +15,8 @@
 		<div class="container">
 			<h1>Find UK Suppliers</h1>
 			<div class="supplier-search-form">
-				<label for="{{ form.term.id_for_label }}">{{ form.term.label }}</label>
-				{{ form.term }}
+				<label for="{{ form.q.id_for_label }}">{{ form.q.label }}</label>
+				{{ form.q }}
 				<input class="button button-primary" type="submit" value="Search">
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 						<div>
 							<span id="ed-search-filters-title">Filter results</span>
 							{% if form.sectors.value %}
-								<a href="?term={{ form.cleaned_data.term }}" id="ed-filters-clear-all" class="pull-right">Clear</a>
+								<a href="?q={{ form.cleaned_data.q }}" id="ed-filters-clear-all" class="pull-right">Clear</a>
 							{% endif %}
 							<i id="ed-search-filters-icon" class="pull-right ed-show-tablet"></i>
 						</div>
@@ -57,7 +57,7 @@
 						</div>
 					{% else %}
 						<div id="fassearch-no-results-content">
-							<p class="message">Your search &quot;<span class="term">{{ form.cleaned_data.term }}</span>&quot; did not match any UK trade profiles.</p>
+							<p class="message">Your search &quot;<span class="term">{{ form.cleaned_data.q }}</span>&quot; did not match any UK trade profiles.</p>
 						</div>
 					{% endif %}
 				{% endif %}

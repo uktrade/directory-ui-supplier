@@ -6,9 +6,12 @@ from django.conf.urls import include, url
 from django.contrib.sitemaps.views import sitemap
 from django.views.static import serve
 
+from directory_constants import slugs
+
 import core.views
 import company.views
 import industry.views
+import investment_support_directory.views
 import notifications.views
 import conf.sitemaps
 
@@ -81,6 +84,7 @@ urlpatterns = [
     url(
         r'^industries/contact/sent/$',
         industry.views.IndustryLandingPageContactCMSSentView.as_view(),
+        {'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT},
         name='sector-list-cms-contact-sent',
     ),
     url(
@@ -96,6 +100,7 @@ urlpatterns = [
     url(
         r'^industries/contact/$',
         industry.views.IndustryLandingPageContactCMSView.as_view(),
+        {'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT},
         name='sector-list-cms-contact',
     ),
     url(
@@ -148,7 +153,19 @@ urlpatterns = [
         notifications.views.AnonymousUnsubscribeView.as_view(),
         name='anonymous-unsubscribe'
     ),
-
+    url(
+        r'^investment-support-directory/$',
+        investment_support_directory.views.CompanySearchView.as_view(),
+        name='investment-support-directory-search'
+    ),
+    url(
+        (
+            r'^investment-support-directory/'
+            r'(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$'
+        ),
+        investment_support_directory.views.ProfileView.as_view(),
+        name='investment-support-directory-profile'
+    ),
     # old export opportunity urls. redirect to CMS industry pages.
     url(
         r'^campaign/food-is-great/.*/$',
@@ -187,6 +204,14 @@ urlpatterns = [
         r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/$',
         company.views.PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail-slugless'
+    ),
+    url(
+        (
+            r'^investment-support-directory/'
+            r'(?P<company_number>[a-zA-Z0-9]+)/$'
+        ),
+        investment_support_directory.views.ProfileView.as_view(),
+        name='investment-support-directory-profile-slugless'
     ),
 ]
 
