@@ -104,3 +104,16 @@ class NotFoundOnDisabledFeature:
         if not self.flag:
             raise Http404()
         return super().dispatch(*args, **kwargs)
+
+
+class SubmitFormOnGetMixin:
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        data = self.request.GET or {}
+        if data:
+            kwargs['data'] = data
+        return kwargs
+
+    def get(self, request, *args, **kwargs):
+        return super().post(request, *args, **kwargs)

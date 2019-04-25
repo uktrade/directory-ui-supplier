@@ -1,7 +1,12 @@
+from urllib.parse import urlencode
+
 from directory_api_client.client import api_client
 import directory_components.helpers
+from directory_constants import choices
 
 from django.shortcuts import Http404
+from django.urls import reverse
+from django.utils.html import escape, mark_safe
 
 
 def get_company_profile(number):
@@ -33,3 +38,53 @@ class CompanyParser(directory_components.helpers.CompanyParser):
                 self.expertise_products_services_label
             ),
         }
+
+
+def get_results_from_search_response(response):
+    parsed = response.json()
+    formatted_results = []
+
+    for result in parsed['hits']['hits']:
+        parser = CompanyParser(result['_source'])
+        formatted = parser.serialize_for_template()
+        if 'highlight' in result:
+            highlighted = '...'.join(
+                result['highlight'].get('description', '') or
+                result['highlight'].get('summary', '')
+            )
+            # escape all html tags other than <em> and </em>
+            highlighted_escaped = (
+                escape(highlighted)
+                .replace('&lt;em&gt;', '<em>')
+                .replace('&lt;/em&gt;', '</em>')
+            )
+            formatted['highlight'] = mark_safe(highlighted_escaped)
+        formatted_results.append(formatted)
+
+    parsed['results'] = formatted_results
+    return parsed
+
+
+def get_paginator_url(filters):
+    url = reverse('investment-support-directory-search')
+    querystring = urlencode({
+        key: value
+        for key, value in filters.items()
+        if value and key != 'page'
+    })
+    return f'{url}?{querystring}'
+
+
+def get_filters_labels(filters):
+    labels = []
+    for name, values in filters.items():
+        if name not in ['term', 'page']:
+            if name == 'expertise_languages':
+                languages = dict(choices.EXPERTISE_LANGUAGES)
+                labels += [
+                    languages[item] for item in values if item in languages
+                ]
+            else:
+                for value in values:
+                    labels.append(value.replace('_', ' ').title())
+    return labels

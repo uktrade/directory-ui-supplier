@@ -151,6 +151,11 @@ urlpatterns = [
     ),
     url(
         r'^investment-support-directory/$',
+        investment_support_directory.views.HomeView.as_view(),
+        name='investment-support-directory-home'
+    ),
+    url(
+        r'^investment-support-directory/search/$',
         investment_support_directory.views.CompanySearchView.as_view(),
         name='investment-support-directory-search'
     ),

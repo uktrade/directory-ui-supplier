@@ -12,7 +12,8 @@
 - Hard-code /trade/ url prefix (was previously feature flagged).
 - Upgraded [Constants][directory-constants].
 - Removed application-level IP filtering (replaced with routing solution at platform level).
-- Added Investment Support Directory profile.
+- [TT-1328] Added Investment Support Directory profile.
+- [TT-1352] Added Investment Support Directory search.
 - Added fallback cache for API
 
 **Fixed bugs:**

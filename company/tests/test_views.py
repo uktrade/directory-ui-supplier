@@ -9,45 +9,6 @@ from django.core.urlresolvers import reverse, NoReverseMatch
 from company import helpers, views
 
 
-@pytest.fixture
-def api_response_200():
-    response = requests.Response()
-    response.status_code = http.client.OK
-    return response
-
-
-@pytest.fixture
-def api_response_404(*args, **kwargs):
-    response = requests.Response()
-    response.status_code = http.client.NOT_FOUND
-    return response
-
-
-@pytest.fixture
-def api_response_search_description_highlight_200(
-    api_response_200, search_results
-):
-    search_results['hits']['hits'][0]['highlight'] = {
-        'description': [
-            '<em>wolf</em> in sheep clothing description',
-            'to the max <em>wolf</em>.'
-        ]
-    }
-    api_response_200.json = lambda: search_results
-    return api_response_200
-
-
-@pytest.fixture
-def api_response_search_summary_highlight_200(
-    api_response_200, search_results
-):
-    search_results['hits']['hits'][0]['highlight'] = {
-        'summary': ['<em>wolf</em> in sheep clothing summary.']
-    }
-    api_response_200.json = lambda: search_results
-    return api_response_200
-
-
 def test_public_profile_different_slug_redirected(
     client, retrieve_profile_data
 ):
