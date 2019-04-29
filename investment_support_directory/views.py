@@ -72,7 +72,7 @@ class CompanySearchView(
     def get_results_and_count(self, form):
         data = form.cleaned_data
         response = api_client.company.search_investment_search_directory(
-            term=data['term'],
+            term=data['q'],
             page=data['page'],
             size=self.page_size,
             expertise_industries=data.get('expertise_industries'),
@@ -88,9 +88,9 @@ class CompanySearchView(
 
     @staticmethod
     def handle_empty_page(form):
-        url = '{url}?term={term}'.format(
+        url = '{url}?q={q}'.format(
             url=reverse('investment-support-directory-search'),
-            term=form.cleaned_data['term']
+            q=form.cleaned_data['q']
         )
         return redirect(url)
 

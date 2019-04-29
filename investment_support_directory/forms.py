@@ -67,7 +67,7 @@ CHOICES_FURTHER_SERVICES = (
 
 class CompanyHomeSearchForm(forms.Form):
 
-    term = fields.CharField(
+    q = fields.CharField(
         label='',
         max_length=255,
         widget=TextInput(
@@ -86,7 +86,7 @@ class CompanySearchForm(forms.Form):
         'Please specify a search term or expertise.'
     )
 
-    term = fields.CharField(
+    q = fields.CharField(
         label='Search by product, service or company keyword',
         max_length=255,
         required=False,
@@ -221,10 +221,10 @@ class CompanySearchForm(forms.Form):
             'expertise_countries',
             'expertise_languages',
             'expertise_products_services',
-            'term',
+            'q',
         }
         searched_fields = set(
             key for key, value in self.cleaned_data.items() if value
         )
         if not searched_fields.intersection(minimum_vialble_search_fields):
-            raise ValidationError({'term': self.MESSAGE_MINIMUM_VIABLE_SEARCH})
+            raise ValidationError({'q': self.MESSAGE_MINIMUM_VIABLE_SEARCH})
