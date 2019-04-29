@@ -22,7 +22,6 @@ class LandingPageCMSView(
     CMSLanguageSwitcherMixin,
     mixins.ActiveViewNameMixin,
     mixins.GetCMSComponentMixin,
-    EnableTranslationsMixin,
     CountryDisplayMixin,
     TemplateView
 ):

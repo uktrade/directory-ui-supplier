@@ -29,6 +29,12 @@ class CompanySearchView(
     form_class = forms.CompanySearchForm
     page_size = 10
 
+    def dispatch(self, *args, **kwargs):
+        if 'term' in self.request.GET:
+            url = self.request.get_full_path()
+            return redirect(url.replace('term=', 'q='))
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         return super().get_context_data(
             active_view_name='public-company-profiles-list',
@@ -52,7 +58,7 @@ class CompanySearchView(
 
     def get_results_and_count(self, form):
         response = api_client.company.search_company(
-            term=form.cleaned_data['term'],
+            term=form.cleaned_data['q'],
             page=form.cleaned_data['page'],
             sectors=form.cleaned_data['sectors'],
             size=self.page_size,
@@ -63,9 +69,9 @@ class CompanySearchView(
 
     @staticmethod
     def handle_empty_page(form):
-        url = '{url}?term={term}'.format(
+        url = '{url}?q={q}'.format(
             url=reverse('company-search'),
-            term=form.cleaned_data['term']
+            q=form.cleaned_data['q']
         )
         return redirect(url)
 
