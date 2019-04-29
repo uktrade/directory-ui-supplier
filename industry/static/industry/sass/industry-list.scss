@@ -108,9 +108,17 @@ $blue: rgba(0, 82, 157, 0.8);
     margin-bottom: 15px;
   }
   ul {
-    -webkit-columns: 4;
-    -moz-columns: 4;
-    columns: 4;
+    @media (min-width: 641px) {
+      -webkit-columns: 2;
+      -moz-columns: 2;
+      columns: 2;
+    }
+    @media (min-width: 769px) {
+      -webkit-columns: 4;
+      -moz-columns: 4;
+      columns: 4;
+    }
+
     a {
       font-size: 19px;
       line-height: 1.68;
@@ -118,7 +126,7 @@ $blue: rgba(0, 82, 157, 0.8);
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   #hero {
     height: 350px;
     margin-bottom: 0;
