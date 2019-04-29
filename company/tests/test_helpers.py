@@ -260,6 +260,21 @@ def test_format_company_details_handles_keywords_empty(retrieve_profile_data):
         assert formatted['keywords'] == []
 
 
+@pytest.mark.parametrize('data,expected', (
+    ({'other': ['foo', 'bar']}, ['foo', 'bar']),
+    ({}, []),
+))
+def test_format_company_details_handles_keywords_expertise(
+    retrieve_profile_data, data, expected
+):
+    retrieve_profile_data['keywords'] = None
+    retrieve_profile_data['expertise_products_services'] = data
+
+    formatted = helpers.format_company_details(retrieve_profile_data)
+
+    assert formatted['keywords'] == expected
+
+
 def test_get_results_from_search_response_xss(retrieve_profile_data):
     response = requests.Response()
     response.json = lambda: {

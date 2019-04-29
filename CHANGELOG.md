@@ -4,13 +4,14 @@
 
 ### Implemented enhancements
 
-- [TT-1328] Added Investment Support Directory profile.
-- [TT-1352] Added Investment Support Directory search.
+- [[TT-1328]](https://uktrade.atlassian.net/browse/CMS-1328) Added Investment Support Directory profile.
+- [[TT-1352]](https://uktrade.atlassian.net/browse/CMS-1328) Added Investment Support Directory search.
 
 ### Fixed bugs:
 
 - [[CMS-1256]](https://uktrade.atlassian.net/browse/CMS-1256) Fix mobile vertical spacing in footer
 - [[CMS-1262]](https://uktrade.atlassian.net/browse/CMS-1262) Fix mobile column spacing on industries list page
+- [[TT-1339]](https://uktrade.atlassian.net/browse/TT-1339) Display keywords added via new profile "other" expertise interface
 
 ## [2019.04.25](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.04.25)
 
