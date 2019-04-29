@@ -1,10 +1,16 @@
 # Changelog
 
+## Pre-release
+
+### Fixed bugs:
+
+- [[CMS-1256]](https://uktrade.atlassian.net/browse/CMS-1256) Fix vertical spacing in footer
+
 ## [2019.04.25](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.04.25)
 
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.04.03...2019.04.25)
 
-**Implemented enhancements:**
+### Implemented enhancements:
 
 - Upgraded [CMS client][directory-cms-client] to allow `lookup_by_path`, to facilitate CMS tree based routing.
 - Upgraded [CMS client][directory-cms-client] reduces noisy fallback cache logging.
@@ -20,7 +26,8 @@
 - Added fallback cache for API
 - GA360 changes FAB search to use q instead of term. Redirect also in place for backwards compatibility.
 
-**Fixed bugs:**
+### Fixed bugs:
+
 - Upgraded urllib3 to fix [vulnerability](https://nvd.nist.gov/vuln/detail/CVE-2019-11324)
 - Fixed 500 internal server error response on contact forms caused by slugs
 
