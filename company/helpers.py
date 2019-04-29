@@ -106,6 +106,12 @@ def format_company_details(details):
         format_case_study, details.get('supplier_case_studies', [])
     )
     keywords = details['keywords']
+    if keywords:
+        keywords = tokenize_keywords(details['keywords'])
+    other_expertise = []
+    if details.get('expertise_products_services'):
+        other_expertise = details['expertise_products_services'].get('other')
+
     return {
         'website': details['website'],
         'description': details['description'],
@@ -115,7 +121,7 @@ def format_company_details(details):
         'sectors': pair_sector_values_with_label(details.get('sectors', [])),
         'logo': details.get('logo'),
         'name': details['name'],
-        'keywords': tokenize_keywords(keywords) if keywords else [],
+        'keywords': keywords or other_expertise,
         'employees': get_employees_label(details['employees']),
         'supplier_case_studies': list(case_studies),
         'modified': format_date_modified(details['modified']),
