@@ -1,5 +1,9 @@
 from investment_support_directory import helpers
 
+from django.urls import reverse
+
+from core.tests.helpers import create_response
+
 
 def test_company_parser_serialize_for_template(retrieve_profile_data):
     company = helpers.CompanyParser(retrieve_profile_data)
@@ -46,3 +50,52 @@ def test_company_parser_serialize_for_template_empty():
     company = helpers.CompanyParser({})
 
     assert company.serialize_for_template() == {}
+
+
+def test_get_results_from_search_response_xss(retrieve_profile_data):
+    response = create_response(json_payload={
+        'hits': {
+            'total': 1,
+            'hits': [
+                {
+                    '_source': retrieve_profile_data,
+                    'highlight': {
+                        'description': [
+                            '<a onmouseover=javascript:func()>stuff</a>',
+                            'to the max <em>wolf</em>.'
+                        ]
+                    }
+
+                }
+            ]
+        }
+    })
+
+    formatted = helpers.get_results_from_search_response(response)
+
+    assert formatted['results'][0]['highlight'] == (
+        '&lt;a onmouseover=javascript:func()&gt;stuff&lt;/a&gt;...to the max '
+        '<em>wolf</em>.'
+    )
+
+
+def test_get_paginator_url():
+    filters = {'page': 2, 'term': 'foo', 'expertise_countries': None}
+
+    assert helpers.get_paginator_url(filters) == (
+        reverse('investment-support-directory-search') + '?term=foo'
+    )
+
+
+def test_get_filters_labels():
+
+    filters = {
+        'expertise_languages': ['aa'],
+        'term': 'foo',
+        'page': 5,
+        'expertise_regions': ['NORTH_EAST']
+    }
+
+    expected = ['Afar', 'North East']
+
+    assert helpers.get_filters_labels(filters) == expected
