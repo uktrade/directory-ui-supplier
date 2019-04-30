@@ -30,6 +30,40 @@ healthcheck_urls = [
 ]
 
 
+investment_support_directory_urls = [
+    url(
+        r'^$',
+        investment_support_directory.views.HomeView.as_view(),
+        name='investment-support-directory-home'
+    ),
+    url(
+        r'^search/$',
+        investment_support_directory.views.CompanySearchView.as_view(),
+        name='investment-support-directory-search'
+    ),
+    url(
+        r'^(?P<company_number>[a-zA-Z0-9]+)/contact/$',
+        investment_support_directory.views.ContactView.as_view(),
+        name='investment-support-directory-company-contact',
+    ),
+    url(
+        r'^(?P<company_number>[a-zA-Z0-9]+)/sent/$',
+        investment_support_directory.views.ContactSuccessView.as_view(),
+        name='investment-support-directory-company-contact-sent',
+    ),
+    url(
+        r'^(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$',
+        investment_support_directory.views.ProfileView.as_view(),
+        name='investment-support-directory-profile'
+    ),
+    url(
+        r'^/(?P<company_number>[a-zA-Z0-9]+)/$',
+        investment_support_directory.views.ProfileView.as_view(),
+        name='investment-support-directory-profile-slugless'
+    ),
+]
+
+
 urlpatterns = [
     url(
         r'^healthcheck/',
@@ -153,24 +187,6 @@ urlpatterns = [
         notifications.views.AnonymousUnsubscribeView.as_view(),
         name='anonymous-unsubscribe'
     ),
-    url(
-        r'^investment-support-directory/$',
-        investment_support_directory.views.HomeView.as_view(),
-        name='investment-support-directory-home'
-    ),
-    url(
-        r'^investment-support-directory/search/$',
-        investment_support_directory.views.CompanySearchView.as_view(),
-        name='investment-support-directory-search'
-    ),
-    url(
-        (
-            r'^investment-support-directory/'
-            r'(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$'
-        ),
-        investment_support_directory.views.ProfileView.as_view(),
-        name='investment-support-directory-profile'
-    ),
     # old export opportunity urls. redirect to CMS industry pages.
     url(
         r'^campaign/food-is-great/.*/$',
@@ -211,15 +227,10 @@ urlpatterns = [
         name='public-company-profiles-detail-slugless'
     ),
     url(
-        (
-            r'^investment-support-directory/'
-            r'(?P<company_number>[a-zA-Z0-9]+)/$'
-        ),
-        investment_support_directory.views.ProfileView.as_view(),
-        name='investment-support-directory-profile-slugless'
-    ),
+        r'^investment-support-directory/',
+        include(investment_support_directory_urls)
+    )
 ]
-
 
 if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
     urlpatterns += [
@@ -234,5 +245,5 @@ urlpatterns = [
     url(
         r'^trade/',
         include(urlpatterns)
-    )
+    ),
 ]

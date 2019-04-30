@@ -91,7 +91,7 @@ def test_get_filters_labels():
 
     filters = {
         'expertise_languages': ['aa'],
-        'term': 'foo',
+        'q': 'foo',
         'page': 5,
         'expertise_regions': ['NORTH_EAST']
     }

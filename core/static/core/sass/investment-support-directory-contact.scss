@@ -1,0 +1,28 @@
+@import 'partials/reset';
+@import 'partials/base';
+@import 'partials/colours';
+
+
+main {
+    background: linear-gradient(to right, $white 70%, $stone-30 70%);
+}
+#content {
+  form {
+    button {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    input {
+      width: 80%;
+    }
+  }
+}
+
+
+#id_terms-container {
+  .form-label {
+    p {
+      margin-bottom: 1em;
+    }
+  }
+}
