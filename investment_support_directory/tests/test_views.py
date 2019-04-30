@@ -134,10 +134,10 @@ def test_home_page_redirect(client, settings):
     url = reverse('investment-support-directory-home')
     expected_url = reverse('investment-support-directory-search')
 
-    response = client.post(url, {'term': 'foo'})
+    response = client.post(url, {'q': 'foo'})
 
     assert response.status_code == 302
-    assert response.url == f'{expected_url}?term=foo'
+    assert response.url == f'{expected_url}?q=foo'
 
 
 @mock.patch.object(views.CompanySearchView, 'get_results_and_count')
@@ -150,7 +150,7 @@ def test_search_submit_form_on_get(
     mock_get_results_and_count.return_value = (results, 20)
 
     response = client.get(
-        reverse('investment-support-directory-search'), {'term': '123'}
+        reverse('investment-support-directory-search'), {'q': '123'}
     )
 
     assert response.status_code == 200
@@ -167,7 +167,7 @@ def test_company_search_pagination_count(
     mock_get_results_and_count.return_value = (results, 20)
 
     response = client.get(
-        reverse('investment-support-directory-search'), {'term': '123'}
+        reverse('investment-support-directory-search'), {'q': '123'}
     )
 
     assert response.status_code == 200
@@ -184,7 +184,7 @@ def test_company_search_pagination_param(
 
     url = reverse('investment-support-directory-search')
     response = client.get(
-        url, {'term': '123', 'page': 1, 'expertise_industries': ['AEROSPACE']}
+        url, {'q': '123', 'page': 1, 'expertise_industries': ['AEROSPACE']}
     )
 
     assert response.status_code == 200
@@ -211,11 +211,11 @@ def test_company_search_pagination_empty_page(
     mock_search.return_value = api_response_search_200
 
     url = reverse('investment-support-directory-search')
-    response = client.get(url, {'term': '123', 'page': 100})
+    response = client.get(url, {'q': '123', 'page': 100})
 
     assert response.status_code == 302
     assert response.get('Location') == (
-        reverse('investment-support-directory-search') + '?term=123'
+        reverse('investment-support-directory-search') + '?q=123'
     )
 
 
@@ -240,7 +240,7 @@ def test_company_search_api_call_error(
 
     with pytest.raises(requests.exceptions.HTTPError):
         client.get(
-            reverse('investment-support-directory-search'), {'term': '123'}
+            reverse('investment-support-directory-search'), {'q': '123'}
         )
 
 
@@ -258,7 +258,7 @@ def test_company_search_api_success(
         'hits': {'total': 2}
     }
     response = client.get(
-        reverse('investment-support-directory-search'), {'term': '123'}
+        reverse('investment-support-directory-search'), {'q': '123'}
     )
 
     assert response.status_code == 200
@@ -277,7 +277,7 @@ def test_company_search_response_no_highlight(
     mock_search.return_value = api_response_search_200
 
     response = client.get(
-        reverse('investment-support-directory-search'), {'term': 'wolf'}
+        reverse('investment-support-directory-search'), {'q': 'wolf'}
     )
 
     assert b'this is a short summary' in response.content
@@ -293,7 +293,7 @@ def test_company_highlight_description(
     mock_search.return_value = api_response_search_description_highlight_200
 
     response = client.get(
-        reverse('investment-support-directory-search'), {'term': 'wolf'}
+        reverse('investment-support-directory-search'), {'q': 'wolf'}
     )
     expected = (
         b'<em>wolf</em> in sheep clothing description...'
@@ -312,7 +312,7 @@ def test_company_search_highlight_summary(
     mock_search.return_value = api_response_search_summary_highlight_200
 
     response = client.get(
-        reverse('investment-support-directory-search'), {'term': 'wolf'}
+        reverse('investment-support-directory-search'), {'q': 'wolf'}
     )
 
     assert b'<em>wolf</em> in sheep clothing summary.' in response.content

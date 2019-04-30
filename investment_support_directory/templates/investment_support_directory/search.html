@@ -21,19 +21,19 @@
             <div class="grid-row">  
                 <div class="column-two-thirds">
                     {% if pagination.paginator.count %}
-                        <h2 class="heading-medium">{{ pagination.paginator.count }} {{pagination.paginator.count|pluralize:'result,results'}} found {% if form.term.value %}for <mark>{{ form.term.value }}</mark>{% endif %}</h2>
+                        <h2 class="heading-medium">{{ pagination.paginator.count }} {{pagination.paginator.count|pluralize:'result,results'}} found {% if form.q.value %}for <mark>{{ form.q.value }}</mark>{% endif %}</h2>
                     {% else %}
                         <h2 class="heading-medium">&nbsp;</h2>
                     {% endif %}
                 </div>
                 <div class="column-one-third">
                     <span class="{{ field.css_classes }}" id="{{ field.id_for_label }}-container">
-                      {% if form.term.errors %}
-                        <div class="error-message">{{ form.term.errors }}</div>
+                      {% if form.q.errors %}
+                        <div class="error-message">{{ form.q.errors }}</div>
                       {% else %}
-                      <label for="{{ form.term.id_for_label }}">Your search</label>
+                      <label for="{{ form.q.id_for_label }}">Your search</label>
                       {% endif %}
-                      {{ form.term }}
+                      {{ form.q }}
                     </span>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                             {% for value in filters %}
                                 <mark>{{ value }}</mark>
                             {% endfor %}
-                            <a href="{% url 'investment-support-directory-search' %}?term={{ form.term.value }}" class="link">Clear all filters</a>
+                            <a href="{% url 'investment-support-directory-search' %}?q={{ form.q.value }}" class="link">Clear all filters</a>
                         </div>
                     {% endif %}
                 </section>

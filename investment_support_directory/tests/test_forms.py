@@ -29,7 +29,7 @@ def test_company_search_form_expertise_products_services():
 
 def test_company_search_form_page_present():
     form = forms.CompanySearchForm(data={
-        'term': 'foo',
+        'q': 'foo',
         'page': 5,
     })
     assert form.is_valid()
@@ -38,7 +38,7 @@ def test_company_search_form_page_present():
 
 def test_company_search_form_page_missing():
     form = forms.CompanySearchForm(data={
-        'term': 'foo',
+        'q': 'foo',
     })
     assert form.is_valid()
     assert form.cleaned_data['page'] == 1
@@ -49,7 +49,7 @@ def test_company_search_form_page_missing():
     {'expertise_regions': [choices.EXPERTISE_REGION_CHOICES[0][0]]},
     {'expertise_countries': [choices.COUNTRY_CHOICES[0][0]]},
     {'expertise_languages': [choices.EXPERTISE_LANGUAGES[0][0]]},
-    {'term': 'foo'},
+    {'q': 'foo'},
     {f'{prefix}_management': [forms.CHOICES_MANAGEMENT_CONSULTING[0]]},
     {f'{prefix}_human_resources': [forms.CHOICES_HUMAN_RESOURCES[0]]},
     {f'{prefix}_legal': [forms.CHOICES_LEGAL[0]]},
@@ -66,4 +66,4 @@ def test_minimum_viable_search_failure():
     form = forms.CompanySearchForm(data={})
 
     assert form.is_valid() is False
-    assert form.errors['term'] == [form.MESSAGE_MINIMUM_VIABLE_SEARCH]
+    assert form.errors['q'] == [form.MESSAGE_MINIMUM_VIABLE_SEARCH]
