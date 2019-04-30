@@ -30,6 +30,7 @@
 - Removed application-level IP filtering (replaced with routing solution at platform level).
 - Added fallback cache for API
 - GA360 changes FAB search to use q instead of term. Redirect also in place for backwards compatibility.
+- GA360 change isd search to use q instead of term.
 
 ### Fixed bugs:
 
