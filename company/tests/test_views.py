@@ -617,41 +617,11 @@ def test_company_profile_url_routing_404(name, number, slug):
         assert reverse(name, kwargs=kwargs)
 
 
-def test_contact_company_sent_no_referer(client):
+def test_contact_company_sent(client):
     url = reverse(
         'contact-company-sent', kwargs={'company_number': '01111111'}
     )
-    expected_url = reverse(
-        'contact-company', kwargs={'company_number': '01111111'}
-    )
-    response = client.get(url, {})
-
-    assert response.status_code == 302
-    assert response.url == expected_url
-
-
-def test_contact_company_sent_incorrect_referer(client):
-    url = reverse(
-        'contact-company-sent', kwargs={'company_number': '01111111'}
-    )
-    expected_url = reverse(
-        'contact-company', kwargs={'company_number': '01111111'}
-    )
-    referer_url = 'http://www.googe.com'
-    response = client.get(url, {}, HTTP_REFERER=referer_url)
-
-    assert response.status_code == 302
-    assert response.url == expected_url
-
-
-def test_contact_company_sent_correct_referer(client):
-    url = reverse(
-        'contact-company-sent', kwargs={'company_number': '01111111'}
-    )
-    referer_url = reverse(
-        'contact-company', kwargs={'company_number': '01111111'}
-    )
-    response = client.get(url, {}, HTTP_REFERER=referer_url)
+    response = client.get(url)
 
     assert response.status_code == 200
     assert response.template_name == [

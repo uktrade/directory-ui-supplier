@@ -158,16 +158,7 @@ class ContactView(
         return super().form_valid(form)
 
 
-
 class ContactSuccessView(
-    FeatureFlagMixin, core.mixins.SpecificRefererRequiredMixin,
-    CompanyProfileMixin, CountryDisplayMixin, TemplateView
+    FeatureFlagMixin, CompanyProfileMixin, CountryDisplayMixin, TemplateView
 ):
     template_name = 'investment_support_directory/sent.html'
-
-    @property
-    def expected_referer_url(self):
-        return reverse(
-            'investment-support-directory-company-contact',
-            kwargs={'company_number': self.kwargs['company_number']}
-        )

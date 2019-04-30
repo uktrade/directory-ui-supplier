@@ -189,18 +189,9 @@ class ContactCompanyView(CompanyProfileMixin, CountryDisplayMixin, FormView):
         )
 
 
-class ContactCompanySentView(
-    core.mixins.SpecificRefererRequiredMixin, CompanyProfileMixin, TemplateView
-):
+class ContactCompanySentView(CompanyProfileMixin, TemplateView):
 
     template_name = 'company-contact-success.html'
-
-    @property
-    def expected_referer_url(self):
-        return reverse(
-            'contact-company',
-            kwargs={'company_number': self.kwargs['company_number']}
-        )
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(company=self.company, **kwargs)

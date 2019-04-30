@@ -26,6 +26,14 @@ def mock_retrieve_company(retrieve_profile_data):
     reverse(
         'investment-support-directory-profile',
         kwargs={'company_number': 'ST121', 'slug': 'foo'}
+    ),
+    reverse(
+        'investment-support-directory-company-contact',
+        kwargs={'company_number': 'ST121'}
+    ),
+    reverse(
+        'investment-support-directory-company-contact-sent',
+        kwargs={'company_number': 'ST121'}
     )
 ))
 def test_feature_flag(url, client, settings):
@@ -316,3 +324,52 @@ def test_company_search_highlight_summary(
     )
 
     assert b'<em>wolf</em> in sheep clothing summary.' in response.content
+
+
+@mock.patch.object(forms.ContactCompanyForm, 'save')
+def test_contact_company(
+    mock_save, client, settings, captcha_stub, retrieve_profile_data
+):
+    url = reverse(
+        'investment-support-directory-company-contact',
+        kwargs={'company_number': 'ST121'}
+    )
+    data = {
+        'given_name': 'Jim',
+        'family_name': 'Example',
+        'company_name': 'Example corp',
+        'email_address': 'jim@example.com',
+        'sector': 'AEROSPACE',
+        'subject': 'Hello',
+        'body': 'foo bar bax',
+        'has_contact': True,
+        'terms': True,
+        'g-recaptcha-response': captcha_stub,
+    }
+    response = client.post(url, data)
+    assert response.status_code == 302
+    assert response.url == reverse(
+        'investment-support-directory-company-contact-sent',
+        kwargs={'company_number': 'ST121'}
+    )
+
+    assert mock_save.call_count == 1
+    assert mock_save.call_args == mock.call(
+        email_address=retrieve_profile_data['email_address'],
+        form_url=url,
+        sender={'email_address': 'jim@example.com', 'country_code': None},
+        spam_control={'contents': ['Hello', 'foo bar bax']},
+        template_id=settings.CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID,
+    )
+
+
+def test_contact_company_success(client):
+    url = reverse(
+        'investment-support-directory-company-contact-sent',
+        kwargs={'company_number': '01111111'}
+    )
+
+    response = client.get(url)
+
+    assert response.status_code == 200
+    assert response.template_name == [views.ContactSuccessView.template_name]
