@@ -2,6 +2,7 @@ from urllib.parse import urlencode
 
 from directory_api_client.client import api_client
 from directory_components.mixins import CountryDisplayMixin
+import directory_forms_api_client.helpers
 
 from django.conf import settings
 from django.core.paginator import EmptyPage, Paginator
@@ -21,6 +22,19 @@ class FeatureFlagMixin(core.mixins.NotFoundOnDisabledFeature):
     @property
     def flag(self):
         return settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON']
+
+
+class CompanyProfileMixin:
+    @cached_property
+    def company(self):
+        return helpers.get_company_profile(self.kwargs['company_number'])
+
+    def get_context_data(self, **kwargs):
+        company = helpers.CompanyParser(self.company)
+        return super().get_context_data(
+            company=company.serialize_for_template(),
+            **kwargs
+        )
 
 
 class HomeView(FeatureFlagMixin, CountryDisplayMixin, FormView):
@@ -95,7 +109,10 @@ class CompanySearchView(
         return redirect(url)
 
 
-class ProfileView(FeatureFlagMixin, CountryDisplayMixin, TemplateView):
+class ProfileView(
+    FeatureFlagMixin, CompanyProfileMixin, CountryDisplayMixin,
+    TemplateView
+):
     template_name = 'investment_support_directory/profile.html'
 
     def get_canonical_url(self):
@@ -110,13 +127,47 @@ class ProfileView(FeatureFlagMixin, CountryDisplayMixin, TemplateView):
             return redirect(to=self.get_canonical_url())
         return super().get(*args, **kwargs)
 
-    @cached_property
-    def company(self):
-        return helpers.get_company_profile(self.kwargs['company_number'])
 
-    def get_context_data(self, **kwargs):
-        company = helpers.CompanyParser(self.company)
-        return super().get_context_data(
-            company=company.serialize_for_template(),
-            **kwargs
+class ContactView(
+    FeatureFlagMixin, CompanyProfileMixin, CountryDisplayMixin, FormView
+):
+    form_class = forms.ContactCompanyForm
+    template_name = 'investment_support_directory/contact.html'
+
+    def get_success_url(self):
+        return reverse(
+            'investment-support-directory-company-contact-sent',
+            kwargs={'company_number': self.kwargs['company_number']}
+        )
+
+    def form_valid(self, form):
+        sender = directory_forms_api_client.helpers.Sender(
+            email_address=form.cleaned_data['email_address'],
+        )
+        spam_control = directory_forms_api_client.helpers.SpamControl(
+            contents=[form.cleaned_data['subject'], form.cleaned_data['body']]
+        )
+        response = form.save(
+            template_id=settings.CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID,
+            email_address=self.company['email_address'],
+            form_url=self.request.path,
+            sender=sender,
+            spam_control=spam_control,
+        )
+        response.raise_for_status()
+        return super().form_valid(form)
+
+
+
+class ContactSuccessView(
+    FeatureFlagMixin, core.mixins.SpecificRefererRequiredMixin,
+    CompanyProfileMixin, CountryDisplayMixin, TemplateView
+):
+    template_name = 'investment_support_directory/sent.html'
+
+    @property
+    def expected_referer_url(self):
+        return reverse(
+            'investment-support-directory-company-contact',
+            kwargs={'company_number': self.kwargs['company_number']}
         )

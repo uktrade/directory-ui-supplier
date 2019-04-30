@@ -78,7 +78,7 @@ def get_paginator_url(filters):
 def get_filters_labels(filters):
     labels = []
     for name, values in filters.items():
-        if name not in ['term', 'page']:
+        if name not in ['q', 'page']:
             if name == 'expertise_languages':
                 languages = dict(choices.EXPERTISE_LANGUAGES)
                 labels += [

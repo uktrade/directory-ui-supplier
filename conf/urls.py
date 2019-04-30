@@ -164,6 +164,16 @@ urlpatterns = [
         name='investment-support-directory-search'
     ),
     url(
+        r'^investment-support-directory/(?P<company_number>[a-zA-Z0-9]+)/contact/$',
+        investment_support_directory.views.ContactView.as_view(),
+        name='investment-support-directory-company-contact',
+    ),
+    url(
+        r'^investment-support-directory/(?P<company_number>[a-zA-Z0-9]+)/sent/$',
+        investment_support_directory.views.ContactSuccessView.as_view(),
+        name='investment-support-directory-company-contact-sent',
+    ),
+    url(
         (
             r'^investment-support-directory/'
             r'(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$'

@@ -1,8 +1,12 @@
+from captcha.fields import ReCaptchaField
 from directory_constants import choices
 from directory_components import forms, fields, widgets
+from directory_forms_api_client.forms import GovNotifyActionMixin
+from directory_validators.common import not_contains_url_or_email
 
 from django.forms import ValidationError
-from django.forms.widgets import HiddenInput, TextInput
+from django.forms.widgets import HiddenInput, TextInput, Textarea
+from django.utils.html import mark_safe
 
 from investment_support_directory.fields import IntegerField
 
@@ -228,3 +232,86 @@ class CompanySearchForm(forms.Form):
         )
         if not searched_fields.intersection(minimum_vialble_search_fields):
             raise ValidationError({'q': self.MESSAGE_MINIMUM_VIABLE_SEARCH})
+
+
+class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
+
+    TERMS_CONDITIONS_LABEL = (
+        '<p>The Department for International Trade (DIT) has used reasonable '
+        'endeavours to ensure that the members of the Directory are suitably '
+        'qualified and that the information in this Directory is accurate and '
+        'up to date. No representation or warranty, express or implied, is '
+        'made or given by the DIT as to the character or professional '
+        'ability of any member of the Directory or any goods or services a '
+        'member may offer. No liability is accepted by DIT for any loss or '
+        'damage (whether consequential or otherwise) which may arise out of '
+        'or in connection with any goods or services provided by any member '
+        'of the Directory. Enquirers using the Directory should conduct their '
+        'own research before engaging any of its members. Membership of the '
+        'Directory does not represent an association with DIT and being '
+        'listed in the Directory does not create legal relations between the '
+        'member and DIT.</p>'
+        '<p>The UK Service Provider that you are contacting has agreed to an '
+        'initial one-hour meeting free of charge for client referrals from '
+        'the directory.</p>'
+        '<p>By sending your details you can confirm that you accept our terms '
+        'and conditions.</p>'
+    )
+    TERMS_CONDITIONS_MESSAGE = (
+        'Tick the box to confirm you agree to the terms and conditions.'
+    )
+    given_name = fields.CharField(
+        label='Given name',
+        max_length=255,
+        validators=[not_contains_url_or_email],
+    )
+    family_name = fields.CharField(
+        label='Family name',
+        max_length=255,
+        validators=[not_contains_url_or_email],
+    )
+    company_name = fields.CharField(
+        label='Your organisation name',
+        max_length=255,
+        validators=[not_contains_url_or_email],
+    )
+    email_address = fields.EmailField(
+        label='Email address',
+    )
+    sector = fields.ChoiceField(
+        label='Industry',
+        choices=(
+            [['', 'Please select your industry']] + list(choices.INDUSTRIES)
+        ),
+    )
+    subject = fields.CharField(
+        label='Enter a subject line for your message',
+        max_length=200,
+        validators=[not_contains_url_or_email],
+    )
+    body = fields.CharField(
+        label='Enter your message to the UK company',
+        help_text='Maximum 1000 characters.',
+        max_length=1000,
+        widget=Textarea,
+        validators=[not_contains_url_or_email],
+    )
+    has_contact = fields.ChoiceField(
+        label=(
+            'Do you currently have a contact at Department of international '
+            'trade'
+        ),
+        widget=widgets.RadioSelect(
+            use_nice_ids=True,
+            attrs={'id': 'radio-one'}
+        ),
+        choices=(
+            (True, 'Yes'),
+            (False, 'No'),
+        )
+    )
+    terms = fields.BooleanField(
+        label=mark_safe(TERMS_CONDITIONS_LABEL),
+        error_messages={'required': TERMS_CONDITIONS_MESSAGE},
+    )
+    captcha = ReCaptchaField(label='')
