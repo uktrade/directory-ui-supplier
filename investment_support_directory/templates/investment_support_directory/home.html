@@ -12,12 +12,12 @@
         <div class="container">
             {% breadcrumbs left_url='/' left_label='Home' right_label='UK support directory' %}
             <div class="width-two-thirds">
-                <h1 class="heading-xlarge margin-bottom-0">Find a UK business</h1>              
-                <p class="hero-subtitle margin-bottom-45">Use the UK Investment Support directory to find experienced businesses that have proven experience and skills in helping foreign firms establish or expand in the UK.</p>  
+                <h1 class="heading-xlarge margin-bottom-0">Find a UK specialist</h1>              
+                <p class="hero-subtitle margin-bottom-45">Search the UK Investment Support Directory to find specialists with experience in helping businesses set up or expand in the UK.</p>  
             </div>
             <form method="post">
                 {% render_form form %}
-                <button class="button">Find a UK business</button>
+                <button class="button">Find a UK specialist</button>
             </form>
         </div>
     </section>
@@ -32,15 +32,15 @@
                     <ul>
                         <li>
                             <h3 class="heading-medium">Search for experienced advice</h3>
-                            <p>The UK Investment Support Directory is a collection of businesses that have proven skills and experience in helping foreign companies establish or expand in the UK.</p>
+                            <p>The UK Investment Support Directory is a collection of companies that have skills and experience in helping overseas businesses establish or expand in the UK.</p>
                         </li>
                         <li>
                             <h3 class="heading-medium">Find the right help</h3>
-                            <p>You can search the directory to find the right specialist to meet your needs. For example, find businesses with expertise and knowledge of different UK regions, in UK tax and employment law, or in UK visas and immigration.</p>
+                            <p>You can search the directory to find the right specialist to meet your needs. For example, find businesses with experience in different UK regions, UK tax and employment law, visas and immigration, or fluency in other languages.</p>
                         </li>
                         <li>
                             <h3 class="heading-medium">Get in touch</h3>
-                            <p>When you’ve found your specialist, use the contact option in this service to get an hour’s free advice.</p>
+                            <p>When you’ve found your specialist, contact them through this service. You’ll get your first hour’s consultation for free.</p>
                         </li>
                     </ul>
                 </div>
@@ -54,7 +54,7 @@
         <div class="container">
             <div class="width-one-half">
                 <h2 class="heading-large">How UK businesses can help</h2>
-                <p id="create-business-profile-label-bottom">These are some of the specialist skills and knowledge our experienced businesses can provide. </p>
+                <p id="create-business-profile-label-bottom">Search for products and services that can help your business set up or expand in the UK.</p>
             </div>
             <div class="grid-row">
                 <ul class="column-one-third">
@@ -84,13 +84,13 @@
                     {% endfor %}
                 </ul>
                 <ul class="column-one-third">
-                    <h3 class="heading-medium">Publicity</h3>
+                    <h3 class="heading-medium">Publicity and communications</h3>
                     {% for choice in CHOICES_PUBLICITY %}
                         <li><a href="{% url 'investment-support-directory-search' %}?expertise_products_services_publicity={{ choice }}" class="link">{{ choice }}</a></li>
                     {% endfor %}
                 </ul>
                 <ul class="column-one-third">
-                    <h3 class="heading-medium">Further services</h3>
+                    <h3 class="heading-medium">Business support</h3>
                     {% for choice in CHOICES_FURTHER_SERVICES %}
                         <li><a href="{% url 'investment-support-directory-search' %}?expertise_products_services_further_services={{ choice }}" class="link">{{ choice }}</a></li>
                     {% endfor %}
