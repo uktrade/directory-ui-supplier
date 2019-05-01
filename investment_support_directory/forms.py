@@ -74,7 +74,10 @@ class CompanyHomeSearchForm(forms.Form):
             attrs={
                 'autofocus': 'autofocus',
                 'dir': 'auto',
-                'placeholder': 'Enter the name of the skills or service you’re looking for'
+                'placeholder': (
+                    'Enter the name of the skills or service '
+                    'you’re looking for'
+                )
             }
         ),
     )
