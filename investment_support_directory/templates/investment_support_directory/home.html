@@ -84,13 +84,13 @@
                     {% endfor %}
                 </ul>
                 <ul class="column-one-third">
-                    <h3 class="heading-medium">Publicity</h3>
+                    <h3 class="heading-medium">Publicity and communications</h3>
                     {% for choice in CHOICES_PUBLICITY %}
                         <li><a href="{% url 'investment-support-directory-search' %}?expertise_products_services_publicity={{ choice }}" class="link">{{ choice }}</a></li>
                     {% endfor %}
                 </ul>
                 <ul class="column-one-third">
-                    <h3 class="heading-medium">Further services</h3>
+                    <h3 class="heading-medium">Business support</h3>
                     {% for choice in CHOICES_FURTHER_SERVICES %}
                         <li><a href="{% url 'investment-support-directory-search' %}?expertise_products_services_further_services={{ choice }}" class="link">{{ choice }}</a></li>
                     {% endfor %}

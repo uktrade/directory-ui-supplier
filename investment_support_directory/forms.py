@@ -216,7 +216,7 @@ class CompanySearchForm(forms.Form):
         products_services = []
         for field_name in product_services_fields:
             if field_name in self.cleaned_data:
-                products_services += self.cleaned_data[field_name]
+                products_services += self.cleaned_data.pop(field_name)
         self.cleaned_data['expertise_products_services'] = products_services
 
         minimum_vialble_search_fields = {
@@ -237,25 +237,22 @@ class CompanySearchForm(forms.Form):
 class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
 
     TERMS_CONDITIONS_LABEL = (
-        '<p>The Department for International Trade (DIT) has used reasonable '
-        'endeavours to ensure that the members of the Directory are suitably '
-        'qualified and that the information in this Directory is accurate and '
-        'up to date. No representation or warranty, express or implied, is '
-        'made or given by the DIT as to the character or professional '
-        'ability of any member of the Directory or any goods or services a '
-        'member may offer. No liability is accepted by DIT for any loss or '
-        'damage (whether consequential or otherwise) which may arise out of '
-        'or in connection with any goods or services provided by any member '
-        'of the Directory. Enquirers using the Directory should conduct their '
-        'own research before engaging any of its members. Membership of the '
-        'Directory does not represent an association with DIT and being '
-        'listed in the Directory does not create legal relations between the '
-        'member and DIT.</p>'
-        '<p>The UK Service Provider that you are contacting has agreed to an '
-        'initial one-hour meeting free of charge for client referrals from '
-        'the directory.</p>'
-        '<p>By sending your details you can confirm that you accept our terms '
-        'and conditions.</p>'
+        '<p>I agree to the great.gov.uk terms and conditions and I '
+        'understand that:</p>'
+        '<ul class="list list-bullet">'
+        '<li>the Department for International Trade (DIT) has reasonably '
+        'tried to ensure that businesses listed in the UK Investment Support '
+        'Directory are appropriately qualified and that the information in '
+        'this directory is accurate and up to date</li>'
+        '<li>DIT is not endorsing the character, ability, goods or services '
+        'of members of the directory</li>'
+        '<li>there is no legal relationship between DIT and directory '
+        'members</li>'
+        '<li>DIT is not liable for any direct or indirect loss or damage that '
+        'might happen after a directory member provides a good or service</li>'
+        '<li>directory members will give 1 hour’s free consultation to '
+        'businesses that contact them through this service</li>'
+        '</ul>'
     )
     TERMS_CONDITIONS_MESSAGE = (
         'Tick the box to confirm you agree to the terms and conditions.'
