@@ -202,7 +202,7 @@ def test_company_search_pagination_param(
         expertise_financial=None,
         expertise_industries=['AEROSPACE'],
         expertise_languages=[],
-        expertise_products_services=[],
+        expertise_products_services_labels=[],
         expertise_regions=[],
         page=1,
         size=10,

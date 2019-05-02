@@ -18,7 +18,7 @@ def test_company_search_form_expertise_products_services():
     })
 
     assert form.is_valid()
-    assert form.cleaned_data['expertise_products_services'] == [
+    assert form.cleaned_data['expertise_products_services_labels'] == [
         forms.CHOICES_MANAGEMENT_CONSULTING[0],
         forms.CHOICES_HUMAN_RESOURCES[0],
         forms.CHOICES_LEGAL[0],
