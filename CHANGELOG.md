@@ -4,13 +4,13 @@
 
 ### Implemented enhancements
 
-- [[CMS-1261]](https://uktrade.atlassian.net/browse/CMS-1261) Fixed missing search icon on industry page
 - [[TT-1328]](https://uktrade.atlassian.net/browse/CMS-1328) Added Investment Support Directory profile.
 - [[TT-1352]](https://uktrade.atlassian.net/browse/CMS-1328) Added Investment Support Directory search.
 - [[TT-1320]](https://uktrade.atlassian.net/browse/TT-1320) Added Investment Support Directory contact.
 
 ### Fixed bugs:
 
+- [[CMS-1261]](https://uktrade.atlassian.net/browse/CMS-1261) Fixed missing search icon on industry page
 - [[CMS-1256]](https://uktrade.atlassian.net/browse/CMS-1256) Fix mobile vertical spacing in footer
 - [[CMS-1262]](https://uktrade.atlassian.net/browse/CMS-1262) Fix mobile column spacing on industries list page
 - [[TT-1339]](https://uktrade.atlassian.net/browse/TT-1339) Display keywords added via new profile "other" expertise interface
