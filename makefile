@@ -27,7 +27,7 @@ django_webserver:
 DEBUG_SET_ENV_VARS := \
 	export PORT=8005; \
 	export SECRET_KEY=debug; \
-	export DEBUG=true ;\
+	export DEBUG=true; \
 	export DIRECTORY_API_CLIENT_API_KEY=debug; \
 	export DIRECTORY_API_CLIENT_BASE_URL=http://api.trade.great:8000; \
 	export RECAPTCHA_PUBLIC_KEY=$$DIRECTORY_UI_SUPPLIER_RECAPTCHA_PUBLIC_KEY; \
@@ -60,7 +60,8 @@ DEBUG_SET_ENV_VARS := \
 	export DIRECTORY_CONSTANTS_URL_GREAT_INTERNATIONAL=http://international.trade.great:8012/international/; \
 	export CONTACT_INDUSTRY_AGENT_EMAIL_ADDRESS=buying@example.com; \
 	export URL_PREFIX_DOMAIN=http://supplier.trade.great:8005; \
-	export FEATURE_INVESTMENT_SUPPORT_DIRECTORY_ENABLED=true
+	export FEATURE_INVESTMENT_SUPPORT_DIRECTORY_ENABLED=true; \
+	export LANGUAGE_COOKIE_DOMAIN=.trade.great
 
 TEST_SET_ENV_VARS := \
 	export DIRECTORY_FORMS_API_API_KEY=debug; \

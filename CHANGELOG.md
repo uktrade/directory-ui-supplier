@@ -14,6 +14,7 @@
 - [[CMS-1262]](https://uktrade.atlassian.net/browse/CMS-1262) Fix mobile column spacing on industries list page
 - [[TT-1339]](https://uktrade.atlassian.net/browse/TT-1339) Display keywords added via new profile "other" expertise interface
 - [[TT-1345]](https://uktrade.atlassian.net/browse/TT-1345) Fixed position of logos on ISD profile.
+- [[CMS-1395]](https://uktrade.atlassian.net/browse/CMS-1395) Fix language cookie name and domain to be the same across all our services.
 
 ## [2019.04.25](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.04.25)
 
