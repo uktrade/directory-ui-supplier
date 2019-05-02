@@ -4,6 +4,7 @@
 
 ### Implemented enhancements
 
+- [[CMS-1261]](https://uktrade.atlassian.net/browse/CMS-1261) Fixed missing search icon on industry page
 - [[TT-1328]](https://uktrade.atlassian.net/browse/CMS-1328) Added Investment Support Directory profile.
 - [[TT-1352]](https://uktrade.atlassian.net/browse/CMS-1328) Added Investment Support Directory search.
 - [[TT-1320]](https://uktrade.atlassian.net/browse/TT-1320) Added Investment Support Directory contact.
