@@ -2,6 +2,10 @@
 
 ## Pre-release
 
+## [2019.05.03](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.03)
+
+[Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.04.25...2019.05.03)
+
 ### Implemented enhancements
 
 - [[TT-1328]](https://uktrade.atlassian.net/browse/CMS-1328) Added Investment Support Directory profile.
