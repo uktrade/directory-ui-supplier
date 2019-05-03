@@ -220,14 +220,16 @@ class CompanySearchForm(forms.Form):
         for field_name in product_services_fields:
             if field_name in self.cleaned_data:
                 products_services += self.cleaned_data[field_name]
-        self.cleaned_data['expertise_products_services'] = products_services
+        self.cleaned_data['expertise_products_services_labels'] = (
+            products_services
+        )
 
         minimum_vialble_search_fields = {
             'expertise_industries',
             'expertise_regions',
             'expertise_countries',
             'expertise_languages',
-            'expertise_products_services',
+            'expertise_products_services_labels',
             'q',
         }
         searched_fields = set(

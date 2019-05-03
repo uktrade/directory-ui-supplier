@@ -94,7 +94,9 @@ class CompanySearchView(
             expertise_countries=data.get('expertise_countries'),
             expertise_languages=data.get('expertise_languages'),
             expertise_financial=data.get('expertise_financial'),
-            expertise_products_services=data.get('expertise_products_services')
+            expertise_products_services_labels=(
+                data.get('expertise_products_services_labels')
+            )
         )
         response.raise_for_status()
         formatted = helpers.get_results_from_search_response(response)
