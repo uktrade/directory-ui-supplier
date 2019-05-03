@@ -87,6 +87,24 @@ def test_get_paginator_url():
     )
 
 
+def test_get_paginator_url_multiple_filters():
+    filters = {
+        'expertise_products_services': ['EPS1_1', 'EPS1 1'],
+        'expertise_languages': 'english',
+        'expertise_countries': ['GB', 'fr'],
+    }
+
+    encoded_url = (
+            '?expertise_products_services=EPS1_1' +
+            '&expertise_products_services=EPS1+1&expertise_languages' +
+            '=english&expertise_countries=GB&expertise_countries=fr'
+    )
+
+    assert helpers.get_paginator_url(filters) == (
+            reverse('investment-support-directory-search') + encoded_url
+    )
+
+
 def test_get_filters_labels():
 
     filters = {
