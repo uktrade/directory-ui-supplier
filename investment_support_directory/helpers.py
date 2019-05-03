@@ -71,7 +71,7 @@ def get_paginator_url(filters):
         key: value
         for key, value in filters.items()
         if value and key != 'page'
-    })
+    }, doseq=True)
     return f'{url}?{querystring}'
 
 
