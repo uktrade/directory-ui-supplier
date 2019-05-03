@@ -1,5 +1,5 @@
 from captcha.fields import ReCaptchaField
-from directory_constants import choices
+from directory_constants import choices, expertise
 from directory_components import forms, fields, widgets
 from directory_forms_api_client.forms import GovNotifyActionMixin
 from directory_validators.common import not_contains_url_or_email
@@ -9,64 +9,6 @@ from django.forms.widgets import HiddenInput, TextInput, Textarea
 from django.utils.html import mark_safe
 
 from investment_support_directory.fields import IntegerField
-
-
-CHOICES_FINANCIAL = (
-    'Opening bank accounts',
-    'Accounting and Tax (including registration for VAT and PAYE)',
-    'Insurance',
-    'Raising Capital',
-    'Regulatory support',
-    'Mergers and Acquisitions',
-)
-
-CHOICES_MANAGEMENT_CONSULTING = (
-    'Business development',
-    'Product safety regulation and compliance',
-    'Commercial/pricing strategy',
-    'Workforce development',
-    'Strategy & long-term planning',
-    'Risk consultation',
-)
-
-CHOICES_HUMAN_RESOURCES = (
-    'Staff management & progression',
-    (
-        'Onboarding, including new starter support and contracts '
-        'of employment'
-    ),
-    'Payroll',
-    'Salary benchmarking and employee benefits ',
-    'Succession planning',
-    'Employment & talent research',
-    'Sourcing and Hiring',
-)
-
-CHOICES_LEGAL = (
-    'Company incorporation',
-    'Employment',
-    'Immigration',
-    'Land use planning',
-    'Intellectual property',
-    'Data Protection and Information Assurance',
-)
-
-CHOICES_PUBLICITY = (
-    'Public Relations',
-    'Branding',
-    'Social Media',
-    'Public Affairs',
-    'Advertising',
-    'Marketing',
-)
-
-CHOICES_FURTHER_SERVICES = (
-    'Business relocation',
-    'Planning consultants',
-    'Facilities (water, wifi, electricity)',
-    'Translation services',
-    'Staff and family relocation including schooling for children',
-)
 
 
 class CompanyHomeSearchForm(forms.Form):
@@ -149,7 +91,7 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-expertise-products-services-financial'},
             use_nice_ids=True,
         ),
-        choices=[(item, item) for item in CHOICES_FINANCIAL],
+        choices=choices.EXPERTISE_FINANCIAL,
         required=False,
     )
     expertise_products_services_management = fields.MultipleChoiceField(
@@ -158,7 +100,7 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-products-services-management-expertise'},
             use_nice_ids=True,
         ),
-        choices=[(item, item) for item in CHOICES_MANAGEMENT_CONSULTING],
+        choices=choices.EXPERTISE_MANAGEMENT_CONSULTING,
         required=False,
     )
     expertise_products_services_human_resources = fields.MultipleChoiceField(
@@ -167,7 +109,7 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-products-services-human-expertise'},
             use_nice_ids=True,
         ),
-        choices=[(item, item) for item in CHOICES_HUMAN_RESOURCES],
+        choices=choices.EXPERTISE_HUMAN_RESOURCES,
         required=False,
     )
     expertise_products_services_legal = fields.MultipleChoiceField(
@@ -176,7 +118,7 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-products-services-legal-expertise'},
             use_nice_ids=True,
         ),
-        choices=[(item, item) for item in CHOICES_LEGAL],
+        choices=choices.EXPERTISE_LEGAL,
         required=False,
     )
     expertise_products_services_publicity = fields.MultipleChoiceField(
@@ -185,7 +127,7 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-products-services-publicity-expertise'},
             use_nice_ids=True,
         ),
-        choices=[(item, item) for item in CHOICES_PUBLICITY],
+        choices=choices.EXPERTISE_PUBLICITY,
         required=False,
     )
     expertise_products_services_further_services = fields.MultipleChoiceField(
@@ -194,7 +136,7 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-products-services-further-expertise'},
             use_nice_ids=True,
         ),
-        choices=[(item, item) for item in CHOICES_FURTHER_SERVICES],
+        choices=choices.EXPERTISE_BUSINESS_SUPPORT,
         required=False,
     )
 
