@@ -1,5 +1,5 @@
 from captcha.fields import ReCaptchaField
-from directory_constants import choices, expertise
+from directory_constants import choices
 from directory_components import forms, fields, widgets
 from directory_forms_api_client.forms import GovNotifyActionMixin
 from directory_validators.common import not_contains_url_or_email

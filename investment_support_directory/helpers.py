@@ -84,6 +84,8 @@ def get_filters_labels(filters):
                 labels += [
                     languages[item] for item in values if item in languages
                 ]
+            elif name.startswith('expertise_products_services_'):
+                labels += values
             else:
                 for value in values:
                     labels.append(value.replace('_', ' ').title())
