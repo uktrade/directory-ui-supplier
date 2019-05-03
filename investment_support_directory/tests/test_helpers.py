@@ -96,8 +96,8 @@ def test_get_paginator_url_multiple_filters():
 
     encoded_url = (
         '?expertise_products_services=EPS1_1&expertise_products_services' +
-        '&expertise_products_services=EPS1+1&expertise_languages=english&' +
-        '=english&expertise_countries=GB&expertise_countries=fr'
+        '&expertise_products_services=EPS1+1&expertise_languages=english' +
+        '&=english&expertise_countries=GB&expertise_countries=fr'
     )
 
     assert helpers.get_paginator_url(filters) == (
