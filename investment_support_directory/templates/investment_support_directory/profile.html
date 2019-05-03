@@ -20,7 +20,7 @@
                     <img alt="{{ company.name }}" src="{{ company.logo }}" />
                 {% endif %}
             </section>
-            {% url 'contact-company' company_number=company.number as contact_url %}
+            {% url 'investment-support-directory-company-contact' company_number=company.number as contact_url %}
             <section id="contact-company-container">
                 <span>
                     <img alt="" height="54px" src="{% static 'core/images/clock.png' %}" width="54px" />

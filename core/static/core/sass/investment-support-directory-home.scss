@@ -1,0 +1,65 @@
+@import 'partials/reset';
+@import 'partials/base';
+@import 'partials/colours';
+
+.breadcrumbs {
+  padding-top: 0;
+  padding-bottom: 30px;
+  a {
+    color: $white;
+  }
+}
+
+#hero {
+  form {
+    background-color: $offwhite;
+    padding: 30px;
+    margin-bottom: 60px;
+
+    .form-group {
+      background-color: white;
+      display: inline-block;
+      margin-bottom: 0;
+      width: 75%;
+      input {
+        width: 100%;
+      }
+    }
+
+    button {
+      width: 20%;
+      margin-left: 15px;
+    }
+
+    input, button {
+      height: 60px;
+      vertical-align: bottom;
+    }
+
+  }
+}
+
+
+#benefits {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  h2 {
+    margin-bottom: 15px;
+    margin-top: 0;
+  }
+  ul {
+    li {
+      h3 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+#bottom {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  h2 {
+    margin-top: 0;
+  }
+}

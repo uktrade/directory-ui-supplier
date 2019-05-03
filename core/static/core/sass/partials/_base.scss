@@ -11,20 +11,12 @@ body {
   font-family: 'Roboto', arial, helvetica, sans-serif;
 }
 
-#content {
-  padding-top: 0;
-}
-
-.container {
-  max-width: 1200px;
-}
-
 body section {
   overflow: visible;
 }
 
 @media (max-width: 641px) {
-  .container {
+  #content .container {
     margin: 0 15px;
     padding: 0 15px;
   }

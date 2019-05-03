@@ -9,45 +9,6 @@ from django.core.urlresolvers import reverse, NoReverseMatch
 from company import helpers, views
 
 
-@pytest.fixture
-def api_response_200():
-    response = requests.Response()
-    response.status_code = http.client.OK
-    return response
-
-
-@pytest.fixture
-def api_response_404(*args, **kwargs):
-    response = requests.Response()
-    response.status_code = http.client.NOT_FOUND
-    return response
-
-
-@pytest.fixture
-def api_response_search_description_highlight_200(
-    api_response_200, search_results
-):
-    search_results['hits']['hits'][0]['highlight'] = {
-        'description': [
-            '<em>wolf</em> in sheep clothing description',
-            'to the max <em>wolf</em>.'
-        ]
-    }
-    api_response_200.json = lambda: search_results
-    return api_response_200
-
-
-@pytest.fixture
-def api_response_search_summary_highlight_200(
-    api_response_200, search_results
-):
-    search_results['hits']['hits'][0]['highlight'] = {
-        'summary': ['<em>wolf</em> in sheep clothing summary.']
-    }
-    api_response_200.json = lambda: search_results
-    return api_response_200
-
-
 def test_public_profile_different_slug_redirected(
     client, retrieve_profile_data
 ):
@@ -656,41 +617,11 @@ def test_company_profile_url_routing_404(name, number, slug):
         assert reverse(name, kwargs=kwargs)
 
 
-def test_contact_company_sent_no_referer(client):
+def test_contact_company_sent(client):
     url = reverse(
         'contact-company-sent', kwargs={'company_number': '01111111'}
     )
-    expected_url = reverse(
-        'contact-company', kwargs={'company_number': '01111111'}
-    )
-    response = client.get(url, {})
-
-    assert response.status_code == 302
-    assert response.url == expected_url
-
-
-def test_contact_company_sent_incorrect_referer(client):
-    url = reverse(
-        'contact-company-sent', kwargs={'company_number': '01111111'}
-    )
-    expected_url = reverse(
-        'contact-company', kwargs={'company_number': '01111111'}
-    )
-    referer_url = 'http://www.googe.com'
-    response = client.get(url, {}, HTTP_REFERER=referer_url)
-
-    assert response.status_code == 302
-    assert response.url == expected_url
-
-
-def test_contact_company_sent_correct_referer(client):
-    url = reverse(
-        'contact-company-sent', kwargs={'company_number': '01111111'}
-    )
-    referer_url = reverse(
-        'contact-company', kwargs={'company_number': '01111111'}
-    )
-    response = client.get(url, {}, HTTP_REFERER=referer_url)
+    response = client.get(url)
 
     assert response.status_code == 200
     assert response.template_name == [

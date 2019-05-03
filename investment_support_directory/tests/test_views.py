@@ -2,11 +2,12 @@ from unittest import mock
 
 from directory_api_client.client import api_client
 import pytest
+import requests
 
 from django.urls import reverse
 
 from core.tests.helpers import create_response
-from investment_support_directory import helpers
+from investment_support_directory import helpers, forms, views
 
 
 @pytest.fixture(autouse=True)
@@ -20,10 +21,19 @@ def mock_retrieve_company(retrieve_profile_data):
 
 
 @pytest.mark.parametrize('url', (
+    reverse('investment-support-directory-home'),
     reverse('investment-support-directory-search'),
     reverse(
         'investment-support-directory-profile',
         kwargs={'company_number': 'ST121', 'slug': 'foo'}
+    ),
+    reverse(
+        'investment-support-directory-company-contact',
+        kwargs={'company_number': 'ST121'}
+    ),
+    reverse(
+        'investment-support-directory-company-contact-sent',
+        kwargs={'company_number': 'ST121'}
     )
 ))
 def test_feature_flag(url, client, settings):
@@ -96,3 +106,270 @@ def test_profile_calls_api(
     assert mock_retrieve_company.call_args == mock.call(
         number=retrieve_profile_data['number']
     )
+
+
+def test_home_page_context_data(client, settings):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+
+    url = reverse('investment-support-directory-home')
+
+    response = client.get(url)
+
+    assert response.status_code == 200
+    assert response.context_data['CHOICES_FINANCIAL'] == (
+        forms.CHOICES_FINANCIAL
+    )
+    assert response.context_data['CHOICES_HUMAN_RESOURCES'] == (
+        forms.CHOICES_HUMAN_RESOURCES
+    )
+    assert response.context_data['CHOICES_LEGAL'] == (
+        forms.CHOICES_LEGAL
+    )
+    assert response.context_data['CHOICES_PUBLICITY'] == (
+        forms.CHOICES_PUBLICITY
+    )
+    assert response.context_data['CHOICES_FURTHER_SERVICES'] == (
+        forms.CHOICES_FURTHER_SERVICES
+    )
+    assert response.context_data['CHOICES_MANAGEMENT_CONSULTING'] == (
+        forms.CHOICES_MANAGEMENT_CONSULTING
+    )
+
+
+def test_home_page_redirect(client, settings):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+
+    url = reverse('investment-support-directory-home')
+    expected_url = reverse('investment-support-directory-search')
+
+    response = client.post(url, {'q': 'foo'})
+
+    assert response.status_code == 302
+    assert response.url == f'{expected_url}?q=foo'
+
+
+@mock.patch.object(views.CompanySearchView, 'get_results_and_count')
+def test_search_submit_form_on_get(
+    mock_get_results_and_count, client, search_results, settings
+):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+
+    results = [{'number': '1234567', 'slug': 'thing'}]
+    mock_get_results_and_count.return_value = (results, 20)
+
+    response = client.get(
+        reverse('investment-support-directory-search'), {'q': '123'}
+    )
+
+    assert response.status_code == 200
+    assert response.context_data['results'] == results
+
+
+@mock.patch.object(views.CompanySearchView, 'get_results_and_count')
+def test_company_search_pagination_count(
+    mock_get_results_and_count, client, search_results, settings
+):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+
+    results = [{'number': '1234567', 'slug': 'thing'}]
+    mock_get_results_and_count.return_value = (results, 20)
+
+    response = client.get(
+        reverse('investment-support-directory-search'), {'q': '123'}
+    )
+
+    assert response.status_code == 200
+    assert response.context_data['pagination'].paginator.count == 20
+
+
+@mock.patch.object(api_client.company, 'search_investment_search_directory')
+def test_company_search_pagination_param(
+    mock_search, client, search_results, api_response_search_200, settings
+):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+
+    mock_search.return_value = api_response_search_200
+
+    url = reverse('investment-support-directory-search')
+    response = client.get(
+        url, {'q': '123', 'page': 1, 'expertise_industries': ['AEROSPACE']}
+    )
+
+    assert response.status_code == 200
+    assert mock_search.call_count == 1
+    assert mock_search.call_args == mock.call(
+        expertise_countries=[],
+        expertise_financial=None,
+        expertise_industries=['AEROSPACE'],
+        expertise_languages=[],
+        expertise_products_services_labels=[],
+        expertise_regions=[],
+        page=1,
+        size=10,
+        term='123'
+    )
+
+
+@mock.patch.object(api_client.company, 'search_investment_search_directory')
+def test_company_search_pagination_empty_page(
+    mock_search, client, search_results, api_response_search_200, settings
+):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+
+    mock_search.return_value = api_response_search_200
+
+    url = reverse('investment-support-directory-search')
+    response = client.get(url, {'q': '123', 'page': 100})
+
+    assert response.status_code == 302
+    assert response.get('Location') == (
+        reverse('investment-support-directory-search') + '?q=123'
+    )
+
+
+@mock.patch.object(views.CompanySearchView, 'get_results_and_count')
+def test_company_search_not_submit_without_params(
+    mock_get_results_and_count, client, settings
+):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+    response = client.get(reverse('investment-support-directory-search'))
+
+    assert response.status_code == 200
+    mock_get_results_and_count.assert_not_called()
+
+
+@mock.patch.object(api_client.company, 'search_investment_search_directory')
+def test_company_search_api_call_error(
+    mock_search, api_response_400, client, settings
+):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+
+    mock_search.return_value = api_response_400
+
+    with pytest.raises(requests.exceptions.HTTPError):
+        client.get(
+            reverse('investment-support-directory-search'), {'q': '123'}
+        )
+
+
+@mock.patch.object(api_client.company, 'search_investment_search_directory')
+@mock.patch.object(helpers, 'get_results_from_search_response')
+def test_company_search_api_success(
+    mock_get_results_from_search_response, mock_search, settings,
+    api_response_search_200, client
+):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+
+    mock_search.return_value = api_response_search_200
+    mock_get_results_from_search_response.return_value = {
+        'results': [],
+        'hits': {'total': 2}
+    }
+    response = client.get(
+        reverse('investment-support-directory-search'), {'q': '123'}
+    )
+
+    assert response.status_code == 200
+    assert mock_get_results_from_search_response.call_count == 1
+    assert mock_get_results_from_search_response.call_args == mock.call(
+        api_response_search_200
+    )
+
+
+@mock.patch.object(api_client.company, 'search_investment_search_directory')
+def test_company_search_response_no_highlight(
+    mock_search, api_response_search_200, client, settings
+):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+
+    mock_search.return_value = api_response_search_200
+
+    response = client.get(
+        reverse('investment-support-directory-search'), {'q': 'wolf'}
+    )
+
+    assert b'this is a short summary' in response.content
+
+
+@mock.patch.object(api_client.company, 'search_investment_search_directory')
+def test_company_highlight_description(
+    mock_search, api_response_search_description_highlight_200, client,
+    settings
+):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+
+    mock_search.return_value = api_response_search_description_highlight_200
+
+    response = client.get(
+        reverse('investment-support-directory-search'), {'q': 'wolf'}
+    )
+    expected = (
+        b'<em>wolf</em> in sheep clothing description...'
+        b'to the max <em>wolf</em>.'
+    )
+
+    assert expected in response.content
+
+
+@mock.patch.object(api_client.company, 'search_investment_search_directory')
+def test_company_search_highlight_summary(
+    mock_search, api_response_search_summary_highlight_200, client, settings
+):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+
+    mock_search.return_value = api_response_search_summary_highlight_200
+
+    response = client.get(
+        reverse('investment-support-directory-search'), {'q': 'wolf'}
+    )
+
+    assert b'<em>wolf</em> in sheep clothing summary.' in response.content
+
+
+@mock.patch.object(forms.ContactCompanyForm, 'save')
+def test_contact_company(
+    mock_save, client, settings, captcha_stub, retrieve_profile_data
+):
+    url = reverse(
+        'investment-support-directory-company-contact',
+        kwargs={'company_number': 'ST121'}
+    )
+    data = {
+        'given_name': 'Jim',
+        'family_name': 'Example',
+        'company_name': 'Example corp',
+        'email_address': 'jim@example.com',
+        'sector': 'AEROSPACE',
+        'subject': 'Hello',
+        'body': 'foo bar bax',
+        'has_contact': True,
+        'terms': True,
+        'g-recaptcha-response': captcha_stub,
+    }
+    response = client.post(url, data)
+    assert response.status_code == 302
+    assert response.url == reverse(
+        'investment-support-directory-company-contact-sent',
+        kwargs={'company_number': 'ST121'}
+    )
+
+    assert mock_save.call_count == 1
+    assert mock_save.call_args == mock.call(
+        email_address=retrieve_profile_data['email_address'],
+        form_url=url,
+        sender={'email_address': 'jim@example.com', 'country_code': None},
+        spam_control={'contents': ['Hello', 'foo bar bax']},
+        template_id=settings.CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID,
+    )
+
+
+def test_contact_company_success(client):
+    url = reverse(
+        'investment-support-directory-company-contact-sent',
+        kwargs={'company_number': '01111111'}
+    )
+
+    response = client.get(url)
+
+    assert response.status_code == 200
+    assert response.template_name == [views.ContactSuccessView.template_name]

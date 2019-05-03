@@ -15,19 +15,6 @@ from company import forms, helpers
 import core.mixins
 
 
-class SubmitFormOnGetMixin:
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        data = self.request.GET or {}
-        if data:
-            kwargs['data'] = data
-        return kwargs
-
-    def get(self, request, *args, **kwargs):
-        return super().post(request, *args, **kwargs)
-
-
 class CompanyProfileMixin:
 
     @cached_property
@@ -35,7 +22,9 @@ class CompanyProfileMixin:
         return helpers.get_company_profile(self.kwargs['company_number'])
 
 
-class CompanySearchView(SubmitFormOnGetMixin, CountryDisplayMixin, FormView):
+class CompanySearchView(
+    core.mixins.SubmitFormOnGetMixin, CountryDisplayMixin, FormView
+):
     template_name = 'company-search-results-list.html'
     form_class = forms.CompanySearchForm
     page_size = 10
@@ -200,18 +189,9 @@ class ContactCompanyView(CompanyProfileMixin, CountryDisplayMixin, FormView):
         )
 
 
-class ContactCompanySentView(
-    core.mixins.SpecificRefererRequiredMixin, CompanyProfileMixin, TemplateView
-):
+class ContactCompanySentView(CompanyProfileMixin, TemplateView):
 
     template_name = 'company-contact-success.html'
-
-    @property
-    def expected_referer_url(self):
-        return reverse(
-            'contact-company',
-            kwargs={'company_number': self.kwargs['company_number']}
-        )
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(company=self.company, **kwargs)

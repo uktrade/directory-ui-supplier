@@ -13,7 +13,7 @@ contextlib2==0.5.5        # via raven
 directory-api-client==14.0.0
 directory-client-core==5.0.0  # via directory-api-client, directory-cms-client, directory-forms-api-client
 directory-cms-client==10.0.0
-directory-components==10.4.1
+directory-components==10.8.1
 directory-constants==16.0.0
 directory-forms-api-client==4.0.0
 directory-healthcheck==1.0.1
