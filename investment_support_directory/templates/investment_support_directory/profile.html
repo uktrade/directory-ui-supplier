@@ -3,12 +3,19 @@
 
 {% load card from directory_components_tags %}
 
+{% load breadcrumbs from directory_components_tags %}
+
 {% block head_css %}
     {{ block.super }}
     <link href="{% static 'core/investment-support-directory-profile.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
 {% block content %}
+<div class="container">
+    {% url 'investment-support-directory-search' as search_url %}
+    {% url 'investment-support-directory-home' as home_url %}
+    {% breadcrumbs left_url=home_url left_label='Home' middle_url=search_url middle_label='Search UK businesses' right_label=company.name %}
+</div>
 <div id="cover-image-container" class="hero" style="background-image: url('{% static "core/images/default-profile-cover.png" %}')">
     &nbsp;
 </div>
