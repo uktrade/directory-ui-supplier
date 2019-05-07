@@ -57,7 +57,7 @@ investment_support_directory_urls = [
         name='investment-support-directory-profile'
     ),
     url(
-        r'^/(?P<company_number>[a-zA-Z0-9]+)/$',
+        r'^(?P<company_number>[a-zA-Z0-9]+)/$',
         investment_support_directory.views.ProfileView.as_view(),
         name='investment-support-directory-profile-slugless'
     ),

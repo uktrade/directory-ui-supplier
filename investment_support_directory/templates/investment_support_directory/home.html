@@ -92,7 +92,7 @@
                 <ul class="column-one-third">
                     <h3 class="heading-medium">Business support</h3>
                     {% for choice in CHOICES_FURTHER_SERVICES %}
-                        <li><a href="{% url 'investment-support-directory-search' %}?expertise_products_services_further_services={{ choice }}" class="link">{{ choice }}</a></li>
+                        <li><a href="{% url 'investment-support-directory-search' %}?expertise_products_services_business_support={{ choice }}" class="link">{{ choice }}</a></li>
                     {% endfor %}
                 </ul>
             </div>

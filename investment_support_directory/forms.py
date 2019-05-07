@@ -133,7 +133,7 @@ class CompanySearchForm(forms.Form):
         choices=choices.EXPERTISE_PUBLICITY,
         required=False,
     )
-    expertise_products_services_further_services = fields.MultipleChoiceField(
+    expertise_products_services_business_support = fields.MultipleChoiceField(
         label='',
         widget=widgets.CheckboxSelectInlineLabelMultiple(
             attrs={'id': 'checkbox-products-services-further-expertise'},
@@ -155,21 +155,22 @@ class CompanySearchForm(forms.Form):
             'expertise_products_services_human_resources',
             'expertise_products_services_legal',
             'expertise_products_services_publicity',
-            'expertise_products_services_further_services',
+            'expertise_products_services_business_support',
         ]
 
         products_services = []
         for field_name in product_services_fields:
             if field_name in self.cleaned_data:
                 products_services += self.cleaned_data.pop(field_name)
-        self.cleaned_data['expertise_products_services'] = products_services
-
+        self.cleaned_data['expertise_products_services_labels'] = (
+            products_services
+        )
         minimum_vialble_search_fields = {
             'expertise_industries',
             'expertise_regions',
             'expertise_countries',
             'expertise_languages',
-            'expertise_products_services',
+            'expertise_products_services_labels',
             'q',
         }
         searched_fields = set(
