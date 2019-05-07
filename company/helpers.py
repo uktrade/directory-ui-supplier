@@ -2,6 +2,7 @@ import datetime
 import http
 
 from directory_api_client.client import api_client
+from directory_components.helpers import CompanyParser
 from directory_constants import choices
 from directory_validators.helpers import tokenize_keywords
 
@@ -112,7 +113,10 @@ def format_company_details(details):
     if details.get('expertise_products_services'):
         other_expertise = details['expertise_products_services'].get('other')
 
+    parser = CompanyParser(details)
+
     return {
+        'is_in_companies_house': parser.is_in_companies_house,
         'website': details['website'],
         'description': details['description'],
         'summary': details['summary'],

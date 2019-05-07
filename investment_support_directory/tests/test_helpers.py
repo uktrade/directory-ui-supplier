@@ -44,6 +44,7 @@ def test_company_parser_serialize_for_template(retrieve_profile_data):
         'twitter_url': 'http://www.twitter.com',
         'verified_with_code': True,
         'website': 'http://example.com',
+        'company_type': 'COMPANIES_HOUSE',
     }
 
 

@@ -42,6 +42,7 @@ def test_get_showcase_companies_200(search_company):
             'sectors': [{'value': 'SECURITY', 'label': 'Security'}],
             'date_of_creation': datetime.datetime(2015, 3, 2, 0, 0),
             'has_social_links': True,
+            'is_in_companies_house': True,
             'slug': 'great-company',
             'facebook_url': 'http://www.facebook.com',
             'linkedin_url': 'http://www.linkedin.com',
