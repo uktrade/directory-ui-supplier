@@ -119,17 +119,20 @@
             <hr>
             {% if company.expertise_products_services %}
                 <div id="profile-products-services-container">
-                  <div class="grid-row">
-                    <h3 class="box-heading heading-medium black-text column-one-half">Products and services</h3>
-                  </div>
+                    <h3 class="box-heading heading-medium black-text">Products and services</h3>
+                    {% if company.expertise_products_services.Other %}
+                        <p class="margin-bottom-15">{{ company.expertise_products_services.Other }}</p>
+                    {% endif %}
                     <dl>
-                      {% for key, values in company.expertise_products_services.items %}
-                        <dt>{{ key }}</dt>
-                        <dd>{{ values }}</dd>
-                      {% endfor %}
+                        {% for key, values in company.expertise_products_services.items %}
+                            {% if key != 'Other' %}
+                                <dt>{{ key }}</dt>
+                                <dd>{{ values }}</dd>
+                            {% endif %}
+                        {% endfor %}
                     </dl>
                 </div>
-              <hr>
+                <hr>
             {% endif %}
 
           {% if company.has_expertise %}
