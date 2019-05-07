@@ -23,7 +23,7 @@
                     {% if pagination.paginator.count %}
                         <h2 class="heading-medium">{{ pagination.paginator.count }} {{pagination.paginator.count|pluralize:'result,results'}} found {% if form.q.value %}for <mark>{{ form.q.value }}</mark>{% endif %}</h2>
                     {% else %}
-                        <h2 class="heading-medium">&nbsp;</h2>
+                        <h2 class="heading-medium">No results found {% if form.q.value %}for <mark>{{ form.q.value }}</mark>{% endif %}</h2>
                     {% endif %}
                 </div>
                 <div class="column-one-third">
@@ -31,7 +31,7 @@
                       {% if form.q.errors %}
                         <div class="error-message">{{ form.q.errors }}</div>
                       {% else %}
-                      <label for="{{ form.q.id_for_label }}">Your search</label>
+                      <label for="{{ form.q.id_for_label }}">New search</label>
                       {% endif %}
                       {{ form.q }}
                     </span>
@@ -69,9 +69,12 @@
                     {% include 'investment_support_directory/filter.html' with label='Human resources and recruitment' alt='Toggle list of Human resources and recruitment skills' field=form.expertise_products_services_human_resources %}
                     {% include 'investment_support_directory/filter.html' with label='Legal' alt='Toggle list of Legal skills' field=form.expertise_products_services_legal %}
                     {% include 'investment_support_directory/filter.html' with label='Publicity' alt='Toggle list of Publicity skills' field=form.expertise_products_services_publicity %}
-                    {% include 'investment_support_directory/filter.html' with label='Further Services' alt='Toggle list of Further Services skills' field=form.expertise_products_services_further_services %}
+                    {% include 'investment_support_directory/filter.html' with label='Business Support' alt='Toggle list of Business Support skills' field=form.expertise_products_services_business_support %}
                 </fieldset>
-                <button class="button">Update results</button>
+                <button class="button" type="submit">Update results</button>
+                <div class="margin-top-15" id="reset-link-container">
+                    <a href="{% url 'investment-support-directory-search' %}" class="link">Reset</a>
+                </div>
             </div>
             <div class="column-two-thirds" id="companies-column">
                 <ul>
@@ -85,12 +88,9 @@
                                         <img class="placeholder" src="{% static 'images/placeholder.png' %}" alt="" />
                                     {% endthumbnail %}
                                 </div>
-                                <div class="width-full">
-                                    <div class="grid-row result-header">
-                                        <h3 class="heading-medium margin-0 column-one-half link">{{ company.name }}</h3>
-                                        {% if company.employees %}
-                                            <div class="column-one-half mid-grey-text font-xsmall">Number of employees: <strong class="bold">{{ company.employees }}</strong></div>
-                                        {% endif %}
+                                <div class="width-full details-container">
+                                    <div class="result-header">
+                                        <h3 class="heading-medium margin-0 link">{{ company.name }}</h3>
                                     </div>
                                     {% if company.description or company.summary %}
                                         {% if company.highlight %}
@@ -99,11 +99,16 @@
                                             {{ company.summary|default:company.description|truncatechars:135 }}
                                         {% endif %}
                                     {% endif %}
-                                    {% if company.expertise_regions %}
-                                        <div class="result-footer mid-grey-text font-xsmall">
-                                            Regional expertise: <strong class="bold">{{ company.expertise_regions }}</strong>
-                                        </div>
-                                    {% endif %}
+                                    <div class="grid-row result-footer width-full">
+                                        {% if company.expertise_regions %}
+                                            <div class="mid-grey-text font-xsmall column-one-half">
+                                                Regional expertise: <strong class="bold">{{ company.expertise_regions }}</strong>
+                                            </div>
+                                        {% endif %}
+                                        {% if company.employees %}
+                                            <div class="employees mid-grey-text font-xsmall column-one-half">Number of employees: <strong class="bold">{{ company.employees }} Employees</strong></div>
+                                        {% endif %}
+                                    </div>
                                 </div>
                             </a>
                         </li>

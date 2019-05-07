@@ -1,8 +1,9 @@
-from investment_support_directory import helpers
+from directory_constants import expertise
 
 from django.urls import reverse
 
 from core.tests.helpers import create_response
+from investment_support_directory import helpers
 
 
 def test_company_parser_serialize_for_template(retrieve_profile_data):
@@ -87,15 +88,37 @@ def test_get_paginator_url():
     )
 
 
-def test_get_filters_labels():
+def test_get_paginator_url_multiple_filters():
+    filters = {
+        'expertise_products_services': ['EPS1_1', 'EPS1 1'],
+        'expertise_languages': 'english',
+        'expertise_countries': ['GB', 'fr'],
+    }
 
+    encoded_url = (
+        '?expertise_products_services=EPS1_1'
+        '&expertise_products_services=EPS1+1&expertise_languages'
+        '=english&expertise_countries=GB&expertise_countries=fr'
+    )
+
+    assert helpers.get_paginator_url(filters) == (
+            reverse('investment-support-directory-search') + encoded_url
+    )
+
+
+def test_get_filters_labels():
     filters = {
         'expertise_languages': ['aa'],
         'q': 'foo',
         'page': 5,
-        'expertise_regions': ['NORTH_EAST']
+        'expertise_regions': ['NORTH_EAST'],
+        'expertise_products_services_financial': [expertise.FINANCIAL[1]]
     }
 
-    expected = ['Afar', 'North East']
+    expected = [
+        'Afar',
+        'North East',
+        'Accounting and Tax (including registration for VAT and PAYE)',
+    ]
 
     assert helpers.get_filters_labels(filters) == expected

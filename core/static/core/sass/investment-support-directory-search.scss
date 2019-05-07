@@ -40,6 +40,18 @@ mark {
 }
 
 #filter-column {
+  .multiple-choice {
+    input,
+    input[type=checkbox]+label:before {
+      width: 30px;
+      height: 30px;
+    }
+    input[type=checkbox]+label:after {
+      top: 9px;
+      left: 6px;
+    }
+  }
+
   #selected-filters-container {
     background-color: $stone-30;
     padding: 20px;
@@ -61,13 +73,15 @@ mark {
     margin-bottom: 20px;
     & > div {
       position: relative;
-      border-bottom: 1px solid $stone-60;
       margin-bottom: 15px;
       & > .form-group {
+        > .form-group {
+          margin-bottom: 0;
+        }
+        border-bottom: 1px solid $stone-60;
         max-height: 400px;
         overflow-y: auto;
         padding-left: 5px;
-        padding-bottom: 15px;
         padding-top: 5px;
         ul {
           margin-top: 0;
@@ -90,22 +104,45 @@ mark {
       width: 100%;
       cursor: pointer;
       padding-bottom: 15px;
+      font-size: 15px;
     }
+
     button.filter-collapse {
       background: transparent;
       border: none;
       position: absolute;
-      right: 0; top: 0
-    }
-
-    button.filter-collapse::after {
-      content:'▲';
-      padding: 5px;
+      right: 0;
+      top: 0;
+      padding-top: 6px;
+      padding-bottom: 4px;
       cursor: pointer;
     }
 
+    button.filter-collapse.checked {
+      padding-bottom: 9px;
+      padding-right: 6px;
+      padding-top: 0;
+    }
+
+    button.filter-collapse::after {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      content: "";
+      border-style: solid;
+      display: inline-block;
+      height: 5px;
+      position: relative;
+      vertical-align: middle;
+      border-color: #000000;
+      border-width: 2px 0 0 2px;
+      height: 8px;
+      width: 8px;
+    }
+
     button.filter-collapse.checked::after {
-      content:'▼';
+      border-width: 0 2px 2px 0;     
+      margin: 5px 0 0 0;
+
     }
 
   }
@@ -140,10 +177,6 @@ body:not(.js-enabled) {
         margin-bottom: 5px;
 
       }
-      .result-footer {
-        margin-top: 15px;
-        margin-bottom: 15px;
-      }
       a {
         text-decoration: none;
         display: flex;
@@ -151,7 +184,6 @@ body:not(.js-enabled) {
         border: 2px solid $stone-60;
         color: $grey;
         .logo-container {
-          margin-right: 30px;
           display: flex;
           flex-flow: row nowrap;
           align-items: center;
@@ -160,6 +192,30 @@ body:not(.js-enabled) {
             max-width: 180px;
             max-height: 180px;
             vertical-align: middle;
+          }
+        }
+        .details-container {
+          padding-left: 30px;
+          position: relative;
+          em {
+            font-weight: bold;
+            font-style: normal;            
+          }
+          .result-footer {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            border-top: 2px solid $stone-60;
+            & > div {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+            .employees {
+              text-align: right;
+            }
           }
         }
         span {
@@ -193,5 +249,23 @@ body:not(.js-enabled) {
         vertical-align: bottom;
       }
     }
+  }
+}
+
+#reset-link-container {
+  text-align: center;
+}
+
+@media (min-width: 641px) {
+  #main-content > div {
+    display: flex;
+  }
+  #companies-column {
+    flex-grow: 1;
+    margin-left: 30px;
+  }
+  #filter-column {
+    width: 300px;
+    padding: 0;
   }
 }

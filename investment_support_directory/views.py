@@ -1,6 +1,7 @@
 from urllib.parse import urlencode
 
 from directory_api_client.client import api_client
+from directory_constants import expertise
 from directory_components.mixins import CountryDisplayMixin
 import directory_forms_api_client.helpers
 
@@ -43,12 +44,12 @@ class HomeView(FeatureFlagMixin, CountryDisplayMixin, FormView):
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(
-            CHOICES_FINANCIAL=forms.CHOICES_FINANCIAL,
-            CHOICES_HUMAN_RESOURCES=forms.CHOICES_HUMAN_RESOURCES,
-            CHOICES_LEGAL=forms.CHOICES_LEGAL,
-            CHOICES_PUBLICITY=forms.CHOICES_PUBLICITY,
-            CHOICES_FURTHER_SERVICES=forms.CHOICES_FURTHER_SERVICES,
-            CHOICES_MANAGEMENT_CONSULTING=forms.CHOICES_MANAGEMENT_CONSULTING,
+            CHOICES_FINANCIAL=expertise.FINANCIAL,
+            CHOICES_HUMAN_RESOURCES=expertise.HUMAN_RESOURCES,
+            CHOICES_LEGAL=expertise.LEGAL,
+            CHOICES_PUBLICITY=expertise.PUBLICITY,
+            CHOICES_BUSINESS_SUPPORT=expertise.BUSINESS_SUPPORT,
+            CHOICES_MANAGEMENT_CONSULTING=expertise.MANAGEMENT_CONSULTING,
             **kwargs,
         )
 
@@ -94,7 +95,9 @@ class CompanySearchView(
             expertise_countries=data.get('expertise_countries'),
             expertise_languages=data.get('expertise_languages'),
             expertise_financial=data.get('expertise_financial'),
-            expertise_products_services=data.get('expertise_products_services')
+            expertise_products_services_labels=(
+                data.get('expertise_products_services_labels')
+            )
         )
         response.raise_for_status()
         formatted = helpers.get_results_from_search_response(response)

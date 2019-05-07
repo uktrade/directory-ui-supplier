@@ -11,64 +11,6 @@ from django.utils.html import mark_safe
 from investment_support_directory.fields import IntegerField
 
 
-CHOICES_FINANCIAL = (
-    'Opening bank accounts',
-    'Accounting and Tax (including registration for VAT and PAYE)',
-    'Insurance',
-    'Raising Capital',
-    'Regulatory support',
-    'Mergers and Acquisitions',
-)
-
-CHOICES_MANAGEMENT_CONSULTING = (
-    'Business development',
-    'Product safety regulation and compliance',
-    'Commercial/pricing strategy',
-    'Workforce development',
-    'Strategy & long-term planning',
-    'Risk consultation',
-)
-
-CHOICES_HUMAN_RESOURCES = (
-    'Staff management & progression',
-    (
-        'Onboarding, including new starter support and contracts '
-        'of employment'
-    ),
-    'Payroll',
-    'Salary benchmarking and employee benefits ',
-    'Succession planning',
-    'Employment & talent research',
-    'Sourcing and Hiring',
-)
-
-CHOICES_LEGAL = (
-    'Company incorporation',
-    'Employment',
-    'Immigration',
-    'Land use planning',
-    'Intellectual property',
-    'Data Protection and Information Assurance',
-)
-
-CHOICES_PUBLICITY = (
-    'Public Relations',
-    'Branding',
-    'Social Media',
-    'Public Affairs',
-    'Advertising',
-    'Marketing',
-)
-
-CHOICES_FURTHER_SERVICES = (
-    'Business relocation',
-    'Planning consultants',
-    'Facilities (water, wifi, electricity)',
-    'Translation services',
-    'Staff and family relocation including schooling for children',
-)
-
-
 class CompanyHomeSearchForm(forms.Form):
 
     q = fields.CharField(
@@ -152,7 +94,7 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-expertise-products-services-financial'},
             use_nice_ids=True,
         ),
-        choices=[(item, item) for item in CHOICES_FINANCIAL],
+        choices=choices.EXPERTISE_FINANCIAL,
         required=False,
     )
     expertise_products_services_management = fields.MultipleChoiceField(
@@ -161,7 +103,7 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-products-services-management-expertise'},
             use_nice_ids=True,
         ),
-        choices=[(item, item) for item in CHOICES_MANAGEMENT_CONSULTING],
+        choices=choices.EXPERTISE_MANAGEMENT_CONSULTING,
         required=False,
     )
     expertise_products_services_human_resources = fields.MultipleChoiceField(
@@ -170,7 +112,7 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-products-services-human-expertise'},
             use_nice_ids=True,
         ),
-        choices=[(item, item) for item in CHOICES_HUMAN_RESOURCES],
+        choices=choices.EXPERTISE_HUMAN_RESOURCES,
         required=False,
     )
     expertise_products_services_legal = fields.MultipleChoiceField(
@@ -179,7 +121,7 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-products-services-legal-expertise'},
             use_nice_ids=True,
         ),
-        choices=[(item, item) for item in CHOICES_LEGAL],
+        choices=choices.EXPERTISE_LEGAL,
         required=False,
     )
     expertise_products_services_publicity = fields.MultipleChoiceField(
@@ -188,16 +130,16 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-products-services-publicity-expertise'},
             use_nice_ids=True,
         ),
-        choices=[(item, item) for item in CHOICES_PUBLICITY],
+        choices=choices.EXPERTISE_PUBLICITY,
         required=False,
     )
-    expertise_products_services_further_services = fields.MultipleChoiceField(
+    expertise_products_services_business_support = fields.MultipleChoiceField(
         label='',
         widget=widgets.CheckboxSelectInlineLabelMultiple(
             attrs={'id': 'checkbox-products-services-further-expertise'},
             use_nice_ids=True,
         ),
-        choices=[(item, item) for item in CHOICES_FURTHER_SERVICES],
+        choices=choices.EXPERTISE_BUSINESS_SUPPORT,
         required=False,
     )
 
@@ -213,21 +155,22 @@ class CompanySearchForm(forms.Form):
             'expertise_products_services_human_resources',
             'expertise_products_services_legal',
             'expertise_products_services_publicity',
-            'expertise_products_services_further_services',
+            'expertise_products_services_business_support',
         ]
 
         products_services = []
         for field_name in product_services_fields:
             if field_name in self.cleaned_data:
-                products_services += self.cleaned_data[field_name]
-        self.cleaned_data['expertise_products_services'] = products_services
-
+                products_services += self.cleaned_data.pop(field_name)
+        self.cleaned_data['expertise_products_services_labels'] = (
+            products_services
+        )
         minimum_vialble_search_fields = {
             'expertise_industries',
             'expertise_regions',
             'expertise_countries',
             'expertise_languages',
-            'expertise_products_services',
+            'expertise_products_services_labels',
             'q',
         }
         searched_fields = set(
@@ -240,25 +183,22 @@ class CompanySearchForm(forms.Form):
 class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
 
     TERMS_CONDITIONS_LABEL = (
-        '<p>The Department for International Trade (DIT) has used reasonable '
-        'endeavours to ensure that the members of the Directory are suitably '
-        'qualified and that the information in this Directory is accurate and '
-        'up to date. No representation or warranty, express or implied, is '
-        'made or given by the DIT as to the character or professional '
-        'ability of any member of the Directory or any goods or services a '
-        'member may offer. No liability is accepted by DIT for any loss or '
-        'damage (whether consequential or otherwise) which may arise out of '
-        'or in connection with any goods or services provided by any member '
-        'of the Directory. Enquirers using the Directory should conduct their '
-        'own research before engaging any of its members. Membership of the '
-        'Directory does not represent an association with DIT and being '
-        'listed in the Directory does not create legal relations between the '
-        'member and DIT.</p>'
-        '<p>The UK Service Provider that you are contacting has agreed to an '
-        'initial one-hour meeting free of charge for client referrals from '
-        'the directory.</p>'
-        '<p>By sending your details you can confirm that you accept our terms '
-        'and conditions.</p>'
+        '<p>I agree to the great.gov.uk terms and conditions and I '
+        'understand that:</p>'
+        '<ul class="list list-bullet">'
+        '<li>the Department for International Trade (DIT) has reasonably '
+        'tried to ensure that businesses listed in the UK Investment Support '
+        'Directory are appropriately qualified and that the information in '
+        'this directory is accurate and up to date</li>'
+        '<li>DIT is not endorsing the character, ability, goods or services '
+        'of members of the directory</li>'
+        '<li>there is no legal relationship between DIT and directory '
+        'members</li>'
+        '<li>DIT is not liable for any direct or indirect loss or damage that '
+        'might happen after a directory member provides a good or service</li>'
+        '<li>directory members will give 1 hour’s free consultation to '
+        'businesses that contact them through this service</li>'
+        '</ul>'
     )
     TERMS_CONDITIONS_MESSAGE = (
         'Tick the box to confirm you agree to the terms and conditions.'

@@ -12,7 +12,10 @@ main {
       margin-top: 60px;
       margin-bottom: 60px;
     }
-    input {
+    input,
+    textarea,
+    select,
+    input[type="checkbox"] + label {
       width: 80%;
     }
   }
@@ -26,3 +29,5 @@ main {
     }
   }
 }
+
+
