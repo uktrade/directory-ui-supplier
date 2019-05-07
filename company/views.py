@@ -9,7 +9,7 @@ from django.template.response import TemplateResponse
 from django.utils.functional import cached_property
 from django.views.generic import RedirectView, TemplateView
 from django.views.generic.edit import FormView
-from directory_components.mixins import CountryDisplayMixin
+from directory_components.mixins import CountryDisplayMixin, GA360Mixin
 
 from company import forms, helpers
 import core.mixins
@@ -88,9 +88,10 @@ class PublishedProfileListView(CountryDisplayMixin, RedirectView):
 
 
 class PublishedProfileDetailView(
-    CompanyProfileMixin, CountryDisplayMixin, TemplateView
+    CompanyProfileMixin, CountryDisplayMixin, GA360Mixin, TemplateView
 ):
     template_name = 'company-profile-detail.html'
+    ga360_payload = {'page_type': 'FindASupplierPublishedProfileDetail'}
 
     def get_canonical_url(self):
         kwargs = {
@@ -120,8 +121,9 @@ class PublishedProfileDetailView(
         )
 
 
-class CaseStudyDetailView(CountryDisplayMixin, TemplateView):
+class CaseStudyDetailView(CountryDisplayMixin, GA360Mixin, TemplateView):
     template_name = 'supplier-case-study-detail.html'
+    ga360_payload = {'page_type': 'FindASupplierCaseStudyDetail'}
 
     @cached_property
     def case_study(self):
@@ -152,9 +154,13 @@ class CaseStudyDetailView(CountryDisplayMixin, TemplateView):
         )
 
 
-class ContactCompanyView(CompanyProfileMixin, CountryDisplayMixin, FormView):
+class ContactCompanyView(CompanyProfileMixin,
+                         CountryDisplayMixin,
+                         GA360Mixin,
+                         FormView):
     template_name = 'company-contact-form.html'
     form_class = forms.ContactCompanyForm
+    ga360_payload = {'page_type': 'FindASupplierContactCompany'}
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(company=self.company, **kwargs)
@@ -189,9 +195,10 @@ class ContactCompanyView(CompanyProfileMixin, CountryDisplayMixin, FormView):
         )
 
 
-class ContactCompanySentView(CompanyProfileMixin, TemplateView):
+class ContactCompanySentView(CompanyProfileMixin, GA360Mixin, TemplateView):
 
     template_name = 'company-contact-success.html'
+    ga360_payload = {'page_type': 'FindASupplierContactCompanySent'}
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(company=self.company, **kwargs)
