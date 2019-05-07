@@ -180,7 +180,7 @@ body:not(.js-enabled) {
       a {
         text-decoration: none;
         display: flex;
-        min-height: 185px;
+        min-height: 205px;
         border: 2px solid $stone-60;
         color: $grey;
         .logo-container {
@@ -208,11 +208,6 @@ body:not(.js-enabled) {
             bottom: 0;
             left: 15px;
             border-top: 2px solid $stone-60;
-            & > div {
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-            }
             .employees {
               text-align: right;
             }
