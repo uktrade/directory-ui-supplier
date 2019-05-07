@@ -1,4 +1,4 @@
-from directory_constants import choices
+from directory_constants import choices, expertise
 import pytest
 
 from investment_support_directory import forms
@@ -6,25 +6,35 @@ from investment_support_directory import forms
 
 prefix = 'expertise_products_services'
 
+expertise_products_services_fields = [
+    f'{prefix}_management'
+    f'{prefix}_human_resources',
+    f'{prefix}_legal',
+    f'{prefix}_publicity',
+    f'{prefix}_business_support'
+]
+
 
 def test_company_search_form_expertise_products_services():
     form = forms.CompanySearchForm(data={
         'term': 'foo',
-        f'{prefix}_management': [forms.CHOICES_MANAGEMENT_CONSULTING[0]],
-        f'{prefix}_human_resources': [forms.CHOICES_HUMAN_RESOURCES[0]],
-        f'{prefix}_legal': [forms.CHOICES_LEGAL[0]],
-        f'{prefix}_publicity': [forms.CHOICES_PUBLICITY[0]],
-        f'{prefix}_further_services': [forms.CHOICES_FURTHER_SERVICES[0]],
+        f'{prefix}_management': [expertise.MANAGEMENT_CONSULTING[0]],
+        f'{prefix}_human_resources': [expertise.HUMAN_RESOURCES[0]],
+        f'{prefix}_legal': [expertise.LEGAL[0]],
+        f'{prefix}_publicity': [expertise.PUBLICITY[0]],
+        f'{prefix}_business_support': [expertise.BUSINESS_SUPPORT[0]],
     })
 
     assert form.is_valid()
     assert form.cleaned_data['expertise_products_services_labels'] == [
-        forms.CHOICES_MANAGEMENT_CONSULTING[0],
-        forms.CHOICES_HUMAN_RESOURCES[0],
-        forms.CHOICES_LEGAL[0],
-        forms.CHOICES_PUBLICITY[0],
-        forms.CHOICES_FURTHER_SERVICES[0],
+        expertise.MANAGEMENT_CONSULTING[0],
+        expertise.HUMAN_RESOURCES[0],
+        expertise.LEGAL[0],
+        expertise.PUBLICITY[0],
+        expertise.BUSINESS_SUPPORT[0],
     ]
+    for field_name in expertise_products_services_fields:
+        assert field_name not in form.cleaned_data
 
 
 def test_company_search_form_page_present():
@@ -50,11 +60,11 @@ def test_company_search_form_page_missing():
     {'expertise_countries': [choices.COUNTRY_CHOICES[0][0]]},
     {'expertise_languages': [choices.EXPERTISE_LANGUAGES[0][0]]},
     {'q': 'foo'},
-    {f'{prefix}_management': [forms.CHOICES_MANAGEMENT_CONSULTING[0]]},
-    {f'{prefix}_human_resources': [forms.CHOICES_HUMAN_RESOURCES[0]]},
-    {f'{prefix}_legal': [forms.CHOICES_LEGAL[0]]},
-    {f'{prefix}_publicity': [forms.CHOICES_PUBLICITY[0]]},
-    {f'{prefix}_further_services': [forms.CHOICES_FURTHER_SERVICES[0]]},
+    {f'{prefix}_management': [expertise.MANAGEMENT_CONSULTING[0]]},
+    {f'{prefix}_human_resources': [expertise.HUMAN_RESOURCES[0]]},
+    {f'{prefix}_legal': [expertise.LEGAL[0]]},
+    {f'{prefix}_publicity': [expertise.PUBLICITY[0]]},
+    {f'{prefix}_business_support': [expertise.BUSINESS_SUPPORT[0]]},
 ))
 def test_minimum_viable_search(data):
     form = forms.CompanySearchForm(data=data)
