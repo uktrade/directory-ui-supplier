@@ -1,7 +1,7 @@
 from directory_api_client.client import api_client
 from directory_components.mixins import (
-    CMSLanguageSwitcherMixin, CountryDisplayMixin, EnableTranslationsMixin
-)
+    CMSLanguageSwitcherMixin, CountryDisplayMixin, EnableTranslationsMixin,
+    GA360Mixin)
 from directory_constants import slugs
 from directory_cms_client.client import cms_api_client
 import directory_forms_api_client.helpers
@@ -23,11 +23,13 @@ class LandingPageCMSView(
     mixins.ActiveViewNameMixin,
     mixins.GetCMSComponentMixin,
     CountryDisplayMixin,
+    GA360Mixin,
     TemplateView
 ):
     active_view_name = 'index'
     template_name = 'core/landing-page.html'
     component_slug = slugs.COMPONENTS_BANNER_INTERNATIONAL
+    ga360_payload = {'page_type': 'FindASupplierLandingPage'}
 
     def get_context_data(self, *args, **kwargs):
         return super().get_context_data(
@@ -57,12 +59,13 @@ class RedirectToCMSIndustryView(RedirectView):
 
 
 class LeadGenerationFormView(
-    EnableTranslationsMixin, CountryDisplayMixin, FormView
+    EnableTranslationsMixin, CountryDisplayMixin, GA360Mixin, FormView
 ):
     success_template = 'lead-generation-success.html'
     template_name = 'lead-generation.html'
     template_name_bidi = 'bidi/lead-generation.html'
     form_class = forms.LeadGenerationForm
+    ga360_payload = {'page_type': 'FindASupplierLeadGenerationForm'}
 
     def form_valid(self, form):
         sender = directory_forms_api_client.helpers.Sender(
@@ -85,10 +88,11 @@ class LeadGenerationFormView(
         return TemplateResponse(self.request, self.success_template)
 
 
-class AnonymousSubscribeFormView(CountryDisplayMixin, FormView):
+class AnonymousSubscribeFormView(CountryDisplayMixin, GA360Mixin, FormView):
     success_template = 'anonymous-subscribe-success.html'
     template_name = 'anonymous-subscribe.html'
     form_class = forms.AnonymousSubscribeForm
+    ga360_payload = {'page_type': 'FindASupplierAnonymousSubscribeForm'}
 
     def form_valid(self, form):
         data = forms.serialize_anonymous_subscriber_forms(form.cleaned_data)

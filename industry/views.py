@@ -4,8 +4,8 @@ import directory_forms_api_client.helpers
 from directory_constants import cms, slugs
 from directory_components.helpers import SocialLinkBuilder
 from directory_components.mixins import (
-    CMSLanguageSwitcherMixin, CountryDisplayMixin
-)
+    CMSLanguageSwitcherMixin, CountryDisplayMixin,
+    GA360Mixin)
 
 from django.conf import settings
 from django.shortcuts import redirect
@@ -31,9 +31,11 @@ class IndustryDetailCMSView(
     CMSLanguageSwitcherMixin,
     GetCMSPageMixin,
     CountryDisplayMixin,
+    GA360Mixin,
     TemplateView
 ):
     template_name = 'industry/detail.html'
+    ga360_payload = {'page_type': 'FindASupplierIndustryDetail'}
 
     def get_context_data(self, *args, **kwargs):
         companies = self.get_companies(
@@ -114,7 +116,7 @@ class GetIndustryPageMixin:
         )
 
 
-class BaseIndustryContactView(CountryDisplayMixin, FormView):
+class BaseIndustryContactView(CountryDisplayMixin, GA360Mixin, FormView):
 
     template_name = 'industry/contact.html'
     form_class = forms.ContactForm
@@ -165,6 +167,7 @@ class IndustryDetailContactCMSView(
     GetIndustryPageMixin, GetCMSContactPageMixin,
     CMSLanguageSwitcherMixin, BaseIndustryContactView
 ):
+    ga360_payload = {'page_type': 'FindASupplierIndustryDetailContact'}
 
     def get_success_url(self):
         return reverse('sector-detail-cms-contact-sent', kwargs=self.kwargs)
@@ -181,14 +184,16 @@ class IndustryLandingPageContactCMSView(
     BaseIndustryContactView
 ):
     success_url = reverse_lazy('sector-list-cms-contact-sent')
+    ga360_payload = {'page_type': 'FindASupplierIndustryLandingPageContact'}
 
 
 class IndustryDetailContactCMSSentView(
     CMSLanguageSwitcherMixin, SpecificRefererRequiredMixin,
     GetCMSContactPageMixin, GetIndustryPageMixin, CountryDisplayMixin,
-    TemplateView
+    GA360Mixin, TemplateView
 ):
     template_name = 'industry/contact-success.html'
+    ga360_payload = {'page_type': 'FindASupplierIndustryDetailContactSent'}
 
     @property
     def expected_referer_url(self):
@@ -197,9 +202,10 @@ class IndustryDetailContactCMSSentView(
 
 class IndustryLandingPageContactCMSSentView(
     CMSLanguageSwitcherMixin, SpecificRefererRequiredMixin,
-    GetCMSContactPageMixin, CountryDisplayMixin, TemplateView
+    GetCMSContactPageMixin, CountryDisplayMixin, GA360Mixin, TemplateView
 ):
     template_name = 'industry/contact-success.html'
+    ga360_payload = {'page_type': 'FindASupplierIndustryLandingContactSent'}
 
     @property
     def expected_referer_url(self):
@@ -208,9 +214,10 @@ class IndustryLandingPageContactCMSSentView(
 
 class IndustryArticleCMSView(
     CMSLanguageSwitcherMixin, GetCMSPageMixin,
-    CountryDisplayMixin, TemplateView
+    CountryDisplayMixin, GA360Mixin, TemplateView
 ):
     template_name = 'industry/article.html'
+    ga360_payload = {'page_type': 'FindASupplierIndustryArticle'}
 
     def get_context_data(self, *args, **kwargs):
         social_links_builder = SocialLinkBuilder(

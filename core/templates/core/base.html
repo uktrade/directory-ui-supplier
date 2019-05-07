@@ -12,6 +12,17 @@
     <script src="{% static 'directory_components/js/dit.components.greatInternationalHeader.js' %}"></script>
 {% endblock %}
 
+{% block head_js_ga360 %}
+    {{ block.super }}
+    {% if ga360 %}
+        <script src="{% static 'core/js/dit.tagging.js' %}"></script>
+        <script id="ga360-script">
+            window.dataLayer.push({ 'pageCategory': '{{ ga360.page_type }}' });
+            dit.tagging.fas.init('{{ ga360.page_type }}')
+        </script>
+    {% endif %}
+{% endblock %}
+
 {% block head_css %}
     {{ block.super }}
     {% if LANGUAGE_BIDI %}
