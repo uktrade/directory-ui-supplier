@@ -12,7 +12,7 @@ django_recaptcha==1.2.0
 redis==2.10.5
 sorl-thumbnail==12.3
 directory-forms-api-client==4.0.0
-directory-components==10.8.1
+directory-components==10.8.3
 directory-cms-client==10.0.0
 directory-api-client==14.0.0
 directory-validators==5.0.1
