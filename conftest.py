@@ -43,6 +43,7 @@ def retrieve_profile_data():
         'po_box': 'abc',
         'country': 'GB',
         'mobile_number': '07506043448',
+        'company_type': 'COMPANIES_HOUSE',
     }
 
 
