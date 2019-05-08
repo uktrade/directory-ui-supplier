@@ -94,7 +94,7 @@
                                     </div>
                                     {% if company.description or company.summary %}
                                         {% if company.highlight %}
-                                            {{ company.highlight }}
+                                            {{ company.highlight|truncatechars:135 }}
                                         {% else %}
                                             {{ company.summary|default:company.description|truncatechars:135 }}
                                         {% endif %}
