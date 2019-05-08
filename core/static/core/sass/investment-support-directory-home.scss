@@ -3,32 +3,37 @@
 @import 'partials/colours';
 
 .breadcrumbs {
+  margin-top: -30px;
   padding-top: 0;
-  padding-bottom: 30px;
-  a {
-    color: $white;
-  }
 }
 
 #hero {
   form {
+    padding: 15px;
+    @media (min-width: 641px) {
+      display: flex;
+      padding: 30px;
+    }
     background-color: $offwhite;
-    padding: 30px;
     margin-bottom: 60px;
 
     .form-group {
       background-color: white;
       display: inline-block;
       margin-bottom: 0;
-      width: 75%;
       input {
         width: 100%;
       }
+      width: 100%;
     }
 
     button {
-      width: 20%;
-      margin-left: 15px;
+      margin-top: 15px;
+      margin-bottom: 0;
+      @media (min-width: 641px) {
+        margin-top: 0;
+        margin-left: 15px;
+      }
     }
 
     input, button {
@@ -61,5 +66,10 @@
   padding-bottom: 60px;
   h2 {
     margin-top: 0;
+  }
+  ul {
+    li {
+      margin-bottom: 10px;
+    }
   }
 }

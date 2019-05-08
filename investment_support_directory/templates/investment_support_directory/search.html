@@ -72,7 +72,7 @@
                     {% include 'investment_support_directory/filter.html' with label='Business Support' alt='Toggle list of Business Support skills' field=form.expertise_products_services_business_support %}
                 </fieldset>
                 <button class="button" type="submit">Update results</button>
-                <div class="margin-top-15" id="reset-link-container">
+                <div class="margin-top-15 margin-bottom-30" id="reset-link-container">
                     <a href="{% url 'investment-support-directory-search' %}" class="link">Reset</a>
                 </div>
             </div>
@@ -101,12 +101,12 @@
                                     {% endif %}
                                     <div class="grid-row result-footer width-full">
                                         {% if company.expertise_regions %}
-                                            <div class="mid-grey-text font-xsmall column-one-half">
+                                            <div class="mid-grey-text font-xsmall column-one-half ellipsis">
                                                 Regional expertise: <strong class="bold">{{ company.expertise_regions }}</strong>
                                             </div>
                                         {% endif %}
                                         {% if company.employees %}
-                                            <div class="employees mid-grey-text font-xsmall column-one-half">Number of employees: <strong class="bold">{{ company.employees }} Employees</strong></div>
+                                            <div class="employees mid-grey-text font-xsmall column-one-half ellipsis">Number of employees: <strong class="bold">{{ company.employees }} Employees</strong></div>
                                         {% endif %}
                                     </div>
                                 </div>
