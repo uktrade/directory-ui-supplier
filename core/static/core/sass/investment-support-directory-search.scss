@@ -17,18 +17,20 @@ mark {
   border-radius: 4px;
 }
 
+#main-content > div {
+  display: flex;
+  flex-flow: column;
+}
+
 #hero-container {
   background-color: $stone-light;
   margin-bottom: 60px;
-
+  padding-bottom: 30px;
   h2 {
     display: inline-block;
-    margin-top: 60px;
-    margin-bottom: 60px;
   }
   span {
     display: inline-block;
-    margin-top: 36px;
   }
   input {
     width: 100%;
@@ -40,6 +42,7 @@ mark {
 }
 
 #filter-column {
+  order: 2;
   .multiple-choice {
     input,
     input[type=checkbox]+label:before {
@@ -169,6 +172,7 @@ body:not(.js-enabled) {
 }
 
 #companies-column {
+  order: 1;
   ul {
     li {
       margin-bottom: 30px;
@@ -240,10 +244,21 @@ body:not(.js-enabled) {
 
 @media (min-width: 641px) {
   #main-content > div {
-    display: flex;
+    display: block;
+  }
+  #hero-container {
+    padding-bottom: 0;
+    h2 {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    span {
+      margin-top: 36px;
+    }
   }
   #companies-column {
     flex-grow: 1;
+    order: 2;
     margin-left: 30px;
     ul {
       li {
@@ -273,6 +288,7 @@ body:not(.js-enabled) {
     }
   }
   #filter-column {
+    order: 1;
     width: 300px;
     padding: 0;
   }

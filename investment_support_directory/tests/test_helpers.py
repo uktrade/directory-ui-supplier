@@ -119,7 +119,7 @@ def test_get_filters_labels():
     expected = [
         'Afar',
         'North East',
-        'Accounting and Tax (including registration for VAT and PAYE)',
+        'Insurance',
     ]
 
     assert helpers.get_filters_labels(filters) == expected
