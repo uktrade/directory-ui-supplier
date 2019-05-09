@@ -68,7 +68,7 @@
                     {% include 'investment_support_directory/filter.html' with label='Management consulting' alt='Toggle list of Management consulting skills' field=form.expertise_products_services_management %}
                     {% include 'investment_support_directory/filter.html' with label='Human resources and recruitment' alt='Toggle list of Human resources and recruitment skills' field=form.expertise_products_services_human_resources %}
                     {% include 'investment_support_directory/filter.html' with label='Legal' alt='Toggle list of Legal skills' field=form.expertise_products_services_legal %}
-                    {% include 'investment_support_directory/filter.html' with label='Publicity' alt='Toggle list of Publicity skills' field=form.expertise_products_services_publicity %}
+                    {% include 'investment_support_directory/filter.html' with label='Publicity and communication' alt='Toggle list of Publicity and communication skills' field=form.expertise_products_services_publicity %}
                     {% include 'investment_support_directory/filter.html' with label='Business Support' alt='Toggle list of Business Support skills' field=form.expertise_products_services_business_support %}
                 </fieldset>
                 <button class="button" type="submit">Update results</button>
@@ -94,7 +94,7 @@
                                     </div>
                                     {% if company.description or company.summary %}
                                         {% if company.highlight %}
-                                            {{ company.highlight }}
+                                            {{ company.highlight|truncatechars:135 }}
                                         {% else %}
                                             {{ company.summary|default:company.description|truncatechars:135 }}
                                         {% endif %}
