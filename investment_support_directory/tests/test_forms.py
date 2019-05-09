@@ -65,6 +65,7 @@ def test_company_search_form_page_missing():
     {f'{prefix}_legal': [expertise.LEGAL[0]]},
     {f'{prefix}_publicity': [expertise.PUBLICITY[0]]},
     {f'{prefix}_business_support': [expertise.BUSINESS_SUPPORT[0]]},
+    {f'{prefix}_financial': [expertise.FINANCIAL[0]]},
 ))
 def test_minimum_viable_search(data):
     form = forms.CompanySearchForm(data=data)
