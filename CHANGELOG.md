@@ -2,6 +2,9 @@
 
 ## Pre-release
 
+# Fixed bugs
+- [TT-1409](https://uktrade.atlassian.net/browse/TT-1409) Fixed the links to filtered search on ISD home page
+
 ## [2019.05.03](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.03)
 
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.04.25...2019.05.03)

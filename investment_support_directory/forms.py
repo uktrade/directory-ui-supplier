@@ -151,6 +151,7 @@ class CompanySearchForm(forms.Form):
         # these field values are all stored in expertise_products_services, but
         # the form expresses them as separate fields for better user experience
         product_services_fields = [
+            'expertise_products_services_financial',
             'expertise_products_services_management',
             'expertise_products_services_human_resources',
             'expertise_products_services_legal',
