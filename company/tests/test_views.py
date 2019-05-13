@@ -1,12 +1,28 @@
 import http
 from unittest.mock import call, patch, Mock
+from unittest import mock
 
 import pytest
 import requests
 
 from django.core.urlresolvers import reverse, NoReverseMatch
 
+from core.tests.helpers import create_response
+from directory_api_client.client import api_client
 from company import helpers, views
+
+
+@pytest.fixture()
+def mock_retrieve_company_non_find_a_supplier(retrieve_profile_data):
+    retrieve_profile_data['is_published_find_a_supplier'] = (
+        False
+    )
+    patch = mock.patch.object(
+        api_client.company, 'retrieve_public_profile',
+        return_value=create_response(200, retrieve_profile_data)
+    )
+    yield patch.start()
+    patch.stop()
 
 
 def test_public_profile_different_slug_redirected(
@@ -190,6 +206,24 @@ def test_public_profile_details_handles_404(
     response = client.get(url)
 
     assert response.status_code == http.client.NOT_FOUND
+
+
+def test_public_profile_details_404_non_fas(
+        mock_retrieve_company_non_find_a_supplier,
+        client,
+        retrieve_profile_data,
+):
+    url = reverse(
+        'public-company-profiles-detail',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+            'slug': retrieve_profile_data['slug'],
+        }
+    )
+
+    response = client.get(url)
+
+    assert response.status_code == 404
 
 
 @patch.object(views.api_client.company, 'retrieve_public_case_study')
