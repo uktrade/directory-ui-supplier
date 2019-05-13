@@ -10,7 +10,6 @@
 {% block content %}
     <section id="hero" class="hero background-light-blue">
         <div class="container">
-            {% breadcrumbs left_url='/' left_label='Home' right_label='UK support directory' %}
             <div class="width-two-thirds">
                 <h1 class="heading-xlarge margin-bottom-0">Find a UK specialist</h1>              
                 <p class="hero-subtitle margin-bottom-45">Search the UK Investment Support Directory to find specialists with experience in helping businesses set up or expand in the UK.</p>  
@@ -24,11 +23,12 @@
 
     <div id="benefits">
         <div class="container">
+            {% breadcrumbs left_url='/' left_label='Home' right_label='UK Investment Support Directory' %}
             <div class="width-half">
                 <h2 class="heading-large">UK Investment Support Directory </h2>
             </div>
             <section class="grid-row">
-                <div class="column-one-third">
+                <div class="column-one-half">
                     <ul>
                         <li>
                             <h3 class="heading-medium">Search for experienced advice</h3>
@@ -44,7 +44,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="column-two-thirds">
+                <div class="column-one-half">
                     &nbsp;
                 </div>
             </section>
@@ -92,7 +92,7 @@
                 <ul class="column-one-third">
                     <h3 class="heading-medium">Business support</h3>
                     {% for choice in CHOICES_FURTHER_SERVICES %}
-                        <li><a href="{% url 'investment-support-directory-search' %}?expertise_products_services_further_services={{ choice }}" class="link">{{ choice }}</a></li>
+                        <li><a href="{% url 'investment-support-directory-search' %}?expertise_products_services_business_support={{ choice }}" class="link">{{ choice }}</a></li>
                     {% endfor %}
                 </ul>
             </div>

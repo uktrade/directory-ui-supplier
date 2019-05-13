@@ -12,11 +12,11 @@ django_recaptcha==1.2.0
 redis==2.10.5
 sorl-thumbnail==12.3
 directory-forms-api-client==4.0.0
-directory-components==10.8.1
+directory-components==10.9.0
 directory-cms-client==10.0.0
 directory-api-client==14.0.0
 directory-validators==5.0.1
-directory-constants==16.0.0
+directory-constants==16.4.0
 beautifulsoup4==4.6.0
 waitress==0.8.9
 django-redis==4.8.0

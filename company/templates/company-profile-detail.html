@@ -40,7 +40,9 @@
 
 		<div class="span4 company-profile-module-inner company-profile-module-facts">
 			<h2>Facts &amp; details</h2>
+			{% if company.is_in_companies_house %}
 			<p>Company number: {{company.number}}</p>
+			{% endif %}
 			<p>Number of employees: {{ company.employees|default:'N/A' }}</p>
 			{% if company.date_of_creation %}
 				<p>Incorporated in: {{company.date_of_creation|date:'Y'}}</p>

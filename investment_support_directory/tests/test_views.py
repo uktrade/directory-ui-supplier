@@ -1,6 +1,7 @@
 from unittest import mock
 
 from directory_api_client.client import api_client
+from directory_constants import expertise
 import pytest
 import requests
 
@@ -116,23 +117,17 @@ def test_home_page_context_data(client, settings):
     response = client.get(url)
 
     assert response.status_code == 200
-    assert response.context_data['CHOICES_FINANCIAL'] == (
-        forms.CHOICES_FINANCIAL
-    )
+    assert response.context_data['CHOICES_FINANCIAL'] == expertise.FINANCIAL
     assert response.context_data['CHOICES_HUMAN_RESOURCES'] == (
-        forms.CHOICES_HUMAN_RESOURCES
+        expertise.HUMAN_RESOURCES
     )
-    assert response.context_data['CHOICES_LEGAL'] == (
-        forms.CHOICES_LEGAL
-    )
-    assert response.context_data['CHOICES_PUBLICITY'] == (
-        forms.CHOICES_PUBLICITY
-    )
-    assert response.context_data['CHOICES_FURTHER_SERVICES'] == (
-        forms.CHOICES_FURTHER_SERVICES
+    assert response.context_data['CHOICES_LEGAL'] == expertise.LEGAL
+    assert response.context_data['CHOICES_PUBLICITY'] == expertise.PUBLICITY
+    assert response.context_data['CHOICES_BUSINESS_SUPPORT'] == (
+        expertise.BUSINESS_SUPPORT
     )
     assert response.context_data['CHOICES_MANAGEMENT_CONSULTING'] == (
-        forms.CHOICES_MANAGEMENT_CONSULTING
+        expertise.MANAGEMENT_CONSULTING
     )
 
 

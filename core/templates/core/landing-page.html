@@ -17,18 +17,19 @@
                 {{ page.hero_text|safe }}
             </div>
             <div id="search-area">
-                <form action="{% url 'company-search' %}" method="get" >
+                <form action="{% url 'company-search' %}" method="get" data-ga-class="company-search-form">
                     <div class="column-one-half">
                         <input
                             class="form-control"
                             type="text"
                             name="{{ search_form.term.name }}"
                             id="{{ search_form.term.id_for_label }}"
+                            data-ga-id="search-input"
                             placeholder="{{ page.search_field_placeholder }}"
                         />
                     </div>
                     <div class="column-one-half">
-                        <div class="column-one-half">
+                        <div class="column-one-half" data-ga-id="select-input-container">
                             {# translations provided by the app #}
                             {{ search_form.sectors }}
                         </div>
@@ -59,7 +60,7 @@
                 {{ page.proposition_text|safe }}
             </div>
             <div class="button-container">
-                <a href="{% url 'sector-list-cms-contact' %}" class="button">{{ page.call_to_action_text }}</a>
+                <a href="{% url 'sector-list-cms-contact' %}" class="button" data-ga-class="contact-cta">{{ page.call_to_action_text }}</a>
             </div>
         </div>
     </div>
