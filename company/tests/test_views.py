@@ -107,6 +107,7 @@ def test_public_profile_details_exposes_context(
         'logo': 'logo.png',
         'summary': 'summary summary',
         'slug': 'thing',
+        'is_published_find_a_supplier': True,
     }
     mock_get_public_company_profile_from_response.return_value = company
     url = reverse(

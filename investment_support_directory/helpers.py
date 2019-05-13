@@ -11,7 +11,8 @@ from django.utils.html import escape, mark_safe
 
 def get_company_profile(number):
     response = api_client.company.retrieve_public_profile(number=number)
-    if response.status_code == 404:
+    if response.status_code == 404 or not response.json()[
+        'is_published_investment_support_directory']:
         raise Http404(f'API returned 404 for company number {number}')
     response.raise_for_status()
     return response.json()
