@@ -3,6 +3,9 @@
 ## Pre-release
 
 # Fixed bugs
+
+- [TT-1409](https://uktrade.atlassian.net/browse/TT-1409) Fixed the missing links under 'Business Support' Category
+
 - [TT-1409](https://uktrade.atlassian.net/browse/TT-1409) Fixed the links to filtered search on ISD home page
 
 ## [2019.05.03](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.03)
