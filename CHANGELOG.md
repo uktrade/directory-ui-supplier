@@ -2,8 +2,13 @@
 
 ## Pre-release
 
+### Implemented enhancements
+- [TT-1443](https://uktrade.atlassian.net/browse/TT-1443) Add ISD home page images.
+
 # Fixed bugs
-- [TT-1409](https://uktrade.atlassian.net/browse/TT-1409) Fixed the links to filtered search on ISD home page
+- [TT-1409](https://uktrade.atlassian.net/browse/TT-1409) Fixed the links to filtered search on ISD home page.
+- [TT-1441]((https://uktrade.atlassian.net/browse/TT-1441) Fixed search results broken layout.
+
 
 ## [2019.05.03](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.03)
 
