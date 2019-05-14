@@ -133,6 +133,12 @@ def format_company_details(details):
         'facebook_url': details['facebook_url'],
         'linkedin_url': details['linkedin_url'],
         'email_address': details.get('email_address'),
+        'is_published_investment_support_directory': details.get(
+            'is_published_investment_support_directory'
+        ),
+        'is_published_find_a_supplier': details.get(
+            'is_published_find_a_supplier'
+        ),
         'slug': details['slug'],
         'public_profile_url': reverse(
             'public-company-profiles-detail',
@@ -163,8 +169,11 @@ def format_case_study(case_study):
 
 def get_company_profile(number):
     response = api_client.company.retrieve_public_profile(number=number)
-    if response.status_code == http.client.NOT_FOUND:
+    if response.status_code == 404:
         raise Http404("API returned 404 for company number %s", number)
+    elif response.ok is True:
+        if not response.json()['is_published_find_a_supplier']:
+            raise Http404("API returned 404 for company number %s", number)
     response.raise_for_status()
     return get_public_company_profile_from_response(response)
 

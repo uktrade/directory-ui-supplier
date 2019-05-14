@@ -44,6 +44,9 @@ def retrieve_profile_data():
         'country': 'GB',
         'mobile_number': '07506043448',
         'company_type': 'COMPANIES_HOUSE',
+        'is_published_investment_support_directory': True,
+        'is_published_find_a_supplier': True,
+
     }
 
 

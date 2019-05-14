@@ -90,6 +90,8 @@ def test_get_company_profile_from_response(retrieve_profile_data):
         'modified': datetime(2016, 11, 23, 11, 21, 10, 977518),
         'slug': 'great-company',
         'public_profile_url': '/trade/suppliers/01234567/great-company/',
+        'is_published_investment_support_directory': True,
+        'is_published_find_a_supplier': True,
     }
 
     actual = helpers.get_company_profile_from_response(response)
@@ -139,6 +141,8 @@ def test_get_public_company_profile_from_response(retrieve_profile_data):
         'name': 'Great company',
         'slug': 'great-company',
         'public_profile_url': '/trade/suppliers/01234567/great-company/',
+        'is_published_investment_support_directory': True,
+        'is_published_find_a_supplier': True,
     }
 
     actual = helpers.get_public_company_profile_from_response(response)
@@ -155,6 +159,8 @@ def test_get_company_list_from_response(public_companies):
                 'logo': 'nice.jpg',
                 'keywords': ['word1', 'word2'],
                 'email_address': 'test@example.com',
+                'is_published_investment_support_directory': True,
+                'is_published_find_a_supplier': True,
                 'employees': '501-1,000',
                 'number': '01234567',
                 'supplier_case_studies': [],
@@ -237,6 +243,8 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
             'employees': '501-1,000',
             'slug': 'great-company',
             'public_profile_url': '/trade/suppliers/01234567/great-company/',
+            'is_published_investment_support_directory': True,
+            'is_published_find_a_supplier': True,
         },
         'slug': 'two',
         'image_one': 'https://image_one.jpg',

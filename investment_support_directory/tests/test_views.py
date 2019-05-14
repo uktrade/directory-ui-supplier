@@ -21,6 +21,19 @@ def mock_retrieve_company(retrieve_profile_data):
     patch.stop()
 
 
+@pytest.fixture()
+def mock_retrieve_company_non_isd(retrieve_profile_data):
+    retrieve_profile_data['is_published_investment_support_directory'] = (
+        False
+    )
+    patch = mock.patch.object(
+        api_client.company, 'retrieve_public_profile',
+        return_value=create_response(200, retrieve_profile_data)
+    )
+    yield patch.start()
+    patch.stop()
+
+
 @pytest.mark.parametrize('url', (
     reverse('investment-support-directory-home'),
     reverse('investment-support-directory-search'),
@@ -107,6 +120,23 @@ def test_profile_calls_api(
     assert mock_retrieve_company.call_args == mock.call(
         number=retrieve_profile_data['number']
     )
+
+
+def test_get_profile_404_non_investment_support_directory(
+    mock_retrieve_company_non_isd, client, settings, retrieve_profile_data
+):
+    settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
+
+    url = reverse(
+        'investment-support-directory-profile',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+            'slug': retrieve_profile_data['slug'],
+        }
+    )
+    response = client.get(url)
+
+    assert response.status_code == 404
 
 
 def test_home_page_context_data(client, settings):
