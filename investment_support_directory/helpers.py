@@ -1,12 +1,16 @@
 from urllib.parse import urlencode
 
-from directory_api_client.client import api_client
-import directory_components.helpers
-from directory_constants import choices
-
+from django.conf import settings
 from django.shortcuts import Http404
 from django.urls import reverse
 from django.utils.html import escape, mark_safe
+
+from directory_api_client.client import api_client
+from directory_forms_api_client import actions
+import directory_components.helpers
+from directory_constants import choices
+
+
 
 
 def get_company_profile(number):
@@ -93,3 +97,15 @@ def get_filters_labels(filters):
                 for value in values:
                     labels.append(value.replace('_', ' ').title())
     return labels
+
+
+def notify_isd_contact_support(form_url, **data):
+    action = actions.GovNotifyAction(
+        email_address='gurdeep.atwal@digital.trade.gov.uk',
+        template_id=settings.CONTACT_ISD_SUPPORT_NOTIFY_TEMPLATE_ID,
+        form_url=form_url,
+    )
+
+    response = action.save({**data})
+    response.raise_for_status()
+    return response

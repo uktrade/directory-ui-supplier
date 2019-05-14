@@ -1,6 +1,8 @@
 from directory_constants import expertise
+from unittest import mock
 
 from django.urls import reverse
+from django.conf import settings
 
 from core.tests.helpers import create_response
 from investment_support_directory import helpers
@@ -125,3 +127,41 @@ def test_get_filters_labels():
     ]
 
     assert helpers.get_filters_labels(filters) == expected
+
+
+@mock.patch(
+    'directory_forms_api_client.client.forms_api_client.submit_generic'
+)
+def test_notify_already_registered(mock_submit):
+    email = 'gurdeep.atwal@digital.trade.gov.uk'
+    form_url = 'test'
+    data = {
+        'given_name': 'Jim',
+        'family_name': 'Smith',
+        'company_name': 'Test company',
+        'email_address': 'test@test.com',
+    }
+
+    mock_submit.return_value = create_response(201)
+    helpers.notify_isd_contact_support(
+        form_url=form_url,
+        given_name=data['given_name'],
+        family_name=data['family_name'],
+        company_name=data['company_name'],
+        email_address=data['email_address'],
+    )
+
+    expected = {
+        'data': data,
+        'meta': {
+            'action_name': 'gov-notify',
+            'form_url': form_url,
+            'sender': {},
+            'spam_control': {},
+            'template_id': settings.CONTACT_ISD_SUPPORT_NOTIFY_TEMPLATE_ID,
+            'email_address': email
+        }
+    }
+
+    assert mock_submit.call_count == 1
+    assert mock_submit.call_args == mock.call(expected)

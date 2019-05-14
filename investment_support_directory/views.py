@@ -157,6 +157,14 @@ class ContactView(
             sender=sender,
             spam_control=spam_control,
         )
+        helpers.notify_isd_contact_support(
+            form_url=self.request.path,
+            given_name=form.cleaned_data['given_name'],
+            company_name=form.cleaned_data['company_name'],
+            family_name=form.cleaned_data['family_name'],
+            email_address=form.cleaned_data['email_address'],
+        )
+
         response.raise_for_status()
         return super().form_valid(form)
 
