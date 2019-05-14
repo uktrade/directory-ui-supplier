@@ -1,6 +1,5 @@
 from urllib.parse import urlencode
 
-from django.conf import settings
 from django.shortcuts import Http404
 from django.urls import reverse
 from django.utils.html import escape, mark_safe
