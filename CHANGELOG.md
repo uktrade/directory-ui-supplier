@@ -3,11 +3,11 @@
 ## Pre-release
 
 # Fixed bugs
-- [TT-1409](https://uktrade.atlassian.net/browse/TT-1409) Fixed the links to filtered search on ISD home page
 
-## [2019.05.03](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.03)
 
-[Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.04.25...2019.05.03)
+## [2019.05.14](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.14)
+
+[Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.04.25...2019.05.14)
 
 ### Implemented enhancements
 
@@ -23,6 +23,12 @@
 - [[TT-1339]](https://uktrade.atlassian.net/browse/TT-1339) Display keywords added via new profile "other" expertise interface
 - [[TT-1345]](https://uktrade.atlassian.net/browse/TT-1345) Fixed position of logos on ISD profile.
 - [[CMS-1395]](https://uktrade.atlassian.net/browse/CMS-1395) Fix language cookie name and domain to be the same across all our services.
+- [[TT-1345]](https://uktrade.atlassian.net/browse/TT-1345) Fixed position of logos on ISD profile. 
+- [[TT-1428]](https://uktrade.atlassian.net/browse/TT-1428) ISD companies 404 if they are also not published to FAS. 
+- [TT-1409](https://uktrade.atlassian.net/browse/TT-1409) Fixed the missing links under 'Business Support' Category
+- [TT-1409](https://uktrade.atlassian.net/browse/TT-1409) Fixed the links to filtered search on ISD home page
+
+
 
 ## [2019.04.25](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.04.25)
 
