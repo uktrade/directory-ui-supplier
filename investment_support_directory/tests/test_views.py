@@ -351,9 +351,15 @@ def test_company_search_highlight_summary(
     assert b'<em>wolf</em> in sheep clothing summary.' in response.content
 
 
+@mock.patch.object(helpers, 'notify_isd_contact_support')
 @mock.patch.object(forms.ContactCompanyForm, 'save')
 def test_contact_company(
-    mock_save, client, settings, captcha_stub, retrieve_profile_data
+    mock_save,
+    mock_send_isd_notify,
+    client,
+    settings,
+    captcha_stub,
+    retrieve_profile_data,
 ):
     url = reverse(
         'investment-support-directory-company-contact',
@@ -385,6 +391,15 @@ def test_contact_company(
         sender={'email_address': 'jim@example.com', 'country_code': None},
         spam_control={'contents': ['Hello', 'foo bar bax']},
         template_id=settings.CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID,
+    )
+
+    assert mock_send_isd_notify.call_count == 1
+    assert mock_send_isd_notify.call_args == mock.call(
+        form_url=url,
+        given_name=data['given_name'],
+        family_name=data['family_name'],
+        company_name=data['company_name'],
+        email_address=data['email_address'],
     )
 
 
