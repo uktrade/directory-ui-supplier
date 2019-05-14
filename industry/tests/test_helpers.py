@@ -42,11 +42,12 @@ def test_get_showcase_companies_200(search_company):
             'sectors': [{'value': 'SECURITY', 'label': 'Security'}],
             'date_of_creation': datetime.datetime(2015, 3, 2, 0, 0),
             'has_social_links': True,
+            'is_in_companies_house': True,
             'slug': 'great-company',
             'facebook_url': 'http://www.facebook.com',
             'linkedin_url': 'http://www.linkedin.com',
             'logo': 'nice.jpg',
-            'public_profile_url': '/suppliers/01234567/great-company/',
+            'public_profile_url': '/trade/suppliers/01234567/great-company/',
             'modified': datetime.datetime(2016, 11, 23, 11, 21, 10, 977518),
             'employees': '501-1,000',
             'number': '01234567',
@@ -57,6 +58,8 @@ def test_get_showcase_companies_200(search_company):
             'email_address': 'test@example.com',
             'website': 'http://example.com',
             'description': 'Ecommerce website',
-            'keywords': ['word1', 'word2']
+            'keywords': ['word1', 'word2'],
+            'is_published_investment_support_directory': True,
+            'is_published_find_a_supplier': True,
         }
     ]

@@ -27,7 +27,7 @@ django_webserver:
 DEBUG_SET_ENV_VARS := \
 	export PORT=8005; \
 	export SECRET_KEY=debug; \
-	export DEBUG=true ;\
+	export DEBUG=true; \
 	export DIRECTORY_API_CLIENT_API_KEY=debug; \
 	export DIRECTORY_API_CLIENT_BASE_URL=http://api.trade.great:8000; \
 	export RECAPTCHA_PUBLIC_KEY=$$DIRECTORY_UI_SUPPLIER_RECAPTCHA_PUBLIC_KEY; \
@@ -50,19 +50,22 @@ DEBUG_SET_ENV_VARS := \
 	export HEALTH_CHECK_TOKEN=debug; \
 	export FEATURE_EU_EXIT_BANNER_ENABLED=true; \
 	export FEATURE_INTERNATIONAL_CONTACT_LINK_ENABLED=true; \
-	export FEATURE_NEW_HEADER_FOOTER_ON=true; \
 	export DIRECTORY_CONSTANTS_URL_FIND_A_BUYER=http://buyer.trade.great:8001; \
 	export DIRECTORY_CONSTANTS_URL_SELLING_ONLINE_OVERSEAS=http://soo.trade.great:8008; \
 	export DIRECTORY_CONSTANTS_URL_FIND_A_SUPPLIER=http://supplier.trade.great:8005; \
 	export DIRECTORY_CONSTANTS_URL_INVEST=http://invest.trade.great:8012; \
 	export DIRECTORY_CONSTANTS_URL_SINGLE_SIGN_ON=http://sso.trade.great:8004; \
 	export DIRECTORY_CONSTANTS_URL_GREAT_DOMESTIC=http://exred.trade.great:8007; \
-	export CONTACT_INDUSTRY_AGENT_EMAIL_ADDRESS=buying@example.com
+	export DIRECTORY_CONSTANTS_URL_GREAT_INTERNATIONAL=http://international.trade.great:8012/international/; \
+	export CONTACT_INDUSTRY_AGENT_EMAIL_ADDRESS=buying@example.com; \
+	export URL_PREFIX_DOMAIN=http://supplier.trade.great:8005; \
+	export FEATURE_INVESTMENT_SUPPORT_DIRECTORY_ENABLED=true; \
+	export LANGUAGE_COOKIE_DOMAIN=.trade.great
 
 TEST_SET_ENV_VARS := \
 	export DIRECTORY_FORMS_API_API_KEY=debug; \
-	export DIRECTORY_FORMS_API_SENDER_ID=debug
-
+	export DIRECTORY_FORMS_API_SENDER_ID=debug; \
+	export URL_PREFIX_DOMAIN=http://testserver
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)

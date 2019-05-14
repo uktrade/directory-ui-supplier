@@ -6,9 +6,12 @@ from django.conf.urls import include, url
 from django.contrib.sitemaps.views import sitemap
 from django.views.static import serve
 
+from directory_constants import slugs
+
 import core.views
 import company.views
 import industry.views
+import investment_support_directory.views
 import notifications.views
 import conf.sitemaps
 
@@ -23,6 +26,40 @@ healthcheck_urls = [
         r'^$',
         directory_healthcheck.views.HealthcheckView.as_view(),
         name='healthcheck'
+    ),
+]
+
+
+investment_support_directory_urls = [
+    url(
+        r'^$',
+        investment_support_directory.views.HomeView.as_view(),
+        name='investment-support-directory-home'
+    ),
+    url(
+        r'^search/$',
+        investment_support_directory.views.CompanySearchView.as_view(),
+        name='investment-support-directory-search'
+    ),
+    url(
+        r'^(?P<company_number>[a-zA-Z0-9]+)/contact/$',
+        investment_support_directory.views.ContactView.as_view(),
+        name='investment-support-directory-company-contact',
+    ),
+    url(
+        r'^(?P<company_number>[a-zA-Z0-9]+)/sent/$',
+        investment_support_directory.views.ContactSuccessView.as_view(),
+        name='investment-support-directory-company-contact-sent',
+    ),
+    url(
+        r'^(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$',
+        investment_support_directory.views.ProfileView.as_view(),
+        name='investment-support-directory-profile'
+    ),
+    url(
+        r'^(?P<company_number>[a-zA-Z0-9]+)/$',
+        investment_support_directory.views.ProfileView.as_view(),
+        name='investment-support-directory-profile-slugless'
     ),
 ]
 
@@ -81,6 +118,7 @@ urlpatterns = [
     url(
         r'^industries/contact/sent/$',
         industry.views.IndustryLandingPageContactCMSSentView.as_view(),
+        {'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT},
         name='sector-list-cms-contact-sent',
     ),
     url(
@@ -96,6 +134,7 @@ urlpatterns = [
     url(
         r'^industries/contact/$',
         industry.views.IndustryLandingPageContactCMSView.as_view(),
+        {'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT},
         name='sector-list-cms-contact',
     ),
     url(
@@ -148,7 +187,6 @@ urlpatterns = [
         notifications.views.AnonymousUnsubscribeView.as_view(),
         name='anonymous-unsubscribe'
     ),
-
     # old export opportunity urls. redirect to CMS industry pages.
     url(
         r'^campaign/food-is-great/.*/$',
@@ -188,8 +226,11 @@ urlpatterns = [
         company.views.PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail-slugless'
     ),
+    url(
+        r'^investment-support-directory/',
+        include(investment_support_directory_urls)
+    )
 ]
-
 
 if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
     urlpatterns += [
@@ -199,3 +240,10 @@ if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
             {'document_root': settings.MEDIA_ROOT}
         ),
     ]
+
+urlpatterns = [
+    url(
+        r'^trade/',
+        include(urlpatterns)
+    ),
+]

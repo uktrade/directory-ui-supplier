@@ -2,7 +2,8 @@ import datetime
 import http
 
 from directory_api_client.client import api_client
-from directory_constants.constants import choices
+from directory_components.helpers import CompanyParser
+from directory_constants import choices
 from directory_validators.helpers import tokenize_keywords
 
 from django.http import Http404
@@ -106,7 +107,16 @@ def format_company_details(details):
         format_case_study, details.get('supplier_case_studies', [])
     )
     keywords = details['keywords']
+    if keywords:
+        keywords = tokenize_keywords(details['keywords'])
+    other_expertise = []
+    if details.get('expertise_products_services'):
+        other_expertise = details['expertise_products_services'].get('other')
+
+    parser = CompanyParser(details)
+
     return {
+        'is_in_companies_house': parser.is_in_companies_house,
         'website': details['website'],
         'description': details['description'],
         'summary': details['summary'],
@@ -115,7 +125,7 @@ def format_company_details(details):
         'sectors': pair_sector_values_with_label(details.get('sectors', [])),
         'logo': details.get('logo'),
         'name': details['name'],
-        'keywords': tokenize_keywords(keywords) if keywords else [],
+        'keywords': keywords or other_expertise,
         'employees': get_employees_label(details['employees']),
         'supplier_case_studies': list(case_studies),
         'modified': format_date_modified(details['modified']),
@@ -123,6 +133,12 @@ def format_company_details(details):
         'facebook_url': details['facebook_url'],
         'linkedin_url': details['linkedin_url'],
         'email_address': details.get('email_address'),
+        'is_published_investment_support_directory': details.get(
+            'is_published_investment_support_directory'
+        ),
+        'is_published_find_a_supplier': details.get(
+            'is_published_find_a_supplier'
+        ),
         'slug': details['slug'],
         'public_profile_url': reverse(
             'public-company-profiles-detail',
@@ -153,8 +169,11 @@ def format_case_study(case_study):
 
 def get_company_profile(number):
     response = api_client.company.retrieve_public_profile(number=number)
-    if response.status_code == http.client.NOT_FOUND:
+    if response.status_code == 404:
         raise Http404("API returned 404 for company number %s", number)
+    elif response.ok is True:
+        if not response.json()['is_published_find_a_supplier']:
+            raise Http404("API returned 404 for company number %s", number)
     response.raise_for_status()
     return get_public_company_profile_from_response(response)
 

@@ -13,8 +13,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 
 import environ
-from directory_components.constants import IP_RETRIEVER_NAME_GOV_UK
-from directory_constants.constants import cms
+from directory_constants import cms
 import directory_healthcheck.backends
 
 
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
     'company',
     'core',
     'industry',
+    'investment_support_directory',
     'formtools',
     'notifications',
     'directory_constants',
@@ -63,26 +63,20 @@ INSTALLED_APPS = [
 
 MIDDLEWARE_CLASSES = [
     'directory_components.middleware.MaintenanceModeMiddleware',
-    'directory_components.middleware.IPRestrictorMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'core.middleware.LocaleQuerystringMiddleware',
-    'core.middleware.PersistLocaleMiddleware',
-    'core.middleware.ForceDefaultLocale',
+    'directory_components.middleware.LocaleQuerystringMiddleware',
+    'directory_components.middleware.PersistLocaleMiddleware',
+    'directory_components.middleware.ForceDefaultLocale',
+    'directory_components.middleware.CountryMiddleware',
     'core.middleware.PrefixUrlMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'directory_components.middleware.RobotsIndexControlHeaderMiddlware',
-    'directory_components.middleware.CountryMiddleware',
 ]
 
-FEATURE_URL_PREFIX_ENABLED = env.str('FEATURE_URL_PREFIX_ENABLED', False)
-URL_PREFIX_DOMAIN = env.str('URL_PREFIX_DOMAIN', '')
-
-if FEATURE_URL_PREFIX_ENABLED:
-    ROOT_URLCONF = 'conf.urls_prefixed'
-else:
-    ROOT_URLCONF = 'conf.urls'
+FEATURE_URL_PREFIX_ENABLED = True
+URL_PREFIX_DOMAIN = env.str('URL_PREFIX_DOMAIN')
+ROOT_URLCONF = 'conf.urls'
 
 TEMPLATES = [
     {
@@ -135,6 +129,7 @@ else:
 CACHES = {
     'default': cache,
     'cms_fallback': cache,
+    'api_fallback': cache,
 }
 
 # Internationalization
@@ -145,6 +140,10 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+# https://docs.djangoproject.com/en/2.2/ref/settings/#std:setting-LANGUAGE_COOKIE_NAME
+LANGUAGE_COOKIE_DEPRECATED_NAME = 'django-language'
+# Django's default value for LANGUAGE_COOKIE_DOMAIN is None
+LANGUAGE_COOKIE_DOMAIN = env.str('LANGUAGE_COOKIE_DOMAIN', None)
 
 # https://github.com/django/django/blob/master/django/conf/locale/__init__.py
 LANGUAGES = [
@@ -166,12 +165,13 @@ LOCALE_PATHS = (
 
 FEATURE_FLAGS = {
     'EXPORT_JOURNEY_ON': False,  # not used in this project
-    'INTERNATIONAL_CONTACT_LINK_ON': env.bool(
-        'FEATURE_INTERNATIONAL_CONTACT_LINK_ENABLED', False),
-    'MAINTENANCE_MODE_ON': env.bool('FEATURE_MAINTENANCE_MODE_ENABLED', False),
-    'SEARCH_ENGINE_INDEXING_OFF': env.bool(
-        'FEATURE_SEARCH_ENGINE_INDEXING_DISABLED', False
+    'INVESTMENT_SUPPORT_DIRECTORY_ON': env.bool(
+        'FEATURE_INVESTMENT_SUPPORT_DIRECTORY_ENABLED', False
     ),
+    'INTERNATIONAL_CONTACT_LINK_ON': env.bool(
+        'FEATURE_INTERNATIONAL_CONTACT_LINK_ENABLED', False
+    ),
+    'MAINTENANCE_MODE_ON': env.bool('FEATURE_MAINTENANCE_MODE_ENABLED', False),
     'EU_EXIT_BANNER_ON': env.bool(
         'FEATURE_EU_EXIT_BANNER_ENABLED', False
     ),
@@ -314,7 +314,6 @@ THUMBNAIL_KVSTORE_CLASSES = {
     'dummy': 'sorl.thumbnail.kvstores.dbm_kvstore.KVStore',
 }
 THUMBNAIL_DEBUG = DEBUG
-TEMPLATE_DEBUG = DEBUG
 THUMBNAIL_KVSTORE = THUMBNAIL_KVSTORE_CLASSES[THUMBNAIL_KVSTORE_CLASS_NAME]
 THUMBNAIL_STORAGE = THUMBNAIL_STORAGE_CLASSES[THUMBNAIL_STORAGE_CLASS_NAME]
 # Workaround for slow S3
@@ -379,9 +378,16 @@ DIRECTORY_FORMS_API_ZENDESK_SEVICE_NAME = env.str(
 ZENDESK_TICKET_SUBJECT = env.str(
     'ZENDESK_TICKET_SUBJECT', 'Trade Profiles feedback'
 )
+CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID = env.str(
+    'CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID',
+    'a0ffc316-09f0-4b28-9af0-86243645efca'
+)
 
 # directory client core
-DIRECTORY_CLIENT_CORE_CACHE_EXPIRE_SECONDS = 60 * 60 * 24 * 30  # 30 days
+DIRECTORY_CLIENT_CORE_CACHE_EXPIRE_SECONDS = env.int(
+    'DIRECTORY_CLIENT_CORE_CACHE_EXPIRE_SECONDS',
+    60 * 60 * 24 * 30  # 30 days
+)
 
 # directory-components
 PRIVACY_COOKIE_DOMAIN = env.str('PRIVACY_COOKIE_DOMAIN')
@@ -396,6 +402,9 @@ DIRECTORY_HEALTHCHECK_BACKENDS = [
 # HEADER AND FOOTER LINKS
 DIRECTORY_CONSTANTS_URL_GREAT_DOMESTIC = env.str(
     'DIRECTORY_CONSTANTS_URL_GREAT_DOMESTIC', ''
+)
+DIRECTORY_CONSTANTS_URL_GREAT_INTERNATIONAL = env.str(
+    'DIRECTORY_CONSTANTS_URL_GREAT_INTERNATIONAL', ''
 )
 DIRECTORY_CONSTANTS_URL_EXPORT_OPPORTUNITIES = env.str(
     'DIRECTORY_CONSTANTS_URL_EXPORT_OPPORTUNITIES', ''
@@ -416,33 +425,6 @@ DIRECTORY_CONSTANTS_URL_SINGLE_SIGN_ON = env.str(
 DIRECTORY_CONSTANTS_URL_FIND_A_BUYER = env.str(
     'DIRECTORY_CONSTANTS_URL_FIND_A_BUYER', ''
 )
-
-# ip-restrictor
-IP_RESTRICTOR_SKIP_CHECK_ENABLED = env.bool(
-    'IP_RESTRICTOR_SKIP_CHECK_ENABLED', False
-)
-IP_RESTRICTOR_SKIP_CHECK_SENDER_ID = env.str(
-    'IP_RESTRICTOR_SKIP_CHECK_SENDER_ID', ''
-)
-IP_RESTRICTOR_SKIP_CHECK_SECRET = env.str(
-    'IP_RESTRICTOR_SKIP_CHECK_SECRET', ''
-)
-IP_RESTRICTOR_REMOTE_IP_ADDRESS_RETRIEVER = env.str(
-    'IP_RESTRICTOR_REMOTE_IP_ADDRESS_RETRIEVER',
-    IP_RETRIEVER_NAME_GOV_UK
-)
-RESTRICT_ADMIN = env.bool('IP_RESTRICTOR_RESTRICT_IPS', False)
-ALLOWED_ADMIN_IPS = env.list('IP_RESTRICTOR_ALLOWED_ADMIN_IPS', default=[])
-ALLOWED_ADMIN_IP_RANGES = env.list(
-    'IP_RESTRICTOR_ALLOWED_ADMIN_IP_RANGES', default=[]
-)
-RESTRICTED_APP_NAMES = env.list(
-    'IP_RESTRICTOR_RESTRICTED_APP_NAMES', default=['admin']
-)
-if env.bool('IP_RESTRICTOR_RESTRICT_UI', False):
-    # restrict all pages that are not in apps API, healthcheck, admin, etc
-    RESTRICTED_APP_NAMES.append('')
-
 
 # Settings for email to supplier
 CONTACT_SUPPLIER_SUBJECT = env.str(

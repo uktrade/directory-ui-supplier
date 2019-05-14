@@ -1,51 +1,28 @@
 import http
 from unittest.mock import call, patch, Mock
+from unittest import mock
 
 import pytest
 import requests
 
 from django.core.urlresolvers import reverse, NoReverseMatch
 
+from core.tests.helpers import create_response
+from directory_api_client.client import api_client
 from company import helpers, views
 
 
-@pytest.fixture
-def api_response_200():
-    response = requests.Response()
-    response.status_code = http.client.OK
-    return response
-
-
-@pytest.fixture
-def api_response_404(*args, **kwargs):
-    response = requests.Response()
-    response.status_code = http.client.NOT_FOUND
-    return response
-
-
-@pytest.fixture
-def api_response_search_description_highlight_200(
-    api_response_200, search_results
-):
-    search_results['hits']['hits'][0]['highlight'] = {
-        'description': [
-            '<em>wolf</em> in sheep clothing description',
-            'to the max <em>wolf</em>.'
-        ]
-    }
-    api_response_200.json = lambda: search_results
-    return api_response_200
-
-
-@pytest.fixture
-def api_response_search_summary_highlight_200(
-    api_response_200, search_results
-):
-    search_results['hits']['hits'][0]['highlight'] = {
-        'summary': ['<em>wolf</em> in sheep clothing summary.']
-    }
-    api_response_200.json = lambda: search_results
-    return api_response_200
+@pytest.fixture()
+def mock_retrieve_company_non_find_a_supplier(retrieve_profile_data):
+    retrieve_profile_data['is_published_find_a_supplier'] = (
+        False
+    )
+    patch = mock.patch.object(
+        api_client.company, 'retrieve_public_profile',
+        return_value=create_response(200, retrieve_profile_data)
+    )
+    yield patch.start()
+    patch.stop()
 
 
 def test_public_profile_different_slug_redirected(
@@ -68,7 +45,7 @@ def test_public_profile_different_slug_redirected(
 
     response = client.get(url)
 
-    assert response.status_code == http.client.MOVED_PERMANENTLY
+    assert response.status_code == 302
     assert response.get('Location') == expected_redirect_url
 
 
@@ -89,7 +66,7 @@ def test_public_profile_missing_slug_redirected(client, retrieve_profile_data):
 
     response = client.get(url)
 
-    assert response.status_code == http.client.MOVED_PERMANENTLY
+    assert response.status_code == 302
     assert response.get('Location') == expected_redirect_url
 
 
@@ -146,6 +123,7 @@ def test_public_profile_details_exposes_context(
         'logo': 'logo.png',
         'summary': 'summary summary',
         'slug': 'thing',
+        'is_published_find_a_supplier': True,
     }
     mock_get_public_company_profile_from_response.return_value = company
     url = reverse(
@@ -170,7 +148,7 @@ def test_company_profile_list_with_params_redirects_to_search(client):
     response = client.get(url, {'sectors': 'AEROSPACE'})
 
     assert response.status_code == 302
-    assert response.get('Location') == '/search/?sector=AEROSPACE'
+    assert response.get('Location') == '/trade/search/?sector=AEROSPACE'
 
 
 def test_company_profile_list_redirects_to_search(client):
@@ -178,7 +156,7 @@ def test_company_profile_list_redirects_to_search(client):
     response = client.get(url)
 
     assert response.status_code == 302
-    assert response.get('Location') == '/search/'
+    assert response.get('Location') == '/trade/search/'
 
 
 @patch.object(helpers, 'get_company_profile')
@@ -228,6 +206,24 @@ def test_public_profile_details_handles_404(
     response = client.get(url)
 
     assert response.status_code == http.client.NOT_FOUND
+
+
+def test_public_profile_details_404_non_fas(
+        mock_retrieve_company_non_find_a_supplier,
+        client,
+        retrieve_profile_data,
+):
+    url = reverse(
+        'public-company-profiles-detail',
+        kwargs={
+            'company_number': retrieve_profile_data['number'],
+            'slug': retrieve_profile_data['slug'],
+        }
+    )
+
+    response = client.get(url)
+
+    assert response.status_code == 404
 
 
 @patch.object(views.api_client.company, 'retrieve_public_case_study')
@@ -306,7 +302,7 @@ def test_case_study_different_slug_redirected(
 
     response = client.get(url)
 
-    assert response.status_code == http.client.MOVED_PERMANENTLY
+    assert response.status_code == 302
     assert response.get('Location') == expected_redirect_url
 
 
@@ -327,7 +323,7 @@ def test_case_study_missing_slug_redirected(supplier_case_study_data, client):
 
     response = client.get(url)
 
-    assert response.status_code == http.client.MOVED_PERMANENTLY
+    assert response.status_code == 302
     assert response.get('Location') == expected_redirect_url
 
 
@@ -466,10 +462,19 @@ def test_company_search_submit_form_on_get(
     results = [{'number': '1234567', 'slug': 'thing'}]
     mock_get_results_and_count.return_value = (results, 20)
 
-    response = client.get(reverse('company-search'), {'term': '123'})
+    response = client.get(reverse('company-search'), {'q': '123'})
 
     assert response.status_code == 200
     assert response.context_data['results'] == results
+
+
+def test_company_search_redirects_using_term(client):
+
+    url = reverse('company-search')
+    response = client.get(url, {'term': '123'})
+
+    assert response.status_code == 302
+    assert response.url == url + '?q=123'
 
 
 @patch('company.views.CompanySearchView.get_results_and_count')
@@ -479,7 +484,7 @@ def test_company_search_pagination_count(
     results = [{'number': '1234567', 'slug': 'thing'}]
     mock_get_results_and_count.return_value = (results, 20)
 
-    response = client.get(reverse('company-search'), {'term': '123'})
+    response = client.get(reverse('company-search'), {'q': '123'})
 
     assert response.status_code == 200
     assert response.context_data['pagination'].paginator.count == 20
@@ -493,7 +498,7 @@ def test_company_search_pagination_param(
 
     url = reverse('company-search')
     response = client.get(
-        url, {'term': '123', 'page': 1, 'sectors': ['AEROSPACE']}
+        url, {'q': '123', 'page': 1, 'sectors': ['AEROSPACE']}
     )
 
     assert response.status_code == 200
@@ -511,7 +516,7 @@ def test_company_search_sector_empty(
 
     url = reverse('company-search')
     response = client.get(
-        url, {'term': '123', 'page': 1, 'sectors': ''}
+        url, {'q': '123', 'page': 1, 'sectors': ''}
     )
     assert response.status_code == 200
     assert mock_search.call_count == 1
@@ -527,10 +532,10 @@ def test_company_search_pagination_empty_page(
     mock_search.return_value = api_response_search_200
 
     url = reverse('company-search')
-    response = client.get(url, {'term': '123', 'page': 100})
+    response = client.get(url, {'q': '123', 'page': 100})
 
     assert response.status_code == 302
-    assert response.get('Location') == '/search/?term=123'
+    assert response.get('Location') == '/trade/search/?q=123'
 
 
 @patch('company.views.CompanySearchView.get_results_and_count')
@@ -557,7 +562,7 @@ def test_company_search_api_call_error(mock_search, api_response_400, client):
     mock_search.return_value = api_response_400
 
     with pytest.raises(requests.exceptions.HTTPError):
-        client.get(reverse('company-search'), {'term': '123'})
+        client.get(reverse('company-search'), {'q': '123'})
 
 
 @patch('directory_api_client.client.api_client.company.search_company')
@@ -571,7 +576,7 @@ def test_company_search_api_success(
         'results': [],
         'hits': {'total': 2}
     }
-    response = client.get(reverse('company-search'), {'term': '123'})
+    response = client.get(reverse('company-search'), {'q': '123'})
 
     assert response.status_code == 200
     assert mock_get_results_from_search_response.call_count == 1
@@ -586,7 +591,7 @@ def test_company_search_response_no_highlight(
 ):
     mock_search.return_value = api_response_search_200
 
-    response = client.get(reverse('company-search'), {'term': 'wolf'})
+    response = client.get(reverse('company-search'), {'q': 'wolf'})
 
     assert b'this is a short summary' in response.content
 
@@ -597,7 +602,7 @@ def test_company_highlight_description(
 ):
     mock_search.return_value = api_response_search_description_highlight_200
 
-    response = client.get(reverse('company-search'), {'term': 'wolf'})
+    response = client.get(reverse('company-search'), {'q': 'wolf'})
     expected = (
         b'<em>wolf</em> in sheep clothing description...'
         b'to the max <em>wolf</em>.'
@@ -612,7 +617,7 @@ def test_company_search_highlight_summary(
 ):
     mock_search.return_value = api_response_search_summary_highlight_200
 
-    response = client.get(reverse('company-search'), {'term': 'wolf'})
+    response = client.get(reverse('company-search'), {'q': 'wolf'})
 
     assert b'<em>wolf</em> in sheep clothing summary.' in response.content
 
@@ -647,41 +652,11 @@ def test_company_profile_url_routing_404(name, number, slug):
         assert reverse(name, kwargs=kwargs)
 
 
-def test_contact_company_sent_no_referer(client):
+def test_contact_company_sent(client):
     url = reverse(
         'contact-company-sent', kwargs={'company_number': '01111111'}
     )
-    expected_url = reverse(
-        'contact-company', kwargs={'company_number': '01111111'}
-    )
-    response = client.get(url, {})
-
-    assert response.status_code == 302
-    assert response.url == expected_url
-
-
-def test_contact_company_sent_incorrect_referer(client):
-    url = reverse(
-        'contact-company-sent', kwargs={'company_number': '01111111'}
-    )
-    expected_url = reverse(
-        'contact-company', kwargs={'company_number': '01111111'}
-    )
-    referer_url = 'http://www.googe.com'
-    response = client.get(url, {}, HTTP_REFERER=referer_url)
-
-    assert response.status_code == 302
-    assert response.url == expected_url
-
-
-def test_contact_company_sent_correct_referer(client):
-    url = reverse(
-        'contact-company-sent', kwargs={'company_number': '01111111'}
-    )
-    referer_url = reverse(
-        'contact-company', kwargs={'company_number': '01111111'}
-    )
-    response = client.get(url, {}, HTTP_REFERER=referer_url)
+    response = client.get(url)
 
     assert response.status_code == 200
     assert response.template_name == [

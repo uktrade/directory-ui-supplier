@@ -4,13 +4,23 @@
 
 {% block head_title %}Find a Buyer - GREAT.gov.uk{% endblock %}
 
-{% block head_js %}
-    <script src="{% static 'directory_components/js/third-party.js' %}"></script>
+{% block header_js %}
     <script src="{% static 'directory_components/js/dit.classes.Dropdown.js' %}"></script>
     <script src="{% static 'directory_components/js/dit.responsive.js' %}"></script>
-    <script src="{% static 'directory_components/js/dit.components.cookie-notice.js' %}"></script>
     <script src="{% static 'directory_components/js/dit.components.countrySelector.js' %}"></script>
+    <script src="{% static 'directory_components/js/dit.components.languageSelectorDropdown.js' %}"></script>
     <script src="{% static 'directory_components/js/dit.components.greatInternationalHeader.js' %}"></script>
+{% endblock %}
+
+{% block head_js_ga360 %}
+    {{ block.super }}
+    {% if ga360 %}
+        <script src="{% static 'core/js/dit.tagging.js' %}"></script>
+        <script id="ga360-script">
+            window.dataLayer.push({ 'pageCategory': '{{ ga360.page_type }}' });
+            dit.tagging.fas.init('{{ ga360.page_type }}')
+        </script>
+    {% endif %}
 {% endblock %}
 
 {% block head_css %}
@@ -28,7 +38,7 @@
 {% endblock %}
 
 {% block body_header %}
-    {% include 'directory_components/header_footer/international_header.html' %}
+    {% include 'core/includes/international_header.html' %}
 {% endblock %}
 
 {% block body_footer %}

@@ -5,6 +5,8 @@ import pytest
 
 from django.core.urlresolvers import resolve, reverse
 
+from directory_constants import slugs
+
 from core.tests.helpers import create_response
 from industry import constants, views
 from industry.views import IndustryDetailCMSView
@@ -350,7 +352,7 @@ def test_sector_list_submit_with_comment_forms_api(
     assert mock_save.call_count == 2
     assert mock_save.call_args_list[0] == call(
         email_address='buying@example.com',
-        form_url='/industries/contact/',
+        form_url='/trade/industries/contact/',
         sender={
             'email_address': 'jeff@example.com',
             'country_code': 'United Kingdom'
@@ -361,7 +363,7 @@ def test_sector_list_submit_with_comment_forms_api(
     )
     assert mock_save.call_args_list[1] == call(
         email_address='jeff@example.com',
-        form_url='/industries/contact/',
+        form_url='/trade/industries/contact/',
         template_id=settings.CONTACT_INDUSTRY_USER_TEMPLATE_ID,
         email_reply_to_id=settings.CONTACT_INDUSTRY_USER_REPLY_TO_ID,
     )
@@ -410,8 +412,12 @@ def test_contact_industry_detail_sent_correct_referer(client):
 
 
 def test_contact_industry_list_sent_no_referer(client):
-    url = reverse('sector-list-cms-contact-sent')
-    expected_url = reverse('sector-list-cms-contact')
+    url = reverse(
+        'sector-list-cms-contact-sent',
+        kwargs={'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT})
+    expected_url = reverse(
+        'sector-list-cms-contact',
+        kwargs={'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT})
     response = client.get(url, {})
 
     assert response.status_code == 302
@@ -419,8 +425,12 @@ def test_contact_industry_list_sent_no_referer(client):
 
 
 def test_contact_industry_list_sent_incorrect_referer(client):
-    url = reverse('sector-list-cms-contact-sent')
-    expected_url = reverse('sector-list-cms-contact')
+    url = reverse(
+        'sector-list-cms-contact-sent',
+        kwargs={'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT})
+    expected_url = reverse(
+        'sector-list-cms-contact',
+        kwargs={'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT})
     referer_url = 'http://www.googe.com'
     response = client.get(url, {}, HTTP_REFERER=referer_url)
 
@@ -429,8 +439,12 @@ def test_contact_industry_list_sent_incorrect_referer(client):
 
 
 def test_contact_industry_list_sent_correct_referer(client):
-    url = reverse('sector-list-cms-contact-sent')
-    referer_url = reverse('sector-list-cms-contact')
+    url = reverse(
+        'sector-list-cms-contact-sent',
+        kwargs={'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT})
+    referer_url = reverse(
+        'sector-list-cms-contact',
+        kwargs={'slug': slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT})
     response = client.get(url, {}, HTTP_REFERER=referer_url)
 
     assert response.status_code == 200

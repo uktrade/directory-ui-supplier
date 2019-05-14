@@ -1,7 +1,7 @@
 from django.core.urlresolvers import reverse
 from django.utils import translation
 
-from directory_constants.constants import urls
+from directory_constants import urls
 
 from core import context_processors, forms
 

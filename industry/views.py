@@ -1,9 +1,11 @@
 import functools
 
 import directory_forms_api_client.helpers
-from directory_constants.constants import cms
+from directory_constants import cms, slugs
 from directory_components.helpers import SocialLinkBuilder
-from directory_components.mixins import CountryDisplayMixin
+from directory_components.mixins import (
+    CMSLanguageSwitcherMixin, CountryDisplayMixin,
+    GA360Mixin)
 
 from django.conf import settings
 from django.shortcuts import redirect
@@ -15,10 +17,8 @@ from django.urls import reverse, reverse_lazy
 
 from directory_cms_client.client import cms_api_client
 
-from core.views import ActivateTranslationMixin
 from core.mixins import (
     ActiveViewNameMixin,
-    CMSLanguageSwitcherMixin,
     GetCMSPageMixin,
     SpecificRefererRequiredMixin
 )
@@ -28,23 +28,25 @@ from industry.helpers import get_showcase_companies
 
 
 class IndustryDetailCMSView(
-    ActivateTranslationMixin,
     CMSLanguageSwitcherMixin,
     GetCMSPageMixin,
     CountryDisplayMixin,
+    GA360Mixin,
     TemplateView
 ):
     template_name = 'industry/detail.html'
+    ga360_payload = {'page_type': 'FindASupplierIndustryDetail'}
 
     def get_context_data(self, *args, **kwargs):
-        page = self.get_cms_page()
         companies = self.get_companies(
-            sector_values=page['search_filter_sector'],
-            term=page['search_filter_text'],
-            search_filter_showcase_only=page['search_filter_showcase_only']
+            sector_values=self.page['search_filter_sector'],
+            term=self.page['search_filter_text'],
+            search_filter_showcase_only=(
+                self.page['search_filter_showcase_only']
+            )
         )
         return super().get_context_data(
-            page=page, companies=companies, *args, **kwargs
+            page=self.page, companies=companies, *args, **kwargs
         )
 
     @staticmethod
@@ -77,11 +79,11 @@ class IndustryDetailCMSView(
         return super().dispatch(request, *args, **kwargs)
 
 
-class GetContactPageMixin:
+class GetCMSContactPageMixin:
     @functools.lru_cache()
     def get_contact_page(self):
         response = cms_api_client.lookup_by_slug(
-            slug=cms.FIND_A_SUPPLIER_INDUSTRY_CONTACT_SLUG,
+            slug=slugs.FIND_A_SUPPLIER_INDUSTRY_CONTACT,
             language_code=translation.get_language(),
             draft_token=self.request.GET.get('draft_token'),
         )
@@ -93,6 +95,10 @@ class GetContactPageMixin:
             *args, **kwargs
         )
 
+    @cached_property
+    def page(self):
+        return self.get_contact_page()
+
 
 class GetIndustryPageMixin:
     @functools.lru_cache()
@@ -101,7 +107,7 @@ class GetIndustryPageMixin:
             slug=self.kwargs['slug'],
             language_code=translation.get_language(),
         )
-        return self.handle_cms_response(response)
+        return handle_cms_response(response)
 
     def get_context_data(self, *args, **kwargs):
         return super().get_context_data(
@@ -110,7 +116,7 @@ class GetIndustryPageMixin:
         )
 
 
-class BaseIndustryContactView(CountryDisplayMixin, FormView):
+class BaseIndustryContactView(CountryDisplayMixin, GA360Mixin, FormView):
 
     template_name = 'industry/contact.html'
     form_class = forms.ContactForm
@@ -158,9 +164,10 @@ class BaseIndustryContactView(CountryDisplayMixin, FormView):
 
 
 class IndustryDetailContactCMSView(
-    ActivateTranslationMixin, GetIndustryPageMixin, GetCMSPageMixin,
-    GetContactPageMixin, CMSLanguageSwitcherMixin, BaseIndustryContactView
+    GetIndustryPageMixin, GetCMSContactPageMixin,
+    CMSLanguageSwitcherMixin, BaseIndustryContactView
 ):
+    ga360_payload = {'page_type': 'FindASupplierIndustryDetailContact'}
 
     def get_success_url(self):
         return reverse('sector-detail-cms-contact-sent', kwargs=self.kwargs)
@@ -173,18 +180,20 @@ class IndustryDetailContactCMSView(
 
 
 class IndustryLandingPageContactCMSView(
-    ActivateTranslationMixin, GetCMSPageMixin, GetContactPageMixin,
-    CMSLanguageSwitcherMixin, BaseIndustryContactView
+    GetCMSContactPageMixin, CMSLanguageSwitcherMixin,
+    BaseIndustryContactView
 ):
     success_url = reverse_lazy('sector-list-cms-contact-sent')
+    ga360_payload = {'page_type': 'FindASupplierIndustryLandingPageContact'}
 
 
 class IndustryDetailContactCMSSentView(
-    ActivateTranslationMixin, SpecificRefererRequiredMixin, GetCMSPageMixin,
-    GetContactPageMixin, GetIndustryPageMixin, CountryDisplayMixin,
-    TemplateView
+    CMSLanguageSwitcherMixin, SpecificRefererRequiredMixin,
+    GetCMSContactPageMixin, GetIndustryPageMixin, CountryDisplayMixin,
+    GA360Mixin, TemplateView
 ):
     template_name = 'industry/contact-success.html'
+    ga360_payload = {'page_type': 'FindASupplierIndustryDetailContactSent'}
 
     @property
     def expected_referer_url(self):
@@ -192,10 +201,11 @@ class IndustryDetailContactCMSSentView(
 
 
 class IndustryLandingPageContactCMSSentView(
-    ActivateTranslationMixin, SpecificRefererRequiredMixin, GetCMSPageMixin,
-    GetContactPageMixin, CountryDisplayMixin, TemplateView
+    CMSLanguageSwitcherMixin, SpecificRefererRequiredMixin,
+    GetCMSContactPageMixin, CountryDisplayMixin, GA360Mixin, TemplateView
 ):
     template_name = 'industry/contact-success.html'
+    ga360_payload = {'page_type': 'FindASupplierIndustryLandingContactSent'}
 
     @property
     def expected_referer_url(self):
@@ -203,45 +213,47 @@ class IndustryLandingPageContactCMSSentView(
 
 
 class IndustryArticleCMSView(
-    ActivateTranslationMixin, CMSLanguageSwitcherMixin, GetCMSPageMixin,
-    CountryDisplayMixin, TemplateView
+    CMSLanguageSwitcherMixin, GetCMSPageMixin,
+    CountryDisplayMixin, GA360Mixin, TemplateView
 ):
     template_name = 'industry/article.html'
+    ga360_payload = {'page_type': 'FindASupplierIndustryArticle'}
 
     def get_context_data(self, *args, **kwargs):
-        page = self.get_cms_page()
         social_links_builder = SocialLinkBuilder(
             url=self.request.build_absolute_uri(),
-            page_title=page['title'],
+            page_title=self.page['title'],
             app_title='Find A Supplier',
         )
         return super().get_context_data(
-            page=page,
+            page=self.page,
             social_links=social_links_builder.links,
             *args, **kwargs
         )
 
 
 class IndustryLandingPageCMSView(
-    ActivateTranslationMixin, CMSLanguageSwitcherMixin, ActiveViewNameMixin,
+    CMSLanguageSwitcherMixin, ActiveViewNameMixin,
     CountryDisplayMixin, TemplateView
 ):
     active_view_name = 'sector-list'
     template_name = 'industry/list.html'
 
-    def get_cms_page(self):
+    @cached_property
+    def page(self):
         response = cms_api_client.lookup_by_slug(
-            slug=cms.FIND_A_SUPPLIER_INDUSTRY_LANDING_SLUG,
+            slug=slugs.FIND_A_SUPPLIER_INDUSTRY_LANDING,
             language_code=translation.get_language(),
             draft_token=self.request.GET.get('draft_token'),
         )
         return handle_cms_response(response)
 
     def get_context_data(self, *args, **kwargs):
-        page = self.get_cms_page()
-        showcase_industries = self.get_showcase_industries(page['industries'])
+        showcase_industries = self.get_showcase_industries(
+            self.page['industries']
+        )
         return super().get_context_data(
-            page=page,
+            page=self.page,
             showcase_industries=showcase_industries,
             *args,
             **kwargs

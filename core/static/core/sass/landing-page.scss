@@ -9,10 +9,6 @@ $white: #ffffff;
 $blue: #006ccc;
 $sand: #f5f2ed;
 
-#content {
-  padding-bottom: 0;
-}
-
 #search-area,
 #industries-section,
 #services-section {
@@ -103,7 +99,6 @@ section {
 
     input, select {
       width: 100%;
-      height: 48px;
       background-color: white;
       height: 60px;
     }
@@ -150,7 +145,6 @@ section {
   }
 
   p {
-    color: gray-light;
     font-size: 19px;
     line-height: 1.58;
     color: $gray-light;
@@ -240,7 +234,6 @@ section {
   }
 
   p {
-    color: gray-light;
     font-size: 19px;
     line-height: 1.58;
     color: $gray-light;
@@ -363,8 +356,7 @@ section {
     }
   }
   #services-section {
-    padding: 30px;
-    padding-bottom: 0;
+    padding: 30px 30px 0;
 
     p {
       font-size: 19px;

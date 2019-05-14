@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+{% load breadcrumbs render_form from directory_components_tags %}
+
+{% block head_css %}
+    {{ block.super }}
+    <link href="{% static 'core/investment-support-directory-contact.css' %}" media="all" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% url 'investment-support-directory-profile' company_number=company.number slug=company.slug as company_url %}
+    {% breadcrumbs left_url='/' left_label='Home' middle_label=company.name middle_url=company_url right_label='Send a message' %}
+    <div class="width-two-thirds">
+        <h1 class="heading-xlarge margin-bottom-0">Send a message to {{ company.name }}</h1>              
+        <p class="hero-subtitle margin-bottom-45 margin-top-15">Enter your details and a brief message about your needs. We’ll send these to the business you’ve selected.</p>  
+        <form method="post">
+            {% render_form form %}
+            <button class="button">Send message</button>
+        </form>
+    </div>
+</div>
+
+    
+{% endblock content %}

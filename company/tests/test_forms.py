@@ -91,12 +91,12 @@ def test_serialize_contact_company_form():
 
 def test_search_form():
     form = forms.CompanySearchForm(data={
-        'term': '123',
+        'q': '123',
         'sectors': ['AEROSPACE']
     })
 
     assert form.is_valid() is True
-    assert form.cleaned_data['term'] == '123'
+    assert form.cleaned_data['q'] == '123'
     assert form.cleaned_data['sectors'] == ['AEROSPACE']
 
 
@@ -104,11 +104,11 @@ def test_search_required_fields():
     form = forms.CompanySearchForm()
 
     assert form.fields['sectors'].required is False
-    assert form.fields['term'].required is False
+    assert form.fields['q'].required is False
 
 
 def test_search_required_empty_sector_term():
-    form = forms.CompanySearchForm(data={'term': '', 'sectors': ''})
+    form = forms.CompanySearchForm(data={'q': '', 'sectors': ''})
 
     assert form.is_valid() is False
 
@@ -133,7 +133,7 @@ def test_contact_supplier_body_text(
         subject='Hello',
         reply_to='reply_to@example.com',
         recipient_name=valid_contact_company_data['company_name'],
-        form_url='/some/path/',
+        form_url='/trade/some/path/',
     )
 
     expected_context = {

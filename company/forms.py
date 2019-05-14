@@ -2,7 +2,7 @@ from captcha.fields import ReCaptchaField
 from directory_components.context_processors import (
     urls_processor, header_footer_processor
 )
-from directory_constants.constants import choices
+from directory_constants import choices
 from directory_validators.common import not_contains_url_or_email
 from directory_forms_api_client.forms import EmailAPIForm
 
@@ -18,7 +18,7 @@ class CompanySearchForm(forms.Form):
 
     MESSAGE_MISSING_SECTOR_TERM = 'Please specify a search term or a sector.'
 
-    term = forms.CharField(
+    q = forms.CharField(
         label='Search by product, service or company keyword',
         max_length=255,
         widget=forms.TextInput(
@@ -47,7 +47,7 @@ class CompanySearchForm(forms.Form):
 
     def clean(self):
         cleaned_data = super().clean()
-        if not cleaned_data.get('term') and not cleaned_data.get('sectors'):
+        if not cleaned_data.get('q') and not cleaned_data.get('sectors'):
             raise forms.ValidationError(self.MESSAGE_MISSING_SECTOR_TERM)
         return cleaned_data
 
