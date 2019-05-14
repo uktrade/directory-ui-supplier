@@ -148,7 +148,9 @@ class ContactView(
             kwargs={'company_number': self.kwargs['company_number']}
         )
 
-    notify_settings = NotifySettings(
+    @property
+    def notify_settings(self):
+        return NotifySettings(
             contact_company_template=(
                 settings.CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID
             ),
