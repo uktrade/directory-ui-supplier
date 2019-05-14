@@ -58,6 +58,8 @@ def test_get_showcase_companies_200(search_company):
             'email_address': 'test@example.com',
             'website': 'http://example.com',
             'description': 'Ecommerce website',
-            'keywords': ['word1', 'word2']
+            'keywords': ['word1', 'word2'],
+            'is_published_investment_support_directory': True,
+            'is_published_find_a_supplier': True,
         }
     ]

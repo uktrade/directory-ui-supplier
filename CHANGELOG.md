@@ -23,6 +23,9 @@
 - [[TT-1339]](https://uktrade.atlassian.net/browse/TT-1339) Display keywords added via new profile "other" expertise interface
 - [[TT-1345]](https://uktrade.atlassian.net/browse/TT-1345) Fixed position of logos on ISD profile.
 - [[CMS-1395]](https://uktrade.atlassian.net/browse/CMS-1395) Fix language cookie name and domain to be the same across all our services.
+- [[TT-1345]](https://uktrade.atlassian.net/browse/TT-1345) Fixed position of logos on ISD profile. 
+- [[TT-1428]](https://uktrade.atlassian.net/browse/TT-1428) ISD companies 404 if they are also not published to FAS. 
+
 
 ## [2019.04.25](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.04.25)
 
