@@ -98,7 +98,11 @@ class AnonymousSubscribeFormView(CountryDisplayMixin, GA360Mixin, FormView):
         data = forms.serialize_anonymous_subscriber_forms(form.cleaned_data)
         response = api_client.buyer.send_form(data)
         response.raise_for_status()
-        return TemplateResponse(self.request, self.success_template)
+        return TemplateResponse(
+            self.request,
+            self.success_template,
+            self.get_context_data()
+        )
 
 
 class SendContactNotifyMessagesMixin:
