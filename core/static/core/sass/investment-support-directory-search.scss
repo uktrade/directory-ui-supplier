@@ -244,7 +244,7 @@ body:not(.js-enabled) {
 
 @media (min-width: 641px) {
   #main-content > div {
-    display: block;
+    flex-flow: row;
   }
   #hero-container {
     padding-bottom: 0;
