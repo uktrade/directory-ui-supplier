@@ -159,7 +159,7 @@ class ContactView(
             kwargs={'company_number': self.kwargs['company_number']}
         )
 
-    
+
 class ContactSuccessView(
     FeatureFlagMixin, CompanyProfileMixin, CountryDisplayMixin, TemplateView
 ):
