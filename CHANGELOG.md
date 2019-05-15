@@ -11,7 +11,7 @@
 - TT-1462 - Solve padding bug fix on ISD search.
 - TT-1409 - Fixed the links to filtered search on ISD home page.
 - TT-1441 - Fixed search results broken layout.
-
+- TT-1318 - Improved consistency of header styles across pages
 
 ## [2019.05.14](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.14)
 
