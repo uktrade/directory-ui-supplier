@@ -151,6 +151,9 @@ class ContactView(
         contact_support_email_address=(
             settings.CONTACT_ISD_SUPPORT_EMAIL_ADDRESS
             ),
+        contact_investor_template=(
+            settings.CONTACT_ISD_INVESTOR_NOTIFY_TEMPLATE_ID
+        ),
     )
 
     def get_success_url(self):
