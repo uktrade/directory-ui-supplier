@@ -23,6 +23,7 @@
 - TT-1352 - Added Investment Support Directory search.
 - TT-1320 - Added Investment Support Directory contact.
 - TT-1437 - Link case study to ISD profile if ingress was ISD profile.
+- TT-1395 - Send ISD Contact notification to support.
 
 ### Fixed bugs:
 

@@ -1,10 +1,5 @@
 from urllib.parse import urlencode
 
-from directory_api_client.client import api_client
-from directory_constants import expertise
-from directory_components.mixins import CountryDisplayMixin
-import directory_forms_api_client.helpers
-
 from django.conf import settings
 from django.core.paginator import EmptyPage, Paginator
 from django.shortcuts import redirect
@@ -13,6 +8,13 @@ from django.urls import reverse
 from django.utils.functional import cached_property
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
+
+from directory_api_client.client import api_client
+from directory_constants import expertise
+from directory_components.mixins import CountryDisplayMixin
+from core.views import BaseNotifyFormView
+from core.helpers import NotifySettings
+
 
 import core.mixins
 from investment_support_directory import forms, helpers
@@ -132,33 +134,33 @@ class ProfileView(
 
 
 class ContactView(
-    FeatureFlagMixin, CompanyProfileMixin, CountryDisplayMixin, FormView
+    FeatureFlagMixin,
+    CompanyProfileMixin,
+    CountryDisplayMixin,
+    BaseNotifyFormView,
 ):
     form_class = forms.ContactCompanyForm
     template_name = 'investment_support_directory/contact.html'
+    notify_settings = NotifySettings(
+        contact_company_template=(
+            settings.CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID
+            ),
+        contact_support_template=(
+            settings.CONTACT_ISD_SUPPORT_NOTIFY_TEMPLATE_ID
+            ),
+        contact_support_email_address=(
+            settings.CONTACT_ISD_SUPPORT_EMAIL_ADDRESS
+            ),
+        contact_investor_template=(
+            settings.CONTACT_ISD_INVESTOR_NOTIFY_TEMPLATE_ID
+        ),
+    )
 
     def get_success_url(self):
         return reverse(
             'investment-support-directory-company-contact-sent',
             kwargs={'company_number': self.kwargs['company_number']}
         )
-
-    def form_valid(self, form):
-        sender = directory_forms_api_client.helpers.Sender(
-            email_address=form.cleaned_data['email_address'],
-        )
-        spam_control = directory_forms_api_client.helpers.SpamControl(
-            contents=[form.cleaned_data['subject'], form.cleaned_data['body']]
-        )
-        response = form.save(
-            template_id=settings.CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID,
-            email_address=self.company['email_address'],
-            form_url=self.request.path,
-            sender=sender,
-            spam_control=spam_control,
-        )
-        response.raise_for_status()
-        return super().form_valid(form)
 
 
 class ContactSuccessView(
