@@ -129,9 +129,23 @@ class SendContactNotifyMessagesMixin:
         )
         response.raise_for_status()
 
+    def send_investor_message(self, form):
+        spam_control = directory_forms_api_client.helpers.SpamControl(
+            contents=[form.cleaned_data['subject'], form.cleaned_data['body']]
+        )
+        response = form.save(
+            template_id=self.notify_settings.contact_investor_template,
+            email_address=form.cleaned_data['email_address'],
+            company_email=self.company['email_address'],
+            form_url=self.request.get_full_path(),
+            spam_control=spam_control,
+        )
+        response.raise_for_status()
+
     def form_valid(self, form):
         self.send_company_message(form)
         self.send_support_message(form)
+        self.send_investor_message(form)
         return super().form_valid(form)
 
 
