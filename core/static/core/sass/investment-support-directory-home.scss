@@ -46,18 +46,26 @@
 
 
 #benefits {
-  padding-top: 60px;
-  padding-bottom: 60px;
   h2 {
-    margin-bottom: 15px;
+    margin-bottom: 60px; 
     margin-top: 0;
   }
+  padding-top: 60px;
+  padding-bottom: 60px;
   ul {
     li {
+      &:first-child {
+        h3 {
+          margin-top: 0;
+        }
+      }
       h3 {
         margin-bottom: 10px;
       }
     }
+  }
+  img {
+    width: 100%
   }
 }
 
@@ -71,5 +79,11 @@
     li {
       margin-bottom: 10px;
     }
+  }
+}
+
+@media (min-width: 641px) {
+  #benefits-list-container {
+    padding-right: 100px;
   }
 }

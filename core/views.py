@@ -99,3 +99,55 @@ class AnonymousSubscribeFormView(CountryDisplayMixin, GA360Mixin, FormView):
         response = api_client.buyer.send_form(data)
         response.raise_for_status()
         return TemplateResponse(self.request, self.success_template)
+
+
+class SendContactNotifyMessagesMixin:
+
+    def send_company_message(self, form):
+        sender = directory_forms_api_client.helpers.Sender(
+            email_address=form.cleaned_data['email_address'],
+            country_code=None,
+        )
+        spam_control = directory_forms_api_client.helpers.SpamControl(
+            contents=[form.cleaned_data['subject'], form.cleaned_data['body']]
+        )
+
+        response = form.save(
+            template_id=self.notify_settings.contact_company_template,
+            email_address=self.company['email_address'],
+            form_url=self.request.path,
+            sender=sender,
+            spam_control=spam_control,
+        )
+        response.raise_for_status()
+
+    def send_support_message(self, form):
+        response = form.save(
+            template_id=self.notify_settings.contact_support_template,
+            email_address=self.notify_settings.contact_support_email_address,
+            form_url=self.request.get_full_path(),
+        )
+        response.raise_for_status()
+
+    def send_investor_message(self, form):
+        spam_control = directory_forms_api_client.helpers.SpamControl(
+            contents=[form.cleaned_data['subject'], form.cleaned_data['body']]
+        )
+        response = form.save(
+            template_id=self.notify_settings.contact_investor_template,
+            email_address=form.cleaned_data['email_address'],
+            company_email=self.company['email_address'],
+            form_url=self.request.get_full_path(),
+            spam_control=spam_control,
+        )
+        response.raise_for_status()
+
+    def form_valid(self, form):
+        self.send_company_message(form)
+        self.send_support_message(form)
+        self.send_investor_message(form)
+        return super().form_valid(form)
+
+
+class BaseNotifyFormView(SendContactNotifyMessagesMixin, FormView):
+    pass

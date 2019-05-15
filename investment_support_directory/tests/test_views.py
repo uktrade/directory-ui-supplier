@@ -353,7 +353,11 @@ def test_company_search_highlight_summary(
 
 @mock.patch.object(forms.ContactCompanyForm, 'save')
 def test_contact_company(
-    mock_save, client, settings, captcha_stub, retrieve_profile_data
+    mock_save,
+    client,
+    settings,
+    captcha_stub,
+    retrieve_profile_data,
 ):
     url = reverse(
         'investment-support-directory-company-contact',
@@ -372,25 +376,39 @@ def test_contact_company(
         'g-recaptcha-response': captcha_stub,
     }
     response = client.post(url, data)
+
     assert response.status_code == 302
     assert response.url == reverse(
         'investment-support-directory-company-contact-sent',
         kwargs={'company_number': 'ST121'}
     )
 
-    assert mock_save.call_count == 1
-    assert mock_save.call_args == mock.call(
+    assert mock_save.call_count == 3
+    assert mock_save.call_args_list[0] == mock.call(
         email_address=retrieve_profile_data['email_address'],
         form_url=url,
         sender={'email_address': 'jim@example.com', 'country_code': None},
         spam_control={'contents': ['Hello', 'foo bar bax']},
         template_id=settings.CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID,
     )
+    assert mock_save.call_args_list[1] == mock.call(
+        form_url=url,
+        email_address=settings.CONTACT_ISD_SUPPORT_EMAIL_ADDRESS,
+        template_id=settings.CONTACT_ISD_SUPPORT_NOTIFY_TEMPLATE_ID,
+    )
+    assert mock_save.call_args_list[2] == mock.call(
+        email_address=data['email_address'],
+        form_url=url,
+        company_email=retrieve_profile_data['email_address'],
+        spam_control={'contents': ['Hello', 'foo bar bax']},
+        template_id=settings.CONTACT_ISD_INVESTOR_NOTIFY_TEMPLATE_ID,
+    )
 
 
 def test_contact_company_success(client):
     url = reverse(
-        'investment-support-directory-company-contact-sent',
+        'inve'
+        'stment-support-directory-company-contact-sent',
         kwargs={'company_number': '01111111'}
     )
 
