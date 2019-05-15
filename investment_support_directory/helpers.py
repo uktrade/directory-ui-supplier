@@ -1,12 +1,12 @@
 from urllib.parse import urlencode
 
-from directory_api_client.client import api_client
-import directory_components.helpers
-from directory_constants import choices
-
 from django.shortcuts import Http404
 from django.urls import reverse
 from django.utils.html import escape, mark_safe
+
+from directory_api_client.client import api_client
+import directory_components.helpers
+from directory_constants import choices
 
 
 def get_company_profile(number):

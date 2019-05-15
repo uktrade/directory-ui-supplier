@@ -1,5 +1,15 @@
+import collections
+
 from django.shortcuts import Http404
 from django.utils import translation
+
+NotifySettings = collections.namedtuple(
+    'NotifySettings', [
+        'contact_company_template',
+        'contact_support_template',
+        'contact_support_email_address',
+        ]
+)
 
 
 def handle_cms_response(response):
