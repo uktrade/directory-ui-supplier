@@ -69,7 +69,7 @@
 				</div>
 				
 				<p id="view-company-profile">
-					<a href="{% url 'public-company-profiles-detail' company_number=case_study.company.number slug=case_study.company.slug %}" class="button button-primary">
+					<a href="{% url request.GET.isd|yesno:'investment-support-directory-profile,public-company-profiles-detail' company_number=case_study.company.number slug=case_study.company.slug %}" class="button button-primary">
 						View company profile
 					</a>
 				</p>
