@@ -136,7 +136,7 @@ class SendContactNotifyMessagesMixin:
         response = form.save(
             template_id=self.notify_settings.contact_investor_template,
             email_address=form.cleaned_data['email_address'],
-            company_email = self.company['email_address'],
+            company_email=self.company['email_address'],
             form_url=self.request.get_full_path(),
             spam_control=spam_control,
         )
