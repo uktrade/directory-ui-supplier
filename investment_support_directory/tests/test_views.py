@@ -382,7 +382,6 @@ def test_contact_company(
         'investment-support-directory-company-contact-sent',
         kwargs={'company_number': 'ST121'}
     )
-
     assert mock_save.call_count == 3
     assert mock_save.call_args_list[0] == mock.call(
         email_address=retrieve_profile_data['email_address'],
@@ -401,6 +400,12 @@ def test_contact_company(
         form_url=url,
         spam_control={'contents': ['Hello', 'foo bar bax']},
         template_id=settings.CONTACT_ISD_INVESTOR_NOTIFY_TEMPLATE_ID,
+    )
+
+    assert mock_save.call_args_list[1] == mock.call(
+        form_url=url,
+        email_address=settings.CONTACT_ISD_SUPPORT_EMAIL_ADDRESS,
+        template_id=settings.CONTACT_ISD_SUPPORT_NOTIFY_TEMPLATE_ID,
     )
 
 
