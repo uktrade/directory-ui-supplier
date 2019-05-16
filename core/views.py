@@ -105,7 +105,6 @@ class AnonymousSubscribeFormView(CountryDisplayMixin, GA360Mixin, FormView):
         )
 
 
-
 class SendContactNotifyMessagesMixin:
 
     def send_company_message(self, form):
