@@ -244,7 +244,7 @@ body:not(.js-enabled) {
 
 @media (min-width: 641px) {
   #main-content > div {
-    display: block;
+    flex-flow: row;
   }
   #hero-container {
     padding-bottom: 0;
@@ -266,10 +266,15 @@ body:not(.js-enabled) {
           border: 2px solid $stone-60;
           display: flex;
           .logo-container {
+            width: 240px;
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
             border-right: 2px solid $stone-60;
+            img {
+              margin-left: auto;
+              margin-right: auto;
+            }
           }
           .details-container {
             padding-left: 30px;

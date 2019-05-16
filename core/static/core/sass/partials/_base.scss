@@ -92,3 +92,39 @@ body section {
     }
   }
 }
+
+@media (min-width: 1200px) {
+  .container,
+  .navbar-static-top .container,
+  .navbar-fixed-top .container,
+  .navbar-fixed-bottom .container {
+      width: 1200px;
+      margin: 0 auto;
+  }
+  
+}
+
+#great-global-header-logo {
+  height: 24px;
+}
+
+#country-selector-dialog {
+  margin-bottom: 0;
+  h2 {
+    line-height: 1em;
+    margin-bottom: 0;
+  }
+  select {
+    height: auto;
+  }
+  button {
+    color: white;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+#close-country-selector-dialog {
+  padding: 0;
+}

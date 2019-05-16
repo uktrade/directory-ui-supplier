@@ -170,6 +170,10 @@ section {
   padding-bottom: 60px;
   margin-top: 60px;
 
+  & > div {
+    padding: 3px;
+  }
+
   h2 {
     color: $gray;
     margin-bottom: 60px;

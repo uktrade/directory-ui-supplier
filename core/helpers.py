@@ -7,8 +7,9 @@ NotifySettings = collections.namedtuple(
     'NotifySettings', [
         'contact_company_template',
         'contact_support_template',
+        'contact_investor_template',
         'contact_support_email_address',
-        ]
+    ]
 )
 
 

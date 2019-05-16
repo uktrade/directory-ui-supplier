@@ -464,6 +464,10 @@ legend {
   padding: 25px;
   margin: 25px 0;
 
+  label {
+    margin-bottom: 5px;
+  }
+
   .button {
     float: right;
     font-size: 24px;
@@ -478,6 +482,7 @@ legend {
     height: auto;
     padding: 12px;
     width: 70%;
+    font-size: 18px;
   }
 }
 
@@ -670,7 +675,12 @@ legend {
   }
 }
 
-
+#id_sectors {
+  label {
+    margin-bottom: 5px;
+    display: block;
+  }
+}
 
 
 /* MOBILE

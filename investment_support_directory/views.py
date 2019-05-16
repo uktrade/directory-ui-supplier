@@ -141,25 +141,25 @@ class ContactView(
 ):
     form_class = forms.ContactCompanyForm
     template_name = 'investment_support_directory/contact.html'
+    notify_settings = NotifySettings(
+        contact_company_template=(
+            settings.CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID
+            ),
+        contact_support_template=(
+            settings.CONTACT_ISD_SUPPORT_NOTIFY_TEMPLATE_ID
+            ),
+        contact_support_email_address=(
+            settings.CONTACT_ISD_SUPPORT_EMAIL_ADDRESS
+            ),
+        contact_investor_template=(
+            settings.CONTACT_ISD_INVESTOR_NOTIFY_TEMPLATE_ID
+        ),
+    )
 
     def get_success_url(self):
         return reverse(
             'investment-support-directory-company-contact-sent',
             kwargs={'company_number': self.kwargs['company_number']}
-        )
-
-    @property
-    def notify_settings(self):
-        return NotifySettings(
-            contact_company_template=(
-                settings.CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID
-            ),
-            contact_support_template=(
-                settings.CONTACT_ISD_SUPPORT_NOTIFY_TEMPLATE_ID
-            ),
-            contact_support_email_address=(
-                settings.CONTACT_ISD_SUPPORT_EMAIL_ADDRESS
-            ),
         )
 
 

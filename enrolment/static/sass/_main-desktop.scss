@@ -637,19 +637,6 @@ a.ed-filled-button-primary {
 
 /* General
  ******************/
-body {
-  @include font-standard-1;
-  background-color: $white;
-  padding: 0;
-}
-
-h1 {
-  @include font-title-2;
-}
-
-h2 {
-  @include font-title-3;
-}
 
 section {
   border: $grey-3 solid 1px;
@@ -702,10 +689,11 @@ input[type="button"],
 
 /* Forms
  *****************/
-label {
-  @include font-standard-1;
+ #great-header-extra-links {
+  .countries {
+    display: flex;  
+  }
 }
-
 label,
 select,
 button,
@@ -718,49 +706,52 @@ input[type="checkbox"] {
 	cursor: initial;
 }
 
-select,
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-  /* silly selector to match and overwrite Bootstrap */
-  @include font-standard-1;
-  background-color: $white;
-  border: $grey-3 solid 1px;
-  border-radius: 0;
-  height: 50px;
-  margin-bottom: 10px;
-  width: 100%;
+.ed-landing-page-form-inner,
+#company-contact-form {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  .uneditable-input {
+    /* silly selector to match and overwrite Bootstrap */
+    @include font-standard-1;
+    background-color: $white;
+    border: $grey-3 solid 1px;
+    border-radius: 0;
+    height: 50px;
+    margin-bottom: 10px;
+    width: 100%;
 
-  &:focus,
-  &:focus:invalid {
-    border-color: $grey-3;
-    color: inherit;
-    outline: 3px solid $focus;
+    &:focus,
+    &:focus:invalid {
+      border-color: $grey-3;
+      color: inherit;
+      outline: 3px solid $focus;
 
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
 
-    -webkit-transition: none;
-    -moz-transition: none;
-    -o-transition: none;
-    transition: none;
+      -webkit-transition: none;
+      -moz-transition: none;
+      -o-transition: none;
+      transition: none;
+    }
   }
-}
 
+}
 .checkbox {
   padding-left: 40px;
   position: relative;
