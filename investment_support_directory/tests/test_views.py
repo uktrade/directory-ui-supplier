@@ -399,7 +399,6 @@ def test_contact_company(
     assert mock_save.call_args_list[2] == mock.call(
         email_address=data['email_address'],
         form_url=url,
-        company_email=retrieve_profile_data['email_address'],
         spam_control={'contents': ['Hello', 'foo bar bax']},
         template_id=settings.CONTACT_ISD_INVESTOR_NOTIFY_TEMPLATE_ID,
     )
