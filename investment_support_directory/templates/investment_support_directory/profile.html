@@ -125,7 +125,7 @@
                     {% endif %}
                     <dl>
                         {% for key, values in company.expertise_products_services.items %}
-                            {% if key != 'Other' %}
+                            {% if values and key != 'Other' %}
                                 <dt>{{ key }}</dt>
                                 <dd>{{ values }}</dd>
                             {% endif %}
