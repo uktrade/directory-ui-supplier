@@ -1,14 +1,16 @@
 # Changelog
 
-## Pre-release
+## [2019.05.16](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.16)
+
+[Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.04.14...2019.05.16)
 
 ### Implemented enhancements
 
-- [TT-1443] Add ISD home page images.
-- [CMS-1528] Add feature flag for country select header.
-- [CMS-108] Temporarily turn off additional GA tagging.
+- TT-1443 - Add ISD home page images.
+- CMS-1528 - Add feature flag for country select header.
+- CMS-108 - Temporarily turn off additional GA tagging.
 
-# Fixed bugs
+### Fixed bugs
 
 - TT-1462 - Solve padding bug fix on ISD search.
 - TT-1409 - Fixed the links to filtered search on ISD home page.
