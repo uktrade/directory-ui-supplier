@@ -16,6 +16,7 @@
 - TT-1409 - Fixed the links to filtered search on ISD home page.
 - TT-1441 - Fixed search results broken layout.
 - TT-1318 - Improved consistency of header styles across pages
+- TT-1476 - Fix Title to show 'Find a UK Specialist'
 
 ## [2019.05.14](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.14)
 
