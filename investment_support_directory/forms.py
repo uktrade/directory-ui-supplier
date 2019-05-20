@@ -14,6 +14,7 @@ class CompanyHomeSearchForm(forms.Form):
     q = fields.CharField(
         label='',
         max_length=255,
+        required=False,
         widget=TextInput(
             attrs={
                 'autofocus': 'autofocus',
