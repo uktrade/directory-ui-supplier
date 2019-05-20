@@ -72,4 +72,3 @@ def test_minimum_viable_search(data):
     assert form.is_valid()
 
 
-
