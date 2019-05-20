@@ -9,6 +9,7 @@
 - TT-1443 - Add ISD home page images.
 - CMS-1528 - Add feature flag for country select header.
 - CMS-108 - Temporarily turn off additional GA tagging.
+- TT-1383 - Return all ISD companies if no terms supplied. 
 
 ### Fixed bugs
 
