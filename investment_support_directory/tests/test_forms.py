@@ -69,12 +69,4 @@ def test_company_search_form_page_missing():
 ))
 def test_minimum_viable_search(data):
     form = forms.CompanySearchForm(data=data)
-
     assert form.is_valid()
-
-
-def test_minimum_viable_search_failure():
-    form = forms.CompanySearchForm(data={})
-
-    assert form.is_valid() is False
-    assert form.errors['q'] == [form.MESSAGE_MINIMUM_VIABLE_SEARCH]
