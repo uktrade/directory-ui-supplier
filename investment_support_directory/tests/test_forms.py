@@ -70,5 +70,3 @@ def test_company_search_form_page_missing():
 def test_minimum_viable_search(data):
     form = forms.CompanySearchForm(data=data)
     assert form.is_valid()
-
-
