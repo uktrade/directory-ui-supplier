@@ -87,8 +87,8 @@ def get_filters_labels(filters):
                 labels += [
                     languages[item] for item in values if item in languages
                 ]
+            #Prevents duplicates labels not to be displayed in filter list
             elif name.startswith('expertise_products_services_label'):
-                #Prevents duplicates labels not to be displayed in filter list
                 pass
             elif name.startswith('expertise_products_services_'):
                 labels += values
