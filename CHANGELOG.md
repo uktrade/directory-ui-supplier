@@ -18,6 +18,7 @@
 - TT-1441 - Fixed search results broken layout.
 - TT-1318 - Improved consistency of header styles across pages
 - TT-1476 - Fix Title to show 'Find a UK Specialist'
+- TT-1479 - Pagination on products & services clears filters
 
 ## [2019.05.14](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.14)
 
