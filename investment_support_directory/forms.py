@@ -1,5 +1,4 @@
 from captcha.fields import ReCaptchaField
-from django.forms import ValidationError
 from django.forms.widgets import HiddenInput, TextInput, Textarea
 from django.utils.html import mark_safe
 
@@ -15,6 +14,7 @@ class CompanyHomeSearchForm(forms.Form):
     q = fields.CharField(
         label='',
         max_length=255,
+        required=False,
         widget=TextInput(
             attrs={
                 'autofocus': 'autofocus',
@@ -161,23 +161,10 @@ class CompanySearchForm(forms.Form):
         products_services = []
         for field_name in product_services_fields:
             if field_name in self.cleaned_data:
-                products_services += self.cleaned_data.pop(field_name)
+                products_services += self.cleaned_data.get(field_name)
         self.cleaned_data['expertise_products_services_labels'] = (
             products_services
         )
-        minimum_vialble_search_fields = {
-            'expertise_industries',
-            'expertise_regions',
-            'expertise_countries',
-            'expertise_languages',
-            'expertise_products_services_labels',
-            'q',
-        }
-        searched_fields = set(
-            key for key, value in self.cleaned_data.items() if value
-        )
-        if not searched_fields.intersection(minimum_vialble_search_fields):
-            raise ValidationError({'q': self.MESSAGE_MINIMUM_VIABLE_SEARCH})
 
 
 class ContactCompanyForm(GovNotifyActionMixin, forms.Form):

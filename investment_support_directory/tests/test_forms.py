@@ -7,7 +7,7 @@ from investment_support_directory import forms
 prefix = 'expertise_products_services'
 
 expertise_products_services_fields = [
-    f'{prefix}_management'
+    f'{prefix}_management',
     f'{prefix}_human_resources',
     f'{prefix}_legal',
     f'{prefix}_publicity',
@@ -34,7 +34,7 @@ def test_company_search_form_expertise_products_services():
         expertise.BUSINESS_SUPPORT[0],
     ]
     for field_name in expertise_products_services_fields:
-        assert field_name not in form.cleaned_data
+        assert field_name in form.cleaned_data
 
 
 def test_company_search_form_page_present():
@@ -69,12 +69,4 @@ def test_company_search_form_page_missing():
 ))
 def test_minimum_viable_search(data):
     form = forms.CompanySearchForm(data=data)
-
     assert form.is_valid()
-
-
-def test_minimum_viable_search_failure():
-    form = forms.CompanySearchForm(data={})
-
-    assert form.is_valid() is False
-    assert form.errors['q'] == [form.MESSAGE_MINIMUM_VIABLE_SEARCH]
