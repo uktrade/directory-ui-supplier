@@ -161,7 +161,7 @@ class CompanySearchForm(forms.Form):
         products_services = []
         for field_name in product_services_fields:
             if field_name in self.cleaned_data:
-                products_services += self.cleaned_data.pop(field_name)
+                products_services += self.cleaned_data.get(field_name)
         self.cleaned_data['expertise_products_services_labels'] = (
             products_services
         )
