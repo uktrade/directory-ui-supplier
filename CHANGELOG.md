@@ -1,19 +1,24 @@
 # Changelog
 
-## Pre-release
+## [2019.05.16](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.16)
+
+[Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.04.14...2019.05.16)
 
 ### Implemented enhancements
 
 - TT-1443 - Add ISD home page images.
 - CMS-1528 - Add feature flag for country select header.
 - CMS-108 - Temporarily turn off additional GA tagging.
+- TT-1383 - Return all ISD companies if no terms supplied. 
 
-# Fixed bugs
+### Fixed bugs
 
 - TT-1462 - Solve padding bug fix on ISD search.
 - TT-1409 - Fixed the links to filtered search on ISD home page.
 - TT-1441 - Fixed search results broken layout.
 - TT-1318 - Improved consistency of header styles across pages
+- TT-1476 - Fix Title to show 'Find a UK Specialist'
+- TT-1479 - Pagination on products & services clears filters
 
 ## [2019.05.14](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.14)
 
