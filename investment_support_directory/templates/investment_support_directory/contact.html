@@ -9,7 +9,7 @@
 
 {% block content %}
 <div class="container">
-    {% url 'investment-support-directory-profile' company_number=company.number slug=company.slug as company_url %}
+    {% url 'investment-support-directory:profile' company_number=company.number slug=company.slug as company_url %}
     {% breadcrumbs left_url='/' left_label='Home' middle_label=company.name middle_url=company_url right_label='Send a message' %}
     <div class="width-two-thirds">
         <h1 class="heading-xlarge margin-bottom-0">Send a message to {{ company.name }}</h1>              
