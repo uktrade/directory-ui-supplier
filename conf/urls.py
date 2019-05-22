@@ -226,13 +226,6 @@ urlpatterns = [
         company.views.PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail-slugless'
     ),
-    url(
-        r'^investment-support-directory/',
-        include(
-            investment_support_directory_urls,
-            namespace='investment-support-directory'
-        ),
-    )
 ]
 
 if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
@@ -244,9 +237,17 @@ if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
         ),
     ]
 
+
 urlpatterns = [
-    url(
-        r'^trade/',
-        include(urlpatterns)
-    ),
+   url(
+       r'^trade/',
+       include(urlpatterns)
+   ),
+   url(
+       r'^investment-support-directory/',
+       include(
+           investment_support_directory_urls,
+           namespace='investment-support-directory',
+       )
+   ),
 ]
