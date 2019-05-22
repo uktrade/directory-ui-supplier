@@ -11,8 +11,8 @@
 
 {% block content %}
 <div class="container">
-    {% url 'investment-support-directory-search' as search_url %}
-    {% url 'investment-support-directory-home' as home_url %}
+    {% url 'investment-support-directory:search' as search_url %}
+    {% url 'investment-support-directory:home' as home_url %}
     {% breadcrumbs left_url=home_url left_label='Home' middle_url=search_url middle_label='Search UK businesses' right_label='Results' %}
 </div>
 <form>
@@ -51,7 +51,7 @@
                             {% for value in filters %}
                                 <mark>{{ value }}</mark>
                             {% endfor %}
-                            <a href="{% url 'investment-support-directory-search' %}?q={{ form.q.value }}" class="link">Clear all filters</a>
+                            <a href="{% url 'investment-support-directory:search' %}?q={{ form.q.value }}" class="link">Clear all filters</a>
                         </div>
                     {% endif %}
                 </section>
@@ -73,14 +73,14 @@
                 </fieldset>
                 <button class="button" type="submit">Update results</button>
                 <div class="margin-top-15 margin-bottom-30" id="reset-link-container">
-                    <a href="{% url 'investment-support-directory-search' %}" class="link">Reset</a>
+                    <a href="{% url 'investment-support-directory:search' %}" class="link">Reset</a>
                 </div>
             </div>
             <div class="column-two-thirds" id="companies-column">
                 <ul>
                     {% for company in results %}
                         <li>
-                            <a href="{% url 'investment-support-directory-profile' company_number=company.number slug=company.slug %}">
+                            <a href="{% url 'investment-support-directory:profile' company_number=company.number slug=company.slug %}">
                                 <div class="logo-container">
                                     {% thumbnail company.logo "x135" as logo %}
                                         <img src="{{ logo.url }}" alt="{{ company.name }}" />

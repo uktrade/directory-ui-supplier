@@ -35,18 +35,18 @@ def mock_retrieve_company_non_isd(retrieve_profile_data):
 
 
 @pytest.mark.parametrize('url', (
-    reverse('investment-support-directory-home'),
-    reverse('investment-support-directory-search'),
+    reverse('investment-support-directory:home'),
+    reverse('investment-support-directory:search'),
     reverse(
-        'investment-support-directory-profile',
+        'investment-support-directory:profile',
         kwargs={'company_number': 'ST121', 'slug': 'foo'}
     ),
     reverse(
-        'investment-support-directory-company-contact',
+        'investment-support-directory:company-contact',
         kwargs={'company_number': 'ST121'}
     ),
     reverse(
-        'investment-support-directory-company-contact-sent',
+        'investment-support-directory:company-contact-sent',
         kwargs={'company_number': 'ST121'}
     )
 ))
@@ -65,7 +65,7 @@ def test_profile(
     company = helpers.CompanyParser(retrieve_profile_data)
 
     url = reverse(
-        'investment-support-directory-profile',
+        'investment-support-directory:profile',
         kwargs={
             'company_number': retrieve_profile_data['number'],
             'slug': retrieve_profile_data['slug'],
@@ -82,7 +82,7 @@ def test_profile_slug_redirect(client, settings, retrieve_profile_data):
     settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
 
     url = reverse(
-        'investment-support-directory-profile',
+        'investment-support-directory:profile',
         kwargs={
             'company_number': retrieve_profile_data['number'],
             'slug': 'something',
@@ -93,7 +93,7 @@ def test_profile_slug_redirect(client, settings, retrieve_profile_data):
 
     assert response.status_code == 302
     assert response.url == reverse(
-        'investment-support-directory-profile',
+        'investment-support-directory:profile',
         kwargs={
             'company_number': retrieve_profile_data['number'],
             'slug': retrieve_profile_data['slug'],
@@ -107,7 +107,7 @@ def test_profile_calls_api(
     settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
 
     url = reverse(
-        'investment-support-directory-profile',
+        'investment-support-directory:profile',
         kwargs={
             'company_number': retrieve_profile_data['number'],
             'slug': retrieve_profile_data['slug'],
@@ -128,7 +128,7 @@ def test_get_profile_404_non_investment_support_directory(
     settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
 
     url = reverse(
-        'investment-support-directory-profile',
+        'investment-support-directory:profile',
         kwargs={
             'company_number': retrieve_profile_data['number'],
             'slug': retrieve_profile_data['slug'],
@@ -142,7 +142,7 @@ def test_get_profile_404_non_investment_support_directory(
 def test_home_page_context_data(client, settings):
     settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
 
-    url = reverse('investment-support-directory-home')
+    url = reverse('investment-support-directory:home')
 
     response = client.get(url)
 
@@ -164,8 +164,8 @@ def test_home_page_context_data(client, settings):
 def test_home_page_redirect(client, settings):
     settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
 
-    url = reverse('investment-support-directory-home')
-    expected_url = reverse('investment-support-directory-search')
+    url = reverse('investment-support-directory:home')
+    expected_url = reverse('investment-support-directory:search')
 
     response = client.post(url, {'q': 'foo'})
 
@@ -183,7 +183,7 @@ def test_search_submit_form_on_get(
     mock_get_results_and_count.return_value = (results, 20)
 
     response = client.get(
-        reverse('investment-support-directory-search'), {'q': '123'}
+        reverse('investment-support-directory:search'), {'q': '123'}
     )
 
     assert response.status_code == 200
@@ -200,7 +200,7 @@ def test_company_search_pagination_count(
     mock_get_results_and_count.return_value = (results, 20)
 
     response = client.get(
-        reverse('investment-support-directory-search'), {'q': '123'}
+        reverse('investment-support-directory:search'), {'q': '123'}
     )
 
     assert response.status_code == 200
@@ -215,7 +215,7 @@ def test_company_search_pagination_param(
 
     mock_search.return_value = api_response_search_200
 
-    url = reverse('investment-support-directory-search')
+    url = reverse('investment-support-directory:search')
     response = client.get(
         url, {'q': '123', 'page': 1, 'expertise_industries': ['AEROSPACE']}
     )
@@ -243,12 +243,12 @@ def test_company_search_pagination_empty_page(
 
     mock_search.return_value = api_response_search_200
 
-    url = reverse('investment-support-directory-search')
+    url = reverse('investment-support-directory:search')
     response = client.get(url, {'q': '123', 'page': 100})
 
     assert response.status_code == 302
     assert response.get('Location') == (
-        reverse('investment-support-directory-search') + '?q=123'
+        reverse('investment-support-directory:search') + '?q=123'
     )
 
 
@@ -257,7 +257,7 @@ def test_company_search_not_submit_without_params(
     mock_get_results_and_count, client, settings
 ):
     settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON'] = True
-    response = client.get(reverse('investment-support-directory-search'))
+    response = client.get(reverse('investment-support-directory:search'))
 
     assert response.status_code == 200
     mock_get_results_and_count.assert_not_called()
@@ -273,7 +273,7 @@ def test_company_search_api_call_error(
 
     with pytest.raises(requests.exceptions.HTTPError):
         client.get(
-            reverse('investment-support-directory-search'), {'q': '123'}
+            reverse('investment-support-directory:search'), {'q': '123'}
         )
 
 
@@ -291,7 +291,7 @@ def test_company_search_api_success(
         'hits': {'total': 2}
     }
     response = client.get(
-        reverse('investment-support-directory-search'), {'q': '123'}
+        reverse('investment-support-directory:search'), {'q': '123'}
     )
 
     assert response.status_code == 200
@@ -310,7 +310,7 @@ def test_company_search_response_no_highlight(
     mock_search.return_value = api_response_search_200
 
     response = client.get(
-        reverse('investment-support-directory-search'), {'q': 'wolf'}
+        reverse('investment-support-directory:search'), {'q': 'wolf'}
     )
 
     assert b'this is a short summary' in response.content
@@ -326,7 +326,7 @@ def test_company_highlight_description(
     mock_search.return_value = api_response_search_description_highlight_200
 
     response = client.get(
-        reverse('investment-support-directory-search'), {'q': 'wolf'}
+        reverse('investment-support-directory:search'), {'q': 'wolf'}
     )
     expected = (
         b'<em>wolf</em> in sheep clothing description...'
@@ -345,7 +345,7 @@ def test_company_search_highlight_summary(
     mock_search.return_value = api_response_search_summary_highlight_200
 
     response = client.get(
-        reverse('investment-support-directory-search'), {'q': 'wolf'}
+        reverse('investment-support-directory:search'), {'q': 'wolf'}
     )
 
     assert b'<em>wolf</em> in sheep clothing summary.' in response.content
@@ -360,7 +360,7 @@ def test_contact_company(
     retrieve_profile_data,
 ):
     url = reverse(
-        'investment-support-directory-company-contact',
+        'investment-support-directory:company-contact',
         kwargs={'company_number': 'ST121'}
     )
     data = {
@@ -379,7 +379,7 @@ def test_contact_company(
 
     assert response.status_code == 302
     assert response.url == reverse(
-        'investment-support-directory-company-contact-sent',
+        'investment-support-directory:company-contact-sent',
         kwargs={'company_number': 'ST121'}
     )
     assert mock_save.call_count == 3
@@ -411,8 +411,7 @@ def test_contact_company(
 
 def test_contact_company_success(client):
     url = reverse(
-        'inve'
-        'stment-support-directory-company-contact-sent',
+        'investment-support-directory:company-contact-sent',
         kwargs={'company_number': '01111111'}
     )
 

@@ -87,7 +87,7 @@ def test_get_paginator_url():
     filters = {'page': 2, 'term': 'foo', 'expertise_countries': None}
 
     assert helpers.get_paginator_url(filters) == (
-        reverse('investment-support-directory-search') + '?term=foo'
+        reverse('investment-support-directory:search') + '?term=foo'
     )
 
 
@@ -105,7 +105,7 @@ def test_get_paginator_url_multiple_filters():
     )
 
     assert helpers.get_paginator_url(filters) == (
-            reverse('investment-support-directory-search') + encoded_url
+            reverse('investment-support-directory:search') + encoded_url
     )
 
 

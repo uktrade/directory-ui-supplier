@@ -34,32 +34,32 @@ investment_support_directory_urls = [
     url(
         r'^$',
         investment_support_directory.views.HomeView.as_view(),
-        name='investment-support-directory-home'
+        name='home'
     ),
     url(
         r'^search/$',
         investment_support_directory.views.CompanySearchView.as_view(),
-        name='investment-support-directory-search'
+        name='search'
     ),
     url(
         r'^(?P<company_number>[a-zA-Z0-9]+)/contact/$',
         investment_support_directory.views.ContactView.as_view(),
-        name='investment-support-directory-company-contact',
+        name='company-contact',
     ),
     url(
         r'^(?P<company_number>[a-zA-Z0-9]+)/sent/$',
         investment_support_directory.views.ContactSuccessView.as_view(),
-        name='investment-support-directory-company-contact-sent',
+        name='company-contact-sent',
     ),
     url(
         r'^(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$',
         investment_support_directory.views.ProfileView.as_view(),
-        name='investment-support-directory-profile'
+        name='profile'
     ),
     url(
         r'^(?P<company_number>[a-zA-Z0-9]+)/$',
         investment_support_directory.views.ProfileView.as_view(),
-        name='investment-support-directory-profile-slugless'
+        name='profile-slugless'
     ),
 ]
 
@@ -228,7 +228,10 @@ urlpatterns = [
     ),
     url(
         r'^investment-support-directory/',
-        include(investment_support_directory_urls)
+        include(
+            investment_support_directory_urls,
+            namespace='investment-support-directory'
+        ),
     )
 ]
 
