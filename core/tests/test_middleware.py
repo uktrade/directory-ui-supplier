@@ -1,5 +1,7 @@
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from core.middleware import PrefixUrlMiddleware
+
 
 
 def test_locale_middleware_installed():
@@ -8,9 +10,8 @@ def test_locale_middleware_installed():
 
 
 def test_prefix_url_middleware_investment_support_directory(rf):
-    request = rf.get('/trade/investment-support-directory/')
+    request = rf.get('/investment-support-directory/')
     response = PrefixUrlMiddleware().process_request(request)
-
     assert response is None
 
 
