@@ -2,7 +2,6 @@ from django.conf import settings
 from core.middleware import PrefixUrlMiddleware
 
 
-
 def test_locale_middleware_installed():
     expected = 'directory_components.middleware.LocaleQuerystringMiddleware'
     assert expected in settings.MIDDLEWARE_CLASSES
