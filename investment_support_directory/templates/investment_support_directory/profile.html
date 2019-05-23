@@ -12,8 +12,8 @@
 
 {% block content %}
 <div class="container">
-    {% url 'investment-support-directory-search' as search_url %}
-    {% url 'investment-support-directory-home' as home_url %}
+    {% url 'investment-support-directory:search' as search_url %}
+    {% url 'investment-support-directory:home' as home_url %}
     {% breadcrumbs left_url=home_url left_label='Home' middle_url=search_url middle_label='Search UK businesses' right_label=company.name %}
 </div>
 <div id="cover-image-container" class="hero" style="background-image: url('{% static "core/images/default-profile-cover.png" %}')">
@@ -27,7 +27,7 @@
                     <img alt="{{ company.name }}" src="{{ company.logo }}" />
                 {% endif %}
             </section>
-            {% url 'investment-support-directory-company-contact' company_number=company.number as contact_url %}
+            {% url 'investment-support-directory:company-contact' company_number=company.number as contact_url %}
             <section id="contact-company-container">
                 <span>
                     <img alt="" height="54px" src="{% static 'core/images/clock.png' %}" width="54px" />

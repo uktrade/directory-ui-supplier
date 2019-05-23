@@ -6,7 +6,7 @@
 {% block content %}
     <section>
       <div class="container">
-        {% url 'investment-support-directory-company-contact' company_number=company.number as contact_url %}
+        {% url 'investment-support-directory:company-contact' company_number=company.number as contact_url %}
         {% breadcrumbs left_url='/' left_label='Home' middle_label="Contact company" middle_url=contact_url right_label='Message sent' %}
         <div class="grid-row margin-top-30">
               <div class="column-two-thirds">
@@ -23,7 +23,7 @@
     <section id="next-container" class="background-stone-30">
       <div class="container">
         <h2 class="heading-large">Next steps</h2>
-        <a class="link" href="{% url 'investment-support-directory-search' %}">Browse more companies</a>
+        <a class="link" href="{% url 'investment-support-directory:search' %}">Browse more companies</a>
       </div>
     </section>
 

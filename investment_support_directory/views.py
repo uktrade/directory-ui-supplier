@@ -56,7 +56,7 @@ class HomeView(FeatureFlagMixin, CountryDisplayMixin, FormView):
         )
 
     def form_valid(self, form):
-        url = reverse('investment-support-directory-search')
+        url = reverse('investment-support-directory:search')
         return redirect(url + '?' + urlencode(self.request.POST))
 
 
@@ -108,7 +108,7 @@ class CompanySearchView(
     @staticmethod
     def handle_empty_page(form):
         url = '{url}?q={q}'.format(
-            url=reverse('investment-support-directory-search'),
+            url=reverse('investment-support-directory:search'),
             q=form.cleaned_data['q']
         )
         return redirect(url)
@@ -125,7 +125,7 @@ class ProfileView(
             'company_number': self.company['number'],
             'slug': self.company['slug'],
         }
-        return reverse('investment-support-directory-profile', kwargs=kwargs)
+        return reverse('investment-support-directory:profile', kwargs=kwargs)
 
     def get(self, *args, **kwargs):
         if self.kwargs.get('slug') != self.company['slug']:
@@ -158,7 +158,7 @@ class ContactView(
 
     def get_success_url(self):
         return reverse(
-            'investment-support-directory-company-contact-sent',
+            'investment-support-directory:company-contact-sent',
             kwargs={'company_number': self.kwargs['company_number']}
         )
 
