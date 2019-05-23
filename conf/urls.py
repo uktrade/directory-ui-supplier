@@ -242,18 +242,18 @@ if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
 
 
 urlpatterns = [
-   url(
-       r'^trade/',
-       include(urlpatterns)
-   ),
-   url(
-       r'^investment-support-directory/',
-       include(
-           investment_support_directory_urls,
-           namespace='investment-support-directory',
-       )
-   ),
-   url(
+    url(
+        r'^trade/',
+        include(urlpatterns)
+    ),
+    url(
+        r'^investment-support-directory/',
+        include(
+            investment_support_directory_urls,
+            namespace='investment-support-directory',
+        )
+    ),
+    url(
         r'^trade/investment-support-directory/.*/$',
         RedirectView.as_view(url='/investment-support-directory/')
     ),
