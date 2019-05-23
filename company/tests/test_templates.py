@@ -51,6 +51,45 @@ def test_case_study_detail_report_button():
     assert href in html
 
 
+def test_case_study_detail_isd(rf):
+    request = rf.get('/', {'isd': True})
+    context = {
+        'case_study': {
+            'company': {
+                'number': '012344',
+                'slug': 'hello',
+            }
+        },
+        'request': request
+    }
+    html = render_to_string('supplier-case-study-detail.html', context)
+    url = reverse(
+        'investment-support-directory:profile',
+        kwargs={'company_number': '012344', 'slug': 'hello'}
+    )
+    assert url in html
+
+
+def test_case_study_detail_not_isd(rf):
+    request = rf.get('/')
+    context = {
+        'case_study': {
+            'company': {
+                'number': '012344',
+                'slug': 'hello',
+            }
+        },
+        'request': request
+    }
+    html = render_to_string('supplier-case-study-detail.html', context)
+    url = reverse(
+        'public-company-profiles-detail',
+        kwargs={'company_number': '012344', 'slug': 'hello'}
+    )
+
+    assert url in html
+
+
 def test_profile_case_studies_empty():
     context = {
         'company': {
