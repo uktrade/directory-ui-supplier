@@ -1,6 +1,6 @@
 # Changelog
 
-## [2019.05.16](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.23)
+## [2019.05.23](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.23)
 
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.05.16...2019.05.23)
 
