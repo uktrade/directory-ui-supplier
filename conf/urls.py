@@ -254,11 +254,7 @@ urlpatterns = [
         )
     ),
     url(
-        r'^trade/investment-support-directory/.*/$',
-        RedirectView.as_view(url='/investment-support-directory/')
-    ),
-    url(
-        r'^trade/investment-support-directory/$',
+        r'^trade/investment-support-directory/',
         RedirectView.as_view(url='/investment-support-directory/')
     ),
 ]
