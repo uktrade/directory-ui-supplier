@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib.sitemaps.views import sitemap
 from django.views.static import serve
+from django.views.generic import RedirectView
 
 from directory_constants import slugs
 
@@ -34,32 +35,32 @@ investment_support_directory_urls = [
     url(
         r'^$',
         investment_support_directory.views.HomeView.as_view(),
-        name='investment-support-directory-home'
+        name='home'
     ),
     url(
         r'^search/$',
         investment_support_directory.views.CompanySearchView.as_view(),
-        name='investment-support-directory-search'
+        name='search'
     ),
     url(
         r'^(?P<company_number>[a-zA-Z0-9]+)/contact/$',
         investment_support_directory.views.ContactView.as_view(),
-        name='investment-support-directory-company-contact',
+        name='company-contact',
     ),
     url(
         r'^(?P<company_number>[a-zA-Z0-9]+)/sent/$',
         investment_support_directory.views.ContactSuccessView.as_view(),
-        name='investment-support-directory-company-contact-sent',
+        name='company-contact-sent',
     ),
     url(
         r'^(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$',
         investment_support_directory.views.ProfileView.as_view(),
-        name='investment-support-directory-profile'
+        name='profile'
     ),
     url(
         r'^(?P<company_number>[a-zA-Z0-9]+)/$',
         investment_support_directory.views.ProfileView.as_view(),
-        name='investment-support-directory-profile-slugless'
+        name='profile-slugless'
     ),
 ]
 
@@ -226,10 +227,8 @@ urlpatterns = [
         company.views.PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail-slugless'
     ),
-    url(
-        r'^investment-support-directory/',
-        include(investment_support_directory_urls)
-    )
+
+
 ]
 
 if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
@@ -241,9 +240,21 @@ if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
         ),
     ]
 
+
 urlpatterns = [
     url(
         r'^trade/',
         include(urlpatterns)
+    ),
+    url(
+        r'^investment-support-directory/',
+        include(
+            investment_support_directory_urls,
+            namespace='investment-support-directory',
+        )
+    ),
+    url(
+        r'^trade/investment-support-directory/',
+        RedirectView.as_view(url='/investment-support-directory/')
     ),
 ]
