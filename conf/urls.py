@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib.sitemaps.views import sitemap
 from django.views.static import serve
+from django.views.generic import RedirectView
 
 from directory_constants import slugs
 
@@ -208,12 +209,6 @@ urlpatterns = [
         core.views.RedirectToCMSIndustryView.as_view(),
         {'slug': 'legal'},
     ),
-    url(
-        r'^investment-support-directory/',
-        include(
-            investment_support_directory_urls,
-        )
-    ),
     # obsolete. use `sector-detail-verbose`
     url(
         r'^industries/(?P<slug>.+)/summary/$',
@@ -258,4 +253,12 @@ urlpatterns = [
            namespace='investment-support-directory',
        )
    ),
+   url(
+        r'^trade/investment-support-directory/.*/$',
+        RedirectView.as_view(url='/investment-support-directory/')
+    ),
+    url(
+        r'^trade/investment-support-directory/$',
+        RedirectView.as_view(url='/investment-support-directory/')
+    ),
 ]

@@ -109,9 +109,7 @@ def test_trade_redirect(client):
     response = client.get(url)
 
     assert response.status_code == 302
-    assert response.url == reverse(
-        'investment-support-directory:search',
-    )
+    assert response.url == '/investment-support-directory/'
 
 
 def test_profile_calls_api(
