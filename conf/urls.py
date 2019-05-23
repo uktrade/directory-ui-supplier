@@ -208,6 +208,12 @@ urlpatterns = [
         core.views.RedirectToCMSIndustryView.as_view(),
         {'slug': 'legal'},
     ),
+    url(
+        r'^investment-support-directory/',
+        include(
+            investment_support_directory_urls,
+        )
+    ),
     # obsolete. use `sector-detail-verbose`
     url(
         r'^industries/(?P<slug>.+)/summary/$',
@@ -226,6 +232,8 @@ urlpatterns = [
         company.views.PublishedProfileDetailView.as_view(),
         name='public-company-profiles-detail-slugless'
     ),
+
+
 ]
 
 if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':

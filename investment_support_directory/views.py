@@ -20,6 +20,14 @@ import core.mixins
 from investment_support_directory import forms, helpers
 
 
+class RedirectTradeMixin:
+    def dispatch(self, *args, **kwargs):
+        url = self.request.get_full_path()
+        if url.startswith('/trade/investment-support-directory/'):
+            return redirect(url.replace('/trade', ''))
+        return super().dispatch(*args, **kwargs)
+
+
 class FeatureFlagMixin(core.mixins.NotFoundOnDisabledFeature):
 
     @property
@@ -40,7 +48,9 @@ class CompanyProfileMixin:
         )
 
 
-class HomeView(FeatureFlagMixin, CountryDisplayMixin, FormView):
+class HomeView(
+    RedirectTradeMixin, FeatureFlagMixin, CountryDisplayMixin, FormView
+):
     template_name = 'investment_support_directory/home.html'
     form_class = forms.CompanyHomeSearchForm
 
@@ -61,8 +71,8 @@ class HomeView(FeatureFlagMixin, CountryDisplayMixin, FormView):
 
 
 class CompanySearchView(
-    FeatureFlagMixin, CountryDisplayMixin, core.mixins.SubmitFormOnGetMixin,
-    FormView
+    RedirectTradeMixin, FeatureFlagMixin, CountryDisplayMixin,
+    core.mixins.SubmitFormOnGetMixin, FormView,
 ):
     form_class = forms.CompanySearchForm
     page_size = 10
@@ -115,8 +125,8 @@ class CompanySearchView(
 
 
 class ProfileView(
-    FeatureFlagMixin, CompanyProfileMixin, CountryDisplayMixin,
-    TemplateView
+    RedirectTradeMixin, FeatureFlagMixin, CompanyProfileMixin,
+    CountryDisplayMixin, TemplateView
 ):
     template_name = 'investment_support_directory/profile.html'
 
@@ -134,6 +144,7 @@ class ProfileView(
 
 
 class ContactView(
+    RedirectTradeMixin,
     FeatureFlagMixin,
     CompanyProfileMixin,
     CountryDisplayMixin,
@@ -164,6 +175,7 @@ class ContactView(
 
 
 class ContactSuccessView(
-    FeatureFlagMixin, CompanyProfileMixin, CountryDisplayMixin, TemplateView
+    RedirectTradeMixin, FeatureFlagMixin, CompanyProfileMixin,
+    CountryDisplayMixin, TemplateView
 ):
     template_name = 'investment_support_directory/sent.html'

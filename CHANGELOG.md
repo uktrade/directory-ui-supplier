@@ -5,8 +5,9 @@
 ### Implemented enhancements
 
 ### Fixed bugs
--- TT-1487 403-on-specialist-filters upgrade directory components
--- TT-1485 Make ISD root 
+- TT-1487 403-on-specialist-filters upgrade directory components
+- TT-1485 Make ISD root 
+- TT-1489 Redirect Trade/Investment-support-directory/ to /Investment-support-directory/
 
 
 ## [2019.05.16](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.16)

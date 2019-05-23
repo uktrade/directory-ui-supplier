@@ -101,6 +101,19 @@ def test_profile_slug_redirect(client, settings, retrieve_profile_data):
     )
 
 
+def test_trade_redirect(client):
+
+    url = '/trade' + reverse(
+        'investment-support-directory:search',
+    )
+    response = client.get(url)
+
+    assert response.status_code == 302
+    assert response.url == reverse(
+        'investment-support-directory:search',
+    )
+
+
 def test_profile_calls_api(
     mock_retrieve_company, client, settings, retrieve_profile_data
 ):
