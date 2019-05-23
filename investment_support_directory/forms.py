@@ -1,3 +1,5 @@
+from functools import reduce
+
 from captcha.fields import ReCaptchaField
 from django.forms.widgets import HiddenInput, TextInput, Textarea
 from django.utils.html import mark_safe
@@ -111,7 +113,10 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-products-services-human-expertise'},
             use_nice_ids=True,
         ),
-        choices=choices.EXPERTISE_HUMAN_RESOURCES,
+        choices=[
+            (item[0].replace(' ', '-'), item[1]) for item in
+            choices.EXPERTISE_HUMAN_RESOURCES
+        ],
         required=False,
     )
     expertise_products_services_legal = fields.MultipleChoiceField(
@@ -165,6 +170,18 @@ class CompanySearchForm(forms.Form):
         self.cleaned_data['expertise_products_services_labels'] = (
             products_services
         )
+
+    def clean_expertise_products_services_human_resources(self):
+        # Hack for AWS WAF 404 caused by spaces in 'on' within the querystring
+        expertise = []
+        if 'expertise_products_services_human_resources' in self.cleaned_data:
+            for item in self.cleaned_data['expertise_products_services_human_resources']:
+                expertise += [item.replace('-', ' ')]
+        self.cleaned_data['expertise_products_services_human_resources'] = (
+            expertise
+        )
+
+        return self.cleaned_data['expertise_products_services_human_resources']
 
 
 class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
