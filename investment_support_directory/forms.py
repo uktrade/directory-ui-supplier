@@ -1,5 +1,3 @@
-from functools import reduce
-
 from captcha.fields import ReCaptchaField
 from django.forms.widgets import HiddenInput, TextInput, Textarea
 from django.utils.html import mark_safe
@@ -173,13 +171,17 @@ class CompanySearchForm(forms.Form):
 
     def clean_expertise_products_services_human_resources(self):
         # Hack for AWS WAF 404 caused by spaces in 'on' within the querystring
-        expertise = []
         if 'expertise_products_services_human_resources' in self.cleaned_data:
-            for item in self.cleaned_data['expertise_products_services_human_resources']:
-                expertise += [item.replace('-', ' ')]
-        self.cleaned_data['expertise_products_services_human_resources'] = (
-            expertise
-        )
+            cleaned_data = list(
+                map(
+                    (lambda x: x.replace('-', ' ')),
+                    self.cleaned_data[(
+                        'expertise_products_services_human_resources'
+                    )]
+                )
+            )
+            self.cleaned_data[(
+                'expertise_products_services_human_resources')] = cleaned_data
 
         return self.cleaned_data['expertise_products_services_human_resources']
 
