@@ -45,16 +45,14 @@ def test_company_search_form_clean_human_resources_for_waf_error_403():
             expertise.HUMAN_RESOURCES[6].replace(' ', '-'),
         ],
     })
-
     assert form.is_valid()
-    assert form.cleaned_data[(
-                'expertise_products_services_human_resources'
-            )] == (
-                    [
-                        expertise.HUMAN_RESOURCES[0].replace('-', ' '),
-                        expertise.HUMAN_RESOURCES[6].replace('-', ' ')
-                    ]
-                )
+    field_name = 'expertise_products_services_labels'
+    assert form.cleaned_data[field_name] == (
+        [
+            expertise.HUMAN_RESOURCES[0].replace('-', ' '),
+            expertise.HUMAN_RESOURCES[6].replace('-', ' '),
+        ]
+    )
 
 
 def test_company_search_form_page_present():
