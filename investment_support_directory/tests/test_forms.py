@@ -38,7 +38,7 @@ def test_company_search_form_expertise_products_services():
         assert field_name in form.cleaned_data
 
 
-def test_company_search_form_clean_human_resources_for_404():
+def test_company_search_form_clean_human_resources_for_waf_error_403():
     form = forms.CompanySearchForm(data={
         f'{prefix}_human_resources': [
             expertise.HUMAN_RESOURCES[0].replace(' ', '-'),
@@ -47,12 +47,14 @@ def test_company_search_form_clean_human_resources_for_404():
     })
 
     assert form.is_valid()
-    assert form.cleaned_data['expertise_products_services_human_resources'] ==(
-        [
-            expertise.HUMAN_RESOURCES[0].replace('-', ' '),
-            expertise.HUMAN_RESOURCES[6].replace('-', ' ')
-        ]
-    )
+    assert form.cleaned_data[(
+                'expertise_products_services_human_resources'
+            )] == (
+                    [
+                        expertise.HUMAN_RESOURCES[0].replace('-', ' '),
+                        expertise.HUMAN_RESOURCES[6].replace('-', ' ')
+                    ]
+                )
 
 
 def test_company_search_form_page_present():
@@ -79,7 +81,8 @@ def test_company_search_form_page_missing():
     {'expertise_languages': [choices.EXPERTISE_LANGUAGES[0][0]]},
     {'q': 'foo'},
     {f'{prefix}_management': [expertise.MANAGEMENT_CONSULTING[0]]},
-    {f'{prefix}_human_resources': [
+    {
+        f'{prefix}_human_resources': [
             expertise.HUMAN_RESOURCES[0].replace(' ', '-')
         ]
     },
