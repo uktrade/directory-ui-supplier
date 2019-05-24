@@ -88,6 +88,8 @@ class CompanySearchView(
 
     def get_results_and_count(self, form):
         data = form.cleaned_data
+        import pdb
+        pdb.set_trace()
         response = api_client.company.search_investment_search_directory(
             term=data['q'],
             page=data['page'],

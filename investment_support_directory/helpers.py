@@ -70,6 +70,10 @@ def get_results_from_search_response(response):
 
 def get_paginator_url(filters):
     url = reverse('investment-support-directory:search')
+    # Hack for AWS WAF 403 caused by spaces in 'on' within the querystring
+    field ='expertise_products_services_human_resources'
+    if filters.get(field):
+        filters[field] = [item.replace(' ', '-') for item in filters[field]]
     querystring = urlencode({
         key: value
         for key, value in filters.items()
