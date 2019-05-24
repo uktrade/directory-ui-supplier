@@ -170,7 +170,7 @@ class CompanySearchForm(forms.Form):
         )
 
     def clean_expertise_products_services_human_resources(self):
-        # Hack for AWS WAF 404 caused by spaces in 'on' within the querystring
+        # Hack for AWS WAF 403 caused by spaces in 'on' within the querystring
         if 'expertise_products_services_human_resources' in self.cleaned_data:
             cleaned_data = list(
                 map(

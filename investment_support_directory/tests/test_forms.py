@@ -79,9 +79,10 @@ def test_company_search_form_page_missing():
     {'expertise_languages': [choices.EXPERTISE_LANGUAGES[0][0]]},
     {'q': 'foo'},
     {f'{prefix}_management': [expertise.MANAGEMENT_CONSULTING[0]]},
-    {f'{prefix}_human_resources': [expertise.HUMAN_RESOURCES[0].replace(
-        ' ', '-')
-    ]},
+    {f'{prefix}_human_resources': [
+            expertise.HUMAN_RESOURCES[0].replace(' ', '-')
+        ]
+    },
     {f'{prefix}_legal': [expertise.LEGAL[0]]},
     {f'{prefix}_publicity': [expertise.PUBLICITY[0]]},
     {f'{prefix}_business_support': [expertise.BUSINESS_SUPPORT[0]]},
