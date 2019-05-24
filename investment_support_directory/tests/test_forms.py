@@ -19,12 +19,13 @@ def test_company_search_form_expertise_products_services():
     form = forms.CompanySearchForm(data={
         'term': 'foo',
         f'{prefix}_management': [expertise.MANAGEMENT_CONSULTING[0]],
-        f'{prefix}_human_resources': [expertise.HUMAN_RESOURCES[0]],
+        f'{prefix}_human_resources': [expertise.HUMAN_RESOURCES[0].replace(
+            ' ', '-')
+        ],
         f'{prefix}_legal': [expertise.LEGAL[0]],
         f'{prefix}_publicity': [expertise.PUBLICITY[0]],
         f'{prefix}_business_support': [expertise.BUSINESS_SUPPORT[0]],
     })
-
     assert form.is_valid()
     assert form.cleaned_data['expertise_products_services_labels'] == [
         expertise.MANAGEMENT_CONSULTING[0],
@@ -35,6 +36,23 @@ def test_company_search_form_expertise_products_services():
     ]
     for field_name in expertise_products_services_fields:
         assert field_name in form.cleaned_data
+
+
+def test_company_search_form_clean_human_resources_for_waf_error_403():
+    form = forms.CompanySearchForm(data={
+        f'{prefix}_human_resources': [
+            expertise.HUMAN_RESOURCES[0].replace(' ', '-'),
+            expertise.HUMAN_RESOURCES[6].replace(' ', '-'),
+        ],
+    })
+    assert form.is_valid()
+    field_name = 'expertise_products_services_labels'
+    assert form.cleaned_data[field_name] == (
+        [
+            expertise.HUMAN_RESOURCES[0].replace('-', ' '),
+            expertise.HUMAN_RESOURCES[6].replace('-', ' '),
+        ]
+    )
 
 
 def test_company_search_form_page_present():
@@ -61,7 +79,11 @@ def test_company_search_form_page_missing():
     {'expertise_languages': [choices.EXPERTISE_LANGUAGES[0][0]]},
     {'q': 'foo'},
     {f'{prefix}_management': [expertise.MANAGEMENT_CONSULTING[0]]},
-    {f'{prefix}_human_resources': [expertise.HUMAN_RESOURCES[0]]},
+    {
+        f'{prefix}_human_resources': [
+            expertise.HUMAN_RESOURCES[0].replace(' ', '-')
+        ]
+    },
     {f'{prefix}_legal': [expertise.LEGAL[0]]},
     {f'{prefix}_publicity': [expertise.PUBLICITY[0]]},
     {f'{prefix}_business_support': [expertise.BUSINESS_SUPPORT[0]]},
