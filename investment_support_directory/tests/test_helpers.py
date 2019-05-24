@@ -114,6 +114,9 @@ def test_get_paginator_url_403_friendly():
         'expertise_products_services_human_resources': [
             'Staff Onboarding', 'Space Specialist'
         ],
+        'expertise_products_services_labels': [
+            'I want to disappear', 'special space'
+        ],
         'expertise_languages': 'english',
         'expertise_countries': ['GB', 'fr'],
     }

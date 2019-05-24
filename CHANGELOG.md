@@ -7,6 +7,7 @@
 ### Fixed bugs
 - TT-1487 403-on-specialist-filters change HR specialist rendering 
 - TT-1487 403-on-specialist-filters change pagination to handle HR filters
+- TT-1487 403-on-specialist-filters remove labels from pagination
 
 ## [2019.05.23](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.23)
 

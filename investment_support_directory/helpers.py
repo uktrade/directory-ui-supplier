@@ -74,6 +74,9 @@ def get_paginator_url(filters):
     field = 'expertise_products_services_human_resources'
     if filters.get(field):
         filters[field] = [item.replace(' ', '-') for item in filters[field]]
+    if filters.get('expertise_products_services_labels'):
+        del filters['expertise_products_services_labels']
+
     querystring = urlencode({
         key: value
         for key, value in filters.items()
