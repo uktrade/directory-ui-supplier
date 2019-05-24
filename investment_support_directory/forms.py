@@ -112,7 +112,7 @@ class CompanySearchForm(forms.Form):
             use_nice_ids=True,
         ),
         choices=[
-            (item[0].replace(' ', '-'), item[1]) for item in
+            (value.replace(' ', '-'), label) for value, label in
             choices.EXPERTISE_HUMAN_RESOURCES
         ],
         required=False,
@@ -171,19 +171,8 @@ class CompanySearchForm(forms.Form):
 
     def clean_expertise_products_services_human_resources(self):
         # Hack for AWS WAF 403 caused by spaces in 'on' within the querystring
-        if 'expertise_products_services_human_resources' in self.cleaned_data:
-            cleaned_data = list(
-                map(
-                    (lambda x: x.replace('-', ' ')),
-                    self.cleaned_data[(
-                        'expertise_products_services_human_resources'
-                    )]
-                )
-            )
-            self.cleaned_data[(
-                'expertise_products_services_human_resources')] = cleaned_data
-
-        return self.cleaned_data['expertise_products_services_human_resources']
+        field = 'expertise_products_services_human_resources'
+        return [item.replace('-', ' ') for item in self.cleaned_data[field]]
 
 
 class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
