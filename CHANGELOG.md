@@ -1,6 +1,7 @@
 # Changelog
 
-## Pre-release
+## [2019.05.28] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.28)
+[Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.05.16...2019.05.28)
 
 ### Implemented enhancements
 
