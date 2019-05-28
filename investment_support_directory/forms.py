@@ -111,7 +111,10 @@ class CompanySearchForm(forms.Form):
             attrs={'id': 'checkbox-products-services-human-expertise'},
             use_nice_ids=True,
         ),
-        choices=choices.EXPERTISE_HUMAN_RESOURCES,
+        choices=[
+            (value.replace(' ', '-'), label) for value, label in
+            choices.EXPERTISE_HUMAN_RESOURCES
+        ],
         required=False,
     )
     expertise_products_services_legal = fields.MultipleChoiceField(
@@ -165,6 +168,11 @@ class CompanySearchForm(forms.Form):
         self.cleaned_data['expertise_products_services_labels'] = (
             products_services
         )
+
+    def clean_expertise_products_services_human_resources(self):
+        # Hack for AWS WAF 403 caused by spaces in 'on' within the querystring
+        field = 'expertise_products_services_human_resources'
+        return [item.replace('-', ' ') for item in self.cleaned_data[field]]
 
 
 class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
