@@ -16,7 +16,7 @@ directory-components==13.0.0
 directory-cms-client==10.0.0
 directory-api-client==14.0.0
 directory-validators==5.0.1
-directory-constants==16.7.1
+directory-constants==16.7.2
 beautifulsoup4==4.6.0
 waitress==0.8.9
 django-redis==4.8.0

@@ -109,6 +109,29 @@ def test_get_paginator_url_multiple_filters():
     )
 
 
+def test_get_paginator_url_403_friendly():
+    filters = {
+        'expertise_products_services_human_resources': [
+            'Staff Onboarding', 'Space Specialist'
+        ],
+        'expertise_products_services_labels': [
+            'I want to disappear', 'special space'
+        ],
+        'expertise_languages': 'english',
+        'expertise_countries': ['GB', 'fr'],
+    }
+    encoded_url = (
+        '?expertise_products_services_human_resources=Staff-Onboarding&'
+        'expertise_products_services_human_resources=Space-Specialist&'
+        'expertise_languages=english&expertise_countries=GB&'
+        'expertise_countries=fr'
+    )
+
+    assert helpers.get_paginator_url(filters) == (
+            reverse('investment-support-directory:search') + encoded_url
+    )
+
+
 def test_get_filters_labels():
     filters = {
         'expertise_languages': ['aa'],
