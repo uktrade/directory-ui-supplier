@@ -1,4 +1,4 @@
-from directory_cms_client.client import cms_api_client
+from directory_cms_client import cms_api_client
 from directory_cms_client.helpers import handle_cms_response_allow_404
 from directory_constants import cms
 

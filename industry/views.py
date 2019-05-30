@@ -15,7 +15,7 @@ from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 from django.urls import reverse, reverse_lazy
 
-from directory_cms_client.client import cms_api_client
+from directory_cms_client import cms_api_client
 
 from core.mixins import (
     ActiveViewNameMixin,

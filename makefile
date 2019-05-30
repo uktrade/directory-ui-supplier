@@ -91,7 +91,7 @@ compile_translations:
 	$(DEBUG_SET_ENV_VARS) && $(COMPILE_TRANSLATIONS)
 
 debug_shell:
-	$(DEBUG_SET_ENV_VARS) && ./manage.py shell
+	$(DEBUG_SET_ENV_VARS) && python manage.py shell
 
 debug: test_requirements debug_test
 
