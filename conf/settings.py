@@ -69,6 +69,7 @@ MIDDLEWARE_CLASSES = [
     'directory_components.middleware.PersistLocaleMiddleware',
     'directory_components.middleware.ForceDefaultLocale',
     'directory_components.middleware.CountryMiddleware',
+    'directory_components.middleware.CheckGATags',
     'core.middleware.PrefixUrlMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

@@ -1,6 +1,7 @@
 # Changelog
 
 ## Pre release
+- CI-108 - Add back sending additional data to GA 360, and update this data to newest spec.
 
 ### Implemented enhancements
 

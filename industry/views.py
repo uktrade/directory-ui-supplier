@@ -35,7 +35,16 @@ class IndustryDetailCMSView(
     TemplateView
 ):
     template_name = 'industry/detail.html'
-    ga360_payload = {'page_type': 'FindASupplierIndustryDetail'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierIndustryDetail',
+            business_unit='FindASupplier',
+            site_section='Industries',
+            site_subsection='Detail'
+        )
 
     def get_context_data(self, *args, **kwargs):
         companies = self.get_companies(
@@ -167,7 +176,16 @@ class IndustryDetailContactCMSView(
     GetIndustryPageMixin, GetCMSContactPageMixin,
     CMSLanguageSwitcherMixin, BaseIndustryContactView
 ):
-    ga360_payload = {'page_type': 'FindASupplierIndustryDetailContact'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierIndustryDetailContact',
+            business_unit='FindASupplier',
+            site_section='Industries',
+            site_subsection='DetailContact'
+        )
 
     def get_success_url(self):
         return reverse('sector-detail-cms-contact-sent', kwargs=self.kwargs)
@@ -184,7 +202,16 @@ class IndustryLandingPageContactCMSView(
     BaseIndustryContactView
 ):
     success_url = reverse_lazy('sector-list-cms-contact-sent')
-    ga360_payload = {'page_type': 'FindASupplierIndustryLandingPageContact'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierIndustryLandingPageContact',
+            business_unit='FindASupplier',
+            site_section='Industries',
+            site_subsection='LandingPageContact'
+        )
 
 
 class IndustryDetailContactCMSSentView(
@@ -193,7 +220,16 @@ class IndustryDetailContactCMSSentView(
     GA360Mixin, TemplateView
 ):
     template_name = 'industry/contact-success.html'
-    ga360_payload = {'page_type': 'FindASupplierIndustryDetailContactSent'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierIndustryDetailContactSent',
+            business_unit='FindASupplier',
+            site_section='Industries',
+            site_subsection='DetailContactSent'
+        )
 
     @property
     def expected_referer_url(self):
@@ -205,7 +241,16 @@ class IndustryLandingPageContactCMSSentView(
     GetCMSContactPageMixin, CountryDisplayMixin, GA360Mixin, TemplateView
 ):
     template_name = 'industry/contact-success.html'
-    ga360_payload = {'page_type': 'FindASupplierIndustryLandingContactSent'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierIndustryLandingContactSent',
+            business_unit='FindASupplier',
+            site_section='Industries',
+            site_subsection='LandingContactSent'
+        )
 
     @property
     def expected_referer_url(self):
@@ -217,7 +262,16 @@ class IndustryArticleCMSView(
     CountryDisplayMixin, GA360Mixin, TemplateView
 ):
     template_name = 'industry/article.html'
-    ga360_payload = {'page_type': 'FindASupplierIndustryArticle'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierIndustryArticle',
+            business_unit='FindASupplier',
+            site_section='Industries',
+            site_subsection='Article'
+        )
 
     def get_context_data(self, *args, **kwargs):
         social_links_builder = SocialLinkBuilder(
@@ -234,10 +288,20 @@ class IndustryArticleCMSView(
 
 class IndustryLandingPageCMSView(
     CMSLanguageSwitcherMixin, ActiveViewNameMixin,
-    CountryDisplayMixin, TemplateView
+    CountryDisplayMixin, GA360Mixin, TemplateView
 ):
     active_view_name = 'sector-list'
     template_name = 'industry/list.html'
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierIndustryLandingPage',
+            business_unit='FindASupplier',
+            site_section='Industries',
+            site_subsection='LandingPage'
+        )
 
     @cached_property
     def page(self):

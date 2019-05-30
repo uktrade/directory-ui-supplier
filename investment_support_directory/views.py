@@ -11,7 +11,7 @@ from django.views.generic.edit import FormView
 
 from directory_api_client.client import api_client
 from directory_constants import expertise
-from directory_components.mixins import CountryDisplayMixin
+from directory_components.mixins import CountryDisplayMixin, GA360Mixin
 from core.views import BaseNotifyFormView
 from core.helpers import NotifySettings
 
@@ -40,9 +40,19 @@ class CompanyProfileMixin:
         )
 
 
-class HomeView(FeatureFlagMixin, CountryDisplayMixin, FormView):
+class HomeView(FeatureFlagMixin, CountryDisplayMixin, GA360Mixin, FormView):
     template_name = 'investment_support_directory/home.html'
     form_class = forms.CompanyHomeSearchForm
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierISDHome',
+            business_unit='FindASupplier',
+            site_section='InvestmentSupportDirectory',
+            site_subsection='Home'
+        )
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(
@@ -62,11 +72,21 @@ class HomeView(FeatureFlagMixin, CountryDisplayMixin, FormView):
 
 class CompanySearchView(
     FeatureFlagMixin, CountryDisplayMixin, core.mixins.SubmitFormOnGetMixin,
-    FormView
+    GA360Mixin, FormView
 ):
     form_class = forms.CompanySearchForm
     page_size = 10
     template_name = 'investment_support_directory/search.html'
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierISDCompanySearch',
+            business_unit='FindASupplier',
+            site_section='InvestmentSupportDirectory',
+            site_subsection='CompanySearch'
+        )
 
     def form_valid(self, form):
         results, count = self.get_results_and_count(form)
@@ -116,9 +136,19 @@ class CompanySearchView(
 
 class ProfileView(
     FeatureFlagMixin, CompanyProfileMixin, CountryDisplayMixin,
-    TemplateView
+    GA360Mixin, TemplateView
 ):
     template_name = 'investment_support_directory/profile.html'
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierISDProfile',
+            business_unit='FindASupplier',
+            site_section='InvestmentSupportDirectory',
+            site_subsection='Profile'
+        )
 
     def get_canonical_url(self):
         kwargs = {
@@ -137,8 +167,20 @@ class ContactView(
     FeatureFlagMixin,
     CompanyProfileMixin,
     CountryDisplayMixin,
+    GA360Mixin,
     BaseNotifyFormView,
 ):
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierISDContact',
+            business_unit='FindASupplier',
+            site_section='InvestmentSupportDirectory',
+            site_subsection='Contact'
+        )
+
     form_class = forms.ContactCompanyForm
     template_name = 'investment_support_directory/contact.html'
     notify_settings = NotifySettings(
@@ -164,6 +206,17 @@ class ContactView(
 
 
 class ContactSuccessView(
-    FeatureFlagMixin, CompanyProfileMixin, CountryDisplayMixin, TemplateView
+    FeatureFlagMixin, CompanyProfileMixin, CountryDisplayMixin,
+    GA360Mixin, TemplateView
 ):
     template_name = 'investment_support_directory/sent.html'
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierISDContactSuccess',
+            business_unit='FindASupplier',
+            site_section='InvestmentSupportDirectory',
+            site_subsection='ContactSuccess'
+        )
