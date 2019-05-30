@@ -3,7 +3,7 @@ from directory_components.mixins import (
     CMSLanguageSwitcherMixin, CountryDisplayMixin, EnableTranslationsMixin,
     GA360Mixin)
 from directory_constants import slugs
-from directory_cms_client.client import cms_api_client
+from directory_cms_client import cms_api_client
 import directory_forms_api_client.helpers
 
 from django.conf import settings

@@ -1,5 +1,5 @@
 from directory_constants import cms
-from directory_cms_client.client import cms_api_client
+from directory_cms_client import cms_api_client
 
 from django.contrib import sitemaps
 from django.core.urlresolvers import reverse
