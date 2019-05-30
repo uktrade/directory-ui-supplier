@@ -74,19 +74,19 @@
 				<h2>Online profiles</h2>
 				{% if company.linkedin_url %}
 					<p class="social-link">
-						<img class="social-icon" src="/static/images/icon-linkedin-white.png" alt="" />
+						<img class="social-icon" src="{% static 'images/icon-linkedin-white.png' %}" alt="" />
 						<a href="{{ company.linkedin_url }}" target="_blank">Visit LinkedIn</a>
 					</p>
 				{% endif %}
 				{% if company.twitter_url %}
 					<p class="social-link">
-						<img class="social-icon" src="/static/images/icon-twitter.png" alt="" />
+						<img class="social-icon" src="{% static 'images/icon-twitter.png' %}" alt="" />
 						<a href="{{ company.twitter_url }}" target="_blank">Visit Twitter</a>
 					</p>
 				{% endif %}
 				{% if company.facebook_url %}
 					<p class="social-link">
-						<img class="social-icon" src="/static/images/icon-facebook-white.png" alt="">
+						<img class="social-icon" src="{% static 'images/icon-facebook-white.png' %}" alt="">
 						<a href="{{ company.facebook_url }}" target="_blank">Visit Facebook</a>
 					</p>
 				{% endif %}

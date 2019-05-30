@@ -1,5 +1,12 @@
 # Changelog
 
+## Pre release
+
+## Fixed bugs
+
+- TT-1486 - Fixed ISD results issue on IE11
+- TT-1474 - Fixed missing social links images
+
 ## [2019.05.28] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.28)
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.05.23...2019.05.28)
 
