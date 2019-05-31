@@ -16,9 +16,10 @@ dit.tagging.fas = new function() {
         function addTaggingForSearch() {
             $("[data-ga-class='company-search-form']").on('submit', function() {
                 window.dataLayer.push({
-                    'eventAction': 'Search',
-                    'eventCategory': 'Search Form',
-                    'eventLabel': 'Find A Supplier',
+                    'event': 'gaEvent',
+                    'action': 'Search',
+                    'type': 'Search Form',
+                    'element': 'Find A Supplier',
                     'eventValue': "Search: " + getSearchInputText() + " :: Filter: " + getIndustryFilterValue()
                 });
             });
@@ -35,9 +36,10 @@ dit.tagging.fas = new function() {
         function addTaggingForContact() {
             $("[data-ga-class='contact-cta']").on('click', function() {
                 window.dataLayer.push({
-                    'eventAction': 'Cta',
-                    'eventCategory': 'Contact',
-                    'eventLabel': 'Link',
+                    'event': 'gaEvent',
+                    'action': 'Cta',
+                    'type': 'Contact',
+                    'element': 'Link',
                     'eventValue': $(this).text()
                 });
             });

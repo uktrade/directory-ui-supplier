@@ -184,6 +184,7 @@ body:not(.js-enabled) {
       a {
         text-decoration: none;
         min-height: 205px;
+        height: 205px; /*IE 11 flexbox min-height fix*/
         color: $grey;
         .logo-container {
           text-align: center;

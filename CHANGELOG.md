@@ -1,6 +1,20 @@
 # Changelog
 
-## Pre-release
+## Pre release
+- CI-108 - Add back sending additional data to GA 360, and update this data to newest spec.
+
+### Implemented enhancements
+
+- TT-1477 - Improve breadcrumbs on ISD pages
+
+## Fixed bugs
+
+- TT-1486 - Fixed ISD results issue on IE11
+- TT-1474 - Fixed missing social links images
+- No ticket - Fall loudly id redis is not configured
+
+## [2019.05.28] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.28)
+[Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.05.23...2019.05.28)
 
 ### Implemented enhancements
 

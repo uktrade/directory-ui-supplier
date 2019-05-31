@@ -1,5 +1,6 @@
 import directory_components.views
 import directory_healthcheck.views
+from directory_components.decorators import skip_ga360
 
 from django.conf import settings
 from django.conf.urls import include, url
@@ -25,7 +26,7 @@ sitemaps = {
 healthcheck_urls = [
     url(
         r'^$',
-        directory_healthcheck.views.HealthcheckView.as_view(),
+        skip_ga360(directory_healthcheck.views.HealthcheckView.as_view()),
         name='healthcheck'
     ),
 ]
@@ -73,12 +74,12 @@ urlpatterns = [
         )
     ),
     url(
-        r"^sitemap\.xml$", sitemap, {'sitemaps': sitemaps},
+        r"^sitemap\.xml$", skip_ga360(sitemap), {'sitemaps': sitemaps},
         name='sitemap'
     ),
     url(
         r"^robots\.txt$",
-        directory_components.views.RobotsView.as_view(),
+        skip_ga360(directory_components.views.RobotsView.as_view()),
         name='robots'
     ),
     url(

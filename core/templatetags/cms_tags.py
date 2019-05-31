@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from django import template
 
-from directory_components.templatetags import directory_components_tags
+from directory_components.templatetags import directory_components
 
 
 register = template.Library()
@@ -15,8 +15,8 @@ def table_of_contents(value):
     soup = BeautifulSoup(value, 'html.parser')
     return [
         (
-            directory_components_tags.build_anchor_id(element, '-section'),
-            directory_components_tags.get_label(element)
+            directory_components.build_anchor_id(element, '-section'),
+            directory_components.get_label(element)
         )
         for element in soup.findAll('h2')
     ]

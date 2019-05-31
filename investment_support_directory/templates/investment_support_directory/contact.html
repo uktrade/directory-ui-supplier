@@ -1,6 +1,6 @@
 {% extends 'core/base.html' %}
 {% load staticfiles %}
-{% load breadcrumbs render_form from directory_components_tags %}
+{% load breadcrumbs render_form from directory_components %}
 
 {% block head_css %}
     {{ block.super }}
@@ -10,7 +10,7 @@
 {% block content %}
 <div class="container">
     {% url 'investment-support-directory:profile' company_number=company.number slug=company.slug as company_url %}
-    {% breadcrumbs left_url='/' left_label='Home' middle_label=company.name middle_url=company_url right_label='Send a message' %}
+    {% breadcrumbs left_url=services_urls.great_international left_label='Great.gov.uk international' middle_url=company_url middle_label=company.name right_label='Contact company' %}
     <div class="width-two-thirds">
         <h1 class="heading-xlarge margin-bottom-0">Send a message to {{ company.name }}</h1>              
         <p class="hero-subtitle margin-bottom-45 margin-top-15">Enter your details and a brief message about your needs. We’ll send these to the business you’ve selected.</p>  
