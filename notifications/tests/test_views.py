@@ -23,7 +23,7 @@ def api_response_400():
     return response
 
 
-def test_unsubscribe_reuqired_params(client):
+def test_unsubscribe_required_params(client):
     response = client.get(reverse('anonymous-unsubscribe'), {'email': '123'})
 
     view = views.AnonymousUnsubscribeView
@@ -31,7 +31,7 @@ def test_unsubscribe_reuqired_params(client):
     assert response.template_name == [view.template_name]
 
 
-def test_unsubscribe_missing_reuqired_params(client):
+def test_unsubscribe_missing_required_params(client):
     response = client.get(reverse('anonymous-unsubscribe'))
 
     view = views.AnonymousUnsubscribeView

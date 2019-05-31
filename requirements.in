@@ -7,12 +7,11 @@ gunicorn==19.5.0
 raven==5.19.0
 requests==2.21.0
 whitenoise==3.1
-jsonschema==2.6.0
 django_recaptcha==1.2.0
 redis==2.10.5
 sorl-thumbnail==12.3
 directory-forms-api-client==4.0.0
-directory-components==13.0.0
+directory-components==15.1.0
 directory-cms-client==10.0.1
 directory-api-client==14.0.0
 directory-validators==5.0.1

@@ -1,6 +1,7 @@
 from unittest.mock import call, patch, PropertyMock
 from bs4 import BeautifulSoup
 from django.utils import translation
+import http
 
 from django.core.urlresolvers import reverse
 
@@ -133,3 +134,9 @@ def test_landing_page_cms_component_bidi(
     soup = BeautifulSoup(response.content, 'html.parser')
 
     assert soup.select('.banner-container')[0].get('dir') == 'rtl'
+
+
+def test_anonymous_subscribe(client):
+    response = client.get(reverse('subscribe'))
+
+    assert response.status_code == http.client.OK

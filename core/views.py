@@ -29,7 +29,15 @@ class LandingPageCMSView(
     active_view_name = 'index'
     template_name = 'core/landing-page.html'
     component_slug = slugs.COMPONENTS_BANNER_INTERNATIONAL
-    ga360_payload = {'page_type': 'FindASupplierLandingPage'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierLandingPage',
+            business_unit='FindASupplier',
+            site_section='HomePage',
+        )
 
     def get_context_data(self, *args, **kwargs):
         return super().get_context_data(
@@ -65,7 +73,16 @@ class LeadGenerationFormView(
     template_name = 'lead-generation.html'
     template_name_bidi = 'bidi/lead-generation.html'
     form_class = forms.LeadGenerationForm
-    ga360_payload = {'page_type': 'FindASupplierLeadGenerationForm'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierLeadGenerationForm',
+            business_unit='FindASupplier',
+            site_section='LeadGeneration',
+            site_subsection='Form'
+        )
 
     def form_valid(self, form):
         sender = directory_forms_api_client.helpers.Sender(
@@ -85,14 +102,27 @@ class LeadGenerationFormView(
             spam_control=spam_control,
         )
         response.raise_for_status()
-        return TemplateResponse(self.request, self.success_template)
+        return TemplateResponse(
+            self.request,
+            self.success_template,
+            context=self.get_context_data()
+        )
 
 
 class AnonymousSubscribeFormView(CountryDisplayMixin, GA360Mixin, FormView):
     success_template = 'anonymous-subscribe-success.html'
     template_name = 'anonymous-subscribe.html'
     form_class = forms.AnonymousSubscribeForm
-    ga360_payload = {'page_type': 'FindASupplierAnonymousSubscribeForm'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierAnonymousSubscribeForm',
+            business_unit='FindASupplier',
+            site_section='AnonymousSubscribe',
+            site_subsection='Form'
+        )
 
     def form_valid(self, form):
         data = forms.serialize_anonymous_subscriber_forms(form.cleaned_data)
