@@ -2,6 +2,7 @@
 
 ## Pre release
 - CI-108 - Add back sending additional data to GA 360, and update this data to newest spec.
+- TT-1492 Add link to T&Cs on disclaimer page
 
 ### Implemented enhancements
 
