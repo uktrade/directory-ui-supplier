@@ -40,6 +40,7 @@ class CompanyParser(directory_components.helpers.CompanyParser):
             'expertise_products_services': (
                 self.expertise_products_services_label
             ),
+            'is_in_companies_house': self.is_in_companies_house,
         }
 
 
