@@ -9,7 +9,6 @@
 }
 
 mark {
-  font-size: 24px;
   font-weight: bold;
   line-height: 1.5;
   background: $stone;
@@ -60,6 +59,7 @@ mark {
     padding: 20px;
     margin-bottom: 20px;
     margin-top: 10px;
+    font-size: 16px;
     a {
       display: block;
     }
@@ -98,7 +98,6 @@ mark {
     }
     
     legend {
-      font-weight: bold;
       margin-bottom: 20px;
     }
 
@@ -255,6 +254,9 @@ body:not(.js-enabled) {
     }
     span {
       margin-top: 36px;
+    }
+    mark {
+      font-size: 24px;
     }
   }
   #companies-column {

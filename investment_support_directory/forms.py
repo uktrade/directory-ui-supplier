@@ -2,7 +2,7 @@ from captcha.fields import ReCaptchaField
 from django.forms.widgets import HiddenInput, TextInput, Textarea
 from django.utils.html import mark_safe
 
-from directory_constants import choices
+from directory_constants import choices, urls
 from directory_components import forms, fields, widgets
 from directory_forms_api_client.forms import GovNotifyActionMixin
 from directory_validators.common import not_contains_url_or_email
@@ -176,9 +176,9 @@ class CompanySearchForm(forms.Form):
 
 
 class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
-
     TERMS_CONDITIONS_LABEL = (
-        '<p>I agree to the great.gov.uk terms and conditions and I '
+        f'<p>I agree to the <a href="{urls.TERMS_AND_CONDITIONS}" '
+        'target="_blank"> great.gov.uk terms and conditions </a> and I '
         'understand that:</p>'
         '<ul class="list list-bullet">'
         '<li>the Department for International Trade (DIT) has reasonably '

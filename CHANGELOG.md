@@ -1,17 +1,21 @@
 # Changelog
 
 ## Pre release
-- CI-108 - Add back sending additional data to GA 360, and update this data to newest spec.
 
 ### Implemented enhancements
 
 - TT-1477 - Improve breadcrumbs on ISD pages
+- CI-108 - Add back sending additional data to GA 360, and update this data to newest spec.
+- TT-1492 Add link to T&Cs on disclaimer page
+- No ticket - Show ISD address only if not in companies house
 
 ## Fixed bugs
 
 - TT-1486 - Fixed ISD results issue on IE11
 - TT-1474 - Fixed missing social links images
 - No ticket - Fall loudly id redis is not configured
+- TT-1482 - Reduce font size of ISD selected filters
+- TT-1422 - Added "filter results" title to ISD
 
 ## [2019.05.28] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.28)
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.05.23...2019.05.28)
@@ -22,6 +26,7 @@
 - TT-1487 403-on-specialist-filters change HR specialist rendering 
 - TT-1487 403-on-specialist-filters change pagination to handle HR filters
 - TT-1487 403-on-specialist-filters remove labels from pagination
+- TT-1321-industry-rewording
 
 ## [2019.05.23](https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.05.23)
 

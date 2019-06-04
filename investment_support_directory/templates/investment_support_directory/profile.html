@@ -44,7 +44,7 @@
                         </dd>
                     {% endif %}
                     <dt>Business type</dt>
-                    {% if company.company_type == 'COMPANIES_HOUSE' %}
+                    {% if company.is_in_companies_house %}
                         <dd>UK business registered in Companies House</dd>
                     {% else %}
                         <dd>UK business not registered in Companies House</dd>
@@ -56,6 +56,10 @@
                     {% if company.sectors %}
                         <dt>Core industry</dt>
                         <dd>{{ company.sectors|title }}</dd>
+                    {% endif %}
+                    {% if not company.is_in_companies_house %}
+                        <dt>Address</dt>
+                        <dd>{{ company.address }}</dd>
                     {% endif %}
                 </dl>
             </section>
@@ -89,10 +93,13 @@
                     </li>
                 </ul>
             </section>
-            {% if company.address %}
-            <section id="registered-office-address-container">
-                {{ company.address }}
-            </section>
+            {% if company.is_in_companies_house %}
+                <section id="registered-office-address-container" class="font-xsmall">
+                    <p>{{ company.name }}</p>
+                    <p>UK registered company – number {{ company.number }}</p>
+                    <p>Registered office address:</p>
+                    <p>{{ company.address }}</p>
+                </section>
             {% endif %}
         </div>
         <div class="column-two-thirds" id="content-column">
