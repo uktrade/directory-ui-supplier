@@ -57,7 +57,7 @@
                         <dt>Core industry</dt>
                         <dd>{{ company.sectors|title }}</dd>
                     {% endif %}
-                    {% if company.is_in_companies_house %}
+                    {% if not company.is_in_companies_house %}
                         <dt>Address</dt>
                         <dd>{{ company.address }}</dd>
                     {% endif %}
