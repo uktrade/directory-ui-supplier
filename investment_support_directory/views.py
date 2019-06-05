@@ -20,13 +20,6 @@ import core.mixins
 from investment_support_directory import forms, helpers
 
 
-class FeatureFlagMixin(core.mixins.NotFoundOnDisabledFeature):
-
-    @property
-    def flag(self):
-        return settings.FEATURE_FLAGS['INVESTMENT_SUPPORT_DIRECTORY_ON']
-
-
 class CompanyProfileMixin:
     @cached_property
     def company(self):
@@ -40,13 +33,25 @@ class CompanyProfileMixin:
         )
 
 
-class HomeView(FeatureFlagMixin, CountryDisplayMixin, GA360Mixin, FormView):
+class PerisistSearchQuerystringMixin:
+
+    @property
+    def search_querystring(self):
+        return self.request.GET.urlencode()
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(
+            search_querystring=self.search_querystring,
+            **kwargs,
+        )
+
+
+class HomeView(CountryDisplayMixin, GA360Mixin, FormView):
     template_name = 'investment_support_directory/home.html'
     form_class = forms.CompanyHomeSearchForm
 
     def __init__(self):
         super().__init__()
-
         self.set_ga360_payload(
             page_id='FindASupplierISDHome',
             business_unit='FindASupplier',
@@ -71,8 +76,8 @@ class HomeView(FeatureFlagMixin, CountryDisplayMixin, GA360Mixin, FormView):
 
 
 class CompanySearchView(
-    FeatureFlagMixin, CountryDisplayMixin, core.mixins.SubmitFormOnGetMixin,
-    GA360Mixin, FormView
+    CountryDisplayMixin, core.mixins.SubmitFormOnGetMixin,
+    GA360Mixin, PerisistSearchQuerystringMixin, FormView
 ):
     form_class = forms.CompanySearchForm
     page_size = 10
@@ -87,6 +92,18 @@ class CompanySearchView(
             site_section='InvestmentSupportDirectory',
             site_subsection='CompanySearch'
         )
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(
+            show_search_guide='show-guide' in self.request.GET,
+            **kwargs,
+        )
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        if 'data' not in kwargs:
+            kwargs['data'] = {}
+        return kwargs
 
     def form_valid(self, form):
         results, count = self.get_results_and_count(form)
@@ -107,6 +124,8 @@ class CompanySearchView(
             return TemplateResponse(self.request, self.template_name, context)
 
     def get_results_and_count(self, form):
+        if 'show-guide' in self.request.GET:
+            return [], 0
         data = form.cleaned_data
         response = api_client.company.search_investment_search_directory(
             term=data['q'],
@@ -127,22 +146,18 @@ class CompanySearchView(
 
     @staticmethod
     def handle_empty_page(form):
-        url = '{url}?q={q}'.format(
-            url=reverse('investment-support-directory:search'),
-            q=form.cleaned_data['q']
-        )
-        return redirect(url)
+        # get_paginator_url returns urls wih all active filters except `page`
+        return redirect(helpers.get_paginator_url(form.cleaned_data))
 
 
 class ProfileView(
-    FeatureFlagMixin, CompanyProfileMixin, CountryDisplayMixin,
-    GA360Mixin, TemplateView
+    CompanyProfileMixin, CountryDisplayMixin,
+    GA360Mixin, PerisistSearchQuerystringMixin, TemplateView
 ):
     template_name = 'investment_support_directory/profile.html'
 
     def __init__(self):
         super().__init__()
-
         self.set_ga360_payload(
             page_id='FindASupplierISDProfile',
             business_unit='FindASupplier',
@@ -164,16 +179,15 @@ class ProfileView(
 
 
 class ContactView(
-    FeatureFlagMixin,
     CompanyProfileMixin,
     CountryDisplayMixin,
     GA360Mixin,
+    PerisistSearchQuerystringMixin,
     BaseNotifyFormView,
 ):
 
     def __init__(self):
         super().__init__()
-
         self.set_ga360_payload(
             page_id='FindASupplierISDContact',
             business_unit='FindASupplier',
@@ -184,36 +198,28 @@ class ContactView(
     form_class = forms.ContactCompanyForm
     template_name = 'investment_support_directory/contact.html'
     notify_settings = NotifySettings(
-        contact_company_template=(
-            settings.CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID
-            ),
-        contact_support_template=(
-            settings.CONTACT_ISD_SUPPORT_NOTIFY_TEMPLATE_ID
-            ),
-        contact_support_email_address=(
-            settings.CONTACT_ISD_SUPPORT_EMAIL_ADDRESS
-            ),
-        contact_investor_template=(
-            settings.CONTACT_ISD_INVESTOR_NOTIFY_TEMPLATE_ID
-        ),
+        company_template=settings.CONTACT_ISD_COMPANY_NOTIFY_TEMPLATE_ID,
+        support_template=settings.CONTACT_ISD_SUPPORT_NOTIFY_TEMPLATE_ID,
+        support_email_address=settings.CONTACT_ISD_SUPPORT_EMAIL_ADDRESS,
+        investor_template=settings.CONTACT_ISD_INVESTOR_NOTIFY_TEMPLATE_ID,
     )
 
     def get_success_url(self):
-        return reverse(
+        url = reverse(
             'investment-support-directory:company-contact-sent',
             kwargs={'company_number': self.kwargs['company_number']}
         )
+        return f'{url}?{self.search_querystring}'
 
 
 class ContactSuccessView(
-    FeatureFlagMixin, CompanyProfileMixin, CountryDisplayMixin,
-    GA360Mixin, TemplateView
+    CompanyProfileMixin, CountryDisplayMixin,
+    GA360Mixin, PerisistSearchQuerystringMixin, TemplateView
 ):
     template_name = 'investment_support_directory/sent.html'
 
     def __init__(self):
         super().__init__()
-
         self.set_ga360_payload(
             page_id='FindASupplierISDContactSuccess',
             business_unit='FindASupplier',

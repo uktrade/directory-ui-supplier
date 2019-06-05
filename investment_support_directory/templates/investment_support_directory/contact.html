@@ -13,8 +13,9 @@
     {% breadcrumbs left_url=services_urls.great_international left_label='Great.gov.uk international' middle_url=company_url middle_label=company.name right_label='Contact company' %}
     <div class="width-two-thirds">
         <h1 class="heading-xlarge margin-bottom-0">Send a message to {{ company.name }}</h1>              
-        <p class="hero-subtitle margin-bottom-45 margin-top-15">Enter your details and a brief message about your needs. We’ll send these to the business you’ve selected.</p>  
-        <form method="post">
+        <p class="hero-subtitle margin-bottom-45 margin-top-15">Enter your details and a brief message about your needs. We’ll send these to the business you’ve selected.</p>
+        {% url 'investment-support-directory:company-contact' company_number=company.number as contact_url %}
+        <form method="post" action="{{contact_url}}?{{ search_querystring }}">
             {% render_form form %}
             <button class="button">Send message</button>
         </form>
