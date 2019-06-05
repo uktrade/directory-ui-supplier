@@ -4,6 +4,13 @@
 
 ### Implemented enhancements
 
+## Fixed bugs
+
+## [2019.06.05] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.05)
+[Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.05.28_1...2019.06.05)
+
+### Implemented enhancements
+
 - TT-1477 - Improve breadcrumbs on ISD pages
 - CI-108 - Add back sending additional data to GA 360, and update this data to newest spec.
 - TT-1492 Add link to T&Cs on disclaimer page
