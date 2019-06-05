@@ -22,7 +22,7 @@
                     {% if pagination.paginator.count %}
                         <h2 class="heading-medium">{{ pagination.paginator.count }} {{pagination.paginator.count|pluralize:'result,results'}} found {% if form.q.value %}for <mark>{{ form.q.value }}</mark>{% endif %}</h2>
                     {% else %}
-                        <h2 class="heading-medium">No results found {% if form.q.value %}for <mark>{{ form.q.value }}</mark>{% endif %}</h2>
+                        <h2 class="heading-medium">&nbsp;</h2>
                     {% endif %}
                 </div>
                 <div class="column-one-third">
@@ -72,48 +72,53 @@
                 </fieldset>
                 <button class="button" type="submit">Update results</button>
                 <div class="margin-top-15 margin-bottom-30" id="reset-link-container">
-                    <a href="{% url 'investment-support-directory:search' %}" class="link">Reset</a>
+                    <a href="{% url 'investment-support-directory:search' %}?show-guide=true" class="link">Reset</a>
                 </div>
             </div>
             <div class="column-two-thirds" id="companies-column">
                 <ul>
-                    {% for company in results %}
-                        <li>
-                            <a href="{% url 'investment-support-directory:profile' company_number=company.number slug=company.slug %}">
-                                <div class="logo-container">
-                                    {% thumbnail company.logo "x135" as logo %}
-                                        <img src="{{ logo.url }}" alt="{{ company.name }}" />
-                                    {% empty %}
-                                        <img class="placeholder" src="{% static 'images/placeholder.png' %}" alt="" />
-                                    {% endthumbnail %}
-                                </div>
-                                <div class="width-full details-container">
-                                    <div class="result-header">
-                                        <h3 class="heading-medium margin-0 link">{{ company.name }}</h3>
+                    {% if show_search_guide %}
+                        <h2 class="heading-medium">Enter a search term or use the filters</h2>
+                    {% else %}
+                        {% for company in results %}
+                            <li>
+                                <a href="{% url 'investment-support-directory:profile' company_number=company.number slug=company.slug %}?{{ search_querystring }}">
+                                    <div class="logo-container">
+                                        {% thumbnail company.logo "x135" as logo %}
+                                            <img src="{{ logo.url }}" alt="{{ company.name }}" />
+                                        {% empty %}
+                                            <img class="placeholder" src="{% static 'images/placeholder.png' %}" alt="" />
+                                        {% endthumbnail %}
                                     </div>
-                                    {% if company.description or company.summary %}
-                                        {% if company.highlight %}
-                                            {{ company.highlight|truncatechars_html:125 }}
-                                        {% else %}
-                                            {{ company.summary|default:company.description|truncatechars:135 }}
+                                    <div class="width-full details-container">
+                                        <div class="result-header">
+                                            <h3 class="heading-medium margin-0 link">{{ company.name }}</h3>
+                                        </div>
+                                        {% if company.description or company.summary %}
+                                            {% if company.highlight %}
+                                                {{ company.highlight|truncatechars_html:125 }}
+                                            {% else %}
+                                                {{ company.summary|default:company.description|truncatechars:135 }}
+                                            {% endif %}
                                         {% endif %}
-                                    {% endif %}
-                                    <div class="grid-row result-footer width-full">
-                                        {% if company.expertise_regions %}
-                                            <div class="mid-grey-text font-xsmall column-one-half ellipsis">
-                                                Regional expertise: <strong class="bold">{{ company.expertise_regions }}</strong>
-                                            </div>
-                                        {% endif %}
-                                        {% if company.employees %}
-                                            <div class="employees mid-grey-text font-xsmall column-one-half ellipsis">Number of employees: <strong class="bold">{{ company.employees }} Employees</strong></div>
-                                        {% endif %}
+                                        <div class="grid-row result-footer width-full">
+                                            {% if company.expertise_regions %}
+                                                <div class="mid-grey-text font-xsmall column-one-half ellipsis">
+                                                    Regional expertise: <strong class="bold">{{ company.expertise_regions }}</strong>
+                                                </div>
+                                            {% endif %}
+                                            {% if company.employees %}
+                                                <div class="employees mid-grey-text font-xsmall column-one-half ellipsis">Number of employees: <strong class="bold">{{ company.employees }} Employees</strong></div>
+                                            {% endif %}
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                    {% empty %}
-                        <h2 class="heading-medium">No results</h2>
-                    {% endfor %}
+                                </a>
+                            </li>
+                        {% empty %}
+                            <h2 class="heading-medium">No UK businesses match your search</h2>
+                            <p class="form-hint">Try different filters or a new search term.</p>
+                        {% endfor %}
+                    {% endif %}
                 </ul>
                 {% if pagination.paginator.num_pages > 1 %}
                     <div id="paginator">

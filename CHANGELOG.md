@@ -8,6 +8,8 @@
 - CI-108 - Add back sending additional data to GA 360, and update this data to newest spec.
 - TT-1492 Add link to T&Cs on disclaimer page
 - No ticket - Show ISD address only if not in companies house
+- TT-1478 - Improve content on ISD search page for communicating not results. Persist search filters on viewing ISD profile and contracting company.
+- No ticket - Remove `FEATURE_INVESTMENT_SUPPORT_DIRECTORY_ENABLED` feature flag
 
 ## Fixed bugs
 

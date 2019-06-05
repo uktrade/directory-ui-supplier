@@ -160,14 +160,11 @@ class CompanySearchForm(forms.Form):
             'expertise_products_services_publicity',
             'expertise_products_services_business_support',
         ]
-
-        products_services = []
+        labels = []
         for field_name in product_services_fields:
             if field_name in self.cleaned_data:
-                products_services += self.cleaned_data.get(field_name)
-        self.cleaned_data['expertise_products_services_labels'] = (
-            products_services
-        )
+                labels += self.cleaned_data.get(field_name)
+        self.cleaned_data['expertise_products_services_labels'] = labels
 
     def clean_expertise_products_services_human_resources(self):
         # Hack for AWS WAF 403 caused by spaces in 'on' within the querystring
