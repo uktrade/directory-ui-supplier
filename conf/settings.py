@@ -401,7 +401,6 @@ DIRECTORY_HEALTHCHECK_TOKEN = env.str('HEALTH_CHECK_TOKEN')
 DIRECTORY_HEALTHCHECK_BACKENDS = [
     directory_healthcheck.backends.APIBackend,
     directory_healthcheck.backends.FormsAPIBackend,
-    directory_healthcheck.backends.SentryBackend,
     directory_healthcheck.backends.CMSAPIBackend,
     # health_check.cache.CacheBackend is also registered in
     # INSTALLED_APPS's health_check.cache
