@@ -47,6 +47,7 @@ def test_company_parser_serialize_for_template(retrieve_profile_data):
         'company_type': 'COMPANIES_HOUSE',
         'is_published_investment_support_directory': True,
         'is_published_find_a_supplier': True,
+        'is_in_companies_house': True
     }
 
 

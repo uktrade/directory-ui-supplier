@@ -61,7 +61,6 @@ DEBUG_SET_ENV_VARS := \
 	export CONTACT_INDUSTRY_AGENT_EMAIL_ADDRESS=buying@example.com; \
 	export CONTACT_ISD_SUPPORT_EMAIL_ADDRESS=isd_support@test.com; \
 	export URL_PREFIX_DOMAIN=http://supplier.trade.great:8005; \
-	export FEATURE_INVESTMENT_SUPPORT_DIRECTORY_ENABLED=true; \
 	export LANGUAGE_COOKIE_DOMAIN=.trade.great
 
 TEST_SET_ENV_VARS := \
@@ -91,7 +90,7 @@ compile_translations:
 	$(DEBUG_SET_ENV_VARS) && $(COMPILE_TRANSLATIONS)
 
 debug_shell:
-	$(DEBUG_SET_ENV_VARS) && ./manage.py shell
+	$(DEBUG_SET_ENV_VARS) && python manage.py shell
 
 debug: test_requirements debug_test
 

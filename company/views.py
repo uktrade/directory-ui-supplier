@@ -23,11 +23,21 @@ class CompanyProfileMixin:
 
 
 class CompanySearchView(
-    core.mixins.SubmitFormOnGetMixin, CountryDisplayMixin, FormView
+    core.mixins.SubmitFormOnGetMixin, CountryDisplayMixin, GA360Mixin, FormView
 ):
     template_name = 'company-search-results-list.html'
     form_class = forms.CompanySearchForm
     page_size = 10
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierCompanySearch',
+            business_unit='FindASupplier',
+            site_section='Companies',
+            site_subsection='Search',
+        )
 
     def dispatch(self, *args, **kwargs):
         if 'term' in self.request.GET:
@@ -76,7 +86,17 @@ class CompanySearchView(
         return redirect(url)
 
 
-class PublishedProfileListView(CountryDisplayMixin, RedirectView):
+class PublishedProfileListView(CountryDisplayMixin, GA360Mixin, RedirectView):
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierPublishedProfileList',
+            business_unit='FindASupplier',
+            site_section='Companies',
+            site_subsection='PublishedProfileList',
+        )
 
     def get_redirect_url(self, *args, **kwargs):
         sectors = self.request.GET.get('sectors')
@@ -91,7 +111,16 @@ class PublishedProfileDetailView(
     CompanyProfileMixin, CountryDisplayMixin, GA360Mixin, TemplateView
 ):
     template_name = 'company-profile-detail.html'
-    ga360_payload = {'page_type': 'FindASupplierPublishedProfileDetail'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierPublishedProfileDetail',
+            business_unit='FindASupplier',
+            site_section='Companies',
+            site_subsection='PublishedProfileDetail',
+        )
 
     def get_canonical_url(self):
         kwargs = {
@@ -123,7 +152,16 @@ class PublishedProfileDetailView(
 
 class CaseStudyDetailView(CountryDisplayMixin, GA360Mixin, TemplateView):
     template_name = 'supplier-case-study-detail.html'
-    ga360_payload = {'page_type': 'FindASupplierCaseStudyDetail'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierCaseStudyDetail',
+            business_unit='FindASupplier',
+            site_section='Companies',
+            site_subsection='CaseStudy',
+        )
 
     @cached_property
     def case_study(self):
@@ -160,7 +198,16 @@ class ContactCompanyView(CompanyProfileMixin,
                          FormView):
     template_name = 'company-contact-form.html'
     form_class = forms.ContactCompanyForm
-    ga360_payload = {'page_type': 'FindASupplierContactCompany'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierContactCompany',
+            business_unit='FindASupplier',
+            site_section='Companies',
+            site_subsection='ContactCompany',
+        )
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(company=self.company, **kwargs)
@@ -198,7 +245,16 @@ class ContactCompanyView(CompanyProfileMixin,
 class ContactCompanySentView(CompanyProfileMixin, GA360Mixin, TemplateView):
 
     template_name = 'company-contact-success.html'
-    ga360_payload = {'page_type': 'FindASupplierContactCompanySent'}
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_ga360_payload(
+            page_id='FindASupplierContactCompanySent',
+            business_unit='FindASupplier',
+            site_section='Companies',
+            site_subsection='ContactCompanySent',
+        )
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(company=self.company, **kwargs)

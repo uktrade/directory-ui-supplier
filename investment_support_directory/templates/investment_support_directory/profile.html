@@ -1,9 +1,9 @@
 {% extends 'core/base.html' %}
 {% load static from staticfiles %}
 
-{% load card from directory_components_tags %}
+{% load card from directory_components %}
 
-{% load breadcrumbs from directory_components_tags %}
+{% load breadcrumbs from directory_components %}
 
 {% block head_css %}
     {{ block.super }}
@@ -13,8 +13,7 @@
 {% block content %}
 <div class="container">
     {% url 'investment-support-directory:search' as search_url %}
-    {% url 'investment-support-directory:home' as home_url %}
-    {% breadcrumbs left_url=home_url left_label='Home' middle_url=search_url middle_label='Search UK businesses' right_label=company.name %}
+    {% breadcrumbs left_url=services_urls.great_international left_label='Great.gov.uk international' middle_url=search_url|add:'?'|add:search_querystring middle_label='Find a UK specialist' right_label=company.name %}
 </div>
 <div id="cover-image-container" class="hero" style="background-image: url('{% static "core/images/default-profile-cover.png" %}')">
     &nbsp;
@@ -33,7 +32,7 @@
                     <img alt="" height="54px" src="{% static 'core/images/clock.png' %}" width="54px" />
                     Contact this company for 1 hour of free advice.
                 </span>
-                <a href="{{ contact_url }}" class="button">Contact company</a>
+                <a href="{{ contact_url }}?{{ search_querystring }}" class="button">Contact company</a>
             </section>
             <section id="about-company-container">
                 <h3 class="heading-medium">Business details</h3>
@@ -45,7 +44,7 @@
                         </dd>
                     {% endif %}
                     <dt>Business type</dt>
-                    {% if company.company_type == 'COMPANIES_HOUSE' %}
+                    {% if company.is_in_companies_house %}
                         <dd>UK business registered in Companies House</dd>
                     {% else %}
                         <dd>UK business not registered in Companies House</dd>
@@ -57,6 +56,10 @@
                     {% if company.sectors %}
                         <dt>Core industry</dt>
                         <dd>{{ company.sectors|title }}</dd>
+                    {% endif %}
+                    {% if not company.is_in_companies_house %}
+                        <dt>Address</dt>
+                        <dd>{{ company.address }}</dd>
                     {% endif %}
                 </dl>
             </section>
@@ -90,10 +93,13 @@
                     </li>
                 </ul>
             </section>
-            {% if company.address %}
-            <section id="registered-office-address-container">
-                {{ company.address }}
-            </section>
+            {% if company.is_in_companies_house %}
+                <section id="registered-office-address-container" class="font-xsmall">
+                    <p>{{ company.name }}</p>
+                    <p>UK registered company – number {{ company.number }}</p>
+                    <p>Registered office address:</p>
+                    <p>{{ company.address }}</p>
+                </section>
             {% endif %}
         </div>
         <div class="column-two-thirds" id="content-column">
@@ -167,16 +173,17 @@
         {% if company.supplier_case_studies %}
             <div class="underline-flag-red">
                 <h3 class="box-heading heading-medium black-text">{{ company.name }} case studies</h3>
-                <div class="grid-row">
                 {% for case_study in company.supplier_case_studies %}
-                    <div class="column-one-half">
-                        {% url 'case-study-details' id=case_study.pk slug=case_study.slug as case_study_url %}
-                        {% with "case-study-"|add:forloop.counter as card_id %}
-                            {% card card_id=card_id img_src=case_study.image_one url=case_study_url|add:'?isd=true' description=case_study.short_summary heading=case_study.title %}
-                        {% endwith %}
-                    </div>
+                    {% cycle 'odd' 'even' as parity silent %}
+                    {% if parity == 'odd' %}<div class="grid-row">{% endif %}
+                        <div class="column-one-half">
+                            {% url 'case-study-details' id=case_study.pk slug=case_study.slug as case_study_url %}
+                            {% with "case-study-"|add:forloop.counter as card_id %}
+                                {% card card_id=card_id img_src=case_study.image_one url=case_study_url|add:'?isd=true' description=case_study.short_summary heading=case_study.title %}
+                            {% endwith %}
+                        </div>
+                    {% if parity == 'even' %}</div>{% endif %}
                 {% endfor %}
-              </div>
             </div>
         {% endif %}
             <div id="report-profile">

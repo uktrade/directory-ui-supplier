@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'captcha',
     'sorl.thumbnail',
     'directory_components',
+    'health_check.cache',
     'directory_healthcheck',
 ]
 
@@ -68,6 +69,7 @@ MIDDLEWARE_CLASSES = [
     'directory_components.middleware.PersistLocaleMiddleware',
     'directory_components.middleware.ForceDefaultLocale',
     'directory_components.middleware.CountryMiddleware',
+    'directory_components.middleware.CheckGATags',
     'core.middleware.PrefixUrlMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -110,21 +112,16 @@ VCAP_SERVICES = env.json('VCAP_SERVICES', {})
 if 'redis' in VCAP_SERVICES:
     REDIS_URL = VCAP_SERVICES['redis'][0]['credentials']['uri']
 else:
-    REDIS_URL = env.str('REDIS_URL', '')
+    REDIS_URL = env.str('REDIS_URL')
 
-if REDIS_URL:
-    cache = {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': REDIS_URL,
-        'OPTIONS': {
-            'CLIENT_CLASS': "django_redis.client.DefaultClient",
-        }
+cache = {
+    'BACKEND': 'django_redis.cache.RedisCache',
+    'LOCATION': REDIS_URL,
+    'OPTIONS': {
+        'CLIENT_CLASS': "django_redis.client.DefaultClient",
     }
-else:
-    cache = {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'unique-snowflake',
-    }
+}
+
 
 CACHES = {
     'default': cache,
@@ -164,10 +161,6 @@ LOCALE_PATHS = (
 )
 
 FEATURE_FLAGS = {
-    'EXPORT_JOURNEY_ON': False,  # not used in this project
-    'INVESTMENT_SUPPORT_DIRECTORY_ON': env.bool(
-        'FEATURE_INVESTMENT_SUPPORT_DIRECTORY_ENABLED', False
-    ),
     'INTERNATIONAL_CONTACT_LINK_ON': env.bool(
         'FEATURE_INTERNATIONAL_CONTACT_LINK_ENABLED', False
     ),
@@ -408,6 +401,10 @@ DIRECTORY_HEALTHCHECK_TOKEN = env.str('HEALTH_CHECK_TOKEN')
 DIRECTORY_HEALTHCHECK_BACKENDS = [
     directory_healthcheck.backends.APIBackend,
     directory_healthcheck.backends.FormsAPIBackend,
+    directory_healthcheck.backends.SentryBackend,
+    directory_healthcheck.backends.CMSAPIBackend,
+    # health_check.cache.CacheBackend is also registered in
+    # INSTALLED_APPS's health_check.cache
 ]
 
 # HEADER AND FOOTER LINKS

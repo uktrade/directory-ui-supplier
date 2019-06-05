@@ -1,6 +1,6 @@
 from unittest.mock import call, patch, PropertyMock, Mock
 
-from directory_cms_client.client import cms_api_client
+from directory_cms_client import cms_api_client
 import pytest
 
 from django.core.urlresolvers import resolve, reverse
