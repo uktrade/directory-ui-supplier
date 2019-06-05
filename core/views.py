@@ -147,7 +147,7 @@ class SendContactNotifyMessagesMixin:
         )
 
         response = form.save(
-            template_id=self.notify_settings.contact_company_template,
+            template_id=self.notify_settings.company_template,
             email_address=self.company['email_address'],
             form_url=self.request.path,
             sender=sender,
@@ -157,8 +157,8 @@ class SendContactNotifyMessagesMixin:
 
     def send_support_message(self, form):
         response = form.save(
-            template_id=self.notify_settings.contact_support_template,
-            email_address=self.notify_settings.contact_support_email_address,
+            template_id=self.notify_settings.support_template,
+            email_address=self.notify_settings.support_email_address,
             form_url=self.request.get_full_path(),
         )
         response.raise_for_status()
@@ -168,7 +168,7 @@ class SendContactNotifyMessagesMixin:
             contents=[form.cleaned_data['subject'], form.cleaned_data['body']]
         )
         response = form.save(
-            template_id=self.notify_settings.contact_investor_template,
+            template_id=self.notify_settings.investor_template,
             email_address=form.cleaned_data['email_address'],
             form_url=self.request.get_full_path(),
             spam_control=spam_control,

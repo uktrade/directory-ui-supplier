@@ -4,11 +4,12 @@ from django.shortcuts import Http404
 from django.utils import translation
 
 NotifySettings = collections.namedtuple(
-    'NotifySettings', [
-        'contact_company_template',
-        'contact_support_template',
-        'contact_investor_template',
-        'contact_support_email_address',
+    'NotifySettings',
+    [
+        'company_template',
+        'support_template',
+        'investor_template',
+        'support_email_address',
     ]
 )
 
