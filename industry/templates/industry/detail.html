@@ -1,7 +1,7 @@
 {% extends 'core/base_cms.html' %}
 {% load static from staticfiles %}
 {% load trans from i18n %}
-{% load search_url from company_tags %}
+{% load search_url from industry_tags %}
 {% load add_href_target from cms_tags %}
 
 {% block head_css %}
@@ -69,7 +69,7 @@
         </div>
         <div class="grid-row">
             <div class="column-one-half">
-                <form method="get" action="{% url 'company-search' %}">
+                <form method="get" action="{% url 'find-a-supplier:search' %}">
                     {% for value in page.search_filter_sector %}
                         <input type="hidden" value="{{ value }}" name="sectors" />
                     {% endfor %}
@@ -86,7 +86,7 @@
                         <img src="{{ company.logo }}"></img>
                     </div>
                     <dl>
-                        <dt><a href="{{ company.public_profile_url }}" class="link">{{ company.name }}</a></dt>
+                        <dt><a href="{% url 'find-a-supplier:profile' number=company.number slug=company.slug %}/" class="link">{{ company.name }}</a></dt>
                         {% with company.summary|default:company.description as summary %}
                             <dd>{{ summary|truncatechars:180 }}</dd>
                         {% endwith %}

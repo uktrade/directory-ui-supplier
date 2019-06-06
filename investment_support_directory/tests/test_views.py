@@ -7,8 +7,9 @@ import requests
 
 from django.urls import reverse
 
+from core.helpers import CompanyParser
 from core.tests.helpers import create_response
-from investment_support_directory import helpers, forms, views
+from investment_support_directory import forms, views
 
 
 @pytest.fixture(autouse=True)
@@ -23,9 +24,7 @@ def mock_retrieve_company(retrieve_profile_data):
 
 @pytest.fixture()
 def mock_retrieve_company_non_isd(retrieve_profile_data):
-    retrieve_profile_data['is_published_investment_support_directory'] = (
-        False
-    )
+    retrieve_profile_data['is_published_investment_support_directory'] = False
     patch = mock.patch.object(
         api_client.company, 'retrieve_public_profile',
         return_value=create_response(200, retrieve_profile_data)
@@ -35,7 +34,7 @@ def mock_retrieve_company_non_isd(retrieve_profile_data):
 
 
 def test_profile(client, retrieve_profile_data):
-    company = helpers.CompanyParser(retrieve_profile_data)
+    company = CompanyParser(retrieve_profile_data)
 
     url = reverse(
         'investment-support-directory:profile',
@@ -52,7 +51,7 @@ def test_profile(client, retrieve_profile_data):
 
 
 def test_profile_querystring(client, retrieve_profile_data):
-    company = helpers.CompanyParser(retrieve_profile_data)
+    company = CompanyParser(retrieve_profile_data)
 
     url = reverse(
         'investment-support-directory:profile',
@@ -259,7 +258,7 @@ def test_company_search_pagination_empty_page(
 
 
 @mock.patch.object(api_client.company, 'search_investment_search_directory')
-@mock.patch.object(helpers, 'get_results_from_search_response')
+@mock.patch.object(views, 'get_results_from_search_response')
 def test_company_search_not_submit_without_params(
     mock_get_results_from_search_response, mock_search,
     api_response_search_200, client
@@ -289,7 +288,7 @@ def test_company_search_api_call_error(mock_search, api_response_400, client):
 
 
 @mock.patch.object(api_client.company, 'search_investment_search_directory')
-@mock.patch.object(helpers, 'get_results_from_search_response')
+@mock.patch.object(views, 'get_results_from_search_response')
 def test_company_search_api_success(
     mock_get_results_from_search_response, mock_search,
     api_response_search_200, client
@@ -311,7 +310,7 @@ def test_company_search_api_success(
 
 
 @mock.patch.object(api_client.company, 'search_investment_search_directory')
-@mock.patch.object(helpers, 'get_results_from_search_response')
+@mock.patch('core.helpers.get_results_from_search_response')
 def test_company_search_querystring(
     mock_get_results_from_search_response, mock_search,
     api_response_search_200, client

@@ -1,6 +1,6 @@
 from directory_api_client.client import api_client
 
-from company.helpers import format_company_details
+from core.helpers import CompanyParser
 
 
 def get_showcase_companies(**kwargs):
@@ -8,5 +8,6 @@ def get_showcase_companies(**kwargs):
     response.raise_for_status()
     formatted = []
     for result in response.json()['hits']['hits']:
-        formatted.append(format_company_details(result['_source']))
+        parser = CompanyParser(result['_source'])
+        formatted.append(parser.serialize_for_template())
     return formatted

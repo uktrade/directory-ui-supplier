@@ -1,0 +1,126 @@
+{% extends 'enrolment-base.html' %}
+{% load static from staticfiles %}
+{% load thumbnail %}
+{% block head_css %}
+    {{ block.super }}
+	<link href="{% static 'supplier-case-study-detail.css' %}" media="all" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+<div class="container supplier-case-study-detail">
+
+	<div class="row-fluid">
+		<div class="span12">
+			<h1 class="element-within company-name-title">
+				<span class="dont-break-out">{{case_study.company.name}}</span>
+			</h1>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<div class="span8">
+			
+			<div id="case-study-details">
+				{% if case_study.image_one %}
+					<div class="showcase-image">
+						{% thumbnail case_study.image_one "750" as logo %}
+							<img src="{{ logo.url }}" aria-labelledby="case-study-image-one-caption" />
+						{% endthumbnail %}
+						{% if case_study.image_one_caption %}
+							<p id="case-study-image-one-caption" class="caption">{{case_study.image_one_caption}}</p>
+						{% endif %}
+					</div>
+				{% endif %}
+				
+				<h2 id="case-study-title">{{ case_study.title }}</h2>
+				<div class="case-study-desctiption">
+					{{ case_study.description|linebreaks }}
+				</div>
+				{% if case_study.website %}
+				    <div>
+                                        <p class="ed-truncate-single-line" >
+                                            <a href="{{ case_study.website }}" class="link" target="_blank">{{ case_study.website }}</a>
+                                        </p>
+                                    </div>
+				{% endif %}
+				
+				<div id="extra-case-study-images">
+					{% if case_study.image_two %}
+						<div class="showcase-image">
+							{% thumbnail case_study.image_two "750" as logo %}
+								<img src="{{ logo.url }}" aria-labelledby="case-study-image-two-caption"  />
+							{% endthumbnail %}
+							{% if case_study.image_two_caption %}
+								<p id="case-study-image-two-caption" class="caption">{{case_study.image_two_caption}}</p>
+							{% endif %}
+						</div>
+					{% endif %}
+				
+					{% if case_study.image_three %}
+						<div class="showcase-image">
+							{% thumbnail case_study.image_three "750" as logo %}
+								<img src="{{ logo.url }}" aria-labelledby="case-study-image-three-caption"  />
+							{% endthumbnail %}
+							{% if case_study.image_three_caption %}
+								<p id="case-study-image-three-caption" class="caption">{{case_study.image_three_caption}}</p>
+							{% endif %}
+						</div>
+					{% endif %}
+				</div>
+				
+				<p id="view-company-profile">
+					<a href="{% url request.GET.isd|yesno:'investment-support-directory:profile,find-a-supplier:profile' company_number=case_study.company.number slug=case_study.company.slug %}" class="button button-primary">
+						View company profile
+					</a>
+				</p>
+			</div>
+				
+		</div>
+		<div class="span4">
+			
+			<div id="contact-details">
+				<h2>Contact</h2>
+				<p class="ed-truncate-single-line">
+					<a class="ga-tracking-contact-supplier" href="{% url 'find-a-supplier:company-contact' company_number=case_study.company.number %}">Email company</a>
+				</p>
+				<p class="ed-truncate-single-line" >
+					<a href="{{ case_study.company.website }}" target="_blank">{{ case_study.company.website }}</a>
+				</p>
+			</div>
+				
+			<div id="company-details">
+				<h2>Company details</h2>
+				<dl>
+					<dt>Incorporated: </dt>
+					<dd>{{ case_study.company.date_of_creation }}</dd>
+					<dt>Industry: </dt>
+					<dd>{{ case_study.sector.label }}</dd>
+				</dl>
+			</div>
+
+			{% if case_study.testimonial %}
+				<div id="case-study-testomonial" class="testomonial">
+					<blockquote class="ed-arrow_box">
+						<span class="text">{{ case_study.testimonial }}</span>
+						<cite>
+							<span class="person-name">{{ case_study.testimonial_name }}</span>
+							<span class="person-title">{{ case_study.testimonial_job_title }}</span>
+							<span class="company-name">{{ case_study.testimonial_company }}</span>
+						</cite>
+					</blockquote>
+				</div>
+			{% endif %}
+			
+		</div>	
+	</div>
+	
+	<div class="row-fluid">
+		<div class="span12">
+			<p id="report-case-study">
+				<a href="mailto:help@digital.trade.gov.uk?subject=Report%20profile%20{{case_study.company.number}}">Report profile</a>
+			</p>
+		</div>
+	</div>
+
+</div>
+{% endblock %}
