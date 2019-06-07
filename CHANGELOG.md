@@ -4,6 +4,10 @@
 
 ### Implemented enhancements
 
+- TT-1518 - Port ISD search changes to FAS
+- TT-1506 - Port ISD profile changes to FAS
+- TT-1505 - Port ISD contact change to FAS
+
 ## Fixed bugs
 
 ## [2019.06.05] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.05)

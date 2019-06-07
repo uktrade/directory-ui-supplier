@@ -1,6 +1,5 @@
 {% extends 'core/base_cms.html' %}
 {% load static from staticfiles %}
-{% load search_url from company_tags %}
 {% load first_paragraph grouper from cms_tags %}
 {% load banner from directory_components %}
 
@@ -17,7 +16,7 @@
                 {{ page.hero_text|safe }}
             </div>
             <div id="search-area">
-                <form action="{% url 'company-search' %}" method="get" data-ga-class="company-search-form">
+                <form action="{% url 'find-a-supplier:search' %}" method="get" data-ga-class="company-search-form">
                     <div class="column-one-half">
                         <input
                             class="form-control"

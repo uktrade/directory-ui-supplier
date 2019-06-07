@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.sitemaps',
     'enrolment',
-    'company',
+    'find_a_supplier',
     'core',
     'industry',
     'investment_support_directory',

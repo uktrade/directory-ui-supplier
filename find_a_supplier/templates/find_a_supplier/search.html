@@ -1,0 +1,18 @@
+{% extends 'core/base-search.html' %}
+
+{% load breadcrumbs from directory_components %}
+
+{% block breadcrumbs %}
+    <div class="container">
+        {% url 'find-a-supplier:search' as search_url %}
+        {% breadcrumbs left_url=services_urls.great_international left_label='Great.gov.uk international' middle_url=search_url middle_label='Find a Supplier' right_label='Search results' %}
+    </div>
+{% endblock %}
+
+{% block filters %}
+    <fieldset>
+        <legend>Filter by expertise</legend>
+        {% include 'core/filter.html' with label='Industry expertise' alt='Toggle list of industries' field=form.sectors %}
+    </fieldset>
+    <fieldset>
+{% endblock %}

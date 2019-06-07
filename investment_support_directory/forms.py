@@ -6,7 +6,8 @@ from directory_constants import choices, urls
 from directory_components import forms, fields, widgets
 from directory_forms_api_client.forms import GovNotifyActionMixin
 from directory_validators.common import not_contains_url_or_email
-from investment_support_directory.fields import IntegerField
+
+from core.fields import IntegerField
 
 
 class CompanyHomeSearchForm(forms.Form):
