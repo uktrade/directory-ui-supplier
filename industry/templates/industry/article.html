@@ -1,7 +1,7 @@
 {% extends 'core/base_cms.html' %}
 {% load static from staticfiles %}
 {% load trans from i18n %}
-{% load add_anchors add_export_elements_classes from directory_components %}
+{% load add_anchors add_export_elements_classes ga360_tracker from directory_components %}
 {% load table_of_contents add_href_target from cms_tags %}
 
 {% block head_css %}
@@ -15,7 +15,9 @@
     <div class="container">
         <p class="breadcrumbs">
             <span class="label verbose">You are here:</span>
+            {% ga360_tracker "breadcrumbs" %}
             <a href="{% url 'index' %}">{{ page.breadcrumbs.landingpage.label }}</a>
+            {% endga360_tracker %}
             <span class="separator">,</span>
             <span class="current">{{ page.breadcrumbs_label }}</span>
         </p>
@@ -27,14 +29,17 @@
     <div class="grid-row">
       <aside class="column-one-quarter {% if not page.show_table_of_content %}hidden{% endif %}" id="table-of-contents">
         <h3><span dir="ltr">Contents:</span></h3>
+        {% ga360_tracker "achor-tag" %}
         <ul>
           <li><a class="link" href="#introduction">Introduction</a></li>
           {% for anchor_id, label in page.body|table_of_contents %}
           <li><a class="link" href="#{{ anchor_id }}">{{ label }}</a></li>
           {% endfor %}
         </ul>
+        {% endga360_tracker %}
       </aside>
 
+      {% ga360_tracker "cta" %}
       <article class="column-one-half">
         <h1 id="introduction" class="heading-xlarge">{{ page.introduction_title }}</h1>
         <div class="article-content">
@@ -43,10 +48,13 @@
         </div>
         {% include 'directory_components/social_share_links.html' with title=page.social_share_title %}
       </article>
+      {% endga360_tracker %}
 
       <aside id="contact-area">
         {{ page.proposition_text|add_export_elements_classes|add_href_target:request|safe }}
+        {% ga360_tracker "contact-cta" %}
         <a href="{% url 'sector-list-cms-contact' %}" class="button">{{ page.call_to_action_text }}</a>
+        {% endga360_tracker %}
       </aside>
 
     </div>

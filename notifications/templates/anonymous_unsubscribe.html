@@ -1,5 +1,7 @@
 {% extends 'enrolment-base.html' %}
 {% load static from staticfiles %}
+{% load ga360_tracker from directory_components %}
+
 {% block css %}
 	<link href="{% static 'company-profile-details.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
@@ -15,6 +17,7 @@
 				</div>
 				<br>
 				<div class="row-fluid">
+					{% ga360_tracker "unsubscribe-form" target="form" %}
 					<form action="" method="post">
 						{{ form }}
 						<div class="row-fluid">
@@ -25,7 +28,7 @@
 							</div>
 						</div>
 					</form>
-
+					{% endga360_tracker %}
 				</div>
 			</div>
 		</div>

@@ -23,7 +23,8 @@ class CompanyHomeSearchForm(forms.Form):
                 'placeholder': (
                     'Enter the name of the skills or service '
                     'you’re looking for'
-                )
+                ),
+                'data-ga-id': 'search-input'
             }
         ),
     )
@@ -43,7 +44,8 @@ class CompanySearchForm(forms.Form):
             attrs={
                 'placeholder': 'Search for UK suppliers',
                 'autofocus': 'autofocus',
-                'dir': 'auto'
+                'dir': 'auto',
+                'data-ga-id': 'search-input'
             }
         ),
     )

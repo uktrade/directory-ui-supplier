@@ -40,7 +40,8 @@ class AnonymousSubscribeForm(forms.Form):
         label=_('Industry'),
         choices=(
             [['', PLEASE_SELECT_LABEL]] + list(choices.INDUSTRIES)
-        )
+        ),
+        widget=Select(attrs={'data-ga-id': 'sector-input'})
     )
     company_name = fields.CharField(label=_('Company name'))
     country = fields.CharField(label=_('Country'))

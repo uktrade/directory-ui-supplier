@@ -1,9 +1,12 @@
+{% load ga360_tracker from directory_components %}
+
 <div class="ed-landing-page-form-container">
     <div class="ed-landing-page-form-inner">
         <h2>
             Receive email updates of the latest UK companies in your industry
         </h2>
         <div class="row-fluid">
+            {% ga360_tracker "subscribe-form" target="form" %}
             <form action="{% url 'subscribe' %}" method="post">
                 <div class="grid-row">
                     <div class="column-full column-third-xl">
@@ -66,8 +69,10 @@
                         <div class="form-field checkbox">
                             <input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox">
                             <label for="{{ form.terms.id_for_label }}">
+                                {% ga360_tracker "terms-and-conditions" %}
                                 <a target="_self" href="{{ header_footer_urls.terms_and_conditions }}">I agree to the
                                     great.gov.uk terms and conditions</a>.
+                                {% endga360_tracker %}
                             </label>
                         </div>
                     </div>
@@ -78,6 +83,7 @@
                     </div>
                 </div>
             </form>
+            {% endga360_tracker %}
         </div>
     </div>
 </div>
