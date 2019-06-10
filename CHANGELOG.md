@@ -10,6 +10,8 @@
 
 ## Fixed bugs
 
+- TT-1532 - Fix FAS Pagination
+
 ## [2019.06.05] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.05)
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.05.28_1...2019.06.05)
 

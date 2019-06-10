@@ -1,6 +1,8 @@
 import requests
 import pytest
 
+from django.urls import reverse
+
 from find_a_supplier import helpers
 from core.helpers import CompanyParser
 
@@ -101,3 +103,28 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
         'video_one': 'https://video_one.wav',
     }
     assert helpers.get_case_study_details_from_response(response) == expected
+
+
+def test_get_paginator_url():
+    filters = {'page': 2, 'term': 'foo', 'sectors': None}
+
+    assert helpers.get_paginator_url(filters) == (
+        reverse('find-a-supplier:search') + '?term=foo'
+    )
+
+
+def test_get_paginator_url_multiple_filters():
+    filters = {
+        'sectors': ['AEROSPACE', 'AGRICULTURE_HORTICULTURE_AND_FISHERIES'],
+    }
+
+    encoded_url = (
+        '?sectors=AEROSPACE'
+        '&sectors=AGRICULTURE_HORTICULTURE_AND_FISHERIES'
+    )
+
+    assert helpers.get_paginator_url(filters) == (
+            reverse('find-a-supplier:search') + encoded_url
+    )
+
+

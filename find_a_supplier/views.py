@@ -58,6 +58,7 @@ class CompanySearchView(
             context = self.get_context_data(
                 results=results,
                 pagination=pagination,
+                paginator_url=helpers.get_paginator_url(form.cleaned_data),
                 form=form,
             )
             return TemplateResponse(self.request, self.template_name, context)
