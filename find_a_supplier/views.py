@@ -11,9 +11,7 @@ from django.views.generic import RedirectView, TemplateView
 from django.views.generic.edit import FormView
 from directory_components.mixins import CountryDisplayMixin, GA360Mixin
 
-from core.helpers import (
-    NotifySettings, get_filters_labels, get_results_from_search_response
-)
+from core.helpers import get_filters_labels, get_results_from_search_response
 from find_a_supplier import forms, helpers
 import core.mixins
 
@@ -202,9 +200,9 @@ class CaseStudyDetailView(CountryDisplayMixin, GA360Mixin, TemplateView):
 
 class ContactCompanyView(
     CompanyProfileMixin,
-    core.mixins.SubmitFormOnGetMixin,
-    core.mixins.PersistSearchQuerystringMixin,
+    CountryDisplayMixin,
     GA360Mixin,
+    core.mixins.PersistSearchQuerystringMixin,
     FormView,
 ):
     template_name = 'find_a_supplier/contact.html'
