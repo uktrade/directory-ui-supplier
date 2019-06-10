@@ -1,9 +1,10 @@
-from directory_api_client.client import api_client
-from directory_constants import choices
+from urllib.parse import urlencode
 
 from django.http import Http404
 from django.core.urlresolvers import reverse
 
+from directory_api_client.client import api_client
+from directory_constants import choices
 from core.helpers import CompanyParser
 
 
@@ -60,3 +61,13 @@ def get_case_study(case_study_id):
         )
     response.raise_for_status()
     return get_case_study_details_from_response(response)
+
+
+def get_paginator_url(filters):
+    url = reverse('find-a-supplier:search')
+    querystring = urlencode({
+        key: value
+        for key, value in filters.items()
+        if value and key != 'page'
+    }, doseq=True)
+    return f'{url}?{querystring}'
