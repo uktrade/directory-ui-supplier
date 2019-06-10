@@ -126,5 +126,3 @@ def test_get_paginator_url_multiple_filters():
     assert helpers.get_paginator_url(filters) == (
             reverse('find-a-supplier:search') + encoded_url
     )
-
-
