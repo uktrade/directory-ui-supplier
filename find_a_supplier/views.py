@@ -11,7 +11,9 @@ from django.views.generic import RedirectView, TemplateView
 from django.views.generic.edit import FormView
 from directory_components.mixins import CountryDisplayMixin, GA360Mixin
 
-from core.helpers import get_results_from_search_response
+from core.helpers import (
+    NotifySettings, get_filters_labels, get_results_from_search_response
+)
 from find_a_supplier import forms, helpers
 import core.mixins
 
@@ -26,7 +28,11 @@ class CompanyProfileMixin(core.mixins.CompanyProfileMixin):
 
 
 class CompanySearchView(
-    core.mixins.SubmitFormOnGetMixin, CountryDisplayMixin, GA360Mixin, FormView
+    core.mixins.SubmitFormOnGetMixin,
+    CountryDisplayMixin,
+    core.mixins.PersistSearchQuerystringMixin,
+    GA360Mixin,
+    FormView
 ):
     template_name = 'find_a_supplier/search.html'
     form_class = forms.CompanySearchForm
@@ -58,8 +64,10 @@ class CompanySearchView(
             context = self.get_context_data(
                 results=results,
                 pagination=pagination,
-                paginator_url=helpers.get_paginator_url(form.cleaned_data),
                 form=form,
+                filters=get_filters_labels(form.cleaned_data),
+                pages_after_current=paginator.num_pages - pagination.number,
+                paginator_url=helpers.get_paginator_url(form.cleaned_data)
             )
             return TemplateResponse(self.request, self.template_name, context)
 
@@ -194,9 +202,9 @@ class CaseStudyDetailView(CountryDisplayMixin, GA360Mixin, TemplateView):
 
 class ContactCompanyView(
     CompanyProfileMixin,
-    CountryDisplayMixin,
-    GA360Mixin,
+    core.mixins.SubmitFormOnGetMixin,
     core.mixins.PersistSearchQuerystringMixin,
+    GA360Mixin,
     FormView,
 ):
     template_name = 'find_a_supplier/contact.html'
