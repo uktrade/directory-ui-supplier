@@ -86,7 +86,7 @@
                         <img src="{{ company.logo }}"></img>
                     </div>
                     <dl>
-                        <dt><a href="{% url 'find-a-supplier:profile' number=company.number slug=company.slug %}/" class="link">{{ company.name }}</a></dt>
+                        <dt><a href="{% url 'find-a-supplier:profile' company_number=company.number slug=company.slug %}/" class="link">{{ company.name }}</a></dt>
                         {% with company.summary|default:company.description as summary %}
                             <dd>{{ summary|truncatechars:180 }}</dd>
                         {% endwith %}

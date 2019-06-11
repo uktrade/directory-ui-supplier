@@ -14,6 +14,8 @@
 - TT-1530 profile links corrupt
 - TT-1534 FAS Breadcrumb search results
 - TT-1536-500-Error-on-Results upgraded sorl-thumbnail to 12.5
+- TT-1528 500 ISE on industry page
+
 
 ## [2019.06.05] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.05)
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.05.28_1...2019.06.05)
