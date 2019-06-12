@@ -15,6 +15,7 @@
 - TT-1534 FAS Breadcrumb search results
 - TT-1536-500-Error-on-Results upgraded sorl-thumbnail to 12.5
 - TT-1528 500 ISE on industry page
+- CI-217: Update Django Version to fix security vulnerability.
 
 
 ## [2019.06.05] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.05)
