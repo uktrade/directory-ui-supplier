@@ -1,6 +1,8 @@
 {% extends 'enrolment-base.html' %}
 {% load static from staticfiles %}
 {% load thumbnail %}
+{% load ga360_tracker from directory_components %}
+
 {% block head_css %}
     {{ block.super }}
 	<link href="{% static 'supplier-case-study-detail.css' %}" media="all" rel="stylesheet" />
@@ -19,7 +21,7 @@
 
 	<div class="row-fluid">
 		<div class="span8">
-			
+
 			<div id="case-study-details">
 				{% if case_study.image_one %}
 					<div class="showcase-image">
@@ -31,7 +33,7 @@
 						{% endif %}
 					</div>
 				{% endif %}
-				
+
 				<h2 id="case-study-title">{{ case_study.title }}</h2>
 				<div class="case-study-desctiption">
 					{{ case_study.description|linebreaks }}
@@ -39,11 +41,13 @@
 				{% if case_study.website %}
 				    <div>
                                         <p class="ed-truncate-single-line" >
+                                            {% ga360_tracker "company-website" %}
                                             <a href="{{ case_study.website }}" class="link" target="_blank">{{ case_study.website }}</a>
+                                            {% endga360_tracker %}
                                         </p>
                                     </div>
 				{% endif %}
-				
+
 				<div id="extra-case-study-images">
 					{% if case_study.image_two %}
 						<div class="showcase-image">
@@ -55,7 +59,7 @@
 							{% endif %}
 						</div>
 					{% endif %}
-				
+
 					{% if case_study.image_three %}
 						<div class="showcase-image">
 							{% thumbnail case_study.image_three "750" as logo %}
@@ -67,27 +71,31 @@
 						</div>
 					{% endif %}
 				</div>
-				
+
 				<p id="view-company-profile">
+					{% ga360_tracker "company-detail-link" %}
 					<a href="{% url request.GET.isd|yesno:'investment-support-directory:profile,find-a-supplier:profile' company_number=case_study.company.number slug=case_study.company.slug %}" class="button button-primary">
 						View company profile
 					</a>
+					{% endga360_tracker %}
 				</p>
 			</div>
-				
+
 		</div>
 		<div class="span4">
-			
+
 			<div id="contact-details">
 				<h2>Contact</h2>
+				{% ga360_tracker "contact-cta" %}
 				<p class="ed-truncate-single-line">
 					<a class="ga-tracking-contact-supplier" href="{% url 'find-a-supplier:company-contact' company_number=case_study.company.number %}">Email company</a>
 				</p>
 				<p class="ed-truncate-single-line" >
 					<a href="{{ case_study.company.website }}" target="_blank">{{ case_study.company.website }}</a>
 				</p>
+				{% endga360_tracker %}
 			</div>
-				
+
 			<div id="company-details">
 				<h2>Company details</h2>
 				<dl>
@@ -110,14 +118,16 @@
 					</blockquote>
 				</div>
 			{% endif %}
-			
-		</div>	
+
+		</div>
 	</div>
-	
+
 	<div class="row-fluid">
 		<div class="span12">
 			<p id="report-case-study">
+				{% ga360_tracker "report-profile" %}
 				<a href="mailto:help@digital.trade.gov.uk?subject=Report%20profile%20{{case_study.company.number}}">Report profile</a>
+				{% endga360_tracker %}
 			</p>
 		</div>
 	</div>

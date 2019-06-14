@@ -38,7 +38,8 @@ class CompanySearchForm(forms.Form):
             attrs={
                 'placeholder': 'Search for UK suppliers',
                 'autofocus': 'autofocus',
-                'dir': 'auto'
+                'dir': 'auto',
+                'data-ga-id': 'search-input'
             }
         ),
         required=False,

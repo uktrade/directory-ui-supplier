@@ -3,7 +3,7 @@
 
 {% load card from directory_components %}
 
-{% load breadcrumbs from directory_components %}
+{% load breadcrumbs ga360_tracker from directory_components %}
 
 {% block head_css %}
     {{ block.super }}
@@ -12,7 +12,9 @@
 
 {% block content %}
     <div class="container">
+        {% ga360_tracker "breadcrumbs" %}
         {% block breadcrumbs %}{% endblock %}
+        {% endga360_tracker %}
     </div>
 
     <div id="cover-image-container" class="hero" style="background-image: url('{% static "core/images/default-profile-cover.png" %}')">
@@ -31,7 +33,9 @@
                         <img alt="" height="54px" src="{% static 'core/images/clock.png' %}" width="54px" />
                         Contact this company for 1 hour of free advice.
                     </span>
+                    {% ga360_tracker "contact-cta" %}
                     <a href="{% url request.resolver_match.namespace|add:':company-contact' company_number=company.number %}?{{ search_querystring }}" class="button">Contact company</a>
+                    {% endga360_tracker %}
                 </section>
                 <section id="about-company-container">
                     <h3 class="heading-medium">Business details</h3>
@@ -39,7 +43,9 @@
                         {% if company.website %}
                             <dt>Website</dt>
                             <dd class="ellipsis">
+                                {% ga360_tracker "company-website" %}
                                 <a class="link" href="{{ company.website }}">{{ company.website }}</a>
+                                {% endga360_tracker %}
                             </dd>
                         {% endif %}
                         <dt>Business type</dt>
@@ -68,26 +74,32 @@
                         <li>
                             
                             {% if company.facebook_url %}
+                                {% ga360_tracker "social-share-link" ga-value="facebook" %}
                                 <a class="link" href="{{ company.facebook_url }}">
                                     <img alt="with Facebook" height="36px" src="{% static 'core/images/facebook.png' %}" width="36px" />
                                     <span>Visit company Facebook</span>
                                 </a>
+                                {% endga360_tracker %}
                             {% endif %}
                         </li>
                         <li>
                             {% if company.twitter_url %}
+                                {% ga360_tracker "social-share-link" ga-value="twitter" %}
                                 <a class="link" href="{{ company.twitter_url }}">
                                     <img alt="with Twitter" height="36px" src="{% static 'core/images/twitter.png' %}" width="36px" />
                                     <span>Visit company Twitter</span>
                                 </a>
+                                {% endga360_tracker %}
                             {% endif %}
                         </li>
                         <li>
                             {% if company.linkedin_url %}
+                                {% ga360_tracker "social-share-link" ga-value="linkedin" %}
                                 <a class="link" href="{{ company.linkedin_url }}">
                                     <img alt="with LinkedIn" height="36px" src="{% static 'core/images/linkedin.png' %}" width="36px" />                            
                                     <span>Visit company LinkedIn</span>
                                 </a>
+                                {% endga360_tracker %}
                             {% endif %}
                         </li>
                     </ul>
@@ -118,7 +130,9 @@
                         {% elif company.description %}
                             {{ company.description|truncatechars:200|linebreaks }}
                         {% endif %}
+                        {% ga360_tracker "full-details" %}
                         <p><a class="link" href="?verbose=true#company-description-container" title="Read full company profile">Read more</a></p>
+                        {% endga360_tracker %}
                     {% endif %}
                 </div>
                 <hr>
@@ -178,7 +192,9 @@
                             <div class="column-one-half">
                                 {% url 'case-study-details' id=case_study.pk slug=case_study.slug as case_study_url %}
                                 {% with "case-study-"|add:forloop.counter as card_id %}
+                                    {% ga360_tracker "case-study-card" ga-value=case_study.title %}
                                     {% card card_id=card_id img_src=case_study.image_one url=case_study_url|add:'?isd=true' description=case_study.short_summary heading=case_study.title %}
+                                    {% endga360_tracker %}
                                 {% endwith %}
                             </div>
                         {% if parity == 'even' %}</div>{% endif %}
@@ -186,7 +202,9 @@
                 </div>
             {% endif %}
                 <div id="report-profile">
+                    {% ga360_tracker "report-profile" %}
                     <a href="{{ services_urls.feedback }}">Report profile</a>
+                    {% endga360_tracker %}
                 </div>
             </div>
         </div>

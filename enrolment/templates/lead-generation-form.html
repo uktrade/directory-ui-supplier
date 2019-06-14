@@ -1,4 +1,6 @@
 {% load trans from i18n %}
+{% load ga360_tracker from directory_components %}
+
 <div class="ed-landing-page-form-container">
 	<div class="ed-landing-page-form-inner">
 		<h2 class="element-within title">
@@ -8,6 +10,7 @@
 			{% trans "Tell us what kind of goods or services you need. We'll put you in touch with relevant UK suppliers." %}
 		</div>
 		<div class="">
+			{% ga360_tracker "lead-generation-form" target="form" %}
 			<form action="{% url 'lead-generation' %}" method="post" style="margin-top: 30px;">
 				<div class="grid-row">
 					<div class="column-half">
@@ -73,7 +76,9 @@
 					<div class="multiple-choice">
 						<input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox">
 						<label for="{{ form.terms.id_for_label }}">
+							{% ga360_tracker "terms-and-conditions" %}
 							<a class="link" target="_self" href="{{ header_footer_urls.terms_and_conditions }}">{% trans "I agree to the great.gov.uk terms and conditions" %}</a>
+							{% endga360_tracker %}
 						</label>
 					</div>
 				</div>
@@ -83,7 +88,7 @@
 					</button>
 				</div>
 			</form>
-
+			{% endga360_tracker %}
 		</div>
 	</div>
 </div>

@@ -7,6 +7,7 @@
 - TT-1518 - Port ISD search changes to FAS
 - TT-1506 - Port ISD profile changes to FAS
 - TT-1505 - Port ISD contact change to FAS
+- CI-108 - Add more tags for GA 360
 
 ## Fixed bugs
 

@@ -1,7 +1,8 @@
 {% extends 'core/base_cms.html' %}
 {% load static from staticfiles %}
 {% load trans from i18n %}
-{% load add_export_elements_classes from directory_components %}
+{% load search_url from industry_tags %}
+{% load add_export_elements_classes ga360_tracker from directory_components %}
 
 {% block head_css %}
     {{ block.super }}
@@ -13,6 +14,7 @@
 {% block content %}
 <div>
     <div class="container">
+        {% ga360_tracker "breadcrumbs" %}
         <p class="breadcrumbs">
             <span class="label verbose">You are here:</span>
             <a href="{% url 'index' %}">{{ page.breadcrumbs.landingpage.label }}</a>
@@ -25,10 +27,12 @@
             {% endif %}
             <span class="Current">{{ page.breadcrumbs_label }}</span>
         </p>
+        {% endga360_tracker %}
     </div>
 </div>
 
 <div class="container">
+    {% ga360_tracker "cta" %}
     <section id="lede" class="grid-row">
         <div class="column-one-half">
             {{ page.success_message_text|add_export_elements_classes|safe }}
@@ -45,6 +49,7 @@
             </div>
         </div>
     </section>
+    {% endga360_tracker %}
 </div>
 {% endblock content %}
 
