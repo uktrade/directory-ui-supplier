@@ -1,7 +1,7 @@
 {% extends 'core/base_cms.html' %}
 {% load static from staticfiles %}
 {% load first_paragraph grouper from cms_tags %}
-{% load banner from directory_components %}
+{% load banner ga360_tracker from directory_components %}
 
 {% block head_css %}
     {{ block.super }}
@@ -16,7 +16,8 @@
                 {{ page.hero_text|safe }}
             </div>
             <div id="search-area">
-                <form action="{% url 'find-a-supplier:search' %}" method="get" data-ga-class="company-search-form">
+                {% ga360_tracker "company-search-form" target="form" %}
+                <form action="{% url 'find-a-supplier:search' %}" method="get">
                     <div class="column-one-half">
                         <input
                             class="form-control"
@@ -37,6 +38,7 @@
                         </div>
                     </div>
                 </form>
+                {% endga360_tracker  %}
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -59,7 +61,9 @@
                 {{ page.proposition_text|safe }}
             </div>
             <div class="button-container">
-                <a href="{% url 'sector-list-cms-contact' %}" class="button" data-ga-class="contact-cta">{{ page.call_to_action_text }}</a>
+                {% ga360_tracker "contact-cta" %}
+                <a href="{% url 'sector-list-cms-contact' %}" class="button">{{ page.call_to_action_text }}</a>
+                {% endga360_tracker %}
             </div>
         </div>
     </div>
@@ -71,6 +75,7 @@
         {% for row in page.industries|grouper:3 %}
             <div class="grid-row">
                 {% for item in row %}
+                    {% ga360_tracker "industry-card" ga-value=item.breadcrumbs_label %}
                     <a href="{{ item.meta.url }}" class="column-one-third industry-card">
                         <span>{{ item.breadcrumbs_label }}</span>
                         <img src="{{ item.summary_image.url }}" />
@@ -79,10 +84,13 @@
                         </div>
                         <div class="clearfix"></div>
                     </a>
+                    {% endga360_tracker %}
                 {% endfor %}
             </div>
         {% endfor %}
+        {% ga360_tracker "all-industries-link" %}
         <a class="button" href="{% url 'sector-list' %}">{{ page.industries_list_call_to_action_text }}</a>
+        {% endga360_tracker %}
     </div>
 </section>
 

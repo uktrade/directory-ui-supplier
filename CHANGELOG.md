@@ -7,14 +7,18 @@
 - TT-1518 - Port ISD search changes to FAS
 - TT-1506 - Port ISD profile changes to FAS
 - TT-1505 - Port ISD contact change to FAS
+- CI-108 - Add more tags for GA 360
+- TT-1545 - Change Filter Labels
 
 ## Fixed bugs
 
+- TT-1531 FAS - Logos are misaligned on trade profiles (fixed cross browser compatibility issues)
 - TT-1532 Fix FAS Pagination
 - TT-1530 profile links corrupt
 - TT-1534 FAS Breadcrumb search results
 - TT-1536-500-Error-on-Results upgraded sorl-thumbnail to 12.5
 - TT-1528 500 ISE on industry page
+- CI-217: Update Django Version to fix security vulnerability.
 
 
 ## [2019.06.05] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.05)

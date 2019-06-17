@@ -1,4 +1,4 @@
-{% load add_export_elements_classes from directory_components %}
+{% load add_export_elements_classes ga360_tracker from directory_components %}
 {% load add_href_target from cms_tags %}
 <article class="grid-row">
     <div class="column-one-half article-media-container">
@@ -15,6 +15,8 @@
             <span>{{ article.industry_name }}</span>
         </div>
         <h2>{{ article.title }}</h2>
+        {% ga360_tracker "cta" %}
         {{ article.body|add_export_elements_classes|add_href_target:request|safe }}
+        {% endga360_tracker %}
     </div>
 </article>
