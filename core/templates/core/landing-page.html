@@ -141,16 +141,6 @@
     </div>
 </section>
 
-{% if page.article_summaries %}
-<section id="articles-section">
-    <div class="container">
-        {% for article in page.article_summaries %}
-            {% include "industry/sector-article-summary.html" with article=article %}
-        {% endfor %}
-    </div>
-</section>
-{% endif %}
-
 {% endblock content %}
 
 
