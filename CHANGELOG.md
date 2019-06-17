@@ -12,6 +12,7 @@
 
 ## Fixed bugs
 
+- TT-1531 FAS - Logos are misaligned on trade profiles (fixed cross browser compatibility issues)
 - TT-1532 Fix FAS Pagination
 - TT-1530 profile links corrupt
 - TT-1534 FAS Breadcrumb search results
