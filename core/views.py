@@ -1,7 +1,10 @@
 from directory_api_client.client import api_client
 from directory_components.mixins import (
-    CMSLanguageSwitcherMixin, CountryDisplayMixin, EnableTranslationsMixin,
-    GA360Mixin)
+    CMSLanguageSwitcherMixin,
+    CountryDisplayMixin,
+    EnableTranslationsMixin,
+    GA360Mixin
+)
 from directory_constants import slugs
 from directory_cms_client import cms_api_client
 import directory_forms_api_client.helpers
@@ -19,6 +22,7 @@ from core import forms, helpers, mixins
 
 
 class LandingPageCMSView(
+    mixins.InternationalHeaderMixin,
     CMSLanguageSwitcherMixin,
     mixins.ActiveViewNameMixin,
     mixins.GetCMSComponentMixin,
@@ -67,7 +71,11 @@ class RedirectToCMSIndustryView(RedirectView):
 
 
 class LeadGenerationFormView(
-    EnableTranslationsMixin, CountryDisplayMixin, GA360Mixin, FormView
+    mixins.InternationalHeaderMixin,
+    EnableTranslationsMixin,
+    CountryDisplayMixin,
+    GA360Mixin,
+    FormView
 ):
     success_template = 'lead-generation-success.html'
     template_name = 'lead-generation.html'
@@ -109,7 +117,11 @@ class LeadGenerationFormView(
         )
 
 
-class AnonymousSubscribeFormView(CountryDisplayMixin, GA360Mixin, FormView):
+class AnonymousSubscribeFormView(
+    mixins.InternationalHeaderMixin,
+    CountryDisplayMixin,
+    GA360Mixin,
+    FormView):
     success_template = 'anonymous-subscribe-success.html'
     template_name = 'anonymous-subscribe.html'
     form_class = forms.AnonymousSubscribeForm
@@ -182,5 +194,8 @@ class SendContactNotifyMessagesMixin:
         return super().form_valid(form)
 
 
-class BaseNotifyFormView(SendContactNotifyMessagesMixin, FormView):
+class BaseNotifyFormView(
+    SendContactNotifyMessagesMixin,
+    FormView
+):
     pass

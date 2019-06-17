@@ -9,7 +9,10 @@ from django.template.response import TemplateResponse
 from django.utils.functional import cached_property
 from django.views.generic import RedirectView, TemplateView
 from django.views.generic.edit import FormView
-from directory_components.mixins import CountryDisplayMixin, GA360Mixin
+from directory_components.mixins import (
+    CountryDisplayMixin,
+    GA360Mixin
+)
 
 from core.helpers import get_filters_labels, get_results_from_search_response
 from find_a_supplier import forms, helpers
@@ -26,6 +29,7 @@ class CompanyProfileMixin(core.mixins.CompanyProfileMixin):
 
 
 class CompanySearchView(
+    core.mixins.InternationalHeaderMixin,
     core.mixins.SubmitFormOnGetMixin,
     CountryDisplayMixin,
     core.mixins.PersistSearchQuerystringMixin,
@@ -89,7 +93,12 @@ class CompanySearchView(
         return redirect(url)
 
 
-class PublishedProfileListView(CountryDisplayMixin, GA360Mixin, RedirectView):
+class PublishedProfileListView(
+    core.mixins.InternationalHeaderMixin,
+    CountryDisplayMixin,
+    GA360Mixin,
+    RedirectView
+):
 
     def __init__(self):
         super().__init__()
@@ -111,6 +120,7 @@ class PublishedProfileListView(CountryDisplayMixin, GA360Mixin, RedirectView):
 
 
 class ProfileView(
+    core.mixins.InternationalHeaderMixin,
     CompanyProfileMixin,
     CountryDisplayMixin,
     GA360Mixin,
@@ -156,7 +166,12 @@ class ProfileView(
         )
 
 
-class CaseStudyDetailView(CountryDisplayMixin, GA360Mixin, TemplateView):
+class CaseStudyDetailView(
+    core.mixins.InternationalHeaderMixin,
+    CountryDisplayMixin,
+    GA360Mixin,
+    TemplateView
+):
     template_name = 'find_a_supplier/supplier-case-study-detail.html'
 
     def __init__(self):
@@ -199,6 +214,7 @@ class CaseStudyDetailView(CountryDisplayMixin, GA360Mixin, TemplateView):
 
 
 class ContactCompanyView(
+    core.mixins.InternationalHeaderMixin,
     CompanyProfileMixin,
     CountryDisplayMixin,
     GA360Mixin,
@@ -249,6 +265,7 @@ class ContactCompanyView(
 
 
 class ContactCompanySentView(
+    core.mixins.InternationalHeaderMixin,
     CompanyProfileMixin,
     GA360Mixin,
     core.mixins.PersistSearchQuerystringMixin,

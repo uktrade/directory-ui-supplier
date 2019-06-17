@@ -8,6 +8,9 @@ from django.utils import translation
 from django.utils.cache import set_response_etag
 from django.utils.functional import cached_property
 
+from directory_components.mixins import InternationalHeaderMixin as \
+    BaseInternationalHeaderMixin
+
 from core import helpers
 
 
@@ -134,3 +137,9 @@ class PersistSearchQuerystringMixin:
             search_querystring=self.search_querystring,
             **kwargs,
         )
+
+
+class InternationalHeaderMixin(BaseInternationalHeaderMixin):
+    @property
+    def international_header_area(self):
+        return "find_a_supplier"

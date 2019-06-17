@@ -4,6 +4,7 @@
 #
 #    __main__.py compile requirements.in
 #
+-e git+https://github.com/uktrade/directory-components@nav-prototype-no-js#egg=directory_components
 attrs==19.1.0             # via jsonschema
 beautifulsoup4==4.6.0
 boto3==1.9.62
@@ -14,7 +15,6 @@ contextlib2==0.5.5        # via raven
 directory-api-client==14.0.0
 directory-client-core==5.1.0  # via directory-api-client, directory-cms-client, directory-forms-api-client
 directory-cms-client==10.0.1
-directory-components==16.1.0
 directory-constants==17.0.0  # via directory-components
 directory-forms-api-client==4.0.0
 directory-healthcheck==1.0.1
