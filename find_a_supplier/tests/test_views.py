@@ -658,3 +658,37 @@ def test_contact_company_sent(client):
     assert response.template_name == [
         views.ContactCompanySentView.template_name
     ]
+
+
+@pytest.mark.parametrize('params', [
+    {'show-guide': True},
+    {'q': '', 'sectors': ''},
+    {'q': ''},
+    {'sectors': ''},
+])
+def test_home_page_show_guide(client, params):
+    url = reverse('find-a-supplier:search')
+
+    response = client.get(url, params)
+
+    assert response.status_code == 200
+    assert response.context_data['show_search_guide'] is True
+
+
+@pytest.mark.parametrize('params', [
+    {'q': 'foo', 'sectors': 'bar'},
+    {'q': 'bar'},
+    {'sectors': 'foo'},
+    {}
+])
+@mock.patch.object(views.CompanySearchView, 'get_results_and_count')
+def test_home_page_hide_guide(mock_get_results_and_count, client, params):
+    results = [{'number': '1234567', 'slug': 'thing'}]
+    mock_get_results_and_count.return_value = (results, 20)
+
+    url = reverse('find-a-supplier:search')
+
+    response = client.get(url, params)
+
+    assert response.status_code == 200
+    assert response.context_data['show_search_guide'] is False

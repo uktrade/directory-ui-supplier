@@ -265,3 +265,7 @@ urlpatterns = [
         RedirectView.as_view(url='/investment-support-directory/')
     ),
 ]
+
+handler404 = 'directory_components.views.handler404'
+
+handler500 = 'directory_components.views.handler500'
