@@ -85,23 +85,23 @@ def test_serialize_contact_company_form():
 def test_search_form():
     form = forms.CompanySearchForm(data={
         'q': '123',
-        'sectors': ['AEROSPACE']
+        'industries': ['AEROSPACE']
     })
 
     assert form.is_valid() is True
     assert form.cleaned_data['q'] == '123'
-    assert form.cleaned_data['sectors'] == ['AEROSPACE']
+    assert form.cleaned_data['industries'] == ['AEROSPACE']
 
 
 def test_search_required_fields():
     form = forms.CompanySearchForm()
 
-    assert form.fields['sectors'].required is False
+    assert form.fields['industries'].required is False
     assert form.fields['q'].required is False
 
 
 def test_search_required_empty_sector_term():
-    form = forms.CompanySearchForm(data={'q': '', 'sectors': ''})
+    form = forms.CompanySearchForm(data={'q': '', 'industries': ''})
 
     assert form.is_valid() is False
 

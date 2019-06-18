@@ -18,7 +18,7 @@ class SearchForm(forms.Form):
         max_length=255,
         required=False,
     )
-    sectors = fields.ChoiceField(
+    industries = fields.ChoiceField(
         required=False,
         choices=(
             (('', _('All industries')),) + choices.INDUSTRIES

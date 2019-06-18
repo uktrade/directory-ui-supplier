@@ -467,13 +467,18 @@ def test_company_search_submit_form_on_get(
     assert response.context_data['results'] == results
 
 
-def test_company_search_redirects_using_term(client):
+@pytest.mark.parametrize('params,expected', [
+    ({'term': '123', 'sectors':'AEROSPACE'}, 'q=123&industries=AEROSPACE'),
+    ({'sectors':'AEROSPACE'},'industries=AEROSPACE'),
+    ({'term': '123'}, 'q=123'),
+])
+def test_company_search_redirects_using_old_params(client, params, expected):
 
     url = reverse('find-a-supplier:search')
-    response = client.get(url, {'term': '123'})
+    response = client.get(url, params)
 
     assert response.status_code == 302
-    assert response.url == url + '?q=123'
+    assert response.url == f'{url}?{expected}'
 
 
 @patch('find_a_supplier.views.CompanySearchView.get_results_and_count')
@@ -497,7 +502,7 @@ def test_company_search_pagination_param(
 
     url = reverse('find-a-supplier:search')
     response = client.get(
-        url, {'q': '123', 'page': 1, 'sectors': ['AEROSPACE']}
+        url, {'q': '123', 'page': 1, 'industries': ['AEROSPACE']}
     )
 
     assert response.status_code == 200
@@ -515,7 +520,7 @@ def test_company_search_sector_empty(
 
     url = reverse('find-a-supplier:search')
     response = client.get(
-        url, {'q': '123', 'page': 1, 'sectors': ''}
+        url, {'q': '123', 'page': 1, 'industries': ''}
     )
     assert response.status_code == 200
     assert mock_search.call_count == 1

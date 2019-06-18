@@ -46,9 +46,11 @@ class CompanySearchView(
         )
 
     def dispatch(self, *args, **kwargs):
-        if 'term' in self.request.GET:
+        if 'term' in self.request.GET or 'sectors' in self.request.GET:
             url = self.request.get_full_path()
-            return redirect(url.replace('term=', 'q='))
+            return redirect(
+                url.replace('term=', 'q=').replace('sectors=', 'industries=')
+            )
         return super().dispatch(*args, **kwargs)
 
     def form_valid(self, form):
@@ -73,7 +75,7 @@ class CompanySearchView(
         response = api_client.company.search_company(
             term=form.cleaned_data['q'],
             page=form.cleaned_data['page'],
-            sectors=form.cleaned_data['sectors'],
+            sectors=form.cleaned_data['industries'],
             size=self.page_size,
         )
         response.raise_for_status()
