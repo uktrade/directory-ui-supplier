@@ -102,12 +102,12 @@ class CompanySearchView(
         """
 
         q = self.request.GET.get('q')
-        sectors = self.request.GET.get('sectors')
+        industries = self.request.GET.get('industries')
         return any([
             'show-guide' in self.request.GET,
-            q == '' and sectors == '',
-            q == '' and sectors is None,
-            sectors == '' and q is None,
+            q == '' and industries == '',
+            q == '' and industries is None,
+            industries == '' and q is None,
         ])
 
     def get_context_data(self, **kwargs):
@@ -130,12 +130,11 @@ class PublishedProfileListView(CountryDisplayMixin, GA360Mixin, RedirectView):
         )
 
     def get_redirect_url(self, *args, **kwargs):
+        url = reverse('find-a-supplier:search')
         sectors = self.request.GET.get('sectors')
         if sectors:
-            return '{url}?sector={sector}'.format(
-                url=reverse('find-a-supplier:search'), sector=sectors
-            )
-        return reverse('find-a-supplier:search')
+            url += f'?industries={sectors}'
+        return url
 
 
 class ProfileView(

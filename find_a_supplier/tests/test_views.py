@@ -147,7 +147,7 @@ def test_company_profile_list_with_params_redirects_to_search(client):
     response = client.get(url, {'sectors': 'AEROSPACE'})
 
     assert response.status_code == 302
-    assert response.get('Location') == '/trade/search/?sector=AEROSPACE'
+    assert response.get('Location') == '/trade/search/?industries=AEROSPACE'
 
 
 def test_company_profile_list_redirects_to_search(client):
@@ -468,8 +468,8 @@ def test_company_search_submit_form_on_get(
 
 
 @pytest.mark.parametrize('params,expected', [
-    ({'term': '123', 'sectors':'AEROSPACE'}, 'q=123&industries=AEROSPACE'),
-    ({'sectors':'AEROSPACE'},'industries=AEROSPACE'),
+    ({'term': '123', 'sectors': 'AEROSPACE'}, 'q=123&industries=AEROSPACE'),
+    ({'sectors': 'AEROSPACE'}, 'industries=AEROSPACE'),
     ({'term': '123'}, 'q=123'),
 ])
 def test_company_search_redirects_using_old_params(client, params, expected):
@@ -662,9 +662,9 @@ def test_contact_company_sent(client):
 
 @pytest.mark.parametrize('params', [
     {'show-guide': True},
-    {'q': '', 'sectors': ''},
+    {'q': '', 'industries': ''},
     {'q': ''},
-    {'sectors': ''},
+    {'industries': ''},
 ])
 def test_home_page_show_guide(client, params):
     url = reverse('find-a-supplier:search')
@@ -676,9 +676,9 @@ def test_home_page_show_guide(client, params):
 
 
 @pytest.mark.parametrize('params', [
-    {'q': 'foo', 'sectors': 'bar'},
+    {'q': 'foo', 'industries': 'bar'},
     {'q': 'bar'},
-    {'sectors': 'foo'},
+    {'industries': 'foo'},
     {}
 ])
 @mock.patch.object(views.CompanySearchView, 'get_results_and_count')
