@@ -8,6 +8,8 @@
     <link href="{% static 'core/landing-page.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
 
+{% block head_title %}Find a UK supplier - GREAT.gov.uk{% endblock %}
+
 {% block content %}
 <section id="hero">
     <div class="container">
@@ -138,16 +140,6 @@
         </div>
     </div>
 </section>
-
-{% if page.article_summaries %}
-<section id="articles-section">
-    <div class="container">
-        {% for article in page.article_summaries %}
-            {% include "industry/sector-article-summary.html" with article=article %}
-        {% endfor %}
-    </div>
-</section>
-{% endif %}
 
 {% endblock content %}
 

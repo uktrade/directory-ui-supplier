@@ -88,6 +88,32 @@ class CompanySearchView(
         )
         return redirect(url)
 
+    @property
+    def should_show_search_guide(self):
+        """show the search guide if:
+
+        - user explicitly asked for it; or
+        - search was submitted with empty q or empty sectors; or
+        - search was submitted with only empty q; or
+        - search was submitted with only empty sectors
+
+        """
+
+        q = self.request.GET.get('q')
+        sectors = self.request.GET.get('sectors')
+        return any([
+            'show-guide' in self.request.GET,
+            q == '' and sectors == '',
+            q == '' and sectors is None,
+            sectors == '' and q is None,
+        ])
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(
+            show_search_guide=self.should_show_search_guide,
+            **kwargs,
+        )
+
 
 class PublishedProfileListView(CountryDisplayMixin, GA360Mixin, RedirectView):
 

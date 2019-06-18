@@ -2,6 +2,8 @@
 
 {% load breadcrumbs from directory_components %}
 
+{% block head_title %}Find a UK supplier - GREAT.gov.uk{% endblock %}
+
 {% block breadcrumbs %}
     <div class="container">
         {% url 'find-a-supplier:search' as search_url %}
