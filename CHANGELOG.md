@@ -10,6 +10,7 @@
 - TT-1505 - Port ISD contact change to FAS
 - CI-108 - Add more tags for GA 360
 - TT-1545 - Change Filter Labels
+- no ticket - Remove obsolete feature of showing article_summaries on FAS homepage
 
 ## Fixed bugs
 
@@ -20,6 +21,7 @@
 - TT-1528 - 500 ISE on industry page
 - CI-217 - Update Django Version to fix security vulnerability.
 - TT-1529 - Fix 500 error pages so links work
+- TT-1531 FAS - Logos are misaligned on trade profiles (fixed cross browser compatibility issues)
 
 ## [2019.06.05] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.05)
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.05.28_1...2019.06.05)
