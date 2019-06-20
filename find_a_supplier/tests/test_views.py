@@ -404,15 +404,14 @@ def test_contact_company_view_feature_submit_forms_api_success(
     ) + '?'
     assert mock_save.call_count == 1
     assert mock_save.call_args == call(
-        recipients=['test@example.com'],
-        subject=settings.CONTACT_SUPPLIER_SUBJECT,
-        reply_to=[valid_contact_company_data['email_address']],
+        email_address=retrieve_profile_data['email_address'],
+        form_url=url,
         sender={
-            'email_address': 'jim@example.com', 'country_code': 'China'
+            'email_address': valid_contact_company_data['email_address'],
+            'country_code': valid_contact_company_data['country'],
         },
         spam_control={'contents': ['greetings', 'and salutations']},
-        recipient_name='Great company',
-        form_url=url,
+        template_id=settings.CONTACT_FAS_COMPANY_NOTIFY_TEMPLATE_ID,
     )
 
 

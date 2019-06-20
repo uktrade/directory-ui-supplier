@@ -1,15 +1,11 @@
 from captcha.fields import ReCaptchaField
-from directory_components.context_processors import (
-    urls_processor, header_footer_processor
-)
 from directory_constants import choices
 from directory_components import fields, forms, widgets
 from directory_validators.common import not_contains_url_or_email
-from directory_forms_api_client.forms import EmailActionMixin
+from directory_forms_api_client.forms import GovNotifyActionMixin
 
 from django.core.validators import EMPTY_VALUES
 from django.forms import HiddenInput, Textarea, TextInput, ValidationError
-from django.template.loader import render_to_string
 
 from core.fields import IntegerField
 
@@ -69,7 +65,7 @@ class CompanySearchForm(forms.Form):
         return self.cleaned_data['page'] or self.fields['page'].initial
 
 
-class ContactCompanyForm(EmailActionMixin, forms.Form):
+class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
 
     error_css_class = 'input-field-container has-error'
     TERMS_CONDITIONS_MESSAGE = (
@@ -117,32 +113,6 @@ class ContactCompanyForm(EmailActionMixin, forms.Form):
         label='I agree to the great.gov.uk terms and conditions',
         error_messages={'required': TERMS_CONDITIONS_MESSAGE},
     )
-
-    def save(self, recipient_name, *args, **kwargs):
-        self.recipient_name = recipient_name
-        return super().save(*args, **kwargs)
-
-    def get_context_data(self):
-        return {
-            **self.cleaned_data,
-            **urls_processor(None),
-            **header_footer_processor(None),
-            'recipient_name': self.recipient_name,
-        }
-
-    @property
-    def html_body(self):
-        return render_to_string(
-            'email/email_to_supplier.html',
-            self.get_context_data(),
-        )
-
-    @property
-    def text_body(self):
-        return render_to_string(
-            'email/email_to_supplier.txt',
-            self.get_context_data(),
-        )
 
 
 def serialize_contact_company_form(cleaned_data, company_number):

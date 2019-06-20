@@ -11,6 +11,7 @@
 - CI-108 - Add more tags for GA 360
 - TT-1545 - Change Filter Labels
 - no ticket - Remove obsolete feature of showing article_summaries on FAS homepage
+- TT-1505 - Send FAS message via notify
 
 ## Fixed bugs
 

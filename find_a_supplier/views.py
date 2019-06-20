@@ -264,10 +264,8 @@ class ContactCompanyView(
             contents=[form.cleaned_data['subject'], form.cleaned_data['body']]
         )
         return form.save(
-            recipients=[self.company['email_address']],
-            subject=settings.CONTACT_SUPPLIER_SUBJECT,
-            reply_to=[form.cleaned_data['email_address']],
-            recipient_name=self.company['name'],
+            template_id=settings.CONTACT_FAS_COMPANY_NOTIFY_TEMPLATE_ID,
+            email_address=self.company['email_address'],
             form_url=self.request.path,
             sender=sender,
             spam_control=spam_control,
