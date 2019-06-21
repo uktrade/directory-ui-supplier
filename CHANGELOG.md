@@ -20,6 +20,7 @@
 
 ## Fixed bugs
 
+- No ticket - Remove noisy CMS healthcheck
 - TT-1532 - Fix FAS Pagination
 - TT-1530 - profile links corrupt
 - TT-1534 - FAS Breadcrumb search results
