@@ -52,7 +52,7 @@
                                     <mark>{{ value }}</mark>
                                 {% endfor %}
                                 {% ga360_tracker "clear-filter" %}
-                                <a href="?q={{ form.q.value }}" class="link">Clear all filters</a>
+                                <a href="?q={{ form.q.value|default:'' }}" class="link">Clear all filters</a>
                                 {% endga360_tracker %}
                             </div>
                         {% endif %}
