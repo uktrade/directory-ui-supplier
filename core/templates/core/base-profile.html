@@ -29,13 +29,11 @@
                     {% endif %}
                 </section>
                 <section id="contact-company-container">
-                    <span>
-                        <img alt="" height="54px" src="{% static 'core/images/clock.png' %}" width="54px" />
-                        Contact this company for 1 hour of free advice.
-                    </span>
-                    {% ga360_tracker "contact-cta" %}
-                    <a href="{% url request.resolver_match.namespace|add:':company-contact' company_number=company.number %}?{{ search_querystring }}" class="button">Contact company</a>
-                    {% endga360_tracker %}
+                    {% block contact %}
+                        {% ga360_tracker "contact-cta" %}
+                        <a href="{% url request.resolver_match.namespace|add:':company-contact' company_number=company.number %}?{{ search_querystring }}" class="button">Contact company</a>
+                        {% endga360_tracker %}
+                    {% endblock %}
                 </section>
                 <section id="about-company-container">
                     <h3 class="heading-medium">Business details</h3>
@@ -60,7 +58,7 @@
                         {% endif %}
                         {% if company.sectors %}
                             <dt>Core industry</dt>
-                            <dd>{{ company.sectors|title }}</dd>
+                            <dd>{{ company.sectors }}</dd>
                         {% endif %}
                         {% if not company.is_in_companies_house %}
                             <dt>Address</dt>

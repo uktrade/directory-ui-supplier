@@ -19,8 +19,8 @@ def search_url(sector_value=None, term=None):
     params = OrderedDict()
 
     if sector_value:
-        sectors = [CONFLATED.get(item, {item}) for item in sector_value]
-        params['sectors'] = list(itertools.chain(*sectors))
+        industries = [CONFLATED.get(item, {item}) for item in sector_value]
+        params['industries'] = list(itertools.chain(*industries))
     if term:
         params['term'] = term
     querystring = urllib.parse.urlencode(params, doseq=True)

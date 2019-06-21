@@ -10,6 +10,6 @@ def test_search_url():
     )
 
     assert search_url == (
-                    reverse('find-a-supplier:search') +
-                    '?sectors=AEROSPACE&term=test'
-                )
+        reverse('find-a-supplier:search') +
+        '?industries=AEROSPACE&term=test'
+    )

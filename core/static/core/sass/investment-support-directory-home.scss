@@ -10,7 +10,7 @@
 #hero {
   form {
     padding: 15px;
-    @media (min-width: 641px) {
+    @media (min-width: 769px) {
       display: flex;
       padding: 30px;
     }
@@ -30,7 +30,7 @@
     button {
       margin-top: 15px;
       margin-bottom: 0;
-      @media (min-width: 641px) {
+      @media (min-width: 769px) {
         margin-top: 0;
         margin-left: 15px;
       }

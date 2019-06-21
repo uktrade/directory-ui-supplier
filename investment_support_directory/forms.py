@@ -236,8 +236,8 @@ class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
     )
     has_contact = fields.ChoiceField(
         label=(
-            'Do you currently have a contact at Department of international '
-            'trade'
+            'Do you currently have a contact at Department for International '
+            'Trade'
         ),
         widget=widgets.RadioSelect(
             use_nice_ids=True,

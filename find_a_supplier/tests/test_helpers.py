@@ -106,7 +106,7 @@ def test_get_case_study_details_from_response(supplier_case_study_data):
 
 
 def test_get_paginator_url():
-    filters = {'page': 2, 'term': 'foo', 'sectors': None}
+    filters = {'page': 2, 'term': 'foo', 'industries': None}
 
     assert helpers.get_paginator_url(filters) == (
         reverse('find-a-supplier:search') + '?term=foo'
@@ -115,12 +115,12 @@ def test_get_paginator_url():
 
 def test_get_paginator_url_multiple_filters():
     filters = {
-        'sectors': ['AEROSPACE', 'AGRICULTURE_HORTICULTURE_AND_FISHERIES'],
+        'industries': ['AEROSPACE', 'AGRICULTURE_HORTICULTURE_AND_FISHERIES'],
     }
 
     encoded_url = (
-        '?sectors=AEROSPACE'
-        '&sectors=AGRICULTURE_HORTICULTURE_AND_FISHERIES'
+        '?industries=AEROSPACE'
+        '&industries=AGRICULTURE_HORTICULTURE_AND_FISHERIES'
     )
 
     assert helpers.get_paginator_url(filters) == (

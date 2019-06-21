@@ -77,7 +77,7 @@
                 {% ga360_tracker "company-search-form" %}
                 <form method="get" action="{% url 'find-a-supplier:search' %}">
                     {% for value in page.search_filter_sector %}
-                        <input type="hidden" value="{{ value }}" name="sectors" data-ga-id='sector-input' />
+                        <input type="hidden" value="{{ value }}" name="industries" data-ga-id='sector-input' />
                     {% endfor %}
                     <input type="text" name="term" class="form-control" data-ga-id='search-input' />
                     <button style="background-image: url({% static 'industry/images/search.svg' %});" type="submit" class="button"></button>
