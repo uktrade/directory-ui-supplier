@@ -10,7 +10,8 @@ import pytest
 @pytest.fixture
 def valid_contact_company_data(captcha_stub):
     return {
-        'full_name': 'Jim Example',
+        'given_name': 'Jim',
+        'family_name': 'Example',
         'company_name': 'Example Corp',
         'country': 'China',
         'email_address': 'jim@example.com',
