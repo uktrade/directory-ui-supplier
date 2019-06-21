@@ -1,5 +1,5 @@
 from captcha.fields import ReCaptchaField
-from directory_constants import choices
+from directory_constants import choices, urls
 from directory_components import fields, forms, widgets
 from directory_validators.common import not_contains_url_or_email
 from directory_forms_api_client.forms import GovNotifyActionMixin
@@ -66,24 +66,35 @@ class CompanySearchForm(forms.Form):
 
 
 class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
-
-    error_css_class = 'input-field-container has-error'
     TERMS_CONDITIONS_MESSAGE = (
         'Tick the box to confirm you agree to the terms and conditions.'
     )
+    TERMS_CONDITIONS_LABEL = (
+        f'<p>I agree to the <a href="{urls.TERMS_AND_CONDITIONS}" '
+        'target="_blank"> great.gov.uk terms and conditions </a> and I '
+        'understand that:</p>'
+        '<ul class="list list-bullet">'
+        '<li>DIT is not endorsing the character, ability, goods or services '
+        'of members of the directory</li>'
+        '<li>there is no legal relationship between DIT and directory members'
+        '<li>DIT is not liable for any direct or indirect loss or damage '
+        'that might happen after a directory member provides a good or '
+        'service</li>'
+        '</ul>'
+    )
 
     given_name = fields.CharField(
-        label='Your given name:',
+        label='Given name',
         max_length=255,
         validators=[not_contains_url_or_email],
     )
     family_name = fields.CharField(
-        label='Your family name:',
+        label='Family name',
         max_length=255,
         validators=[not_contains_url_or_email],
     )
     company_name = fields.CharField(
-        label='Your company name:',
+        label='Your organisation name',
         max_length=255,
         validators=[not_contains_url_or_email],
     )
@@ -95,27 +106,31 @@ class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
         label='Your email address:',
     )
     sector = fields.ChoiceField(
-        label='Industry:',
+        label='Your industry',
+        help_text='Please select your industry',
         choices=(
             [['', SELECT_LABEL]] + list(choices.INDUSTRIES)
         ),
     )
     subject = fields.CharField(
-        label='Enter a subject line for your message:',
+        label='Enter a subject line for your message',
         help_text='Maximum 200 characters.',
         max_length=200,
         validators=[not_contains_url_or_email],
     )
     body = fields.CharField(
-        label='Enter your message to the UK company:',
-        help_text='Maximum 1000 characters.',
+        label='Enter your message to the UK company',
+        help_text=(
+            'Include the goods or services you’re interested in, and your '
+            'country. Maximum 1000 characters.'
+        ),
         max_length=1000,
         widget=Textarea,
         validators=[not_contains_url_or_email],
     )
     captcha = ReCaptchaField()
     terms = fields.BooleanField(
-        label='I agree to the great.gov.uk terms and conditions',
+        label=TERMS_CONDITIONS_LABEL,
         error_messages={'required': TERMS_CONDITIONS_MESSAGE},
     )
 
