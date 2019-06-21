@@ -72,8 +72,13 @@ class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
         'Tick the box to confirm you agree to the terms and conditions.'
     )
 
-    full_name = fields.CharField(
-        label='Your full name:',
+    given_name = fields.CharField(
+        label='Your given name:',
+        max_length=255,
+        validators=[not_contains_url_or_email],
+    )
+    family_name = fields.CharField(
+        label='Your family name:',
         max_length=255,
         validators=[not_contains_url_or_email],
     )
@@ -114,24 +119,8 @@ class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
         error_messages={'required': TERMS_CONDITIONS_MESSAGE},
     )
 
-
-def serialize_contact_company_form(cleaned_data, company_number):
-    """
-    Return the shape directory-api-client expects for sending a email to a
-    company
-
-    @param {dict} cleaned_data - Fields from `ContactCompanyForm`
-    @returns dict
-
-    """
-
-    return {
-        'sender_email': cleaned_data['email_address'],
-        'sender_name': cleaned_data['full_name'],
-        'sender_company_name': cleaned_data['company_name'],
-        'sender_country': cleaned_data['country'],
-        'sector': cleaned_data['sector'],
-        'subject': cleaned_data['subject'],
-        'body': cleaned_data['body'],
-        'recipient_company_number': company_number,
-    }
+    @property
+    def serialized_data(self):
+        data = super().serialized_data
+        data['sector_label'] = dict(choices.INDUSTRIES)[data['sector']]
+        return data

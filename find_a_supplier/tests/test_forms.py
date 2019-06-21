@@ -1,3 +1,5 @@
+from unittest import mock
+
 from django.forms.fields import Field
 from directory_validators.common import not_contains_url_or_email
 
@@ -10,7 +12,8 @@ REQUIRED_MESSAGE = Field.default_error_messages['required']
 def test_contact_company_form_required_fields():
     form = forms.ContactCompanyForm()
 
-    assert form.fields['full_name'].required is True
+    assert form.fields['given_name'].required is True
+    assert form.fields['family_name'].required is True
     assert form.fields['company_name'].required is True
     assert form.fields['country'].required is True
     assert form.fields['email_address'].required is True
@@ -22,7 +25,8 @@ def test_contact_company_form_required_fields():
 def test_contact_company__form_length_of_fields():
     form = forms.ContactCompanyForm()
 
-    assert form.fields['full_name'].max_length == 255
+    assert form.fields['given_name'].max_length == 255
+    assert form.fields['family_name'].max_length == 255
     assert form.fields['company_name'].max_length == 255
     assert form.fields['country'].max_length == 255
     assert form.fields['subject'].max_length == 200
@@ -44,40 +48,47 @@ def test_contact_company_form_captcha_invalid():
     assert 'captcha' in form.errors
 
 
+@mock.patch(
+    'directory_forms_api_client.client.forms_api_client.submit_generic'
+)
+def test_contact_supplier_body_text(
+    mock_submit_generic, valid_contact_company_data, captcha_stub
+):
+    form = forms.ContactCompanyForm(data=valid_contact_company_data)
+
+    assert form.is_valid()
+
+    form.save(
+        template_id='foo',
+        email_address='reply_to@example.com',
+        form_url='/trade/some/path/',
+    )
+
+    assert form.serialized_data == {
+        'email_address': valid_contact_company_data['email_address'],
+        'body': valid_contact_company_data['body'],
+        'company_name': valid_contact_company_data['company_name'],
+        'given_name': valid_contact_company_data['given_name'],
+        'family_name': valid_contact_company_data['family_name'],
+        'terms': True,
+        'sector': valid_contact_company_data['sector'],
+        'sector_label': 'Aerospace',
+        'country': valid_contact_company_data['country'],
+        'subject': valid_contact_company_data['subject'],
+        'captcha': captcha_stub,
+    }
+
+
 def test_contact_company_validators():
     form = forms.ContactCompanyForm({})
     validator = not_contains_url_or_email
 
-    assert validator in form.fields['full_name'].validators
+    assert validator in form.fields['given_name'].validators
+    assert validator in form.fields['family_name'].validators
     assert validator in form.fields['company_name'].validators
     assert validator in form.fields['country'].validators
     assert validator in form.fields['subject'].validators
     assert validator in form.fields['body'].validators
-
-
-def test_serialize_contact_company_form():
-    data = {
-        'email_address': 'jim@example.com',
-        'full_name': 'Jimmy example',
-        'company_name': 'Example corp',
-        'country': 'United states of whatever',
-        'sector': 'AEROSPACE',
-        'subject': 'Whatever',
-        'body': 'This is my united states of whatever',
-    }
-    expected = {
-        'sender_email': 'jim@example.com',
-        'sender_name': 'Jimmy example',
-        'sender_company_name': 'Example corp',
-        'sender_country': 'United states of whatever',
-        'sector': 'AEROSPACE',
-        'subject': 'Whatever',
-        'body': 'This is my united states of whatever',
-        'recipient_company_number': '01234567'
-    }
-    actual = forms.serialize_contact_company_form(data, '01234567')
-
-    assert actual == expected
 
 
 def test_search_form():
