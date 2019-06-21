@@ -16,6 +16,7 @@
 - TT-1545 - Change Filter Labels
 - no ticket - Remove obsolete feature of showing article_summaries on FAS homepage
 - TT-1505 - Send FAS message via notify
+- TT-1522 - Improve the content of FAS contact form
 
 ## Fixed bugs
 
