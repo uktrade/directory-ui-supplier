@@ -146,7 +146,6 @@
                                         {% include 'core/paginator-item.html' with number=pagination.paginator.num_pages %}
                                     {% endif %}
                                 </ol>
-                            </span>
                             {% if pagination.has_next %}
                                 <a class="button-ghost-blue" href="{{ paginator_url }}&page={{ pagination.next_page_number }}">Next</a>
                             {% endif %}
