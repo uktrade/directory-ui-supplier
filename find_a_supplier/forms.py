@@ -49,7 +49,7 @@ class CompanySearchForm(forms.Form):
         widget=HiddenInput,
         initial=1,
     )
-    sectors = fields.MultipleChoiceField(
+    industries = fields.MultipleChoiceField(
         label='Industry expertise',
         widget=CheckboxSelectMultipleIgnoreEmpty(
             attrs={'id': 'checkbox-industry-expertise'},
@@ -61,7 +61,7 @@ class CompanySearchForm(forms.Form):
 
     def clean(self):
         cleaned_data = super().clean()
-        if not cleaned_data.get('q') and not cleaned_data.get('sectors'):
+        if not cleaned_data.get('q') and not cleaned_data.get('industries'):
             raise ValidationError(self.MESSAGE_MISSING_SECTOR_TERM)
         return cleaned_data
 
