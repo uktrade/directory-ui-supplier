@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 {% load thumbnail %}
 {% load ga360_tracker from directory_components %}
-
+{% block head_title %}Find a UK supplier - GREAT.gov.uk{% endblock %}
 {% block head_css %}
     {{ block.super }}
 	<link href="{% static 'supplier-case-study-detail.css' %}" media="all" rel="stylesheet" />
