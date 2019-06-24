@@ -32,7 +32,7 @@
 - TT-1547 - Prevent FAS "&sectors=" getting encoded as "§ors=" by renaming to industries.
 - TT-1522 - fix none when clear filters ISD search
 - TT-1576 -fix next allignment
-
+- TT-1537 - Consistent use of logo image formats
 
 ## [2019.06.05] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.05)
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.05.28_1...2019.06.05)

@@ -2,6 +2,7 @@
 {% load static from staticfiles %}
 
 {% load card from directory_components %}
+{% load thumbnail %}
 
 {% load breadcrumbs ga360_tracker from directory_components %}
 
@@ -24,9 +25,11 @@
         <div class="grid-row">   
             <div class="column-one-third" id="data-column">
                 <section id="logo-container">
-                    {% if company.logo %}
-                        <img alt="{{ company.name }}" src="{{ company.logo }}" />
-                    {% endif %}
+                    {% thumbnail company.logo "x300" as logo %}
+                        <img src="{{ logo.url }}" alt="{{ company.name }}" />
+                    {% empty %}
+                        <img class="placeholder" src="{% static 'images/placeholder.png' %}" alt="" />
+                    {% endthumbnail %}
                 </section>
                 <section id="contact-company-container">
                     {% block contact %}
