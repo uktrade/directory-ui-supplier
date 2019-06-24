@@ -93,20 +93,25 @@ def get_results_from_search_response(response):
 
 
 def get_filters_labels(filters):
+    sectors = dict(choices.INDUSTRIES)
+    languages = dict(choices.EXPERTISE_LANGUAGES)
     labels = []
+    skip_fields = [
+        'q',
+        'page',
+        # Prevents duplicates labels not to be displayed in filter list
+        'expertise_products_services_label'
+    ]
     for name, values in filters.items():
-        if name not in ['q', 'page']:
-            if name == 'expertise_languages':
-                languages = dict(choices.EXPERTISE_LANGUAGES)
-                labels += [
-                    languages[item] for item in values if item in languages
-                ]
-            # Prevents duplicates labels not to be displayed in filter list
-            elif name.startswith('expertise_products_services_label'):
-                pass
-            elif name.startswith('expertise_products_services_'):
-                labels += values
-            else:
-                for value in values:
-                    labels.append(value.replace('_', ' ').title())
+        if name in skip_fields:
+            pass
+        elif name == 'industries':
+            labels += [sectors[item] for item in values if item in sectors]
+        elif name == 'expertise_languages':
+            labels += [languages[item] for item in values if item in languages]
+        elif name.startswith('expertise_products_services_'):
+            labels += values
+        else:
+            for value in values:
+                labels.append(value.replace('_', ' ').title())
     return labels
