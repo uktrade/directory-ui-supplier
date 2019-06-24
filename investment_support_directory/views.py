@@ -2,7 +2,7 @@ from urllib.parse import urlencode
 
 from django.conf import settings
 from django.core.paginator import EmptyPage, Paginator
-from django.shortcuts import redirect
+from django.shortcuts import Http404, redirect
 from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.utils.functional import cached_property
@@ -12,38 +12,22 @@ from django.views.generic.edit import FormView
 from directory_api_client.client import api_client
 from directory_constants import expertise
 from directory_components.mixins import CountryDisplayMixin, GA360Mixin
+
 from core.views import BaseNotifyFormView
-from core.helpers import NotifySettings
-
-
+from core.helpers import (
+    NotifySettings, get_filters_labels, get_results_from_search_response
+)
 import core.mixins
 from investment_support_directory import forms, helpers
 
 
-class CompanyProfileMixin:
+class CompanyProfileMixin(core.mixins.CompanyProfileMixin):
     @cached_property
     def company(self):
-        return helpers.get_company_profile(self.kwargs['company_number'])
-
-    def get_context_data(self, **kwargs):
-        company = helpers.CompanyParser(self.company)
-        return super().get_context_data(
-            company=company.serialize_for_template(),
-            **kwargs
-        )
-
-
-class PerisistSearchQuerystringMixin:
-
-    @property
-    def search_querystring(self):
-        return self.request.GET.urlencode()
-
-    def get_context_data(self, **kwargs):
-        return super().get_context_data(
-            search_querystring=self.search_querystring,
-            **kwargs,
-        )
+        company = super().company
+        if not company['is_published_investment_support_directory']:
+            raise Http404(f'API returned 404 for company {company["number"]}')
+        return company
 
 
 class HomeView(CountryDisplayMixin, GA360Mixin, FormView):
@@ -76,8 +60,11 @@ class HomeView(CountryDisplayMixin, GA360Mixin, FormView):
 
 
 class CompanySearchView(
-    CountryDisplayMixin, core.mixins.SubmitFormOnGetMixin,
-    GA360Mixin, PerisistSearchQuerystringMixin, FormView
+    CountryDisplayMixin,
+    core.mixins.SubmitFormOnGetMixin,
+    core.mixins.PersistSearchQuerystringMixin,
+    GA360Mixin,
+    FormView,
 ):
     form_class = forms.CompanySearchForm
     page_size = 10
@@ -117,7 +104,7 @@ class CompanySearchView(
                 results=results,
                 pagination=pagination,
                 form=form,
-                filters=helpers.get_filters_labels(form.cleaned_data),
+                filters=get_filters_labels(form.cleaned_data),
                 pages_after_current=paginator.num_pages - pagination.number,
                 paginator_url=helpers.get_paginator_url(form.cleaned_data)
             )
@@ -141,7 +128,7 @@ class CompanySearchView(
             )
         )
         response.raise_for_status()
-        formatted = helpers.get_results_from_search_response(response)
+        formatted = get_results_from_search_response(response)
         return formatted['results'], formatted['hits']['total']
 
     @staticmethod
@@ -151,8 +138,11 @@ class CompanySearchView(
 
 
 class ProfileView(
-    CompanyProfileMixin, CountryDisplayMixin,
-    GA360Mixin, PerisistSearchQuerystringMixin, TemplateView
+    CompanyProfileMixin,
+    CountryDisplayMixin,
+    core.mixins.PersistSearchQuerystringMixin,
+    GA360Mixin,
+    TemplateView
 ):
     template_name = 'investment_support_directory/profile.html'
 
@@ -181,8 +171,8 @@ class ProfileView(
 class ContactView(
     CompanyProfileMixin,
     CountryDisplayMixin,
+    core.mixins.PersistSearchQuerystringMixin,
     GA360Mixin,
-    PerisistSearchQuerystringMixin,
     BaseNotifyFormView,
 ):
 
@@ -213,8 +203,11 @@ class ContactView(
 
 
 class ContactSuccessView(
-    CompanyProfileMixin, CountryDisplayMixin,
-    GA360Mixin, PerisistSearchQuerystringMixin, TemplateView
+    CompanyProfileMixin,
+    CountryDisplayMixin,
+    core.mixins.PersistSearchQuerystringMixin,
+    GA360Mixin,
+    TemplateView
 ):
     template_name = 'investment_support_directory/sent.html'
 

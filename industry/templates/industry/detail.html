@@ -1,8 +1,9 @@
 {% extends 'core/base_cms.html' %}
 {% load static from staticfiles %}
 {% load trans from i18n %}
-{% load search_url from company_tags %}
+{% load search_url from industry_tags %}
 {% load add_href_target from cms_tags %}
+{% load ga360_tracker from directory_components %}
 
 {% block head_css %}
     {{ block.super }}
@@ -21,6 +22,7 @@
 
 <div>
     <div class="container">
+        {% ga360_tracker "breadcrumbs" %}
         <p class="breadcrumbs">
             <span class="label verbose">You are here:</span>
             <a href="{% url 'index' %}">{{ page.breadcrumbs.landingpage.label }}</a>
@@ -29,15 +31,18 @@
             <span class="separator">,</span>
             <span class="current">{{ page.breadcrumbs_label }}</span>
         </p>
+        {% endga360_tracker %}
     </div>
 </div>
 
 <section id="lede-section" class="grid-row container">
     <div class="container">
+        {% ga360_tracker "contact-cta" %}
         <h2 class="heading-large">{{ page.introduction_text }}</h2>
         <a href="{% url 'sector-detail-cms-contact' slug=page.meta.slug %}" class="button button-primary">
             {{ page.introduction_call_to_action_button_text }}
         </a>
+        {% endga360_tracker %}
     </div>
 </section>
 
@@ -69,16 +74,19 @@
         </div>
         <div class="grid-row">
             <div class="column-one-half">
-                <form method="get" action="{% url 'company-search' %}">
+                {% ga360_tracker "company-search-form" %}
+                <form method="get" action="{% url 'find-a-supplier:search' %}">
                     {% for value in page.search_filter_sector %}
-                        <input type="hidden" value="{{ value }}" name="sectors" />
+                        <input type="hidden" value="{{ value }}" name="industries" data-ga-id='sector-input' />
                     {% endfor %}
-                    <input type="text" name="term" class="form-control" />
+                    <input type="text" name="term" class="form-control" data-ga-id='search-input' />
                     <button style="background-image: url({% static 'industry/images/search.svg' %});" type="submit" class="button"></button>
                 </form>
+                {% endga360_tracker %}
             </div>
         </div>
         {% if companies %}
+            {% ga360_tracker "company-link" %}
             <ul>
             {% for company in companies %}
                 <li>
@@ -86,7 +94,7 @@
                         <img src="{{ company.logo }}"></img>
                     </div>
                     <dl>
-                        <dt><a href="{{ company.public_profile_url }}" class="link">{{ company.name }}</a></dt>
+                        <dt><a href="{% url 'find-a-supplier:profile' company_number=company.number slug=company.slug %}/" class="link">{{ company.name }}</a></dt>
                         {% with company.summary|default:company.description as summary %}
                             <dd>{{ summary|truncatechars:180 }}</dd>
                         {% endwith %}
@@ -97,11 +105,13 @@
             <div>
                 <a href="{% search_url sector_value=page.search_filter_sector term=page.search_filter_text %}" class="button">{{ page.company_list_call_to_action_text }} </a>
             </div>
+            {% endga360_tracker %}
         {% endif %}
     </div>
 </section>
 
 {% if page.article_summaries %}
+    {% ga360_tracker "article-summary" %}
     <section id="articles-section">
         <div class="container">
             {% for article in page.article_summaries %}
@@ -109,6 +119,7 @@
             {% endfor %}
         </div>
     </section>
+    {% endga360_tracker %}
 {% endif %}
 
 {% endblock content %}

@@ -29,7 +29,7 @@ class StaticViewSitemap(sitemaps.Sitemap):
     def items(self):
         return [
             'index',
-            'public-company-profiles-list',
+            'find-a-supplier:public-company-profiles-list',
             'sector-list',
             'subscribe',
         ]

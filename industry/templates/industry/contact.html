@@ -1,10 +1,7 @@
 {% extends 'core/base_cms.html' %}
 {% load static from staticfiles %}
-{% load trans from i18n %}
-{% load search_url from company_tags %}
 {% load add_href_target from cms_tags %}
-{% load add_export_elements_classes from directory_components %}
-{% load render_form from directory_components %}
+{% load add_export_elements_classes render_form ga360_tracker from directory_components %}
 
 {% block head_css %}
     {{ block.super }}
@@ -16,6 +13,7 @@
 {% block content %}
 
 <div class="container">
+  {% ga360_tracker "breadcrumbs" %}
   <p class="breadcrumbs">
       <span class="label verbose">You are here:</span>
       <a href="{% url 'index' %}">{{ page.breadcrumbs.landingpage.label }}</a>
@@ -28,17 +26,20 @@
       {% endif %}
       <span class="current">{{ page.breadcrumbs_label }}</span>
   </p>
+  {% endga360_tracker %}
 
   <section id="lede" class="grid-row">
     <div class="column-two-thirds">
       {{ page.introduction_text|add_export_elements_classes|add_href_target:request|safe }}
 
+      {% ga360_tracker "contact-industry-form" target="form" ga-value=industry_page.breadcrumbs_label %}
       <form action="" method="post">
           {% render_form form %}
           <div>
               <input class="button" type="submit" value="{{ page.submit_button_text }}">
           </div>
       </form>
+      {% endga360_tracker %}
     </div>
   </section>
 </div>

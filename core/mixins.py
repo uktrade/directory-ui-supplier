@@ -108,3 +108,29 @@ class SubmitFormOnGetMixin:
 
     def get(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
+
+
+class CompanyProfileMixin:
+    @cached_property
+    def company(self):
+        return helpers.get_company_profile(self.kwargs['company_number'])
+
+    def get_context_data(self, **kwargs):
+        company = helpers.CompanyParser(self.company)
+        return super().get_context_data(
+            company=company.serialize_for_template(),
+            **kwargs
+        )
+
+
+class PersistSearchQuerystringMixin:
+
+    @property
+    def search_querystring(self):
+        return self.request.GET.urlencode()
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(
+            search_querystring=self.search_querystring,
+            **kwargs,
+        )

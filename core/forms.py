@@ -18,7 +18,7 @@ class SearchForm(forms.Form):
         max_length=255,
         required=False,
     )
-    sectors = fields.ChoiceField(
+    industries = fields.ChoiceField(
         required=False,
         choices=(
             (('', _('All industries')),) + choices.INDUSTRIES
@@ -40,7 +40,8 @@ class AnonymousSubscribeForm(forms.Form):
         label=_('Industry'),
         choices=(
             [['', PLEASE_SELECT_LABEL]] + list(choices.INDUSTRIES)
-        )
+        ),
+        widget=Select(attrs={'data-ga-id': 'sector-input'})
     )
     company_name = fields.CharField(label=_('Company name'))
     country = fields.CharField(label=_('Country'))

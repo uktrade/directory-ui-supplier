@@ -11,7 +11,7 @@ from django.views.generic import RedirectView
 from directory_constants import slugs
 
 import core.views
-import company.views
+import find_a_supplier.views
 import industry.views
 import investment_support_directory.views
 import notifications.views
@@ -66,6 +66,40 @@ investment_support_directory_urls = [
 ]
 
 
+find_a_supplier_urls = [
+    url(
+        r'^search/$',
+        find_a_supplier.views.CompanySearchView.as_view(),
+        name='search',
+    ),
+    url(
+        r'^suppliers/$',
+        find_a_supplier.views.PublishedProfileListView.as_view(),
+        name='public-company-profiles-list',
+    ),
+    url(
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/contact/$',
+        find_a_supplier.views.ContactCompanyView.as_view(),
+        name='company-contact',
+    ),
+    url(
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/contact/success/$',
+        find_a_supplier.views.ContactCompanySentView.as_view(),
+        name='company-contact-sent',
+    ),
+    url(
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$',
+        find_a_supplier.views.ProfileView.as_view(),
+        name='profile',
+    ),
+    # obsolete. use `find-a-supplier:profile`
+    url(
+        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/$',
+        find_a_supplier.views.ProfileView.as_view(),
+        name='profile-slugless'
+    ),
+]
+
 urlpatterns = [
     url(
         r'^healthcheck/',
@@ -87,31 +121,7 @@ urlpatterns = [
         core.views.LandingPageCMSView.as_view(),
         name="index"
     ),
-    url(
-        r'^suppliers/$',
-        company.views.PublishedProfileListView.as_view(),
-        name='public-company-profiles-list',
-    ),
-    url(
-        r'^search/$',
-        company.views.CompanySearchView.as_view(),
-        name='company-search',
-    ),
-    url(
-        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/contact/$',
-        company.views.ContactCompanyView.as_view(),
-        name='contact-company',
-    ),
-    url(
-        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/contact/success/$',
-        company.views.ContactCompanySentView.as_view(),
-        name='contact-company-sent',
-    ),
-    url(
-        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/(?P<slug>.+)/$',
-        company.views.PublishedProfileDetailView.as_view(),
-        name='public-company-profiles-detail',
-    ),
+
     url(
         r'^industries/$',
         industry.views.IndustryLandingPageCMSView.as_view(),
@@ -170,11 +180,6 @@ urlpatterns = [
         name='sector-detail-verbose',
     ),
     url(
-        r'^case-study/(?P<id>.+)/(?P<slug>.+)/$',
-        company.views.CaseStudyDetailView.as_view(),
-        name='case-study-details'
-    ),
-    url(
         r'^subscribe/$',
         core.views.AnonymousSubscribeFormView.as_view(),
         name='subscribe'
@@ -210,26 +215,27 @@ urlpatterns = [
         core.views.RedirectToCMSIndustryView.as_view(),
         {'slug': 'legal'},
     ),
+    url(
+        r'^case-study/(?P<id>.+)/(?P<slug>.+)/$',
+        find_a_supplier.views.CaseStudyDetailView.as_view(),
+        name='case-study-details'
+    ),
+    # obsolete. use `case-study-details`
+    url(
+        r'^case-study/(?P<id>.+)/$',
+        find_a_supplier.views.CaseStudyDetailView.as_view(),
+        name='case-study-details-slugless'
+    ),
     # obsolete. use `sector-detail-verbose`
     url(
         r'^industries/(?P<slug>.+)/summary/$',
         core.views.RedirectToCMSIndustryView.as_view(),
         name='sector-detail-summary',
     ),
-    # obsolete. use `case-study-details`
     url(
-        r'^case-study/(?P<id>.+)/$',
-        company.views.CaseStudyDetailView.as_view(),
-        name='case-study-details-slugless'
-    ),
-    # obsolete. use `public-company-profiles-detail`
-    url(
-        r'^suppliers/(?P<company_number>[a-zA-Z0-9]+)/$',
-        company.views.PublishedProfileDetailView.as_view(),
-        name='public-company-profiles-detail-slugless'
-    ),
-
-
+        r'^',
+        include(find_a_supplier_urls, namespace='find-a-supplier'),
+    )
 ]
 
 if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
@@ -259,3 +265,7 @@ urlpatterns = [
         RedirectView.as_view(url='/investment-support-directory/')
     ),
 ]
+
+handler404 = 'directory_components.views.handler404'
+
+handler500 = 'directory_components.views.handler500'
