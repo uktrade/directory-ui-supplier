@@ -183,7 +183,6 @@ body:not(.js-enabled) {
       a {
         text-decoration: none;
         min-height: 205px;
-        height: 205px; /*IE 11 flexbox min-height fix*/
         color: $grey;
         .logo-container {
           text-align: center;
@@ -202,6 +201,10 @@ body:not(.js-enabled) {
           .result-footer {
             padding-top: 15px;
             padding-bottom: 15px;
+          }
+          // ie11 only hack
+          _:-ms-fullscreen, :root & {
+            min-height: 205px;   /* flexbox min-height fix*/
           }
         }
         span {
@@ -281,6 +284,7 @@ body:not(.js-enabled) {
           }
           .details-container {
             padding-left: 30px;
+            padding-bottom: 75px;
             .result-footer {
               position: absolute;
               bottom: 0;
