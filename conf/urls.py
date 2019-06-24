@@ -242,7 +242,7 @@ if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
     urlpatterns += [
         url(
             r'^media/(?P<path>.*)$',
-            serve,
+            skip_ga360(serve),
             {'document_root': settings.MEDIA_ROOT}
         ),
     ]
