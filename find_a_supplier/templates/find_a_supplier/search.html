@@ -19,8 +19,8 @@
     <fieldset>
 {% endblock %}
 
-{% block newsletter %}
-<div class="newsletter">
+{% block subscription %}
+<div class="subscription">
     {% if results %}
 		{% include 'anonymous-subscribe-form.html' with form=subscribe.form %}
 	{% else %}

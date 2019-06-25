@@ -1,7 +1,7 @@
 {% load ga360_tracker from directory_components %}
 
-<div class="newsletter-subscribe-form-container">
-    <div class="newsletter-subscribe-form-inner">
+<div class="subscription-form-container">
+    <div class="subscription-form-inner">
         <div class="grid-row">
             <h2 class="title column-half-xl">
                 Receive email updates of the latest UK companies in your industry
@@ -66,7 +66,7 @@
 
                 <div class="row-fluid">
                     <div
-                        class="newsletter-checkbox-container {{ form.terms.css_classes|default:'input-field-container' }}">
+                        class="subscription-checkbox-container {{ form.terms.css_classes|default:'input-field-container' }}">
                         {{ form.terms.errors }}
                         <div class="form-field checkbox">
                             <input id="{{ form.terms.id_for_label }}" name="{{ form.terms.html_name }}" type="checkbox">
@@ -78,7 +78,7 @@
                             </label>
                         </div>
                     </div>
-                    <div class="newsletter-subscribe-register-button-container">
+                    <div class="subscription-register-button-container">
                         <button class="button button-primary">
                             Send
                         </button>

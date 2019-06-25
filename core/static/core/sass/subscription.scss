@@ -1,15 +1,15 @@
 @import "partials/variables";
 
-.newsletter {
+.subscription {
   width: 100%;
   margin-bottom: -30px;
 }
 
-.newsletter-subscribe-form-container {
+.subscription-form-container {
   background-color: $spring-wood;
   padding: 60px;
   margin: 90px 0 30px;
-  .newsletter-subscribe-register-button-container {
+  .subscription-register-button-container {
     margin-bottom: 0;
     margin-top: 0;
     text-align: left;
@@ -20,7 +20,7 @@
       margin-top: 19px;
     }
   }
-  .newsletter-checkbox-container {
+  .subscription-checkbox-container {
     margin-left: 0;
   }
   textarea {
@@ -59,7 +59,7 @@ input[type="checkbox"] {
 	cursor: initial;
 }
 
-.newsletter-subscribe-form-inner,
+.subscription-form-inner,
 #company-contact-form {
   select,
   textarea,
