@@ -5,11 +5,11 @@
   margin-bottom: -30px;
 }
 
-.ed-landing-page-form-container {
+.newsletter-subscribe-form-container {
   background-color: $spring-wood;
   padding: 60px;
   margin: 90px 0 30px;
-  .ed-landing-page-register-button-container {
+  .newsletter-subscribe-register-button-container {
     margin-bottom: 0;
     margin-top: 0;
     text-align: left;
@@ -20,7 +20,7 @@
       margin-top: 19px;
     }
   }
-  .ed-checkbox-container {
+  .newsletter-checkbox-container {
     margin-left: 0;
   }
   textarea {
@@ -39,80 +39,6 @@
     padding-bottom: 60px;
   }
 }
-
-.ed-pretty-radio-select {
-  li {
-    width: 100%;
-    margin-right: 20px;
-    display: inline-block;
-    position: relative;
-    margin-bottom: 0;
-    font-size: 15px;
-  }
-  input {
-    width: 26px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-bottom: 0;
-    cursor: pointer;
-    -webkit-appearance: none;
-    appearance: none;
-    -moz-appearance: none;
-    background: white;
-    border: none;
-  }
-
-  label {
-    padding-left: 35px;
-    text-indent: -35px;
-    margin-bottom: 10px;
-  }
-
-  input::before {
-    content: "";
-    border: 2px solid;
-    background: transparent;
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-  }
-
-  input:focus {
-    outline: none;
-  }
-
-  input:focus::before {
-    -webkit-box-shadow: 0 0 0 4px #ffbf47;
-    -moz-box-shadow: 0 0 0 4px #ffbf47;
-    box-shadow: 0 0 0 4px #ffbf47;
-  }
-
-  input:checked::after {
-    zoom: 1;
-    filter: alpha(opacity=100);
-    opacity: 1;
-  }
-  input::after {
-    content: "";
-    border: 6px solid #00549f;;
-    height: 0;
-    position: absolute;
-    top: 7px;
-    left: 7px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    zoom: 1;
-    filter: alpha(opacity=0);
-    opacity: 0;
-  }
-}
-
 
 /* Forms
  *****************/
@@ -133,7 +59,7 @@ input[type="checkbox"] {
 	cursor: initial;
 }
 
-.ed-landing-page-form-inner,
+.newsletter-subscribe-form-inner,
 #company-contact-form {
   select,
   textarea,
@@ -233,54 +159,12 @@ input[type="checkbox"] {
   }
 }
 
-.checkbox.multi {
-  li {
-    position: relative;
-    padding-left: 40px;
-
-    input {
-      height: 22px;
-      left: -2px;
-      margin: 0;
-      opacity: 0;
-      position: absolute;
-      top: -5px;
-      width: 22px;
-      -webkit-appearance: none;
-      margin-left: 0;
-    }
-
-    input:checked + label:after {
-      content: "";
-      border-color: $mid-blue;
-      border-style: solid;
-      border-width: 0 0 3px 3px;
-      height: 6px;
-      left: 5px;
-      position: absolute;
-      -moz-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-      top: 8px;
-      width: 16px;
-      z-index: 0;
-    }
-
-    input:focus + label:before  {
-      outline: 3px solid $focus;
-    }
-    label:before {
-      content: "";
-      border: 1px solid $mine-shaft;
-      display: block;
-      height: 22px;
-      left: 0;
-      position: absolute;
-      top: 1px;
-      width: 24px;
-      z-index: 0;
+.input-field-container {
+  margin-bottom: 15px;
+  label {
+    span {
+      margin-bottom: 5px;
+      display: inline-block;
     }
   }
 }
