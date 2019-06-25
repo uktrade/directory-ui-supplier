@@ -1,7 +1,7 @@
 {% extends 'core/base-profile.html' %}
 
 {% load breadcrumbs from directory_components %}
-
+{% block head_title %}Find a UK supplier - GREAT.gov.uk{% endblock %}
 {% block breadcrumbs %}
 {% url 'find-a-supplier:search' as search_url %}
 {% breadcrumbs left_url=services_urls.great_international left_label='Great.gov.uk international' middle_url=search_url|add:'?'|add:search_querystring middle_label='Find a Supplier' right_label=company.name %}
