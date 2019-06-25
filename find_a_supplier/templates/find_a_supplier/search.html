@@ -5,7 +5,7 @@
 {% block breadcrumbs %}
     <div class="container">
         {% url 'find-a-supplier:search' as search_url %}
-        {% breadcrumbs left_url=services_urls.great_international left_label='Great.gov.uk international' middle_url=search_url middle_label='Find a Supplier' right_label='Search results' %}
+        {% breadcrumbs 'Search results' %}<a href="{{ services_urls.great_international }}">Great.gov.uk international</a><a href="{{ search_url }}">Find a Supplier</a>{% endbreadcrumbs %}
     </div>
 {% endblock %}
 
