@@ -1,13 +1,14 @@
 {% extends 'core/base_cms.html' %}
 {% load static from staticfiles %}
-{% load search_url from company_tags %}
 {% load first_paragraph grouper from cms_tags %}
-{% load banner from directory_components %}
+{% load banner ga360_tracker from directory_components %}
 
 {% block head_css %}
     {{ block.super }}
     <link href="{% static 'core/landing-page.css' %}" media="all" rel="stylesheet" />
 {% endblock %}
+
+{% block head_title %}Find a UK supplier - GREAT.gov.uk{% endblock %}
 
 {% block content %}
 <section id="hero">
@@ -17,7 +18,8 @@
                 {{ page.hero_text|safe }}
             </div>
             <div id="search-area">
-                <form action="{% url 'company-search' %}" method="get" data-ga-class="company-search-form">
+                {% ga360_tracker "company-search-form" target="form" %}
+                <form action="{% url 'find-a-supplier:search' %}" method="get">
                     <div class="column-one-half">
                         <input
                             class="form-control"
@@ -31,13 +33,14 @@
                     <div class="column-one-half">
                         <div class="column-one-half" data-ga-id="select-input-container">
                             {# translations provided by the app #}
-                            {{ search_form.sectors }}
+                            {{ search_form.industries }}
                         </div>
                         <div class="column-one-half button-container">
                           <button class="button">{{ page.search_button_text }}</button>
                         </div>
                     </div>
                 </form>
+                {% endga360_tracker  %}
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -60,7 +63,9 @@
                 {{ page.proposition_text|safe }}
             </div>
             <div class="button-container">
-                <a href="{% url 'sector-list-cms-contact' %}" class="button" data-ga-class="contact-cta">{{ page.call_to_action_text }}</a>
+                {% ga360_tracker "contact-cta" %}
+                <a href="{% url 'sector-list-cms-contact' %}" class="button">{{ page.call_to_action_text }}</a>
+                {% endga360_tracker %}
             </div>
         </div>
     </div>
@@ -72,6 +77,7 @@
         {% for row in page.industries|grouper:3 %}
             <div class="grid-row">
                 {% for item in row %}
+                    {% ga360_tracker "industry-card" ga-value=item.breadcrumbs_label %}
                     <a href="{{ item.meta.url }}" class="column-one-third industry-card">
                         <span>{{ item.breadcrumbs_label }}</span>
                         <img src="{{ item.summary_image.url }}" />
@@ -80,10 +86,13 @@
                         </div>
                         <div class="clearfix"></div>
                     </a>
+                    {% endga360_tracker %}
                 {% endfor %}
             </div>
         {% endfor %}
+        {% ga360_tracker "all-industries-link" %}
         <a class="button" href="{% url 'sector-list' %}">{{ page.industries_list_call_to_action_text }}</a>
+        {% endga360_tracker %}
     </div>
 </section>
 
@@ -131,16 +140,6 @@
         </div>
     </div>
 </section>
-
-{% if page.article_summaries %}
-<section id="articles-section">
-    <div class="container">
-        {% for article in page.article_summaries %}
-            {% include "industry/sector-article-summary.html" with article=article %}
-        {% endfor %}
-    </div>
-</section>
-{% endif %}
 
 {% endblock content %}
 

@@ -1,5 +1,5 @@
 boto3==1.9.62
-Django==1.11.20
+Django==1.11.21
 django-environ==0.4.5
 django-formtools==2.0
 django-storages==1.6.6
@@ -9,13 +9,12 @@ requests==2.21.0
 whitenoise==3.1
 django_recaptcha==1.2.0
 redis==2.10.5
-sorl-thumbnail==12.3
+sorl-thumbnail==12.5
 directory-forms-api-client==4.0.0
-directory-components==15.1.0
+directory-components==16.5.0
 directory-cms-client==10.0.1
 directory-api-client==14.0.0
 directory-validators==5.0.1
-directory-constants==16.7.2
 beautifulsoup4==4.6.0
 waitress==0.8.9
 django-redis==4.8.0

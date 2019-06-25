@@ -1,8 +1,8 @@
 {% extends 'core/base_cms.html' %}
 {% load static from staticfiles %}
 {% load trans from i18n %}
-{% load search_url from company_tags %}
 {% load grouper from cms_tags %}
+{% load ga360_tracker from directory_components %}
 
 {% block head_css %}
     {{ block.super }}
@@ -20,12 +20,14 @@
 
 <div>
     <div class="container">
+        {% ga360_tracker "breadcrumbs" %}
         <p class="breadcrumbs">
             <span class="label verbose">You are here:</span>
             <a href="{% url 'index' %}">{{ page.breadcrumbs.landingpage.label }}</a>
             <span class="separator">,</span>
             <span class="current">{{ page.breadcrumbs_label }}</span>
         </p>
+        {% endga360_tracker %}
     </div>
 </div>
 
@@ -36,11 +38,14 @@
         </p>
     </div>
     <div class="column-one-half">
+        {% ga360_tracker "contact-cta" %}
         <a href="{% url 'sector-list-cms-contact' %}" class="button button-primary">{{ page.call_to_action_text }}</a>
+        {% endga360_tracker %}
     </div>
     <span class="clearfix"></span>
 </div>
 
+{% ga360_tracker "industry-link" %}
 <div class="container" id="industry-pages-container">
     {% for row in showcase_industries|grouper:3 %}
         <section class="grid-row">
@@ -60,6 +65,7 @@
     {% endfor %}
     </ul>
 </div>
+{% endga360_tracker %}
 
     </section>
 </div>

@@ -1,6 +1,6 @@
 {% extends 'core/base.html' %}
 {% load staticfiles %}
-{% load breadcrumbs render_form from directory_components %}
+{% load breadcrumbs render_form ga360_tracker from directory_components %}
 
 {% block head_css %}
     {{ block.super }}
@@ -14,16 +14,20 @@
                 <h1 class="heading-xlarge margin-bottom-0">Find a UK specialist</h1>              
                 <p class="hero-subtitle margin-bottom-45">Search the UK Investment Support Directory to find specialists with experience in helping businesses set up or expand in the UK.</p>  
             </div>
+            {% ga360_tracker "isd-search-form" target="form" %}
             <form method="post">
                 {% render_form form %}
                 <button class="button">Find a UK specialist</button>
             </form>
+            {% endga360_tracker %}
         </div>
     </section>
 
     <div id="benefits">
         <div class="container">
+            {% ga360_tracker "breadcrumbs" %}
             {% breadcrumbs left_url=services_urls.great_international left_label='Great.gov.uk international' right_label='Find a UK specialist' %}
+            {% endga360_tracker %}
             <div class="width-half">
                 <h2 class="heading-large">UK Investment Support Directory </h2>
             </div>
@@ -51,6 +55,7 @@
         </div>
     </div>
     <div class="background-stone-30" id="bottom">
+        {% ga360_tracker "search-link" %}
         <div class="container">
             <div class="width-one-half">
                 <h2 class="heading-large">How UK businesses can help</h2>
@@ -97,5 +102,6 @@
                 </ul>
             </div>
         </div>
+        {% endga360_tracker %}
     </div>
 {% endblock content %}

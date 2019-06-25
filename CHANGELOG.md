@@ -4,6 +4,44 @@
 
 ### Implemented enhancements
 
+- TT-1518 - Port ISD search changes to FAS
+    + TT-1546 - Fix FAS page title
+    + TT-1567 - Remove "free advice" for FAS profiles
+    + TT-1551 - Remove unwanted capitalisation from industries
+    + TT-1527 - Replace "of" with "for" International Trade
+    + TT-1539 - Fix bad text wrapping on tablet
+- TT-1506 - Port ISD profile changes to FAS
+- TT-1505 - Port ISD contact change to FAS
+- CI-108 - Add more tags for GA 360
+- TT-1545 - Change Filter Labels
+- no ticket - Remove obsolete feature of showing article_summaries on FAS homepage
+- TT-1505 - Send FAS message via notify
+- TT-1522 - Improve the content of FAS contact form
+
+
+## Fixed bugs
+
+- No ticket - Remove noisy CMS healthcheck
+- TT-1532 - Fix FAS Pagination
+- TT-1530 - profile links corrupt
+- TT-1534 - FAS Breadcrumb search results
+- TT-1536 - 500-Error-on-Results upgraded sorl-thumbnail to 12.5
+- TT-1528 - 500 ISE on industry page
+- CI-217 - Update Django Version to fix security vulnerability.
+- TT-1529 - Fix 500 error pages so links work
+- TT-1531 FAS - Logos are misaligned on trade profiles (fixed cross browser compatibility issues)
+- TT-1547 - Prevent FAS "&sectors=" getting encoded as "§ors=" by renaming to industries.
+- TT-1522 - fix none when clear filters ISD search
+- TT-1576 -fix next allignment
+- TT-1537 - Consistent use of logo image formats
+- TT-1579 - Fix FAS Title pages
+- TT-1583 - Dit contact us content change
+
+## [2019.06.05] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.05)
+[Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.05.28_1...2019.06.05)
+
+### Implemented enhancements
+
 - TT-1477 - Improve breadcrumbs on ISD pages
 - CI-108 - Add back sending additional data to GA 360, and update this data to newest spec.
 - TT-1492 Add link to T&Cs on disclaimer page

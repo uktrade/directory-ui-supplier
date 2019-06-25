@@ -1,32 +1,8 @@
-{% extends "core/base.html" %}
-{% load static from staticfiles %}
+{% extends "core/base-sent.html" %}
+
 {% load breadcrumbs message_box from directory_components %}
 
-{% block content %}
-    <section>
-      <div class="container">
-        {% url 'investment-support-directory:company-contact' company_number=company.number as contact_url %}
-        {% breadcrumbs left_url=services_urls.great_international left_label='Great.gov.uk international' middle_url=contact_url middle_label='Contact company' right_label='Message sent' %}
-        <div class="grid-row margin-top-30">
-              <div class="column-two-thirds">
-                  <div id="success-message-container">
-                    {% with description="Your message has been sent to "|add:company.name %}
-                        {% message_box heading="Message sent" description=description heading_level='h1' %}
-                    {% endwith %}
-                  </div>
-              </div>
-          </div>
-      </div>
-    </section>
-
-    <section id="next-container" class="background-stone-30">
-      <div class="container">
-        <h2 class="heading-large">Next steps</h2>
-        <a class="link" href="{% url 'investment-support-directory:search' %}?{{ search_querystring }}">Browse more companies</a>
-      </div>
-    </section>
-
+{% block breadcrumbs %}
+  {% url 'investment-support-directory:company-contact' company_number=company.number as contact_url %}
+  {% breadcrumbs left_url=services_urls.great_international left_label='Great.gov.uk international' middle_url=contact_url|add:'?'|add:search_querystring middle_label='Contact company' right_label='Message sent' %}
 {% endblock %}
-
-
-

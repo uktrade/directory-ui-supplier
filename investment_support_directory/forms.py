@@ -6,7 +6,8 @@ from directory_constants import choices, urls
 from directory_components import forms, fields, widgets
 from directory_forms_api_client.forms import GovNotifyActionMixin
 from directory_validators.common import not_contains_url_or_email
-from investment_support_directory.fields import IntegerField
+
+from core.fields import IntegerField
 
 
 class CompanyHomeSearchForm(forms.Form):
@@ -22,7 +23,8 @@ class CompanyHomeSearchForm(forms.Form):
                 'placeholder': (
                     'Enter the name of the skills or service '
                     'you’re looking for'
-                )
+                ),
+                'data-ga-id': 'search-input'
             }
         ),
     )
@@ -42,7 +44,8 @@ class CompanySearchForm(forms.Form):
             attrs={
                 'placeholder': 'Search for UK suppliers',
                 'autofocus': 'autofocus',
-                'dir': 'auto'
+                'dir': 'auto',
+                'data-ga-id': 'search-input'
             }
         ),
     )
@@ -233,8 +236,8 @@ class ContactCompanyForm(GovNotifyActionMixin, forms.Form):
     )
     has_contact = fields.ChoiceField(
         label=(
-            'Do you currently have a contact at Department of international '
-            'trade'
+            'Do you currently have a contact at Department for International '
+            'Trade'
         ),
         widget=widgets.RadioSelect(
             use_nice_ids=True,

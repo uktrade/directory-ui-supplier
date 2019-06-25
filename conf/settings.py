@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.sitemaps',
     'enrolment',
-    'company',
+    'find_a_supplier',
     'core',
     'industry',
     'investment_support_directory',
@@ -387,6 +387,11 @@ CONTACT_ISD_INVESTOR_NOTIFY_TEMPLATE_ID = env.str(
 CONTACT_ISD_SUPPORT_EMAIL_ADDRESS = env.str(
     'CONTACT_ISD_SUPPORT_EMAIL_ADDRESS', ''
 )
+CONTACT_FAS_COMPANY_NOTIFY_TEMPLATE_ID = env.str(
+    'CONTACT_FAS_COMPANY_NOTIFY_TEMPLATE_ID',
+    'bb88aa79-595a-44fc-9ed3-cf8a6cbd6306',
+)
+
 # directory client core
 DIRECTORY_CLIENT_CORE_CACHE_EXPIRE_SECONDS = env.int(
     'DIRECTORY_CLIENT_CORE_CACHE_EXPIRE_SECONDS',
@@ -401,7 +406,6 @@ DIRECTORY_HEALTHCHECK_TOKEN = env.str('HEALTH_CHECK_TOKEN')
 DIRECTORY_HEALTHCHECK_BACKENDS = [
     directory_healthcheck.backends.APIBackend,
     directory_healthcheck.backends.FormsAPIBackend,
-    directory_healthcheck.backends.CMSAPIBackend,
     # health_check.cache.CacheBackend is also registered in
     # INSTALLED_APPS's health_check.cache
 ]
