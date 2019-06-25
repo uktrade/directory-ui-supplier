@@ -18,3 +18,22 @@
     </fieldset>
     <fieldset>
 {% endblock %}
+
+{% block newsletter %}
+<div class="newsletter">
+    {% if results %}
+		{% include 'anonymous-subscribe-form.html' with form=subscribe.form %}
+	{% else %}
+		{% if not form.is_bound %}
+		<div id="fassearch-initial-content">
+			<p class="message">Our UK trade profiles will help you contact the right people in the right company.</p>
+			<p class="list-header">Trade profiles give you:</p>
+			<ul>
+				<li>a company summary</li>
+				<li>examples of outstanding projects, goods and services</li>
+				<li>direct contact with a member of a sales or business development team</li>
+			</ul>
+		</div>
+		{% endif %}
+	{% endif %}
+{% endblock %}

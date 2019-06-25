@@ -2,6 +2,7 @@
 @import 'partials/base';
 @import 'partials/colours';
 @import 'components/articles-section';
+@import 'newsletter';
 
 .breadcrumbs {
   padding-top: 15px;
@@ -301,3 +302,4 @@ body:not(.js-enabled) {
     padding: 0;
   }
 }
+
