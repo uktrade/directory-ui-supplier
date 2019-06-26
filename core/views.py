@@ -34,6 +34,10 @@ class LandingPageCMSView(
     template_name = 'core/landing-page.html'
     component_slug = slugs.COMPONENTS_BANNER_INTERNATIONAL
 
+    @property
+    def international_header_selected_page(self):
+        return "find_a_supplier_home"
+
     def __init__(self):
         super().__init__()
 

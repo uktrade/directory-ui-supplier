@@ -143,3 +143,7 @@ class InternationalHeaderMixin(BaseInternationalHeaderMixin):
     @property
     def international_header_area(self):
         return "find_a_supplier"
+
+    @property
+    def international_header_selected_page(self):
+        return ""
