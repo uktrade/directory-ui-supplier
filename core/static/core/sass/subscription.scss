@@ -42,22 +42,6 @@
 
 /* Forms
  *****************/
- #great-header-extra-links {
-  .countries {
-    display: flex;
-  }
-}
-label,
-select,
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-input[type="radio"],
-input[type="checkbox"] {
-  /* overwrite confusing Bootstrap style */
-	cursor: initial;
-}
 
 .subscription-form-inner,
 #company-contact-form {

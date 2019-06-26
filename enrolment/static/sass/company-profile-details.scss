@@ -1,0 +1,321 @@
+@import 'main.scss';
+@import 'captcha.scss';
+
+h1 {
+  @include font-title-2;
+}
+
+h2 {
+  @include font-title-3;
+}
+
+h3 {
+  @include font-title-4;
+}
+
+.company-profile-details-body {
+  margin-top: 30px;
+  position: relative;
+
+  li {
+    list-style-type: disc;
+  }
+}
+
+.company-profile-module-description {
+  word-wrap: break-word;
+}
+
+.company-profile-module-details {
+  padding-left: 30px;
+
+  a {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.company-profile-module-social-links,
+.company-profile-module-facts {
+  border-left: 1px solid $grey-3;
+
+  p {
+    margin: 0;
+  }
+
+  .social-icon {
+    left: 0;
+    position: absolute;
+    top: -5px;
+    width: 30px;
+  }
+
+  .social-link {
+    line-height: 1.2em;
+    margin-bottom: 20px;
+    min-height: 30px;
+    padding-left: 40px;
+    position: relative;
+  }
+}
+
+.ed-contact-company-container {
+  margin-bottom: 45px;
+  text-align: right;
+}
+
+.stone-label {
+  &:focus,
+  &:link {
+    background-color: $stone;
+    border-radius: 6px;
+    color: $dark-grey;
+    display: inline-block;
+    margin: 0 5px 8px 0;
+    padding: 9px 12px;
+  }
+}
+
+.supplier-case-study-images {
+  margin-bottom: 20px;
+  img {
+    vertical-align: top;
+  }
+}
+
+.company-profile-details-body-toolbar {
+  padding: 28px 25px 27px 25px;
+  border: solid 1px #d8d8d8;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.39;
+  letter-spacing: -0.2px;
+  color: #4a4a4a;
+}
+
+.company-profile-details-body-toolbar-bottom {
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.public-company-profiles-result-item {
+  border: solid 1px #d8d8d8;
+  border-top: 0;
+  color: #4a4a4a;
+  padding: 20px;
+  h3 {
+    font-size: 24px;
+    line-height: 25px;
+    font-weight: 300;
+  }
+  b {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.39;
+  }
+  .ed-public-company-profiles-result-item-profile-link {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.39;
+    letter-spacing: -0.2px;
+    text-align: right;
+    color: #004f95;
+    @media (max-width: 767px) {
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+  }
+  .company-profile-box {
+    background: $white;
+  }
+}
+
+.supplier-case-study-read-more-cta {
+  margin-top: 20px;
+}
+
+.public-company-profiles-result-item-updated {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.39;
+  letter-spacing: -0.2px;
+}
+
+#company-contact-form {
+  @include form-container;
+  .errorlist.nonfield {
+    display: none;
+  }
+}
+
+#company-details,
+#company-profiles {
+  display: table;
+  table-layout: fixed;
+
+  [class*="span"] {
+    display: table-cell;
+    float: none;
+    margin: 0;
+    vertical-align: top;
+  }
+
+  .span2 {
+    padding: 0;
+    width: 20%;
+  }
+
+  .span4 {
+    padding: 0 30px;
+    width: 30%;
+  }
+
+  .span6 {
+    padding-right: 30px;
+    width: 50%;
+  }
+
+  .span8 {
+    padding-right: 30px;
+    width: 70%;
+  }
+}
+
+#company-logo {
+  width: 100%;
+}
+
+#company-projects {
+  border: none;
+  margin: 5px 0;
+  padding: 0;
+
+  img {
+    margin-bottom: 15px;
+  }
+
+  p {
+    @include font-standard-2;
+  }
+
+  article {
+    margin-bottom: 30px;
+    &:nth-child(3n+2) {
+      clear: left;
+      margin-left: 0;
+    }
+  }
+}
+
+/* TABLET
+ ****************/
+@media (max-width: 767px) {
+  .company-profile-details-body {
+    .company-profile-module-description {
+      padding-right: 40px;
+    }
+  }
+
+  #navbar > .container {
+    padding: 0 15px;
+  }
+
+  .company-profile-module-social-links,
+  .company-profile-module-facts {
+    border: none;
+  }
+
+  #company-projects {
+    img {
+      max-width: 50%;
+      width: auto;
+    }
+
+    .span4 {
+      margin: 0 0 30px 0;
+      width: 100%;
+    }
+  }
+}
+
+
+/* MOBILE
+ ****************/
+@media (max-width: 640px) {
+  #company-details,
+  #company-profiles {
+    [class*="span"] {
+      display: block;
+      float: left;
+    }
+
+    .span4,
+    .span8 {
+    	border-left: none;
+    	padding: 0;
+    	width: 100%;
+    }
+
+    .span6 {
+      padding-right: 0;
+      width: 80%;
+    }
+  }
+
+  #company-details {
+    .company-profile-module-facts {
+      padding-top: 30px;
+    }
+  }
+
+  #company-profiles {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 580px) {
+  #company-details {
+    .span2,
+    .span6 {
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  #company-details,
+  #company-projects {
+    img {
+      display: block;
+  	  max-width: 100%;
+      margin: 0 auto;
+      width: auto;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  #company-contact-form {
+    padding: 30px 15px;
+  }
+}
+
+
+
+/* IE FIXES
+ ****************/
+
+/* IE targeted hack because 10+ no longer supports Conditional Comments */
+@media screen\0 {
+
+  /* Fix lack of max-width support because container doesn't have set width */
+  .company-logo img {
+    width: 100%;
+  }
+}
