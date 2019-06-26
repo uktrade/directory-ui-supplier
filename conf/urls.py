@@ -181,7 +181,7 @@ urlpatterns = [
     ),
     url(
         r'^subscribe/$',
-        core.views.AnonymousSubscribeFormView.as_view(),
+        find_a_supplier.views.SubscribeFormView.as_view(),
         name='subscribe'
     ),
     url(

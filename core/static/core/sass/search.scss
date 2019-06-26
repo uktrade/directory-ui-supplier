@@ -181,6 +181,9 @@ body:not(.js-enabled) {
         margin-bottom: 5px;
 
       }
+      &:last-child {
+        margin-bottom: 0;
+      }
       a {
         text-decoration: none;
         min-height: 205px;
