@@ -3,23 +3,7 @@ from django.utils import translation
 
 from directory_constants import urls
 
-from core import context_processors, forms
-
-
-def test_lead_generation_form_installed(settings):
-    processors = settings.TEMPLATES[0]['OPTIONS']['context_processors']
-
-    assert 'core.context_processors.lead_generation_form' in processors
-
-
-def test_lead_generation_form_exposes_form_details(rf):
-    request = rf.get(reverse('index'))
-
-    actual = context_processors.lead_generation_form(request)
-
-    assert isinstance(
-        actual['lead_generation']['form'], forms.LeadGenerationForm
-    )
+from core import context_processors
 
 
 def test_html_lang_attribute_processor_default_lang(rf):

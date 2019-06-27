@@ -1,16 +1,13 @@
 from directory_components.mixins import (
-    CMSLanguageSwitcherMixin, CountryDisplayMixin, EnableTranslationsMixin,
-    GA360Mixin
+    CMSLanguageSwitcherMixin, CountryDisplayMixin, GA360Mixin
 )
 from directory_constants import slugs
 from directory_cms_client import cms_api_client
 import directory_forms_api_client.helpers
 
-from django.conf import settings
 from django.urls import reverse
 from django.utils import translation
 from django.utils.functional import cached_property
-from django.template.response import TemplateResponse
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 from django.views.generic.base import RedirectView
@@ -63,49 +60,6 @@ class RedirectToCMSIndustryView(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         return reverse(
             'sector-detail-verbose', kwargs={'slug': self.kwargs['slug']}
-        )
-
-
-class LeadGenerationFormView(
-    EnableTranslationsMixin, CountryDisplayMixin, GA360Mixin, FormView
-):
-    success_template = 'lead-generation-success.html'
-    template_name = 'lead-generation.html'
-    template_name_bidi = 'bidi/lead-generation.html'
-    form_class = forms.LeadGenerationForm
-
-    def __init__(self):
-        super().__init__()
-
-        self.set_ga360_payload(
-            page_id='FindASupplierLeadGenerationForm',
-            business_unit='FindASupplier',
-            site_section='LeadGeneration',
-            site_subsection='Form'
-        )
-
-    def form_valid(self, form):
-        sender = directory_forms_api_client.helpers.Sender(
-            email_address=form.cleaned_data['email_address'],
-            country_code=form.cleaned_data['country'],
-        )
-        spam_control = directory_forms_api_client.helpers.SpamControl(
-            contents=[form.cleaned_data['comment']]
-        )
-        response = form.save(
-            email_address=form.cleaned_data['email_address'],
-            full_name=form.cleaned_data['full_name'],
-            subject=settings.ZENDESK_TICKET_SUBJECT,
-            service_name=settings.DIRECTORY_FORMS_API_ZENDESK_SEVICE_NAME,
-            form_url=self.request.path,
-            sender=sender,
-            spam_control=spam_control,
-        )
-        response.raise_for_status()
-        return TemplateResponse(
-            self.request,
-            self.success_template,
-            context=self.get_context_data()
         )
 
 
