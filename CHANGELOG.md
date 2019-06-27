@@ -7,6 +7,7 @@
 
 ### Implemented enhancements
 
+- TT-1556 - Add newsletter subscribe form on FAS results pages
 - TT-1518 - Port ISD search changes to FAS
     + TT-1546 - Fix FAS page title
     + TT-1567 - Remove "free advice" for FAS profiles

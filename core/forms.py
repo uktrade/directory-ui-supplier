@@ -27,29 +27,6 @@ class SearchForm(forms.Form):
     )
 
 
-class AnonymousSubscribeForm(forms.Form):
-    error_css_class = 'input-field-container has-error'
-    PLEASE_SELECT_LABEL = _('Please select an industry')
-    TERMS_CONDITIONS_MESSAGE = _(
-        'Tick the box to confirm you agree to the terms and conditions.'
-    )
-
-    full_name = fields.CharField(label=_('Your name'))
-    email_address = fields.EmailField(label=_('Email address'))
-    sector = fields.ChoiceField(
-        label=_('Industry'),
-        choices=(
-            [['', PLEASE_SELECT_LABEL]] + list(choices.INDUSTRIES)
-        ),
-        widget=Select(attrs={'data-ga-id': 'sector-input'})
-    )
-    company_name = fields.CharField(label=_('Company name'))
-    country = fields.CharField(label=_('Country'))
-    terms = fields.BooleanField(
-        error_messages={'required': TERMS_CONDITIONS_MESSAGE}
-    )
-
-
 class LeadGenerationForm(ZendeskActionMixin, forms.Form):
     error_css_class = 'input-field-container has-error'
     PLEASE_SELECT_LABEL = _('Please select an industry')
@@ -85,25 +62,6 @@ class LeadGenerationForm(ZendeskActionMixin, forms.Form):
         del data['captcha']
         del data['terms']
         return data
-
-
-def serialize_anonymous_subscriber_forms(cleaned_data):
-    """
-    Return the shape directory-api-client expects for saving international
-    buyers.
-
-    @param {dict} cleaned_data - All the fields in `AnonymousSubscribeForm`
-    @returns dict
-
-    """
-
-    return {
-        'name': cleaned_data['full_name'],
-        'email': cleaned_data['email_address'],
-        'sector': cleaned_data['sector'],
-        'company_name': cleaned_data['company_name'],
-        'country': cleaned_data['country'],
-    }
 
 
 def get_language_form_initial_data():

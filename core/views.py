@@ -1,7 +1,7 @@
-from directory_api_client.client import api_client
 from directory_components.mixins import (
     CMSLanguageSwitcherMixin, CountryDisplayMixin, EnableTranslationsMixin,
-    GA360Mixin)
+    GA360Mixin
+)
 from directory_constants import slugs
 from directory_cms_client import cms_api_client
 import directory_forms_api_client.helpers
@@ -106,32 +106,6 @@ class LeadGenerationFormView(
             self.request,
             self.success_template,
             context=self.get_context_data()
-        )
-
-
-class AnonymousSubscribeFormView(CountryDisplayMixin, GA360Mixin, FormView):
-    success_template = 'anonymous-subscribe-success.html'
-    template_name = 'anonymous-subscribe.html'
-    form_class = forms.AnonymousSubscribeForm
-
-    def __init__(self):
-        super().__init__()
-
-        self.set_ga360_payload(
-            page_id='FindASupplierAnonymousSubscribeForm',
-            business_unit='FindASupplier',
-            site_section='AnonymousSubscribe',
-            site_subsection='Form'
-        )
-
-    def form_valid(self, form):
-        data = forms.serialize_anonymous_subscriber_forms(form.cleaned_data)
-        response = api_client.buyer.send_form(data)
-        response.raise_for_status()
-        return TemplateResponse(
-            self.request,
-            self.success_template,
-            self.get_context_data()
         )
 
 
