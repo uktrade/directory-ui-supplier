@@ -2,6 +2,9 @@
 
 ## Pre release
 
+## [2019.06.25] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.25)
+[Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.06.05...2019.06.25)
+
 ### Implemented enhancements
 
 - TT-1518 - Port ISD search changes to FAS
@@ -18,7 +21,6 @@
 - TT-1505 - Send FAS message via notify
 - TT-1522 - Improve the content of FAS contact form
 
-
 ## Fixed bugs
 
 - No ticket - Remove noisy CMS healthcheck
@@ -29,7 +31,7 @@
 - TT-1528 - 500 ISE on industry page
 - CI-217 - Update Django Version to fix security vulnerability.
 - TT-1529 - Fix 500 error pages so links work
-- TT-1531 FAS - Logos are misaligned on trade profiles (fixed cross browser compatibility issues)
+- TT-1531 - Logos are misaligned on trade profiles (fixed cross browser compatibility issues)
 - TT-1547 - Prevent FAS "&sectors=" getting encoded as "§ors=" by renaming to industries.
 - TT-1522 - fix none when clear filters ISD search
 - TT-1576 -fix next allignment
