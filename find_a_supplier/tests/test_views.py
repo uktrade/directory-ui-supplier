@@ -691,3 +691,9 @@ def test_home_page_hide_guide(mock_get_results_and_count, client, params):
 
     assert response.status_code == 200
     assert response.context_data['show_search_guide'] is False
+
+
+def test_anonymous_subscribe(client):
+    response = client.get(reverse('subscribe'))
+
+    assert response.status_code == http.client.OK

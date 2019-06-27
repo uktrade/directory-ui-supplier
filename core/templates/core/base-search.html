@@ -15,7 +15,7 @@
     {% endga360_tracker %}
 
     {% ga360_tracker "search-form" target="form" %}
-    <form>
+    <form class="grid-row padding-bottom-90">
         <div id="hero-container">
             <div class="container">
                 <div class="grid-row">  
@@ -157,6 +157,9 @@
             </div>
         </div>
     </form>
+
+    {% block subscription %} {% endblock %}
+
     {% endga360_tracker %}
 {% endblock content %}
 
