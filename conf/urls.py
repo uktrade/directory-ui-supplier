@@ -1,6 +1,7 @@
 import directory_components.views
 import directory_healthcheck.views
 from directory_components.decorators import skip_ga360
+from directory_constants.urls import FEEDBACK
 
 from django.conf import settings
 from django.conf.urls import include, url
@@ -185,11 +186,6 @@ urlpatterns = [
         name='subscribe'
     ),
     url(
-        r'^feedback/$',
-        core.views.LeadGenerationFormView.as_view(),
-        name='lead-generation'
-    ),
-    url(
         r'^unsubscribe/$',
         notifications.views.AnonymousUnsubscribeView.as_view(),
         name='anonymous-unsubscribe'
@@ -235,7 +231,11 @@ urlpatterns = [
     url(
         r'^',
         include(find_a_supplier_urls, namespace='find-a-supplier'),
-    )
+    ),
+    url(
+        r'^feedback/$',
+        RedirectView.as_view(url=FEEDBACK),
+    ),
 ]
 
 if settings.THUMBNAIL_STORAGE_CLASS_NAME == 'local-storage':
