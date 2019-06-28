@@ -14,7 +14,7 @@
 {% block filters %}
     <fieldset>
         <legend>Filter by industry</legend>
-        {% include 'core/filter.html' with label='Industry' alt='Toggle list of industries' field=form.industries %}
+        {% include 'core/filter.html' with label='Industry' alt='Toggle list of industries' field=form.industries open=True %}
     </fieldset>
     <fieldset>
 {% endblock %}
