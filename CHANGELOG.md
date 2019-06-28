@@ -7,6 +7,7 @@
 
 ### Implemented enhancements
 
+- TT-1406 - Adding a line to specify how the sorting is done.
 - TT-1556 - Add newsletter subscribe form on FAS results pages
 - TT-1518 - Port ISD search changes to FAS
     + TT-1546 - Fix FAS page title
