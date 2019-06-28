@@ -22,7 +22,7 @@
                     <div class="column-two-thirds">
                         {% if pagination.paginator.count %}
                             <h2 class="heading-medium margin-top-60 margin-bottom-15">{{ pagination.paginator.count }} {{pagination.paginator.count|pluralize:'result,results'}} found {% if form.q.value %}for <mark>{{ form.q.value }}</mark>{% endif %}</h2>
-                            <p class="font-xsmall margin-bottom-60">These are sorted by relevance to your search terms</p>
+                            <p class="font-xsmall margin-bottom-60 grey-text">These are sorted by relevance to your search terms</p>
                         {% else %}
                             <h2 class="heading-medium margin-top-60 margin-bottom-60">&nbsp;</h2>
                         {% endif %}
