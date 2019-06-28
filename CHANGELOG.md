@@ -2,6 +2,9 @@
 
 ## Pre release
 
+### Implemented enhancements
+- TT-1596 - Keep FAS industry filter open by default
+
 ## [2019.06.25] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.25)
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.06.05...2019.06.25)
 
