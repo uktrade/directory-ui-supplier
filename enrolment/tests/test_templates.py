@@ -1,7 +1,5 @@
 from django.template.loader import render_to_string
 
-from core import forms
-
 
 def test_robots(rf):
     request = rf.get('/')
@@ -24,12 +22,3 @@ def test_utm_cookie_domain():
     html = render_to_string('enrolment-base.html', context)
 
     assert '<meta id="utmCookieDomain" value=".thing.com" />' in html
-
-
-def test_lead_generation_form():
-    context = {
-        'form': forms.LeadGenerationForm()
-    }
-    html = render_to_string('lead-generation.html', context)
-
-    assert html

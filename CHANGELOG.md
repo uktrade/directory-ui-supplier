@@ -3,6 +3,7 @@
 ## Pre release
 
 ### Implemented enhancements
+- TT-1591 - Remove feedback form
 - TT-1596 - Keep FAS industry filter open by default
 
 ## [2019.06.25] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.25)
