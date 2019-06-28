@@ -236,6 +236,7 @@ body:not(.js-enabled) {
     text-align: center;
     li {
       display: inline-block;
+      vertical-align: top;
       a {
         padding: 0;
         width: 50px;
