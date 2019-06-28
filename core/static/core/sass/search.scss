@@ -255,16 +255,8 @@ body:not(.js-enabled) {
   }
   #hero-container {
     padding-bottom: 0;
-    h2 {
-      margin-top: 60px;
-      margin-bottom: 60px;
-    }
     p {
-      margin-top: -45px;
-      font-size: 15px;
-      line-height: 22px;
-      margin-bottom: 60px;
-      color: $grey;
+     color: $grey;
     }
     span {
       margin-top: 36px;
