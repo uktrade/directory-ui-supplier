@@ -127,22 +127,22 @@
                                         {% for number in pagination.paginator.page_range|slice:'0:4' %}
                                             {% include 'core/paginator-item.html' %}
                                         {% endfor %}
-                                        <li class="active-blue-text margin-15"><span>...</span></li>
+                                        <li class="active-blue-text margin-right-0 margin-top-15 margin-15-m"><span>...</span></li>
                                         {% include 'core/paginator-item.html' with number=pagination.paginator.num_pages %}
                                     {% elif pages_after_current < 4 %}
                                         {% include 'core/paginator-item.html' with number='1' %}
-                                        <li class="active-blue-text margin-15"><span>...</span></li>
+                                        <li class="active-blue-text margin-right-0 margin-top-15 margin-15-m"><span>...</span></li>
                                         {% for number in pagination.paginator.page_range|slice:'-4:-1' %}
                                             {% include 'core/paginator-item.html' %}
                                         {% endfor %}
                                         {% include 'core/paginator-item.html' with number=pagination.paginator.num_pages %}
                                     {% else %}
                                         {% include 'core/paginator-item.html' with number='1'%}
-                                        <li class="active-blue-text margin-15"><span>...</span></li>
+                                        <li class="active-blue-text margin-right-0 margin-top-15 margin-15-m"><span>...</span></li>
                                         {% include 'core/paginator-item.html' with number=pagination.number|add:'-1'%}
                                         {% include 'core/paginator-item.html' with number=pagination.number %}
                                         {% include 'core/paginator-item.html' with number=pagination.number|add:'1'%}
-                                        <li class="active-blue-text margin-15"><span>...</span></li>
+                                        <li class="active-blue-text margin-right-0 margin-top-15 margin-15-m"><span>...</span></li>
                                         {% include 'core/paginator-item.html' with number=pagination.paginator.num_pages %}
                                     {% endif %}
                                 </ol>

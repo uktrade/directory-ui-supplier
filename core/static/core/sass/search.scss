@@ -249,6 +249,27 @@ body:not(.js-enabled) {
   text-align: center;
 }
 
+
+
+@media (max-width: 769px) {
+  #paginator {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    a {
+      width: 125px;
+    }
+    ol {
+      order: 2;
+      display: flex;
+      li {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+
+
 @media (min-width: 769px) {
   #main-content > div {
     flex-flow: row;
