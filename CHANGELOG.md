@@ -8,6 +8,7 @@
 
 ### Bugs fixed
 - TT-1598 - Fix human resource ISD links not working on ISD home page
+- TT-1585 - Fixed report profile position on profile 
 
 ## [2019.06.25] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.25)
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.06.05...2019.06.25)

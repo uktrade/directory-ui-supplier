@@ -257,12 +257,31 @@ body:not(.js-enabled) {
     justify-content: space-between;
     a {
       width: 125px;
+      padding: 0;
     }
     ol {
       order: 2;
       display: flex;
       li {
         margin-right: 10px;
+      }
+    }
+    &.one-paginator-button {
+      > a {
+        width: auto;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      #paginator-previous {
+        order: 1;
+      }
+      #paginator-next {
+        order: 2;
+      }
+      ol {
+        order: 1;
       }
     }
   }
