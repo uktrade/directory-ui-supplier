@@ -202,7 +202,7 @@
                                     {% endga360_tracker %}
                                 {% endwith %}
                             </div>
-                        {% if parity == 'even' %}</div>{% endif %}
+                        {% if parity == 'even' or forloop.last %}</div>{% endif %}
                     {% endfor %}
                 </div>
             {% endif %}

@@ -8,12 +8,15 @@
 
 ### Bugs fixed
 - TT-1584 - Fix vertical alignment of paginator on IE11.
+- TT-1598 - Fix human resource ISD links not working on ISD home page
+- TT-1585 - Fixed report profile position on profile 
 
 ## [2019.06.25] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.25)
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.06.05...2019.06.25)
 
 ### Implemented enhancements
 
+- TT-1406 - Adding a line to specify how the sorting is done.
 - TT-1556 - Add newsletter subscribe form on FAS results pages
 - TT-1518 - Port ISD search changes to FAS
     + TT-1546 - Fix FAS page title

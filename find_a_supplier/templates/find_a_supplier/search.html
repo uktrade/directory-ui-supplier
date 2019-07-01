@@ -20,9 +20,10 @@
 {% endblock %}
 
 {% block subscription %}
+{% if results %}
+
 <div class="subscription background-stone-30 grid-row padding-top-90 padding-bottom-60">
     <div class="container">
-    {% if results %}
         <div class="subscription-form-container">
             <div class="subscription-form-inner">
                 <div class="grid-row">
@@ -69,16 +70,18 @@
         </div>
     {% else %}
         {% if not form.is_bound %}
-        <div id="fassearch-initial-content">
-            <p class="message">Our UK trade profiles will help you contact the right people in the right company.</p>
-            <p class="list-header">Trade profiles give you:</p>
-            <ul>
-                <li>a company summary</li>
-                <li>examples of outstanding projects, goods and services</li>
-                <li>direct contact with a member of a sales or business development team</li>
-            </ul>
-        </div>
-        {% endif %}
+        <div class="subscription background-stone-30 grid-row padding-top-90 padding-bottom-60">
+            <div class="container">
+                <div id="fassearch-initial-content">
+                    <p class="message">Our UK trade profiles will help you contact the right people in the right company.</p>
+                    <p class="list-header">Trade profiles give you:</p>
+                    <ul>
+                        <li>a company summary</li>
+                        <li>examples of outstanding projects, goods and services</li>
+                        <li>direct contact with a member of a sales or business development team</li>
+                    </ul>
+                </div>
+                {% endif %}
     {% endif %} 
     </div>
 </div>
