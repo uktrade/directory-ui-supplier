@@ -66,7 +66,7 @@ DEBUG_SET_ENV_VARS := \
 TEST_SET_ENV_VARS := \
 	export DIRECTORY_FORMS_API_API_KEY=debug; \
 	export DIRECTORY_FORMS_API_SENDER_ID=debug; \
-	export URL_PREFIX_DOMAIN=http://testserver; \
+	export URL_PREFIX_DOMAIN=http://testserver
 
 debug_webserver:
 	$(DEBUG_SET_ENV_VARS) && $(DJANGO_WEBSERVER)
