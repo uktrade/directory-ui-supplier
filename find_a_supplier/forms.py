@@ -166,7 +166,11 @@ class AnonymousSubscribeForm(forms.Form):
         widget=Select(attrs={'data-ga-id': 'sector-input'})
     )
     company_name = fields.CharField(label=_('Company name'))
-    country = fields.CharField(label=_('Country'))
+    country = fields.ChoiceField(
+        choices=[('', 'Please select')] + choices.COUNTRY_CHOICES,
+        widget=Select(attrs={'data-ga-id': 'country-input'})
+    )
+    captcha = ReCaptchaField(label=_(''))
     terms = fields.BooleanField(
         label=TERMS_CONDITIONS_LABEL,
         error_messages={'required': TERMS_CONDITIONS_MESSAGE}

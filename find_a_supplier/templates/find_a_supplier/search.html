@@ -48,10 +48,16 @@
 
                         <div class="grid-row">
                             <div class="column-full column-third-xl">
-                                {% include "directory_components/form_widgets/form_field.html" with field=subscribe_form.country %}
+                                {% include "directory_components/form_widgets/form_field.html" with field=subscribe_form.company_name %}
                             </div>
                             <div class="column-full column-third-xl">
-                                {% include "directory_components/form_widgets/form_field.html" with field=subscribe_form.company_name %}
+                                {% include "directory_components/form_widgets/form_field.html" with field=subscribe_form.country %}
+                            </div>
+                        </div>
+
+                        <div class="grid-row">
+                            <div class="column-full form-group" >
+                                {% include "directory_components/form_widgets/form_field.html" with field=subscribe_form.captcha %}
                             </div>
                         </div>
 
