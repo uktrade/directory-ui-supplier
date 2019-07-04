@@ -10,6 +10,7 @@
 - TT-1584 - Fix vertical alignment of paginator on IE11.
 - TT-1598 - Fix human resource ISD links not working on ISD home page
 - TT-1585 - Fixed report profile position on profile 
+- No ticket - Upgrade vulnerable django version to django 1.11.22
 
 ## [2019.06.25] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.06.25)
 [Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.06.05...2019.06.25)
