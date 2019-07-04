@@ -1,7 +1,7 @@
 import pytest
 import requests
 
-from directory_constants import expertise
+from directory_constants import expertise, sectors
 
 from django.shortcuts import Http404
 from django.urls import reverse
@@ -132,13 +132,20 @@ def test_get_filters_labels():
         'q': 'foo',
         'page': 5,
         'expertise_regions': ['NORTH_EAST'],
-        'expertise_products_services_financial': [expertise.FINANCIAL[1]]
+        'expertise_products_services_financial': [expertise.FINANCIAL[1]],
+        'industries': [sectors.AEROSPACE, sectors.ADVANCED_MANUFACTURING],
+        'expertise_products_services_human_resources': [
+            'Employment and talent research'
+        ],
     }
 
     expected = [
         'Afar',
         'North East',
         'Insurance',
+        'Aerospace',
+        'Advanced manufacturing',
+        'Employment and talent research',
     ]
 
     assert helpers.get_filters_labels(filters) == expected

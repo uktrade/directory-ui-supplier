@@ -2,6 +2,7 @@
 @import 'partials/base';
 @import 'partials/colours';
 @import 'components/articles-section';
+@import 'subscription';
 
 .breadcrumbs {
   padding-top: 15px;
@@ -180,6 +181,9 @@ body:not(.js-enabled) {
         margin-bottom: 5px;
 
       }
+      &:last-child {
+        margin-bottom: 0;
+      }
       a {
         text-decoration: none;
         min-height: 205px;
@@ -232,6 +236,7 @@ body:not(.js-enabled) {
     text-align: center;
     li {
       display: inline-block;
+      vertical-align: top;
       a {
         padding: 0;
         width: 50px;
@@ -245,16 +250,52 @@ body:not(.js-enabled) {
   text-align: center;
 }
 
+
+
+@media (max-width: 769px) {
+  #paginator {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    a {
+      width: 125px;
+      padding: 0;
+    }
+    ol {
+      order: 2;
+      display: flex;
+      li {
+        margin-right: 10px;
+      }
+    }
+    &.one-paginator-button {
+      > a {
+        width: auto;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      #paginator-previous {
+        order: 1;
+      }
+      #paginator-next {
+        order: 2;
+      }
+      ol {
+        order: 1;
+      }
+    }
+  }
+}
+
+
+
 @media (min-width: 769px) {
   #main-content > div {
     flex-flow: row;
   }
   #hero-container {
     padding-bottom: 0;
-    h2 {
-      margin-top: 60px;
-      margin-bottom: 60px;
-    }
     span {
       margin-top: 36px;
     }
@@ -305,3 +346,4 @@ body:not(.js-enabled) {
     padding: 0;
   }
 }
+

@@ -15,15 +15,16 @@
     {% endga360_tracker %}
 
     {% ga360_tracker "search-form" target="form" %}
-    <form>
+    <form class="grid-row padding-bottom-90">
         <div id="hero-container">
             <div class="container">
                 <div class="grid-row">  
                     <div class="column-two-thirds">
                         {% if pagination.paginator.count %}
-                            <h2 class="heading-medium">{{ pagination.paginator.count }} {{pagination.paginator.count|pluralize:'result,results'}} found {% if form.q.value %}for <mark>{{ form.q.value }}</mark>{% endif %}</h2>
+                            <h2 class="heading-medium margin-top-45 margin-bottom-15">{{ pagination.paginator.count }} {{pagination.paginator.count|pluralize:'result,results'}} found {% if form.q.value %}for <mark>{{ form.q.value }}</mark>{% endif %}</h2>
+                            <p class="font-xsmall margin-bottom-30 grey-text">These are sorted by relevance to your search terms</p>
                         {% else %}
-                            <h2 class="heading-medium">&nbsp;</h2>
+                            <h2 class="heading-medium margin-top-60 margin-bottom-60">&nbsp;</h2>
                         {% endif %}
                     </div>
                     <div class="column-one-third">
@@ -114,9 +115,9 @@
                     </ul>
                     {% if pagination.paginator.num_pages > 1 %}
                         {% ga360_tracker "pagination" %}
-                        <div id="paginator">
+                        <div id="paginator" class="{{ pagination.has_previous|yesno:',one-paginator-button' }} {{ pagination.has_next|yesno:',one-paginator-button' }}">
                             {% if pagination.has_previous %}
-                                <a class="button-ghost-blue" href="{{ paginator_url }}&page={{ pagination.previous_page_number}}">Previous</a>
+                                <a class="button-ghost-blue" id="paginator-previous" href="{{ paginator_url }}&page={{ pagination.previous_page_number}}">Previous</a>
                             {% endif %}
                                 <ol>
                                     {% if pagination.paginator.num_pages <= 5 %}
@@ -124,30 +125,43 @@
                                             {% include 'core/paginator-item.html' %}
                                         {% endfor %}
                                     {% elif pagination.number < 5 %}
-                                        {% for number in pagination.paginator.page_range|slice:'0:4' %}
-                                            {% include 'core/paginator-item.html' %}
-                                        {% endfor %}
-                                        <li class="active-blue-text margin-15"><span>...</span></li>
+                                        {% if pagination.has_previous %}
+                                            {% for number in pagination.paginator.page_range|slice:'0:4' %}
+                                                {% include 'core/paginator-item.html' %}
+                                            {% endfor %}
+                                        {% else %}
+                                            {% for number in pagination.paginator.page_range|slice:'0:3' %}
+                                                {% include 'core/paginator-item.html' %}
+                                            {% endfor %}
+                                        {% endif %}
+                                        <li class="active-blue-text margin-right-0 margin-top-15 margin-15-m"><span>...</span></li>
                                         {% include 'core/paginator-item.html' with number=pagination.paginator.num_pages %}
                                     {% elif pages_after_current < 4 %}
                                         {% include 'core/paginator-item.html' with number='1' %}
-                                        <li class="active-blue-text margin-15"><span>...</span></li>
-                                        {% for number in pagination.paginator.page_range|slice:'-4:-1' %}
-                                            {% include 'core/paginator-item.html' %}
-                                        {% endfor %}
+                                        <li class="active-blue-text margin-right-0 margin-top-15 margin-15-m"><span>...</span></li>
+                                        
+                                        {% if pagination.has_next %}
+                                            {% for number in pagination.paginator.page_range|slice:'-4:-1' %}
+                                                {% include 'core/paginator-item.html' %}
+                                            {% endfor %}
+                                        {% else %}
+                                            {% for number in pagination.paginator.page_range|slice:'-2:-1' %}
+                                                {% include 'core/paginator-item.html' %}
+                                            {% endfor %}
+                                        {% endif %}
                                         {% include 'core/paginator-item.html' with number=pagination.paginator.num_pages %}
                                     {% else %}
                                         {% include 'core/paginator-item.html' with number='1'%}
-                                        <li class="active-blue-text margin-15"><span>...</span></li>
+                                        <li class="active-blue-text margin-right-0 margin-top-15 margin-15-m"><span>...</span></li>
                                         {% include 'core/paginator-item.html' with number=pagination.number|add:'-1'%}
                                         {% include 'core/paginator-item.html' with number=pagination.number %}
                                         {% include 'core/paginator-item.html' with number=pagination.number|add:'1'%}
-                                        <li class="active-blue-text margin-15"><span>...</span></li>
+                                        <li class="active-blue-text margin-right-0 margin-top-15 margin-15-m"><span>...</span></li>
                                         {% include 'core/paginator-item.html' with number=pagination.paginator.num_pages %}
                                     {% endif %}
                                 </ol>
                             {% if pagination.has_next %}
-                                <a class="button-ghost-blue" href="{{ paginator_url }}&page={{ pagination.next_page_number }}">Next</a>
+                                <a class="button-ghost-blue" id="paginator-next" href="{{ paginator_url }}&page={{ pagination.next_page_number }}">Next</a>
                             {% endif %}
                         </div>
                         {% endga360_tracker %}
@@ -156,6 +170,9 @@
             </div>
         </div>
     </form>
+
+    {% block subscription %} {% endblock %}
+
     {% endga360_tracker %}
 {% endblock content %}
 

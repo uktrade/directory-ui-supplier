@@ -1,23 +1,6 @@
-from core.forms import AnonymousSubscribeForm, LeadGenerationForm
 from django.utils import translation
 from django.conf import settings
 from directory_constants import urls
-
-
-def subscribe_form(request):
-    return {
-        'subscribe': {
-            'form': AnonymousSubscribeForm(),
-        },
-    }
-
-
-def lead_generation_form(request):
-    return {
-        'lead_generation': {
-            'form': LeadGenerationForm()
-        }
-    }
 
 
 def html_lang_attribute(request):
