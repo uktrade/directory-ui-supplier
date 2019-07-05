@@ -8,5 +8,6 @@ class IntegerField(DirectoryComponentsFieldMixin, forms.IntegerField):
     pass
 
 
-class RecaptchaField(DirectoryComponentsFieldMixin, ReCaptchaField):
+class DirectoryComponentsRecaptchaField(DirectoryComponentsFieldMixin,
+                                        ReCaptchaField):
     pass

@@ -11,7 +11,10 @@ from django.forms import (
 
 from django.utils.translation import ugettext as _
 
-from core.fields import IntegerField, RecaptchaField as CustomRecaptchaField
+from core.fields import (
+    IntegerField,
+    DirectoryComponentsRecaptchaField
+)
 
 
 SELECT_LABEL = 'Please select your industry'
@@ -170,7 +173,7 @@ class AnonymousSubscribeForm(forms.Form):
         choices=[('', 'Please select')] + choices.COUNTRY_CHOICES,
         widget=Select(attrs={'data-ga-id': 'country-input'})
     )
-    captcha = CustomRecaptchaField(label=_(''))
+    captcha = DirectoryComponentsRecaptchaField(label=_(''))
     terms = fields.BooleanField(
         label=TERMS_CONDITIONS_LABEL,
         error_messages={'required': TERMS_CONDITIONS_MESSAGE}
