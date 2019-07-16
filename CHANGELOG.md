@@ -4,6 +4,15 @@
 
 ### Implemented enhancements
 
+- TT-1623 - Change logo on ISD pages to invest logo
+
+## [2019.07.15] (https://github.com/uktrade/directory-ui-supplier/releases/tag/2019.07.15)
+[Full Changelog](https://github.com/uktrade/directory-ui-supplier/compare/2019.06.25...2019.07.15)
+
+### Implemented enhancements
+- TT-1591 - Remove feedback form
+- TT-1596 - Keep FAS industry filter open by default
+
 - TT-1518 - Port ISD search changes to FAS
     + TT-1546 - Fix FAS page title
     + TT-1567 - Remove "free advice" for FAS profiles
