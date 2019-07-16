@@ -4,6 +4,7 @@ from django.forms.fields import Field
 from directory_validators.common import not_contains_url_or_email
 
 from find_a_supplier import forms
+import pytest
 
 
 REQUIRED_MESSAGE = Field.default_error_messages['required']
@@ -151,13 +152,16 @@ def test_subscribe_form_required():
     assert form.fields['terms'].required is True
 
 
-def test_subscribe_form_accepts_valid_data():
+@pytest.fixture
+def test_subscribe_form_accepts_valid_data(captcha_stub):
     form = forms.AnonymousSubscribeForm(data={
         'full_name': 'Jim Example',
         'email_address': 'jim@example.com',
         'sector': 'AEROSPACE',
         'company_name': 'Deutsche Bank',
-        'country': 'Germany',
-        'terms': True
+        'country': 'DE',
+        'terms': True,
+        'g-recaptcha-response': captcha_stub
     })
+
     assert form.is_valid()
