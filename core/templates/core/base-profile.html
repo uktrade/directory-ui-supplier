@@ -194,11 +194,15 @@
                                 {% url 'case-study-details' id=case_study.pk slug=case_study.slug as case_study_url %}
                                 {% with "case-study-"|add:forloop.counter as card_id %}
                                     {% ga360_tracker "case-study-card" ga-value=case_study.title %}
-                                    {% card card_id=card_id img_src=case_study.image_one url=case_study_url|add:'?isd=true' description=case_study.short_summary heading=case_study.title %}
+                                        {% if request.resolver_match.namespace == 'investment-support-directory' %}
+                                            {% card card_id=card_id img_src=case_study.image_one url=case_study_url|add:'?isd=true' description=case_study.short_summary heading=case_study.title %}
+                                        {% else %}
+                                            {% card card_id=card_id img_src=case_study.image_one url=case_study_url description=case_study.short_summary heading=case_study.title %}
+                                        {% endif %}
                                     {% endga360_tracker %}
                                 {% endwith %}
                             </div>
-                        {% if parity == 'even' %}</div>{% endif %}
+                        {% if parity == 'even' or forloop.last %}</div>{% endif %}
                     {% endfor %}
                 </div>
             {% endif %}

@@ -4,7 +4,6 @@
 
 #logo-container {
   height: 300px;
-  width: 300px;
   display: flex;
   background-color: white;
   border: 1px solid #999;
@@ -47,9 +46,6 @@ hr {
   }
   dd {
     margin-bottom: 1em;
-  }
-  & > section {
-    width: 80%;
   }
   li a {
     height: 36px;
@@ -120,6 +116,9 @@ hr {
     width: 100%;
     text-align: center;
     margin-top: 30px;
+    padding: 10px;
+    line-height: normal;
+    height: 39px
   }  
   span {
     margin-top: 45px;
@@ -151,4 +150,16 @@ hr {
 
 #registered-office-address-container {
   margin-top: 45px;
+}
+
+
+@media (min-width: 769px) {
+  #data-column {
+    & > section {
+      width: 80%;
+    }
+  }
+  #logo-container {
+    width: 300px;
+  }
 }
