@@ -1,0 +1,14 @@
+{% extends 'directory_components/header_footer/international_header.html' %}
+
+{% load static from staticfiles %}
+
+{% block language_form_action %}{# Left empty #}{% endblock %}
+{% block language_form_method %}get{% endblock %}
+
+{% block header_logo %}
+    {% if request.resolver_match.namespace == 'investment-support-directory' %}
+        <img src="{% static 'directory_components/images/invest.svg' %}" alt="Great Britain and Northern Ireland" height="64" width="auto">
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
