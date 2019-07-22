@@ -323,4 +323,3 @@ class SubscribeFormView(
             self.success_template,
             self.get_context_data()
         )
-
