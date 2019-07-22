@@ -24,7 +24,7 @@
       <div class="container">
         <h2 class="heading-large">Next steps</h2>
         {% ga360_tracker "next-steps" %}
-        <a class="link" href="{% url 'find-a-supplier:search' %}">Browse companies</a>
+        <a class="link" href="{% url 'find-a-supplier:search' %}{% if search_querystring %}?{{ search_querystring }}{% endif %}">Browse companies</a>
         {% endga360_tracker %}
       </div>
     </section>

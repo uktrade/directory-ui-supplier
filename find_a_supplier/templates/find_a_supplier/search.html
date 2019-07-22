@@ -33,7 +33,7 @@
                 </div>
                 <div class="grid-row">
                     {% ga360_tracker "subscribe-form" target="form" %}
-                    <form action="{% url 'subscribe' %}" method="post">
+                    <form action="{% url 'subscribe' %}{% if search_querystring %}?{{ search_querystring }}{% endif %}" method="post">
                         <div class="grid-row">
                             <div class="column-full column-third-xl">
                                 {% include "directory_components/form_widgets/form_field.html" with field=subscribe_form.full_name %}

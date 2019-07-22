@@ -294,7 +294,12 @@ class ContactCompanySentView(
         )
 
 
-class SubscribeFormView(CountryDisplayMixin, GA360Mixin, FormView):
+class SubscribeFormView(
+    CountryDisplayMixin,
+    GA360Mixin,
+    core.mixins.PersistSearchQuerystringMixin,
+    FormView
+):
     success_template = 'find_a_supplier/subscribe-success.html'
     template_name = 'find_a_supplier/subscribe.html'
     form_class = forms.AnonymousSubscribeForm
@@ -318,3 +323,4 @@ class SubscribeFormView(CountryDisplayMixin, GA360Mixin, FormView):
             self.success_template,
             self.get_context_data()
         )
+
