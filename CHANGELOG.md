@@ -2,6 +2,8 @@
 
 ## Pre release
 
+- TT-1556 - Newsletter form on FAS search results page
+    + TT-1676 - FAS Add Back link to subscription success page to show previous search results instead of empty search.
 - TT-1623 - Change logo on ISD pages to invest logo
 - TT-1556 - Add captcha to subscribe form
 
