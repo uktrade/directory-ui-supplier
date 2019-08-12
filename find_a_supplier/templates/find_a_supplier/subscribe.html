@@ -23,7 +23,7 @@
             </div>
             <div class="grid-row">
                 {% ga360_tracker "subscribe-form" target="form" %}
-                <form action="{% url 'subscribe' %}" method="post" class="column-full column-half-xl">
+                <form action="{% url 'subscribe' %}{% if search_querystring %}?{{ search_querystring }}{% endif %}" method="post" class="column-full column-half-xl">
                     {% render_form form %}
                     <button class="button">Send</button>
                 </form>
